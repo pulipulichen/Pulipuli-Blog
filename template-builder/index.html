@@ -8,22 +8,25 @@
     <link href='lib/semantic-ui/semantic.min.css' rel='stylesheet' type='text/css'/>
     <script src="lib/semantic-ui/semantic.min.js"></script>
     <script src="lib/vue/vue.min.js"></script>
+    <link rel="icon" type="image/png" href="icon.png" />
   </head>
   <body>
-    <div class="ui container">
+    <div class="ui container" id="app">
       <form class="ui form">
-        <div class="ui stackable four column grid">
-          <div class="column">
-            <button class="ui labeled icon button" type="button">
+        <div class="ui stackable two column grid">
+          <div class="column blogger">
+            <button class="ui labeled icon fluid button" type="button" v-on:click="copyCode">
               <i class="copy icon"></i>
-              COPY
+              Copy for Blogger Code
             </button>
+            <textarea v-model="codeForBlogger"></textarea>
           </div>
-          <div class="column">
+          <div class="column olw">
             
           </div>
         </div>
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
