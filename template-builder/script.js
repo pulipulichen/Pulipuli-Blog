@@ -25,6 +25,7 @@ var app = {
         '3_footer/2_col.html',
         '3_footer/3_col.html',
         '3_footer/4_management.html',
+        '3_footer/9_include.html',
         '4_content/archives.html',
         '4_content/author.html',
         '4_content/backlinks.html',
@@ -44,7 +45,7 @@ var app = {
           fetch('components/' + filename)
             .then(res => res.text())
             .then(text => {
-              mainTemplate = mainTemplate.replace('<p:include>' + filename + '</p:include>', text.trim())
+              mainTemplate = mainTemplate.split('<p:include>' + filename + '</p:include>').join(text.trim())
               i++
               loop(i)
           })
@@ -66,6 +67,9 @@ var app = {
           mainTemplate = template.innerHTML;
           console.log(mainTemplate)
           */
+          if (mainTemplate.indexOf("<p:include>") > -1) {
+            alert("<p:include> error")
+          }
           this.codeForBlogger = mainTemplate
         }
       }

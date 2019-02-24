@@ -10,6 +10,7 @@ $(function(){
         }
     });
     
+    /*
     $("head").append($("<link />").attr({
         rel: "stylesheet",
         type: "text/css",
@@ -20,4 +21,7 @@ $(function(){
     $.getScript("//pulipulichen.github.io/blogger/blogger/lib/highlight/highlight.min.js", function () {
         hljs.initHighlightingOnLoad();
     });
+    */
+    
+    hljs.initHighlightingOnLoad();
 });

@@ -24,14 +24,15 @@ $(function(){
         }
     });
     
+    /*
     $("head").append($("<link />").attr({
         rel: "stylesheet",
         type: "text/css",
-        href: "//pulipulichen.github.io/blogger/blogger/lib/lightbox2-lokeshdhakar/css/lightbox.min.css"
+        href: "//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/lightbox2-lokeshdhakar/css/lightbox.min.css"
         //media: "screen"
     }));
     
-    $.getScript("//pulipulichen.github.io/blogger/blogger/lib/lightbox2-lokeshdhakar/js/lightbox.min.js", function () {
+    $.getScript("//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/lightbox2-lokeshdhakar/js/lightbox.min.js", function () {
         lightbox.option({
             'disableScrolling': true
         });
@@ -42,5 +43,17 @@ $(function(){
                 window.open(_src);
             }
         });
+    });
+    */
+    
+    lightbox.option({
+        'disableScrolling': true
+    });
+    $("#lightbox .lb-nav").click(function () {
+        var _src = $(this).prev().attr("src");
+        //console.log(_src);
+        if (_src !== undefined) {
+            window.open(_src);
+        }
     });
 });
