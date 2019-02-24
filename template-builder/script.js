@@ -5,7 +5,10 @@ var app = {
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
   },
   created: function () {
-    $.get('main-template.html', (mainTemplate) => {
+    fetch('main-template.html')
+      .then(res => res.text())
+      .then(mainTemplate => {
+      console.log(mainTemplate)
       mainTemplate = mainTemplate.trim()
       //this.codeForBlogger = mainTemplate.trim()
       
@@ -38,10 +41,12 @@ var app = {
         if (i < replaceList.length) {
           var filename = replaceList[i]
           //console.log(filename)
-          $.get(filename, (text) => {
-            mainTemplate = mainTemplate.replace('<p:include>' + filename + '</p:include>', text.trim())
-            i++
-            loop(i)
+          fetch(filename)
+            .then(res => res.text())
+            .then(text => {
+              mainTemplate = mainTemplate.replace('<p:include>' + filename + '</p:include>', text.trim())
+              i++
+              loop(i)
           })
         }
         else {
