@@ -1,0 +1,19 @@
+{
+  "name": "pulipuli-blog",
+  "version": "1.0.0",
+  "description": "擺放blog.pulipuli.info各種資料的儲存庫",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pulipulichen/Pulipuli-Blog.git"
+  },
+  "author": "Pulipuli Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/Pulipuli-Blog/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/Pulipuli-Blog#readme"
+}
