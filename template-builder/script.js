@@ -3,6 +3,7 @@ var app = {
   data: {
     codeForBlogger: 'Blogger Template Code (now loading...)',
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
+    useLocalhost: true
   },
   created: function () {
     fetch('main-template.html')
@@ -70,6 +71,12 @@ var app = {
           if (mainTemplate.indexOf("<p:include>") > -1) {
             alert("<p:include> error")
           }
+          
+          if (this.useLocalhost === true) {
+            mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
+                    .join('http://localhost/nodejs-projects/Pulipuli-Blog/')
+          }
+          
           this.codeForBlogger = mainTemplate
         }
       }
