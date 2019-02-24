@@ -41,7 +41,7 @@ var app = {
         if (i < replaceList.length) {
           var filename = replaceList[i]
           //console.log(filename)
-          fetch(filename)
+          fetch('components/' + filename)
             .then(res => res.text())
             .then(text => {
               mainTemplate = mainTemplate.replace('<p:include>' + filename + '</p:include>', text.trim())
