@@ -4,12 +4,11 @@ const {exec} = require('child_process')
 const path = require('path')
 const fs = require('fs')
 
-/*
-function getComponentsList () {
+function getComponentsList (mainDirectory) {
   var list = []
   
   //joining path of directory 
-  const directoryPath = path.join(__dirname, 'components');
+  const directoryPath = path.join(__dirname, mainDirectory);
   //passsing directoryPath and callback function
   var subDirectoies = fs.readdirSync(directoryPath)
  
@@ -29,7 +28,7 @@ function getComponentsList () {
   return list
 }
 
-var list = getComponentsList()
+var list = getComponentsList('template-builder/components')
 list.forEach(file => {
   if (file.endsWith('.css') && !file.endsWith('.min.css')) {
     var input = file
@@ -38,4 +37,3 @@ list.forEach(file => {
     exec('postcss ' + input + ' > ' + output)
   }
 })
-*/
