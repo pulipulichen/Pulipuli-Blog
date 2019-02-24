@@ -13,9 +13,9 @@ var app = {
       //this.codeForBlogger = mainTemplate.trim()
       
       var replaceList = [
-        '0_header/1_style.css',
-        '0_header/2_style.css',
-        '0_header/3_custom_style.css',
+        '0_header/1_style.min.css',
+        '0_header/2_style.min.css',
+        '0_header/3_custom_style.min.css',
         '0_header/4_facebook_code.html',
         '1_menu/1_menu.html',
         '1_menu/2_search.html',
@@ -60,7 +60,13 @@ var app = {
           // /\s*\(.*?\)\s*/g
           // /* Related Posts */
           
-          this.codeForBlogger = mainTemplate.trim()
+          /*
+          var template = document.createElement('template');
+          template.innerHTML = mainTemplate;
+          mainTemplate = template.innerHTML;
+          console.log(mainTemplate)
+          */
+          this.codeForBlogger = mainTemplate
         }
       }
       loop(0)
