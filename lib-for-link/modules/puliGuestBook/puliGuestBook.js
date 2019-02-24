@@ -53,7 +53,7 @@ jQuery.puliGuestBook = function (config) {
     };
     
     //var css = getParam('css', 'https://sites.google.com/site/puddingchen35/Home/puliguestbook/puliGuestBook.css');
-    var css = getParam('css', '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook.css');
+    var css = getParam('css', '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.css');
     if (jQuery('link[href="'+css+'"]').length === 0) {
         jQuery("<link type='text/css' rel='stylesheet' href='"+css+"' /> ").appendTo(jQuery('head'));
     }
