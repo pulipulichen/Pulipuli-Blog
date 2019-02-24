@@ -1,0 +1,4 @@
+.template-code {
+  max-height: inherit !important;
+  height: calc(100vh - 4em) !important;
+}

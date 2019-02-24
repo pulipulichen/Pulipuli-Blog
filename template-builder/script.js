@@ -1,8 +1,8 @@
 var app = {
   el: '#app',
   data: {
-    codeForBlogger: 'codeForBlogger',
-    codeForOLW: 'codeForOLW',
+    codeForBlogger: 'Blogger Template Code (now loading...)',
+    codeForOLW: 'Open Live Writer Template Code (now loading...)',
   },
   created: function () {
     $.get('main-template.html', (mainTemplate) => {
