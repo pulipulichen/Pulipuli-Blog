@@ -56,7 +56,7 @@ var app = {
           
           // 移除註解
           //mainTemplate = mainTemplate.replace(/ *\<p:comment>[^<\/p:comment>]*\<\/p:comment> */g, "");
-          mainTemplate = mainTemplate.replace(/\s*<p:comment>.*?\<\/p:comment>\s*/g, "");
+          mainTemplate = mainTemplate.replace(/<!--.*?-->/sg, "")
           // /\s*\(.*?\)\s*/g
           // /* Related Posts */
           
