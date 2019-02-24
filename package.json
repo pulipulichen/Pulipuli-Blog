@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pulipulichen/Pulipuli-Blog/issues"
   },
-  "homepage": "https://github.com/pulipulichen/Pulipuli-Blog#readme"
+  "homepage": "https://github.com/pulipulichen/Pulipuli-Blog#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
 }

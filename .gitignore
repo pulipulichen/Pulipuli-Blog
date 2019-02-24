@@ -1,1 +1,5 @@
 /nbproject/private/
+/node_modules/
+/package-lock.json
+/template-builder/.cache/
+/.cache/
