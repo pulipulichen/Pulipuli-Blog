@@ -19,10 +19,10 @@
 <script type='text/javascript' src="//pulipulichen.github.io/blogger/blogger/js/breeze.js"></script>
 <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'/>
 
-<?php 
+<p:comment>
 // --------------------------------------------
 // 讀取外部檔案
-?>
+</p:comment>
 
 <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
 <link href='//fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'/>
@@ -41,15 +41,15 @@
     <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/blogger/blogger/css/style-print.css" media="print"/>
 </b:if>
 
-<?php 
+<p:comment>
 // 讀取外部檔案
 // --------------------------------------------
-?>
+</p:comment>
 
-<?php 
+<p:comment> 
 // --------------------------------------------
 // 標記資訊
-?>
+</p:comment>
 
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 <link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='shortcut icon' type='image/vnd.microsoft.icon'/>
@@ -57,7 +57,7 @@
 <link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='icon' sizes='192x192'/>
 <link href='//lh3.googleusercontent.com/-vjf_alp-zjQ/VvtkKVpqCjI/AAAAAAACuMI/HPJXcEemwok/s0/pulipuli144x144.jpg' rel='apple-touch-icon' sizes='144x144'/>
 
-<?php echo file_get_contents("0_header/4_facebook_code.html"); ?>
+<p:include>0_header/4_facebook_code.html</p:include>
 <meta name="msvalidate.01" content="09F5F270E3016847B9723E71AEE3FC24" />
 <meta name="baidu-site-verification" content="0XST85Xh5F" />
 <meta name="p:domain_verify" content="102285e6f21741f433c6400b5ec23fa7"/>
@@ -90,9 +90,9 @@
     <img src='//lh3.googleusercontent.com/-joQnbCCa6Jg/VwFqIuKnCCI/AAAAAAACuUo/iZTPC_EVSyE/s0/bmenu_brown.png'/></div>
 
 <header>
-<?php
+<p:comment>
 // 在這邊加上回去上一頁的按鈕
-?>
+</p:comment>
     <b:if cond='data:blog.url != data:blog.homepageUrl'>
         <div onclick="javascript: _header_back_button_click();" class="back-button">
             <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -175,16 +175,13 @@
 </b:section>
 </header>
      
-<?php echo file_get_contents("1_menu/2_search.html"); ?>
-
-<?php echo file_get_contents("1_menu/1_menu.html"); ?>
+<p:include>1_menu/2_search.html</p:include>
+<p:include>1_menu/1_menu.html</p:include>
 
  </div> 
 </div>
 </div>
-<?php
-// ---------------------------------------------
-?>  
+  
 <div class='clear'/>
 </div>
       <div class='clear'/>
@@ -193,7 +190,7 @@
 <div class='row' id='primary'>
 
 <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/archives.html" or data:blog.url == "https://blog.pulipuli.info/p/archives.html"'>
-<?php echo file_get_contents("4_content/archives.html") ?>
+<p:include>4_content/archives.html</p:include>
 <style type="text/css">
 #content.main {
     display: none;
@@ -202,7 +199,7 @@
 </b:if>
 
 <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/labels.html" or data:blog.url == "https://blog.pulipuli.info/p/labels.html"'>
-<?php echo file_get_contents("4_content/labels.html") ?>
+<p:include>4_content/labels.html</p:include>
 <style type="text/css">
 #content.main {
     display: none;
@@ -264,7 +261,7 @@
   </span>
 </b:includable>
 <b:includable id='backlinks' var='post'>
-  <?php echo file_get_contents("4_content/backlinks.html"); ?>
+  <p:include>4_content/backlinks.html</p:include>
 </b:includable>
 <b:includable id='comment-form' var='post'>
   <div class='comment-form'>
@@ -276,14 +273,14 @@
       <data:blogTeamBlogMessage/>
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
-      <?php echo file_get_contents("4_content/comment_form_tool.html"); ?>
+      <p:include>4_content/comment_form_tool.html</p:include>
       <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
     <b:else/>
       <p><data:blogCommentMessage/></p>
       <data:blogTeamBlogMessage/>
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
-      <?php echo file_get_contents("4_content/comment_form_tool.html"); ?>
+      <p:include>4_content/comment_form_tool.html</p:include>
       <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' width='100%'/>
     </b:if>
     <data:post.friendConnectJs/>
@@ -342,7 +339,7 @@
   </b:if>
 </b:includable>
 <b:includable id='comments' var='post'>
-  <?php echo file_get_contents("4_content/comments.html"); ?>
+  <p:include>4_content/comments.html</p:include>
 </b:includable>
     <b:includable id='feedLinks'>
   <b:if cond='data:blog.pageType != &quot;item&quot;'> <!-- Blog feed links -->
@@ -556,9 +553,6 @@
           </b:if>
         </b:if>
           
-        
-          
-
       </div>
     </div>
   </div>
@@ -739,18 +733,19 @@
  
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-    <?php echo file_get_contents("4_content/author.html") ?>
+  <p:include>4_content/author.html<p:include>
 </b:if>
 
-<?php echo file_get_contents("4_content/share.html") ?>
+<p:include>4_content/share.html<p:include>
 
 <div class='clear'/>
 
 </aside>
 </div>
-</b:if> <?php /* <b:if cond='data:blog.url != "http://blog.pulipuli.info/2005/12/blogger_113544406852218769.html"'> */ ?>
+</b:if> 
+<p:comment> <b:if cond='data:blog.url != "http://blog.pulipuli.info/2005/12/blogger_113544406852218769.html"'> </p:comment>
 
-<?php /* Related Posts */ ?>   
+<p:comment> /* Related Posts */ </p:comment> 
 <b:if cond='data:blog.url != "http://blog.pulipuli.info/2005/12/blogger_113544406852218769.html" and data:blog.url != "https://blog.pulipuli.info/2005/12/blogger_113544406852218769.html"'>
     <div class='related_posts'>
         <script type='text/javascript'>
@@ -809,14 +804,14 @@
       <data:blogTeamBlogMessage/>
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
-      <?php echo file_get_contents("4_content/comment_form_tool.html"); ?>
+      <p:include>4_content/comment_form_tool.html</p:include>
       <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
     <b:else/>
       <p><data:blogCommentMessage/></p>
       <data:blogTeamBlogMessage/>
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
-      <?php echo file_get_contents("4_content/comment_form_tool.html"); ?>
+      <p:include>4_content/comment_form_tool.html</p:include>
       <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' width='100%'/>
     </b:if>
     <data:post.friendConnectJs/>
@@ -889,7 +884,7 @@
 <div class='span3' id='side-bar'>
     <a accesskey="R" href="#side-bar-anchor" title="accesskey: sidebar section" id="side-bar-anchor"> ::: </a>
     <div class="sidebar section" id="sidebar">
-        <?php echo file_get_contents("2_sidebar/1_sidebar.html"); ?>
+      <p:include>2_sidebar/1_sidebar.html</p:include>
     </div>
 </div>
 
@@ -902,10 +897,10 @@
             <a accesskey="B" href="#footer-anchor" title="accesskey: footer section" id="footer-anchor"> ::: </a>
             <div class='row-fluid' id='footer-body'>
                 <div class="cleanwidget  nopadding span4 bl_html section" id="column1">
-                    <?php echo file_get_contents("3_footer/1_col.html") ?>
+                    <p:include>3_footer/1_col.html</p:include>
                 </div>
                 <div class="cleanwidget  nopadding span8 bl_html section" id="column2">
-                    <?php echo file_get_contents("3_footer/2_col.html") ?>
+                    <p:include>3_footer/2_col.html</p:include>
                 </div>
                 <div class='clear'/>
             </div>
@@ -920,10 +915,9 @@
                     <a class="goto-comment" href='#comment-form-iframe' title="Add Comment"><i class="fa fa-commenting" aria-hidden="true"></i></a>
                 </div>
             
-            
             <p>
             <span class="blog-copyright">
-                &#169; Copyright <?php echo date("Y"); ?> 
+                &#169; Copyright <p:year /> 
                 <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> 
             </span>
             <span class="themexpose">
@@ -932,7 +926,7 @@
             </span>
             </p>
             <p class="management">
-                <?php echo file_get_contents("3_footer/4_management.html") ?>
+                <p:include>3_footer/4_management.html</p:include>
             </p>
         </div>
     </footer>        

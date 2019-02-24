@@ -37,7 +37,7 @@ var app = {
       var loop = (i) => {
         if (i < replaceList.length) {
           var filename = replaceList[i]
-          console.log(filename)
+          //console.log(filename)
           $.get(filename, (text) => {
             mainTemplate = mainTemplate.replace('<p:include>' + filename + '</p:include>', text.trim())
             i++
@@ -45,6 +45,16 @@ var app = {
           })
         }
         else {
+          // 加入年份
+          var year = (new Date()).getFullYear()
+          mainTemplate = mainTemplate.replace('<p:year />', year);
+          
+          // 移除註解
+          //mainTemplate = mainTemplate.replace(/ *\<p:comment>[^<\/p:comment>]*\<\/p:comment> */g, "");
+          mainTemplate = mainTemplate.replace(/\s*<p:comment>.*?\<\/p:comment>\s*/g, "");
+          // /\s*\(.*?\)\s*/g
+          // /* Related Posts */
+          
           this.codeForBlogger = mainTemplate.trim()
         }
       }
