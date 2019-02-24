@@ -14,13 +14,17 @@
   <body>
     <div class="ui container" id="app">
       <form class="ui form">
+        <a class="ui labeled icon primary fluid button" href="https://www.blogger.com/blogger.g?blogID=4556372852427986553#templatehtml" target="bloggerTemplateLink">
+          <i class="blogger icon"></i>
+          Open Blogger Template
+        </a>
         <div class="ui stackable two column grid">
           <div class="column blogger">
-            <button class="ui labeled icon fluid button" type="button" v-on:click="copyCode">
+            <button class="ui top attached labeled icon fluid button" type="button" v-on:click="copyCode">
               <i class="copy icon"></i>
               Copy for Blogger Code
             </button>
-            <textarea v-model="codeForBlogger" class="template-code"></textarea>
+            <textarea v-model="codeForBlogger" class="template-code ui attached segment"></textarea>
           </div>
           <div class="column olw">
             
