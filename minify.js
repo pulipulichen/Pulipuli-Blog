@@ -4,31 +4,23 @@ const {exec} = require('child_process')
 const path = require('path')
 const fs = require('fs')
 
-function getComponentsList (mainDirectory) {
+function getComponentsList (directory) {
   var list = []
   
-  //joining path of directory 
-  const directoryPath = path.join(__dirname, mainDirectory);
+  var subDirectoryPath = path.join(__dirname, directory);
   //passsing directoryPath and callback function
-  var subDirectoies = fs.readdirSync(directoryPath)
- 
+  var files = fs.readdirSync(subDirectoryPath)
   //listing all files using forEach
-  subDirectoies.forEach(function (subDirectory) {
+  files.forEach(function (file) {
     // Do whatever you want to do with the file
-    var subDirectoryPath = path.join(__dirname, 'components', subDirectory);
-    //passsing directoryPath and callback function
-    var files = fs.readdirSync(subDirectoryPath)
-    //listing all files using forEach
-    files.forEach(function (file) {
-      // Do whatever you want to do with the file
-      //console.log(path.join('components', subDirectory, file));
-      list.push(path.join('components', subDirectory, file))
-    });
+    //console.log(path.join('components', subDirectory, file));
+    list.push(path.join(directory, file))
   });
   return list
 }
 
-var list = getComponentsList('template-builder/components')
+var list = getComponentsList('template-builder/components/0_header')
+        .concat(getComponentsList('lib-for-link/style'))
 list.forEach(file => {
   if (file.endsWith('.css') && !file.endsWith('.min.css')) {
     var input = file
