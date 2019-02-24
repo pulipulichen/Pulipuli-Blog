@@ -14,3 +14,6 @@ https://ithelp.ithome.com.tw/articles/10158140
 ````
 npm init
 ````
+
+盡可能降低連線數
+http://blog.pulipuli.info/2007/05/blog-post_7346.html
