@@ -3,10 +3,8 @@ const {exec} = require('child_process')
 
 const path = require('path')
 const fs = require('fs')
-const {promisify} = require('util')
 
-const readdir = promisify(fs.readdir);
-
+/*
 function getComponentsList () {
   var list = []
   
@@ -40,3 +38,4 @@ list.forEach(file => {
     exec('postcss ' + input + ' > ' + output)
   }
 })
+*/

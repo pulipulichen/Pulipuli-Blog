@@ -20,6 +20,7 @@
     "cssnano": "^4.1.10"
   },
   "dependencies": {
+    "node-minify": "^3.6.0",
     "postcss": "^7.0.14",
     "postcss-cli": "^6.1.2"
   }
