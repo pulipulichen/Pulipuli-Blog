@@ -72,37 +72,17 @@
 	<div class="clear" />
 </div>
 
+<!-- =================================================== -->
 
-	<!-- =================================================== -->
-	
-	
 <div class="widget HTML guestbook">
-        <a href="/feeds/113544406852218769/comments/default" target="_blank" class="icon"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  <a href="/feeds/113544406852218769/comments/default" target="_blank" class="icon"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
 	<h2 class="title">
-            <span>Guestbook</span>
+    <span>Guestbook</span>
 	</h2>
 	<div class="widget-content">
-	
-<script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/js/puliGuestBook.js"></script>
-<script type="text/javascript">
-// 布丁式Blogger留言板
-// @param {Object} config 設定
-jQuery.puliGuestBook({
-    blogID: "16607461",    //blog的ID
-    postID: "113544406852218769",    //post的ID
-    url: "/2005/12/blogger_113544406852218769.html",    //訂閱張貼意見的網址，或是文章ID:115667103250300740
-    css: "//pulipulichen.github.io/blogger/blogger/css/puliGuestBook.css",    //CSS樣式表
-    container: "#puliGuestBook",    //顯示留言的元素
-    listNumber: 20,    //顯示留言數量。超過此數量時，會顯示「閱讀全部留言」的連結。
-    adminName: '布丁布丁吃布丁',    //Blog主人的名字
-    adminPhoto: '//1.bp.blogspot.com/_yr4MQB4zDus/SZ4Mb30N0aI/AAAAAAAAFUg/3OGhwhzBUOg/S45/',    //部落格主人的照片
-    anonymous: '匿名',    //匿名者的名字
-    readMore: '閱讀全部留言',    //閱讀全部留言連結的名稱
-    write: '撰寫留言',    //撰寫留言連結的名稱
-    reload: '重新讀取',    //重新讀取連結的名稱
-    addLink: "/2005/12/blogger_113544406852218769.html#comment-editor" //撰寫留言的按鈕連結
-});
-</script>
+    <link href='//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.css' rel='stylesheet' type='text/css'/>
+    <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.js" type="text/javascript"></script>
+    <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/init.js" type="text/javascript"></script>
 	</div>
 	<div class="clear" />
 </div>
@@ -110,12 +90,12 @@ jQuery.puliGuestBook({
 	<!-- =================================================== -->
 	
 <div class="widget HTML new">
-        <a href="/feeds/posts/default" target="_blank" class="icon"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  <a href="/feeds/posts/default" target="_blank" class="icon"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
 	<h2 class="title">
-            <span>Recent Posts</span>
+    <span>Recent Posts</span>
 	</h2>
 	<div class="widget-content">
-	<div id="puliHandlePostNode"></div>
+    <div id="puliHandlePostNode"></div>
 	</div>
 	<div class="clear" />
 </div>
@@ -123,32 +103,14 @@ jQuery.puliGuestBook({
 <!-- =================================================== -->
 	
 <div class="widget HTML comments">
-        <a href="/feeds/comments/default" target="_blank" class="icon"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  <a href="/feeds/comments/default" target="_blank" class="icon"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
 	<h2 class="title">
-            <span>Comments</span>
+    <span>Comments</span>
 	</h2>
 	<div class="widget-content">
 	<div id="puliCommentsNode"></div>
-<script type="text/javascript">
-jQuery.getScript("//pulipulichen.github.io/blogger/blogger/js/puliHandleRecentFunction.js", function () {
-    
-    var pHP = puliHandlePost();
-    pHP.bloggerName = "pulipuli";
-    pHP.postshow = 10;
-    pHP.titlelen = "";
-    pHP.layout = decodeURI("%25title%25%20(%25Y%25-%25M%25-%25D%25%20)");
-    pHP.tagname = "";
-    pHP.callback = function () {
-        var pHC = puliHandleComments();
-        pHC.bloggerName = "pulipuli";
-        pHC.postshow = 10;
-        pHC.titlelen = "20";
-        pHC.layout = decodeURI("%3Cstrong%3E%25authorname%25%3C/strong%3E(%25Y%25-%25M%25-%25D%25)%3Cbr%20/%3E%25comment%25");
-        pHC.load("puliCommentsNode");
-    };
-    pHP.load("puliHandlePostNode");
-    
-});</script>
+    <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliHandleRecentFunction/puliHandleRecentFunction.js" type="text/javascript"></script>
+    <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliHandleRecentFunction/init.js" type="text/javascript"></script>
 	</div>
 	<div class="clear" />
 </div>

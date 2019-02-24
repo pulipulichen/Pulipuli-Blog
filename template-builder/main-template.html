@@ -32,12 +32,12 @@
 <p:include>0_header/2_style.min.css</p:include>
 <p:include>0_header/3_custom_style.min.css</p:include>
 </style>
-<link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/blogger/blogger/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/style/style.min.css"/>
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-    <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/blogger/blogger/css/style-item.css"/>
-    <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/blogger/blogger/css/gutenberg.min.css" media="print"/>
-    <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/blogger/blogger/css/style-print.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/style/style-item.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/style/gutenberg.min.css" media="print"/>
+    <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/style/style-print.min.css" media="print"/>
 </b:if>
 
 <!--
@@ -62,16 +62,15 @@
 <meta name="p:domain_verify" content="102285e6f21741f433c6400b5ec23fa7"/>
 
 <!-- ======================================== -->
-<script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/js/script.js"></script>
+<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/script/script.js" type="text/javascript"></script>
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-    <script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/js/script-item.js"></script>
+  <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/script/script-item.js" type="text/javascript"></script>
 </b:if>
 <!-- ======================================== -->
 
 <!-- <link rel="stylesheet" type="text/css" href="//pulipulichen.github.io/blogger/blogger/css/style-olw.css"/> -->
 </head>
-    
-    
+
 <body>
 
 <script src='//connect.facebook.net/en_US/all.js#xfbml=1'/>
@@ -84,10 +83,11 @@
 
     
 <div class='navbar navbar-inverse'>
- <div class='navbar-inner'>
- <div class='btn-navbar' data-target='.nav-collapse' data-toggle='collapse' type='button'>
-    <img src='//lh3.googleusercontent.com/-joQnbCCa6Jg/VwFqIuKnCCI/AAAAAAACuUo/iZTPC_EVSyE/s0/bmenu_brown.png'/></div>
-
+  <div class='navbar-inner'>
+    <div class='btn-navbar' data-target='.nav-collapse' data-toggle='collapse' type='button'>
+      <img src='//lh3.googleusercontent.com/-joQnbCCa6Jg/VwFqIuKnCCI/AAAAAAACuUo/iZTPC_EVSyE/s0/bmenu_brown.png'/>
+    </div>
+    
 <header>
 <!--
 // 在這邊加上回去上一頁的按鈕
@@ -103,7 +103,6 @@
    <b:widget id='Header1' locked='true' title='Breeze Responsive Blogger Template  (Header)' type='Header'>
      <b:includable id='main'>
 
-         
   <b:if cond='data:useImage'>
     <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
       <!--
@@ -685,7 +684,6 @@
                     <i class='fa fa-tags'/>       
                     <b:if cond='data:post.labels'>
                         <span class='label-info'>
-
                             <b:loop values='data:post.labels' var='label'>
                                 <a expr:href='data:label.url' rel='tag'>
                                     <data:label.name/>
@@ -771,7 +769,7 @@
 
 </div>
 </b:includable>
-    <b:includable id='postQuickEdit' var='post'>
+<b:includable id='postQuickEdit' var='post'>
   <b:if cond='data:post.editUrl'>
     <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
       <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>
@@ -782,10 +780,10 @@
     </span>
   </b:if>
 </b:includable>
-    <b:includable id='shareButtons' var='post'>
+<b:includable id='shareButtons' var='post'>
   <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showOrkutButton'><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
 </b:includable>
-    <b:includable id='status-message'>
+<b:includable id='status-message'>
   <b:if cond='data:navMessage'>
   <div class='status-msg-wrap'>
     <div class='status-msg-body'>
@@ -878,8 +876,6 @@
 </b:section>
 </div>
 
-
-
 <div class='span3' id='side-bar'>
     <a accesskey="R" href="#side-bar-anchor" title="accesskey: sidebar section" id="side-bar-anchor"> ::: </a>
     <div class="sidebar section" id="sidebar">
@@ -915,17 +911,17 @@
                 </div>
             
             <p>
-            <span class="blog-copyright">
+              <span class="blog-copyright">
                 &#169; Copyright <p:year /> 
                 <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> 
-            </span>
+              </span>
             <span class="themexpose">
-            / Created by <a href='http://themexpose.com/' id='mycontent'>ThemeXpose</a>
-            / Published By <a href='http://gooyaabitemplates.com/' rel='dofollow' target='_blank' title='Blogger Templates'>Gooyaabi Templates</a>
+              / Created by <a href='http://themexpose.com/' id='mycontent'>ThemeXpose</a>
+              / Published By <a href='http://gooyaabitemplates.com/' rel='dofollow' target='_blank' title='Blogger Templates'>Gooyaabi Templates</a>
             </span>
             </p>
             <p class="management">
-                <p:include>3_footer/4_management.html</p:include>
+              <p:include>3_footer/4_management.html</p:include>
             </p>
         </div>
     </footer>        
@@ -936,12 +932,11 @@
 <!-- JAVASCRIPT -->
 <!-- <script src="//load.sumome.com/" data-sumo-site-id="91b6a5a67cc23845f0765da427a8ac1c0b918c4e9226f12ea32abf1e8110df0c" async="async"></script> -->
 <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=pulipuli" async="async"></script> 
-<script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/js/google-analytics.js"></script>
+<script type="text/javascript" src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/script/google-analytics.js"></script>
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-    <script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/js/related-posts.js"></script>
-    <script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/lib/lightbox2-lokeshdhakar/init.js"></script>
-    <script type="text/javascript" src="//pulipulichen.github.io/blogger/blogger/lib/highlight/init.js"></script>
+  <p:include>3_footer/9_include.html</p:include>
 </b:if>
+
 </body>
 </html>
