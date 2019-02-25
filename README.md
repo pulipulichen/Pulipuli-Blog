@@ -3,6 +3,8 @@
 
 https://pulipulichen.github.io/Pulipuli-Blog/
 
+https://github.com/pulipulichen/Pulipuli-Blog/issues
+
 # Reference
 - Semantic UI: https://semantic-ui.com/collections/grid.html
 - Semantic UI icon: https://semantic-ui.com/elements/icon.html
