@@ -69,10 +69,10 @@ _puli_related_post_render = function (_owl_items) {
 
 // --------------------
 
-relatedTitles=new Array;
-relatedTitlesNum=0;
-relatedUrls=new Array;
-thumburl=new Array;
+relatedTitles = new Array;
+relatedTitlesNum = 0;
+relatedUrls = new Array;
+thumburl = new Array;
 
 $(function() {
   if (typeof(relatedPostsPostUrl) === 'undefined') {
