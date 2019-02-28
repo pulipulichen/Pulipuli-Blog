@@ -1,6 +1,7 @@
 
 /**
  * 檢查PULI_UTILS是否存在
+ * @author Pulipuli Chen 20190228
  */
 if (typeof(PULI_UTILS) === "undefined") {
 	PULI_UTILS = {};

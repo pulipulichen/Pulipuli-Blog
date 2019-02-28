@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "minify": "node minify.js",
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch --mode development"
   },
   "repository": {
     "type": "git",
