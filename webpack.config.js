@@ -24,6 +24,10 @@ module.exports = {
     'item-header': [
       './lib-for-link/src/item-header/style/style-item.css',
       './lib-for-link/src/item-header/script/script-item.js',
+    ],
+    'item-print': [
+      './lib-for-link/src/item-print/style/style-print.css',
+      //'./lib-for-link/src/item-print/style/gutenberg.min.css'
     ]
   },
   output: {
