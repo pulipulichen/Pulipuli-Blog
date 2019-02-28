@@ -4,8 +4,7 @@
   "description": "擺放blog.pulipuli.info各種資料的儲存庫",
   "main": "index.js",
   "scripts": {
-    "minify": "node minify.js",
-    "build": "webpack",
+    "build": "webpack --mode development",
     "watch": "webpack --watch --mode development"
   },
   "repository": {
