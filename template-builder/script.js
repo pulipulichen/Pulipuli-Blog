@@ -69,6 +69,7 @@ var app = {
           '5_footer_bar/1_col.html',
           '5_footer_bar/2_col.html',
           '5_footer_bar/3_col.html',
+          '6_includable/main.html',
           '6_includable/postQuickEdit.html',
           '6_includable/shareButtons.html',
           '6_includable/status-message.html',

@@ -128,64 +128,13 @@
     
 <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
      
-   <b:widget id='Header1' locked='true' title='Breeze Responsive Blogger Template  (Header)' type='Header'>
-     <b:includable id='main'>
-
-  <b:if cond='data:useImage'>
-    <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
-      <!--
-      Show image as background to text. You can't really calculate the width
-      reliably in JS because margins are not taken into account by any of
-      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
-      width if the user is using shrink to fit.
-      This results in a margin-width's worth of pixels being cropped. If the
-      user is not using shrink to fit then we expand the header.
-      -->
-      <b:if cond='data:mobile'>
-        <div id='header-inner'>
-          <div class='titlewrapper'>
-            <h1 class='title'>
-              <b:include name='title'/>
-            </h1>
-          </div>
-          <b:include name='description'/>
-        </div>
-        <b:else/>
-          <div id="header-inner" class="header-inner-not-mobile" 
-               expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot; + &quot;background-position: &quot; + data:backgroundPositionStyleStr + &quot;; &quot; + data:widthStyleStr + &quot;min-height: &quot; + data:height + &quot;_height: &quot; + data:height + &quot;' >
-            <div class='titlewrapper'>
-              <h1 class='title'>
-                <b:include name='title'/>
-              </h1>
-            </div>
-            <b:include name='description'/>
-          </div>
-        </b:if>
-    <b:else/>
-      <!--Show the image only-->
-      <div id='header-inner'>
-        <a accesskey="H" expr:href='data:blog.homepageUrl' id='header-inner-link'>
-          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width'/>
-        </a>
-        <!--Show the description-->
-        <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
-          <b:include name='description'/>
-        </b:if>
-      </div>
-    </b:if>
-  <b:else/>
-    <!--No header image -->
-    <div id='header-inner' class="no-header-image">
-      <div class='titlewrapper'>
-        <h1 class='title'>
-          <b:include name='title'/>
-        </h1>
-      </div>
-      <b:include name='description'/>
-    </div>
-  </b:if>
+<b:widget id='Header1' locked='true' title='Breeze Responsive Blogger Template  (Header)' type='Header'>
+  
+<b:includable id='main'>
+  <p:include>6_includable/main.html</p:include>
 </b:includable>
-     <b:includable id='description'>
+     
+<b:includable id='description'>
   <div class='descriptionwrapper' expr:url='data:blog.url'>
     <p class='description'><span><data:description/></span></p>
   </div>
@@ -298,20 +247,28 @@
     <a name='comment-form'/>
     <b:if cond='data:mobile'>
       <h4 id='comment-post-message'>
-        <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
+        <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' 
+           href='javascript:void(0)'>
+          <data:postCommentMsg/>
+        </a>
+      </h4>
       <p><data:blogCommentMessage/></p>
       <data:blogTeamBlogMessage/>
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
       <p:include>4_content/comment_form_tool.html</p:include>
-      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+      <iframe allowtransparency='true' 
+              class='blogger-iframe-colorize blogger-comment-from-post hide' 
+              id='comment-editor' name='comment-editor' src='' />
     <b:else/>
       <p><data:blogCommentMessage/></p>
       <data:blogTeamBlogMessage/>
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
       <p:include>4_content/comment_form_tool.html</p:include>
-      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' width='100%'/>
+      <iframe allowtransparency='true' 
+              class='blogger-iframe-colorize blogger-comment-from-post' 
+              id='comment-editor' name='comment-editor' src='' />
     </b:if>
     <data:post.friendConnectJs/>
     <data:post.cmtfpIframe/>
@@ -335,11 +292,17 @@
 </b:includable>
     <b:includable id='comment_count_picker' var='post'>
   <b:if cond='data:post.forceIframeComments'>
-    <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'>
+    <span class='cmt_count_iframe_holder' 
+          expr:data-count='data:post.numComments' 
+          expr:data-onclick='data:post.addCommentOnclick' 
+          expr:data-url='data:post.canonicalUrl'>
     </span>
   <b:else/>
     <b:if cond='data:post.commentSource == 1'>
-      <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-url='data:post.canonicalUrl'>
+      <span class='cmt_count_iframe_holder' 
+            expr:data-count='data:post.numComments' 
+            expr:data-onclick='data:post.addCommentOnclick' 
+            expr:data-url='data:post.canonicalUrl'>
       </span>
     <b:else/>
       <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
@@ -397,7 +360,12 @@
   <div class='feed-links'>
   <data:feedLinksMsg/>
   <b:loop values='data:links' var='f'>
-     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+     <a class='feed-link' 
+        expr:href='data:f.url'
+        expr:type='data:f.mimeType' 
+        target='_blank'>
+       <data:f.name/> (<data:f.feedType/>)
+     </a>
   </b:loop>
   </div>
 </b:includable>
@@ -445,7 +413,15 @@
         <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
           <b:if cond='data:post.allowComments'>
             <b:if cond='data:post.numComments != 0'>
-              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+              <a class='comment-link' 
+                 expr:href='data:post.addCommentUrl' 
+                 expr:onclick='data:post.addCommentOnclick'>
+                <b:if cond='data:post.numComments == 1'>
+                  1 <data:top.commentLabel/>
+                  <b:else/>
+                  <data:post.numComments/> <data:top.commentLabelPlural/>
+                </b:if>
+              </a>
             </b:if>
           </b:if>
         </b:if>
@@ -475,13 +451,23 @@
   <div class='blog-pager' id='blog-pager'>
     <b:if cond='data:newerPageUrl'>
       <div class='mobile-link-button' id='blog-pager-newer-link'>
-      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>&amp;lsaquo;</a>
+      <a class='blog-pager-newer-link' 
+         expr:href='data:newerPageUrl' 
+         expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' 
+         expr:title='data:newerPageTitle'>
+        &amp;lsaquo;
+      </a>
       </div>
     </b:if>
 
     <b:if cond='data:olderPageUrl'>
       <div class='mobile-link-button' id='blog-pager-older-link'>
-      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>&amp;rsaquo;</a>
+      <a class='blog-pager-older-link' 
+         expr:href='data:olderPageUrl' 
+         expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' 
+         expr:title='data:olderPageTitle'>
+        &amp;rsaquo;
+      </a>
       </div>
     </b:if>
 
@@ -548,7 +534,11 @@
                 <b:if cond='data:top.showTimestamp'>
                   <data:top.timestampLabel/>
                   <b:if cond='data:post.url'>
-                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr></a>
+                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
+                      <abbr class='published' expr:title='data:post.timestampISO8601'>
+                        <data:post.timestamp/>
+                      </abbr>
+                    </a>
                   </b:if>
                 </b:if>
               </span>
@@ -557,7 +547,15 @@
                 <b:if cond='data:blog.pageType != &quot;item&quot;'>
                   <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
                     <b:if cond='data:post.allowComments'>
-                      <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+                      <a class='comment-link' 
+                         expr:href='data:post.addCommentUrl' 
+                         expr:onclick='data:post.addCommentOnclick'>
+                        <b:if cond='data:post.numComments == 1'>
+                          1 <data:top.commentLabel/>
+                          <b:else/>
+                          <data:post.numComments/> <data:top.commentLabelPlural/>
+                        </b:if>
+                      </a>
                     </b:if>
                   </b:if>
                 </b:if>
@@ -601,7 +599,10 @@
             <b:if cond='data:newerPageUrl'>
                 <li class="previous link">
                     <span id='blog-pager-newer-link'>
-                        <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>
+                        <a class='blog-pager-newer-link' 
+                           expr:href='data:newerPageUrl' 
+                           expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' 
+                           expr:title='data:newerPageTitle'>
                             <i class="fa fa-chevron-left"></i> <data:newerPageTitle/>
                         </a>
                     </span>
@@ -623,7 +624,10 @@
             <b:if cond='data:olderPageUrl'>
                 <li class="next link">
                     <span id='blog-pager-older-link'>
-                        <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>
+                        <a class='blog-pager-older-link' 
+                           expr:href='data:olderPageUrl' 
+                           expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' 
+                           expr:title='data:olderPageTitle'>
                             <i class="fa fa-chevron-right"></i> <data:olderPageTitle/>
                         </a>
                     </span>
@@ -631,7 +635,10 @@
             <b:else/>
                 <li class="next hidden link">
                     <span id='blog-pager-older-link'>
-                        <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>
+                        <a class='blog-pager-older-link' 
+                           expr:href='data:olderPageUrl' 
+                           expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' 
+                           expr:title='data:olderPageTitle'>
                             <i class="fa fa-chevron-right"></i> <data:olderPageTitle/>
                         </a>
                     </span>
