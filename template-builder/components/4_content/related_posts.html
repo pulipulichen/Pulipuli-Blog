@@ -1,0 +1,28 @@
+<b:if cond='data:blog.url != "http://blog.pulipuli.info/2005/12/blogger_113544406852218769.html" and data:blog.url != "https://blog.pulipuli.info/2005/12/blogger_113544406852218769.html"'>
+  <div class='related_posts'>
+    <!--
+    <script type='text/javascript'>
+      var maxresults=10;
+      var splittercolor=&quot;&quot;;
+      var relatedpoststitle=&quot;Related Posts&quot;;
+    </script>
+    -->
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <div id='related-posts'>
+        <b:loop values='data:post.labels' var='label'>
+          <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+          <!-- 下面這個不能移除，還是得引用 -->
+          <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=pulipuli_related_results_labels_thumbs&amp;max-results=6&quot;' 
+                  type='text/javascript'/>
+        </b:loop>
+        <script type='text/javascript'>
+          $(() => {
+            removeRelatedDuplicates_thumbs();
+            printRelatedLabels_thumbs(&quot;<data:post.url/>&quot;);
+          })
+        </script>
+      </div>
+      <div style='clear:both'/>
+    </b:if>
+  </div> <!-- <div class='related_posts'> -->
+</b:if>

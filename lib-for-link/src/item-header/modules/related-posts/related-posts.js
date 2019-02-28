@@ -2,7 +2,7 @@ var maxresults = 10
 var splittercolor = ''
 var relatedpoststitle = 'Related Posts'
       
-function pulipuli_related_results_labels_thumbs(e) {
+pulipuli_related_results_labels_thumbs = function (e) {
     //console.log(e);
     if (typeof(e.feed.entry) === "undefined") {
         if ($("#related-posts").hasClass("has-item") === false) {
@@ -47,7 +47,7 @@ function pulipuli_related_results_labels_thumbs(e) {
     }
 }
 
-var _puli_related_post_render = function (_owl_items) {
+_puli_related_post_render = function (_owl_items) {
     //console.log($(_owl_items[0]).html());
     for (var _i = 0; _i < _owl_items.length; _i++) {
         var _item = $(_owl_items[_i]);

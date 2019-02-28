@@ -66,6 +66,7 @@ var app = {
           '4_content/comments.html',
           '4_content/labels.html',
           '4_content/share.html',
+          '4_content/related_posts.html',
           '5_footer_bar/1_col.html',
           '5_footer_bar/2_col.html',
           '5_footer_bar/3_col.html',

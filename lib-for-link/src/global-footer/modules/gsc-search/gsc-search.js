@@ -37,3 +37,23 @@ var initSearchInput = () => {
     }
   }, 500)
 })();
+
+/**
+ * 幫search button做調整
+ * @author Pulipuli Chen 20190228
+ */
+$(function () {
+    $("#srch_btn").click(function () {
+        $("#masthead input.gsc-search-button").click();
+    });
+});
+
+var menu_search_submit = function (_form) {
+    var _query = _form.q.value;
+    ga("send", "event", "search", _query, 1);
+    //console.log("送出GA事件 search");
+    
+    $("#masthead input.gsc-input").val(_query).attr('placeholder', '')
+    $("#masthead input.gsc-search-button").click();
+    return false;
+};
