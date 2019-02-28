@@ -24,7 +24,7 @@
         // Browser globals (root is window)
         root.lightbox = factory(root.jQuery);
     }
-}(this, function ($) {
+}(this, function (jQuery) {
 
   function Lightbox(options) {
     this.album = [];
@@ -82,38 +82,38 @@
     jQuery('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" /><div class="lb-nav"><a class="lb-prev" href="" ></a><a class="lb-next" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>').appendTo(jQuery('body'));
 
     // Cache jQuery objects
-    this.$lightbox       = jQuery('#lightbox');
-    this.$overlay        = jQuery('#lightboxOverlay');
-    this.$outerContainer = this.$lightbox.find('.lb-outerContainer');
-    this.$container      = this.$lightbox.find('.lb-container');
+    this._lightbox       = jQuery('#lightbox');
+    this._overlay        = jQuery('#lightboxOverlay');
+    this._outerContainer = this._lightbox.find('.lb-outerContainer');
+    this._container      = this._lightbox.find('.lb-container');
 
     // Store css values for future lookup
-    this.containerTopPadding = parseInt(this.$container.css('padding-top'), 10);
-    this.containerRightPadding = parseInt(this.$container.css('padding-right'), 10);
-    this.containerBottomPadding = parseInt(this.$container.css('padding-bottom'), 10);
-    this.containerLeftPadding = parseInt(this.$container.css('padding-left'), 10);
+    this.containerTopPadding = parseInt(this._container.css('padding-top'), 10);
+    this.containerRightPadding = parseInt(this._container.css('padding-right'), 10);
+    this.containerBottomPadding = parseInt(this._container.css('padding-bottom'), 10);
+    this.containerLeftPadding = parseInt(this._container.css('padding-left'), 10);
 
     // Attach event handlers to the newly minted DOM elements
-    this.$overlay.hide().on('click', function() {
+    this._overlay.hide().on('click', function() {
       self.end();
       return false;
     });
 
-    this.$lightbox.hide().on('click', function(event) {
+    this._lightbox.hide().on('click', function(event) {
       if (jQuery(event.target).attr('id') === 'lightbox') {
         self.end();
       }
       return false;
     });
 
-    this.$outerContainer.on('click', function(event) {
+    this._outerContainer.on('click', function(event) {
       if (jQuery(event.target).attr('id') === 'lightbox') {
         self.end();
       }
       return false;
     });
 
-    this.$lightbox.find('.lb-prev').on('click', function() {
+    this._lightbox.find('.lb-prev').on('click', function() {
       if (self.currentImageIndex === 0) {
         self.changeImage(self.album.length - 1);
       } else {
@@ -122,7 +122,7 @@
       return false;
     });
 
-    this.$lightbox.find('.lb-next').on('click', function() {
+    this._lightbox.find('.lb-next').on('click', function() {
       if (self.currentImageIndex === self.album.length - 1) {
         self.changeImage(0);
       } else {
@@ -131,18 +131,18 @@
       return false;
     });
 
-    this.$lightbox.find('.lb-loader, .lb-close').on('click', function() {
+    this._lightbox.find('.lb-loader, .lb-close').on('click', function() {
       self.end();
       return false;
     });
   };
 
   // Show overlay and lightbox. If the image is part of a set, add siblings to album array.
-  Lightbox.prototype.start = function($link) {
+  Lightbox.prototype.start = function(_link) {
     var self    = this;
-    var $window = jQuery(window);
+    var _window = jQuery(window);
 
-    $window.on('resize', jQuery.proxy(this.sizeOverlay, this));
+    _window.on('resize', jQuery.proxy(this.sizeOverlay, this));
 
     jQuery('select, object, embed').css({
       visibility: 'hidden'
@@ -153,35 +153,35 @@
     this.album = [];
     var imageNumber = 0;
 
-    function addToAlbum($link) {
+    function addToAlbum(_link) {
       self.album.push({
-        link: $link.attr('href'),
-        title: $link.attr('data-title') || $link.attr('title')
+        link: _link.attr('href'),
+        title: _link.attr('data-title') || _link.attr('title')
       });
     }
 
     // Support both data-lightbox attribute and rel attribute implementations
-    var dataLightboxValue = $link.attr('data-lightbox');
-    var $links;
+    var dataLightboxValue = _link.attr('data-lightbox');
+    var _links;
 
     if (dataLightboxValue) {
-      $links = jQuery($link.prop('tagName') + '[data-lightbox="' + dataLightboxValue + '"]');
-      for (var i = 0; i < $links.length; i = ++i) {
-        addToAlbum(jQuery($links[i]));
-        if ($links[i] === $link[0]) {
+      _links = jQuery(_link.prop('tagName') + '[data-lightbox="' + dataLightboxValue + '"]');
+      for (var i = 0; i < _links.length; i = ++i) {
+        addToAlbum(jQuery(_links[i]));
+        if (_links[i] === _link[0]) {
           imageNumber = i;
         }
       }
     } else {
-      if ($link.attr('rel') === 'lightbox') {
+      if (_link.attr('rel') === 'lightbox') {
         // If image is not part of a set
-        addToAlbum($link);
+        addToAlbum(_link);
       } else {
         // If image is part of a set
-        $links = jQuery($link.prop('tagName') + '[rel="' + $link.attr('rel') + '"]');
-        for (var j = 0; j < $links.length; j = ++j) {
-          addToAlbum(jQuery($links[j]));
-          if ($links[j] === $link[0]) {
+        _links = jQuery(_link.prop('tagName') + '[rel="' + _link.attr('rel') + '"]');
+        for (var j = 0; j < _links.length; j = ++j) {
+          addToAlbum(jQuery(_links[j]));
+          if (_links[j] === _link[0]) {
             imageNumber = j;
           }
         }
@@ -189,9 +189,9 @@
     }
 
     // Position Lightbox
-    var top  = $window.scrollTop() + this.options.positionFromTop;
-    var left = $window.scrollLeft();
-    this.$lightbox.css({
+    var top  = _window.scrollTop() + this.options.positionFromTop;
+    var left = _window.scrollLeft();
+    this._lightbox.css({
       top: top + 'px',
       left: left + 'px'
     }).fadeIn(this.options.fadeDuration);
@@ -209,19 +209,19 @@
     var self = this;
 
     this.disableKeyboardNav();
-    var $image = this.$lightbox.find('.lb-image');
+    var _image = this._lightbox.find('.lb-image');
 
-    this.$overlay.fadeIn(this.options.fadeDuration);
+    this._overlay.fadeIn(this.options.fadeDuration);
 
     jQuery('.lb-loader').fadeIn('slow');
-    this.$lightbox.find('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
+    this._lightbox.find('.lb-image, .lb-nav, .lb-prev, .lb-next, .lb-dataContainer, .lb-numbers, .lb-caption').hide();
 
-    this.$outerContainer.addClass('animating');
+    this._outerContainer.addClass('animating');
 
     // When image to show is preloaded, we send the width and height to sizeContainer()
     var preloader = new Image();
     preloader.onload = function() {
-      var $preloader;
+      var _preloader;
       var imageHeight;
       var imageWidth;
       var maxImageHeight;
@@ -229,12 +229,12 @@
       var windowHeight;
       var windowWidth;
 
-      $image.attr('src', self.album[imageNumber].link);
+      _image.attr('src', self.album[imageNumber].link);
 
-      $preloader = jQuery(preloader);
+      _preloader = jQuery(preloader);
 
-      $image.width(preloader.width);
-      $image.height(preloader.height);
+      _image.width(preloader.width);
+      _image.height(preloader.height);
 
       if (self.options.fitImagesInViewport) {
         // Fit image inside the viewport.
@@ -258,17 +258,17 @@
           if ((preloader.width / maxImageWidth) > (preloader.height / maxImageHeight)) {
             imageWidth  = maxImageWidth;
             imageHeight = parseInt(preloader.height / (preloader.width / imageWidth), 10);
-            $image.width(imageWidth);
-            $image.height(imageHeight);
+            _image.width(imageWidth);
+            _image.height(imageHeight);
           } else {
             imageHeight = maxImageHeight;
             imageWidth = parseInt(preloader.width / (preloader.height / imageHeight), 10);
-            $image.width(imageWidth);
-            $image.height(imageHeight);
+            _image.width(imageWidth);
+            _image.height(imageHeight);
           }
         }
       }
-      self.sizeContainer($image.width(), $image.height());
+      self.sizeContainer(_image.width(), _image.height());
     };
 
     preloader.src          = this.album[imageNumber].link;
@@ -277,7 +277,7 @@
 
   // Stretch overlay to fit the viewport
   Lightbox.prototype.sizeOverlay = function() {
-    this.$overlay
+    this._overlay
       .width(jQuery(document).width())
       .height(jQuery(document).height());
   };
@@ -286,20 +286,20 @@
   Lightbox.prototype.sizeContainer = function(imageWidth, imageHeight) {
     var self = this;
 
-    var oldWidth  = this.$outerContainer.outerWidth();
-    var oldHeight = this.$outerContainer.outerHeight();
+    var oldWidth  = this._outerContainer.outerWidth();
+    var oldHeight = this._outerContainer.outerHeight();
     var newWidth  = imageWidth + this.containerLeftPadding + this.containerRightPadding;
     var newHeight = imageHeight + this.containerTopPadding + this.containerBottomPadding;
 
     function postResize() {
-      self.$lightbox.find('.lb-dataContainer').width(newWidth);
-      self.$lightbox.find('.lb-prevLink').height(newHeight);
-      self.$lightbox.find('.lb-nextLink').height(newHeight);
+      self._lightbox.find('.lb-dataContainer').width(newWidth);
+      self._lightbox.find('.lb-prevLink').height(newHeight);
+      self._lightbox.find('.lb-nextLink').height(newHeight);
       self.showImage();
     }
 
     if (oldWidth !== newWidth || oldHeight !== newHeight) {
-      this.$outerContainer.animate({
+      this._outerContainer.animate({
         width: newWidth,
         height: newHeight
       }, this.options.resizeDuration, 'swing', function() {
@@ -312,8 +312,8 @@
 
   // Display the image and its details and begin preload neighboring images.
   Lightbox.prototype.showImage = function() {
-    this.$lightbox.find('.lb-loader').stop(true).hide();
-    this.$lightbox.find('.lb-image').fadeIn('slow');
+    this._lightbox.find('.lb-loader').stop(true).hide();
+    this._lightbox.find('.lb-image').fadeIn('slow');
 
     this.updateNav();
     this.updateDetails();
@@ -332,25 +332,25 @@
       alwaysShowNav = (this.options.alwaysShowNavOnTouchDevices) ? true : false;
     } catch (e) {}
 
-    this.$lightbox.find('.lb-nav').show();
+    this._lightbox.find('.lb-nav').show();
 
     if (this.album.length > 1) {
       if (this.options.wrapAround) {
         if (alwaysShowNav) {
-          this.$lightbox.find('.lb-prev, .lb-next').css('opacity', '1');
+          this._lightbox.find('.lb-prev, .lb-next').css('opacity', '1');
         }
-        this.$lightbox.find('.lb-prev, .lb-next').show();
+        this._lightbox.find('.lb-prev, .lb-next').show();
       } else {
         if (this.currentImageIndex > 0) {
-          this.$lightbox.find('.lb-prev').show();
+          this._lightbox.find('.lb-prev').show();
           if (alwaysShowNav) {
-            this.$lightbox.find('.lb-prev').css('opacity', '1');
+            this._lightbox.find('.lb-prev').css('opacity', '1');
           }
         }
         if (this.currentImageIndex < this.album.length - 1) {
-          this.$lightbox.find('.lb-next').show();
+          this._lightbox.find('.lb-next').show();
           if (alwaysShowNav) {
-            this.$lightbox.find('.lb-next').css('opacity', '1');
+            this._lightbox.find('.lb-next').css('opacity', '1');
           }
         }
       }
@@ -365,7 +365,7 @@
     // Thanks Nate Wright for the fix. @https://github.com/NateWr
     if (typeof this.album[this.currentImageIndex].title !== 'undefined' &&
       this.album[this.currentImageIndex].title !== '') {
-      this.$lightbox.find('.lb-caption')
+      this._lightbox.find('.lb-caption')
         .html(this.album[this.currentImageIndex].title)
         .fadeIn('fast')
         .find('a').on('click', function(event) {
@@ -379,14 +379,14 @@
 
     if (this.album.length > 1 && this.options.showImageNumberLabel) {
       var labelText = this.imageCountLabel(this.currentImageIndex + 1, this.album.length);
-      this.$lightbox.find('.lb-number').text(labelText).fadeIn('fast');
+      this._lightbox.find('.lb-number').text(labelText).fadeIn('fast');
     } else {
-      this.$lightbox.find('.lb-number').hide();
+      this._lightbox.find('.lb-number').hide();
     }
 
-    this.$outerContainer.removeClass('animating');
+    this._outerContainer.removeClass('animating');
 
-    this.$lightbox.find('.lb-dataContainer').fadeIn(this.options.resizeDuration, function() {
+    this._lightbox.find('.lb-dataContainer').fadeIn(this.options.resizeDuration, function() {
       return self.sizeOverlay();
     });
   };
@@ -439,8 +439,8 @@
   Lightbox.prototype.end = function() {
     this.disableKeyboardNav();
     jQuery(window).off('resize', this.sizeOverlay);
-    this.$lightbox.fadeOut(this.options.fadeDuration);
-    this.$overlay.fadeOut(this.options.fadeDuration);
+    this._lightbox.fadeOut(this.options.fadeDuration);
+    this._overlay.fadeOut(this.options.fadeDuration);
     jQuery('select, object, embed').css({
       visibility: 'visible'
     });
