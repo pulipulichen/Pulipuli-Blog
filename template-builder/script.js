@@ -35,8 +35,8 @@ var app = {
 
         var replaceList = [
           '0_header/1_style.min.css',
-          '0_header/2_style.min.css',
-          '0_header/3_custom_style.min.css',
+          //'0_header/2_style.min.css',
+          //'0_header/3_custom_style.min.css',
           '0_header/4_facebook_code.html',
           '1_menu/1_menu.html',
           '1_menu/2_search.html',

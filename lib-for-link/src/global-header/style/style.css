@@ -1652,3 +1652,135 @@ iframe#comment-editor {
 #footer .go-top {
     border-left-width: 0;
 }
+
+
+.post-avatar{background:url(//lh3.googleusercontent.com/-6qwdHih3tFk/Vv6N0dTaICI/AAAAAAACuRA/AsKTNm9c_Bg/s0/post-avatar.png)}
+
+
+
+.firstload-background {
+background: url(//2.bp.blogspot.com/-h8fC3jrTphQ/U9Ywn5XUesI/AAAAAAAABGA/TOLe6IOXPtQ/s1600/pattern5.png) repeat scroll 0 0 transparent;;
+height: 100%;
+left: 0;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: -1;
+}
+
+
+
+
+.author-box{
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+
+
+
+.search-bar {
+    -moz-transition: .3s linear;
+    -webkit-transition: .3s ease-out;
+    transition: .3s linear;
+    float: right;
+    right: 0;
+    cursor: pointer;
+    background-image: url();
+    background-repeat: no-repeat;
+    padding: 0px 20px 23px;
+    background-size: 100px 100px;
+    top: 0;
+    z-index: 99999;
+    margin-top: -5px;
+  }
+
+.search-bar:hover {
+    -moz-transition: .01s linear;
+    -webkit-transition: .01s ease-out;
+    transition: .01s linear;
+    /*opacity: 1; */
+    background-image:none;
+}
+
+.nav-search {
+    width: auto;
+    height: 30px;
+    position: relative;
+    left: 0;
+    float: left;
+    line-height: 10px;
+    color: #fff !important;
+}
+
+.nav-search label {
+    display: none;
+}
+
+.nav-search input {
+    float: left;
+    /*width: 0;*/
+    background: none;
+    height: 30px;
+    line-height: 20px;
+    margin: 22px 0 0;
+    padding: 0 10px 0 0;
+    font-size: 15px;
+    /*color: #fff !important;*/
+    outline: 0;
+    border-radius: 0;
+    border: 0;
+    /*opacity: 1;*/
+    /*opacity: 1;*/
+    /*-webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+    -webkit-appearance: none;*/
+    
+    width: 160px;
+    margin-left: 33px;
+    background: none;
+    border-bottom: 1px solid #f1f1f1;
+    opacity: 1;
+}
+
+/*
+.search-bar:hover .nav-search input {
+    width: 160px;
+    margin-left: 33px;
+    background: none;
+    border-bottom: 1px solid #f1f1f1;
+    opacity: 1;
+}
+*/
+/*
+.nav-search input::-webkit-input-placeholder {
+    color: #eee;
+}
+
+.nav-search input::-moz-placeholder {
+    color: #eee;
+}
+
+.nav-search input:-moz-placeholder {
+    color: #eee;
+}
+
+.nav-search input:-ms-input-placeholder {
+    color: #eee;
+}
+
+.nav-search input:focus {
+    color: #fff;
+}
+*/
+
+.nav-search .srch_btn {
+    height: 42px;
+    width: 23px;
+    margin-top: 0;
+    background: url(//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png) 2px center no-repeat;
+    text-indent: 9999px;
+    position: relative;
+}
