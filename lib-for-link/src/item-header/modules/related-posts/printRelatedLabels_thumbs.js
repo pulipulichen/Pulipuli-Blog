@@ -62,7 +62,7 @@ contains_thumbs = function (e, t) {
 }
 
 printRelatedLabels_thumbs = function (e) {
-  console.log(e)
+  //console.log(e)
 
   var t;
   if (typeof splittercolor !== "undefined") {

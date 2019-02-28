@@ -32,7 +32,7 @@
     this.init();
 
     // options
-    this.options = $.extend({}, this.constructor.defaults);
+    this.options = jQuery.extend({}, this.constructor.defaults);
     this.option(options);
   }
 
@@ -53,7 +53,7 @@
   };
 
   Lightbox.prototype.option = function(options) {
-    $.extend(this.options, options);
+    jQuery.extend(this.options, options);
   };
 
   Lightbox.prototype.imageCountLabel = function(currentImageNum, totalImages) {
@@ -142,7 +142,7 @@
     var self    = this;
     var $window = jQuery(window);
 
-    $window.on('resize', $.proxy(this.sizeOverlay, this));
+    $window.on('resize', jQuery.proxy(this.sizeOverlay, this));
 
     jQuery('select, object, embed').css({
       visibility: 'hidden'
@@ -404,7 +404,7 @@
   };
 
   Lightbox.prototype.enableKeyboardNav = function() {
-    jQuery(document).on('keyup.keyboard', $.proxy(this.keyboardAction, this));
+    jQuery(document).on('keyup.keyboard', jQuery.proxy(this.keyboardAction, this));
   };
 
   Lightbox.prototype.disableKeyboardNav = function() {
