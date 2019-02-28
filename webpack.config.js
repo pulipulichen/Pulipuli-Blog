@@ -24,9 +24,10 @@ module.exports = {
       './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css',
       './lib-for-link/src/global-footer/modules/puli-guest-book/init.js',
       
-      './lib-for-link/src/global-footer/modules/puli-handle-function/puli-handle-function.js',
-      './lib-for-link/src/global-footer/modules/puli-handle-function/init-recent.js',
-      './lib-for-link/src/global-footer/modules/puli-handle-function/init-comment.js',
+      './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js',
+      './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-init.js',
+      './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js',
+      './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-init.js',
       
       './lib-for-link/src/global-footer/script/gsc-search.js'
     ],
