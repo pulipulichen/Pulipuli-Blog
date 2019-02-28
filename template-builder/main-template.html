@@ -116,11 +116,11 @@
 <!--
 // 在這邊加上回去上一頁的按鈕
 -->
-    <b:if cond='data:blog.url != data:blog.homepageUrl'>
-        <div onclick="javascript: _header_back_button_click();" class="back-button">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </div>
-    </b:if>
+<b:if cond='data:blog.url != data:blog.homepageUrl'>
+    <div class="back-button">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+</b:if>
     
 <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
      
@@ -211,25 +211,23 @@
 <div class='container' id='content-wrapper'>
 <div class='row' id='primary'>
 
+<!-- ============================ -->
+  
 <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/archives.html" or data:blog.url == "https://blog.pulipuli.info/p/archives.html"'>
 <p:include>4_content/archives.html</p:include>
-<style type="text/css">
-#content.main {
-    display: none;
-}
-</style>
 </b:if>
+  
+<!-- ============================ -->
 
 <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/labels.html" or data:blog.url == "https://blog.pulipuli.info/p/labels.html"'>
 <p:include>4_content/labels.html</p:include>
-<style type="text/css">
-#content.main {
-    display: none;
-}
-</style>
 </b:if>
+  
+<!-- ============================ -->
+  
 <div class='span9 main' id='content' role='main'>
     <a accesskey="C" href="#content-anchor" title="accesskey: main section" id="content-anchor"> ::: </a>
+    
 <b:section class='main' id='main' showaddelement='no'>
   <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
     <b:includable id='main' var='top'>

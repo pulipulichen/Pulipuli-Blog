@@ -191,6 +191,9 @@ var _header_back_button_click = function () {
         location.href = "/";
     }
 };
+$(function () {
+  $('header .back-button').click(_header_back_button_click)
+})
 
 // ----------------------------------
 // 20160522 Relate post的功能

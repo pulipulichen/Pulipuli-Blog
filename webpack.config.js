@@ -31,6 +31,9 @@ module.exports = {
     ],
     'item-owl': [
       './lib-for-link/src/item-olw/style/style-owl.css'
+    ],
+    'page': [
+      './lib-for-link/src/page/style/style-page.css'
     ]
   },
   output: {
