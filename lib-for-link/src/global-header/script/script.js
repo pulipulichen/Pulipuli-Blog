@@ -410,6 +410,8 @@ $(function ($) {
 // 20160625 隨機文章
 $(function () {
     _load_random_posts();
+    
+    $('.widget.HTML.random > a.button').click(_load_random_posts)
 });
     
 var _load_random_posts = function () {

@@ -10,7 +10,7 @@ module.exports = {
       './lib-for-link/src/global-header/style/2_style.css',
       './lib-for-link/src/global-header/style/3_custom_style.css',
       './lib-for-link/src/global-header/style/header.css',
-      './lib-for-link/src/global-header/style/search-bar.css',
+      //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/sidebar.css',
       './lib-for-link/src/global-header/style/style.css',
       
@@ -28,7 +28,8 @@ module.exports = {
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js',
       
-      './lib-for-link/src/global-footer/script/gsc-search.js'
+      './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.css',
+      './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.js'
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/style-item.css',
