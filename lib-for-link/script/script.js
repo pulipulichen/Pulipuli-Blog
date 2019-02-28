@@ -10,7 +10,10 @@ if (typeof PULI_UTILS.post === "undefined") {
 	PULI_UTILS.post = {};
 }
 
-
+/**
+ * 幫search button做調整
+ * @author Pulipuli Chen 20190228
+ */
 $(function () {
     $("#srch_btn").click(function () {
         $("#masthead input.gsc-search-button").click();
