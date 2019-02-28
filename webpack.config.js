@@ -28,6 +28,9 @@ module.exports = {
     'item-print': [
       './lib-for-link/src/item-print/style/style-print.css',
       //'./lib-for-link/src/item-print/style/gutenberg.min.css'
+    ],
+    'item-owl': [
+      './lib-for-link/src/item-olw/style/style-owl.css'
     ]
   },
   output: {
