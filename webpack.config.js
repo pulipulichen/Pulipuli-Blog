@@ -36,6 +36,7 @@ module.exports = {
       
       './lib-for-link/src/item-header/script/script-item.js',
       './lib-for-link/src/item-header/modules/related-posts/related-posts.js',
+      './lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js',
       './lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js',
     ],
     'item-print': [
