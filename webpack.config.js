@@ -57,9 +57,10 @@ module.exports = {
       //'./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js',
       './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js',
       
-      './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
       './lib-for-link/src/item-footer/modules/disqus/disqus.css',
       './lib-for-link/src/item-footer/modules/disqus/disqus.js',
+      './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
+      './lib-for-link/src/item-footer/modules/disqus/blogger_index.js',
     ],
   },
   output: {

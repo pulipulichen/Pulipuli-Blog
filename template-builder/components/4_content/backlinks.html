@@ -15,9 +15,12 @@
   </style>
 </b:if>
 -->
+<!--
 <style type='text/css'>
   .post-comment-link { visibility: hidden; }
 </style>
+-->
+<!--
 <script type='text/javascript'>
   (function () {
     var bloggerjs = document.createElement('script');
@@ -27,23 +30,34 @@
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(bloggerjs);
   })();
 </script>
+-->
 
-<a name='links'/><h4><data:post.backlinksLabel/></h4>
+<a name='links'/>
+<h4>
+  <data:post.backlinksLabel/>
+</h4>
+
 <b:if cond='data:post.numBacklinks != 0'>
   <dl class='comments-block' id='comments-block'>
     <b:loop values='data:post.backlinks' var='backlink'>
       <div class='collapsed-backlink backlink-control'>
         <dt class='comment-title'>
           <span class='backlink-toggle-zippy'>&#160;</span>
-          <a expr:href='data:backlink.url' rel='nofollow'><data:backlink.title/></a>
-        <b:include data='backlink' name='backlinkDeleteIcon'/>
+          <a expr:href='data:backlink.url' rel='nofollow'>
+            <data:backlink.title/>
+          </a>
+          <b:include data='backlink' name='backlinkDeleteIcon'/>
         </dt>
         <dd class='comment-body collapseable'>
-        <data:backlink.snippet/>
+          <data:backlink.snippet/>
         </dd>
         <dd class='comment-footer collapseable'>
-          <span class='comment-author'><data:post.authorLabel/> <data:backlink.author/></span>
-          <span class='comment-timestamp'><data:post.timestampLabel/> <data:backlink.timestamp/></span>
+          <span class='comment-author'>
+            <data:post.authorLabel/> <data:backlink.author/>
+          </span>
+          <span class='comment-timestamp'>
+            <data:post.timestampLabel/> <data:backlink.timestamp/>
+          </span>
         </dd>
       </div>
     </b:loop>
@@ -52,5 +66,10 @@
 
 <p class='comment-footer'>
   <a id="comment-form-anchor" name="comment-form-anchor"></a>
-  <a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
+  <a class='comment-link' 
+     expr:href='data:post.createLinkUrl' 
+     expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' 
+     target='_blank'>
+    <data:post.createLinkLabel/>
+  </a>
 </p>
