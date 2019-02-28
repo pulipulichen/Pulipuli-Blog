@@ -25,8 +25,18 @@ var app = {
       document.execCommand("copy")
       document.removeEventListener("copy", listener)
     },
+    cleanCss: function(T){
+      T = T.replace(/(\n|\r|\	|\f|\v)+/g,''); // Remove line breaks, tabs etc.
+      T = T.replace(/\/\*.+?\*\//g,''); // Remove comments.
+      T = T.replace(/ +/g,' '); // Remove redundant whitespace.
+      T = T.replace(/ *{ */g,'{'); // Remove spaces around {
+      T = T.replace(/ *} */g,'}'); // Remove spaces around }
+      T = T.replace(/ *: */g,':'); // Remove spaces around :
+      T = T.replace(/ *; */g,';'); // Remove spaces around ;
+      return T
+    },
     loadTemplate: function () {
-        fetch('main-template.html')
+      fetch('components/main-template.html')
         .then(res => res.text())
         .then(mainTemplate => {
         //console.log(mainTemplate)
@@ -73,15 +83,8 @@ var app = {
             fetch('components/' + filename)
               .then(res => res.text())
               .then(text => {
-                if (filename.endsWith('.css')) {
-                  text = text.replace(/\*[^*]*\*+([^/][^*]*\*+)*/, '')
-                    .split(': ').join(':')
-                    .split('\r\n').join('')
-                    .split('\r').join('')
-                    .split('\t').join('')
-                    .split('  ').join('')
-                    .split('   ').join('')
-                    .split('    ').join('')
+                if (filename.endsWith(".css")) {
+                  text = this.cleanCss(text)
                 }
                 
                 mainTemplate = mainTemplate.split('<p:include>' + filename + '</p:include>').join(text.trim())
@@ -114,6 +117,16 @@ var app = {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
                       .join('http://localhost/nodejs-projects/Pulipuli-Blog/')
             }
+            
+            // 移除多餘的空行
+            mainTemplate = mainTemplate.split("\n").map((item, index, array) => {
+              if (item.trim() === "") {
+                return ''
+              }
+              else {
+                return item + '\n'
+              }
+            }).join("")
 
             this.codeForBlogger = mainTemplate
           }

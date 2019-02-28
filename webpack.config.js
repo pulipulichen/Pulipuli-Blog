@@ -9,7 +9,9 @@ module.exports = {
       
       './lib-for-link/src/global-footer/modules/puli-handle-function/puli-handle-function.js',
       './lib-for-link/src/global-footer/modules/puli-handle-function/init-recent.js',
-      './lib-for-link/src/global-footer/modules/puli-handle-function/init-comment.js'
+      './lib-for-link/src/global-footer/modules/puli-handle-function/init-comment.js',
+      
+      './lib-for-link/src/global-footer/script/gsc-search.js'
     ],
     'global-header': [
       './lib-for-link/src/global-header/style/style.css',
