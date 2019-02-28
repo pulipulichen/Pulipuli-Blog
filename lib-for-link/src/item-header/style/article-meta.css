@@ -1,0 +1,5 @@
+#main .entry-content article .meta1 .item-control a {
+  margin-right: 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
