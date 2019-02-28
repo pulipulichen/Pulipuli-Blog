@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html expr:dir='data:blog.languageDirection' 
+      xmlns='http://www.w3.org/1999/xhtml' 
+      xmlns:b='http://www.google.com/2005/gml/b' 
+      xmlns:data='http://www.google.com/2005/gml/data' 
+      xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
   <title>
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -138,18 +142,19 @@
       user is not using shrink to fit then we expand the header.
       -->
       <b:if cond='data:mobile'>
-          <div id='header-inner'>
-            <div class='titlewrapper' style='background: transparent'>
-              <h1 class='title' style='background: transparent; border-width: 0px'>
-                <b:include name='title'/>
-              </h1>
-            </div>
-            <b:include name='description'/>
+        <div id='header-inner'>
+          <div class='titlewrapper'>
+            <h1 class='title'>
+              <b:include name='title'/>
+            </h1>
           </div>
+          <b:include name='description'/>
+        </div>
         <b:else/>
-          <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                        + &quot;background-position: &quot;                        + data:backgroundPositionStyleStr + &quot;; &quot;                        + data:widthStyleStr                        + &quot;min-height: &quot; + data:height                        + &quot;_height: &quot; + data:height                        + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
-            <div class='titlewrapper' style='background: transparent'>
-              <h1 class='title' style='background: transparent; border-width: 0px'>
+          <div id="header-inner" class="header-inner-not-mobile" 
+               expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot; + &quot;background-position: &quot; + data:backgroundPositionStyleStr + &quot;; &quot; + data:widthStyleStr + &quot;min-height: &quot; + data:height + &quot;_height: &quot; + data:height + &quot;' >
+            <div class='titlewrapper'>
+              <h1 class='title'>
                 <b:include name='title'/>
               </h1>
             </div>
@@ -159,8 +164,8 @@
     <b:else/>
       <!--Show the image only-->
       <div id='header-inner'>
-        <a accesskey="H" expr:href='data:blog.homepageUrl' id='header-inner-link' style='display: block'>
-          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/>
+        <a accesskey="H" expr:href='data:blog.homepageUrl' id='header-inner-link'>
+          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width'/>
         </a>
         <!--Show the description-->
         <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
@@ -170,7 +175,7 @@
     </b:if>
   <b:else/>
     <!--No header image -->
-    <div id='header-inner'>
+    <div id='header-inner' class="no-header-image">
       <div class='titlewrapper'>
         <h1 class='title'>
           <b:include name='title'/>
@@ -823,9 +828,11 @@
     </span>
   </b:if>
 </b:includable>
+
 <b:includable id='shareButtons' var='post'>
-  <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showOrkutButton'><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
+  <p:include>6_includable/shareButtons.html</p:include>
 </b:includable>
+
 <b:includable id='status-message'>
   <b:if cond='data:navMessage'>
   <div class='status-msg-wrap'>
@@ -836,6 +843,7 @@
   <div class='clear'/>
   </b:if>
 </b:includable>
+
 <b:includable id='threaded-comment-form' var='post'>
   <div class='comment-form'>
     <a name='comment-form'/>
@@ -861,7 +869,8 @@
     </script>
   </div>
 </b:includable>
-    <b:includable id='threaded_comment_js' var='post'>
+
+<b:includable id='threaded_comment_js' var='post'>
   <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
 
   <script type='text/javascript'>
@@ -876,45 +885,11 @@
 // ]]>
   </script>
 </b:includable>
+
 <b:includable id='threaded_comments' var='post'>
-  <div class="comments" id="disqus_thread"></div>
-    
-  <div class='comments' id='comments'>
-    <a name='comments-anchor' id='comments-anchor'  />
-    <h4>總共<data:post.commentLabelFull/>, <a href="#comment-form-iframe" class="comment-form-iframe">(我要發問)</a></h4>
-
-    <div class='comments-content'>
-      <b:if cond='data:post.embedCommentForm'>
-        <b:include data='post' name='threaded_comment_js'/>
-      </b:if>
-      <div id='comment-holder'>
-         <data:post.commentHtml/>
-      </div>
-    </div>
-    <p class='comment-footer'>
-      <b:if cond='data:post.allowNewComments'>
-        <b:include data='post' name='threaded-comment-form'/>
-      <b:else/>
-        <data:post.noNewCommentsText/>
-      </b:if>
-    </p>
-
-    <b:if cond='data:showCmtPopup'>
-      <div id='comment-popup'>
-        <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
-        </iframe>
-      </div>
-    </b:if>
-
-    <div id='backlinks-container'>
-    <div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'>
-       <b:if cond='data:post.showBacklinks'>
-         <b:include data='post' name='backlinks'/>
-       </b:if>
-    </div>
-    </div>
-  </div>
+  <p:include>6_includable/threaded_comments.html</p:include>
 </b:includable>
+
   </b:widget>
 </b:section>
 </div>
@@ -945,13 +920,13 @@
         </div>
 
 <div class='footer' id='footer'>
-    <footer>
-        <div class='container clearfix'>
-                 
-                <div class='go-top'>
-                    <a class="goto-top" href='#' title="Go to Top"><i class='fa fa-angle-up'/></a>
-                    <a class="goto-comment" href='#comment-form-iframe' title="Add Comment"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-                </div>
+  <footer>
+    <div class='container clearfix'>
+
+      <div class='go-top'>
+        <a class="goto-top" href='#' title="Go to Top"><i class='fa fa-angle-up'/></a>
+        <a class="goto-comment" href='#comment-form-iframe' title="Add Comment"><i class="fa fa-commenting" aria-hidden="true"></i></a>
+      </div>
             
             <p>
               <span class="blog-copyright">
