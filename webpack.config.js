@@ -3,13 +3,15 @@ const path = require('path')
 module.exports = {
   entry: {
     'global-footer': [
-      './lib-for-link/src/global-footer/modules/puliGuestBook/puliGuestBook.js',
-      './lib-for-link/src/global-footer/modules/puliGuestBook/puliGuestBook.css',
-      './lib-for-link/src/global-footer/modules/puliGuestBook/init.js',
-      './lib-for-link/src/global-footer/modules/puliHandleRecentFunction/puliHandleRecentFunction.js',
-      './lib-for-link/src/global-footer/modules/puliHandleRecentFunction/init.js'
+      './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js',
+      './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css',
+      './lib-for-link/src/global-footer/modules/puli-guest-book/init.js',
+      './lib-for-link/src/global-footer/modules/puli-handle-function/puli-handle-function.js',
+      './lib-for-link/src/global-footer/modules/puli-handle-function/init-recent.js',
+      './lib-for-link/src/global-footer/modules/puli-handle-function/init-comment.js'
     ],
     'global-header': [
+      './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/script/google-analytics.js',
       './lib-for-link/src/global-header/script/script.js',
       './lib-for-link/src/global-header/style/style.css'

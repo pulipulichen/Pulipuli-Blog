@@ -1,6 +1,7 @@
-// JavaScript Document
-//puliHandleRecentFunction.js
-
+/**
+ * puli-handle-function
+ * @author Pulipuli Chen 20190228
+ */
 puliHandlePost = function () {
     var pHP = this;
     pHP.title = "";
