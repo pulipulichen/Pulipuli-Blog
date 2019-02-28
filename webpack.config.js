@@ -39,7 +39,7 @@ module.exports = {
       //'./lib-for-link/src/item-print/style/gutenberg.min.css'
     ],
     'item-owl': [
-      './lib-for-link/src/item-olw/style/style-owl.css'
+      './lib-for-link/src/item-olw/style/style-olw.css'
     ],
     'page': [
       './lib-for-link/src/page/style/style-page.css'
@@ -49,8 +49,8 @@ module.exports = {
       './lib-for-link/src/item-footer/modules/highlight/highlight.min.js',
       './lib-for-link/src/item-footer/modules/highlight/init.js',
       
-      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/lightbox.min.css',
-      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/lightbox.min.js',
+      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css',
+      //'./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js',
       './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js'
     ],
   },
