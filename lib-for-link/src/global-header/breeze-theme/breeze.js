@@ -75,9 +75,9 @@ stripTags2 = function (_0x17a4x2,_0x17a4x3) {
 
 after_rm2 = function (_id) {
     var _img_div = jQuery("#" + _id + " div.entry-image:first");
-    console.log(_img_div.length);
+    //console.log(_img_div.length);
     var _img_src = _img_div.find('img.thumb:first').attr('src');
-    console.log(_img_src)
+    //console.log(_img_src)
     _img_div.css('background-image', 'url("' + _img_src + '")');
     _img_div.attr('data-bg-src', _img_src)
 }

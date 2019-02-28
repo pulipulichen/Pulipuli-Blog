@@ -61,17 +61,16 @@ puliHandleComments = function ()	{
         }   //for (var i = 0, post; post = sortentry[i]; i++) {
         temp += "</ul>";
         jQuery("#" + pHC.divID).html(temp);
-
     };
 
     pHC.load = function (nodeID)
     {
         jQuery("#" + nodeID).html('<div id="' + pHC.divID + '"><h2>' + pHC.loading + '</h2></div>');
-
-        jQuery.getJSON("/feeds/comments/full?alt=json-in-script&callback=?",
-                function (data) {
-                    pHC.handleComments(data);
-                });
+        //console.log('a')
+        jQuery.getJSON("/feeds/comments/full?alt=json-in-script&callback=?", function (data) {
+          //console.log('b')
+          pHC.handleComments(data);
+        });
         return pHC;
     };
     return pHC;

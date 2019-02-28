@@ -25,9 +25,8 @@ module.exports = {
       './lib-for-link/src/global-footer/modules/puli-guest-book/init.js',
       
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js',
-      './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-init.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js',
-      './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-init.js',
+      './lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js',
       
       './lib-for-link/src/global-footer/script/gsc-search.js'
     ],
