@@ -101,7 +101,7 @@ puliHandlePost = function () {
     return pHP;
 };
 
-var puliHandleComments = function ()	{
+puliHandleComments = function ()	{
     var pHC = this;
     pHC.title = "";
     pHC.divID = "puliHandleCommentsDiv";

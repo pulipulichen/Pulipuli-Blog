@@ -685,14 +685,23 @@
         </span>
       </b:if>
     </span>
-    <span expr:id='&quot;p&quot; + data:post.id'><data:post.body/></span>
+    <span class="index-post-body" 
+          expr:id='&quot;p&quot; + data:post.id'
+          expr:data-title='&quot;p&quot; + data:post.title'
+          expr:data-url='&quot;p&quot; + data:post.url'
+          expr:data-author='&quot;p&quot; + data:post.author'
+          expr:data-timestamp='&quot;p&quot; + data:post.timestamp'
+          expr:data-numComments='&quot;p&quot; + data:post.numComments'
+          >
+      <data:post.body/>
+    </span>
     <script type='text/javascript'>
-        var x=&quot;<data:post.title/>&quot;
-        ,y=&quot;<data:post.url/>&quot;
-        ,z=&quot;<data:post.author/>&quot;
-        ,t=&quot;<data:post.timestamp/>&quot;
-        ,u=&quot;<data:post.numComments/>&quot;;
-        rm2(&quot;p<data:post.id/>&quot;,&quot;<data:post.url/>&quot;);
+      var x=&quot;<data:post.title/>&quot;
+      ,y=&quot;<data:post.url/>&quot;
+      ,z=&quot;<data:post.author/>&quot;
+      ,t=&quot;<data:post.timestamp/>&quot;
+      ,u=&quot;<data:post.numComments/>&quot;;
+      //rm2(&quot;p<data:post.id/>&quot;,&quot;<data:post.url/>&quot;);
     </script>
   <b:else/>
     <div class='entry-container'>

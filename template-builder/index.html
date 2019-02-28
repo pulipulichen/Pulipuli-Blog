@@ -14,10 +14,22 @@
   <body>
     <div class="ui container" id="app">
       <form class="ui form">
-        <a class="ui labeled icon primary fluid button" href="https://www.blogger.com/blogger.g?blogID=16607461#templatehtml/src=sidebar" target="bloggerTemplateLink">
-          <i class="blogger icon"></i>
-          Open Blogger Template
-        </a>
+        <div class="ui stackable two column grid">
+          <div class="column">
+            <a class="ui labeled icon primary fluid button" href="https://www.blogger.com/blogger.g?blogID=16607461#templatehtml/src=sidebar" target="bloggerTemplateLink">
+              <i class="cog icon"></i>
+              Open Blogger Template
+            </a>
+          </div>
+          <div class="column">
+            <a class="ui labeled icon fluid button" href="http://blog.pulipuli.info" target="blogPulipuliInfo">
+              <i class="eye icon"></i>
+              Open Blogger
+            </a>
+          </div>
+        </div>
+            
+        
         <div class="ui checkbox">
           <input type="checkbox" id="useLocalhost" name="useLocalhost" v-model="useLocalhost" v-on:change="loadTemplate" />
           <label for="useLocalhost">Use Local Server</label>
