@@ -34,19 +34,21 @@ var app = {
         //this.codeForBlogger = mainTemplate.trim()
 
         var replaceList = [
-          '0_header/1_style.min.css',
+          '0_header/1_style.css',
           //'0_header/2_style.min.css',
           //'0_header/3_custom_style.min.css',
           '0_header/4_facebook_code.html',
           '1_menu/1_menu.html',
           '1_menu/2_search.html',
-          '1_menu/2_search.html',
           '2_sidebar/1_sidebar.html',
           '3_footer/1_col.html',
           '3_footer/2_col.html',
           '3_footer/3_col.html',
+          '3_footer/4_copyright.html',
+          '3_footer/4_goto.html',
           '3_footer/4_management.html',
-          '3_footer/9_include.html',
+          '3_footer/8_include.html',
+          '3_footer/9_include_item.html',
           '4_content/archives.html',
           '4_content/author.html',
           '4_content/backlinks.html',
@@ -56,7 +58,12 @@ var app = {
           '4_content/share.html',
           '5_footer_bar/1_col.html',
           '5_footer_bar/2_col.html',
-          '5_footer_bar/3_col.html'
+          '5_footer_bar/3_col.html',
+          '6_includable/postQuickEdit.html',
+          '6_includable/shareButtons.html',
+          '6_includable/status-message.html',
+          '6_includable/threaded_comment_js.html',
+          '6_includable/threaded_comments.html'
         ] // var replaceList = [
 
         var loop = (i) => {
@@ -66,6 +73,17 @@ var app = {
             fetch('components/' + filename)
               .then(res => res.text())
               .then(text => {
+                if (filename.endsWith('.css')) {
+                  text = text.replace(/\*[^*]*\*+([^/][^*]*\*+)*/, '')
+                    .split(': ').join(':')
+                    .split('\r\n').join('')
+                    .split('\r').join('')
+                    .split('\t').join('')
+                    .split('  ').join('')
+                    .split('   ').join('')
+                    .split('    ').join('')
+                }
+                
                 mainTemplate = mainTemplate.split('<p:include>' + filename + '</p:include>').join(text.trim())
                 i++
                 loop(i)
