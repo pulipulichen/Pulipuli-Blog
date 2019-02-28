@@ -729,7 +729,7 @@ body .addthis-smartlayers {
 }
 
 /* 20161118 */
-@media (min-width: 980px) {
+@media (min-width: 979px) {
     .social-button.line,
     .share-story-container li.line {
         display: none;
@@ -1094,7 +1094,7 @@ header > .back-button {
 
     
 
-@media (min-width: 480px) and (max-width: 979px) {
+@media (min-width: 460px) and (max-width: 979px) {
     /*
     .nav-collapse ul li {
         padding-left: 50px;
@@ -1105,9 +1105,7 @@ header > .back-button {
     }
 }
 
-
-
-@media (min-width: 480px) {
+@media (min-width: 460px) {
     
     .addthis-smartlayers-mobile {
         display: none !important;
@@ -1472,7 +1470,7 @@ header > .back-button {
 /*************************************/
 /* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */
 
-@media (max-width: 480px) {
+@media (max-width: 460px) {
     #content-wrapper #primary {
         padding-left:0px !important;
         padding-right:0px !important; 
@@ -1480,6 +1478,12 @@ header > .back-button {
     .sumome-stylebufferbottom-shim {
         height: 50px;
     }
+    #footer .go-top {
+        bottom: calc(50px + 1em);
+    }
+}
+
+@media (max-width: 979px) {
     #footer .go-top {
         bottom: calc(50px + 1em);
     }

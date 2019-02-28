@@ -1,3 +1,8 @@
+/**
+ * @author Pulipuli Chen 20190228
+ * puli-utils-append 
+ * 這個class name會被移除
+ */
 
 /**
  * Table of Content
@@ -90,6 +95,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
             //}
 
             cata_container = $('<span></span>')
+                    .addClass("puli-utils-append")
                     .hide()
                     .insertBefore(firstHeading);
             cata_container.attr('id', 'postcata' + PULI_UTILS.create_page_id());
@@ -145,15 +151,15 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
         //headingAry.css("border", "1px solid red");
 
         var cataTitleID = prefix + "cataTitle";
-        var cataTitle = jQuery("<div class='cata-title' style='width: 75%'>"
-                //+ '目錄's
-                + "<a name='" + cataTitleID + "' id='" + cataTitleID + "' /></div>");
+        var cataTitle = jQuery('<a class="puli-utils-append" name="' + cataTitleID + '" id="' + cataTitleID + '" />');
 
-        var goCata = jQuery('<a style="margin:0;padding:0;text-decoration:none;font-size:smaller;font-weight:normal;float:right;" href="#' + cataTitleID + '">'
+        var goCata = jQuery('<a class="puli-utils-append heading-button" href="#' + cataTitleID + '">'
         + '<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>'
         + '</a>');
 
-        var ulObj = jQuery("<ul></ul>").addClass("puli-toc");
+        var ulObj = jQuery("<ul></ul>")
+                .addClass("puli-toc")
+                .addClass("puli-utils-append")
 
         //在每個Heading後面加入錨點
         for (i = 0; i < headingAry.length; i++) {
@@ -162,7 +168,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
             var title = hdObj.text();
             var anchorID = prefix + "_anchor" + i;
 
-            var anc = jQuery("<a id='" + anchorID + "' name='" + anchorID + "' />");
+            var anc = jQuery('<a class="heading-anchor puli-utils-append" id="' + anchorID + '" name="' + anchorID + '" />');
             hdObj.prepend(anc);
 
             hdObj.prepend(goCata.clone());
@@ -210,8 +216,8 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
                     .append(ulObj)
                     .slideDown();
 
-            cata_container.prepend("<hr />");
-            cata_container.append("<hr />");
+            cata_container.prepend('<hr class="puli-utils-append" />');
+            cata_container.append('<hr class="puli-utils-append" />');
         }
 
     });	//$(function () {
