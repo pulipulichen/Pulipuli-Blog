@@ -67,15 +67,17 @@ window[_0x2b54[32]] = function () {
   }
   _0x17a4x8[_0x2b54[37]](_0x2b54[34],_0x2b54[36]);
   _0x17a4x8[_0x2b54[24]]=_0x2b54[38]
-};
+}
     
-function stripTags2 (_0x17a4x2,_0x17a4x3) {
+stripTags2 = function (_0x17a4x2,_0x17a4x3) {
   return _0x17a4x2[_0x2b54[5]](/<img[^>]*>/ig,_0x2b54[4]);
-};
+}
 
-function after_rm2(_id) {
-    var _img_div = $("#" + _id + " div.entry-image:first");
-    //console.log(_img_div.length);
-    var _img_src = _img_div.find("img.thumb:first").attr("src");
-    _img_div.css("background-image", "url (" + _img_src + ")");
+after_rm2 = function (_id) {
+    var _img_div = jQuery("#" + _id + " div.entry-image:first");
+    console.log(_img_div.length);
+    var _img_src = _img_div.find('img.thumb:first').attr('src');
+    console.log(_img_src)
+    _img_div.css('background-image', 'url("' + _img_src + '")');
+    _img_div.attr('data-bg-src', _img_src)
 }
