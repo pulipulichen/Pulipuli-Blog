@@ -3,7 +3,7 @@ var app = {
   data: {
     codeForBlogger: 'Blogger Template Code (now loading...)',
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
-    useLocalhost: false
+    useLocalhost: true
   },
   created: function () {
     this.loadTemplate()
@@ -115,7 +115,7 @@ var app = {
 
             if (this.useLocalhost === true) {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
-                      .join('http://localhost/nodejs-projects/Pulipuli-Blog/')
+                      .join('http://pc.pulipuli.info/public/Pulipuli-Blog/')
             }
             
             // 移除多餘的空行
