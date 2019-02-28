@@ -24,6 +24,8 @@ module.exports = {
     'item-header': [
       './lib-for-link/src/item-header/style/style-item.css',
       './lib-for-link/src/item-header/script/script-item.js',
+      './lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js',
+      './lib-for-link/src/item-header/modules/related-posts/related-posts.js',
     ],
     'item-print': [
       './lib-for-link/src/item-print/style/style-print.css',
