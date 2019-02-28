@@ -8,20 +8,20 @@
     </script>
     -->
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
-      <div id='related-posts'>
-        <b:loop values='data:post.labels' var='label'>
-          <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
-          <!-- 下面這個不能移除，還是得引用 -->
-          <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=pulipuli_related_results_labels_thumbs&amp;max-results=6&quot;' 
-                  type='text/javascript'/>
-        </b:loop>
-        <script type='text/javascript'>
-          $(() => {
-            removeRelatedDuplicates_thumbs();
-            printRelatedLabels_thumbs(&quot;<data:post.url/>&quot;);
-          })
-        </script>
-      </div>
+      <b:loop values='data:post.labels' var='label'>
+        <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+        <!-- 下面這個不能移除，還是得引用 -->
+        <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=pulipuli_related_results_labels_thumbs&amp;max-results=6&quot;' 
+                type='text/javascript'/>
+      </b:loop>
+      <div class='related-posts'></div>
+      <script type='text/javascript'>
+      relatedPostsPostUrl = &quot;<data:post.url/>&quot;
+      </script>
+      <!--
+      removeRelatedDuplicates_thumbs();
+      printRelatedLabels_thumbs(&quot;<data:post.url/>&quot;);
+      -->
       <div style='clear:both'/>
     </b:if>
   </div> <!-- <div class='related_posts'> -->

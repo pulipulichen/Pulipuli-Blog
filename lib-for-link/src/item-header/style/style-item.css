@@ -328,18 +328,18 @@ body .addthis-smartlayers {
 
 /*********************************/
 
-#related-posts .item-img > a > img {
+.related-posts .item-img > a > img {
     max-width: 240px;
     width: 100% !important;
     height: auto !important;
 }
 
-#related-posts .item-img {
+.related-posts .item-img {
     max-height: 160px;
     overflow: hidden;
 }
 
-#related-posts .related-post-title {
+.related-posts .related-post-title {
     overflow-x: hidden;
     white-space: nowrap;
     background-color: black;
