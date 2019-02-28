@@ -41,7 +41,16 @@ module.exports = {
     ],
     'page': [
       './lib-for-link/src/page/style/style-page.css'
-    ]
+    ],
+    'item-footer': [
+      './lib-for-link/src/item-footer/modules/highlight/default.min.css',
+      './lib-for-link/src/item-footer/modules/highlight/highlight.min.js',
+      './lib-for-link/src/item-footer/modules/highlight/init.js',
+      
+      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/lightbox.min.css',
+      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/lightbox.min.js',
+      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js'
+    ],
   },
   output: {
     path: path.resolve(__dirname, 'lib-for-link/dist'),
