@@ -6,6 +6,7 @@ module.exports = {
       './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js',
       './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css',
       './lib-for-link/src/global-footer/modules/puli-guest-book/init.js',
+      
       './lib-for-link/src/global-footer/modules/puli-handle-function/puli-handle-function.js',
       './lib-for-link/src/global-footer/modules/puli-handle-function/init-recent.js',
       './lib-for-link/src/global-footer/modules/puli-handle-function/init-comment.js'
@@ -15,6 +16,7 @@ module.exports = {
       './lib-for-link/src/global-header/style/2_style.css',
       './lib-for-link/src/global-header/style/3_custom_style.css',
       './lib-for-link/src/global-header/style/header.css',
+      './lib-for-link/src/global-header/style/search-bar.css',
       
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
@@ -25,6 +27,7 @@ module.exports = {
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/style-item.css',
+      
       './lib-for-link/src/item-header/script/script-item.js',
       './lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js',
       './lib-for-link/src/item-header/modules/related-posts/related-posts.js',

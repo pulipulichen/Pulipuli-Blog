@@ -808,25 +808,7 @@
 <!-- 編輯區 -->
 
 <b:includable id='postQuickEdit' var='post'>
-  <b:if cond='data:post.editUrl'>
-    <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
-      <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>
-        <!-- <img alt='' class='icon-action' height='18' src='//img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/> -->
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        Edit Post
-      </a>
-
-      <span expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>
-        <i class="fa fa-code" aria-hidden="true"></i>
-        Copy HTML
-      </span>
-
-      <span expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>
-        <i class="fa fa-download" aria-hidden="true"></i>
-        Download Article
-      </span>
-    </span>
-  </b:if>
+  <p:include>6_includable/postQuickEdit.html</p:include>
 </b:includable>
 
 <b:includable id='shareButtons' var='post'>
@@ -834,14 +816,7 @@
 </b:includable>
 
 <b:includable id='status-message'>
-  <b:if cond='data:navMessage'>
-  <div class='status-msg-wrap'>
-    <div class='status-msg-body'>
-      <data:navMessage/>
-    </div>
-  </div>
-  <div class='clear'/>
-  </b:if>
+  <p:include>6_includable/status-message.html</p:include>
 </b:includable>
 
 <b:includable id='threaded-comment-form' var='post'>
@@ -871,19 +846,7 @@
 </b:includable>
 
 <b:includable id='threaded_comment_js' var='post'>
-  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
-
-  <script type='text/javascript'>
-    (function() {
-      var items = <data:post.commentJso/>;
-      var msgs = <data:post.commentMsgs/>;
-      var config = <data:post.commentConfig/>;
-
-// <![CDATA[
-      _display_related_posts(items, msgs, config);
-    })();
-// ]]>
-  </script>
+  <p:include>6_includable/threaded_comment_js.html</p:include>
 </b:includable>
 
 <b:includable id='threaded_comments' var='post'>
@@ -895,61 +858,49 @@
 </div>
 
 <div class='span3' id='side-bar'>
-    <a accesskey="R" href="#side-bar-anchor" title="accesskey: sidebar section" id="side-bar-anchor"> ::: </a>
-    <div class="sidebar section" id="sidebar">
-      <p:include>2_sidebar/1_sidebar.html</p:include>
-    </div>
+  <a accesskey="R" href="#side-bar-anchor" title="accesskey: sidebar section" id="side-bar-anchor"> ::: </a>
+  <div class="sidebar section" id="sidebar">
+    <p:include>2_sidebar/1_sidebar.html</p:include>
+  </div>
 </div>
 
 <div class='clear'/>
 </div> 
 </div> 
 
-    <div class='site-footer' id='colophon' role='contentinfo'>
-        <div class='container'>
-            <a accesskey="B" href="#footer-anchor" title="accesskey: footer section" id="footer-anchor"> ::: </a>
-            <div class='row-fluid' id='footer-body'>
-                <div class="cleanwidget  nopadding span4 bl_html section" id="column1">
-                    <p:include>3_footer/1_col.html</p:include>
-                </div>
-                <div class="cleanwidget  nopadding span8 bl_html section" id="column2">
-                    <p:include>3_footer/2_col.html</p:include>
-                </div>
-                <div class='clear'/>
-            </div>
-        </div>
+<div class='site-footer' id='colophon' role='contentinfo'>
+
+<div class='container'>
+  <a accesskey="B" href="#footer-anchor" title="accesskey: footer section" id="footer-anchor"> ::: </a>
+  <div class='row-fluid' id='footer-body'>
+    <div class="cleanwidget  nopadding span4 bl_html section" id="column1">
+      <p:include>3_footer/1_col.html</p:include>
+    </div>
+    <div class="cleanwidget  nopadding span8 bl_html section" id="column2">
+      <p:include>3_footer/2_col.html</p:include>
+    </div>
+    <div class='clear'/>
+  </div>
+</div>
 
 <div class='footer' id='footer'>
   <footer>
     <div class='container clearfix'>
-
-      <div class='go-top'>
-        <a class="goto-top" href='#' title="Go to Top"><i class='fa fa-angle-up'/></a>
-        <a class="goto-comment" href='#comment-form-iframe' title="Add Comment"><i class="fa fa-commenting" aria-hidden="true"></i></a>
-      </div>
-            
-            <p>
-              <span class="blog-copyright">
-                &#169; Copyright <p:year /> 
-                <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> 
-              </span>
-            <span class="themexpose">
-              / Created by <a href='http://themexpose.com/' id='mycontent'>ThemeXpose</a>
-              / Published By <a href='http://gooyaabitemplates.com/' rel='dofollow' target='_blank' title='Blogger Templates'>Gooyaabi Templates</a>
-            </span>
-            </p>
-            <p class="management">
-              <p:include>3_footer/4_management.html</p:include>
-            </p>
-        </div>
-    </footer>        
-  </div>
+      <p:include>3_footer/4_goto.html</p:include>
+      <p:include>3_footer/4_copyright.html</p:include>
+      <p:include>3_footer/4_management.html</p:include>
+    </div>
+  </footer>        
 </div>
+
+</div> <!-- <div class='site-footer' id='colophon' role='contentinfo'> -->
+
 </div>
 
 <!-- JAVASCRIPT -->
 <!-- <script src="//load.sumome.com/" data-sumo-site-id="91b6a5a67cc23845f0765da427a8ac1c0b918c4e9226f12ea32abf1e8110df0c" async="async"></script> -->
-<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=pulipuli" async="async"></script> 
+<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=pulipuli" async="async"></script> 
 <script type="text/javascript" src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/script/google-analytics.js"></script>
 
 <p:include>3_footer/8_include.html</p:include>
