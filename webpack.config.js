@@ -11,14 +11,19 @@ module.exports = {
       './lib-for-link/src/global-footer/modules/puli-handle-function/init-comment.js'
     ],
     'global-header': [
+      './lib-for-link/src/global-header/style/style.css',
+      './lib-for-link/src/global-header/style/2_style.css',
+      './lib-for-link/src/global-header/style/3_custom_style.css',
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
       './lib-for-link/src/global-header/script/google-analytics.js',
       './lib-for-link/src/global-header/script/script.js',
-      './lib-for-link/src/global-header/style/style.css',
-      './lib-for-link/src/global-header/style/2_style.css',
-      './lib-for-link/src/global-header/style/3_custom_style.css',
+      './lib-for-link/src/global-header/script/facebook.js'
+    ],
+    'item-header': [
+      './lib-for-link/src/item-header/style/style-item.css',
+      './lib-for-link/src/item-header/script/script-item.js',
     ]
   },
   output: {
