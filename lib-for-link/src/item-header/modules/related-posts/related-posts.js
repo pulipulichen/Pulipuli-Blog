@@ -75,6 +75,10 @@ relatedUrls=new Array;
 thumburl=new Array;
 
 $(function() {
+  if (typeof(relatedPostsPostUrl) === 'undefined') {
+    return
+  }
+  
   removeRelatedDuplicates_thumbs();
   printRelatedLabels_thumbs(relatedPostsPostUrl);
   

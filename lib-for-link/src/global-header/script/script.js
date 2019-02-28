@@ -144,7 +144,7 @@ $(function () {
 // ----------------------------------
 // 20160522 Relate post的功能
 
-var _display_related_posts = function (items, msgs, config) {
+_display_related_posts = function (items, msgs, config) {
     var cursor = null;
       if (items && items.length > 0) {
         cursor = parseInt(items[items.length - 1].timestamp) + 1;
