@@ -25,7 +25,7 @@ var app = {
       document.execCommand("copy")
       document.removeEventListener("copy", listener)
     },
-    cleanCss: function(T){
+    cleanCss: function(T) {
       T = T.replace(/(\n|\r|\	|\f|\v)+/g,''); // Remove line breaks, tabs etc.
       T = T.replace(/\/\*.+?\*\//g,''); // Remove comments.
       T = T.replace(/ +/g,' '); // Remove redundant whitespace.
@@ -126,7 +126,7 @@ var app = {
               else {
                 return item + '\n'
               }
-            }).join("")
+            }).join("").trim()
 
             this.codeForBlogger = mainTemplate
           }

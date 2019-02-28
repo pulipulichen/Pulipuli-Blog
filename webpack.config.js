@@ -3,19 +3,21 @@ const path = require('path')
 module.exports = {
   entry: {
     'global-header': [
-      './lib-for-link/src/global-header/style/style.css',
+      './lib-for-link/src/global-header/breeze-theme/font-awesome.css',
+      './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
+      './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
+      
       './lib-for-link/src/global-header/style/2_style.css',
       './lib-for-link/src/global-header/style/3_custom_style.css',
       './lib-for-link/src/global-header/style/header.css',
       './lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/sidebar.css',
+      './lib-for-link/src/global-header/style/style.css',
       
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
-      './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
-      './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
       './lib-for-link/src/global-header/script/google-analytics.js',
-      './lib-for-link/src/global-header/script/script.js',
-      './lib-for-link/src/global-header/script/facebook.js'
+      './lib-for-link/src/global-header/script/facebook.js',
+      './lib-for-link/src/global-header/script/script.js'
     ],
     'global-footer': [
       './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js',

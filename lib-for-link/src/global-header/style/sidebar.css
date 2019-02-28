@@ -9,4 +9,6 @@
   border-bottom-width: 0px; 
   border-left-width: 0px;
   margin-left: 0.5rem;
+  display: block;
+  float: right;
 }
