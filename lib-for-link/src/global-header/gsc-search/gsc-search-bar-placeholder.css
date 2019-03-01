@@ -1,3 +1,10 @@
+/* --------------------------------------------- */
+/* all { */
+
+#masthead .search-bar .nav-search {
+  width: 100%;
+}
+
 #masthead .search-bar .gcse-placeholder {
   display: block;
   width: calc(100% - 40px);
@@ -20,4 +27,56 @@
   padding-left: 8px;
   background-color: white !important;
   border-radius: 0.5rem;
+}
+
+/* --------------------------------------------- */
+/* all fixed-nav { */
+
+#masthead.fixed-nav .search-bar .nav-search {
+  margin-top: 6px;
+}
+
+/* --------------------------------------------- */
+/* @media (max-width: 979px) { */
+
+@media (max-width: 979px) {
+  #masthead .search-bar {
+    width: 260px;
+    padding:0;
+    margin-top: 4px !important;
+  }
+  
+  #masthead .nav-search .srch_btn {
+    margin-top: -3px;
+  }
+  
+  /* --------------------------------------------- */
+  /* @media (max-width: 979px) fixed-nav { */
+  #masthead.fixed-nav .search-bar .nav-search {
+    margin-top: 10px;
+  }
+}
+
+/* --------------------------------------------- */
+/* @media (max-width: 767px) { */
+
+@media (max-width: 767px) {
+  #masthead .search-bar {
+    width: 200px;
+  }
+}
+
+/* --------------------------------------------- */
+/* @media (max-width: 680px) { */
+
+@media (max-width: 680px) {
+  #masthead .search-bar {
+    display: none;
+    /*width: 200px;*/
+  }
+  /*
+  #masthead .search-bar .nav-search {
+    margin-right: 60px;
+  }
+  */
 }

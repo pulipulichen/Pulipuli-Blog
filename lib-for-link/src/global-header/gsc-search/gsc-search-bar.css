@@ -15,7 +15,9 @@
 }
 
 #masthead .search-bar .gcse {
-  display: none;
+  position: fixed;
+  top: -1000px;
+  left: -1000px;
 }
 
 #masthead .search-bar:hover {
@@ -27,7 +29,7 @@
 }
 
 #masthead .nav-search {
-  width: auto;
+  /*width: auto;*/
   height: 30px;
   position: relative;
   left: 0;
@@ -193,20 +195,9 @@
 }
 
 @media (max-width: 979px) {
-  #masthead .search-bar {
-    /*
-    margin-top: 16px;
-    padding-left: 0;
-    padding-right: 0;
-    */
-    padding:0;
-  }
+  
   #masthead .search-bar .gcse {
     margin-top: 13px;
-  }
-
-  #masthead .nav-search .srch_btn {
-    margin-top: -5px;
   }
 
   #masthead .nav-search input {
@@ -226,9 +217,11 @@
     margin-top: 7px;
   }
 
+  /*
   #masthead.fixed-nav .search-bar .srch_btn {
     margin-top: -15px;
   }
+  */
 
   #masthead .nav-search input {
     line-height: 26px;

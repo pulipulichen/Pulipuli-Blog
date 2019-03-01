@@ -1,6 +1,8 @@
 
-.gsc-results-wrapper-overlay {
+#masthead .gsc-results-wrapper-overlay {
   line-height: 1.5em;
+  top: 4rem;
+  height: calc(100vh - 10rem);
 }
 
 .gsc-results-wrapper-overlay .gcsc-branding {
