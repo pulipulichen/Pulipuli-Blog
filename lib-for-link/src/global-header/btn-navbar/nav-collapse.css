@@ -1,18 +1,37 @@
 #masthead #menu-primary a {
   color: white;
 }
+#masthead .dropdown-menu {
+  z-index: -1;
+}
 
 #masthead #menu-primary ul > li > a {
   white-space: nowrap;
   overflow-x: hidden;
 }
 
-#masthead .nav-collapse #menu-primary,
-#masthead .nav-collapse .dropdown-menu {
-  background-color: #2D2D2D;
+/* ****************************************** */
+/* @media (min-width: 979px) { */
+
+@media (min-width: 979px) {
+  #masthead .dropdown-menu {
+    margin-top: 2px;
+  }
 }
 
+/* ****************************************** */
+/* @media (max-width: 979px) { */
+
 @media (max-width: 979px) {
+  #masthead .nav-collapse #menu-primary,
+  #masthead .nav-collapse .dropdown-menu {
+    background-color: #2D2D2D;
+  }
+  
+  #masthead .nav-collapse .dropdown-menu {
+    border-top: 2px solid #F69087;
+  }
+  
   #masthead .nav-collapse.collapse {
     overflow: hidden;
     height: 0;
