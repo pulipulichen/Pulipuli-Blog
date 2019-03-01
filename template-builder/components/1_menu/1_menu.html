@@ -2,10 +2,18 @@
     <div class='nav-collapse collapse'>
         <ul class='nav' id='menu-primary'>
             <li class="search">
-                <form action="#" id="searchform" method="get" role="search">
-                    <input type="submit" class="srch_btn" id="menu_gsce_submit" />
-                    <input class="search_input" id="s" name="q" type="text" value="Search and hit" />
+                <form class="gcse-placeholder" action="#" onsubmit="return false" role="search">
+                    <!-- <input class="search_input" name="search" type="text" placeholder="Search" /> -->
+                    <!-- <input type="submit" class="srch_btn" id="menu_gsce_submit" /> -->
+                    <input autocomplete="off" type="text" size="10" 
+                      class="gsc-input-placeholder search_input" 
+                      name="search" 
+                      title="Search" 
+                      placeholder="Search"/>
                 </form>
+              <div class='srch_btn'>
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </div>
             </li>
             <li class="home">
                 <a accesskey="U" href="#menu-anchor" title="accesskey: menu" class="accesskey-menu" id="menu-anchor"> ::: </a>

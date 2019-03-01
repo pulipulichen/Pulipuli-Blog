@@ -1,4 +1,4 @@
-
+/*
 var initSearchInput = () => {
   $("#s.search_input").blur(function () {
     if (this.value.trim() === '') {
@@ -10,6 +10,7 @@ var initSearchInput = () => {
     }
   })
 }
+*/
 
 (function () {
   var cx = '017270649262638447003:o6vaq9on3vs';
@@ -20,16 +21,17 @@ var initSearchInput = () => {
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(gcse, s);
   
-  $('#gsce_submit').click(() => {
+  $('.srch_btn').click(() => {
     $('input.gsc-search-button').click()
   })
   
-  initSearchInput()
+  //initSearchInput()
+  
   $('#searchform').submit(function () {
     return menu_search_submit(this);
   })
   $(() => {
-    console.log($('.gcse-placeholder').length)
+    //console.log($('.gcse-placeholder').length)
     $('.gcse-placeholder').submit(function () {
       return menu_search_submit(this);
     })
@@ -66,7 +68,12 @@ var menu_search_submit = function (_form) {
     _query = _form.search.value
   }
   else {
-    console.log('找不到')
+    //console.log('找不到')
+    return false
+  }
+  
+  _query = _query.trim()
+  if (_query === '') {
     return false
   }
   

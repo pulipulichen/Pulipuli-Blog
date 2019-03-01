@@ -323,7 +323,6 @@ _display_related_posts = function (items, msgs, config) {
         var _top = $("#comment-editor:first").offset().top - $("#masthead .container:first").height();
         window.scrollTo(0, _top);
     });
-    
 };
 
 
