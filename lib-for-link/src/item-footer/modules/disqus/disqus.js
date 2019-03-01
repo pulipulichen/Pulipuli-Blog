@@ -14,9 +14,16 @@ disqus_blogger_canonical_homepage_url = getBloggerVariable('data-blog-canonicalH
 
 $(function () {
   disqus_url = disqus_blogger_current_url;
+  
+  /**
+   * 莫名其妙...移除了也能夠正常運作，為什麼呢？
+   * @author Pulipuli Chen 20190301
+   */
+  /*
   (function () {
       "use strict";
       //$.getScript('//pulipuli.disqus.com/embed.js');
-      disqus_embed()
+      //disqus_embed()
   })();
+  */
 });
