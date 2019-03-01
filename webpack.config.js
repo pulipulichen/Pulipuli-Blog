@@ -43,8 +43,8 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js',
       './lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js',
       
-      './lib-for-link/src/item-print/style/style-print.css',
-      //'./lib-for-link/src/item-print/style/gutenberg.min.css'
+      './lib-for-link/src/item-header/style-print/style-print.css',
+      //'./lib-for-link/src/item-header/style-print/gutenberg.min.css'
     ],
     'item-owl': [
       './lib-for-link/src/item-olw/style/style-olw.css'
