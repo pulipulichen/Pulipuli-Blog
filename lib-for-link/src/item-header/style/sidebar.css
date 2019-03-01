@@ -6,7 +6,7 @@
  * @author Pulipuli Chen 20190301
  * 開始處理底板的問題
  */
-@media (min-width:767px) {
+@media (min-width:767px) and (max-width: 979px) {
   #sidebar > .widget:not(.two-col) {
     display: none;
   }
@@ -33,5 +33,12 @@
   #sidebar > .widget.two-col:nth-of-type(even) {
     /*border: 3px solid red;*/
     margin-right: 0;
+    clear: none;
   }
 } 
+
+@media (min-width:979px) {
+  #sidebar > .widget:not(.three-col) {
+    display: none;
+  }
+}
