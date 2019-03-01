@@ -1,7 +1,7 @@
 var app = {
   el: '#app',
   data: {
-    codeForBlogger: 'Blogger Template Code (now loading...)',
+    codeForBlogger: '',
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
     useLocalhost: true
   },
@@ -132,6 +132,7 @@ var app = {
             }).join("").trim()
 
             this.codeForBlogger = mainTemplate
+            $('.copy-button:first').focus()
           }
         }
         loop(0)

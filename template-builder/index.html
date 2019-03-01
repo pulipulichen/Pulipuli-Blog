@@ -36,11 +36,17 @@
         </div>
         <div class="ui stackable one column grid">
           <div class="column blogger">
-            <button class="ui top attached labeled icon fluid button" type="button" v-on:click="copyCode">
+            <button class="ui top attached labeled icon fluid button copy-button" 
+                    type="button" 
+                    v-on:click="copyCode"
+                    v-bind:class="{ disabled: (codeForBlogger == '') }"
+                    >
               <i class="copy icon"></i>
               Copy for Blogger Code
             </button>
-            <textarea v-model="codeForBlogger" class="template-code ui attached segment"></textarea>
+            <textarea v-model="codeForBlogger" 
+                      class="template-code ui attached segment"
+                      placeholder="Blogger Template Code (now loading...)"></textarea>
           </div>
           <div class="column olw">
             

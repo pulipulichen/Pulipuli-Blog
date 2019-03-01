@@ -75,12 +75,13 @@ relatedUrls = new Array;
 thumburl = new Array;
 
 $(function() {
-  if (typeof(relatedPostsPostUrl) === 'undefined') {
+  let postUrl = getBloggerPostVariable('data-post-url')
+  if (typeof(postUrl) === 'undefined') {
     return
   }
   
   removeRelatedDuplicates_thumbs();
-  printRelatedLabels_thumbs(relatedPostsPostUrl);
+  printRelatedLabels_thumbs(postUrl);
   
   $("#owl-demo").owlCarousel({
     autoPlay: 5000,

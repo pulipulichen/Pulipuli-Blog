@@ -328,7 +328,11 @@ _display_related_posts = function (items, msgs, config) {
 
 //---------------------------------------
 
-$('.go-top').click(function(){$('.st-content').animate({scrollTop:0},'slow');$('html, body').animate({scrollTop:0},'slow');return false;});
+$('.go-top').click(function(){
+  $('.st-content').animate({scrollTop:0},'slow');
+  $('html, body').animate({scrollTop:0},'slow');
+  return false;
+});
 
 //----------------------------------------
 
@@ -338,18 +342,17 @@ $(function () {
 
 // -------------------
 $(function ($) {
+  var aboveHeight = $('#leader-wrapper').outerHeight();
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > aboveHeight) {
+      $('#masthead').addClass('fixed-nav').css('top', '0').next()
+              .css('padding-top', '5px');
 
-    var aboveHeight = $('#leader-wrapper').outerHeight();
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > aboveHeight) {
-            $('#masthead').addClass('fixed-nav').css('top', '0').next()
-                    .css('padding-top', '5px');
-
-        } else {
-            $('#masthead').removeClass('fixed-nav').next()
-                    .css('padding-top', '0');
-        }
-    });
+    } else {
+      $('#masthead').removeClass('fixed-nav').next()
+              .css('padding-top', '0');
+    }
+  });
 });
 
 // --------------
@@ -522,13 +525,3 @@ var _load_random_posts = function () {
         $("head").append('<link rel="shortcut icon" href="'+_icon+'" type="image/' + _icon.substr(_icon.lastIndexOf('.')+1) + '" size="192x192" />');
     }
 })();
-
-// --------------
-// 20181226 FB粉專
-$(function () {
-    _load_fan_page()
-});
-
-var _load_fan_page = function () {
-  $('.widget.HTML.fb-fan-page .widget-content').html('<iframe src="//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpulipuli.blogspot&tabs=timeline&width=350&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=391880581194257" width="350" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
-}

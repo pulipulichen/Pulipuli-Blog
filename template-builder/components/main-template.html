@@ -96,8 +96,6 @@
 </b:if>
 <!-- ======================================== -->
 
-<p:include>0_header/5_env_variables</p:include>
-
 </head>
 
 <body>
@@ -186,8 +184,8 @@
 <b:section class='main' id='main' showaddelement='no'>
   <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
     <b:includable id='main' var='top'>
-  <b:if cond='data:mobile == &quot;false&quot;'>
-    <!-- posts -->
+      <b:if cond='data:mobile == &quot;false&quot;'>
+      <!-- posts -->
       <b:include data='top' name='status-message'/>
       <b:loop values='data:posts' var='post'>
         <b:include data='post' name='post'/>
@@ -242,7 +240,7 @@
 <b:includable id='backlinks' var='post'>
   <p:include>4_content/backlinks.html</p:include>
 </b:includable>
-    
+
 <b:includable id='comment-form' var='post'>
   <div class='comment-form'>
     <a name='comment-form'/>
@@ -663,17 +661,24 @@
 </b:includable>
     
 <b:includable id='post' var='post'>
+  <p:include>0_header/5_env_variables.html</p:include>
   <div class='post'>
   <b:if cond='data:blog.pageType == &quot;index&quot;'>
     <b:if cond='data:post.title'>
       <h3>
         <b:if cond='data:post.link'>
-          <a expr:href='data:post.link' expr:title='data:post.title'><data:post.title/></a>
+          <a expr:href='data:post.link' 
+             expr:title='data:post.title'>
+            <data:post.title/>
+          </a>
         <b:else/>
           <b:if cond='data:post.url'>
-          <a expr:href='data:post.url' expr:title='data:post.title'><data:post.title/></a>
+            <a expr:href='data:post.url' 
+               expr:title='data:post.title'>
+              <data:post.title/>
+            </a>
           <b:else/>
-          <data:post.title/>
+            <data:post.title/>
           </b:if>
         </b:if>
       </h3>

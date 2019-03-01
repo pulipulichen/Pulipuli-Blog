@@ -19,6 +19,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/script/google-analytics.js',
       './lib-for-link/src/global-header/script/facebook.js',
+      './lib-for-link/src/global-header/script/env-variables.js',
       './lib-for-link/src/global-header/script/script.js'
     ],
     'global-footer': [
