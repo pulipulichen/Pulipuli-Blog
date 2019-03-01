@@ -48,6 +48,14 @@
   margin-top: 22px;
   float: right;
 }
+#masthead .search-bar .nav-search .srch_btn {
+  height: 42px;
+  width: 23px;
+  line-height: 36px;
+  /*text-indent: 9999px;*/
+  position: relative;
+  font-size: 23px;
+}
 
 /* --------------------------------------------- */
 /* all fixed-nav { */
@@ -55,6 +63,13 @@
 #masthead.fixed-nav .search-bar .nav-search {
   margin-top: 6px;
 }
+
+/*
+#masthead.fixed-nav .nav-search .srch_btn {
+  margin-top: -15px;
+}
+*/
+
 
 /* --------------------------------------------- */
 /* @media (max-width: 979px) { */

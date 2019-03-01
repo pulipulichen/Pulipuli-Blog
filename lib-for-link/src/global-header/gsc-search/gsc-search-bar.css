@@ -88,14 +88,6 @@
 }
 */
 
-#masthead .nav-search .srch_btn {
-  height: 42px;
-  width: 23px;
-  margin-top: 0;
-  background: url("//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png") 2px center no-repeat;
-  text-indent: 9999px;
-  position: relative;
-}
 /*
 #masthead .search-bar input.gsc-input {
   visibility: hidden;
@@ -146,10 +138,6 @@
 
 .nav-search .srch_btn {
   float: left;
-}
-
-.fixed-nav .nav-search .srch_btn {
-  margin-top: -15px;
 }
 
 .cse .gsc-control-wrapper-cse, 
