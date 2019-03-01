@@ -13,6 +13,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/2_style.css',
       './lib-for-link/src/global-header/style/3_custom_style.css',
       './lib-for-link/src/global-header/style/header.css',
+      './lib-for-link/src/global-header/style/btn-navbar.css',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/sidebar.css',
       './lib-for-link/src/global-header/style/go-top.css',
