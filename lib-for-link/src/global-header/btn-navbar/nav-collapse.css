@@ -1,10 +1,33 @@
+#masthead #menu-primary a {
+  color: white;
+}
+
+#masthead #menu-primary ul > li > a {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+#masthead .nav-collapse #menu-primary,
+#masthead .nav-collapse .dropdown-menu {
+  background-color: #2D2D2D;
+}
+
 @media (max-width: 979px) {
   #masthead .nav-collapse.collapse {
     overflow: hidden;
     height: 0;
   }
+  
   #masthead .nav-collapse {
     height: auto;
+  }
+  
+  #masthead .nav-collapse .nav > li:not(.dropdown) {
+    display: none;
+  }
+  
+  #masthead .nav-collapse .nav > li.dropdown > a {
+    display: none;
   }
 }
   

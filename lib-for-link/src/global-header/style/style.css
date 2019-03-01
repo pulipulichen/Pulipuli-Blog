@@ -242,23 +242,6 @@
     }
 }
 
-@media (max-width: 979px) {
-    #menu-primary {
-        background-color: #212021;
-    }
-    #menu-primary a {
-        color:white;
-    }
-    .nav-collapse, .nav-collapse.collapse {
-        top: -5px;
-    }
-}
-
-#menu-primary ul > li > a {
-    white-space: nowrap;
-    overflow-x: hidden;
-}
-
 .widget-content.popular-posts dd {
     margin-bottom: 0.5em;
     clear: both;
