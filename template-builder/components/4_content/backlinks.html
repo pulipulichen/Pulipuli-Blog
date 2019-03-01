@@ -34,12 +34,27 @@
 </script>
 -->
 
-test
+<!-- =================================== -->
+<!-- 
+  -- @author Pulipuli Chen 20190301
+  -- 不知道為什麼，這裡最後變成了 <a></a> 
+  -->
 <a name='links' />
+
+<!-- 
+  -- @author Pulipuli Chen 20190301
+  -- 顯示永久連結的位置
+  -->
 <h4>
   <data:post.backlinksLabel/>
 </h4>
 
+<!-- =================================== -->
+
+<!-- 
+  -- @author Pulipuli Chen 20190301
+  -- 大部分時候，以下不顯示
+  -->
 <b:if cond='data:post.numBacklinks != 0'>
   <dl class='comments-block' id='comments-block'>
     <b:loop values='data:post.backlinks' var='backlink'>
@@ -67,7 +82,13 @@ test
     </b:loop>
   </dl>
 </b:if>
+  
+<!-- =================================== -->
 
+<!-- 
+  -- @author Pulipuli Chen 20190301
+  -- 顯示「建立連結」的位置
+  -->
 <p class='comment-footer'>
   <a id="comment-form-anchor" name="comment-form-anchor" />
   <a class='comment-link' 

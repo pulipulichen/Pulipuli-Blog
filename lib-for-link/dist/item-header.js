@@ -1534,6 +1534,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./lib-for-link/src/item-header/style/backlinks.css":
+/*!**********************************************************!*\
+  !*** ./lib-for-link/src/item-header/style/backlinks.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./backlinks.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-header/style/backlinks.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./lib-for-link/src/item-header/style/comment.css":
 /*!********************************************************!*\
   !*** ./lib-for-link/src/item-header/style/comment.css ***!
@@ -1679,6 +1709,21 @@ exports.push([module.i, "\n/******************************************/\n@media 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, "#main .entry-content article .meta1 .item-control a {\n  margin-right: 0.5rem;\n  white-space: nowrap;\n  cursor: pointer;\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-header/style/backlinks.css":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-header/style/backlinks.css ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "#backlinks-container h4 {\n  float: left;\n  line-height: 1rem;\n  margin-right: 25px;\n  cursor: default;\n}\n\n#backlinks-container h4:after {\n  bottom: 10px;\n  left: inherit;\n  right: -20px;\n}\n\n#backlinks-container a[href] {\n  line-height: 2.4rem;\n}\n\n#backlinks-container p {\n  margin-bottom: 0;\n}", ""]);
 
 
 
@@ -2350,9 +2395,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 2:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/item-header/style/article-meta.css ./lib-for-link/src/item-header/style/comment.css ./lib-for-link/src/item-header/style/go-top.css ./lib-for-link/src/item-header/style/image.css ./lib-for-link/src/item-header/style/style-item.css ./lib-for-link/src/item-header/script/script-item.js ./lib-for-link/src/item-header/modules/related-posts/related-posts.js ./lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js ./lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js ./lib-for-link/src/item-header/style-print/style-print.css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/item-header/style/article-meta.css ./lib-for-link/src/item-header/style/comment.css ./lib-for-link/src/item-header/style/go-top.css ./lib-for-link/src/item-header/style/image.css ./lib-for-link/src/item-header/style/backlinks.css ./lib-for-link/src/item-header/style/style-item.css ./lib-for-link/src/item-header/script/script-item.js ./lib-for-link/src/item-header/modules/related-posts/related-posts.js ./lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js ./lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js ./lib-for-link/src/item-header/style-print/style-print.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2360,6 +2405,7 @@ __webpack_require__(/*! ./lib-for-link/src/item-header/style/article-meta.css */
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/comment.css */"./lib-for-link/src/item-header/style/comment.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/go-top.css */"./lib-for-link/src/item-header/style/go-top.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/image.css */"./lib-for-link/src/item-header/style/image.css");
+__webpack_require__(/*! ./lib-for-link/src/item-header/style/backlinks.css */"./lib-for-link/src/item-header/style/backlinks.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/style-item.css */"./lib-for-link/src/item-header/style/style-item.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/script/script-item.js */"./lib-for-link/src/item-header/script/script-item.js");
 __webpack_require__(/*! ./lib-for-link/src/item-header/modules/related-posts/related-posts.js */"./lib-for-link/src/item-header/modules/related-posts/related-posts.js");
