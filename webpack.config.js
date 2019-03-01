@@ -33,7 +33,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js',
       
       './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.css',
-      './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.js'
+      './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.js',
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/article-meta.css',
