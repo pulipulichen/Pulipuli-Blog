@@ -40,6 +40,14 @@ var initSearchInput = () => {
       $('.gcse-placeholder:first').submit()
     })
     
+    $('.gcse-placeholder-dropdown').submit(function () {
+      return menu_search_submit(this);
+    })
+    $('.srch_btn-dropdown').click(() => {
+      //$('input.gsc-search-button').click()
+      $('.gcse-placeholder-dropdown').submit()
+    })
+    
     var testSearch = () => {
       $('.gcse-placeholder:first input').val('test')
       setTimeout(() => {
@@ -47,6 +55,14 @@ var initSearchInput = () => {
       }, 1000)
     }
     //testSearch()
+    
+    var testSearchDropdown = () => {
+      $('.gcse-placeholder-dropdown input').val('test')
+      setTimeout(() => {
+        $('.gcse-placeholder-dropdown').submit()
+      }, 1000)
+    }
+    testSearchDropdown()
   })
     
   
@@ -95,8 +111,8 @@ var menu_search_submit = function (_form) {
   ga("send", "event", "search", _query, 1);
   //console.log("送出GA事件 search");
 
-  $("#masthead .gcse input.gsc-input").val(_query)
-  $("#masthead .gcse .gsc-search-button").click()
+  $(".gcse input.gsc-input").val(_query)
+  $(".gcse .gsc-search-button").click()
   //console.log(['query', _query])
   return false;
 };

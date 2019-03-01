@@ -86,4 +86,36 @@
     color: #fff;
   }
 }
+
+/* ****************************************** */
+/* @media (max-width: 680px) { */
+
+@media (max-width: 680px) {
+  #masthead .nav-collapse.collapse li.search {
+    display: none;
+  }
+  
+  #masthead .nav-collapse li.search {
+    border-top: 2px solid #F69087;
+    padding-top: 27px;
+  }
+  
+  #masthead .nav-collapse .dropdown-menu {
+    border-top-width: 0;
+    clear: both;
+    margin-top: 16px;
+  }
+  
+  #masthead .nav-collapse li.search .gcse-placeholder-dropdown input.gsc-input-placeholder {
+    margin-left: 19px;
+    float: left;
+    margin-right: 25px;
+  }
+  
+  #masthead .nav-collapse li.search .srch_btn-dropdown {
+    color: white;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+}
   

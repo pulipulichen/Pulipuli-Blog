@@ -315,8 +315,7 @@ $(() => {
   let testOpen = () => {
     $('#masthead .btn-navbar').click()
   }
-  //testOpen()
-  
+  testOpen()  
 })
 
 
@@ -570,6 +569,14 @@ var initSearchInput = () => {
       $('.gcse-placeholder:first').submit()
     })
     
+    $('.gcse-placeholder-dropdown').submit(function () {
+      return menu_search_submit(this);
+    })
+    $('.srch_btn-dropdown').click(() => {
+      //$('input.gsc-search-button').click()
+      $('.gcse-placeholder-dropdown').submit()
+    })
+    
     var testSearch = () => {
       $('.gcse-placeholder:first input').val('test')
       setTimeout(() => {
@@ -577,6 +584,14 @@ var initSearchInput = () => {
       }, 1000)
     }
     //testSearch()
+    
+    var testSearchDropdown = () => {
+      $('.gcse-placeholder-dropdown input').val('test')
+      setTimeout(() => {
+        $('.gcse-placeholder-dropdown').submit()
+      }, 1000)
+    }
+    testSearchDropdown()
   })
     
   
@@ -625,8 +640,8 @@ var menu_search_submit = function (_form) {
   ga("send", "event", "search", _query, 1);
   //console.log("送出GA事件 search");
 
-  $("#masthead .gcse input.gsc-input").val(_query)
-  $("#masthead .gcse .gsc-search-button").click()
+  $(".gcse input.gsc-input").val(_query)
+  $(".gcse .gsc-search-button").click()
   //console.log(['query', _query])
   return false;
 };
@@ -1599,7 +1614,7 @@ exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n 
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#masthead #menu-primary a {\n  color: white;\n}\n#masthead .dropdown-menu {\n  z-index: -1;\n}\n\n#masthead #menu-primary ul > li > a {\n  white-space: nowrap;\n  overflow-x: hidden;\n}\n\n#masthead .navbar .nav li.search {\n  display: none;\n}\n\n\n/* ****************************************** */\n/* @media (min-width: 979px) { */\n\n@media (min-width: 979px) {\n  #masthead .dropdown-menu {\n    margin-top: 2px;\n  }\n}\n\n/* ****************************************** */\n/* @media (max-width: 979px) { */\n\n@media (max-width: 979px) {\n  #masthead .nav-collapse #menu-primary,\n  #masthead .nav-collapse .dropdown-menu {\n    background-color: #2D2D2D;\n  }\n  \n  #masthead .nav-collapse .dropdown-menu {\n    border-top: 2px solid #F69087;\n    position: fixed;\n    z-index: -1;\n    width: 100vw;\n  }\n  \n  #masthead .nav-collapse.collapse {\n    overflow: hidden;\n    height: 0;\n  }\n  \n  #masthead .nav-collapse.collapse .dropdown-menu {\n    display: none;\n  }\n  \n  #masthead .nav-collapse {\n    height: auto;\n  }\n  \n  #masthead .nav-collapse .nav > li:not(.dropdown) {\n    display: none;\n  }\n  \n  #masthead .nav-collapse .nav > li.dropdown > a {\n    display: none;\n  }\n  .nav-collapse.in.collapse .dropdown .dropdown-toggle {\n    display:none;\n  }\n\n  .nav-collapse .dropdown-menu {\n    display: block;\n    margin: 0;\n  }\n\n  .navbar .nav .dropdown-menu li a {\n    padding-left:18px !important;\n    border-radius: 0;\n  }\n\n  .navbar .nav .dropdown-menu li a:hover, \n  .navbar .nav .dropdown-menu li a:active, \n  .navbar .nav .dropdown-menu li a:focus {\n    border-left: 3px solid #85CCB1;\n    padding-left:15px !important;\n  }\n\n  .navbar .nav .dropdown-menu li.active, .navbar .nav .dropdown-menu li:hover {\n    background: none repeat scroll 0 0 rgba(255,255,255,0.02);\n    color: #fff;\n  }\n}\n  ", ""]);
+exports.push([module.i, "#masthead #menu-primary a {\n  color: white;\n}\n#masthead .dropdown-menu {\n  z-index: -1;\n}\n\n#masthead #menu-primary ul > li > a {\n  white-space: nowrap;\n  overflow-x: hidden;\n}\n\n#masthead .navbar .nav li.search {\n  display: none;\n}\n\n\n/* ****************************************** */\n/* @media (min-width: 979px) { */\n\n@media (min-width: 979px) {\n  #masthead .dropdown-menu {\n    margin-top: 2px;\n  }\n}\n\n/* ****************************************** */\n/* @media (max-width: 979px) { */\n\n@media (max-width: 979px) {\n  #masthead .nav-collapse #menu-primary,\n  #masthead .nav-collapse .dropdown-menu {\n    background-color: #2D2D2D;\n  }\n  \n  #masthead .nav-collapse .dropdown-menu {\n    border-top: 2px solid #F69087;\n    position: fixed;\n    z-index: -1;\n    width: 100vw;\n  }\n  \n  #masthead .nav-collapse.collapse {\n    overflow: hidden;\n    height: 0;\n  }\n  \n  #masthead .nav-collapse.collapse .dropdown-menu {\n    display: none;\n  }\n  \n  #masthead .nav-collapse {\n    height: auto;\n  }\n  \n  #masthead .nav-collapse .nav > li:not(.dropdown) {\n    display: none;\n  }\n  \n  #masthead .nav-collapse .nav > li.dropdown > a {\n    display: none;\n  }\n  .nav-collapse.in.collapse .dropdown .dropdown-toggle {\n    display:none;\n  }\n\n  .nav-collapse .dropdown-menu {\n    display: block;\n    margin: 0;\n  }\n\n  .navbar .nav .dropdown-menu li a {\n    padding-left:18px !important;\n    border-radius: 0;\n  }\n\n  .navbar .nav .dropdown-menu li a:hover, \n  .navbar .nav .dropdown-menu li a:active, \n  .navbar .nav .dropdown-menu li a:focus {\n    border-left: 3px solid #85CCB1;\n    padding-left:15px !important;\n  }\n\n  .navbar .nav .dropdown-menu li.active, .navbar .nav .dropdown-menu li:hover {\n    background: none repeat scroll 0 0 rgba(255,255,255,0.02);\n    color: #fff;\n  }\n}\n\n/* ****************************************** */\n/* @media (max-width: 680px) { */\n\n@media (max-width: 680px) {\n  #masthead .nav-collapse.collapse li.search {\n    display: none;\n  }\n  \n  #masthead .nav-collapse li.search {\n    border-top: 2px solid #F69087;\n    padding-top: 27px;\n  }\n  \n  #masthead .nav-collapse .dropdown-menu {\n    border-top-width: 0;\n    clear: both;\n    margin-top: 16px;\n  }\n  \n  #masthead .nav-collapse li.search .gcse-placeholder-dropdown input.gsc-input-placeholder {\n    margin-left: 19px;\n    float: left;\n    margin-right: 25px;\n  }\n  \n  #masthead .nav-collapse li.search .srch_btn-dropdown {\n    color: white;\n    cursor: pointer;\n    margin-top: 4px;\n  }\n}\n  ", ""]);
 
 
 
@@ -1614,7 +1629,7 @@ exports.push([module.i, "#masthead #menu-primary a {\n  color: white;\n}\n#masth
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#footer .go-top {\n    border-left-width: 0;\n}\n\n/*****************************/\n/* 20170312 GO to comment */\n#footer .go-top .goto-comment {\n    display: none;\n}\n\n\n/*********************************/\n/* 底部按鈕的問題 */\n#footer .go-top {\n    position: fixed;\n    right: 1em;\n    bottom: calc(50px + 1em);\n    z-index: 999;\n}\n\n#footer .go-top a {\n    background-color: #AD7518;\n    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);\n    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    /*margin-bottom: 0.5em;*/\n}\n\n/*\n@media (max-height: 320px) {\n    #footer .go-top {\n        position: static;\n    }\n}\n*/\n\n/*\n@media (max-width: 979px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/\n\n/*************************************/\n/* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */\n\n/*\n@media (max-width: 460px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/", ""]);
+exports.push([module.i, "#footer .go-top {\n    border-left-width: 0;\n}\n\n/*****************************/\n/* 20170312 GO to comment */\n#footer .go-top .goto-comment {\n    display: none;\n}\n\n\n/*********************************/\n/* 底部按鈕的問題 */\n#footer .go-top {\n    position: fixed;\n    right: 1em;\n    bottom: calc(50px + 1em);\n    z-index: 999;\n}\n\n#footer footer .go-top a {\n    background-color: #AD7518;\n    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);\n    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    /*margin-bottom: 0.5em;*/\n}\n\n/*\n@media (max-height: 320px) {\n    #footer .go-top {\n        position: static;\n    }\n}\n*/\n\n/*\n@media (max-width: 979px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/\n\n/*************************************/\n/* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */\n\n/*\n@media (max-width: 460px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/", ""]);
 
 
 
@@ -1674,7 +1689,7 @@ exports.push([module.i, "\n\n#masthead .search-bar .gcse {\n  position: fixed;\n
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n#masthead .gsc-results-wrapper-overlay {\n  line-height: 1.5em;\n  top: 4rem;\n  height: calc(100vh - 10rem);\n}\n\n.gsc-results-wrapper-overlay .gcsc-branding {\n  display: none;\n}\n\n.gsc-results-wrapper-overlay .gsc-cursor-box {\n  text-align: center;\n}\n\n.gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page {\n  padding: 7px 10px;\n  border: 1px solid gray !important;\n  border-radius: 5px;\n  cursor: pointer !important;\n  color: gray !important;\n  text-decoration: none !important;\n}\n\n.gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page.gsc-cursor-current-page {\n  color: black !important;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper {\n  max-height: calc(100% - 120px);\n  overflow-y: auto;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper > .gsc-adBlock {\n  display: none;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper img.gs-image {\n  width: 100% !important;\n  height: auto !important;\n  max-width: 100% !important;\n  max-height: 100% !important;\n  border: 1px solid gray;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper a.gs-image {\n  width: 176px;\n}\n\n.gsc-results-wrapper-overlay .gs-image-box.gs-web-image-box {\n  width: 176px !important;\n  height: auto !important;\n  max-height: 176px;\n  /*margin-right: calc(1em + 7px);*/\n  top: -3em;\n  margin-bottom: -3em;\n  position: relative;\n}\n\n.gsc-results-wrapper-overlay div.gs-title,\n.gsc-results-wrapper-overlay div.gsc-url-top {\n  margin-left: calc(176px + 1em);\n}\n\n.gsc-results-wrapper-overlay div.gs-snippet {\n  margin-left: 19px;\n}\n\n.gsc-results-wrapper-overlay td.gsc-table-cell-thumbnail.gsc-thumbnail {\n  width: 176px;\n  display: block !important;\n}", ""]);
+exports.push([module.i, "\n.gcse .gsc-results-wrapper-overlay {\n  line-height: 1.5em;\n  top: 50px;\n  height: calc(100vh - 160px);\n  left: 50px;\n  width: calc(100vw - 160px);\n}\n\n.gcse .gsc-results-wrapper-overlay .gcsc-branding {\n  display: none;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-cursor-box {\n  text-align: center;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page {\n  padding: 7px 10px;\n  border: 1px solid gray !important;\n  border-radius: 5px;\n  cursor: pointer !important;\n  color: gray;\n  text-decoration: none !important;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page.gsc-cursor-current-page {\n  color: black;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-wrapper {\n  max-height: calc(100% - 120px);\n  overflow-y: auto;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-wrapper > .gsc-adBlock {\n  display: none;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-wrapper img.gs-image {\n  width: 100% !important;\n  height: auto !important;\n  max-width: 100% !important;\n  max-height: 100% !important;\n  border: 1px solid gray;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-wrapper a.gs-image {\n  width: 176px;\n}\n\n.gcse .gsc-results-wrapper-overlay .gs-image-box.gs-web-image-box {\n  width: 176px;\n  height: auto !important;\n  max-height: 176px;\n  /*margin-right: calc(1em + 7px);*/\n  top: -3em;\n  margin-bottom: -3em;\n  position: relative;\n}\n\n.gcse .gsc-results-wrapper-overlay div.gs-title,\n.gcse .gsc-results-wrapper-overlay div.gsc-url-top {\n  margin-left: calc(176px + 1em);\n}\n\n.gcse .gsc-results-wrapper-overlay div.gs-snippet {\n  margin-left: 19px;\n}\n\n.gcse .gsc-results-wrapper-overlay td.gsc-table-cell-thumbnail.gsc-thumbnail {\n  width: 176px;\n  display: block !important;\n}\n\n.gcse .gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page.gsc-cursor-current-page,\n.gcse .gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page:hover {\n  background-color: #AD7518;\n  color: white;\n}\n\n/* ****************************************** */\n/* @media (max-width: 680px) { */\n\n@media (max-width: 680px) {\n  .gcse .gsc-results-wrapper-overlay {\n    top: 20px;\n    height: calc(100vh - 100px);\n    \n    left: 20px;\n    width: calc(100vw - 100px);    \n  }\n}\n\n\n/* ****************************************** */\n/* @media (max-width: 460px) { */\n\n@media (max-width: 460px) {\n  .gcse .gsc-results-wrapper-overlay {\n    top: 0px;\n    height: calc(100vh - 60px);\n    \n    left: 0px;\n    width: calc(100vw - 60px);    \n  }\n  \n  .gcse .gsc-results-wrapper-overlay div.gs-title, \n  .gcse .gsc-results-wrapper-overlay div.gsc-url-top {\n    margin-left: 0;\n  }\n  \n  .gcse .gsc-results-wrapper-overlay div.gs-snippet {\n    margin-left: 6px;\n  }\n  \n  .gcse .gsc-results-wrapper-overlay td.gsc-table-cell-thumbnail.gsc-thumbnail,\n  .gcse .gsc-results-wrapper-overlay .gs-image-box.gs-web-image-box,\n  .gcse .gsc-results-wrapper-overlay .gsc-wrapper a.gs-image {\n    width: 0;\n  }\n  \n  .gcse .gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page {\n    line-height: 35px;\n  }\n}", ""]);
 
 
 
