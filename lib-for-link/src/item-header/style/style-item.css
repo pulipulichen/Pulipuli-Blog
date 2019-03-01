@@ -3,7 +3,8 @@
 #main .entry-content > article > p:first-of-type > a[href$=".jpg"]:first-of-type,
 #main .entry-content > article > p:first-of-type > a[href$=".gif"]:first-of-type,
 #main .entry-content > article > p:first-of-type > a[href|="https://lh3.googleusercontent.com/"]:first-of-type
-#main .entry-content > article > p:first-of-type > a[href$="-no"]:first-of-type, {
+#main .entry-content > article > p:first-of-type > a[href$="-no"]:first-of-type,
+#main .entry-content > article > p:first-of-type > a[href$=".png?puli_gphoto=1"]:first-of-type {
     margin-left: -2em;
     display: block;
     text-align:center;

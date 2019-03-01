@@ -1,0 +1,18 @@
+/**
+ * @author Pulipuli Chen 20190301
+ * 修正圖片寬度的問題
+ */
+#main article img {
+  max-width: calc(100% - 2rem);
+}
+
+@media (max-width: 460px) {
+  #main article img {
+    max-width: 100%;
+    margin-left: -1rem;
+  }
+  #main article > p > a[href] {
+    display: block;
+    text-align: center;
+  }
+}
