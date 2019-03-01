@@ -57,9 +57,9 @@
 // 標記資訊
 -->
 
-<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
 <link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='shortcut icon' type='image/vnd.microsoft.icon'/>
-<meta content='#A1501A' name='theme-color'/>
+<meta name='theme-color' content='#A1501A' />
 <link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='icon' sizes='192x192'/>
 <link href='//lh3.googleusercontent.com/-vjf_alp-zjQ/VvtkKVpqCjI/AAAAAAACuMI/HPJXcEemwok/s0/pulipuli144x144.jpg' rel='apple-touch-icon' sizes='144x144'/>
 
@@ -95,6 +95,15 @@
   <!-- <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-olw.js" type="text/javascript"></script> -->
 </b:if>
 <!-- ======================================== -->
+
+<!-- ===============
+  -- 設定blog變數的地方
+  -- =============== -->
+<meta class='blog-variables'
+  expr:data-blog-canonicalUrl='data:blog.canonicalUrl'
+  expr:data-blog-url='data:blog.url'
+  expr:data-blog-homepageUrl='data:blog.homepageUrl'
+  expr:data-blog-canonicalHomepageUrl='data:blog.canonicalHomepageUrl' />
 
 </head>
 
@@ -708,6 +717,7 @@
           >
       <data:post.body/>
     </span>
+    <!-- @TODO #23 -->
     <script type='text/javascript'>
       var x=&quot;<data:post.title/>&quot;
       ,y=&quot;<data:post.url/>&quot;
