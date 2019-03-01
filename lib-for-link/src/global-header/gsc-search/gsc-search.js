@@ -35,6 +35,14 @@ var initSearchInput = () => {
     $('.gcse-placeholder').submit(function () {
       return menu_search_submit(this);
     })
+    
+    var testSearch = () => {
+      $('.gcse-placeholder:first input').val('test')
+      setTimeout(() => {
+        $('.gcse-placeholder:first').submit()
+      }, 1000)
+    }
+    testSearch()
   })
     
   
@@ -83,6 +91,6 @@ var menu_search_submit = function (_form) {
 
   $("#masthead .gcse input.gsc-input").val(_query)
   $("#masthead .gcse .gsc-search-button").click()
-  console.log(['query', _query])
+  //console.log(['query', _query])
   return false;
 };
