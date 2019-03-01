@@ -6,6 +6,62 @@
  * @author Pulipuli Chen 20190301
  * 開始處理底板的問題
  */
+
+@media (min-width:767px) {
+    #side-bar {
+        /*display: none;*/
+        width: 100%;
+    }
+    
+    #sidebar > div.widget {
+    }
+    
+    #sidebar > div.widget .widget-content {
+        min-height: 360px;
+        max-height: 360px;
+        overflow-y: auto;
+        margin-bottom: 0;
+    }
+    
+    .sidebar .widget {
+        margin-bottom: 0;
+    }
+    
+    #content {
+        width: 100% !important;
+        max-width: 1170px;
+    }
+    /*
+    .popular-posts {
+        padding-bottom: 0;
+    }
+    */
+}
+
+
+#side-bar {
+    margin-left: 30px;
+}
+
+@media (min-width: 767px) {
+    #side-bar {
+        max-width: 1170px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #side-bar {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 979px) and (max-width: 1200px) {
+    #sidebar > div.widget {
+        width: calc(33% - 0.5em);
+        margin-right: 1em;
+    }
+}
+
 @media (min-width:767px) and (max-width: 979px) {
   #sidebar > .widget:not(.two-col) {
     display: none;
@@ -38,7 +94,32 @@
 } 
 
 @media (min-width:979px) {
+  /*
+  #side-bar {
+    margin-left: 0 !important;
+  }
+  */
+  
   #sidebar > .widget:not(.three-col) {
     display: none;
+  }
+  
+  #sidebar > .widget.three-col {
+    margin-bottom: 18px;
+    width: calc(33% - 9px);
+    float: left;
+    margin-right: 18px;
+    clear: none;
+    /*width: calc(50% - 0.5em);*/
+    /*border: 1px solid red;*/
+  }
+  
+  #sidebar > .widget.three-col:nth-of-type(3n) {
+    /*border: 1px solid red;*/
+    margin-right: 0;
+  }    
+
+  #sidebar > .comments {
+    display: block;
   }
 }
