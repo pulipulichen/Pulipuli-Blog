@@ -526,12 +526,6 @@ body .addthis-smartlayers {
     user-select: none;
 }
 
-/*****************************/
-/* 20170312 GO to comment */
-#footer .go-top .goto-comment {
-    display: block !important;
-    margin-top: 0.5em;
-}
 
 /*****************************/
 /* 20170916 修正Google投影片iframe的問題 */

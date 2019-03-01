@@ -6,3 +6,6 @@
 979
 1200
 
+# AddThis Floating Position
+
+只有在480px以下，AddThis工具才會放到下面

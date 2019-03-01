@@ -990,29 +990,6 @@ body > div.sumome-share-client-counts div.sumome-share-client-animated {
     }
 }
 
-/*********************************/
-/* 底部按鈕的問題 */
-#footer .go-top {
-    position: fixed;
-    right: 1em;
-    bottom: 1em;
-    z-index: 999;
-}
-
-#footer .go-top a {
-    background-color: #AD7518;
-    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
-    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
-    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
-    /*margin-bottom: 0.5em;*/
-}
-
-@media (max-height: 320px) {
-    #footer .go-top {
-        position: static;
-    }
-}
-
 /**************************/
 
 a[name][id]:target,
@@ -1478,16 +1455,8 @@ header > .back-button {
     .sumome-stylebufferbottom-shim {
         height: 50px;
     }
-    #footer .go-top {
-        bottom: calc(50px + 1em);
-    }
 }
 
-@media (max-width: 979px) {
-    #footer .go-top {
-        bottom: calc(50px + 1em);
-    }
-}
 
 /****************************************/
 /* 20160625 隨機文章 */
@@ -1620,12 +1589,6 @@ ul#random_posts {
     color: black;
 }
 
-/*****************************/
-/* 20170312 GO to comment */
-#footer .go-top .goto-comment {
-    display: none;
-}
-
 /******************************/
 /* 20170912 navbar */
 @media (max-width: 979px) {
@@ -1649,12 +1612,9 @@ iframe#comment-editor {
     height: 250px;
 }
 
-#footer .go-top {
-    border-left-width: 0;
+.post-avatar {
+  background:url(//lh3.googleusercontent.com/-6qwdHih3tFk/Vv6N0dTaICI/AAAAAAACuRA/AsKTNm9c_Bg/s0/post-avatar.png)
 }
-
-
-.post-avatar{background:url(//lh3.googleusercontent.com/-6qwdHih3tFk/Vv6N0dTaICI/AAAAAAACuRA/AsKTNm9c_Bg/s0/post-avatar.png)}
 
 
 

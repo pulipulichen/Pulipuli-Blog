@@ -14,6 +14,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/header.css',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/sidebar.css',
+      './lib-for-link/src/global-header/style/go-top.css',
       './lib-for-link/src/global-header/style/style.css',
       
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
@@ -35,9 +36,10 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.js'
     ],
     'item-header': [
-      './lib-for-link/src/item-header/style/style-item.css',
       './lib-for-link/src/item-header/style/article-meta.css',
       './lib-for-link/src/item-header/style/comment.css',
+      './lib-for-link/src/item-header/style/go-top.css',
+      './lib-for-link/src/item-header/style/style-item.css',
       
       './lib-for-link/src/item-header/script/script-item.js',
       './lib-for-link/src/item-header/modules/related-posts/related-posts.js',

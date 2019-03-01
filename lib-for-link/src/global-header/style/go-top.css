@@ -1,0 +1,54 @@
+#footer .go-top {
+    border-left-width: 0;
+}
+
+/*****************************/
+/* 20170312 GO to comment */
+#footer .go-top .goto-comment {
+    display: none;
+}
+
+
+/*********************************/
+/* 底部按鈕的問題 */
+#footer .go-top {
+    position: fixed;
+    right: 1em;
+    bottom: calc(50px + 1em);
+    z-index: 999;
+}
+
+#footer .go-top a {
+    background-color: #AD7518;
+    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
+    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
+    /*margin-bottom: 0.5em;*/
+}
+
+/*
+@media (max-height: 320px) {
+    #footer .go-top {
+        position: static;
+    }
+}
+*/
+
+/*
+@media (max-width: 979px) {
+    #footer .go-top {
+        bottom: calc(50px + 1em);
+    }
+}
+*/
+
+/*************************************/
+/* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */
+
+/*
+@media (max-width: 460px) {
+    #footer .go-top {
+        bottom: calc(50px + 1em);
+    }
+}
+*/
