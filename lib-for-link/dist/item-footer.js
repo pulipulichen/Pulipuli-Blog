@@ -266,7 +266,7 @@ if(false) {}
 /***/ (function(module, exports) {
 
 /**
- * config
+ * disqus主要檔案
  * @author Pulipuli Chen 20190301
  * @type String
  */
