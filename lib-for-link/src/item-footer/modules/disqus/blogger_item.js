@@ -3,7 +3,7 @@ var disqus_url = disqus_blogger_current_url;
 (function () {
     "use strict";
     var get_comment_block = function () {
-        var block = document.getElementById('comments');
+        var block = document.getElementById('disqus_thread');
         if (!block) {
             block = document.getElementById('disqus-blogger-comment-block');
         }
