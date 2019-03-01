@@ -964,31 +964,18 @@ _display_related_posts = function (items, msgs, config) {
     
 };
 
-//---------------------------------------
-
-$('.go-top').click(function(){
-  $('.st-content').animate({scrollTop:0},'slow');
-  $('html, body').animate({scrollTop:0},'slow');
-  return false;
-});
-
-//----------------------------------------
-
-$(function () {
-    $(".widget h2").wrapInner("<span/>");
-});
 
 // -------------------
 $(function ($) {
   var aboveHeight = $('#leader-wrapper').outerHeight();
   $(window).scroll(function () {
     if ($(window).scrollTop() > aboveHeight) {
-      $('#masthead').addClass('fixed-nav').css('top', '0').next()
-              .css('padding-top', '5px');
+      $('#masthead').addClass('fixed-nav').css('top', '0')
+              .next().css('padding-top', '5px');
 
     } else {
-      $('#masthead').removeClass('fixed-nav').next()
-              .css('padding-top', '0');
+      $('#masthead').removeClass('fixed-nav')
+              .next().css('padding-top', '0');
     }
   });
 });
@@ -1551,7 +1538,7 @@ exports.push([module.i, "#header-inner {\n  width: auto !important;\n  /*padding
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n */\n\n/* --------------------------------------------- */\n/* @media (max-width: 979px) {*/\n@media (max-width: 979px) {\n  #masthead .btn-navbar {\n    font-size: 23px !important;\n    margin-top: 15px;\n    margin-bottom: 0;\n    padding-right: 16px;\n    margin-left: 0;\n    padding-left: 17px;\n  }\n  \n  /* --------------------------------------------- */\n  /* @media (max-width: 979px) fixed-nav {*/\n  #masthead.fixed-nav .btn-navbar {\n    margin-top: 5px;\n  }\n}", ""]);
+exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n */\n\n/* --------------------------------------------- */\n/* @media (max-width: 979px) {*/\n@media (max-width: 979px) {\n  #masthead .btn-navbar {\n    font-size: 23px !important;\n    margin-top: 15px;\n    margin-bottom: 0;\n    padding-right: 16px;\n    margin-left: 0;\n    padding-left: 17px;\n    width: 23px;\n  }\n  \n  /* --------------------------------------------- */\n  /* @media (max-width: 979px) fixed-nav {*/\n  #masthead.fixed-nav .btn-navbar {\n    margin-top: 5px;\n  }\n}", ""]);
 
 
 
@@ -1562,13 +1549,9 @@ exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n 
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/go-top.css ***!
   \***********************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "#footer .go-top {\n    border-left-width: 0;\n}\n\n/*****************************/\n/* 20170312 GO to comment */\n#footer .go-top .goto-comment {\n    display: none;\n}\n\n\n/*********************************/\n/* 底部按鈕的問題 */\n#footer .go-top {\n    position: fixed;\n    right: 1em;\n    bottom: calc(50px + 1em);\n    z-index: 999;\n}\n\n#footer .go-top a {\n    background-color: #AD7518;\n    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);\n    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    /*margin-bottom: 0.5em;*/\n}\n\n/*\n@media (max-height: 320px) {\n    #footer .go-top {\n        position: static;\n    }\n}\n*/\n\n/*\n@media (max-width: 979px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/\n\n/*************************************/\n/* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */\n\n/*\n@media (max-width: 460px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/", ""]);
-
-
+throw new Error("Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\global-header\\style\\go-top.css'");
 
 /***/ }),
 
@@ -1607,13 +1590,9 @@ exports.push([module.i, "\n/******************/\n\n#masthead #header h1 {\n  lin
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/sidebar.css ***!
   \************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "#sidebar .widget.about-me .description .avatar-image-container {\n  background-image: url(//lh3.googleusercontent.com/-tkBPlsBsFJg/V0M0b-gPKNI/AAAAAAACw9Y/Y-2BGg4z3H4/Image.jpg?imgmax=50);\n  background-repeat: no-repeat;\n  border-width: 0;\n  height: 54px;\n  width: 54px;\n  border-right-width: 0px; \n  border-top-width: 0px; \n  border-bottom-width: 0px; \n  border-left-width: 0px;\n  margin-left: 0.5rem;\n  display: block;\n  float: right;\n}\n\n#sidebar .widget.about-me .link-buttons {\n  white-space: nowrap;\n}\n\n#sidebar .widget a h2 {\n  cursor: inherit;\n}\n\n#sidebar .widget h2 {\n  cursor: default;\n}", ""]);
-
-
+throw new Error("Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\global-header\\style\\sidebar.css'");
 
 /***/ }),
 
