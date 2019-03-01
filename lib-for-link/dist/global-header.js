@@ -1551,7 +1551,7 @@ exports.push([module.i, "#header-inner {\n  width: auto !important;\n  /*padding
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n */\n\n/* --------------------------------------------- */\n/* @media (max-width: 979px) {*/\n@media (max-width: 979px) {\n  #masthead .btn-navbar {\n    font-size: 23px !important;\n    margin-top: 15px;\n    margin-bottom: 0;\n  }\n  \n  /* --------------------------------------------- */\n  /* @media (max-width: 979px) fixed-nav {*/\n}", ""]);
+exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n */\n\n/* --------------------------------------------- */\n/* @media (max-width: 979px) {*/\n@media (max-width: 979px) {\n  #masthead .btn-navbar {\n    font-size: 23px !important;\n    margin-top: 15px;\n    margin-bottom: 0;\n    padding-right: 16px;\n    margin-left: 0;\n    padding-left: 17px;\n  }\n  \n  /* --------------------------------------------- */\n  /* @media (max-width: 979px) fixed-nav {*/\n  #masthead.fixed-nav .btn-navbar {\n    margin-top: 5px;\n  }\n}", ""]);
 
 
 
