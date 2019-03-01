@@ -1,3 +1,34 @@
 #sidebar .widget.about-me .link-buttons .subscribe {
   display: none;
 }
+
+/**
+ * @author Pulipuli Chen 20190301
+ * 開始處理底板的問題
+ */
+@media (min-width:767px) {
+  #sidebar > .widget:not(.two-col) {
+    display: none;
+  }
+  
+  #sidebar > .widget.two-col {
+    margin-bottom: 18px;
+    /*width: calc(50% - 0.5em);*/
+    /*border: 1px solid red;*/
+  }
+  
+  /**
+   * 1 3 5
+   */
+  #sidebar > .widget.two-col:nth-of-type(odd) {
+    margin-right: 16px;
+    /*clear: both;*/
+  }
+  
+  /**
+   * 2 4 6
+   */
+  #sidebar > .widget.two-col:nth-of-type(even) {
+    /*border: 3px solid red;*/
+  }
+} 
