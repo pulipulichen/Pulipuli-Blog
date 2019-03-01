@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  devtool: 'source-map',
   entry: {
     'global-header': [
       './lib-for-link/src/global-header/breeze-theme/font-awesome.css',
