@@ -55,9 +55,11 @@
         margin-bottom: 0;
     }
     
+    /*
     #sidebar > div.widget:nth-of-type(4) {
         margin-right: 0;
     }
+    */
     
     /*
     #sidebar > div.widget.random {
@@ -90,11 +92,7 @@
     }
     
     
-    #sidebar > div.widget,
-    #sidebar > div.widget:nth-of-type(4) {
-        width: calc(50% - 0.5em);
-        margin-right: 1em;
-    }
+    
     
     /*
     #sidebar > div.widget:nth-of-type(2), 
