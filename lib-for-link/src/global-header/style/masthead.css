@@ -1,0 +1,80 @@
+
+/******************/
+
+#masthead #header h1 {
+  line-height:30px;
+  margin-top: 10px;
+}
+
+#masthead.fixed-nav.affix #header h1 {
+  line-height: 22px;
+}
+
+#masthead.fixed-nav {
+  opacity: 1 !important;
+  background-color: rgba(34, 34, 34, 0.9) !imporant;
+}
+
+/* ------------------------------ */
+
+@media (max-width: 460px) {
+  #masthead #header .description {
+    display: none;
+  }
+  #masthead #header {
+    /*margin-top: 15px;*/
+    margin-right:0 ;
+    max-width: calc(100% - 101px);
+    /*margin-left: 5px;*/
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+
+  #masthead {
+    height: auto;
+  }
+
+  /*
+  #masthead #header h1 {
+      line-height:50px;
+      margin-top: 2px;
+  }
+  */
+}
+
+@media (max-width: 979px) {
+  #masthead #header #header-inner{
+    /*margin-left: 10px !important;*/
+    margin-top: 15px;
+  }
+
+  /************/
+  #masthead {
+    position: fixed !important;
+  }
+
+  #masthead.fixed-nav.affix .btn-navbar {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  #masthead.fixed-nav.affix #header h1 {
+    line-height: 55px;
+    margin-top: 0 !important;
+  }
+
+  #masthead.fixed-nav.affix #header-inner {
+    margin-top: 0px;
+  }
+
+  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a {
+    padding-left:22px !important;
+  }
+
+  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:hover, 
+  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:active, 
+  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:focus {
+    padding-left:19px !important;
+  }
+
+}
