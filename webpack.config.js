@@ -42,8 +42,7 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/modules/related-posts/related-posts.js',
       './lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js',
       './lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js',
-    ],
-    'item-print': [
+      
       './lib-for-link/src/item-print/style/style-print.css',
       //'./lib-for-link/src/item-print/style/gutenberg.min.css'
     ],
