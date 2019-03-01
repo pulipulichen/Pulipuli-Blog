@@ -21,19 +21,23 @@ var initSearchInput = () => {
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(gcse, s);
   
-  $('.srch_btn').click(() => {
-    $('input.gsc-search-button').click()
-  })
   
   //initSearchInput()
-  
+  /*
   $('#searchform').submit(function () {
     return menu_search_submit(this);
   })
+  */
+  
   $(() => {
     //console.log($('.gcse-placeholder').length)
     $('.gcse-placeholder').submit(function () {
       return menu_search_submit(this);
+    })
+    
+    $('.srch_btn').click(() => {
+      //$('input.gsc-search-button').click()
+      $('.gcse-placeholder:first').submit()
     })
     
     var testSearch = () => {
@@ -42,7 +46,7 @@ var initSearchInput = () => {
         $('.gcse-placeholder:first').submit()
       }, 1000)
     }
-    testSearch()
+    //testSearch()
   })
     
   
@@ -61,11 +65,13 @@ var initSearchInput = () => {
  * 幫search button做調整
  * @author Pulipuli Chen 20190228
  */
+/*
 $(function () {
     $("#srch_btn").click(function () {
         $("#masthead input.gsc-search-button").click();
     });
 });
+*/
 
 var menu_search_submit = function (_form) {
   let _query

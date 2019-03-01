@@ -3,6 +3,10 @@ $(() => {
     $('#masthead .nav-collapse').toggleClass('collapse')
   })
   
-  $('#masthead .btn-navbar').click()
+  let testOpen = () => {
+    $('#masthead .btn-navbar').click()
+  }
+  //testOpen()
+  
 })
 

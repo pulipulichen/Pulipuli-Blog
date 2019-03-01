@@ -279,33 +279,6 @@ div.post-avatar {
   #content-wrapper {
     padding-top: 80px;
   }
-
-  .nav-collapse.in.collapse .dropdown .dropdown-toggle {
-    display:none;
-  }
-
-  .nav-collapse .dropdown-menu {
-    display: block;
-    margin: 0;
-  }
-
-  .navbar .nav .dropdown-menu li a {
-    padding-left:18px !important;
-  }
-
-  .navbar .nav .dropdown-menu li a:hover, .navbar .nav .dropdown-menu li a:active, .navbar .nav .dropdown-menu li a:focus {
-    border-left: 3px solid #85CCB1;
-    padding-left:15px !important;
-  }
-
-  .navbar .nav .dropdown-menu li.active, .navbar .nav .dropdown-menu li:hover {
-    background: none repeat scroll 0 0 rgba(255,255,255,0.02);
-    color: #fff;
-  }
-}
-
-.navbar .nav li.search {
-  display: none;
 }
 
 .container1{
