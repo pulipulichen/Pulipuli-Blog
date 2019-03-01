@@ -118,4 +118,16 @@
     margin-top: 4px;
   }
 }
+
+/* ****************************************** */
+/* @media (max-width: 480px) { */
+
+@media (max-width: 480px) {
+  #masthead .nav-collapse .dropdown-menu {
+    position: static;
+  }
   
+  #masthead .nav-collapse #menu-primary {
+    padding-top: 0;
+  }
+}

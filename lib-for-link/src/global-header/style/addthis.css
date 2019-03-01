@@ -2,7 +2,7 @@
   z-index: auto;
 }
 
-@media (min-width: 460px) {
+@media (min-width: 480px) {
   .addthis-smartlayers-mobile {
     display: none !important;
   }
@@ -14,7 +14,7 @@
   cursor: default;
 }
 
-@media (min-width: 460px) and (max-width: 979px) {
+@media (min-width: 480px) and (max-width: 979px) {
   /*
   .nav-collapse ul li {
       padding-left: 50px;

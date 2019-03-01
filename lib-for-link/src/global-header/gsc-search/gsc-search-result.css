@@ -96,7 +96,7 @@
 /* ****************************************** */
 /* @media (max-width: 460px) { */
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .gcse .gsc-results-wrapper-overlay {
     top: 0px;
     height: calc(100vh - 60px);

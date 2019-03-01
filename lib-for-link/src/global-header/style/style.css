@@ -44,7 +44,7 @@
   margin-left: 2em !important;
 }
 
-@media (max-width:460px) {
+@media (max-width:480px) {
   .entry-content li {
     margin-left: 1em !important;
   }
@@ -314,7 +314,7 @@ body .addthis-smartlayers {
 }
 */
 
-@media (min-width: 460px) and (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 767px) {
   .entry-container .entry-content {
     padding: 50px;
     padding-right: 20px;
@@ -378,7 +378,7 @@ body .addthis-smartlayers {
 }
 
 /*
-@media (max-width: 460px) {
+@media (max-width: 480px) {
     .site-footer .cloud-label-widget-content .label-size-4 {
         display:none;
     }
@@ -526,7 +526,7 @@ body .addthis-smartlayers {
 
 
 /********************/
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   body {
     font-size: 1rem;
   }
@@ -721,7 +721,7 @@ header > .back-button {
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .fixed-nav header > .back-button,
   header > .back-button {
     font-size: 20px;
@@ -1112,7 +1112,7 @@ header > .back-button {
 /*************************************/
 /* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   #content-wrapper #primary {
     padding-left:0px !important;
     padding-right:0px !important; 

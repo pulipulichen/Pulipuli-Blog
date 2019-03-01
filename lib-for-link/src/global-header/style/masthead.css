@@ -18,7 +18,7 @@
 
 /* ------------------------------ */
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   #masthead #header .description {
     display: none;
   }

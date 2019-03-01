@@ -62,7 +62,7 @@ var initSearchInput = () => {
         $('.gcse-placeholder-dropdown').submit()
       }, 1000)
     }
-    testSearchDropdown()
+    //testSearchDropdown()
   })
     
   
