@@ -1,6 +1,7 @@
 const path = require('path')
 
-module.exports = {
+let webpackConfig  = {
+  //cache: true,
   devtool: 'source-map',
   entry: {
     'global-header': [
@@ -83,3 +84,5 @@ module.exports = {
     ]
   }
 }
+
+module.exports = webpackConfig
