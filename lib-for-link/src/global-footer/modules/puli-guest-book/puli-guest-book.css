@@ -7,7 +7,7 @@
 }
 
 .puli-guest-book .guest-book-list {
-  border: 3px solid #D2CBBD;
+  /* border: 3px solid #D2CBBD; */
   max-height: 300px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -24,7 +24,7 @@
   background-image:none;
   background-color: white !important;
   margin: 0;
-  padding: 8px;
+  padding: 18px;
   list-style:none;
   clear:both;
   text-indent: 0px !important;
@@ -32,7 +32,7 @@
 }
 
 .puli-guest-book .guest-book-list .guest-book-li:hover {
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 .puli-guest-book .guest-book-list .guest-book-li .date {
@@ -88,12 +88,14 @@
   border-color: #5B5743;
 }
 
+/*
 .puli-guest-book .guest-book-list .guest-book-li.guest-book-li-0 {
   background-color: #F6F3E0 !important;
 }
 .puli-guest-book .guest-book-list .guest-book-li.guest-book-li-1 {
   background-color: white !important;
 }
+*/
 
 .puli-guest-book .guest-book-list strong.name a {
   display: inline;
