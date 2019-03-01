@@ -107,19 +107,35 @@
   #masthead .nav-collapse .dropdown-menu {
     border-top-width: 0;
     clear: both;
-    margin-top: 16px;
+    margin-top: 8px;
+  }
+  
+  #masthead .nav-collapse li.search .gcse-placeholder-dropdown {
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 15px;
+    width: calc(100vw - 60px);
+    line-height: 30px;
   }
   
   #masthead .nav-collapse li.search .gcse-placeholder-dropdown input.gsc-input-placeholder {
-    margin-left: 19px;
     float: left;
+    border-width: 0;
+    outline: none;
+    /*
+    margin-left: 19px;
     margin-right: 25px;
+    */
+    width: calc(100% - 40px);
   }
   
   #masthead .nav-collapse li.search .srch_btn-dropdown {
-    color: white;
+    color: gray;
     cursor: pointer;
-    margin-top: 4px;
+    margin-top: 0px;
+  }
+  #masthead .nav-collapse li.search .srch_btn-dropdown:hover {
+    color: #222222;
   }
   
   #masthead.fixed-nav form.gcse-placeholder-dropdown {

@@ -82,6 +82,15 @@
 
 
 /* --------------------------------------------- */
+/* @media (min-width: 979px) { */
+
+@media (min-width: 979px) {
+  #masthead .search-bar .nav-search .srch_btn {
+    line-height: 32px;
+  }
+}
+
+/* --------------------------------------------- */
 /* @media (max-width: 979px) { */
 
 @media (max-width: 979px) {
