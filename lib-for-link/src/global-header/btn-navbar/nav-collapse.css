@@ -1,0 +1,10 @@
+@media (max-width: 979px) {
+  #masthead .nav-collapse.collapse {
+    overflow: hidden;
+    height: 0;
+  }
+  #masthead .nav-collapse {
+    height: auto;
+  }
+}
+  

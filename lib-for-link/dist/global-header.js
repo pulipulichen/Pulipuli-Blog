@@ -270,6 +270,129 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./lib-for-link/src/global-header/btn-navbar/btn-navbar.css":
+/*!******************************************************************!*\
+  !*** ./lib-for-link/src/global-header/btn-navbar/btn-navbar.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./btn-navbar.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/btn-navbar/btn-navbar.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/btn-navbar/btn-navbar.js":
+/*!*****************************************************************!*\
+  !*** ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(() => {
+  $('#masthead .btn-navbar').click(() => {
+    $('#masthead .nav-collapse').toggleClass('collapse')
+  })
+})
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/btn-navbar/nav-collapse.css":
+/*!********************************************************************!*\
+  !*** ./lib-for-link/src/global-header/btn-navbar/nav-collapse.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./nav-collapse.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/btn-navbar/nav-collapse.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/go-top/go-top.css":
+/*!**********************************************************!*\
+  !*** ./lib-for-link/src/global-header/go-top/go-top.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./go-top.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/go-top/go-top.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/go-top/go-top.js":
+/*!*********************************************************!*\
+  !*** ./lib-for-link/src/global-header/go-top/go-top.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+//---------------------------------------
+
+$('.go-top').click(function(){
+  $('.st-content').animate({scrollTop:0},'slow');
+  $('html, body').animate({scrollTop:0},'slow');
+  return false;
+});
+
+/***/ }),
+
 /***/ "./lib-for-link/src/global-header/gsc-search/default.css":
 /*!***************************************************************!*\
   !*** ./lib-for-link/src/global-header/gsc-search/default.css ***!
@@ -1154,6 +1277,51 @@ var _load_random_posts = function () {
 
 /***/ }),
 
+/***/ "./lib-for-link/src/global-header/sidebar/sidebar.css":
+/*!************************************************************!*\
+  !*** ./lib-for-link/src/global-header/sidebar/sidebar.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./sidebar.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/sidebar/sidebar.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/sidebar/sidebar.js":
+/*!***********************************************************!*\
+  !*** ./lib-for-link/src/global-header/sidebar/sidebar.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+$(function () {
+    $(".widget h2").wrapInner("<span/>");
+});
+
+
+/***/ }),
+
 /***/ "./lib-for-link/src/global-header/style/2_style.css":
 /*!**********************************************************!*\
   !*** ./lib-for-link/src/global-header/style/2_style.css ***!
@@ -1214,66 +1382,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-header/style/btn-navbar.css":
-/*!*************************************************************!*\
-  !*** ./lib-for-link/src/global-header/style/btn-navbar.css ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./btn-navbar.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/btn-navbar.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./lib-for-link/src/global-header/style/go-top.css":
-/*!*********************************************************!*\
-  !*** ./lib-for-link/src/global-header/style/go-top.css ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./go-top.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/go-top.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./lib-for-link/src/global-header/style/header.css":
 /*!*********************************************************!*\
   !*** ./lib-for-link/src/global-header/style/header.css ***!
@@ -1313,36 +1421,6 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./masthead.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/masthead.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./lib-for-link/src/global-header/style/sidebar.css":
-/*!**********************************************************!*\
-  !*** ./lib-for-link/src/global-header/style/sidebar.css ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./sidebar.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/sidebar.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1439,6 +1517,51 @@ exports.push([module.i, "/* latin-ext */\n@font-face {\n  font-family: 'Lato';\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/btn-navbar/btn-navbar.css":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/btn-navbar/btn-navbar.css ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n */\n\n/* --------------------------------------------- */\n/* @media (max-width: 979px) {*/\n@media (max-width: 979px) {\n  #masthead .btn-navbar {\n    font-size: 23px !important;\n    margin-top: 15px;\n    margin-bottom: 0;\n    padding-right: 16px;\n    margin-left: 0;\n    padding-left: 17px;\n    width: 23px;\n  }\n  \n  /* --------------------------------------------- */\n  /* @media (max-width: 979px) fixed-nav {*/\n  #masthead.fixed-nav .btn-navbar {\n    margin-top: 5px;\n  }\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/btn-navbar/nav-collapse.css":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/btn-navbar/nav-collapse.css ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "@media (max-width: 979px) {\n  #masthead .nav-collapse.collapse {\n    overflow: hidden;\n    height: 0;\n  }\n  #masthead .nav-collapse {\n    height: auto;\n  }\n}\n  ", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/go-top/go-top.css":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/go-top/go-top.css ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "#footer .go-top {\n    border-left-width: 0;\n}\n\n/*****************************/\n/* 20170312 GO to comment */\n#footer .go-top .goto-comment {\n    display: none;\n}\n\n\n/*********************************/\n/* 底部按鈕的問題 */\n#footer .go-top {\n    position: fixed;\n    right: 1em;\n    bottom: calc(50px + 1em);\n    z-index: 999;\n}\n\n#footer .go-top a {\n    background-color: #AD7518;\n    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);\n    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);\n    /*margin-bottom: 0.5em;*/\n}\n\n/*\n@media (max-height: 320px) {\n    #footer .go-top {\n        position: static;\n    }\n}\n*/\n\n/*\n@media (max-width: 979px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/\n\n/*************************************/\n/* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */\n\n/*\n@media (max-width: 460px) {\n    #footer .go-top {\n        bottom: calc(50px + 1em);\n    }\n}\n*/", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/default.css":
 /*!*****************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/default.css ***!
@@ -1499,6 +1622,21 @@ exports.push([module.i, "\n#masthead .gsc-results-wrapper-overlay {\n  line-heig
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/sidebar/sidebar.css":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/sidebar/sidebar.css ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "#sidebar .widget.about-me .description .avatar-image-container {\n  background-image: url(//lh3.googleusercontent.com/-tkBPlsBsFJg/V0M0b-gPKNI/AAAAAAACw9Y/Y-2BGg4z3H4/Image.jpg?imgmax=50);\n  background-repeat: no-repeat;\n  border-width: 0;\n  height: 54px;\n  width: 54px;\n  border-right-width: 0px; \n  border-top-width: 0px; \n  border-bottom-width: 0px; \n  border-left-width: 0px;\n  margin-left: 0.5rem;\n  display: block;\n  float: right;\n}\n\n#sidebar .widget.about-me .link-buttons {\n  white-space: nowrap;\n}\n\n#sidebar .widget a h2 {\n  cursor: inherit;\n}\n\n#sidebar .widget h2 {\n  cursor: default;\n}", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/2_style.css":
 /*!************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/2_style.css ***!
@@ -1529,32 +1667,6 @@ exports.push([module.i, "#header-inner {\n  width: auto !important;\n  /*padding
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/btn-navbar.css":
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/btn-navbar.css ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "/**\n * 只有在 979 以下才會顯示這個按鈕\n */\n\n/* --------------------------------------------- */\n/* @media (max-width: 979px) {*/\n@media (max-width: 979px) {\n  #masthead .btn-navbar {\n    font-size: 23px !important;\n    margin-top: 15px;\n    margin-bottom: 0;\n    padding-right: 16px;\n    margin-left: 0;\n    padding-left: 17px;\n    width: 23px;\n  }\n  \n  /* --------------------------------------------- */\n  /* @media (max-width: 979px) fixed-nav {*/\n  #masthead.fixed-nav .btn-navbar {\n    margin-top: 5px;\n  }\n}", ""]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/go-top.css":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/go-top.css ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\global-header\\style\\go-top.css'");
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/header.css":
 /*!***********************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/header.css ***!
@@ -1582,17 +1694,6 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "\n/******************/\n\n#masthead #header h1 {\n  line-height:30px;\n  margin-top: 10px;\n}\n\n#masthead.fixed-nav.affix #header h1 {\n  line-height: 22px;\n}\n\n#masthead.fixed-nav {\n  opacity: 1 !important;\n  background-color: rgba(34, 34, 34, 0.9) !imporant;\n}\n\n\n/* ------------------------------ */\n\n@media (max-width: 460px) {\n  #masthead #header .description {\n    display: none;\n  }\n  #masthead #header {\n    /*margin-top: 15px;*/\n    margin-right:0 ;\n    max-width: calc(100% - 101px);\n    /*margin-left: 5px;*/\n    overflow-x: hidden;\n    white-space: nowrap;\n  }\n\n  #masthead {\n    height: auto;\n  }\n\n  /*\n  #masthead #header h1 {\n      line-height:50px;\n      margin-top: 2px;\n  }\n  */\n}\n\n@media (max-width: 979px) {\n  #masthead #header #header-inner{\n    /*margin-left: 10px !important;*/\n    margin-top: 15px;\n  }\n\n  /************/\n  #masthead {\n    position: fixed !important;\n  }\n\n  #masthead.fixed-nav.affix .btn-navbar {\n    margin-top: 5px;\n    margin-bottom: 0;\n  }\n\n  #masthead.fixed-nav.affix #header h1 {\n    line-height: 55px;\n    margin-top: 0 !important;\n  }\n\n  #masthead.fixed-nav.affix #header-inner {\n    margin-top: 0px;\n  }\n\n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a {\n    padding-left:22px !important;\n  }\n\n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:hover, \n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:active, \n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:focus {\n    padding-left:19px !important;\n  }\n\n}\n\n@media (min-width: 979px) and (max-width: 1200px) {\n  .navbar {\n    width: 960px !important;\n  }\n}", ""]);
 
 
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/sidebar.css":
-/*!************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/sidebar.css ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\global-header\\style\\sidebar.css'");
 
 /***/ }),
 
@@ -2217,22 +2318,26 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.css ./lib-for-link/src/global-header/style/btn-navbar.css ./lib-for-link/src/global-header/style/sidebar.css ./lib-for-link/src/global-header/style/go-top.css ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.css ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/sidebar.css ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.css ./lib-for-link/src/global-header/btn-navbar/btn-navbar.css ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.css ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./lib-for-link/src/global-header/breeze-theme/font-awesome.css */"./lib-for-link/src/global-header/breeze-theme/font-awesome.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css */"./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css */"./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/go-top/go-top.css */"./lib-for-link/src/global-header/go-top/go-top.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/go-top/go-top.js */"./lib-for-link/src/global-header/go-top/go-top.js");
+__webpack_require__(/*! ./lib-for-link/src/global-header/sidebar/sidebar.css */"./lib-for-link/src/global-header/sidebar/sidebar.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/sidebar/sidebar.js */"./lib-for-link/src/global-header/sidebar/sidebar.js");
+__webpack_require__(/*! ./lib-for-link/src/global-header/btn-navbar/nav-collapse.css */"./lib-for-link/src/global-header/btn-navbar/nav-collapse.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/btn-navbar/btn-navbar.css */"./lib-for-link/src/global-header/btn-navbar/btn-navbar.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js */"./lib-for-link/src/global-header/btn-navbar/btn-navbar.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/masthead.css */"./lib-for-link/src/global-header/style/masthead.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/2_style.css */"./lib-for-link/src/global-header/style/2_style.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/3_custom_style.css */"./lib-for-link/src/global-header/style/3_custom_style.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/header.css */"./lib-for-link/src/global-header/style/header.css");
-__webpack_require__(/*! ./lib-for-link/src/global-header/style/btn-navbar.css */"./lib-for-link/src/global-header/style/btn-navbar.css");
-__webpack_require__(/*! ./lib-for-link/src/global-header/style/sidebar.css */"./lib-for-link/src/global-header/style/sidebar.css");
-__webpack_require__(/*! ./lib-for-link/src/global-header/style/go-top.css */"./lib-for-link/src/global-header/style/go-top.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/style.css */"./lib-for-link/src/global-header/style/style.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/default.css */"./lib-for-link/src/global-header/gsc-search/default.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css */"./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css");
