@@ -3,12 +3,17 @@
  * @param {String} key
  * @returns {Array|getBloggerPostVariable.output}
  */
-getBloggerPostVariable = function (key) {
-  if (key.startsWith('data-')) {
+getBloggerVariable = function (key) {
+  if (key.startsWith('data-') === false) {
     key = 'data-' + key
   }
-  
-  var ele = $('post-variables')
+  let ele
+  if (key.startsWith('data-blog-')) {
+    ele = $('.blog-variables')
+  }
+  else if (key.startsWith('data-post-')) {
+    ele = $('.post-variables')
+  }
   if (ele.length === 1) {
     return ele.attr(key)
   }

@@ -75,7 +75,7 @@ relatedUrls = new Array;
 thumburl = new Array;
 
 $(function() {
-  let postUrl = getBloggerPostVariable('data-post-url')
+  let postUrl = getBloggerVariable('data-post-url')
   if (typeof(postUrl) === 'undefined') {
     return
   }
