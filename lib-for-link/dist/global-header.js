@@ -427,7 +427,15 @@ var initSearchInput = () => {
   $('#searchform').submit(function () {
     return menu_search_submit(this);
   })
+  $(() => {
+    console.log($('.gcse-placeholder').length)
+    $('.gcse-placeholder').submit(function () {
+      return menu_search_submit(this);
+    })
+  })
+    
   
+  /*
   var timer = setInterval(() => {
     if ($('#gsc-i-id1').length > 0) {
       $('#gsc-i-id1').attr('placeholder', 'Search')
@@ -435,6 +443,7 @@ var initSearchInput = () => {
       clearInterval(timer)
     }
   }, 500)
+  */
 })();
 
 /**
@@ -448,13 +457,26 @@ $(function () {
 });
 
 var menu_search_submit = function (_form) {
-    var _query = _form.q.value;
-    ga("send", "event", "search", _query, 1);
-    //console.log("送出GA事件 search");
-    
-    $("#masthead input.gsc-input").val(_query).attr('placeholder', '')
-    $("#masthead input.gsc-search-button").click();
-    return false;
+  let _query
+  if (typeof(_form['q']) !== "undefined") {
+    _query = _form.q.value
+  }
+  else if (typeof(_form['search']) !== "undefined") {
+    _query = _form.search.value
+  }
+  else {
+    console.log('找不到')
+    return false
+  }
+  
+  
+  ga("send", "event", "search", _query, 1);
+  //console.log("送出GA事件 search");
+
+  $("#masthead input.gsc-input").val(_query)
+  $("#masthead input.gsc-search-button").click();
+  console.log(['query', _query])
+  return false;
 };
 
 
@@ -1424,7 +1446,7 @@ exports.push([module.i, "/**\n * Default Theme, v2.\n *\n */\n/* Slight reset to
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#masthead .search-bar.placeholder input.gsc-input {\n  width: 100%; \n  padding: 0px; \n  border: none; \n  margin: 0px; \n  height: auto; \n  text-indent: 48px; \n  outline: none;\n}\n\n#masthead .search-bar.placeholder table.gsc-input {\n  width: 100%; \n  padding: 0px;\n}\n\n#masthead .search-bar.placeholder {\n  margin-top: 0;\n}", ""]);
+exports.push([module.i, "#masthead .search-bar .gcse-placeholder {\n  display: block;\n  width: calc(100% - 40px);\n  padding: 0px;\n  float: left;\n  /*margin-left: 30px;*/\n  margin-top: 7px;\n  margin-right: 15px;\n}\n\n#masthead .search-bar .gcse-placeholder input.gsc-input-placeholder {\n  width: 100%; \n  padding: 0px; \n  border: none; \n  margin: 0px; \n  /* height: auto; */\n  /*text-indent: 48px;*/ \n  outline: none;\n  padding-top: 2px;\n  padding-left: 8px;\n  background-color: white !important;\n  border-radius: 0.5rem;\n}", ""]);
 
 
 
@@ -1439,7 +1461,7 @@ exports.push([module.i, "#masthead .search-bar.placeholder input.gsc-input {\n  
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#masthead .search-bar {\n  -moz-transition: .3s linear;\n  -webkit-transition: .3s ease-out;\n  transition: .3s linear;\n  float: right;\n  right: 0;\n  cursor: pointer;\n  background-image: none;\n  background-repeat: no-repeat;\n  padding: 0px 0px 23px 20px;\n  background-size: 100px 100px;\n  top: 0;\n  z-index: 99999;\n  margin-top: -5px;\n  \n}\n\n#masthead .search-bar:hover {\n  -moz-transition: .01s linear;\n  -webkit-transition: .01s ease-out;\n  transition: .01s linear;\n  /*opacity: 1; */\n  background-image:none;\n}\n\n#masthead .nav-search {\n  width: auto;\n  height: 30px;\n  position: relative;\n  left: 0;\n  /* float: left; */\n  line-height: 10px;\n  color: #fff !important;\n}\n\n#masthead .nav-search label {\n  display: none;\n}\n\n#masthead .nav-search input {\n  float: left;\n  /*width: 0;*/\n  background: none;\n  height: 30px;\n  line-height: 20px;\n  margin: 22px 0 0;\n  padding: 0 10px 0 0;\n  font-size: 15px;\n  /*color: #fff !important;*/\n  outline: 0;\n  border-radius: 0;\n  border: 0;\n  /*opacity: 1;*/\n  /*opacity: 1;*/\n  /*-webkit-transition: all .8s ease-in-out;\n  -moz-transition: all .8s ease-in-out;\n  -o-transition: all .8s ease-in-out;\n  transition: all .8s ease-in-out;\n  -webkit-appearance: none;*/\n\n  width: 160px;\n  margin-left: 33px;\n  background: none;\n  border-bottom: 1px solid #f1f1f1;\n  opacity: 1;\n  margin-top: -4px !important;\n}\n\n/*\n.search-bar:hover .nav-search input {\n    width: 160px;\n    margin-left: 33px;\n    background: none;\n    border-bottom: 1px solid #f1f1f1;\n    opacity: 1;\n}\n*/\n/*\n.nav-search input::-webkit-input-placeholder {\n    color: #eee;\n}\n\n.nav-search input::-moz-placeholder {\n    color: #eee;\n}\n\n.nav-search input:-moz-placeholder {\n    color: #eee;\n}\n\n.nav-search input:-ms-input-placeholder {\n    color: #eee;\n}\n\n.nav-search input:focus {\n    color: #fff;\n}\n*/\n\n#masthead .nav-search .srch_btn {\n  height: 42px;\n  width: 23px;\n  margin-top: 0;\n  background: url(\"//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png\") 2px center no-repeat;\n  text-indent: 9999px;\n  position: relative;\n}\n/*\n#masthead .search-bar input.gsc-input {\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n\n#masthead .search-bar.visible input.gsc-input {\n  visibility: visible;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n*/\n/******************************/\n/* 縮小寬度之下的導航列 */\n\n.nav-search input.search_input,\n.search-bar:hover .nav-search input {\n  background-color: white;\n  color: black !important;\n  padding-left: 0.5em;\n  border-radius: 3px;\n  margin-top:27px;\n}\n\n\n#masthead.fixed-nav.affix .search-bar {\n  padding-bottom: 0;\n}\n\n#masthead.fixed-nav .descriptionwrapper {\n  display: none;\n}\n\n\n/***********************/\n.gsc-control-cse {\n  border-color: transparent !important;\n  background-color: transparent !important;\n  padding: 0 !important;\n}\n\n.gcse {\n  float: left;\n  /*margin-left: 30px;*/\n  margin-top: 7px;\n}\n\n.nav-search {\n  margin-top: 19px;\n  float: right;\n}\n\n.nav-search .srch_btn {\n  float: left;\n}\n\n.fixed-nav .nav-search .srch_btn {\n  margin-top: -15px;\n}\n\n.cse .gsc-control-wrapper-cse, \n#masthead .gsc-control-wrapper-cse {\n  width: 160px !important;\n  transition: width .2s !important;\n}\n\n.gsc-search-button {\n  display: none !important;\n}\n\n#masthead .gsc-input-box {\n  border-radius: 0.5em !important;\n  /*border: 2px solid yellow;*/\n}\n\n.gsc-input-box input.gsc-input {\n  opacity: 1 !important;\n  /*border-width: 0;*/\n  background-image: none !important;\n  box-shadow: inset 0px 0px 0px 0px red;\n  text-indent: 0 !important;\n}\n\n@media (max-width: 979px) {\n  #masthead .search-bar {\n    /*\n    margin-top: 16px;\n    padding-left: 0;\n    padding-right: 0;\n    */\n    padding:0;\n  }\n  #masthead .search-bar .gcse {\n    margin-top: 13px;\n  }\n\n  #masthead .nav-search .srch_btn {\n    margin-top: -5px;\n  }\n\n  #masthead .nav-search input {\n    line-height: 34px;\n  }\n}\n\n@media (min-width: 979px) and (max-width: 1200px) {\n  #masthead .gsc-control-wrapper-cse {\n    width: 135px !important;\n  }\n}\n\n\n@media (min-width: 979px) {\n  #masthead .search-bar .gcse {\n    margin-top: 7px;\n  }\n\n  #masthead.fixed-nav .search-bar .srch_btn {\n    margin-top: -15px;\n  }\n\n  #masthead .nav-search input {\n    line-height: 26px;\n  }\n\n}\n\n\n@media (max-width: 680px) {\n  .search-bar {\n    /*display: none;*/\n    position: absolute;\n    top: -1000px;\n  }\n\n\n  /*********************/\n  .navbar .nav li.search {\n    display: list-item !important;\n  }\n\n  .navbar .nav li.search form {\n    margin: 0;\n  }\n\n  .navbar .nav li.search input {\n    width: calc(100% - 100px);\n    /*margin: 0 18px;*/\n  }\n\n  .navbar .nav li.search .srch_btn {\n    height: 42px;\n    width: 23px;\n    margin-top: 0;\n    background: url(//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png) 2px center no-repeat;\n    text-indent: 9999px;\n    position: relative;\n    float: left;\n    margin-left: 18px;\n    margin-right: 10px;\n    margin-top: -5px;\n    display: inline !important;\n    border-width: 0;\n  }\n  /*\n  .search-bar {\n      clear: both;\n      padding-top: 0;\n      padding-bottom: 5px;\n  }\n  .search-bar form {\n      margin: 0;\n  }\n  .nav-search input {\n      margin-top: 5px;\n  }\n  .navbar .btn-navbar {\n      margin-bottom: 0;\n  }\n\n  /*.search-bar:hover .nav-search input {\n      width:100%;\n  }\n  */\n}", ""]);
+exports.push([module.i, "#masthead .search-bar {\n  -moz-transition: .3s linear;\n  -webkit-transition: .3s ease-out;\n  transition: .3s linear;\n  float: right;\n  right: 0;\n  cursor: pointer;\n  background-image: none;\n  background-repeat: no-repeat;\n  padding: 0px 0px 23px 20px;\n  background-size: 100px 100px;\n  top: 0;\n  z-index: 99999;\n  margin-top: -5px;\n}\n\n#masthead .search-bar .gcse {\n  display: none;\n}\n\n#masthead .search-bar:hover {\n  -moz-transition: .01s linear;\n  -webkit-transition: .01s ease-out;\n  transition: .01s linear;\n  /*opacity: 1; */\n  background-image:none;\n}\n\n#masthead .nav-search {\n  width: auto;\n  height: 30px;\n  position: relative;\n  left: 0;\n  /* float: left; */\n  line-height: 10px;\n  color: #fff !important;\n}\n\n#masthead .nav-search label {\n  display: none;\n}\n\n#masthead .nav-search input {\n  float: left;\n  /*width: 0;*/\n  background: none;\n  height: 30px;\n  line-height: 20px;\n  margin: 22px 0 0;\n  padding: 0 10px 0 0;\n  font-size: 15px;\n  /*color: #fff !important;*/\n  outline: 0;\n  border-radius: 0;\n  border: 0;\n  /*opacity: 1;*/\n  /*opacity: 1;*/\n  /*-webkit-transition: all .8s ease-in-out;\n  -moz-transition: all .8s ease-in-out;\n  -o-transition: all .8s ease-in-out;\n  transition: all .8s ease-in-out;\n  -webkit-appearance: none;*/\n\n  width: 160px;\n  margin-left: 33px;\n  background: none;\n  border-bottom: 1px solid #f1f1f1;\n  opacity: 1;\n  margin-top: -4px !important;\n}\n\n/*\n.search-bar:hover .nav-search input {\n    width: 160px;\n    margin-left: 33px;\n    background: none;\n    border-bottom: 1px solid #f1f1f1;\n    opacity: 1;\n}\n*/\n/*\n.nav-search input::-webkit-input-placeholder {\n    color: #eee;\n}\n\n.nav-search input::-moz-placeholder {\n    color: #eee;\n}\n\n.nav-search input:-moz-placeholder {\n    color: #eee;\n}\n\n.nav-search input:-ms-input-placeholder {\n    color: #eee;\n}\n\n.nav-search input:focus {\n    color: #fff;\n}\n*/\n\n#masthead .nav-search .srch_btn {\n  height: 42px;\n  width: 23px;\n  margin-top: 0;\n  background: url(\"//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png\") 2px center no-repeat;\n  text-indent: 9999px;\n  position: relative;\n}\n/*\n#masthead .search-bar input.gsc-input {\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n\n#masthead .search-bar.visible input.gsc-input {\n  visibility: visible;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n*/\n/******************************/\n/* 縮小寬度之下的導航列 */\n\n.nav-search input.search_input,\n.search-bar:hover .nav-search input {\n  background-color: white;\n  color: black !important;\n  padding-left: 0.5em;\n  border-radius: 3px;\n  margin-top:27px;\n}\n\n\n#masthead.fixed-nav.affix .search-bar {\n  padding-bottom: 0;\n}\n\n#masthead.fixed-nav .descriptionwrapper {\n  display: none;\n}\n\n\n/***********************/\n.gsc-control-cse {\n  border-color: transparent !important;\n  background-color: transparent !important;\n  padding: 0 !important;\n}\n\n.gcse {\n  float: left;\n  /*margin-left: 30px;*/\n  margin-top: 7px;\n}\n\n.nav-search {\n  margin-top: 19px;\n  float: right;\n}\n\n.nav-search .srch_btn {\n  float: left;\n}\n\n.fixed-nav .nav-search .srch_btn {\n  margin-top: -15px;\n}\n\n.cse .gsc-control-wrapper-cse, \n#masthead .gsc-control-wrapper-cse {\n  width: 160px !important;\n  transition: width .2s !important;\n}\n\n.gsc-search-button {\n  display: none !important;\n}\n\n#masthead .gsc-input-box {\n  border-radius: 0.5em !important;\n  /*border: 2px solid yellow;*/\n}\n\n.gsc-input-box input.gsc-input {\n  opacity: 1 !important;\n  /*border-width: 0;*/\n  background-image: none !important;\n  box-shadow: inset 0px 0px 0px 0px red;\n  text-indent: 0 !important;\n}\n\n@media (max-width: 979px) {\n  #masthead .search-bar {\n    /*\n    margin-top: 16px;\n    padding-left: 0;\n    padding-right: 0;\n    */\n    padding:0;\n  }\n  #masthead .search-bar .gcse {\n    margin-top: 13px;\n  }\n\n  #masthead .nav-search .srch_btn {\n    margin-top: -5px;\n  }\n\n  #masthead .nav-search input {\n    line-height: 34px;\n  }\n}\n\n@media (min-width: 979px) and (max-width: 1200px) {\n  #masthead .gsc-control-wrapper-cse {\n    width: 135px !important;\n  }\n}\n\n\n@media (min-width: 979px) {\n  #masthead .search-bar .gcse {\n    margin-top: 7px;\n  }\n\n  #masthead.fixed-nav .search-bar .srch_btn {\n    margin-top: -15px;\n  }\n\n  #masthead .nav-search input {\n    line-height: 26px;\n  }\n\n}\n\n\n@media (max-width: 680px) {\n  .search-bar {\n    /*display: none;*/\n    position: absolute;\n    top: -1000px;\n  }\n\n\n  /*********************/\n  .navbar .nav li.search {\n    display: list-item !important;\n  }\n\n  .navbar .nav li.search form {\n    margin: 0;\n  }\n\n  .navbar .nav li.search input {\n    width: calc(100% - 100px);\n    /*margin: 0 18px;*/\n  }\n\n  .navbar .nav li.search .srch_btn {\n    height: 42px;\n    width: 23px;\n    margin-top: 0;\n    background: url(//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png) 2px center no-repeat;\n    text-indent: 9999px;\n    position: relative;\n    float: left;\n    margin-left: 18px;\n    margin-right: 10px;\n    margin-top: -5px;\n    display: inline !important;\n    border-width: 0;\n  }\n  /*\n  .search-bar {\n      clear: both;\n      padding-top: 0;\n      padding-bottom: 5px;\n  }\n  .search-bar form {\n      margin: 0;\n  }\n  .nav-search input {\n      margin-top: 5px;\n  }\n  .navbar .btn-navbar {\n      margin-bottom: 0;\n  }\n\n  /*.search-bar:hover .nav-search input {\n      width:100%;\n  }\n  */\n}", ""]);
 
 
 

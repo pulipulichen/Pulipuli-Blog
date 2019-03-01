@@ -536,9 +536,9 @@ jQuery.puliGuestBook = function (config) {
       // do nothing
     }
     var firstPost = null;
-    console.log('========要顯示post了============')
+    //console.log('========要顯示post了============')
     for (var i = 0, post; post = sortentry[i]; i++) {
-      console.log(post)
+      //console.log(post)
       if (i === 0) {
         firstPost = post;
       }
@@ -585,7 +585,7 @@ jQuery.puliGuestBook = function (config) {
        */
       let commentId = post.id.$t
       commentId = commentId.slice(commentId.lastIndexOf('.post-') + 6, commentId.length)
-      console.log(commentId)
+      //console.log(commentId)
       let commentLink = addLink
       if (commentLink.indexOf('#')) {
         commentLink = commentLink.slice(0, commentLink.indexOf('#'))

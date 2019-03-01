@@ -28,7 +28,15 @@ var initSearchInput = () => {
   $('#searchform').submit(function () {
     return menu_search_submit(this);
   })
+  $(() => {
+    console.log($('.gcse-placeholder').length)
+    $('.gcse-placeholder').submit(function () {
+      return menu_search_submit(this);
+    })
+  })
+    
   
+  /*
   var timer = setInterval(() => {
     if ($('#gsc-i-id1').length > 0) {
       $('#gsc-i-id1').attr('placeholder', 'Search')
@@ -36,6 +44,7 @@ var initSearchInput = () => {
       clearInterval(timer)
     }
   }, 500)
+  */
 })();
 
 /**
@@ -49,11 +58,24 @@ $(function () {
 });
 
 var menu_search_submit = function (_form) {
-    var _query = _form.q.value;
-    ga("send", "event", "search", _query, 1);
-    //console.log("送出GA事件 search");
-    
-    $("#masthead input.gsc-input").val(_query).attr('placeholder', '')
-    $("#masthead input.gsc-search-button").click();
-    return false;
+  let _query
+  if (typeof(_form['q']) !== "undefined") {
+    _query = _form.q.value
+  }
+  else if (typeof(_form['search']) !== "undefined") {
+    _query = _form.search.value
+  }
+  else {
+    console.log('找不到')
+    return false
+  }
+  
+  
+  ga("send", "event", "search", _query, 1);
+  //console.log("送出GA事件 search");
+
+  $("#masthead input.gsc-input").val(_query)
+  $("#masthead input.gsc-search-button").click();
+  console.log(['query', _query])
+  return false;
 };

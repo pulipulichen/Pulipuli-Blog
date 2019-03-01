@@ -12,7 +12,10 @@
   top: 0;
   z-index: 99999;
   margin-top: -5px;
-  
+}
+
+#masthead .search-bar .gcse {
+  display: none;
 }
 
 #masthead .search-bar:hover {

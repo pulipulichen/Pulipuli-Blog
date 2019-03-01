@@ -1,18 +1,23 @@
-#masthead .search-bar.placeholder input.gsc-input {
+#masthead .search-bar .gcse-placeholder {
+  display: block;
+  width: calc(100% - 40px);
+  padding: 0px;
+  float: left;
+  /*margin-left: 30px;*/
+  margin-top: 7px;
+  margin-right: 15px;
+}
+
+#masthead .search-bar .gcse-placeholder input.gsc-input-placeholder {
   width: 100%; 
   padding: 0px; 
   border: none; 
   margin: 0px; 
-  height: auto; 
-  text-indent: 48px; 
+  /* height: auto; */
+  /*text-indent: 48px;*/ 
   outline: none;
-}
-
-#masthead .search-bar.placeholder table.gsc-input {
-  width: 100%; 
-  padding: 0px;
-}
-
-#masthead .search-bar.placeholder {
-  margin-top: 0;
+  padding-top: 2px;
+  padding-left: 8px;
+  background-color: white !important;
+  border-radius: 0.5rem;
 }
