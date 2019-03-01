@@ -1386,6 +1386,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./lib-for-link/src/global-header/style/addthis.css":
+/*!**********************************************************!*\
+  !*** ./lib-for-link/src/global-header/style/addthis.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./addthis.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/addthis.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./lib-for-link/src/global-header/style/header.css":
 /*!*********************************************************!*\
   !*** ./lib-for-link/src/global-header/style/header.css ***!
@@ -1666,6 +1696,21 @@ exports.push([module.i, "div.post-avatar {\n  border: 3px solid #eaeaea;\n  widt
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, "#header-inner {\n  width: auto !important;\n  /*padding-left: 60px !important;*/\n  background-position: left top !important;\n  background-image: none !important;\n}\n\n#header-inner .descriptionwrapper {\n  margin-top:5px;\n}\n\n.fixed-nav.affix #header-inner .descriptionwrapper,\n.fixed-nav.affix #header-inner img {\n  display:none;\n\n}\n\n.fixed-nav.affix #header-inner {\n  background-image: none !important;\n}\n\n#sidebar-popular-post .popular-posts > ul > dd {\n  display:none;\n}\n\n#sidebar-popular-post .popular-posts > ul > dd:nth-of-type(1),\n#sidebar-popular-post .popular-posts > ul > dd:nth-of-type(2),\n#sidebar-popular-post .popular-posts > ul > dd:nth-of-type(3),\n#sidebar-popular-post .popular-posts > ul > dd:nth-of-type(4),\n#sidebar-popular-post .popular-posts > ul > dd:nth-of-type(5) {\n  display:block;\n}\n\n.site-footer .cloud-label-widget-content a {\n  color: #CCC;\n}\n\n.entry-image {\n  max-height: 430px;\n}\n\n/* ****************** */\n\n.entry-content {\n  line-height: 200%;\n}\n\n.entry-content > article > p {\n  text-indent: 2em;\n}\n\n.entry-content h4 {\n  font-size: 24pt;\n  color:#BD8A39;\n}\n\n.entry-content h5 {\n  font-size: 20pt;\n  color:#BD8A39;\n}\n\n.entry-content h6 {\n  font-size: 18pt;\n  font-style: italic;\n  color:#BD8A39;\n}\n\n.entry-content hr {\n  border-top: 2px solid #DEB46F;\n  border-bottom: 2px solid #BD8A39;\n}\n/*\n.entry-content ul {\n\n}\n\n*/\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/addthis.css":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/addthis.css ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".addthis-smartlayers .atss {\n  z-index: auto;\n}\n\n@media (min-width: 460px) {\n  .addthis-smartlayers-mobile {\n    display: none !important;\n  }\n}\n\n.addthis-smartlayers .at-custom-sidebar-counter {\n  background-color: white;\n  min-height: 31px;\n  cursor: default;\n}\n\n@media (min-width: 460px) and (max-width: 979px) {\n  /*\n  .nav-collapse ul li {\n      padding-left: 50px;\n  }\n  */\n  /*\n  .sumome-share-client-wrapper.sumome-share-client-wrapper-left-page {\n    z-index: auto !important;\n  }\n  */\n}\n", ""]);
 
 
 
@@ -2322,9 +2367,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.css ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/sidebar.css ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.css ./lib-for-link/src/global-header/btn-navbar/btn-navbar.css ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.css ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.css ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/sidebar.css ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.css ./lib-for-link/src/global-header/btn-navbar/btn-navbar.css ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.css ./lib-for-link/src/global-header/style/addthis.css ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2342,6 +2387,7 @@ __webpack_require__(/*! ./lib-for-link/src/global-header/style/masthead.css */".
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/2_style.css */"./lib-for-link/src/global-header/style/2_style.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/3_custom_style.css */"./lib-for-link/src/global-header/style/3_custom_style.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/header.css */"./lib-for-link/src/global-header/style/header.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/style/addthis.css */"./lib-for-link/src/global-header/style/addthis.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/style.css */"./lib-for-link/src/global-header/style/style.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/default.css */"./lib-for-link/src/global-header/gsc-search/default.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css */"./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css");
