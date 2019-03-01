@@ -1,97 +1,97 @@
 
 .entry-content {
-    line-height: 200%;
+  line-height: 200%;
 }
 
 .entry-content > article > p {
-    text-indent: 2em;
-    text-align: justify;
+  text-indent: 2em;
+  text-align: justify;
 }
 
 .entry-content h4 {
-    font-size: 24pt;
-    color:#BD8242;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
+  font-size: 24pt;
+  color:#BD8242;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 .entry-content h5 {
-    font-size: 20pt;
-    color:#713E06;
+  font-size: 20pt;
+  color:#713E06;
 
-    margin-top: 1.5em;
-    margin-bottom: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 .entry-content h6 {
-    font-size: 18pt;
-    font-style: italic;
-    color:#634121;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+  font-size: 18pt;
+  font-style: italic;
+  color:#634121;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 .entry-content hr {
-    border-top: 3px solid #CE8A42;
-    border-bottom: 0px solid #BD8A39;
+  border-top: 3px solid #CE8A42;
+  border-bottom: 0px solid #BD8A39;
 }
 
 .entry-content ul {
-    margin-left: 0em !important;
+  margin-left: 0em !important;
 }
 
 .entry-content li {
-    margin-left: 2em !important;
+  margin-left: 2em !important;
 }
 
 @media (max-width:460px) {
-    .entry-content li {
-        margin-left: 1em !important;
-    }
+  .entry-content li {
+    margin-left: 1em !important;
+  }
 }
 
 .entry-content ul,
 .entry-content li {
-    /*margin-left: 2em !important;*/
-    margin-top:0.5em !important;
-    margin-bottom:0.5em !important;
+  /*margin-left: 2em !important;*/
+  margin-top:0.5em !important;
+  margin-bottom:0.5em !important;
 }
 
 .entry-content li {
-    list-style: square !important;
-    line-height: 200%;
+  list-style: square !important;
+  line-height: 200%;
 }
 
 .entry-content ol > li {
-    list-style: decimal !important;
+  list-style: decimal !important;
 }
 
 .entry-content .post ol > li {
-    list-style: decimal !important;
+  list-style: decimal !important;
 }
 
 .entry-content blockquote {
-    border-left-color: #F7EBDE;
+  border-left-color: #F7EBDE;
 }
 
 .entry-content a {
-    text-decoration: underline;
-    color: #BD8242;
+  text-decoration: underline;
+  color: #BD8242;
 }
 
 .entry-content h1 a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 .entry-content table,
 .entry-content table th,
 .entry-content table td {
-    /*border: 1px solid #BD8242;*/
+  /*border: 1px solid #BD8242;*/
 }
 
 .entry-content > article > table > tbody > tr:nth-of-type(odd) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .entry-content > article > table>tbody>tr>td,
@@ -100,105 +100,105 @@
 .entry-content > article > table>tfoot>tr>th,
 .entry-content > article > table>thead>tr>td,
 .entry-content > article > table>thead>tr>th {
-    padding: 8px;
-    /*line-height: 1.42857143;*/
-    vertical-align: top;
-    border-top: 1px solid #ddd;
+  padding: 8px;
+  /*line-height: 1.42857143;*/
+  vertical-align: top;
+  border-top: 1px solid #ddd;
 }
 
 .entry-content > article > table>tbody>tr:first-of-type>td {
-    border-top-width: 0;
+  border-top-width: 0;
 }
 
 .entry-content > article > table>tbody>tr:hover {
-    background-color: #f5f5f5; 
+  background-color: #f5f5f5; 
 }
 
 #main .post > h3 {
-    display: none;
+  display: none;
 }
 
 #main .post .entry-image .thumb {
-    width: 95%;
-    max-width: 95%;
+  width: 95%;
+  max-width: 95%;
 }
 
 #main .post .entry-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: calc(100% + 10px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(100% + 10px);
 }
 
 #main .post .entry-image > a[href] > img.thumb:first-of-type {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /* ************************ */
 
 #disqus_thread {
-    overflow: hidden;
-    background: #FFFFFF;
-    border-bottom: 2px solid #DDDDDD;
-    padding: 25px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-bottom: 2px solid #DDDDDD;
+  padding: 25px;
 }
 
 /* ************************ */
 
 #Blog1_backlinks-container .comment-footer {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #footer_bar_body {
-    background: transparent;
+  background: transparent;
 }
 
 /* *************************** */
 .about-me .description {
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 .about-me .about-link {
-    /*float: right;*/
-    padding-bottom: 1.5em;
+  /*float: right;*/
+  padding-bottom: 1.5em;
 }
 
 /* 20160601 加大About Me的高度 */
 #sidebar .about-me h3 {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 #sidebar .about-me .description {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 
 #sidebar .about-link .read-more {
-    float: right;
-    display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 5px;
-    margin-top: 0;
+  float: right;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 5px;
+  margin-top: 0;
 }
 
 #sidebar .about-link .social-button-wrapper {
-    margin-top: 4px;
-    display: inline-block;
+  margin-top: 4px;
+  display: inline-block;
 }
 
 .about-me .social-media {
-    margin-top: 0.5em;
-    text-align: center;
-    clear: both;
+  margin-top: 0.5em;
+  text-align: center;
+  clear: both;
 }
 .about-me .email-subscribe {
-    text-align: center;
-    /*margin: 1em;*/
+  text-align: center;
+  /*margin: 1em;*/
 }
 
 .about-me .widget-content {
-    margin: 0 1em;
+  margin: 0 1em;
 }
 
 .fb-fan-page .widget-content {
@@ -206,22 +206,22 @@
 }
 
 .about-me .email-subscribe td:first-of-type {
-    text-align: left;
-    padding-top: 0.7em;
+  text-align: left;
+  padding-top: 0.7em;
 }
 
 .about-me .email-subscribe .follow-by-email-address {
-    width: 95%;
+  width: 95%;
 }
 
 .donation input[type="image"] {
-    margin-top: 10px;
-    margin-right: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 
 #footerbar-popular-post .popular-posts > ul > dd {
-    display:none;
+  display:none; 
 }
 
 #footerbar-popular-post .popular-posts > ul > dd:nth-of-type(1),
@@ -229,49 +229,49 @@
 #footerbar-popular-post .popular-posts > ul > dd:nth-of-type(3),
 #footerbar-popular-post .popular-posts > ul > dd:nth-of-type(4),
 #footerbar-popular-post .popular-posts > ul > dd:nth-of-type(5) {
-    display:block;
+  display:block;
 }
 
-.popular-posts {
-    padding-bottom: 0.5em;
+.popular-posts { 
+  padding-bottom: 0.5em;
 }
 
 @media (max-width:979px) {
-    #footer_bar {
-        display: none;
-    }
+  #footer_bar {
+    display: none;
+  } 
 }
 
 .widget-content.popular-posts dd {
-    margin-bottom: 0.5em;
-    clear: both;
+  margin-bottom: 0.5em;
+  clear: both;
 }
 .widget-content.popular-posts img {
-    float: left;
+  float: left;
 }
 
 h1.title {
-    font-size: 30px;
+  font-size: 30px;
 }
 #header-inner .descriptionwrapper {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 div.post-avatar {
-    display:none;
+  display:none;
 }
 
 .meta {
-    margin-left: 0px !important;
+  margin-left: 0px !important;
 }
 
 /************************/
 #content #archivespage ul {
-    margin-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 #content #archivespage li.archivedate {
-    list-style: none !important;
+  list-style: none !important;
 }
 
 @media (max-width: 979px) {
@@ -305,16 +305,16 @@ div.post-avatar {
 }
 
 .navbar .nav li.search {
-    display: none;
+  display: none;
 }
 
 .container1{
-    width:100% !important; 
+  width:100% !important; 
 }
 
 #footer .management {
-    clear: both;
-    /*margin-bottom: 70px;*/
+  clear: both;
+  /*margin-bottom: 70px;*/
 }
 
 @media (max-width: 979px) {
@@ -342,37 +342,37 @@ body .addthis-smartlayers {
 */
 
 @media (min-width: 460px) and (max-width: 767px) {
-    .entry-container .entry-content {
-        padding: 50px;
-        padding-right: 20px;
-    }
-    
-    /*********************/
-    /* 20160926 修正小視窗底下按鈕沒有置中的問題 */
-    #main .post > .entry-meta.clearfix > aside > .pull-left {
-        float: none;
-        text-align: center;
-        width: 100%;
-    }
-    
-    #main .post > .entry-meta.clearfix > aside > .pull-left > .read-more,
-    #main .post > .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
-        float: none;
-        width: 42%;
-        display: inline-block;
-    }
-    #main .post > .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
-        margin-left: 0;
-    }
+  .entry-container .entry-content {
+    padding: 50px;
+    padding-right: 20px;
+  }
+
+  /*********************/
+  /* 20160926 修正小視窗底下按鈕沒有置中的問題 */
+  #main .post > .entry-meta.clearfix > aside > .pull-left {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  #main .post > .entry-meta.clearfix > aside > .pull-left > .read-more,
+  #main .post > .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
+    float: none;
+    width: 42%;
+    display: inline-block;
+  }
+  #main .post > .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
+    margin-left: 0;
+  }
 }
 
 .entry-container .entry-content > p {
-    text-indent: 2em;
+  text-indent: 2em;
 }
 
 .entry-container .entry-content a.more {
-    font-weight: bold;
-    text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /**********************************/
@@ -380,28 +380,28 @@ body .addthis-smartlayers {
 
 .site-footer .cloud-label-widget-content .label-size-2,
 .site-footer .cloud-label-widget-content .label-size-1 {
-    display:none;
+  display:none;
 }
 
 
 
 .site-footer .cloud-label-widget-content .btn {
-    float: right;
-    color: black;
-    margin-top: 1em;
+  float: right;
+  color: black;
+  margin-top: 1em;
 }
 
 /* 20160527網頁寬度低於460時，Buy Me A Coffee跟Hit Count應該分開為左右2欄 */
 @media (max-width: 979px) {
-    div.donation {
-        width: 49.5%;
-        float: left;
-        margin-right: 1%;
-    }
-    
-    .site-footer .cloud-label-widget-content .label-size-3 {
-        display:none;
-    }
+  div.donation {
+    width: 49.5%;
+    float: left;
+    margin-right: 1%;
+  }
+
+  .site-footer .cloud-label-widget-content .label-size-3 {
+    display:none;
+  }
 }
 
 /*
@@ -415,115 +415,115 @@ body .addthis-smartlayers {
 /**********************************/
 
 .social-button {
-    background-color: #D6D7D6;
-    display: inline-block;
-    width: 33px;
-    height: 32px;
-    line-height: 33px;
-    border-radius: 16px;
-    -o-transition: all .20s linear;
-    -webkit-transition: all .20s linear;
-    -moz-transition: all .20s linear;
-    transition:  all .20s linear;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
+  background-color: #D6D7D6;
+  display: inline-block;
+  width: 33px;
+  height: 32px;
+  line-height: 33px;
+  border-radius: 16px;
+  -o-transition: all .20s linear;
+  -webkit-transition: all .20s linear;
+  -moz-transition: all .20s linear;
+  transition:  all .20s linear;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
 
 .social-button.facebook:hover {
-    color:white;
-    background-color: #3165A5;
+  color:white;
+  background-color: #3165A5;
 }
 
 .social-button.twitter:hover {
-    color:white;
-    background-color: #42AAE7;
+  color:white;
+  background-color: #42AAE7;
 }
 
 .social-button.linkedin:hover {
-    color:white;
-    background-color: #0075B5;
+  color:white;
+  background-color: #0075B5;
 }
 
 .social-button.plurk:hover {
-    color:white;
-    background-color: #EF4539;
+  color:white;
+  background-color: #EF4539;
 }
 
 .social-button.line:hover {
-    color:white;
-    background-color: #4ACF00;
+  color:white;
+  background-color: #4ACF00;
 }
 
 .social-button.google-plus:hover {
-    color:white;
-    background-color: #DE4939;
+  color:white;
+  background-color: #DE4939;
 }
 
 .social-button.chrome:hover {
-    color:white;
-    background-color: #42556B;
+  color:white;
+  background-color: #42556B;
 }
 
 .social-button.github:hover {
-    color:white;
-    background-color: black;
+  color:white;
+  background-color: black;
 }
 
 .social-button.android:hover {
-    color:white;
-    background-color: #a4c639;
+  color:white;
+  background-color: #a4c639;
 }
 
 .social-button.chrome:hover {
-    color:white;
-    background-color: #4286F7;
+  color:white;
+  background-color: #4286F7;
 }
 
 .social-button.rss:hover {
-    color:white;
-    background-color: #F78631;
+  color:white;
+  background-color: #F78631;
 }
 
 .social-button.addthis:hover {
-    color:white;
-    background-color: #FF5D39;
+  color:white;
+  background-color: #FF5D39;
 }
 
 /* 20161118 */
 @media (min-width: 979px) {
-    .social-button.line,
-    .share-story-container li.line {
-        display: none;
-    }
+  .social-button.line,
+  .share-story-container li.line {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
-    div.share-story-container ul {
-        margin: 0;
-    }
+  div.share-story-container ul {
+    margin: 0;
+  }
 }
 
 .entry-meta.clearfix .share-story-container .about {
-    display: none;
+  display: none;
 }
 
 .share-story-container ul {
-    text-align: right;
+  text-align: right;
 }
 
 /***********************/
 .pager .previous.hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .pager li.link > span {
-    width: 6em;
+  width: 6em;
 }
 
 
 .navbar .nav {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 /*******************************************/
@@ -542,275 +542,250 @@ body .addthis-smartlayers {
 }
 
 .entry-content input.gsc-search-button {
-    height: 13px;
-    width: 13px;
-    padding: 0;
-    min-width: 0;
-    border-radius: 0.5em;
-    padding: 13px;
-    margin: 0;
+  height: 13px;
+  width: 13px;
+  padding: 0;
+  min-width: 0;
+  border-radius: 0.5em;
+  padding: 13px;
+  margin: 0;
 }
 
 
 /********************/
 @media (max-width: 460px) {
-    body {
-        font-size: 1rem;
-    }
-    
-    #masthead.fixed-nav.affix {
-        /*padding-top: 27px;*/
-    }
-    
-    #masthead .btn-navbar {
-        margin-right: 5px;
-    }
-    
-    #masthead #menu-primary {
-        padding-top: 27px;
-    }
-    
-    #masthead .nav-collapse, #masthead .nav-collapse.collapse {
-        top: 0;
-    }
-    
-    #masthead #header {
-        /*border:1px solid red;*/
-        max-width: calc(100% - 80px);
-    }
-    
-    #masthead #header-inner {
-        margin-left: 0 !important;
-    }
-    
-    #masthead #header h1,
-    #masthead.fixed-nav.affix #header h1 {
-        font-size: 20px;
-        /*padding-left: 5px;*/
-        margin-top: 0px;
-        line-height: 55px;
-    }
-    
-    #masthead .navbar-inner .btn-navbar {
-        margin:0;
-        margin-top: 3px !important;
-    }
-    
-    #masthead #header-inner {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    #masthead #header-inner .title {
-        /*line-height: 44px;*/
-        
-    }
-    
-    #masthead.fixed-nav.affix #header-inner {
-        margin-top:0 !important;
-        line-height: 55px;
-    }
-    
-    #content-wrapper {
-        padding-top: 50px !important;
-    }
-    
-    #masthead.fixed-nav.affix #header h1 {
-        /*line-height: 55px;*/
-    }
-    
-    #masthead #header-inner .descriptionwrapper {
-        display: none;
-    }
-    
-    header > .back-button {
-        margin-right: -10px;
-    }
-    
-    #masthead.fixed-nav.affix header > .back-button {
-        margin-right: 0;
-    }
-    
-    
-    /***********************/
-    
-    #main .share-story {
-        display: none;
-    }
-    
-    #main .post h1 {
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
-    
-    
-    #main .post .entry-content p {
-        font-size: 1rem;
-    }
-    
-    #main .read-more {
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    #main .entry-meta .pull-left {
-        width: 100%;
-    }
-    
-    #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {
-        width: 100%;
-        margin-left: 0 !important;
-        margin-right: 0;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        text-align: center;
-    }
-    
-    #main .entry-meta {
-        border-top-width: 0;
-        padding-top: 0;
-    }
-    
-    #main .entry-content > p {
-        text-indent: 1em;
-    }
+  body {
+    font-size: 1rem;
+  }
+
+  #masthead.fixed-nav.affix {
+    /*padding-top: 27px;*/
+  }
+
+  #masthead .btn-navbar {
+    margin-right: 5px;
+  }
+
+  #masthead #menu-primary {
+    padding-top: 27px;
+  }
+
+  #masthead .nav-collapse, #masthead .nav-collapse.collapse {
+    top: 0;
+  }
+
+  #masthead #header {
+    /*border:1px solid red;*/
+    max-width: calc(100% - 80px);
+  }
+
+  #masthead #header-inner {
+    margin-left: 0 !important;
+  }
+
+  #masthead #header h1,
+  #masthead.fixed-nav.affix #header h1 {
+    font-size: 20px;
+    /*padding-left: 5px;*/
+    margin-top: 0px;
+    line-height: 55px;
+  }
+
+  #masthead .navbar-inner .btn-navbar {
+    margin:0;
+    margin-top: 3px !important;
+  }
+
+  #masthead #header-inner {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #masthead #header-inner .title {
+    /*line-height: 44px;*/
+
+  }
+
+  #masthead.fixed-nav.affix #header-inner {
+    margin-top:0 !important;
+    line-height: 55px;
+  }
+
+  #content-wrapper {
+    padding-top: 50px !important;
+  }
+
+  #masthead.fixed-nav.affix #header h1 {
+    /*line-height: 55px;*/
+  }
+
+  #masthead #header-inner .descriptionwrapper {
+    display: none;
+  }
+
+  header > .back-button {
+    margin-right: -10px;
+  }
+
+  #masthead.fixed-nav.affix header > .back-button {
+    margin-right: 0;
+  }
+
+
+  /***********************/
+
+  #main .share-story {
+    display: none;
+  }
+
+  #main .post h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+
+  #main .post .entry-content p {
+    font-size: 1rem;
+  }
+
+  #main .read-more {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #main .entry-meta .pull-left {
+    width: 100%;
+  }
+
+  #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+  }
+
+  #main .entry-meta {
+    border-top-width: 0;
+    padding-top: 0;
+  }
+
+  #main .entry-content > p {
+    text-indent: 1em;
+  }
 }
 
 /**********************************/
 /* 來處理SumoMe的問題 */
 body > a[title="SumoMe"] {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 body > div.sumome-share-client-counts a[title="SumoMe"] > img {
-    display: none;
+  display: none;
 }
 body > div.sumome-share-client-counts a[title="SumoMe"] {
-    background-image: url(//lh3.googleusercontent.com/-qWpis5y0_fQ/Vwp4Y1ies0I/AAAAAAACuvg/9VCLXE9q7Wk/s0/share-alt.png) !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+  background-image: url(//lh3.googleusercontent.com/-qWpis5y0_fQ/Vwp4Y1ies0I/AAAAAAACuvg/9VCLXE9q7Wk/s0/share-alt.png) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 body > div.sumome-share-client-wrapper.sumome-share-client-wrapper-left-page {
-    top: 111px !important;
+  top: 111px !important;
 }
 
 body > div.sumome-share-client-counts div.sumome-share-client-animated {
-    border: 1px solid rgb(15, 82, 186);
+  border: 1px solid rgb(15, 82, 186);
 }
 
 @media (max-height: 320px) {
-    body > div.sumome-share-client-wrapper {
-        display: none;
-    }
+  body > div.sumome-share-client-wrapper {
+    display: none;
+  }
 }
 
 /**************************/
 
 a[name][id]:target,
 a[name="more"]:target {
-    margin-top: -60px;
-    position: absolute;
+  margin-top: -60px;
+  position: absolute;
 }
 
 a#comment-form-anchor:target {
-    margin-top: -300px;
+  margin-top: -300px;
 }
 
 
 /**************************/
 /* 20160522 首頁回去按鈕 */
 header > .back-button {
-    float: left;
-    font-size: 30px;
-    padding-right: 10px;
-    color: white;
-    cursor: pointer;
-    line-height: 70px;
-    width: 30px;
+  float: left;
+  font-size: 30px;
+  padding-right: 10px;
+  color: white;
+  cursor: pointer;
+  line-height: 70px;
+  width: 30px;
 }
 
 .fixed-nav header > .back-button {
-    font-size: 20px;
-    line-height: 35px;
-    width: 20px;
+  font-size: 20px;
+  line-height: 35px;
+  width: 20px;
 }
 
 @media (max-width: 979px) {
-    header > .back-button {
-        margin-left: 10px;
-    }
-    
-    .fixed-nav header > .back-button {
-        line-height: 55px;
-    }
+  header > .back-button {
+    margin-left: 10px;
+  }
+
+  .fixed-nav header > .back-button {
+    line-height: 55px;
+  }
 }
 
 @media (max-width: 460px) {
-    .fixed-nav header > .back-button,
-    header > .back-button {
-        font-size: 20px;
-        line-height: 55px;
-        margin-top: 0px;
-    }
-    /*
-    .fixed-nav header > .back-button {
-        font-size: 20px;
-        line-height: 55px;
-        margin-top: 0px;
-    }
-    */
+  .fixed-nav header > .back-button,
+  header > .back-button {
+    font-size: 20px;
+    line-height: 55px;
+    margin-top: 0px;
+  }
+  /*
+  .fixed-nav header > .back-button {
+      font-size: 20px;
+      line-height: 55px;
+      margin-top: 0px;
+  }
+  */
 }
 
 /*********************************/
 /* 20160522 修正導覽列的問題 */
 @media (max-width: 1200px) and (min-width: 979px) {
-    #masthead .gsc-control-wrapper-cse {
-        width: 130px !important;
-    }
-    .search-bar {
-        width: 160px !important;
-    }
-    
-    .navbar .nav > li > a {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+  #masthead .gsc-control-wrapper-cse {
+    width: 130px !important;
+  }
+  .search-bar {
+    width: 160px !important;
+  }
+
+  .navbar .nav > li > a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 @media (min-width: 979px) {
-    .search-bar {
-        width: 240px;
-    }
+  .search-bar {
+    width: 240px;
+  }
 }
 
-    
-
-@media (min-width: 460px) and (max-width: 979px) {
-    /*
-    .nav-collapse ul li {
-        padding-left: 50px;
-    }
-    */
-    .sumome-share-client-wrapper.sumome-share-client-wrapper-left-page {
-        z-index: auto !important;
-    }
-}
-
-@media (min-width: 460px) {
-    
-    .addthis-smartlayers-mobile {
-        display: none !important;
-    }
-}
-
-.addthis-smartlayers .at-custom-sidebar-counter {
-    background-color: white;
-    min-height: 31px;
-    cursor: default;
-}
 
 /*
 @media (max-width: 979px) {
@@ -824,119 +799,119 @@ header > .back-button {
 /* 20160522 accesskey */
 #masthead a[accesskey],
 .site-footer a[accesskey] {
-    color:white;
+  color:white;
 }
 
 #masthead a[accesskey].accesskey-menu {
-    /*line-height: 70px;*/
-    float: left;
-    /*padding-left:5px;*/
+  /*line-height: 70px;*/
+  float: left;
+  /*padding-left:5px;*/
 }
 
 #masthead.fixed-nav a[accesskey].accesskey-menu {
-    /*line-height: 35px;*/
+  /*line-height: 35px;*/
 }
 
 .site-footer .container {
-    padding-top:0 !important;
+  padding-top:0 !important;
 }
 
 #content-wrapper {
-    padding-top: 80px;
+  padding-top: 80px;
 }
 
 @media (max-width: 979px) {
-    #masthead a[accesskey].accesskey-menu {
-        /*line-height: 80px;*/
-    }
-    
-    #masthead.fixed-nav a[accesskey].accesskey-menu {
-        /*line-height: 55px;*/
-    }
+  #masthead a[accesskey].accesskey-menu {
+    /*line-height: 80px;*/
+  }
+
+  #masthead.fixed-nav a[accesskey].accesskey-menu {
+    /*line-height: 55px;*/
+  }
 }
 
 #masthead.fixed-nav li > a.accesskey-menu,
 .navbar .nav > li > a.accesskey-menu {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /*********************************************/
 /* 20160523 help */
 #menu-primary li.help a {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #menu-primary li.help .icon {
-    background-color: #FFF;
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    line-height: 22px;
-    border-radius: 11px;
-    -o-transition: all .20s linear;
-    -webkit-transition: all .20s linear;
-    -moz-transition: all .20s linear;
-    transition:  all .20s linear;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
+  background-color: #FFF;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 11px;
+  -o-transition: all .20s linear;
+  -webkit-transition: all .20s linear;
+  -moz-transition: all .20s linear;
+  transition:  all .20s linear;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
 }
 
 #menu-primary li.help .title {
-    display: none;
+  display: none;
 
 }
 @media (min-width: 979px) and (max-width: 1200px) {
-    #menu-primary > li.home {
-        width: 90px;
-    }
-    
-    #masthead .gsc-control-wrapper-cse {
-        width: 130px;
-    }
+  #menu-primary > li.home {
+    width: 90px;
+  }
+
+  #masthead .gsc-control-wrapper-cse {
+    width: 130px;
+  }
 }
 
 @media (max-width: 979px) {
-    #menu-primary li.help .title {
-        display: block;
-    }
-    
-    #menu-primary li.help a {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    #menu-primary li.help .icon {
-        float:left;
-        margin-right: 0.5em;
-    }
+  #menu-primary li.help .title {
+    display: block;
+  }
+
+  #menu-primary li.help a {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #menu-primary li.help .icon {
+    float:left;
+    margin-right: 0.5em;
+  }
 }
 
 /****************************************/
 /* 20160523 畫面太矮的時候 */
 
 @media (max-width: 979px) and (max-height: 650px) {
-    #menu-primary {
-        max-height: 210px;
-        overflow-x: auto;
-    }
+  #menu-primary {
+    max-height: 210px;
+    overflow-x: auto;
+  }
 }
 
 /****************************************/
 /* 20160523 常用按鈕 */
 
 .entry-content .post-btn {
-    text-decoration: none !important;
-    font-size: 1em;
-    padding: 0.5em;
+  text-decoration: none !important;
+  font-size: 1em;
+  padding: 0.5em;
 }
 
 .entry-content .post-btn.btn-primary {
-    color: white;
+  color: white;
 }
 
 /********************************************************/
@@ -1098,80 +1073,80 @@ header > .back-button {
 .btn-android .badge{color:#558700;background-color:#fff}
 
 .entry-content .btn:not(.btn-primary) {
-    background-image: none;
+  background-image: none;
 }
 .entry-content a.btn.btn-social {
-    color:white;
-    text-shadow: none;
-    padding-top:0;
-    padding-bottom: 0;
+  color:white;
+  text-shadow: none;
+  padding-top:0;
+  padding-bottom: 0;
 }
 
 .entry-content a.btn.btn-social.btn-reddit {
-    color: black;
+  color: black;
 }
 
 .entry-content a.btn.btn-social:focus {
-    padding-left: 44px;
+  padding-left: 44px;
 }
 
 .entry-content a.btn.btn-lg.btn-social {
-    font-size: 18px;
-    line-height: 45px;
+  font-size: 18px;
+  line-height: 45px;
 }
 
 .entry-content a.btn.btn-lg.btn-social:focus {
-    padding-left: 61px;
+  padding-left: 61px;
 }
 
 .entry-content a.btn {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /**********************************************/
 /* 20160527 調整側欄，加上RSS連結 */
 
 #sidebar .widget a.icon {
-    float: right;
-    line-height: 40px;
-    background: #FFFFFF;
-    font-size: 20px;
-    font-weight: normal;
-    padding: 10px 15px 0;
-    color: #292929;
+  float: right;
+  line-height: 40px;
+  background: #FFFFFF;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 10px 15px 0;
+  color: #292929;
 }
 
 /**********************************************/
 /* 20160608 首頁的labels */
 #main .index-labels {
-    display: none;  
+  display: none;  
 }
 #main .meta .label-info a,
 #main .meta > p > small > span a{
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 #main .meta > p > small > span {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #main .meta > p > small > span,
 #main .meta > p > small > a {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 /*************************************/
 /* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */
 
 @media (max-width: 460px) {
-    #content-wrapper #primary {
-        padding-left:0px !important;
-        padding-right:0px !important; 
-    }
-    .sumome-stylebufferbottom-shim {
-        height: 50px;
-    }
+  #content-wrapper #primary {
+    padding-left:0px !important;
+    padding-right:0px !important; 
+  }
+  .sumome-stylebufferbottom-shim {
+    height: 50px;
+  }
 }
 
 
@@ -1179,40 +1154,40 @@ header > .back-button {
 /* 20160625 隨機文章 */
 
 .sidebar .widget-content li a {
-    font-size: inherit;
-    color: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 ul#random_posts {
-    list-style-type: none;
-    padding: 0px;
-    padding-bottom: 0.5em;
+  list-style-type: none;
+  padding: 0px;
+  padding-bottom: 0.5em;
 }
 
 #random_posts dd {
-    line-height: 22px;
-    margin: 0;
-    padding: 8px 15px 8px 10px;
-    position: relative;
-    min-height: 55px;
-    border-left: 3px solid transparent;
+  line-height: 22px;
+  margin: 0;
+  padding: 8px 15px 8px 10px;
+  position: relative;
+  min-height: 55px;
+  border-left: 3px solid transparent;
 }
 
 #random_posts dd:hover {
-    background:#F8F8F8;
-    border-left:3px solid #F69087;
-    cursor:pointer
+  background:#F8F8F8;
+  border-left:3px solid #F69087;
+  cursor:pointer
 }
 
 #random_posts img {
-    /*border-radius: 10px;*/
-    float: left;
-    margin-right: 5px;
-    max-width: 70px;
-    height: auto;
-    background-color: #F5F5F5;
-    padding: 3px;
-    transition: all 0.2s linear 0s;
+  /*border-radius: 10px;*/
+  float: left;
+  margin-right: 5px;
+  max-width: 70px;
+  height: auto;
+  background-color: #F5F5F5;
+  padding: 3px;
+  transition: all 0.2s linear 0s;
 }
 
 /*
@@ -1237,92 +1212,92 @@ ul#random_posts {
 */
 
 #random_posts .random-summary {
-    font-size: 11px;
-    background: none;
-    padding: 5px;
-    margin-right: 8px;
+  font-size: 11px;
+  background: none;
+  padding: 5px;
+  margin-right: 8px;
 }
 
 #random_posts li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #EEEEEE;
-    padding: 4px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 4px;
 }
 
 #sidebar > .widget > a.icon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /*****************************************/
 /* 20160626 小畫面下面about me按鈕錯誤 */
 @media (max-width: 1200px) and (min-width: 979px) {
-    #sidebar .about-link .read-more {
-        padding: 5px;
-        margin-top: 2px;
-    }
+  #sidebar .about-link .read-more {
+    padding: 5px;
+    margin-top: 2px;
+  }
 }   /* @media (max-width: 1200px) and (min-width: 979px) { */
 
 
 /*************************************/
 /* 20160926 快速編輯 */
 #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {
-    display: block;
-    float: left;
-    border-radius: 3px;
-    font-size: 13px;
-    padding: 7px 20px;
-    background: #333;
-    color: #fff;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border: 1px solid #1D1D1D;
-    margin-top: 13px;
-    margin-bottom: 12px;
-    margin-left: 1em;
+  display: block;
+  float: left;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 7px 20px;
+  background: #333;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid #1D1D1D;
+  margin-top: 13px;
+  margin-bottom: 12px;
+  margin-left: 1em;
 }
 
 #main .entry-container .entry-content .foundation .meta {
-    line-height: 100%;
+  line-height: 100%;
 }
 
 #main .entry-container .entry-content > a:last-of-type {
-    display: none;
+  display: none;
 }
 
 #main .entry-container .entry-content {
-    padding-bottom: 1px;
+  padding-bottom: 1px;
 }
 
 /*****************************/
 /* 20161116 */
 @media (max-width: 979px) {
-    #masthead.fixed-nav > .container {
-        box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
-    }
+  #masthead.fixed-nav > .container {
+    box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
+  }
 }
 
 .entry-content p, 
 .entry-content li {
-    color: black;
+  color: black;
 }
 
 /******************************/
 /* 20170912 navbar */
 @media (max-width: 979px) {
-    #header-inner {
-        min-height: 40px;
-    }
+  #header-inner {
+    min-height: 40px;
+  }
 }
 
 @media (min-width: 979px) {
-    #header {
-        margin-top: -5px;
-    }
+  #header {
+    margin-top: -5px;
+  }
 }
 
 iframe#comment-editor {
-    width: 100% !important;
-    height: 250px;
+  width: 100% !important;
+  height: 250px;
 }
 
 .post-avatar {
@@ -1332,13 +1307,13 @@ iframe#comment-editor {
 
 
 .firstload-background {
-background: url(//2.bp.blogspot.com/-h8fC3jrTphQ/U9Ywn5XUesI/AAAAAAAABGA/TOLe6IOXPtQ/s1600/pattern5.png) repeat scroll 0 0 transparent;;
-height: 100%;
-left: 0;
-position: fixed;
-top: 0;
-width: 100%;
-z-index: -1;
+  background: url(//2.bp.blogspot.com/-h8fC3jrTphQ/U9Ywn5XUesI/AAAAAAAABGA/TOLe6IOXPtQ/s1600/pattern5.png) repeat scroll 0 0 transparent;;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .author-box{
