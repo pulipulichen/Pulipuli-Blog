@@ -1,3 +1,16 @@
 /**
  * 只有在 979 以下才會顯示這個按鈕
  */
+
+/* --------------------------------------------- */
+/* @media (max-width: 979px) {*/
+@media (max-width: 979px) {
+  #masthead .btn-navbar {
+    font-size: 23px !important;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+  
+  /* --------------------------------------------- */
+  /* @media (max-width: 979px) fixed-nav {*/
+}

@@ -1326,10 +1326,6 @@ ul#random_posts {
 /******************************/
 /* 20170912 navbar */
 @media (max-width: 979px) {
-    .navbar .btn-navbar {
-        margin-top: 5px;
-        margin-bottom: 0;
-    }
     #header-inner {
         min-height: 40px;
     }
