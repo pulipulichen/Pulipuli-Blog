@@ -18,6 +18,8 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/go-top.css',
       './lib-for-link/src/global-header/style/style.css',
       
+      './lib-for-link/src/global-header/gsc-search/default.css',
+      './lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css',
       './lib-for-link/src/global-header/gsc-search/gsc-search-bar.css',
       './lib-for-link/src/global-header/gsc-search/gsc-search-result.css',
       './lib-for-link/src/global-header/gsc-search/gsc-search.js',

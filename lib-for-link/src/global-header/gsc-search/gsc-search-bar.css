@@ -105,19 +105,19 @@
   text-indent: 9999px;
   position: relative;
 }
-
-#masthead .search-bar .gsc-input {
+/*
+#masthead .search-bar input.gsc-input {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
-#masthead .search-bar.visible .gsc-input {
+#masthead .search-bar.visible input.gsc-input {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
 }
-
+*/
 /******************************/
 /* 縮小寬度之下的導航列 */
 
@@ -176,8 +176,9 @@
   display: none !important;
 }
 
-.gsc-input-box {
-  border-radius: 0.5em;
+#masthead .gsc-input-box {
+  border-radius: 0.5em !important;
+  /*border: 2px solid yellow;*/
 }
 
 .gsc-input-box input.gsc-input {

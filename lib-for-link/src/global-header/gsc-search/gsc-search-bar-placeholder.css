@@ -1,0 +1,18 @@
+#masthead .search-bar.placeholder input.gsc-input {
+  width: 100%; 
+  padding: 0px; 
+  border: none; 
+  margin: 0px; 
+  height: auto; 
+  text-indent: 48px; 
+  outline: none;
+}
+
+#masthead .search-bar.placeholder table.gsc-input {
+  width: 100%; 
+  padding: 0px;
+}
+
+#masthead .search-bar.placeholder {
+  margin-top: 0;
+}
