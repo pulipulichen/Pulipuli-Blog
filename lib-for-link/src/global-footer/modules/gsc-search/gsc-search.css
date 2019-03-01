@@ -121,13 +121,13 @@
     padding:0;
   }
   #masthead .search-bar .gcse {
-    margin-top: 19px;
+    margin-top: 13px;
   }
   #masthead .nav-search .srch_btn {
-    margin-top: -3px;
+    margin-top: -5px;
   }
   
   #masthead .nav-search input {
-    
+    line-height: 34px;
   }
 }
