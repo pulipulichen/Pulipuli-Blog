@@ -12,3 +12,7 @@
   display: block;
   float: right;
 }
+
+#sidebar .widget.about-me .link-buttons {
+  white-space: nowrap;
+}

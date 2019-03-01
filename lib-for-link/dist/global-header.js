@@ -1249,7 +1249,7 @@ exports.push([module.i, "#header-inner.header-inner-not-mobile {\n  background-r
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#sidebar .widget.about-me .description .avatar-image-container {\n  background-image: url(//lh3.googleusercontent.com/-tkBPlsBsFJg/V0M0b-gPKNI/AAAAAAACw9Y/Y-2BGg4z3H4/Image.jpg?imgmax=50);\n  background-repeat: no-repeat;\n  border-width: 0;\n  height: 54px;\n  width: 54px;\n  border-right-width: 0px; \n  border-top-width: 0px; \n  border-bottom-width: 0px; \n  border-left-width: 0px;\n  margin-left: 0.5rem;\n  display: block;\n  float: right;\n}", ""]);
+exports.push([module.i, "#sidebar .widget.about-me .description .avatar-image-container {\n  background-image: url(//lh3.googleusercontent.com/-tkBPlsBsFJg/V0M0b-gPKNI/AAAAAAACw9Y/Y-2BGg4z3H4/Image.jpg?imgmax=50);\n  background-repeat: no-repeat;\n  border-width: 0;\n  height: 54px;\n  width: 54px;\n  border-right-width: 0px; \n  border-top-width: 0px; \n  border-bottom-width: 0px; \n  border-left-width: 0px;\n  margin-left: 0.5rem;\n  display: block;\n  float: right;\n}\n\n#sidebar .widget.about-me .link-buttons {\n  white-space: nowrap;\n}", ""]);
 
 
 

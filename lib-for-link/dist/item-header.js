@@ -1654,6 +1654,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./lib-for-link/src/item-header/style/sidebar.css":
+/*!********************************************************!*\
+  !*** ./lib-for-link/src/item-header/style/sidebar.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./sidebar.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-header/style/sidebar.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./lib-for-link/src/item-header/style/style-item.css":
 /*!***********************************************************!*\
   !*** ./lib-for-link/src/item-header/style/style-item.css ***!
@@ -1769,6 +1799,21 @@ exports.push([module.i, "/*****************************/\n/* 20170312 GO to comm
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, "/**\r\n * @author Pulipuli Chen 20190301\r\n * 修正圖片寬度的問題\r\n */\r\n#main article img {\r\n  max-width: calc(100% - 2rem);\r\n}\r\n\r\n@media (max-width: 460px) {\r\n  #main article img {\r\n    max-width: 100%;\r\n    margin-left: -1rem;\r\n  }\r\n  #main article > p > a[href] {\r\n    display: block;\r\n    text-align: center;\r\n  }\r\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-header/style/sidebar.css":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-header/style/sidebar.css ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "#sidebar .widget.about-me .link-buttons .subscribe {\n  display: none;\n}", ""]);
 
 
 
@@ -2395,9 +2440,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 2:
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/item-header/style/article-meta.css ./lib-for-link/src/item-header/style/comment.css ./lib-for-link/src/item-header/style/go-top.css ./lib-for-link/src/item-header/style/image.css ./lib-for-link/src/item-header/style/backlinks.css ./lib-for-link/src/item-header/style/style-item.css ./lib-for-link/src/item-header/script/script-item.js ./lib-for-link/src/item-header/modules/related-posts/related-posts.js ./lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js ./lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js ./lib-for-link/src/item-header/style-print/style-print.css ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/item-header/style/article-meta.css ./lib-for-link/src/item-header/style/comment.css ./lib-for-link/src/item-header/style/go-top.css ./lib-for-link/src/item-header/style/image.css ./lib-for-link/src/item-header/style/backlinks.css ./lib-for-link/src/item-header/style/sidebar.css ./lib-for-link/src/item-header/style/style-item.css ./lib-for-link/src/item-header/script/script-item.js ./lib-for-link/src/item-header/modules/related-posts/related-posts.js ./lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js ./lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js ./lib-for-link/src/item-header/style-print/style-print.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2406,6 +2451,7 @@ __webpack_require__(/*! ./lib-for-link/src/item-header/style/comment.css */"./li
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/go-top.css */"./lib-for-link/src/item-header/style/go-top.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/image.css */"./lib-for-link/src/item-header/style/image.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/backlinks.css */"./lib-for-link/src/item-header/style/backlinks.css");
+__webpack_require__(/*! ./lib-for-link/src/item-header/style/sidebar.css */"./lib-for-link/src/item-header/style/sidebar.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/style/style-item.css */"./lib-for-link/src/item-header/style/style-item.css");
 __webpack_require__(/*! ./lib-for-link/src/item-header/script/script-item.js */"./lib-for-link/src/item-header/script/script-item.js");
 __webpack_require__(/*! ./lib-for-link/src/item-header/modules/related-posts/related-posts.js */"./lib-for-link/src/item-header/modules/related-posts/related-posts.js");
