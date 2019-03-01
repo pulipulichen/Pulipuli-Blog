@@ -129,7 +129,9 @@ jQuery.puliGuestBook = function (config) {
     var temp = '<ul id="' + listID + '" class="guest-book-list">';
     var postshow = listNumber;
     var titlelen = '20';
-    var layout = "<span class='date'>%Y%-%M%-%D%</span> <strong class='name'>%authorname%</strong>:<br /> %comment%";
+    var layout = `<a class="date" href="%COMMENT_LINK%" target="_blank">%Y%-%M%-%D% (查看留言)</a>
+      <strong class="name">%authorname%</strong>:<br />
+      %comment%`;
     var sortentry = [];
     try
     {
@@ -140,10 +142,12 @@ jQuery.puliGuestBook = function (config) {
         return 0 - order;
       });
     } catch (e) {
+      // do nothing
     }
     var firstPost = null;
-    for (var i = 0, post; post = sortentry[i]; i++)
-    {
+    console.log('========要顯示post了============')
+    for (var i = 0, post; post = sortentry[i]; i++) {
+      console.log(post)
       if (i === 0) {
         firstPost = post;
       }
@@ -152,41 +156,67 @@ jQuery.puliGuestBook = function (config) {
       }
       var title = post.content.$t;
       var fulltitle = title.replace("\u003CBR/\u003E", "<br />\n");
+      
       //var tmp = fulltitle.split('<br />'); fulltitle = tmp.join('&nbsp;\n');
       //var tmp = fulltitle.split('"'); fulltitle = tmp.join('&quot;');
       //var tmp = fulltitle.split('<'); fulltitle = tmp.join('&lt;');
       //var tmp = fulltitle.split('>'); fulltitle = tmp.join('&gt;');
+      
+      /**
+       * 移除掉過長長度留言刪除的功能
+       * @type String
+       */
+      
       //if (titlelen != "" && title.length > titlelen)
       //  title = title.substr(0, titlelen) + "...";
+      
       var title_temp = "";
-      for (var j = 0; j < title.length; j++)
-      {
+      for (var j = 0; j < title.length; j++) {
         var temp_char = title.substr(j, 1);
-        if (temp_char === "<")
-        {
+        if (temp_char === "<") {
           var temp_j = title.indexOf(">", j);
           if (temp_j !== -1)
             j = temp_j;
           continue;
-        } else
+        } else {
           title_temp = title_temp + temp_char;
+        }
       }
       title = title_temp;
       var link = post.link[2].href;
       var title_link = fulltitle;
+      
+      /**
+       * 取得comment id
+       * "tag:blogger.com,1999:blog-16607461.post-2375590755261769329"
+       * http://blog.pulipuli.info/2005/12/blogger_113544406852218769.html?showComment=1547392640473#c2375590755261769329
+       * @type String
+       */
+      let commentId = post.id.$t
+      commentId = commentId.slice(commentId.lastIndexOf('.post-') + 6, commentId.length)
+      console.log(commentId)
+      let commentLink = addLink
+      if (commentLink.indexOf('#')) {
+        commentLink = commentLink.slice(0, commentLink.indexOf('#'))
+      }
+      commentLink = commentLink + '#c' + commentId 
+      
       var authorname = post.author[0].name.$t;
+      
       if (authorname === 'Anonymous') {
         authorname = anonymous;
       }
 
-      if (authorname === adminName && adminPhoto !== null) {
+      if (authorname === adminName 
+              && adminPhoto !== null) {
         authorname = '<img src="' + adminPhoto + '" class="admin-photo" border="0" /> '
                 + authorname;
       }
 
       var uri = '';
       if (typeof (post.author[0].uri) !== 'undefined') {
-        uri = post.author[0].uri.$t;
+        //uri = post.author[0].uri.$t;
+        uri = commentLink // 20190301 換成連結到comment那篇
         authorname = '<a href="' + uri + '" target="_blank">' + authorname + '</a>';
       }
 
@@ -199,10 +229,9 @@ jQuery.puliGuestBook = function (config) {
               .replace("%Y%", y)
               .replace("%M%", m)
               .replace("%D%", d)
-              .replace("%authorname%", authorname);
+              .replace("%authorname%", authorname)
+              .replace("%COMMENT_LINK%", commentLink)
       
-      layout_replace = '<a href="" target="_blank">' + layout_replace + '</a>'
-
       var odd = 0;
       if (i % 2 === 1) {
         odd = 1;
