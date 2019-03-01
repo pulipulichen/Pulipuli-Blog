@@ -120,6 +120,7 @@ jQuery.puliGuestBook = function (config) {
   var write = getParam('write', '撰寫留言');
   var reload = getParam('reload', '重新讀取');
   var addLink = getParam('addLink', null);
+  var disableBottomButtons = getParam('disableBottomButtons', false);
 
   handleGuestbookPulipuli = function (json) {
     //document.getElementById("pulipuli_guestbook").innerHTML = '';
@@ -194,7 +195,13 @@ jQuery.puliGuestBook = function (config) {
       var m = timestamp.substr(5, 2);
       var d = timestamp.substr(8, 2);
 
-      var layout_replace = layout.replace("%comment%", title_link).replace("%Y%", y).replace("%M%", m).replace("%D%", d).replace("%authorname%", authorname);
+      var layout_replace = layout.replace("%comment%", title_link)
+              .replace("%Y%", y)
+              .replace("%M%", m)
+              .replace("%D%", d)
+              .replace("%authorname%", authorname);
+      
+      layout_replace = '<a href="" target="_blank">' + layout_replace + '</a>'
 
       var odd = 0;
       if (i % 2 === 1) {
@@ -229,11 +236,14 @@ jQuery.puliGuestBook = function (config) {
       }
       //https://www.blogger.com/comment.g?blogID=16607461&postID=113544406852218769
       reload_cmd = "jQuery.getScript('" + baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli')";
+      
+      $('#sidebar .guestbook a.icon.reload').click(() => {
+        jQuery.getScript( baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli")
+      })
       //$.getScript('http://pulipuli.blogspot.com/feeds/1187506547871300947/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli');
     }
 
-    if (post = sortentry[i])
-    {
+    if (post = sortentry[i]) {
       link = add_link;
 
       temp += '<li class="guest-book-li readmore"><span class="item-title">'
@@ -242,17 +252,17 @@ jQuery.puliGuestBook = function (config) {
     }
     temp += "</ul>";
 
+    if (disableBottomButtons === false) {
+      temp += '<div class="guestbook-write">'
+              //+ ' <a href="'+rss_link+'" style="float:right;margin-right:1em;font-size: 1.5em;line-height: 1em;">'
+              //+ '<img src="http://3.bp.blogspot.com/_yr4MQB4zDus/Ru35yvgloDI/AAAAAAAABOQ/bbtw-pQhpOk/s200/rss.gif" border="0" />'
+              //+ '<i class="fa fa-rss-square"></i>'
+              //+ '</a>'
 
-
-    temp += '<div class="guestbook-write">'
-            //+ ' <a href="'+rss_link+'" style="float:right;margin-right:1em;font-size: 1.5em;line-height: 1em;">'
-            //+ '<img src="http://3.bp.blogspot.com/_yr4MQB4zDus/Ru35yvgloDI/AAAAAAAABOQ/bbtw-pQhpOk/s200/rss.gif" border="0" />'
-            //+ '<i class="fa fa-rss-square"></i>'
-            //+ '</a>'
-
-            + ' <a href="' + add_link + '" class="write" target="guestbook_write">' + write + '</a>'
-            + ' <a class="write" onclick="' + reload_cmd + '">' + reload + '</a>'
-            + '</div>';
+              + ' <a href="' + add_link + '" class="write" target="guestbook_write">' + write + '</a>'
+              + ' <a class="write" onclick="' + reload_cmd + '">' + reload + '</a>'
+              + '</div>';
+    }
 
     //document.getElementById("pulipuli_guestbook").innerHTML = temp;
     container.html(temp);

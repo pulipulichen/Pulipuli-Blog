@@ -16,3 +16,11 @@
 #sidebar .widget.about-me .link-buttons {
   white-space: nowrap;
 }
+
+#sidebar .widget a h2 {
+  cursor: inherit;
+}
+
+#sidebar .widget h2 {
+  cursor: default;
+}

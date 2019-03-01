@@ -9,3 +9,6 @@
 # AddThis Floating Position
 
 只有在480px以下，AddThis工具才會放到下面
+
+# Font Awaresome Icon
+https://fontawesome.com/icons?d=gallery

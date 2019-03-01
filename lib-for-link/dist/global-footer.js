@@ -436,17 +436,18 @@ var menu_search_submit = function (_form) {
 jQuery.puliGuestBook({
     blogID: "16607461",    //blog的ID
     postID: "113544406852218769",    //post的ID
-    url: "/2005/12/blogger_113544406852218769.html",    //訂閱張貼意見的網址，或是文章ID:115667103250300740
+    url: "/2005/12/blogger_113544406852218769.html#comment-editor",    //訂閱張貼意見的網址，或是文章ID:115667103250300740
     //css: "//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.css",    //CSS樣式表
     container: ".puliGuestBook",    //顯示留言的元素
     listNumber: 20,    //顯示留言數量。超過此數量時，會顯示「閱讀全部留言」的連結。
-    adminName: '布丁布丁吃布丁',    //Blog主人的名字
+    adminName: 'Pulipuli Chen',    //Blog主人的名字
     adminPhoto: '//1.bp.blogspot.com/_yr4MQB4zDus/SZ4Mb30N0aI/AAAAAAAAFUg/3OGhwhzBUOg/S45/',    //部落格主人的照片
     anonymous: '匿名',    //匿名者的名字
     readMore: '閱讀全部留言',    //閱讀全部留言連結的名稱
     write: '撰寫留言',    //撰寫留言連結的名稱
     reload: '重新讀取',    //重新讀取連結的名稱
-    addLink: "/2005/12/blogger_113544406852218769.html#comment-editor" //撰寫留言的按鈕連結
+    addLink: "/2005/12/blogger_113544406852218769.html#comment-editor", //撰寫留言的按鈕連結
+    disableBottomButtons: true
 });
 
 /***/ }),
@@ -610,6 +611,7 @@ jQuery.puliGuestBook = function (config) {
   var write = getParam('write', '撰寫留言');
   var reload = getParam('reload', '重新讀取');
   var addLink = getParam('addLink', null);
+  var disableBottomButtons = getParam('disableBottomButtons', false);
 
   handleGuestbookPulipuli = function (json) {
     //document.getElementById("pulipuli_guestbook").innerHTML = '';
@@ -684,7 +686,13 @@ jQuery.puliGuestBook = function (config) {
       var m = timestamp.substr(5, 2);
       var d = timestamp.substr(8, 2);
 
-      var layout_replace = layout.replace("%comment%", title_link).replace("%Y%", y).replace("%M%", m).replace("%D%", d).replace("%authorname%", authorname);
+      var layout_replace = layout.replace("%comment%", title_link)
+              .replace("%Y%", y)
+              .replace("%M%", m)
+              .replace("%D%", d)
+              .replace("%authorname%", authorname);
+      
+      layout_replace = '<a href="" target="_blank">' + layout_replace + '</a>'
 
       var odd = 0;
       if (i % 2 === 1) {
@@ -719,11 +727,14 @@ jQuery.puliGuestBook = function (config) {
       }
       //https://www.blogger.com/comment.g?blogID=16607461&postID=113544406852218769
       reload_cmd = "jQuery.getScript('" + baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli')";
+      
+      $('#sidebar .guestbook a.icon.reload').click(() => {
+        jQuery.getScript( baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli")
+      })
       //$.getScript('http://pulipuli.blogspot.com/feeds/1187506547871300947/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli');
     }
 
-    if (post = sortentry[i])
-    {
+    if (post = sortentry[i]) {
       link = add_link;
 
       temp += '<li class="guest-book-li readmore"><span class="item-title">'
@@ -732,17 +743,17 @@ jQuery.puliGuestBook = function (config) {
     }
     temp += "</ul>";
 
+    if (disableBottomButtons === false) {
+      temp += '<div class="guestbook-write">'
+              //+ ' <a href="'+rss_link+'" style="float:right;margin-right:1em;font-size: 1.5em;line-height: 1em;">'
+              //+ '<img src="http://3.bp.blogspot.com/_yr4MQB4zDus/Ru35yvgloDI/AAAAAAAABOQ/bbtw-pQhpOk/s200/rss.gif" border="0" />'
+              //+ '<i class="fa fa-rss-square"></i>'
+              //+ '</a>'
 
-
-    temp += '<div class="guestbook-write">'
-            //+ ' <a href="'+rss_link+'" style="float:right;margin-right:1em;font-size: 1.5em;line-height: 1em;">'
-            //+ '<img src="http://3.bp.blogspot.com/_yr4MQB4zDus/Ru35yvgloDI/AAAAAAAABOQ/bbtw-pQhpOk/s200/rss.gif" border="0" />'
-            //+ '<i class="fa fa-rss-square"></i>'
-            //+ '</a>'
-
-            + ' <a href="' + add_link + '" class="write" target="guestbook_write">' + write + '</a>'
-            + ' <a class="write" onclick="' + reload_cmd + '">' + reload + '</a>'
-            + '</div>';
+              + ' <a href="' + add_link + '" class="write" target="guestbook_write">' + write + '</a>'
+              + ' <a class="write" onclick="' + reload_cmd + '">' + reload + '</a>'
+              + '</div>';
+    }
 
     //document.getElementById("pulipuli_guestbook").innerHTML = temp;
     container.html(temp);
@@ -786,7 +797,7 @@ exports.push([module.i, ".search-bar {\n  -moz-transition: .3s linear;\n  -webki
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".puli-guest-book .admin-photo {\n  float:left;\n  margin-right: 5px;\n  width:20px; \n  height: 20px;\n  display:block;\n}\n\n.puli-guest-book .guest-book-list {\n  /* border: 3px solid #D2CBBD; */\n  max-height: 300px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  color: #5B5743;\n  font-size:90%;\n\n  padding: 0;\n  margin: 0;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li {\n  background-image:none;\n  background-color: white !important;\n  margin: 0;\n  padding: 18px;\n  list-style:none;\n  clear:both;\n  text-indent: 0px !important;\n  color: #5B5743 !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li:hover {\n  padding-left: 15px;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li .date {\n  background-image:none !important;\n  background-color: transparent !important;\n  padding: 0 !important;\n  list-style:none;\n  text-indent: 0px !important;\n  color: #5B5743 !important;\n  width: auto !important;\n  height: auto !important;\n\n\n  display: block;\n  float:right;\n  text-align: right;\n  color: #B4AF98;\n  font-size:70%;\n  margin: 0 !important;\n  margin-left: 10px !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li.readmore {\n  text-align:center;\n  font-weight: bold;\n  border-top: 1px solid #5B5743;\n  background-color: white;\n  padding: 10px 0;\n}\n\n.puli-guest-book .guestbook-write {\n  text-align:center;\n  font-weight: bold;\n  padding: 10px 0;\n}\n\n.puli-guest-book .guestbook-write a.write {\n  color: #5B5743;\n  border: 1px solid #D2CBBD;\n  background-color:white;\n  padding: 5px;\n  margin: 5px;\n  text-decoration:none;\n  font-size:90%;\n  cursor:pointer;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n}\n\n.puli-guest-book .guestbook-write a.write:hover {\n  color: #5B5743;\n  border-color: #5B5743;\n}\n\n/*\n.puli-guest-book .guest-book-list .guest-book-li.guest-book-li-0 {\n  background-color: #F6F3E0 !important;\n}\n.puli-guest-book .guest-book-list .guest-book-li.guest-book-li-1 {\n  background-color: white !important;\n}\n*/\n\n.puli-guest-book .guest-book-list strong.name a {\n  display: inline;\n}", ""]);
+exports.push([module.i, ".puli-guest-book .admin-photo {\n  float:left;\n  margin-right: 5px;\n  width:20px; \n  height: 20px;\n  display:block;\n}\n\n.puli-guest-book .guest-book-list {\n  /* border: 3px solid #D2CBBD; */\n  max-height: 500px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  color: #5B5743;\n  font-size:90%;\n\n  padding: 0;\n  margin: 0;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li {\n  background-image:none;\n  background-color: white !important;\n  margin: 0;\n  padding: 18px;\n  list-style:none;\n  clear:both;\n  text-indent: 0px !important;\n  color: #5B5743 !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li:hover {\n  padding-left: 15px;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li.readmore:hover {\n  padding-left: -9px !important;\n  border-left-width: 0 !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li .date {\n  background-image:none !important;\n  background-color: transparent !important;\n  padding: 0 !important;\n  list-style:none;\n  text-indent: 0px !important;\n  color: #5B5743 !important;\n  width: auto !important;\n  height: auto !important;\n\n\n  display: block;\n  float:right;\n  text-align: right;\n  color: #B4AF98;\n  font-size:70%;\n  margin: 0 !important;\n  margin-left: 10px !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li.readmore {\n  text-align:center;\n  font-weight: bold;\n  /*border-top: 1px solid #5B5743;*/\n  /*background-color: white;*/\n  padding: 10px 0;\n  background-color: #D6D7D6 !important;\n}\n\n.puli-guest-book .guestbook-write {\n  text-align:center;\n  font-weight: bold;\n  padding: 10px 0;\n}\n\n.puli-guest-book .guestbook-write a.write {\n  color: #5B5743;\n  border: 1px solid #D2CBBD;\n  background-color:white;\n  padding: 5px;\n  margin: 5px;\n  text-decoration:none;\n  font-size:90%;\n  cursor:pointer;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n}\n\n.puli-guest-book .guestbook-write a.write:hover {\n  color: #5B5743;\n  border-color: #5B5743;\n}\n\n/*\n.puli-guest-book .guest-book-list .guest-book-li.guest-book-li-0 {\n  background-color: #F6F3E0 !important;\n}\n.puli-guest-book .guest-book-list .guest-book-li.guest-book-li-1 {\n  background-color: white !important;\n}\n*/\n\n.puli-guest-book .guest-book-list strong.name a {\n  display: inline;\n}", ""]);
 
 
 
