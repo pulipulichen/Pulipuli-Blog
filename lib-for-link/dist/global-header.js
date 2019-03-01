@@ -270,6 +270,136 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css":
+/*!**********************************************************************!*\
+  !*** ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./gsc-search-bar.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/gsc-search/gsc-search-result.css":
+/*!*************************************************************************!*\
+  !*** ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./gsc-search-result.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/gsc-search-result.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/gsc-search/gsc-search.js":
+/*!*****************************************************************!*\
+  !*** ./lib-for-link/src/global-header/gsc-search/gsc-search.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+var initSearchInput = () => {
+  $("#s.search_input").blur(function () {
+    if (this.value.trim() === '') {
+      this.value = this.defaultValue;
+    }
+  }).focus(function () {
+    if (this.value === this.defaultValue) {
+      this.value = ''
+    }
+  })
+}
+
+(function () {
+  var cx = '017270649262638447003:o6vaq9on3vs';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = '//cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+  
+  $('#gsce_submit').click(() => {
+    $('input.gsc-search-button').click()
+  })
+  
+  initSearchInput()
+  $('#searchform').submit(function () {
+    return menu_search_submit(this);
+  })
+  
+  var timer = setInterval(() => {
+    if ($('#gsc-i-id1').length > 0) {
+      $('#gsc-i-id1').attr('placeholder', 'Search')
+      $('.navbar-inner .search-bar').addClass('visible')
+      clearInterval(timer)
+    }
+  }, 500)
+})();
+
+/**
+ * 幫search button做調整
+ * @author Pulipuli Chen 20190228
+ */
+$(function () {
+    $("#srch_btn").click(function () {
+        $("#masthead input.gsc-search-button").click();
+    });
+});
+
+var menu_search_submit = function (_form) {
+    var _query = _form.q.value;
+    ga("send", "event", "search", _query, 1);
+    //console.log("送出GA事件 search");
+    
+    $("#masthead input.gsc-input").val(_query).attr('placeholder', '')
+    $("#masthead input.gsc-search-button").click();
+    return false;
+};
+
+
+/***/ }),
+
 /***/ "./lib-for-link/src/global-header/script/env-variables.js":
 /*!****************************************************************!*\
   !*** ./lib-for-link/src/global-header/script/env-variables.js ***!
@@ -1210,6 +1340,36 @@ exports.push([module.i, "/* latin-ext */\n@font-face {\n  font-family: 'Lato';\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "#masthead .search-bar {\n  -moz-transition: .3s linear;\n  -webkit-transition: .3s ease-out;\n  transition: .3s linear;\n  float: right;\n  right: 0;\n  cursor: pointer;\n  background-image: none;\n  background-repeat: no-repeat;\n  padding: 0px 0px 23px 20px;\n  background-size: 100px 100px;\n  top: 0;\n  z-index: 99999;\n  margin-top: -5px;\n  \n}\n\n#masthead .search-bar:hover {\n  -moz-transition: .01s linear;\n  -webkit-transition: .01s ease-out;\n  transition: .01s linear;\n  /*opacity: 1; */\n  background-image:none;\n}\n\n#masthead .nav-search {\n  width: auto;\n  height: 30px;\n  position: relative;\n  left: 0;\n  /* float: left; */\n  line-height: 10px;\n  color: #fff !important;\n}\n\n#masthead .nav-search label {\n  display: none;\n}\n\n#masthead .nav-search input {\n  float: left;\n  /*width: 0;*/\n  background: none;\n  height: 30px;\n  line-height: 20px;\n  margin: 22px 0 0;\n  padding: 0 10px 0 0;\n  font-size: 15px;\n  /*color: #fff !important;*/\n  outline: 0;\n  border-radius: 0;\n  border: 0;\n  /*opacity: 1;*/\n  /*opacity: 1;*/\n  /*-webkit-transition: all .8s ease-in-out;\n  -moz-transition: all .8s ease-in-out;\n  -o-transition: all .8s ease-in-out;\n  transition: all .8s ease-in-out;\n  -webkit-appearance: none;*/\n\n  width: 160px;\n  margin-left: 33px;\n  background: none;\n  border-bottom: 1px solid #f1f1f1;\n  opacity: 1;\n  margin-top: -4px !important;\n}\n\n/*\n.search-bar:hover .nav-search input {\n    width: 160px;\n    margin-left: 33px;\n    background: none;\n    border-bottom: 1px solid #f1f1f1;\n    opacity: 1;\n}\n*/\n/*\n.nav-search input::-webkit-input-placeholder {\n    color: #eee;\n}\n\n.nav-search input::-moz-placeholder {\n    color: #eee;\n}\n\n.nav-search input:-moz-placeholder {\n    color: #eee;\n}\n\n.nav-search input:-ms-input-placeholder {\n    color: #eee;\n}\n\n.nav-search input:focus {\n    color: #fff;\n}\n*/\n\n#masthead .nav-search .srch_btn {\n  height: 42px;\n  width: 23px;\n  margin-top: 0;\n  background: url(\"//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png\") 2px center no-repeat;\n  text-indent: 9999px;\n  position: relative;\n}\n\n#masthead .search-bar .gsc-input {\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0s linear 300ms, opacity 300ms;\n}\n\n#masthead .search-bar.visible .gsc-input {\n  visibility: visible;\n  opacity: 1;\n  transition: visibility 0s linear 0s, opacity 300ms;\n}\n\n/******************************/\n/* 縮小寬度之下的導航列 */\n\n.nav-search input.search_input,\n.search-bar:hover .nav-search input {\n  background-color: white;\n  color: black !important;\n  padding-left: 0.5em;\n  border-radius: 3px;\n  margin-top:27px;\n}\n\n\n#masthead.fixed-nav.affix .search-bar {\n  padding-bottom: 0;\n}\n\n#masthead.fixed-nav .descriptionwrapper {\n  display: none;\n}\n\n\n/***********************/\n.gsc-control-cse {\n  border-color: transparent !important;\n  background-color: transparent !important;\n  padding: 0 !important;\n}\n\n.gcse {\n  float: left;\n  /*margin-left: 30px;*/\n  margin-top: 7px;\n}\n\n.nav-search {\n  margin-top: 19px;\n  float: right;\n}\n\n.nav-search .srch_btn {\n  float: left;\n}\n\n.fixed-nav .nav-search .srch_btn {\n  margin-top: -15px;\n}\n\n.cse .gsc-control-wrapper-cse, \n#masthead .gsc-control-wrapper-cse {\n  width: 160px !important;\n  transition: width .2s !important;\n}\n\n.gsc-search-button {\n  display: none !important;\n}\n\n.gsc-input-box {\n  border-radius: 0.5em;\n}\n\n.gsc-input-box input.gsc-input {\n  opacity: 1 !important;\n  /*border-width: 0;*/\n  background-image: none !important;\n  box-shadow: inset 0px 0px 0px 0px red;\n  text-indent: 0 !important;\n}\n\n@media (max-width: 979px) {\n  #masthead .search-bar {\n    /*\n    margin-top: 16px;\n    padding-left: 0;\n    padding-right: 0;\n    */\n    padding:0;\n  }\n  #masthead .search-bar .gcse {\n    margin-top: 13px;\n  }\n\n  #masthead .nav-search .srch_btn {\n    margin-top: -5px;\n  }\n\n  #masthead .nav-search input {\n    line-height: 34px;\n  }\n}\n\n@media (min-width: 979px) and (max-width: 1200px) {\n  #masthead .gsc-control-wrapper-cse {\n    width: 135px !important;\n  }\n}\n\n\n@media (min-width: 979px) {\n  #masthead .search-bar .gcse {\n    margin-top: 7px;\n  }\n\n  #masthead.fixed-nav .search-bar .srch_btn {\n    margin-top: -15px;\n  }\n\n  #masthead .nav-search input {\n    line-height: 26px;\n  }\n\n}\n\n\n@media (max-width: 680px) {\n  .search-bar {\n    /*display: none;*/\n    position: absolute;\n    top: -1000px;\n  }\n\n\n  /*********************/\n  .navbar .nav li.search {\n    display: list-item !important;\n  }\n\n  .navbar .nav li.search form {\n    margin: 0;\n  }\n\n  .navbar .nav li.search input {\n    width: calc(100% - 100px);\n    /*margin: 0 18px;*/\n  }\n\n  .navbar .nav li.search .srch_btn {\n    height: 42px;\n    width: 23px;\n    margin-top: 0;\n    background: url(//3.bp.blogspot.com/-h-x1pzE69JE/U5sUcTyNfAI/AAAAAAAAAdg/PYKJ6twHM1M/s1600/search-icon.png) 2px center no-repeat;\n    text-indent: 9999px;\n    position: relative;\n    float: left;\n    margin-left: 18px;\n    margin-right: 10px;\n    margin-top: -5px;\n    display: inline !important;\n    border-width: 0;\n  }\n  /*\n  .search-bar {\n      clear: both;\n      padding-top: 0;\n      padding-bottom: 5px;\n  }\n  .search-bar form {\n      margin: 0;\n  }\n  .nav-search input {\n      margin-top: 5px;\n  }\n  .navbar .btn-navbar {\n      margin-bottom: 0;\n  }\n\n  /*.search-bar:hover .nav-search input {\n      width:100%;\n  }\n  */\n}", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/gsc-search-result.css":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "\n.gsc-results-wrapper-overlay {\n  line-height: 1.5em;\n}\n\n.gsc-results-wrapper-overlay .gcsc-branding {\n  display: none;\n}\n\n.gsc-results-wrapper-overlay .gsc-cursor-box {\n  text-align: center;\n}\n\n.gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page {\n  padding: 7px 10px;\n  border: 1px solid gray !important;\n  border-radius: 5px;\n  cursor: pointer !important;\n  color: gray !important;\n  text-decoration: none !important;\n}\n\n.gsc-results-wrapper-overlay .gsc-cursor .gsc-cursor-page.gsc-cursor-current-page {\n  color: black !important;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper {\n  max-height: calc(100% - 120px);\n  overflow-y: auto;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper > .gsc-adBlock {\n  display: none;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper img.gs-image {\n  width: 100% !important;\n  height: auto !important;\n  max-width: 100% !important;\n  max-height: 100% !important;\n  border: 1px solid gray;\n}\n\n.gsc-results-wrapper-overlay .gsc-wrapper a.gs-image {\n  width: 176px;\n}\n\n.gsc-results-wrapper-overlay .gs-image-box.gs-web-image-box {\n  width: 176px !important;\n  height: auto !important;\n  max-height: 176px;\n  /*margin-right: calc(1em + 7px);*/\n  top: -3em;\n  margin-bottom: -3em;\n  position: relative;\n}\n\n.gsc-results-wrapper-overlay div.gs-title,\n.gsc-results-wrapper-overlay div.gsc-url-top {\n  margin-left: calc(176px + 1em);\n}\n\n.gsc-results-wrapper-overlay div.gs-snippet {\n  margin-left: 19px;\n}\n\n.gsc-results-wrapper-overlay td.gsc-table-cell-thumbnail.gsc-thumbnail {\n  width: 176px;\n  display: block !important;\n}", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/2_style.css":
 /*!************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-header/style/2_style.css ***!
@@ -1279,7 +1439,7 @@ exports.push([module.i, "#header-inner.header-inner-not-mobile {\n  background-r
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n/******************/\n\n#masthead #header h1 {\n  line-height:30px;\n  margin-top: 10px;\n}\n\n#masthead.fixed-nav.affix #header h1 {\n  line-height: 22px;\n}\n\n#masthead.fixed-nav {\n  opacity: 1 !important;\n  background-color: rgba(34, 34, 34, 0.9) !imporant;\n}\n\n/* ------------------------------ */\n\n@media (max-width: 460px) {\n  #masthead #header .description {\n    display: none;\n  }\n  #masthead #header {\n    /*margin-top: 15px;*/\n    margin-right:0 ;\n    max-width: calc(100% - 101px);\n    /*margin-left: 5px;*/\n    overflow-x: hidden;\n    white-space: nowrap;\n  }\n\n  #masthead {\n    height: auto;\n  }\n\n  /*\n  #masthead #header h1 {\n      line-height:50px;\n      margin-top: 2px;\n  }\n  */\n}\n\n@media (max-width: 979px) {\n  #masthead #header #header-inner{\n    /*margin-left: 10px !important;*/\n    margin-top: 15px;\n  }\n\n  /************/\n  #masthead {\n    position: fixed !important;\n  }\n\n  #masthead.fixed-nav.affix .btn-navbar {\n    margin-top: 5px;\n    margin-bottom: 0;\n  }\n\n  #masthead.fixed-nav.affix #header h1 {\n    line-height: 55px;\n    margin-top: 0 !important;\n  }\n\n  #masthead.fixed-nav.affix #header-inner {\n    margin-top: 0px;\n  }\n\n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a {\n    padding-left:22px !important;\n  }\n\n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:hover, \n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:active, \n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:focus {\n    padding-left:19px !important;\n  }\n\n}\n", ""]);
+exports.push([module.i, "\n/******************/\n\n#masthead #header h1 {\n  line-height:30px;\n  margin-top: 10px;\n}\n\n#masthead.fixed-nav.affix #header h1 {\n  line-height: 22px;\n}\n\n#masthead.fixed-nav {\n  opacity: 1 !important;\n  background-color: rgba(34, 34, 34, 0.9) !imporant;\n}\n\n\n/* ------------------------------ */\n\n@media (max-width: 460px) {\n  #masthead #header .description {\n    display: none;\n  }\n  #masthead #header {\n    /*margin-top: 15px;*/\n    margin-right:0 ;\n    max-width: calc(100% - 101px);\n    /*margin-left: 5px;*/\n    overflow-x: hidden;\n    white-space: nowrap;\n  }\n\n  #masthead {\n    height: auto;\n  }\n\n  /*\n  #masthead #header h1 {\n      line-height:50px;\n      margin-top: 2px;\n  }\n  */\n}\n\n@media (max-width: 979px) {\n  #masthead #header #header-inner{\n    /*margin-left: 10px !important;*/\n    margin-top: 15px;\n  }\n\n  /************/\n  #masthead {\n    position: fixed !important;\n  }\n\n  #masthead.fixed-nav.affix .btn-navbar {\n    margin-top: 5px;\n    margin-bottom: 0;\n  }\n\n  #masthead.fixed-nav.affix #header h1 {\n    line-height: 55px;\n    margin-top: 0 !important;\n  }\n\n  #masthead.fixed-nav.affix #header-inner {\n    margin-top: 0px;\n  }\n\n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a {\n    padding-left:22px !important;\n  }\n\n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:hover, \n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:active, \n  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:focus {\n    padding-left:19px !important;\n  }\n\n}\n\n@media (min-width: 979px) and (max-width: 1200px) {\n  .navbar {\n    width: 960px !important;\n  }\n}", ""]);
 
 
 
@@ -1921,9 +2081,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.css ./lib-for-link/src/global-header/style/sidebar.css ./lib-for-link/src/global-header/style/go-top.css ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.css ./lib-for-link/src/global-header/style/sidebar.css ./lib-for-link/src/global-header/style/go-top.css ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1937,6 +2097,9 @@ __webpack_require__(/*! ./lib-for-link/src/global-header/style/header.css */"./l
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/sidebar.css */"./lib-for-link/src/global-header/style/sidebar.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/go-top.css */"./lib-for-link/src/global-header/style/go-top.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/style.css */"./lib-for-link/src/global-header/style/style.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css */"./lib-for-link/src/global-header/gsc-search/gsc-search-bar.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/gsc-search-result.css */"./lib-for-link/src/global-header/gsc-search/gsc-search-result.css");
+__webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/gsc-search.js */"./lib-for-link/src/global-header/gsc-search/gsc-search.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/breeze-theme/breeze.js */"./lib-for-link/src/global-header/breeze-theme/breeze.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/script/google-analytics.js */"./lib-for-link/src/global-header/script/google-analytics.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/script/facebook.js */"./lib-for-link/src/global-header/script/facebook.js");

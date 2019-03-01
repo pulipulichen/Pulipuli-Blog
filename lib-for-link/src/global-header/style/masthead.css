@@ -15,6 +15,7 @@
   background-color: rgba(34, 34, 34, 0.9) !imporant;
 }
 
+
 /* ------------------------------ */
 
 @media (max-width: 460px) {
@@ -77,4 +78,10 @@
     padding-left:19px !important;
   }
 
+}
+
+@media (min-width: 979px) and (max-width: 1200px) {
+  .navbar {
+    width: 960px !important;
+  }
 }

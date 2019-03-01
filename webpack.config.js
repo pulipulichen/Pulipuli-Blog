@@ -18,6 +18,10 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/go-top.css',
       './lib-for-link/src/global-header/style/style.css',
       
+      './lib-for-link/src/global-header/gsc-search/gsc-search-bar.css',
+      './lib-for-link/src/global-header/gsc-search/gsc-search-result.css',
+      './lib-for-link/src/global-header/gsc-search/gsc-search.js',
+      
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/script/google-analytics.js',
       './lib-for-link/src/global-header/script/facebook.js',
@@ -32,9 +36,6 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js',
-      
-      './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.css',
-      './lib-for-link/src/global-footer/modules/gsc-search/gsc-search.js',
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/article-meta.css',
