@@ -7,3 +7,9 @@
 #comment-editor.hide {
   display: none;
 }
+
+#comments-block img.favicon {
+  height: 16px;
+  width: 16px;
+  margin-bottom:-2px;
+}
