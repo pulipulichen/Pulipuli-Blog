@@ -13,5 +13,10 @@
 # Font Awaresome Icon
 https://fontawesome.com/icons?d=gallery
 
+# 關於Header的高度
+
 header nav bar 最高就是56
 不能再高了
+
+header標準最高高度為82
+統一用這個吧，雖然這是一個奇怪的數字
