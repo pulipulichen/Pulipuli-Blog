@@ -20,3 +20,6 @@ header nav bar 最高就是56
 
 header標準最高高度為82
 統一用這個吧，雖然這是一個奇怪的數字
+
+尺寸參考
+https://i.stack.imgur.com/vN5Ox.png
