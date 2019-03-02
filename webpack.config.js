@@ -87,6 +87,9 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/disqus/disqus.js',
       './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
     ],
+    'test': [
+      './tests/b/simple-test.js'
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'lib-for-link/dist'),

@@ -60,17 +60,8 @@ rm2 = function (_0x17a4x5, _url, _labels){
     after_rm2(_id);
 }
 
-window[_0x2b54[32]] = function () {
-  var _0x17a4x8=document[_0x2b54[6]](_0x2b54[33]);
-  if (_0x17a4x8== null) {
-    window[_0x2b54[35]][_0x2b54[34]]=_0x2b54[36]
-  }
-  _0x17a4x8[_0x2b54[37]](_0x2b54[34],_0x2b54[36]);
-  _0x17a4x8[_0x2b54[24]]=_0x2b54[38]
-}
-    
-stripTags2 = function (_0x17a4x2,_0x17a4x3) {
-  return _0x17a4x2[_0x2b54[5]](/<img[^>]*>/ig,_0x2b54[4]);
+stripTags2 = function (a,_0x17a4x3) {
+  return a.replace(/<img[^>]*>/ig,'');
 }
 
 after_rm2 = function (_id) {

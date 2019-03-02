@@ -4,11 +4,12 @@
   "description": "擺放blog.pulipuli.info各種資料的儲存庫",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch --mode development",
+    "webpack-build": "webpack",
+    "webpack-watch": "webpack --watch --mode development",
     "webpack-dev-server": "webpack-dev-server  --progress --colors --hot",
     "unit-test": "webpack --config tests/config/webpack-test.config.js --mode development",
-    "mocha": "mocha --watch tests/*.js"
+    "mocha": "mocha tests/**/*.mocha-test.js",
+    "mocha-watch": "mocha --watch tests/**/*.mocha-test.js"
   },
   "repository": {
     "type": "git",
