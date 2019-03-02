@@ -15,8 +15,8 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/sidebar/sidebar.css',
       './lib-for-link/src/global-header/sidebar/sidebar.js',
       
-      './lib-for-link/src/global-header/btn-navbar/nav-collapse.css',
-      './lib-for-link/src/global-header/btn-navbar/btn-navbar.css',
+      './lib-for-link/src/global-header/btn-navbar/nav-collapse.less',
+      './lib-for-link/src/global-header/btn-navbar/btn-navbar.less',
       './lib-for-link/src/global-header/btn-navbar/btn-navbar.js',
       
       './lib-for-link/src/global-header/style/masthead.css',
@@ -28,9 +28,9 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/style.css',
       
       './lib-for-link/src/global-header/gsc-search/default.css',
-      './lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.css',
-      './lib-for-link/src/global-header/gsc-search/gsc-search-bar.css',
-      './lib-for-link/src/global-header/gsc-search/gsc-search-result.css',
+      './lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.less',
+      './lib-for-link/src/global-header/gsc-search/gsc-search-bar.less',
+      './lib-for-link/src/global-header/gsc-search/gsc-search-result.less',
       './lib-for-link/src/global-header/gsc-search/gsc-search.js',
       
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
