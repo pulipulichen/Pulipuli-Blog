@@ -1,4 +1,5 @@
 const path = require('path')
+var glob = require("glob");
 
 let webpackConfig  = {
   //cache: true,
@@ -67,9 +68,7 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/style-print/style-print.css',
       //'./lib-for-link/src/item-header/style-print/gutenberg.min.css'
     ],
-    'item-owl': [
-      './lib-for-link/src/item-olw/style/style-olw.css'
-    ],
+    'item-owl': glob.sync('./lib-for-link/src/item-olw/**/*.css'),
     'page': [
       './lib-for-link/src/page/style/style-page.css'
     ],
