@@ -22,7 +22,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/masthead.css',
       './lib-for-link/src/global-header/style/2_style.css',
       './lib-for-link/src/global-header/style/3_custom_style.css',
-      './lib-for-link/src/global-header/style/header.css',
+      './lib-for-link/src/global-header/style/header.less',
       './lib-for-link/src/global-header/style/addthis.css',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/style.css',
@@ -98,7 +98,15 @@ let webpackConfig  = {
           'style-loader', // 這個會後執行 (順序很重要)
           'css-loader' // 這個會先執行
         ]
-      }
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader', // Step 3
+          'css-loader', // Step 2再執行這個
+          'less-loader' // Step 1 要先執行這個
+        ],
+      },
     ]
   }
 }
