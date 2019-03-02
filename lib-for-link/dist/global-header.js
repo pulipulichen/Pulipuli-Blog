@@ -649,6 +649,60 @@ var menu_search_submit = function (_form) {
 
 /***/ }),
 
+/***/ "./lib-for-link/src/global-header/script/back-button.js":
+/*!**************************************************************!*\
+  !*** ./lib-for-link/src/global-header/script/back-button.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// ----------------------------------
+// 20160522 回到上一頁的功能：如果上一頁不是布丁布丁吃什麼，那就隱藏
+
+var _header_back_button_click = function () {
+
+  var _back_type = "back";
+
+  if (typeof (document.referrer) !== "string") {
+    _back_type = "index";
+  } else {
+    var _needle = [
+      "http://blog.pulipuli.info/",
+      "http://pulipuli.info/",
+      "http://pulipuli.blogspot.com/",
+      "http://pulipuli.blogspot.tw/"
+    ];
+
+    var _result = false;
+    for (var _i = 0; _i < _needle.length; _i++) {
+      var _n = _needle[_i];
+      if (document.referrer.substr(0, _n.length) === _n) {
+        _result = true;
+        break;
+      }
+    }
+
+    if (_result === false) {
+      _back_type = "index";
+    }
+  }
+
+  if (_back_type === "back") {
+    if (history.back() === undefined) {
+      location.href = "/";
+    }
+  } else {
+    location.href = "/";
+  }
+};
+
+$(function () {
+  $('#masthead header .back-button').click(_header_back_button_click)
+})
+
+
+/***/ }),
+
 /***/ "./lib-for-link/src/global-header/script/env-variables.js":
 /*!****************************************************************!*\
   !*** ./lib-for-link/src/global-header/script/env-variables.js ***!
@@ -900,51 +954,6 @@ PULI_UTILS.create_page_id = function () {
     _page_index++;
     return _pagename;
 };
-
-// ----------------------------------
-// 20160522 回到上一頁的功能：如果上一頁不是布丁布丁吃什麼，那就隱藏
-
-var _header_back_button_click = function () {
-    
-    var _back_type = "back";
-    
-    if (typeof(document.referrer) !== "string") {
-        _back_type = "index";
-    }
-    else {
-        var _needle = [
-            "http://blog.pulipuli.info/", 
-            "http://pulipuli.info/", 
-            "http://pulipuli.blogspot.com/", 
-            "http://pulipuli.blogspot.tw/"
-        ];
-
-        var _result = false;
-        for (var _i = 0; _i < _needle.length; _i++) {
-            var _n = _needle[_i];
-            if (document.referrer.substr(0, _n.length) === _n) {
-                _result = true;
-                break;
-            }
-        }
-        
-        if (_result === false) {
-            _back_type = "index";
-        }
-    }
-    
-    if (_back_type === "back") {
-        if (history.back() === undefined) {
-            location.href = "/";
-        }
-    }
-    else {
-        location.href = "/";
-    }
-};
-$(function () {
-  $('header .back-button').click(_header_back_button_click)
-})
 
 // ----------------------------------
 // 20160522 Relate post的功能
@@ -1824,7 +1833,7 @@ exports.push([module.i, ".gcse .gsc-results-wrapper-overlay {\n  line-height: 1.
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#masthead header #header {\n  margin-top: -2px;\n}\n#masthead header #header #header-inner.header-inner-not-mobile {\n  background-repeat: no-repeat;\n}\n#masthead header #header #header-inner:not(.no-header-image) .titlewrapper {\n  background: transparent;\n}\n#masthead header #header #header-inner:not(.no-header-image) .titlewrapper .title {\n  background: transparent;\n  border-width: 0px;\n}\n#masthead header #header #header-inner-link,\n#masthead header #header #header-inner-link > a {\n  display: block;\n}\n#masthead header #header .descriptionwrapper {\n  cursor: default;\n}\n#masthead header .back-button {\n  float: left;\n  font-size: 30px;\n  padding-right: 10px;\n  color: white;\n  cursor: pointer;\n  line-height: 68px;\n  width: 30px;\n  /*\n    .back-button {\n      font-size: 20px;\n      line-height: 55px;\n      margin-top: 0px;\n    }\n    */\n}\n#masthead.fixed-nav header #header {\n  margin-top: -5px;\n}\n#masthead.fixed-nav header .back-button {\n  font-size: 20px;\n  line-height: 37px;\n  width: 20px;\n}\n@media (min-width: 979px) {\n  /*\n  #header {\n    margin-top: -5px;\n  }\n  */\n}\n@media (max-width: 979px) {\n  #masthead header .back-button {\n    margin-left: 10px;\n  }\n  #masthead.fixed-nav header #header {\n    /*\n      margin-top: 3px;\n      margin-bottom: -3px;\n      */\n    margin: 0;\n  }\n  #masthead.fixed-nav header #header h1.title {\n    /*line-height: 55px;*/\n    font-size: 20px;\n    /*padding-left: 5px;*/\n    margin-top: 0px;\n    line-height: 56px;\n  }\n  #masthead.fixed-nav header #header #header-inner {\n    min-height: auto;\n    margin-left: 0 !important;\n    margin-top: auto;\n  }\n  #masthead.fixed-nav header .back-button {\n    margin-right: 0;\n    line-height: 56px;\n  }\n}\n@media (max-width: 480px) {\n  #masthead header #header {\n    /*border:1px solid red;*/\n    max-width: calc(100% - 80px);\n    margin: 0;\n  }\n  #masthead header #header h1.title {\n    /*line-height: 55px;*/\n    font-size: 20px;\n    /*padding-left: 5px;*/\n    margin-top: 0px;\n    line-height: 56px;\n  }\n  #masthead header #header #header-inner {\n    min-height: auto;\n    margin-left: 0 !important;\n    margin-top: auto;\n  }\n  #masthead header .back-button {\n    margin-right: -10px;\n    font-size: 20px;\n    line-height: 56px;\n  }\n  #masthead.fixed-nav header #header {\n    /*margin-top: -11px;*/\n    margin: 0;\n  }\n  #masthead.fixed-nav header .back-button {\n    margin-right: 0;\n    line-height: 56px;\n  }\n}\n", ""]);
+exports.push([module.i, "#masthead header .back-button {\n  float: left;\n  font-size: 30px;\n  padding-right: 10px;\n  color: white;\n  cursor: pointer;\n  line-height: 68px;\n  width: 30px;\n  /*\n    .back-button {\n      font-size: 20px;\n      line-height: 55px;\n      margin-top: 0px;\n    }\n    */\n}\n#masthead header #header {\n  margin-top: -2px;\n}\n#masthead header #header #header-inner.header-inner-not-mobile {\n  background-repeat: no-repeat;\n}\n#masthead header #header #header-inner:not(.no-header-image) .titlewrapper {\n  background: transparent;\n}\n#masthead header #header #header-inner:not(.no-header-image) .titlewrapper .title {\n  background: transparent;\n  border-width: 0px;\n}\n#masthead header #header #header-inner-link,\n#masthead header #header #header-inner-link > a {\n  display: block;\n}\n#masthead header #header .descriptionwrapper {\n  cursor: default;\n}\n#masthead.fixed-nav header #header {\n  margin-top: -5px;\n}\n#masthead.fixed-nav header .back-button {\n  font-size: 20px;\n  line-height: 37px;\n  width: 20px;\n}\n@media (min-width: 979px) {\n  /*\n  #header {\n    margin-top: -5px;\n  }\n  */\n}\n@media (max-width: 979px) {\n  #masthead header .back-button {\n    margin-left: 20px;\n  }\n  #masthead header .back-button.placeholder {\n    width: 20px;\n    height: 20px;\n    margin-left: 0;\n    padding-right: 0;\n  }\n  #masthead.fixed-nav header #header {\n    /*\n      margin-top: 3px;\n      margin-bottom: -3px;\n      */\n    margin: 0;\n  }\n  #masthead.fixed-nav header #header h1.title {\n    /*line-height: 55px;*/\n    font-size: 20px;\n    /*padding-left: 5px;*/\n    margin-top: 0px;\n    line-height: 56px;\n  }\n  #masthead.fixed-nav header #header #header-inner {\n    min-height: auto;\n    margin-left: 0 !important;\n    margin-top: auto;\n  }\n  #masthead.fixed-nav header .back-button {\n    margin-right: 0;\n    line-height: 56px;\n  }\n}\n@media (max-width: 480px) {\n  #masthead header {\n    overflow: hidden;\n  }\n  #masthead header #header {\n    /*border:1px solid red;*/\n    max-width: calc(100% - 80px);\n    margin: 0;\n  }\n  #masthead header #header h1.title {\n    /*line-height: 55px;*/\n    font-size: 20px;\n    /*padding-left: 5px;*/\n    margin-top: 0px;\n    line-height: 56px;\n  }\n  #masthead header #header #header-inner {\n    min-height: auto;\n    margin-left: 0 !important;\n    margin-top: auto;\n  }\n  #masthead header .back-button {\n    margin-right: -10px;\n    font-size: 20px;\n    line-height: 56px;\n  }\n  #masthead.fixed-nav header #header {\n    /*margin-top: -11px;*/\n    margin: 0;\n  }\n  #masthead.fixed-nav header .back-button {\n    margin-right: 0;\n    line-height: 56px;\n  }\n}\n", ""]);
 
 
 
@@ -2451,9 +2460,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.css ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/sidebar.css ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.less ./lib-for-link/src/global-header/style/addthis.css ./lib-for-link/src/global-header/style/navbar.less ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.less ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.less ./lib-for-link/src/global-header/gsc-search/gsc-search-result.less ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/script.js ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.css ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/sidebar.css ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/style/masthead.css ./lib-for-link/src/global-header/style/2_style.css ./lib-for-link/src/global-header/style/3_custom_style.css ./lib-for-link/src/global-header/style/header.less ./lib-for-link/src/global-header/style/addthis.css ./lib-for-link/src/global-header/style/navbar.less ./lib-for-link/src/global-header/style/style.css ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.less ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.less ./lib-for-link/src/global-header/gsc-search/gsc-search-result.less ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/back-button.js ./lib-for-link/src/global-header/script/script.js ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2483,6 +2492,7 @@ __webpack_require__(/*! ./lib-for-link/src/global-header/breeze-theme/breeze.js 
 __webpack_require__(/*! ./lib-for-link/src/global-header/script/google-analytics.js */"./lib-for-link/src/global-header/script/google-analytics.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/script/facebook.js */"./lib-for-link/src/global-header/script/facebook.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/script/env-variables.js */"./lib-for-link/src/global-header/script/env-variables.js");
+__webpack_require__(/*! ./lib-for-link/src/global-header/script/back-button.js */"./lib-for-link/src/global-header/script/back-button.js");
 module.exports = __webpack_require__(/*! ./lib-for-link/src/global-header/script/script.js */"./lib-for-link/src/global-header/script/script.js");
 
 

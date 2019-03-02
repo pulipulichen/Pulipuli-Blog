@@ -38,6 +38,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/script/google-analytics.js',
       './lib-for-link/src/global-header/script/facebook.js',
       './lib-for-link/src/global-header/script/env-variables.js',
+      './lib-for-link/src/global-header/script/back-button.js',
       './lib-for-link/src/global-header/script/script.js'
     ],
     'global-footer': [

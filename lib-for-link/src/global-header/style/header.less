@@ -2,6 +2,24 @@
 // Global
 
 #masthead header {
+  .back-button {
+    float: left;
+    font-size: 30px;
+    padding-right: 10px;
+    color: white;
+    cursor: pointer;
+    line-height: 68px;
+    width: 30px;
+    
+    /*
+    .back-button {
+      font-size: 20px;
+      line-height: 55px;
+      margin-top: 0px;
+    }
+    */
+  }
+  
   #header {
     margin-top: -2px;
   }
@@ -30,24 +48,6 @@
     .descriptionwrapper {
       cursor: default;
     }
-  }
-  
-  .back-button {
-    float: left;
-    font-size: 30px;
-    padding-right: 10px;
-    color: white;
-    cursor: pointer;
-    line-height: 68px;
-    width: 30px;
-    
-    /*
-    .back-button {
-      font-size: 20px;
-      line-height: 55px;
-      margin-top: 0px;
-    }
-    */
   }
 }
 
@@ -84,7 +84,14 @@
 @media (max-width: 979px) {
   #masthead header {
     .back-button {
-      margin-left: 10px;
+      margin-left: 20px;
+    }
+    
+    .back-button.placeholder {
+      width: 20px;
+      height: 20px;
+      margin-left: 0;
+      padding-right: 0;
     }
   }
     
@@ -125,6 +132,8 @@
   // 從480px開始，就沒有區分fixed-nav的差別，全部都要一樣小
   
   #masthead header {
+    overflow: hidden;
+    
     #header {
       /*border:1px solid red;*/
       max-width: calc(100% - 80px);
