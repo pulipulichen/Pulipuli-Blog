@@ -12,7 +12,7 @@ describe(scriptName, function() {
 // 固定的開頭  
 
   // 以下才是測試的開始
-  it('should pass', function() {
+  it('should pass 可以測試嗎', function() {
     expect(a()).to.be.true;
   });
 

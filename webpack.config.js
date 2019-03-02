@@ -86,9 +86,6 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/disqus/disqus.css',
       './lib-for-link/src/item-footer/modules/disqus/disqus.js',
       './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
-    ],
-    'test': [
-      './tests/b/simple-test.js'
     ]
   },
   output: {

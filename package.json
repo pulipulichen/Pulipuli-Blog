@@ -8,8 +8,8 @@
     "webpack-watch": "webpack --watch --mode development",
     "webpack-dev-server": "webpack-dev-server  --progress --colors --hot",
     "unit-test": "webpack --config tests/config/webpack-test.config.js --mode development",
-    "mocha": "mocha tests/**/*.mocha-test.js",
-    "mocha-watch": "mocha --watch tests/**/*.mocha-test.js"
+    "mocha": "mocha lib-for-link/src/**/*.mocha-test.js",
+    "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,13 @@
     "chai": "^4.2.0",
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.10",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.5.0",
     "mocha": "^6.0.2",
     "mocha-webpack": "^1.1.0",
+    "nyc": "^13.3.0",
     "preload-webpack-plugin": "^3.0.0-beta.3",
     "should": "^13.2.3",
     "style-loader": "^0.23.1",
