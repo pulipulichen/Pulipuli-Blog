@@ -1,0 +1,29 @@
+/**
+ * @author Pulipuli Chen 20190301
+ * 修正圖片寬度的問題
+ */
+#main article img {
+  max-width: calc(100% - 2rem);
+}
+
+@media (max-width: 480px) {
+  #main article img {
+    max-width: 100%;
+  }
+
+  #main article > p > a[href] > img {
+    display: block;
+    text-align: center;
+    text-indent: 0 !important;
+    /*margin-left: -1rem;*/
+  }
+  
+  #main .entry-content > article > p:first-of-type > a[href$=".png"]:first-of-type,
+  #main .entry-content > article > p:first-of-type > a[href$=".jpg"]:first-of-type, 
+  #main .entry-content > article > p:first-of-type > a[href$=".gif"]:first-of-type, 
+  #main .entry-content > article > p:first-of-type > a[href|="https://lh3.googleusercontent.com/"]:first-of-type,
+  #main .entry-content > article > p:first-of-type > a[href$="-no"]:first-of-type, 
+  #main .entry-content > article > p:first-of-type > a[href$=".png?puli_gphoto=1"]:first-of-type {
+    margin-left: 0 !important;
+  }
+}
