@@ -24,6 +24,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/3_custom_style.css',
       './lib-for-link/src/global-header/style/header.less',
       './lib-for-link/src/global-header/style/addthis.css',
+      './lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/style.css',
       

@@ -55,6 +55,7 @@
 // global fixed-nav
 
 #masthead.fixed-nav header {
+  
   #header {
     margin-top: -5px;
   }
@@ -88,8 +89,31 @@
   }
     
   #masthead.fixed-nav header {
+    #header {
+      /*
+      margin-top: 3px;
+      margin-bottom: -3px;
+      */
+      margin: 0;
+      
+      h1.title {
+        /*line-height: 55px;*/
+        font-size: 20px;
+        /*padding-left: 5px;*/
+        margin-top: 0px;
+        line-height: 56px;
+      }
+      
+      #header-inner {
+        min-height: auto;
+        margin-left: 0 !important;
+        margin-top: auto;
+      }
+    }
+    
     .back-button {
-      line-height: 55px;
+      margin-right: 0;
+      line-height: 56px;
     }
   }
 }
@@ -98,33 +122,45 @@
 // @media (max-width: 480px)
 
 @media (max-width: 480px) {
-  #masthead #header {
-    /*border:1px solid red;*/
-    max-width: calc(100% - 80px);
-  }
+  // 從480px開始，就沒有區分fixed-nav的差別，全部都要一樣小
+  
+  #masthead header {
+    #header {
+      /*border:1px solid red;*/
+      max-width: calc(100% - 80px);
+      margin: 0;
 
-  #masthead #header-inner {
-    margin-left: 0 !important;
-  }
-  
-  
-  header > .back-button {
-    margin-right: -10px;
-  }
+      h1.title {
+        /*line-height: 55px;*/
+        font-size: 20px;
+        /*padding-left: 5px;*/
+        margin-top: 0px;
+        line-height: 56px;
+      }
+      
+      #header-inner {
+        min-height: auto;
+        margin-left: 0 !important;
+        margin-top: auto;
+      }
+    }
 
-  #masthead #header h1,
-  #masthead.fixed-nav.affix #header h1 {
-    font-size: 20px;
-    /*padding-left: 5px;*/
-    margin-top: 0px;
-    line-height: 55px;
-  }
-  
-  #masthead.fixed-nav.affix #header h1 {
-    /*line-height: 55px;*/
-  }
-  
-  #masthead.fixed-nav.affix header > .back-button {
-    margin-right: 0;
+    .back-button {
+      margin-right: -10px;
+      font-size: 20px;
+      line-height: 56px;
+    }
+  } 
+
+  #masthead.fixed-nav header {
+    #header {
+      /*margin-top: -11px;*/
+      margin: 0;
+    }
+    
+    .back-button {
+      margin-right: 0;
+      line-height: 56px;
+    }
   }
 }
