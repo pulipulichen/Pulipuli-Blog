@@ -126,6 +126,7 @@
         background-color: #2D2D2D;
         display: block;
         margin: 0;
+        padding-top: 8px;
 
         li a {
           padding-left:18px !important;
@@ -208,14 +209,14 @@
   }
   
   #masthead .nav-collapse li.search {
-    border-top: 2px solid #F69087;
-    padding-top: 27px;
+    /*border-top: 2px solid #F69087;*/
+    padding-top: 12px;
   }
   
   #masthead .nav-collapse .dropdown-menu {
-    border-top-width: 0;
+    /*border-top-width: 0;*/
     clear: both;
-    margin-top: 7px;
+    margin-top: 0;
   }
   
   #masthead .nav-collapse li.search .gcse-placeholder-dropdown {
@@ -257,15 +258,27 @@
 /* @media (max-width: 480px) { */
 
 @media (max-width: 480px) {
+  #masthead nav {
+    .nav-collapse {
+      overflow: initial;
+      
+      #menu-primary {
+        padding-top: 0;
+      }
+      
+      .dropdown-menu {
+        position: static;
+        width: 100%;
+      }
+    }
+    
+  }
+}
+
+@media (max-width: 480px) and (max-height: 480px) {
   #masthead .nav-collapse .dropdown-menu {
-    position: static;
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 320px;
-    width: 100%;
-  }
-  
-  #masthead .nav-collapse #menu-primary {
-    padding-top: 0;
   }
 }
