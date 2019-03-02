@@ -61,22 +61,6 @@ div.post-avatar {
 }
 
 
-#masthead.fixed-nav {
-  position: fixed;
-  top: 0;
-  width: 100% !important;
-  margin: 0px auto;
-  z-index: 999;
-  height: 56px;
-  opacity: 0.9;
-  -webkit-box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
-  -moz-box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
-  box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
-}
-
-#masthead.fixed-nav li > a {
-  padding: 6px 20px 10px;
-}
 #masthead.fixed-nav img {
   margin-top: 0;
   width: auto;
