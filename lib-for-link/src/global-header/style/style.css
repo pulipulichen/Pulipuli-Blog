@@ -547,22 +547,7 @@ body .addthis-smartlayers {
     top: 0;
   }
 
-  #masthead #header {
-    /*border:1px solid red;*/
-    max-width: calc(100% - 80px);
-  }
-
-  #masthead #header-inner {
-    margin-left: 0 !important;
-  }
-
-  #masthead #header h1,
-  #masthead.fixed-nav.affix #header h1 {
-    font-size: 20px;
-    /*padding-left: 5px;*/
-    margin-top: 0px;
-    line-height: 55px;
-  }
+  
 
   #masthead .navbar-inner .btn-navbar {
     margin:0;
@@ -587,21 +572,12 @@ body .addthis-smartlayers {
     padding-top: 50px !important;
   }
 
-  #masthead.fixed-nav.affix #header h1 {
-    /*line-height: 55px;*/
-  }
 
   #masthead #header-inner .descriptionwrapper {
     display: none;
   }
 
-  header > .back-button {
-    margin-right: -10px;
-  }
 
-  #masthead.fixed-nav.affix header > .back-button {
-    margin-right: 0;
-  }
 
 
   /***********************/
@@ -691,82 +667,6 @@ a[name="more"]:target {
 a#comment-form-anchor:target {
   margin-top: -300px;
 }
-
-
-/**************************/
-/* 20160522 首頁回去按鈕 */
-header > .back-button {
-  float: left;
-  font-size: 30px;
-  padding-right: 10px;
-  color: white;
-  cursor: pointer;
-  line-height: 70px;
-  width: 30px;
-}
-
-.fixed-nav header > .back-button {
-  font-size: 20px;
-  line-height: 35px;
-  width: 20px;
-}
-
-@media (max-width: 979px) {
-  header > .back-button {
-    margin-left: 10px;
-  }
-
-  .fixed-nav header > .back-button {
-    line-height: 55px;
-  }
-}
-
-@media (max-width: 480px) {
-  .fixed-nav header > .back-button,
-  header > .back-button {
-    font-size: 20px;
-    line-height: 55px;
-    margin-top: 0px;
-  }
-  /*
-  .fixed-nav header > .back-button {
-      font-size: 20px;
-      line-height: 55px;
-      margin-top: 0px;
-  }
-  */
-}
-
-/*********************************/
-/* 20160522 修正導覽列的問題 */
-@media (max-width: 1200px) and (min-width: 979px) {
-  #masthead .gsc-control-wrapper-cse {
-    width: 130px !important;
-  }
-  .search-bar {
-    width: 160px !important;
-  }
-
-  .navbar .nav > li > a {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-@media (min-width: 979px) {
-  .search-bar {
-    width: 240px;
-  }
-}
-
-
-/*
-@media (max-width: 979px) {
-    .nav-collapse:not(.in) {
-        clear: none;
-    }
-} 
-*/
 
 /*********************************************/
 /* 20160522 accesskey */
@@ -1259,12 +1159,6 @@ ul#random_posts {
 @media (max-width: 979px) {
   #header-inner {
     min-height: 40px;
-  }
-}
-
-@media (min-width: 979px) {
-  #header {
-    margin-top: -5px;
   }
 }
 

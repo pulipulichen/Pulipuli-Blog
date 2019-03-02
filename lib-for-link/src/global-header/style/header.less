@@ -1,19 +1,130 @@
-#masthead {
-  #header-inner.header-inner-not-mobile {
-    background-repeat: no-repeat;
+// --------------------------
+// Global
+
+#masthead header {
+  #header {
+    margin-top: -2px;
+  }
+  
+  #header {
+    #header-inner.header-inner-not-mobile {
+      background-repeat: no-repeat;
+    }
+
+    #header-inner:not(.no-header-image) {
+      .titlewrapper {
+        background: transparent
+      }
+
+      .titlewrapper .title {
+        background: transparent; 
+        border-width: 0px
+      }
+    } 
+
+    #header-inner-link,
+    #header-inner-link > a {
+      display: block;
+    }
+    
+    .descriptionwrapper {
+      cursor: default;
+    }
+  }
+  
+  .back-button {
+    float: left;
+    font-size: 30px;
+    padding-right: 10px;
+    color: white;
+    cursor: pointer;
+    line-height: 70px;
+    width: 30px;
+    
+    /*
+    .back-button {
+      font-size: 20px;
+      line-height: 55px;
+      margin-top: 0px;
+    }
+    */
+  }
+}
+
+// ------------------------
+// global fixed-nav
+
+#masthead.fixed-nav header {
+  #header {
+    margin-top: -5px;
   }
 
-  #header-inner:not(.no-header-image) .titlewrapper {
-    background: transparent
+  .back-button {
+    font-size: 20px;
+    line-height: 35px;
+    width: 20px;
+  }
+}
+
+// -------------------------------------------
+// @media (min-width: 979px) {
+
+@media (min-width: 979px) {
+  /*
+  #header {
+    margin-top: -5px;
+  }
+  */
+}
+
+// -----------------------------------
+// @media (max-width: 979px)
+
+@media (max-width: 979px) {
+  #masthead header {
+    .back-button {
+      margin-left: 10px;
+    }
+  }
+    
+  #masthead.fixed-nav header {
+    .back-button {
+      line-height: 55px;
+    }
+  }
+}
+
+// -----------------------------------
+// @media (max-width: 480px)
+
+@media (max-width: 480px) {
+  #masthead #header {
+    /*border:1px solid red;*/
+    max-width: calc(100% - 80px);
   }
 
-  #header-inner:not(.no-header-image) .titlewrapper .title {
-    background: transparent; 
-    border-width: 0px
+  #masthead #header-inner {
+    margin-left: 0 !important;
+  }
+  
+  
+  header > .back-button {
+    margin-right: -10px;
   }
 
-  #header-inner-link,
-  #header-inner-link > a {
-    display: block;
+  #masthead #header h1,
+  #masthead.fixed-nav.affix #header h1 {
+    font-size: 20px;
+    /*padding-left: 5px;*/
+    margin-top: 0px;
+    line-height: 55px;
+  }
+  
+  #masthead.fixed-nav.affix #header h1 {
+    /*line-height: 55px;*/
+  }
+  
+  #masthead.fixed-nav.affix header > .back-button {
+    margin-right: 0;
   }
 }
