@@ -1,6 +1,10 @@
 const path = require('path')
 var glob = require("glob")
 
+/**
+ * 列出檔案清單
+ * @author Pulipuli Chen 20190303
+ **/
 function getFilelist (dir) {
   let filelist = glob.sync(path.resolve(dir, '**/*.css'))
       .concat(glob.sync(path.resolve(dir, '**/*.js')))
