@@ -19,3 +19,14 @@ npm init
 
 盡可能降低連線數
 http://blog.pulipuli.info/2007/05/blog-post_7346.html
+
+# Selenium
+https://seleniumhq.github.io/selenium/docs/api/javascript/index.html
+https://www.cnblogs.com/fnng/p/5854875.html
+下載最新版
+http://chromedriver.storage.googleapis.com/index.html?path=73.0.3683.20/
+
+放到node.js安裝環境，例如
+C:\Program Files\nodejs
+
+https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/until.html#titleIs

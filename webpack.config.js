@@ -12,6 +12,7 @@ function getFilelist (dir) {
       .filter((file) => {
         return (!file.endsWith('entry.js') 
           && !file.endsWith('.mocha-test.js')
+          && !file.endsWith('.selenium-test.js')
           && (file.indexOf('/tmp/') === -1)
           && (file.indexOf('/ignore/') === -1))
       })

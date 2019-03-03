@@ -7,7 +7,8 @@
     "webpack-build": "webpack --mode production",
     "webpack-watch": "webpack --watch --mode development",
     "mocha": "mocha lib-for-link/src/**/*.mocha-test.js",
-    "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js"
+    "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js",
+    "selenium": "node selenium.config.js"
   },
   "repository": {
     "type": "git",
