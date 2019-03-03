@@ -15,9 +15,13 @@ function getFilelist (dir) {
           && (file.indexOf('/tmp/') === -1)
           && (file.indexOf('/ignore/') === -1))
       })
-      .map(item => './' + item)
+      .map((item) => {
+        return './' + item
+      })
   return filelist
 }
+
+console.log(getFilelist('./lib-for-link/src/page'))
 
 let webpackConfig  = {
   //cache: true,

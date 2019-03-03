@@ -5,3 +5,4 @@
 /template-builder/.cache/
 /.cache/
 /template-builder/tmp/
+/tmp.js
