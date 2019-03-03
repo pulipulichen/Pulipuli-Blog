@@ -7,7 +7,6 @@
     "webpack-build": "webpack --mode production",
     "webpack-watch": "webpack --watch --mode development",
     "webpack-dev-server": "webpack-dev-server  --progress --colors --hot",
-    "unit-test": "webpack --config tests/config/webpack-test.config.js --mode development",
     "mocha": "mocha lib-for-link/src/**/*.mocha-test.js",
     "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js"
   },
