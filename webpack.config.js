@@ -123,6 +123,12 @@ let webpackConfig  = {
           'less-loader' // Step 1 要先執行這個
         ],
       },
+      {
+        test: /\.vue$/,
+        use: [
+          'vue-loader'
+        ],
+      }
     ]
   }
 }
