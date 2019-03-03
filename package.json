@@ -6,7 +6,6 @@
   "scripts": {
     "webpack-build": "webpack --mode production",
     "webpack-watch": "webpack --watch --mode development",
-    "webpack-dev-server": "webpack-dev-server  --progress --colors --hot",
     "mocha": "mocha lib-for-link/src/**/*.mocha-test.js",
     "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js"
   },
