@@ -1,5 +1,15 @@
 const path = require('path')
-var glob = require("glob");
+var glob = require("glob")
+
+function getFilelist (dir) {
+  let filelist = glob.sync(path.resolve(dir, '**/*.css'))
+      .concat(glob.sync(path.resolve(dir, '**/*.js')))
+      .concat(glob.sync(path.resolve(dir, '**/*.less')))
+      .filter((file) => {
+        return (!file.endsWith('entry.js') && !file.endsWith('.mocha-test.js'))
+      })
+  return filelist
+}
 
 let webpackConfig  = {
   //cache: true,
@@ -68,10 +78,8 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/style-print/style-print.css',
       //'./lib-for-link/src/item-header/style-print/gutenberg.min.css'
     ],
-    'item-owl': glob.sync('./lib-for-link/src/item-olw/**/*.css'),
-    'page': [
-      './lib-for-link/src/page/style/style-page.css'
-    ],
+    'item-owl': getFilelist('./lib-for-link/src/item-olw/'),
+    'page': getFilelist('./lib-for-link/src/page/'),
     'item-footer': [
       './lib-for-link/src/item-footer/modules/highlight/default.css',
       './lib-for-link/src/item-footer/modules/highlight/highlight.js',
@@ -80,7 +88,6 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css',
       './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js',
       './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js',
-      
       
       './lib-for-link/src/item-footer/modules/disqus/disqus.css',
       './lib-for-link/src/item-footer/modules/disqus/disqus.js',
