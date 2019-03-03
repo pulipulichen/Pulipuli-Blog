@@ -6,7 +6,10 @@ function getFilelist (dir) {
       .concat(glob.sync(path.resolve(dir, '**/*.js')))
       .concat(glob.sync(path.resolve(dir, '**/*.less')))
       .filter((file) => {
-        return (!file.endsWith('entry.js') && !file.endsWith('.mocha-test.js'))
+        return (!file.endsWith('entry.js') 
+          && !file.endsWith('.mocha-test.js')
+          && (file.indexOf('/tmp/') === -1)
+          && (file.indexOf('/ignore/') === -1))
       })
   return filelist
 }
