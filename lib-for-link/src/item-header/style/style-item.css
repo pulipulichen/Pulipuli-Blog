@@ -1,0 +1,403 @@
+
+
+#main .entry-content, 
+#main .entry-content li {
+    word-wrap: break-word;
+}
+
+#main .entry-content > article code {
+    display: block;
+}
+
+body .addthis-smartlayers {
+    display: block !important;
+}
+
+.at4-thankyou-background .at4lb-inner {
+    display: none !important;
+}
+
+
+/*************************************/
+
+@media (min-width:767px) {
+    #main .author-meta {
+        max-width: calc(100% - 300px);
+    }
+    
+}
+
+#main .post-iframe {
+    height: 90vh;
+}
+
+#main .entry-meta .creative-commons,
+#main .entry-meta .introduction {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin-left: 74px;
+}
+#main .entry-meta .bl_popover {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+#main .entry-meta .creative-commons img {
+    border-width: 0;
+    /*float:left;*/
+    margin-right: 0;
+    padding-top: 0;
+}
+
+#main .entry-meta img.avatar-author {
+    float:left;
+    margin-top: 8px;
+}
+
+#main .entry-meta h4 {
+    line-height: 1em;
+}
+
+#main .entry-meta .creative-commons .title,
+#main .entry-meta .creative-commons .author {
+    text-decoration: underline;
+    color: #BD8242;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    #footer .management {
+        margin-bottom: 70px;
+    }
+    
+    body > .sumome-stylebufferbottom-shim {
+        display: none;
+    }
+    
+    #main .post h4 {
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+    }
+    
+    #main .post h5,
+    #main .post h6 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    
+    .entry-content > article > p {
+        text-indent: 1em;
+    }
+    
+    .entry-content > article > p:not(:first-of-type) > a.lightbox-group {
+        display: inline-block;
+        text-indent: -1em;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /*#main .entry-content > article > p > a[href$=".png"]:first-of-type img {
+        max-height: 300px;
+    }*/
+    
+    .entry-content ul, .entry-content li {
+        margin-top: 0em !important; 
+        margin-bottom: 0em !important; 
+    }
+    
+}
+/**************************/
+@media (max-width: 767px) {
+    #main .entry-container .entry-content {
+        padding-bottom: 5px;
+        padding-top: 1em;
+    }
+    
+    #main .entry-meta {
+        border-top-width: 1px;
+    }
+    
+    #main .entry-meta .author-meta {
+        padding-left:0;
+        text-align: center;
+        /*display: none;*/
+    }
+    #main .entry-meta .avatar-author,
+    #main .entry-meta .bl_popover {
+        display: none;
+    }
+    
+    #main .entry-meta .avatar-author {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    #main .entry-meta .creative-commons {
+        margin-left: 0 !important;
+        line-height: 1.5em !important;
+    }
+    #main .entry-meta .creative-commons a.img {
+        display: block;
+        margin-top: 1.5em;
+    }
+    #main .entry-meta .creative-commons img {
+        float: none;
+        margin-left: 0;
+    }
+    
+    .entry-meta img {
+        margin-right:0;
+    }
+    
+    .entry-meta .author-meta h4:after {
+        content: attr(data-content);
+        display:block;
+        font-weight: normal;
+        line-height: 1.5em;
+    }
+    
+    .entry-meta .popover {
+        display:none !important;
+    }
+    
+    .entry-meta {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    
+    .share-story-container ul {
+        margin-top:0;
+    }
+    
+    #side-bar {
+        margin-left:0;
+    }
+    
+    /* 20161118 */
+    .entry-meta .author-meta {
+        margin-bottom: 5px;
+    }
+}
+
+/*********************************/
+
+.related-posts .item-img > a > img {
+    max-width: 240px;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.related-posts .item-img {
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.related-posts .related-post-title {
+    overflow-x: hidden;
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    padding-left: 10px;
+}
+
+/*************************************/
+/* 20160528 最矮留言高度 */
+#main div.comments#disqus_thread {
+    min-height: 380px;
+}
+
+#main div.comments#comments {
+    min-height: 378px;
+}
+
+/*************************************/
+/* 20160926 修正code標籤 */
+#main .entry-content > article p > code {
+    text-indent: 0;
+}
+
+#main .entry-content > article pre {
+    font-size: 1em;
+}
+
+#main .entry-content > article code {
+    font-size: 0.8em;
+    line-height: 1.15em;
+}
+
+/************************************/
+/* 20161113 puli toc */
+.entry-content .puli-toc {
+    /*border: 3px solid #CE8A42;*/
+    padding: 0.5em;
+    background-color: #2d2d2d;
+    color: white !important;
+    display: inline-block;
+}
+
+.entry-content .puli-toc li,
+.entry-content .puli-toc a {
+    color: white !important;
+}
+
+/* ******************************* */
+/* 2016/11/15 */
+@media (max-width: 480px) {
+    #masthead #header {
+        max-width: calc(100% - 130px);
+    }
+    
+    
+    .entry-content,
+    .entry-content li {
+        line-height: 150%;
+    }
+    
+    .entry-content article h1 div.meta1 p small span {
+        white-space: nowrap;
+    }
+    
+    #comment-holder li.comment div.avatar-image-container {
+        position: relative;
+        z-index: 1;
+        margin: 10px;
+    }
+    
+    #comment-holder li.comment div.comment-block {
+        margin-left: 0;
+    }
+    
+    #comment-holder li.comment div.comment-block > * {
+        margin-left: 60px;
+    }
+    
+    #comment-holder li.comment div.comment-replies {
+        margin-left: 0;
+    }
+    
+    /* 20161117 */
+    #main .post h1 .meta1 {
+        line-height: 1rem;
+    }
+}
+
+#comment-holder li.comment div.avatar-image-container img[src="//img1.blogblog.com/img/blank.gif"] {
+    /*Gender_Neutral_User-48*/
+    background-image: url(http://pulipulichen.github.io/blogger/blogger/img/no-such-user.png);
+    background-size: cover;
+}
+
+/****************************/
+/* 20161118 */
+.entry-meta.clearfix .share-story-container .share-story.about {
+    display: block;
+}
+
+.entry-meta.clearfix .share-story-container .share-story.about li a  {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .entry-meta.clearfix .share-story-container .share-story.about li a  {
+        line-height: 50px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 767px) {
+    .pull-right.share-story-container {
+        margin-top: 0;
+    }
+    
+    .entry-meta.clearfix .share-story-container .share-story.about li {
+        width: auto;
+    }
+    
+    .entry-meta.clearfix .share-story-container .share-story.about li a {
+        background-color: #D6D7D6;
+        border-radius: 6px;
+        line-height: 32px;
+        padding: 0 10px;
+        margin-top: 5px;
+        font-size: 0.8em;
+    }
+    
+    .entry-meta.clearfix .share-story-container .share-story.about li a:hover {
+        color:white;
+        background-color: #333;
+    }
+}
+
+
+.author-meta .popover {
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+/******************************/
+/* 20170309 上傳圖片 */
+.imgur-btn button {
+    background-color: #f8f8f8;
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    border: 1px solid #c6c6c6;
+    color: #222;
+    -webkit-transition: all;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    font-weight: bold;
+    margin: 0 8px 6px 0;
+    font-family: arial,sans-serif;
+    font-size: 11px;
+    height: 27px;
+    padding-bottom: 0;
+    text-align: center;
+    text-shadow: 0 1px rgba(0,0,0,.1);
+    vertical-align: top;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    user-select: none;
+    margin-left: 0.5em;
+}
+
+.comment-form-tool {
+    font-size: 14px;
+    user-select: none;
+}
+
+
+/*****************************/
+/* 20170916 修正Google投影片iframe的問題 */
+@media (max-width: 1200px) {
+    iframe[src^="https://docs.google.com/presentation/d/e/"] {
+        /* https://docs.google.com/presentation/d/e/2PACX-1vQmg24W4Vqv_NCw2Q2Ke34RVL6uIOKcyJ_DZYjA1Yih05ZWArEctxd3AzteV1tvHQiRyZ-JhADzH3aW/embed?start=false&loop=false&delayms=3000  */
+        width: 100%;
+        height: calc(100vw * 0.7);
+    }
+}   /* @media (max-widt@media (max-width: 1200px) {*/
+
+/*****************************/
+/* 20181021 留言裡面的圖片 */
+/* https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html */
+#comment-holder .comment-content img.comment-image {
+  display: block;
+}
+
+#comment-holder .comment-content iframe.youtube-embed {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ------------------------- */
+#main article .cata-title {
+  width: 75%;
+}
+
+#main article .heading-button {
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  font-size:smaller;
+  font-weight:normal;
+  float:right;
+}

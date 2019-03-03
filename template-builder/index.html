@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pulipuli Blog Template Builder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="lib/jquery/jquery-3.3.1.min.js"></script>
+    <link href='lib/semantic-ui/semantic.min.css' rel='stylesheet' type='text/css'/>
+    <script src="lib/semantic-ui/semantic.min.js"></script>
+    <script src="lib/vue/vue.min.js"></script>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link href='style.css' rel='stylesheet' type='text/css'/>
+  </head>
+  <body>
+    <div class="ui container" id="app">
+      <form class="ui form">
+        <div class="ui stackable two column grid">
+          <div class="column">
+            <a class="ui labeled icon primary fluid button" href="https://www.blogger.com/blogger.g?blogID=16607461#templatehtml/src=sidebar" target="bloggerTemplateLink">
+              <i class="cog icon"></i>
+              Open Blogger Template
+            </a>
+          </div>
+          <div class="column">
+            <a class="ui labeled icon fluid button" href="http://blog.pulipuli.info" target="blogPulipuliInfo">
+              <i class="eye icon"></i>
+              Open Blogger
+            </a>
+          </div>
+        </div>
+            
+        
+        <div class="ui checkbox">
+          <input type="checkbox" id="useLocalhost" name="useLocalhost" v-model="useLocalhost" v-on:change="loadTemplate" />
+          <label for="useLocalhost">Use Local Server</label>
+        </div>
+        <div class="ui stackable one column grid">
+          <div class="column blogger">
+            <button class="ui top attached labeled icon fluid button copy-button" 
+                    type="button" 
+                    v-on:click="copyCode"
+                    v-bind:class="{ disabled: (codeForBlogger == '') }"
+                    >
+              <i class="copy icon"></i>
+              Copy for Blogger Code
+            </button>
+            <textarea v-model="codeForBlogger" 
+                      class="template-code ui attached segment"
+                      placeholder="Blogger Template Code (now loading...)"></textarea>
+          </div>
+          <div class="column olw">
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
