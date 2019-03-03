@@ -1,3 +1,0 @@
-這一些圖片本身不會用到，會直接上傳到Blogger變成網址，不會用Github Page連線
-畢竟Github Page連線速度太慢了
-
