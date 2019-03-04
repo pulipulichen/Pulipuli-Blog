@@ -86,15 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./lib-for-link/src/page/style/style-page.css":
-/*!****************************************************!*\
-  !*** ./lib-for-link/src/page/style/style-page.css ***!
-  \****************************************************/
+/***/ "./lib-for-link/src/page/style/style-page.less":
+/*!*****************************************************!*\
+  !*** ./lib-for-link/src/page/style/style-page.less ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./style-page.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/page/style/style-page.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/less-loader/dist/cjs.js!./style-page.less */ "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./lib-for-link/src/page/style/style-page.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -116,14 +116,114 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/page/style/style-page.css":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/page/style/style-page.css ***!
-  \******************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./lib-for-link/src/page/style/style-page.less":
+/*!**********************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/less-loader/dist/cjs.js!./lib-for-link/src/page/style/style-page.less ***!
+  \**********************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\page\\style\\style-page.css'");
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "#content.main {\n  display: none;\n}\n#main {\n  margin-top: 30px;\n}\n#ArchiveList > #BlogArchive1_ArchiveList ul.hierarchy > li.archivedate {\n  padding-left: 0;\n  margin-left: 1rem !important;\n}\n#ArchiveList > #BlogArchive1_ArchiveList ul.posts > li {\n  padding-left: 0.75rem;\n  margin-left: 1rem !important;\n}\n#main .page-tool {\n  font-size: 14px;\n  user-select: none;\n}\n#main .page-tool a button {\n  background-color: #f8f8f8;\n  background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);\n  border: 1px solid #c6c6c6;\n  color: #222;\n  -webkit-transition: all;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);\n  font-weight: bold;\n  margin-right: 0.5rem;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  height: 27px;\n  padding-bottom: 0;\n  text-align: center;\n  text-shadow: 0 1px rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n  -webkit-appearance: none;\n  box-sizing: border-box;\n  user-select: none;\n}\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return '@media ' + item[2] + '{' + content + '}';
+      } else {
+        return content;
+      }
+    }).join('');
+  }; // import a list of modules into the list
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (i = 0; i < modules.length; i++) {
+      var item = modules[i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || '';
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+  return '/*# ' + data + ' */';
+}
 
 /***/ }),
 
@@ -637,13 +737,13 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 6:
-/*!**********************************************************!*\
-  !*** multi ./lib-for-link/src/page/style/style-page.css ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** multi ./lib-for-link/src/page/style/style-page.less ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./lib-for-link/src/page/style/style-page.css */"./lib-for-link/src/page/style/style-page.css");
+module.exports = __webpack_require__(/*! ./lib-for-link/src/page/style/style-page.less */"./lib-for-link/src/page/style/style-page.less");
 
 
 /***/ })
