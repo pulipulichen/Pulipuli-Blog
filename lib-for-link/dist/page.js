@@ -221,11 +221,76 @@ ArchiveListUtils = {
           $('#' + id).prop('checked', data[id])
         }
       }
-      
     }) 
   },
-  startDownload: function () {
-    console.log('startDownload')
+  
+  // ------------------------------------------------------------------
+  loopOpenItem: function (linkList, callback) {
+    let loop = (i) => {
+      if (i < linkList.length) {
+        let win = window.open(linkList[i])
+        
+        // 這邊要等待它關閉
+        let checkWinClosed = () => {
+          if (win.closed === false) {
+            setTimeout(() => {
+              checkWinClosed()
+            }, 1000)
+          }
+          else {
+            i++
+            loop(i)
+          }
+        }
+        checkWinClosed()
+      }
+      else {
+        if (typeof(callback) === 'function') {
+          callback()
+        }
+      }
+    }
+    loop(0)
+    
+    
+  },
+  startDownload: function (callback) {
+    //console.log('startDownload')
+    
+    let checkedList = $('#BlogArchive1_ArchiveList input.download-checkbox[data-folder-type="month"]:checked')
+    let loopChecklist = (i) => {
+      if (i < checkedList.length) {
+        let li = checkedList.eq(i).parent()
+        if (li.hasClass('collapsed')) {
+          // 要先點開
+          li.children('a.toggle')[0].click()
+          setTimeout(() => {
+            loopChecklist(i)
+          }, 1000)
+        }
+        else {
+          // 已經點開了
+          let linkList = []
+          li.find('ul.posts > li > a').each((i, ele) => {
+            linkList.push(ele.href + '?downloadArticle=true')
+          })
+          
+          // 那我們逐一點開吧
+          this.loopOpenItem(linkList, () => {
+            checkedList.eq(i).prop('checked', false).change()
+            i++
+            loopChecklist(i)
+          })
+        }
+        
+      }
+      else {
+        if (typeof(callback) === 'function') {
+          callback()
+        }
+      }
+    }
+    loopChecklist(0)
   }
 }
 
