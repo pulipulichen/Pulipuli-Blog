@@ -522,11 +522,16 @@ articleDownload = {
     
     return article
   },
-  downloadZIP: function (filename, zip) {
+  downloadZIP: function (filename, zip, callback) {
     zip.generateAsync({type: "blob"})
             .then((content) => {
               // see FileSaver.js
-              saveAs(content, filename + ".zip");
+              let filesaver = saveAs(content, filename + ".zip");
+              setTimeout(() => {
+                if (typeof(callback) === 'function') {
+                  callback()
+                }
+              }, 3000)
             });
   },
   downloadArticle: function () {
@@ -564,7 +569,11 @@ articleDownload = {
         commentJSON = JSON.stringify(commentJSON, null, 2)
         zip.file("comments.json", commentJSON);
 
-        this.downloadZIP(filename, zip)
+        this.downloadZIP(filename, zip, () => {
+          if (location.href.endsWith('downloadArticle=true')) {
+            window.close()
+          }
+        })
       })
       
     })

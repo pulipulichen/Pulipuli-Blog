@@ -1,6 +1,11 @@
 ArchiveListUtils = {
   openListYear: function () {
     console.log('openListYear')
+    //$("#BlogArchive1_ArchiveList > ul.hierarchy > li.archivedate:not(.expanded) a.toggle:eq(0)").trigger("click")
+    let li = $("#BlogArchive1_ArchiveList > ul.hierarchy > li.archivedate:not(.expanded)")
+    let zippy = $("#BlogArchive1_ArchiveList > ul.hierarchy > li.archivedate:not(.expanded) > a.toggle > .zippy:not(.toggle-open)")
+    li.addClass("expanded").removeClass('collapsed')
+    zippy.addClass('toggle-open').text('▼ ')
   },
   openListMonth: function () {
     console.log('openListMonth')
@@ -14,7 +19,7 @@ ArchiveListUtils = {
 }
 
 $(() => {
-  let pageTool = $('#ArchiveList > page-tool')
+  let pageTool = $('#ArchiveList > .page-tool')
   pageTool.find('.open-list.year').click(() => {
     ArchiveListUtils.openListYear()
   })
