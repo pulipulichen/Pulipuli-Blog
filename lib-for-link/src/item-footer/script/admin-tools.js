@@ -23,5 +23,9 @@ $(() => {
     loadAdminTools(() => {
       articleDownload.downloadArticle()
     })
-  }).click()
+  })
+  
+  setTimeout(() => {
+    $('#main .entry-content .blog-admin .download-article-button:visible').click()
+  }, 3000)
 })

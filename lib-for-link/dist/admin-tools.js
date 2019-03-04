@@ -86,6 +86,193 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./lib-for-link/src/admin-tools/article-download/FileSaver.js":
+/*!********************************************************************!*\
+  !*** ./lib-for-link/src/admin-tools/article-download/FileSaver.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var mod; }
+})(this, function () {
+  "use strict";
+
+  /*
+  * FileSaver.js
+  * A saveAs() FileSaver implementation.
+  *
+  * By Eli Grey, http://eligrey.com
+  *
+  * License : https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md (MIT)
+  * source  : http://purl.eligrey.com/github/FileSaver.js
+  */
+  // The one and only way of getting global scope in all environments
+  // https://stackoverflow.com/q/3277182/1008999
+  var _global = typeof window === 'object' && window.window === window ? window : typeof self === 'object' && self.self === self ? self : typeof global === 'object' && global.global === global ? global : void 0;
+
+  function bom(blob, opts) {
+    if (typeof opts === 'undefined') opts = {
+      autoBom: false
+    };else if (typeof opts !== 'object') {
+      console.warn('Depricated: Expected third argument to be a object');
+      opts = {
+        autoBom: !opts
+      };
+    } // prepend BOM for UTF-8 XML and text/* types (including HTML)
+    // note: your browser will automatically convert UTF-16 U+FEFF to EF BB BF
+
+    if (opts.autoBom && /^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(blob.type)) {
+      return new Blob([String.fromCharCode(0xFEFF), blob], {
+        type: blob.type
+      });
+    }
+
+    return blob;
+  }
+
+  function download(url, name, opts) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+
+    xhr.onload = function () {
+      saveAs(xhr.response, name, opts);
+    };
+
+    xhr.onerror = function () {
+      console.error('could not download file');
+    };
+
+    xhr.send();
+  }
+
+  function corsEnabled(url) {
+    var xhr = new XMLHttpRequest(); // use sync to avoid popup blocker
+
+    xhr.open('HEAD', url, false);
+    xhr.send();
+    return xhr.status >= 200 && xhr.status <= 299;
+  } // `a.click()` doesn't work for all browsers (#465)
+
+
+  function click(node) {
+    try {
+      node.dispatchEvent(new MouseEvent('click'));
+    } catch (e) {
+      var evt = document.createEvent('MouseEvents');
+      evt.initMouseEvent('click', true, true, window, 0, 0, 0, 80, 20, false, false, false, false, 0, null);
+      node.dispatchEvent(evt);
+    }
+  }
+
+  var saveAs = _global.saveAs || ( // probably in some web worker
+  typeof window !== 'object' || window !== _global ? function saveAs() {}
+  /* noop */
+  // Use download attribute first if possible (#193 Lumia mobile)
+  : 'download' in HTMLAnchorElement.prototype ? function saveAs(blob, name, opts) {
+    var URL = _global.URL || _global.webkitURL;
+    var a = document.createElement('a');
+    name = name || blob.name || 'download';
+    a.download = name;
+    a.rel = 'noopener'; // tabnabbing
+    // TODO: detect chrome extensions & packaged apps
+    // a.target = '_blank'
+
+    if (typeof blob === 'string') {
+      // Support regular links
+      a.href = blob;
+
+      if (a.origin !== location.origin) {
+        corsEnabled(a.href) ? download(blob, name, opts) : click(a, a.target = '_blank');
+      } else {
+        click(a);
+      }
+    } else {
+      // Support blobs
+      a.href = URL.createObjectURL(blob);
+      setTimeout(function () {
+        URL.revokeObjectURL(a.href);
+      }, 4E4); // 40s
+
+      setTimeout(function () {
+        click(a);
+      }, 0);
+    }
+  } // Use msSaveOrOpenBlob as a second approach
+  : 'msSaveOrOpenBlob' in navigator ? function saveAs(blob, name, opts) {
+    name = name || blob.name || 'download';
+
+    if (typeof blob === 'string') {
+      if (corsEnabled(blob)) {
+        download(blob, name, opts);
+      } else {
+        var a = document.createElement('a');
+        a.href = blob;
+        a.target = '_blank';
+        setTimeout(function () {
+          click(a);
+        });
+      }
+    } else {
+      navigator.msSaveOrOpenBlob(bom(blob, opts), name);
+    }
+  } // Fallback to using FileReader and a popup
+  : function saveAs(blob, name, opts, popup) {
+    // Open a popup immediately do go around popup blocker
+    // Mostly only avalible on user interaction and the fileReader is async so...
+    popup = popup || open('', '_blank');
+
+    if (popup) {
+      popup.document.title = popup.document.body.innerText = 'downloading...';
+    }
+
+    if (typeof blob === 'string') return download(blob, name, opts);
+    var force = blob.type === 'application/octet-stream';
+
+    var isSafari = /constructor/i.test(_global.HTMLElement) || _global.safari;
+
+    var isChromeIOS = /CriOS\/[\d]+/.test(navigator.userAgent);
+
+    if ((isChromeIOS || force && isSafari) && typeof FileReader === 'object') {
+      // Safari doesn't allow downloading of blob urls
+      var reader = new FileReader();
+
+      reader.onloadend = function () {
+        var url = reader.result;
+        url = isChromeIOS ? url : url.replace(/^data:[^;]*;/, 'data:attachment/file;');
+        if (popup) popup.location.href = url;else location = url;
+        popup = null; // reverse-tabnabbing #460
+      };
+
+      reader.readAsDataURL(blob);
+    } else {
+      var URL = _global.URL || _global.webkitURL;
+      var url = URL.createObjectURL(blob);
+      if (popup) popup.location = url;else location.href = url;
+      popup = null; // reverse-tabnabbing #460
+
+      setTimeout(function () {
+        URL.revokeObjectURL(url);
+      }, 4E4); // 40s
+    }
+  });
+  _global.saveAs = saveAs.saveAs = saveAs;
+
+  if (true) {
+    module.exports = saveAs;
+  }
+});
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./lib-for-link/src/admin-tools/article-download/article-download.js":
 /*!***************************************************************************!*\
   !*** ./lib-for-link/src/admin-tools/article-download/article-download.js ***!
@@ -97,6 +284,7 @@ __webpack_require__(/*! ./jszip.js */ "./lib-for-link/src/admin-tools/article-do
 //require('./beautify.js')
 //require('./beautify-css.js')
 __webpack_require__(/*! ./beautify-html.js */ "./lib-for-link/src/admin-tools/article-download/beautify-html.js")
+__webpack_require__(/*! ./FileSaver.js */ "./lib-for-link/src/admin-tools/article-download/FileSaver.js")
 
 articleDownload = {
   getRenderedPost: function () {
@@ -156,6 +344,13 @@ articleDownload = {
     document.execCommand("copy")
     document.removeEventListener("copy", listener)
   },
+  beautifyHTML: function (html) {
+    return html_beautify(html, {
+      "indent_size": 2,
+      "indent_char": " ",
+      "indent_with_tabs": false,
+    })
+  },
   copyHTML: function () {
     //console.log(beautify(data, { indent_size:2 }));
     //console.log(js_beautify);
@@ -163,18 +358,89 @@ articleDownload = {
     //return
     
     let article = this.getRenderedPost()
-    let html = article.html()
-    html = html_beautify(html, {
-      "indent_size": 2,
-      "indent_char": " ",
-      "indent_with_tabs": false,
-    })
-    console.log(html);
+    let html = this.beautifyHTML(article.html())
+    
+    //console.log(html);
     this.copyToClip(html)
+  },
+  
+  getArticleFilename: function () {
+    let pathname = location.pathname
+    pathname = pathname.slice(1, pathname.length)
+    pathname = pathname.split("/").join("-")
+    
+    // 移除最後的html
+    if (pathname.endsWith(".html")) {
+      pathname = pathname.slice(0, pathname.length - 5)
+    }
+    return pathname
+  },
+  getMetadata: function () {
+    let metadata = {}
+    
+    let h1 = $('article > h1').clone()
+    h1.find('div.meta1').remove()
+    metadata.title = h1.text().trim()
+    
+    let articleDate = $('article .meta1 .timestamp').text().trim().split('/')
+    metadata.date = {
+      year: parseInt(articleDate[2].trim(), 10),
+      month: parseInt(articleDate[0].trim(), 10),
+      day: parseInt(articleDate[1].trim(), 10)
+    }
+    
+    metadata.labels = []
+    $('article .meta1 .label-info > a').each((i, ele) => {
+      metadata.labels.push(ele.innerHTML.trim())
+    })
+    
+    let commentCount = $('article .meta1 .comment-count').text().trim()
+    commentCount = commentCount.slice(0, commentCount.indexOf(' '))
+    commentCount = parseInt(commentCount, 10)
+    metadata.commentCount = commentCount
+    
+    let shareCount = $('.addthis-smartlayers .at-custom-sidebar-count').text()
+    shareCount = parseInt(shareCount, 10)
+    metadata.shareCount = shareCount
+    
+    return metadata
+  },
+  getComments: function () {
+    let comments = []
+    
+    return comments
   },
   downloadArticle: function () {
     //console.log('downloadArticle')
     //console.log(JSZip)
+    console.log(this.getMetadata())
+    let filename = this.getArticleFilename()
+    var zip = new JSZip();
+    
+    let downloadZip = function () {
+      //var img = zip.folder("images");
+      //img.file("smile.gif", imgData, {base64: true});
+      zip.generateAsync({type:"blob"})
+      .then((content) => {
+          // see FileSaver.js
+          saveAs(content,filename + ".zip");
+      });
+      //let article = this.getRenderedPost()
+    } 
+    
+    let metadata = this.getMetadata()
+    metadata = JSON.stringify(metadata, null, 2)
+    zip.file("metadata.json", metadata);
+    
+    // 下載comments的json
+    let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
+    commentJSONLink = commentJSONLink + '-in-script&callback=?'
+    $.getJSON(commentJSONLink, function (commentJSON) {
+      commentJSON = JSON.stringify(commentJSON, null, 2)
+      zip.file("comments.json", commentJSON);
+      
+      downloadZip()
+    })
   }
 }
 

@@ -1,11 +1,11 @@
 #footer .go-top {
-    border-left-width: 0;
+  border-left-width: 0 !important;
 }
 
 /*****************************/
 /* 20170312 GO to comment */
 #footer .go-top .goto-comment {
-    display: none;
+  display: none;
 }
 
 
@@ -19,11 +19,11 @@
 }
 
 #footer footer .go-top a {
-    background-color: #AD7518;
-    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
-    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
-    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
-    /*margin-bottom: 0.5em;*/
+  background-color: #AD7518;
+  -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
+  -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
+  box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
+  /*margin-bottom: 0.5em;*/
 }
 
 /*

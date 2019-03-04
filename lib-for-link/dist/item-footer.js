@@ -1749,13 +1749,17 @@ $(() => {
     loadAdminTools(() => {
       articleDownload.copyHTML()
     })
-  }).click()
+  })
   
   $('#main .entry-content .blog-admin .download-article-button').click(function () {
     loadAdminTools(() => {
       articleDownload.downloadArticle()
     })
   })
+  
+  setTimeout(() => {
+    $('#main .entry-content .blog-admin .download-article-button:visible').click()
+  }, 3000)
 })
 
 /***/ }),

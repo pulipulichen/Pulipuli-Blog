@@ -2,6 +2,7 @@ require('./jszip.js')
 //require('./beautify.js')
 //require('./beautify-css.js')
 require('./beautify-html.js')
+require('./FileSaver.js')
 
 articleDownload = {
   getRenderedPost: function () {
@@ -61,6 +62,13 @@ articleDownload = {
     document.execCommand("copy")
     document.removeEventListener("copy", listener)
   },
+  beautifyHTML: function (html) {
+    return html_beautify(html, {
+      "indent_size": 2,
+      "indent_char": " ",
+      "indent_with_tabs": false,
+    })
+  },
   copyHTML: function () {
     //console.log(beautify(data, { indent_size:2 }));
     //console.log(js_beautify);
@@ -68,18 +76,89 @@ articleDownload = {
     //return
     
     let article = this.getRenderedPost()
-    let html = article.html()
-    html = html_beautify(html, {
-      "indent_size": 2,
-      "indent_char": " ",
-      "indent_with_tabs": false,
-    })
-    console.log(html);
+    let html = this.beautifyHTML(article.html())
+    
+    //console.log(html);
     this.copyToClip(html)
+  },
+  
+  getArticleFilename: function () {
+    let pathname = location.pathname
+    pathname = pathname.slice(1, pathname.length)
+    pathname = pathname.split("/").join("-")
+    
+    // 移除最後的html
+    if (pathname.endsWith(".html")) {
+      pathname = pathname.slice(0, pathname.length - 5)
+    }
+    return pathname
+  },
+  getMetadata: function () {
+    let metadata = {}
+    
+    let h1 = $('article > h1').clone()
+    h1.find('div.meta1').remove()
+    metadata.title = h1.text().trim()
+    
+    let articleDate = $('article .meta1 .timestamp').text().trim().split('/')
+    metadata.date = {
+      year: parseInt(articleDate[2].trim(), 10),
+      month: parseInt(articleDate[0].trim(), 10),
+      day: parseInt(articleDate[1].trim(), 10)
+    }
+    
+    metadata.labels = []
+    $('article .meta1 .label-info > a').each((i, ele) => {
+      metadata.labels.push(ele.innerHTML.trim())
+    })
+    
+    let commentCount = $('article .meta1 .comment-count').text().trim()
+    commentCount = commentCount.slice(0, commentCount.indexOf(' '))
+    commentCount = parseInt(commentCount, 10)
+    metadata.commentCount = commentCount
+    
+    let shareCount = $('.addthis-smartlayers .at-custom-sidebar-count').text()
+    shareCount = parseInt(shareCount, 10)
+    metadata.shareCount = shareCount
+    
+    return metadata
+  },
+  getComments: function () {
+    let comments = []
+    
+    return comments
   },
   downloadArticle: function () {
     //console.log('downloadArticle')
     //console.log(JSZip)
+    console.log(this.getMetadata())
+    let filename = this.getArticleFilename()
+    var zip = new JSZip();
+    
+    let downloadZip = function () {
+      //var img = zip.folder("images");
+      //img.file("smile.gif", imgData, {base64: true});
+      zip.generateAsync({type:"blob"})
+      .then((content) => {
+          // see FileSaver.js
+          saveAs(content,filename + ".zip");
+      });
+      //let article = this.getRenderedPost()
+    } 
+    
+    let metadata = this.getMetadata()
+    metadata = JSON.stringify(metadata, null, 2)
+    zip.file("metadata.json", metadata);
+    
+    // 下載comments的json
+    let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
+    commentJSONLink = commentJSONLink + '-in-script&callback=?'
+    $.getJSON(commentJSONLink, function (commentJSON) {
+      commentJSON = JSON.stringify(commentJSON, null, 2)
+      zip.file("comments.json", commentJSON);
+      
+      downloadZip()
+    })
   }
 }
 

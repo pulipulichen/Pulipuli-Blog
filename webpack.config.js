@@ -84,6 +84,7 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/style/image.less',
       './lib-for-link/src/item-header/style/backlinks.css',
       './lib-for-link/src/item-header/style/sidebar.css',
+      './lib-for-link/src/item-header/style/comment-form-tool.less',
       './lib-for-link/src/item-header/style/style-item.css',
       
       './lib-for-link/src/item-header/script/script-item.js',

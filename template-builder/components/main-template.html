@@ -747,7 +747,7 @@
         <div class='meta1'>
           <p>
             <small>  
-              <span>
+              <span class="timestamp">
                 <i class='fa fa-clock-o'/> <data:post.timestamp/>
               </span>    
               <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
@@ -764,7 +764,7 @@
                 </span>
               </b:if>
               <b:if cond='data:post.allowNewComments'>
-                <span>
+                <span class="comment-count">
                   <i class='fa fa-comments'/> <data:post.numComments/> Comments
                 </span>
               </b:if>
@@ -852,7 +852,10 @@
       <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
       <a expr:href='data:post.commentFormIframeSrc' id='c' name="c"/>
       <p:include>4_content/comment_form_tool.html</p:include>
-      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='210' id='comment-editor' name='comment-editor' src='' width='100%'/>
+      <iframe allowtransparency='true' 
+        class='blogger-iframe-colorize blogger-comment-from-post' 
+        frameborder='0' height='210' 
+        id='comment-editor' name='comment-editor' src='' width='100%'/>
     </b:if>
     <data:post.friendConnectJs/>
     <data:post.cmtfpIframe/>
