@@ -1,4 +1,5 @@
 require('./jszip.js')
+require('./jszip-utils.js')
 //require('./beautify.js')
 //require('./beautify-css.js')
 require('./beautify-html.js')
@@ -131,7 +132,25 @@ articleDownload = {
   downloadArticle: function () {
     //console.log('downloadArticle')
     //console.log(JSZip)
-    console.log(this.getMetadata())
+    //console.log(this.getMetadata())
+    
+    //let article = this.getRenderedPost()
+    
+    // loading a file and add it in a zip file
+    JSZipUtils.getBinaryContent("https://lh3.googleusercontent.com/-u-i8xAlRMUw/XDXF1ELCZ-I/AAAAAAAD-oE/1I3wbxMnkC01ZvX07hpLTiZUpdPRPh9gQCHMYCw/%252111_thumb%255B1%255D?imgmax=800", function (err, data) {
+       if(err) {
+          throw err; // or handle the error
+       }
+       var zip = new JSZip();
+       zip.file("picture.png", data, {binary:true});
+       zip.generateAsync({type:"blob"})
+      .then((content) => {
+          // see FileSaver.js
+          saveAs(content,"a.zip");
+      });
+    });
+    
+    /*
     let filename = this.getArticleFilename()
     var zip = new JSZip();
     
@@ -159,6 +178,7 @@ articleDownload = {
       
       downloadZip() // 最後下載檔案
     })
+    */
   }
 }
 

@@ -31,7 +31,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
       
-      './lib-for-link/src/global-header/go-top/go-top.css',
+      './lib-for-link/src/global-header/go-top/go-top.less',
       './lib-for-link/src/global-header/go-top/go-top.js',
       
       './lib-for-link/src/global-header/sidebar/sidebar.less',
