@@ -1,3 +1,8 @@
+require('./jszip.js')
+require('./beautify.js')
+require('./beautify-css.js')
+require('./beautify-html.js')
+
 articleDownload = {
   getRenderedPost: function () {
     let article = $('#main .post .entry-content > article').clone()
@@ -27,6 +32,10 @@ articleDownload = {
     document.removeEventListener("copy", listener)
   },
   copyHTML: function () {
+    //console.log(beautify(data, { indent_size:2 }));
+    console.log(beautify);
+    return
+    
     let article = this.getRenderedPost()
     this.copyToClip(article.html())
   },

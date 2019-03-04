@@ -12,11 +12,13 @@ let loadAdminTools = function (callback) {
 }
 
 $(() => {
+  
   $('#main .entry-content .blog-admin .copy-html-button').click(function () {
     loadAdminTools(() => {
       articleDownload.copyHTML()
     })
-  })
+  }).click()
+  
   $('#main .entry-content .blog-admin .download-article-button').click(function () {
     loadAdminTools(() => {
       articleDownload.downloadArticle()

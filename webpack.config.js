@@ -109,12 +109,15 @@ let webpackConfig  = {
       
       './lib-for-link/src/item-footer/script/admin-tools.js',
     ],
-    'item-owl': getFilelist('./lib-for-link/src/item-olw/'),
     'admin-tools': [
-      './lib-for-link/src/admin-tools/article-download/tidy.js',
-      './lib-for-link/src/admin-tools/article-download/jszip.js',
+      //'./lib-for-link/src/admin-tools/article-download/beautify.js',
+      //'./lib-for-link/src/admin-tools/article-download/beautify-css.js',
+      //'./lib-for-link/src/admin-tools/article-download/beautify-html.js',
+      //'./lib-for-link/src/admin-tools/article-download/jszip.js',
+      
       './lib-for-link/src/admin-tools/article-download/article-download.js',
     ],
+    'item-owl': getFilelist('./lib-for-link/src/item-olw/'),
     'page': getFilelist('./lib-for-link/src/page/'),
   },
   output: {

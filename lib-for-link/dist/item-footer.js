@@ -81,32 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./lib-for-link/src/item-footer/article-download/article-download.js":
-/*!***************************************************************************!*\
-  !*** ./lib-for-link/src/item-footer/article-download/article-download.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\item-footer\\article-download\\article-download.js'");
-
-/***/ }),
-
-/***/ "./lib-for-link/src/item-footer/article-download/jszip.js":
-/*!****************************************************************!*\
-  !*** ./lib-for-link/src/item-footer/article-download/jszip.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\item-footer\\article-download\\jszip.js'");
-
-/***/ }),
 
 /***/ "./lib-for-link/src/item-footer/modules/disqus/blogger_item.js":
 /*!*********************************************************************!*\
@@ -1745,6 +1723,43 @@ $(function(){
 
 /***/ }),
 
+/***/ "./lib-for-link/src/item-footer/script/admin-tools.js":
+/*!************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/script/admin-tools.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+let loadAdminToolsIsLoaded = false
+let loadAdminTools = function (callback) {
+  if (loadAdminToolsIsLoaded === true) {
+    if (typeof(callback) === "function") {
+      callback()
+    }
+  }
+  else {
+    let adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
+    $.getScript(adminToolURL, callback)
+  }
+}
+
+$(() => {
+  
+  $('#main .entry-content .blog-admin .copy-html-button').click(function () {
+    loadAdminTools(() => {
+      articleDownload.copyHTML()
+    })
+  }).click()
+  
+  $('#main .entry-content .blog-admin .download-article-button').click(function () {
+    loadAdminTools(() => {
+      articleDownload.downloadArticle()
+    })
+  })
+})
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-footer/modules/disqus/disqus.css":
 /*!******************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-footer/modules/disqus/disqus.css ***!
@@ -2395,10 +2410,10 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ 5:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/item-footer/modules/highlight/default.css ./lib-for-link/src/item-footer/modules/highlight/highlight.js ./lib-for-link/src/item-footer/modules/highlight/init.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ./lib-for-link/src/item-footer/modules/disqus/disqus.css ./lib-for-link/src/item-footer/modules/disqus/disqus.js ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ./lib-for-link/src/item-footer/article-download/jszip.js ./lib-for-link/src/item-footer/article-download/article-download.js ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ 3:
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/item-footer/modules/highlight/default.css ./lib-for-link/src/item-footer/modules/highlight/highlight.js ./lib-for-link/src/item-footer/modules/highlight/init.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ./lib-for-link/src/item-footer/modules/disqus/disqus.css ./lib-for-link/src/item-footer/modules/disqus/disqus.js ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ./lib-for-link/src/item-footer/script/admin-tools.js ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2411,8 +2426,7 @@ __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/lightbox2-lokeshd
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/disqus.css */"./lib-for-link/src/item-footer/modules/disqus/disqus.css");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/disqus.js */"./lib-for-link/src/item-footer/modules/disqus/disqus.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js */"./lib-for-link/src/item-footer/modules/disqus/blogger_item.js");
-__webpack_require__(/*! ./lib-for-link/src/item-footer/article-download/jszip.js */"./lib-for-link/src/item-footer/article-download/jszip.js");
-module.exports = __webpack_require__(/*! ./lib-for-link/src/item-footer/article-download/article-download.js */"./lib-for-link/src/item-footer/article-download/article-download.js");
+module.exports = __webpack_require__(/*! ./lib-for-link/src/item-footer/script/admin-tools.js */"./lib-for-link/src/item-footer/script/admin-tools.js");
 
 
 /***/ })
