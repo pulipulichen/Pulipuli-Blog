@@ -411,14 +411,167 @@ articleDownload = {
     
     return comments
   },
+  parseImageList: function (article) {
+    let imageList = {}
+    let filenameList = []
+    
+    let imgUrlPatterns = [
+      '.googleusercontent.com/',
+      '.bp.blogspot.com/'
+    ]
+    
+    let pushImageList = function (link) {
+      // https://lh3.googleusercontent.com/-quhLaYWL29s/WCsAVr6SwpI/AAAAAAAC9iI/F62sfdA4C90/image_thumb%25255B4%25255D.png?imgmax=800
+      // http://2.bp.blogspot.com/-L-p05d-w9LA/XHbAUssrMPI/AAAAAAAED78/31DtDe9q6JcGr77dvTTUOna6huIYwbvEgCK4BGAYYCw/s0/%25E7%25B0%25A1%25E5%25A0%25B11.png
+      if (typeof(imageList[link]) === 'string') {
+        // 表示已經加入了
+        return
+      }
+      
+      let filename = link
+      filename = filename.slice(filename.lastIndexOf('/')+1, filename.length)
+      if (filename.lastIndexOf("?") > -1) {
+        filename = filename.slice(0, filename.lastIndexOf("?"))
+      }
+      
+      // unescape
+      while (filename !== unescape(filename)) {
+        filename = unescape(filename)
+      }
+      
+      if (!filename.endsWith('.jpg')
+              && !filename.endsWith('.png')
+              && !filename.endsWith('.gif')) {
+        filename = filename + '.png'
+      }
+      
+      if (filenameList.indexOf(filename) > -1) {
+        let count = 0
+        let filenameHeader = filename.slice(0, filename.lastIndexOf('.'))
+        let filenameFooter = filename.slice(filename.lastIndexOf('.'), filename.length)
+        let tempFilename = filenameHeader + '-' + count + filenameFooter
+        while (filenameList.indexOf(tempFilename) > -1) {
+          count++
+          tempFilename = filenameHeader + '-' + count + filenameFooter
+        }
+        filename = tempFilename
+      }
+      
+      filenameList.push(filename)
+      imageList[link] = filename
+    }
+    
+    imgUrlPatterns.forEach((pattern) => {
+      article.find('a[href*="' + pattern + '"]').each((i, ele) => {
+        pushImageList(ele.href)
+      })
+
+      article.find('img[src*="' + pattern + '"]').each((i, ele) => {
+        pushImageList(ele.src)
+      })
+    })
+    
+    //console.log(filenameList.length)
+    //console.log(filenameList)
+    return imageList
+  },
+  getImageFromList: function (imageList, callback) {
+    let linkList = []
+    let linkFileList = {}
+    
+    for (let link in imageList) {
+      linkList.push(link)
+      linkFileList[link] = {
+        'filename': imageList[link]
+      }
+    }
+    
+    let loop = (i) => {
+      if (i < linkList.length) {
+        let link = linkList[i]
+        JSZipUtils.getBinaryContent(link, (err, data) => {
+          if (err) {
+            throw err; // or handle the error
+          }
+          linkFileList[link].data = data
+          i++
+          loop(i)
+        });
+      }
+      else {
+        if (typeof(callback) === "function") {
+          callback(linkFileList)
+        }
+      }
+    }
+    loop(0)
+  },
+  replaceArticleLink: function (article, imageList) {
+    for (let link in imageList) {
+      let filename = 'img/' + imageList[link]
+      //console.log(filename)
+      
+      article.find('a[href="' + link + '"]').each((i, ele) => {
+        ele.href = filename
+      })
+
+      article.find('img[src="' + link + '"]').each((i, ele) => {
+        ele.src = filename
+      })
+    }
+    
+    return article
+  },
+  downloadZIP: function (filename, zip) {
+    zip.generateAsync({type: "blob"})
+            .then((content) => {
+              // see FileSaver.js
+              saveAs(content, filename + ".zip");
+            });
+  },
   downloadArticle: function () {
     //console.log('downloadArticle')
     //console.log(JSZip)
     //console.log(this.getMetadata())
     
-    //let article = this.getRenderedPost()
+    let filename = this.getArticleFilename()
+    var zip = new JSZip();
+    
+    let article = this.getRenderedPost()
+    let imageList = this.parseImageList(article)
+    
+    article = this.replaceArticleLink(article, imageList)
+    this.getImageFromList(imageList,(linkFileList) => {
+      let articleHTML = this.beautifyHTML(article.html())
+      zip.file("article.html", articleHTML);
+      
+      let img = zip.folder("img");
+      for (let link in linkFileList) {
+        let item = linkFileList[link]
+        img.file(item.filename, item.data, {binary:true});
+      }
+      
+      // --------------------------
+      
+      let metadata = this.getMetadata()
+      metadata = JSON.stringify(metadata, null, 2)
+      zip.file("metadata.json", metadata);
+
+      // 下載comments的json
+      let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
+      commentJSONLink = commentJSONLink + '-in-script&callback=?'
+      $.getJSON(commentJSONLink, (commentJSON) => {
+        commentJSON = JSON.stringify(commentJSON, null, 2)
+        zip.file("comments.json", commentJSON);
+
+        this.downloadZIP(filename, zip)
+      })
+      
+    })
+    //console.log(imageList)
     
     // loading a file and add it in a zip file
+    /*
     JSZipUtils.getBinaryContent("https://lh3.googleusercontent.com/-u-i8xAlRMUw/XDXF1ELCZ-I/AAAAAAAD-oE/1I3wbxMnkC01ZvX07hpLTiZUpdPRPh9gQCHMYCw/%252111_thumb%255B1%255D?imgmax=800", function (err, data) {
        if(err) {
           throw err; // or handle the error
@@ -431,6 +584,7 @@ articleDownload = {
           saveAs(content,"a.zip");
       });
     });
+    */
     
     /*
     let filename = this.getArticleFilename()
@@ -447,19 +601,7 @@ articleDownload = {
       //let article = this.getRenderedPost()
     } 
     
-    let metadata = this.getMetadata()
-    metadata = JSON.stringify(metadata, null, 2)
-    zip.file("metadata.json", metadata);
     
-    // 下載comments的json
-    let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
-    commentJSONLink = commentJSONLink + '-in-script&callback=?'
-    $.getJSON(commentJSONLink, function (commentJSON) {
-      commentJSON = JSON.stringify(commentJSON, null, 2)
-      zip.file("comments.json", commentJSON);
-      
-      downloadZip() // 最後下載檔案
-    })
     */
   }
 }
