@@ -444,11 +444,11 @@ jQuery.puliGuestBook = function (config) {
 
   //var css = getParam('css', 'https://sites.google.com/site/puddingchen35/Home/puliguestbook/puliGuestBook.css');
   /*
-  var css = getParam('css', '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.css');
-  if (jQuery('link[href="' + css + '"]').length === 0) {
-    jQuery("<link type='text/css' rel='stylesheet' href='" + css + "' /> ").appendTo(jQuery('head'));
-  }
-  */
+   var css = getParam('css', '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.css');
+   if (jQuery('link[href="' + css + '"]').length === 0) {
+   jQuery("<link type='text/css' rel='stylesheet' href='" + css + "' /> ").appendTo(jQuery('head'));
+   }
+   */
 
   var _container_id = getParam('container', '#puliGuestBook');
   var container = jQuery(_container_id);
@@ -486,18 +486,21 @@ jQuery.puliGuestBook = function (config) {
       var _slash_pos = host.indexOf("/", _blogspot_pos);
       host = host.substring(0, _slash_pos + 1);
 
-      url = host + 'feeds/' + url + '/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli';
+      //url = host + 'feeds/' + url + '/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli';
+      url = host + 'feeds/' + url + '/comments/full?alt=json-in-script&callback=?';
     }
 
     var needle = 'default';
     if (url.substring(url.length - needle.length, url.length) === needle) {
       url = url.substring(0, url.length - needle.length);
-      url = url + 'full?alt=json-in-script&callback=handleGuestbookPulipuli';
+      //url = url + 'full?alt=json-in-script&callback=handleGuestbookPulipuli';
+      url = url + 'full?alt=json-in-script&callback=?';
     }
   } else {
     var host = getBaseLink();
 
-    url = host + 'feeds/' + postID + '/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli';
+    //url = host + 'feeds/' + postID + '/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli';
+    url = host + 'feeds/' + postID + '/comments/full?alt=json-in-script&callback=?';
   }
 
   var listID = getParam('listID', 'Feedpulipuli_guestbookDisplay');
@@ -513,7 +516,7 @@ jQuery.puliGuestBook = function (config) {
   var addLink = getParam('addLink', null);
   var disableBottomButtons = getParam('disableBottomButtons', false);
 
-  handleGuestbookPulipuli = function (json) {
+  let handleGuestbookPulipuli = function (json) {
     //document.getElementById("pulipuli_guestbook").innerHTML = '';
     container.html('');
 
@@ -547,20 +550,20 @@ jQuery.puliGuestBook = function (config) {
       }
       var title = post.content.$t;
       var fulltitle = title.replace("\u003CBR/\u003E", "<br />\n");
-      
+
       //var tmp = fulltitle.split('<br />'); fulltitle = tmp.join('&nbsp;\n');
       //var tmp = fulltitle.split('"'); fulltitle = tmp.join('&quot;');
       //var tmp = fulltitle.split('<'); fulltitle = tmp.join('&lt;');
       //var tmp = fulltitle.split('>'); fulltitle = tmp.join('&gt;');
-      
+
       /**
        * 移除掉過長長度留言刪除的功能
        * @type String
        */
-      
+
       //if (titlelen != "" && title.length > titlelen)
       //  title = title.substr(0, titlelen) + "...";
-      
+
       var title_temp = "";
       for (var j = 0; j < title.length; j++) {
         var temp_char = title.substr(j, 1);
@@ -576,7 +579,7 @@ jQuery.puliGuestBook = function (config) {
       title = title_temp;
       var link = post.link[2].href;
       var title_link = fulltitle;
-      
+
       /**
        * 取得comment id
        * "tag:blogger.com,1999:blog-16607461.post-2375590755261769329"
@@ -590,15 +593,15 @@ jQuery.puliGuestBook = function (config) {
       if (commentLink.indexOf('#')) {
         commentLink = commentLink.slice(0, commentLink.indexOf('#'))
       }
-      commentLink = commentLink + '#c' + commentId 
-      
-      var authorname = post.author[0].name.$t;
-      
+      commentLink = commentLink + '#c' + commentId
+
+      var authorname = post.author[0].name.$t
+
       if (authorname === 'Anonymous') {
         authorname = anonymous;
       }
 
-      if (authorname === adminName 
+      if (authorname === adminName
               && adminPhoto !== null) {
         authorname = '<img src="' + adminPhoto + '" class="admin-photo" border="0" /> '
                 + authorname;
@@ -622,7 +625,7 @@ jQuery.puliGuestBook = function (config) {
               .replace("%D%", d)
               .replace("%authorname%", authorname)
               .replace("%COMMENT_LINK%", commentLink)
-      
+
       var odd = 0;
       if (i % 2 === 1) {
         odd = 1;
@@ -656,9 +659,11 @@ jQuery.puliGuestBook = function (config) {
       }
       //https://www.blogger.com/comment.g?blogID=16607461&postID=113544406852218769
       reload_cmd = "jQuery.getScript('" + baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli')";
-      
+
       $('#sidebar .guestbook a.icon.reload').click(() => {
-        jQuery.getScript( baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli")
+        //jQuery.getScript(baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli")
+        let url = baseLink + "feeds/" + postID + "/comments/full?alt=json-in-script&callback=?"
+        lscacheHelper.getJSON(url, handleGuestbookPulipuli)
       })
       //$.getScript('http://pulipuli.blogspot.com/feeds/1187506547871300947/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli');
     }
@@ -690,11 +695,14 @@ jQuery.puliGuestBook = function (config) {
 
   //http://pulipuli.blogspot.com/feeds/113544406852218769/comments/full?alt=json-in-script&callback=handleGuestbookPulipuli
   //http://pulipuli.blogspot.com/feeds/6921201361608060798/comments/default 
+  /*
   jQuery.ajax({
     url: url,
     dataType: 'script',
     cache: false
   });
+  */
+  lscacheHelper.getJSON(url, handleGuestbookPulipuli)
 
 };    //$.puliGuestBook = function (config) {
 

@@ -1058,10 +1058,10 @@ var menu_search_submit = function (_form) {
 /***/ (function(module, exports) {
 
 lscacheHelper = {
-  expiredMinute: 10,
-  getLock: false,
-  get: function (url, callback) {
-    if (this.getLock === true) {
+  expiredMinute: 60 * 24,
+  getJSONLock: false,
+  getJSON: function (url, callback) {
+    if (this.getJSONLock === true) {
       setTimeout(() => {
         this.get(url, callback)
       }, 500)
@@ -1082,9 +1082,9 @@ lscacheHelper = {
         url = url.split('callback=?').join('callback=a')
       }
       */
-      this.getLock = true
+      this.getJSONLock = true
       $.getJSON(url, (data) => {
-        this.getLock = false
+        this.getJSONLock = false
         //if (data.indexOf('a(') > -1) {
         //  data = data.slice(data.indexOf('a(') + 2, data.length - 2)
         //}
