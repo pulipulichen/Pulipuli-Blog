@@ -122,7 +122,7 @@ var app = {
                       .join(this.localhostURL)
               
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
-                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/static/redirect.js"></script>')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/static/redirect.min.js"></script>')
             }
             else {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
