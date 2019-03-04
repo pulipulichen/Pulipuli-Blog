@@ -1,10 +1,3 @@
-// --------------
-// 20160625 隨機文章
-$(function () {
-  _load_random_posts();
-
-  $('.widget.HTML.random > a.button').click(_load_random_posts)
-});
 
 var _load_random_posts = function () {
   var _ul = $("#random_posts");
@@ -198,3 +191,11 @@ var _load_random_posts = function () {
   //console.log(url)
   lscacheHelper.getJSON(url, callback, 60 * 24 * 30)
 };
+
+// --------------
+// 20160625 隨機文章
+$(function () {
+  _load_random_posts();
+
+  $('.widget.HTML.random > a.button').click(_load_random_posts)
+});

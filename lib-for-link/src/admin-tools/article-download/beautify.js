@@ -213,7 +213,7 @@ var legacy_beautify_js =
 var Beautifier = __webpack_require__(1).Beautifier,
   Options = __webpack_require__(5).Options;
 
-function js_beautify(js_source_text, options) {
+js_beautify = function (js_source_text, options) {
   var beautifier = new Beautifier(js_source_text, options);
   return beautifier.beautify();
 }

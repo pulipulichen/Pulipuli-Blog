@@ -3004,7 +3004,8 @@ module.exports.TOKEN = TOKEN;
 /******/ ]);
 var style_html = legacy_beautify_html;
 /* Footer */
-if (typeof define === "function" && define.amd) {
+if (false &&  // 故意加上去的，這樣才能引用 20190304
+        typeof define === "function" && define.amd) {
     // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
     define(["require", "./beautify", "./beautify-css"], function(requireamd) {
         var js_beautify = requireamd("./beautify");
@@ -3016,7 +3017,8 @@ if (typeof define === "function" && define.amd) {
             }
         };
     });
-} else if (typeof exports !== "undefined") {
+} else if (false && // 故意加上去的，這樣才能引用 20190304
+        typeof exports !== "undefined") {
     // Add support for CommonJS. Just put this file somewhere on your require.paths
     // and you will be able to `var html_beautify = require("beautify").html_beautify`.
     var js_beautify = require('./beautify.js');

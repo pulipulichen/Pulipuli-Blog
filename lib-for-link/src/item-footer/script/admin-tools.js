@@ -17,11 +17,11 @@ $(() => {
     loadAdminTools(() => {
       articleDownload.copyHTML()
     })
-  }).click()
+  })
   
   $('#main .entry-content .blog-admin .download-article-button').click(function () {
     loadAdminTools(() => {
       articleDownload.downloadArticle()
     })
-  })
+  }).click()
 })

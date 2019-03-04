@@ -18,7 +18,7 @@ var app = {
     },
     copyToClip: function (str) {
       var listener = function (e) {
-        //e.clipboardData.setData("text/html", str)
+        e.clipboardData.setData("text/html", str)
         e.clipboardData.setData("text/plain", str)
         e.preventDefault();
       }
