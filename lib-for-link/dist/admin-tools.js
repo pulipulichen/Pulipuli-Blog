@@ -366,15 +366,38 @@ articleDownload = {
   },
   
   getArticleFilename: function () {
+    let articleDate = $('article .meta1 .timestamp').text().trim().split('/')
+    let date = {
+      year: parseInt(articleDate[2].trim(), 10),
+      month: parseInt(articleDate[0].trim(), 10),
+      day: parseInt(articleDate[1].trim(), 10)
+    }
+    
+    let paddingZero = (n) => {
+      if (n < 10) {
+        return '0' + n
+      }
+      else {
+        return n
+      }
+    }
+    
     let pathname = location.pathname
     pathname = pathname.slice(1, pathname.length)
-    pathname = pathname.split("/").join("-")
+    let filename = pathname.split("/")
+    filename = date.year 
+            + '-' 
+            + paddingZero(date.month)
+            + '-' 
+            + paddingZero(date.day)
+            + '_' 
+            +  filename[(filename.length - 1)]
     
     // 移除最後的html
-    if (pathname.endsWith(".html")) {
-      pathname = pathname.slice(0, pathname.length - 5)
+    if (filename.endsWith(".html")) {
+      filename = filename.slice(0, filename.length - 5)
     }
-    return pathname
+    return filename
   },
   getMetadata: function () {
     let metadata = {}
