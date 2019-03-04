@@ -25,9 +25,9 @@ $(() => {
     })
   })
   
-  /*
-  setTimeout(() => {
-    $('#main .entry-content .blog-admin .download-article-button:visible').click()
-  }, 3000)
-  */
+  if (location.href.endsWith('downloadArticle=true')) {
+    setTimeout(() => {
+      $('#main .entry-content .blog-admin .download-article-button:visible').click()
+    }, 1000)
+  }
 })
