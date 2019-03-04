@@ -254,15 +254,35 @@ var _load_random_posts = function () {
   var randomposts_commentsd = '';
   var randomposts_current = [];
   var total_randomposts = 0;
+  
   var randomposts_current = new Array(randomposts_number);
+  /*
+  var randomposts_current = lscache.get('randomPostIds')
+  if (randomposts_current === null) {
+    randomposts_current = new Array(randomposts_number)
+    lscache.set('randomPostIds', randomposts_current, 5)
+  }
+  */
+  //console.log(randomposts_current)
 
-  randomposts = function (json) {
+  let randomposts = function (json) {
     total_randomposts = json.feed.openSearch$totalResults.$t;
+    //console.log({'total_randomposts': total_randomposts})
   };
   //document.write('<script type=\"text/javascript\" src=\"/feeds/posts/default?alt=json-in-script&max-results=0&callback=randomposts\"><\/script>');
 
-
+  /**
+   * 取得隨機篇數的語法
+   * 這邊改成每5分鐘再更換，不然太頻繁更換很麻煩
+   * @author Pulipuli Chen 20190304
+   */
   var getvalue = function () {
+    randomposts_current = lscache.get('randomPostIds')
+    if (randomposts_current !== null) {
+      return
+    }
+    randomposts_current = new Array(randomposts_number)
+    
     for (var i = 0; i < randomposts_number; i++) {
       var found = false;
       var rndValue = get_random();
@@ -279,6 +299,8 @@ var _load_random_posts = function () {
         randomposts_current[i] = rndValue;
       }
     }
+    
+    lscache.set('randomPostIds', randomposts_current, 5)
   };
 
   var get_random = function () {
@@ -287,8 +309,15 @@ var _load_random_posts = function () {
   };
 
   var random_posts = function (json) {
-    for (var i = 0; i < randomposts_number; i++) {
-      var entry = json.feed.entry[i];
+    //for (var i = 0; i < randomposts_number; i++) {
+      var entry = json.feed.entry[0];
+      //console.log(entry)
+      if (entry === undefined) {
+        entry = json.feed.entry[i + ''];
+      }
+      //console.log(entry.title)
+      //console.log(entry.title['$t'])
+      //console.log(entry.title.$t)
       var randompoststitle = entry.title.$t;
 
       if (randompoststitle.length > 40) {
@@ -366,12 +395,13 @@ var _load_random_posts = function () {
       _li = _li + '<div style="clear:both"></div>';
       _li = _li + '</a>' + '</dd>';
       _ul.append(_li);
-    }
+    //}
   };
   
   let url = "/feeds/posts/default?alt=json-in-script&max-results=0&callback=?"
   let callback = function (data) {
-    random_posts(data)
+    randomposts(data)
+    //console.log(data)
     
     getvalue();
     //for (var i = 0; i < randomposts_number; i++) {
@@ -379,26 +409,31 @@ var _load_random_posts = function () {
     //$.getScript('/feeds/posts/default?alt=json-in-script&start-index=' + randomposts_current[i] + '&max-results=1&callback=random_posts');
     //};
 
-    var _i = 0;
-    var _loop = function () {
+    var _loop = function (_i) {
       //console.log([_i, randomposts_number]);
-      if (_i < randomposts_number) {
+      //console.log(_i)
+      if (_i < randomposts_current.length) {
         //console.log('/feeds/posts/default?alt=json-in-script&start-index=' + randomposts_current[_i] + '&max-results=1&callback=random_posts');
         
         //$.getScript('/feeds/posts/default?alt=json-in-script&start-index=' + randomposts_current[_i] + '&max-results=1&callback=random_posts');
         let url = '/feeds/posts/default?alt=json-in-script&start-index=' + randomposts_current[_i] + '&max-results=1&callback=?'
-        lscacheHelper.getJSON(url, () => {
-          _i++;
-          _loop();
+        //console.log(url)
+        lscacheHelper.getJSON(url, (data) => {
+          //console.log(data)
+          random_posts(data)
         })
+        _i++
+        //console.log(_i)
+        _loop(_i)
       }
-    };
-    _loop();
+    }
+    _loop(0)
   }
 
   //console.log("/feeds/posts/default?alt=json-in-script&max-results=0&callback=randomposts");
   //$.getScript(url, callback);
-  lscacheHelper.getJSON(url, callback)
+  //console.log(url)
+  lscacheHelper.getJSON(url, callback, 60 * 24 * 30)
 };
 
 /***/ }),
