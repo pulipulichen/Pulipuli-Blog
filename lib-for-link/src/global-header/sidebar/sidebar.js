@@ -1,4 +1,3 @@
-
 $(function () {
-    $(".widget h2").wrapInner("<span/>");
+    $("#side-bar .widget h2").wrapInner("<span/>");
 });

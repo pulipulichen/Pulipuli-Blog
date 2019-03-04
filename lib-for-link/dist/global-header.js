@@ -1786,9 +1786,8 @@ var _load_random_posts = function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
 $(function () {
-    $(".widget h2").wrapInner("<span/>");
+    $("#side-bar .widget h2").wrapInner("<span/>");
 });
 
 
