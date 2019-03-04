@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./lib-for-link/src/global-footer/article-download/article-download.js":
-/*!*****************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/article-download/article-download.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\global-footer\\article-download\\article-download.js'");
-
-/***/ }),
-
 /***/ "./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js":
 /*!***************************************************************************!*\
   !*** ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ***!
@@ -1556,9 +1545,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 1:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css ./lib-for-link/src/global-footer/puli-guest-book/init.js ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/init.js ./lib-for-link/src/global-footer/article-download/article-download.js ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css ./lib-for-link/src/global-footer/puli-guest-book/init.js ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/init.js ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1568,8 +1557,7 @@ __webpack_require__(/*! ./lib-for-link/src/global-footer/puli-guest-book/init.js
 __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js */"./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js");
 __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js */"./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js");
 __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js */"./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js");
-__webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/init.js */"./lib-for-link/src/global-footer/blogger-feed-loader/init.js");
-module.exports = __webpack_require__(/*! ./lib-for-link/src/global-footer/article-download/article-download.js */"./lib-for-link/src/global-footer/article-download/article-download.js");
+module.exports = __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/init.js */"./lib-for-link/src/global-footer/blogger-feed-loader/init.js");
 
 
 /***/ })
