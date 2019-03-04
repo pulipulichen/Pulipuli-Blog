@@ -63,14 +63,16 @@ puliHandleComments = function ()	{
         jQuery("#" + pHC.divID).html(temp);
     };
 
-    pHC.load = function (nodeID)
-    {
+    pHC.load = function (nodeID) {
         jQuery("#" + nodeID).html('<div id="' + pHC.divID + '"><h2>' + pHC.loading + '</h2></div>');
         //console.log('a')
-        jQuery.getJSON("/feeds/comments/full?alt=json-in-script&callback=?", function (data) {
+        let url = "/feeds/comments/full?alt=json-in-script&callback=?"
+        let callback = function (data) {
           //console.log('b')
           pHC.handleComments(data);
-        });
+        }
+        //jQuery.getJSON(url, callback);
+        lscacheHelper.getJSON(url, callback)
         return pHC;
     };
     return pHC;

@@ -12,7 +12,9 @@ function getFilelist (dir) {
       .filter((file) => {
         return (!file.endsWith('entry.js') 
           && !file.endsWith('.mocha-test.js')
+          && !file.endsWith('.mocha-test-skip.js')
           && !file.endsWith('.selenium-test.js')
+          && !file.endsWith('.selenium-test-skip.js')
           && (file.indexOf('/tmp/') === -1)
           && (file.indexOf('/ignore/') === -1))
       })
@@ -69,6 +71,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css',
       './lib-for-link/src/global-footer/modules/puli-guest-book/init.js',
       
+      './lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js',
       './lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js',

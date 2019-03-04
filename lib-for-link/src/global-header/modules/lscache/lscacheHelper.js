@@ -15,11 +15,15 @@ lscacheHelper = {
     
     let getHeader = 'getHeader-'
     let lscacheKey = getHeader + url
+    //console.log(lscacheKey)
+    
     let data = lscache.get(lscacheKey)
     if (data !== null) {
       if (typeof(callback) === 'function') {
+        //console.log('lscached: ' + url)
         callback(data)
       }
+      return
     }
     else {
       /*
