@@ -54,6 +54,9 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/gsc-search/gsc-search-result.less',
       './lib-for-link/src/global-header/gsc-search/gsc-search.js',
       
+      './lib-for-link/src/global-header/modules/lscache/lscache.js',
+      './lib-for-link/src/global-header/modules/lscache/lscacheHelper.js',
+      
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/script/google-analytics.js',
       './lib-for-link/src/global-header/script/facebook.js',
