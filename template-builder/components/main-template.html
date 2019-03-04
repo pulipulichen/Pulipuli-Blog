@@ -795,7 +795,9 @@
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
     <div class='pull-left buttons'>
         <a class='read-more' expr:href='data:post.url + &quot;&quot;'>Read More</a>
-        <b:include data='post' name='postQuickEdit'/>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <b:include data='post' name='postQuickEdit'/>
+        </b:if>
     </div>
 </b:if>
  
