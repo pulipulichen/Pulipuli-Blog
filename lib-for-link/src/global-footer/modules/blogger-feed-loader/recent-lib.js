@@ -87,10 +87,12 @@ puliHandlePost = function () {
       tagname = "/-/" + tagname;
     }
 
-    jQuery.getJSON("/feeds/posts/summary" + tagname + "/?alt=json-in-script&callback=?",
-            function (data) {
-              pHP.handlePosts(data);
-            });
+    let url = "/feeds/posts/summary" + tagname + "/?alt=json-in-script&callback=?"
+    let callback = function (data) {
+      pHP.handlePosts(data)
+    }
+    //jQuery.getJSON(url, callback);
+    lscacheHelper.getJSON(url, callback)
     return pHP;
   };
   return pHP;
