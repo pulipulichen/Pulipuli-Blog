@@ -1,0 +1,140 @@
+{
+  "id": "6cb93018-6f0d-457c-8b05-6e6a0bbf1b1d",
+  "version": "2.0",
+  "name": "blog.pulipuli.info",
+  "url": "http://blog.pulipuli.info",
+  "tests": [{
+    "id": "2ac67835-4d54-455d-945f-158f0a8d0be0",
+    "name": "demo",
+    "commands": [{
+      "id": "176d315a-780b-4f3f-b14d-dfa82e45c265",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b9fda99-e48e-4488-aa52-c2cf2e24e7b1",
+      "comment": "",
+      "command": "//click",
+      "target": "css=.entry-title:first-of-type > a",
+      "targets": [
+        ["linkText=製作向量化的手寫文字：Image Vectorizer + Inkscape / Turn a Hand Lettered Sketch into SVG Vector Format: Image Vectorizer + Inkscape", "linkText"],
+        ["css=#p2503257057285863664 .entry-title > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'製作向量化的手寫文字：Image Vectorizer + Inkscape / Turn a Hand Lettered Sketch into SVG Vector Format: Image Vectorizer + Inkscape')])[2]", "xpath:link"],
+        ["xpath=//span[@id='p2503257057285863664']/div[2]/div/h1/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://blog.pulipuli.info/2019/02/image-vectorizer-inkscape-turn-hand.html'])[3]", "xpath:href"],
+        ["xpath=//h1/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01ca04cc-94ff-42d0-a6ac-c4c9d8165250",
+      "comment": "",
+      "command": "//click",
+      "target": "css=.goto-comment",
+      "targets": [
+        ["css=.fa-commenting", "css:finder"],
+        ["xpath=//div[@id='footer']/footer/div/div/a[2]/i", "xpath:idRelative"],
+        ["xpath=//footer/div/div/a[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "748fdca8-9d56-49de-93ad-5273c4ddf0e7",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//u[contains(.,'進入贊助捐款網頁')]",
+      "targets": [
+        ["css=u", "css:finder"],
+        ["xpath=//div[@id='donation']/div/div/div/a/u", "xpath:idRelative"],
+        ["xpath=//u", "xpath:position"],
+        ["xpath=//u[contains(.,'進入贊助捐款網頁')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a85e702-5f3e-4344-a381-64852d3721a8",
+      "comment": "",
+      "command": "click",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=#searchform > .gsc-input-placeholder", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchform']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bedc03de-6d34-4d9e-8603-4bca16de6575",
+      "comment": "",
+      "command": "type",
+      "target": "name=search",
+      "targets": [
+        ["name=search", "name"],
+        ["css=#searchform > .gsc-input-placeholder", "css:finder"],
+        ["xpath=//input[@name='search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchform']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "fd066b36-de64-43ae-a71b-228c181ea87e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.search-bar .srch_btn",
+      "targets": [
+        ["css=.srch_btn > .fa", "css:finder"],
+        ["xpath=//form[@id='searchform']/div/i", "xpath:idRelative"],
+        ["xpath=//form/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b9fc1bb-fdd3-4d53-b6f3-84b1fe3a8607",
+      "comment": "",
+      "command": "pause",
+      "target": "5000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ddb0db81-b34f-4bc3-8327-b0f23de2bf0c",
+      "comment": "",
+      "command": "//waitForElementVisible",
+      "target": "css=.gsc-results > .gsc-webResult .gsc-thumbnail-inside > .gs-title > .gs-title",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d29f29c-7cec-43df-9196-3135eeee293c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.gsc-results > .gsc-webResult .gsc-thumbnail-inside > .gs-title > .gs-title",
+      "targets": [
+        ["linkText=網站負載測試器：Electron Web Speed Testing / Test Website ...", "linkText"],
+        ["css=.gsc-results > .gsc-webResult .gsc-thumbnail-inside > .gs-title > .gs-title", "css:finder"],
+        ["xpath=//div[@id='___gcse_0']/div/div/div/div[6]/div[2]/div/div/div/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.google.com/url?q=http://blog.pulipuli.info/2019/01/electron-web-speed-testing-test-website.html&sa=U&ved=0ahUKEwiYy-nFvebgAhVLyosBHUYfDpkQFggFMAA&client=internal-uds-cse&cx=017270649262638447003:o6vaq9on3vs&usg=AOvVaw0oBCadLe5rAhvNP4bMRbpD')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'網站負載測試器：Electron Web Speed Testing / Test Website ...')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win6141",
+      "windowTimeout": 2000
+    }, {
+      "id": "85979dd3-b3e0-43d9-87b1-684eec1765d1",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win6141}",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d920076c-0ffc-4145-ba85-7b0b13029dbf",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2ac67835-4d54-455d-945f-158f0a8d0be0"]
+  }],
+  "urls": ["http://blog.pulipuli.info/"],
+  "plugins": []
+}
