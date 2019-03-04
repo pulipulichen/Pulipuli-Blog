@@ -320,23 +320,6 @@ body .addthis-smartlayers {
     padding-right: 20px;
   }
 
-  /*********************/
-  /* 20160926 修正小視窗底下按鈕沒有置中的問題 */
-  #main .post > .entry-meta.clearfix > aside > .pull-left {
-    float: none;
-    text-align: center;
-    width: 100%;
-  }
-
-  #main .post > .entry-meta.clearfix > aside > .pull-left > .read-more,
-  #main .post > .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
-    float: none;
-    width: 42%;
-    display: inline-block;
-  }
-  #main .post > .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
-    margin-left: 0;
-  }
 }
 
 .entry-container .entry-content > p {
@@ -525,104 +508,9 @@ body .addthis-smartlayers {
 }
 
 
-/********************/
-@media (max-width: 480px) {
-  body {
-    font-size: 1rem;
-  }
-
-  #masthead.fixed-nav.affix {
-    /*padding-top: 27px;*/
-  }
-
-  #masthead .btn-navbar {
-    margin-right: 5px;
-  }
-
-  #masthead #menu-primary {
-    padding-top: 27px;
-  }
-
-  #masthead .nav-collapse, #masthead .nav-collapse.collapse {
-    top: 0;
-  }
-
-
-  #masthead #header-inner {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  #masthead #header-inner .title {
-    /*line-height: 44px;*/
-
-  }
-
-  #masthead.fixed-nav.affix #header-inner {
-    margin-top:0 !important;
-    line-height: 55px;
-  }
-
-  #content-wrapper {
-    padding-top: 50px !important;
-  }
-
-
-  #masthead #header-inner .descriptionwrapper {
-    display: none;
-  }
-
-
-
-
-  /***********************/
-
-  #main .share-story {
-    display: none;
-  }
-
-  #main .post h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-
-  #main .post .entry-content p {
-    font-size: 1rem;
-  }
-
-  #main .read-more {
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  #main .entry-meta .pull-left {
-    width: 100%;
-  }
-
-  #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {
-    width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    text-align: center;
-  }
-
-  #main .entry-meta {
-    border-top-width: 0;
-    padding-top: 0;
-  }
-
-  #main .entry-content > p {
-    text-indent: 1em;
-  }
-}
-
 /**********************************/
 /* 來處理SumoMe的問題 */
+/*
 body > a[title="SumoMe"] {
   visibility: hidden;
 }
@@ -649,6 +537,7 @@ body > div.sumome-share-client-counts div.sumome-share-client-animated {
     display: none;
   }
 }
+*/
 
 /**************************/
 
@@ -1040,25 +929,6 @@ ul#random_posts {
   }
 }   /* @media (max-width: 1200px) and (min-width: 979px) { */
 
-
-/*************************************/
-/* 20160926 快速編輯 */
-#main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {
-  display: block;
-  float: left;
-  border-radius: 3px;
-  font-size: 13px;
-  padding: 7px 20px;
-  background: #333;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  border: 1px solid #1D1D1D;
-  margin-top: 13px;
-  margin-bottom: 12px;
-  margin-left: 1em;
-}
-
 #main .entry-container .entry-content .foundation .meta {
   line-height: 100%;
 }
@@ -1117,4 +987,10 @@ iframe#comment-editor {
   float: left;
   width: 100%;
   padding: 0;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
 }
