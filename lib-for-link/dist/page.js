@@ -114,7 +114,7 @@ ArchiveListUtils = {
     this.openListYear(() => {
       //console.log(document.querySelectorAll("ul > li > ul > li.archivedate.collapsed > a.toggle").length)
       // 請溫柔地開它
-      let aList = document.querySelectorAll("ul > li > ul > li.archivedate.collapsed > a.toggle")
+      let aList = document.querySelectorAll("#BlogArchive1_ArchiveList > ul > li > ul > li.archivedate.collapsed > a.toggle")
       let loop = (i) => {
         if (i < aList.length) {
           aList[i].click()
@@ -122,7 +122,7 @@ ArchiveListUtils = {
             setTimeout(() => {
               i++
               loop(i)
-            }, 1000)
+            }, 500)
           })
         }
         else {
@@ -136,6 +136,53 @@ ArchiveListUtils = {
   },
   displayConfiguration: function () {
     console.log('displayConfiguration')
+    
+    this.openListYear(() => {
+      let checkboxChange = function () {
+        // 要先確認自己是位於那個階層
+        let folderType = 'month'
+        if ($(this).parent().parent().parent().attr('id') === 'BlogArchive1_ArchiveList') {
+          folderType = 'year'
+        }
+        
+        
+        if (folderType === 'year') {
+          // 強迫它底下的所有checkbox都check
+          //console.log(this.checked)
+          //console.log($(this).find('.download-checkbox').length)
+          /*
+          let checked = 'checked'
+          if (this.checked === false) {
+            checked = false
+          } 
+          */
+          let checkboxList = $(this).parent().find('ul > li > .download-checkbox')
+          //console.log(checkboxList.length)
+          //console.log(checked)
+          checkboxList.prop('checked', this.checked)
+        }
+        else {
+          // 檢查上面一層底下的所有狀態，有跟自己不一樣的就移除上層的打勾
+          let yearLi = $(this).parent().parent().parent()
+          //console.log(yearLi.prop('className'))
+          let yearCheckbox = yearLi.children('.download-checkbox')
+          
+          let yearChecked = true
+          yearLi.find('ul.hierarchy > li > .download-checkbox').each((i, input) => {
+            if (input.checked === false) {
+              yearChecked = false
+            }
+          })
+          yearCheckbox.prop('checked', yearChecked)
+        }
+      }
+      
+      $('#BlogArchive1_ArchiveList a.toggle').each((i, a) => {
+        let checkbox = $('<input type="checkbox" checked="checked" class="download-checkbox" />').change(checkboxChange)
+        $(a).before(checkbox)
+                .parent().addClass('init-download-checkbox')
+      })
+    }) 
   },
   startDownload: function () {
     console.log('startDownload')
@@ -152,7 +199,7 @@ $(() => {
   })
   pageTool.find('.setup-checkbox').click(() => {
     ArchiveListUtils.displayConfiguration()
-  })
+  }).click()
   pageTool.find('.start-download').click(() => {
     ArchiveListUtils.startDownload()
   })
@@ -199,7 +246,7 @@ if(false) {}
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#content.main {\n  display: none;\n}\n#main {\n  margin-top: 30px;\n}\n#ArchiveList > #BlogArchive1_ArchiveList ul.hierarchy > li.archivedate {\n  padding-left: 0;\n  margin-left: 1rem !important;\n}\n#ArchiveList > #BlogArchive1_ArchiveList ul.posts > li {\n  padding-left: 0.75rem;\n  margin-left: 1rem !important;\n}\n#main .page-tool {\n  font-size: 14px;\n  user-select: none;\n}\n#main .page-tool a button {\n  background-color: #f8f8f8;\n  background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);\n  border: 1px solid #c6c6c6;\n  color: #222;\n  -webkit-transition: all;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);\n  font-weight: bold;\n  margin-right: 0.5rem;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  height: 27px;\n  padding-bottom: 0;\n  text-align: center;\n  text-shadow: 0 1px rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n  -webkit-appearance: none;\n  box-sizing: border-box;\n  user-select: none;\n}\n", ""]);
+exports.push([module.i, "#content.main {\n  display: none;\n}\n#main {\n  margin-top: 30px;\n}\n#ArchiveList > #BlogArchive1_ArchiveList ul.hierarchy > li.archivedate {\n  padding-left: 0;\n  margin-left: 1rem !important;\n}\n#ArchiveList > #BlogArchive1_ArchiveList ul.posts > li {\n  padding-left: 0.75rem;\n  margin-left: 1rem !important;\n}\n#ArchiveList > #BlogArchive1_ArchiveList input.download-checkbox {\n  width: 16px;\n  height: 16px;\n  margin-top: -2px;\n}\n#main .page-tool {\n  font-size: 14px;\n  user-select: none;\n}\n#main .page-tool a button {\n  background-color: #f8f8f8;\n  background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);\n  border: 1px solid #c6c6c6;\n  color: #222;\n  -webkit-transition: all;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);\n  font-weight: bold;\n  margin-right: 0.5rem;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  height: 27px;\n  padding-bottom: 0;\n  text-align: center;\n  text-shadow: 0 1px rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n  -webkit-appearance: none;\n  box-sizing: border-box;\n  user-select: none;\n}\n", ""]);
 
 
 
