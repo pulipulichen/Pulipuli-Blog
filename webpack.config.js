@@ -48,6 +48,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/addthis.css',
       './lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
+      './lib-for-link/src/global-header/style/index.less',
       './lib-for-link/src/global-header/style/style.css',
       
       './lib-for-link/src/global-header/gsc-search/default.css',
@@ -67,14 +68,16 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/script/script.js'
     ],
     'global-footer': [
-      './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js',
-      './lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css',
-      './lib-for-link/src/global-footer/modules/puli-guest-book/init.js',
+      './lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js',
+      './lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css',
+      './lib-for-link/src/global-footer/puli-guest-book/init.js',
       
-      './lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js',
-      './lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js',
-      './lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js',
-      './lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js',
+      './lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js',
+      './lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js',
+      './lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js',
+      './lib-for-link/src/global-footer/blogger-feed-loader/init.js',
+      
+      './lib-for-link/src/global-footer/article-download/article-download.js',
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/article-meta.css',

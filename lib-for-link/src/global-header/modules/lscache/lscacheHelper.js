@@ -4,7 +4,7 @@ lscacheHelper = {
   getJSON: function (url, callback, expiredMinute) {
     if (this.getJSONLock === true) {
       setTimeout(() => {
-        this.get(url, callback, expiredMinute)
+        this.getJSON(url, callback, expiredMinute)
       }, 500)
       return
     }

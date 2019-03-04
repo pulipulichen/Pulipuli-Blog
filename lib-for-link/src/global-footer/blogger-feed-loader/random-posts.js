@@ -133,8 +133,8 @@ var _load_random_posts = function () {
   };
   
   let url = "/feeds/posts/default?alt=json-in-script&max-results=0&callback=?"
-  let callback = function () {
-    random_posts()
+  let callback = function (data) {
+    random_posts(data)
     
     getvalue();
     //for (var i = 0; i < randomposts_number; i++) {

@@ -86,10 +86,21 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js":
-/*!***********************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js ***!
-  \***********************************************************************************/
+/***/ "./lib-for-link/src/global-footer/article-download/article-download.js":
+/*!*****************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/article-download/article-download.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//$()
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js":
+/*!***************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -175,10 +186,10 @@ puliHandleComments = function ()	{
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js":
-/*!****************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js ***!
-  \****************************************************************************/
+/***/ "./lib-for-link/src/global-footer/blogger-feed-loader/init.js":
+/*!********************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/blogger-feed-loader/init.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -217,10 +228,10 @@ initRecent()
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js":
-/*!************************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js ***!
-  \************************************************************************************/
+/***/ "./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js":
+/*!****************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -359,8 +370,8 @@ var _load_random_posts = function () {
   };
   
   let url = "/feeds/posts/default?alt=json-in-script&max-results=0&callback=?"
-  let callback = function () {
-    random_posts()
+  let callback = function (data) {
+    random_posts(data)
     
     getvalue();
     //for (var i = 0; i < randomposts_number; i++) {
@@ -392,10 +403,10 @@ var _load_random_posts = function () {
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js":
-/*!**********************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js ***!
-  \**********************************************************************************/
+/***/ "./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js":
+/*!**************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -503,10 +514,10 @@ puliHandlePost = function () {
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-footer/modules/puli-guest-book/init.js":
-/*!************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/puli-guest-book/init.js ***!
-  \************************************************************************/
+/***/ "./lib-for-link/src/global-footer/puli-guest-book/init.js":
+/*!****************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/puli-guest-book/init.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -531,15 +542,15 @@ jQuery.puliGuestBook({
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css":
-/*!************************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css ***!
-  \************************************************************************************/
+/***/ "./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css":
+/*!****************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js!./puli-guest-book.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./puli-guest-book.css */ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -553,7 +564,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -561,10 +572,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js":
-/*!***********************************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js ***!
-  \***********************************************************************************/
+/***/ "./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js":
+/*!***************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -889,14 +900,14 @@ jQuery.puliGuestBook = function (config) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css":
-/*!**************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css ***!
-  \**************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".puli-guest-book .admin-photo {\n  float:left;\n  margin-right: 5px;\n  width:20px; \n  height: 20px;\n  display:block;\n}\n\n.puli-guest-book .guest-book-list {\n  /* border: 3px solid #D2CBBD; */\n  max-height: 500px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  color: #5B5743;\n  font-size:90%;\n\n  padding: 0;\n  margin: 0;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li {\n  background-image:none;\n  background-color: white !important;\n  margin: 0;\n  padding: 18px;\n  list-style:none;\n  clear:both;\n  text-indent: 0px !important;\n  color: #5B5743 !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li:hover {\n  padding-left: 15px;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li.readmore:hover {\n  padding-left: -9px !important;\n  border-left-width: 0 !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li .date {\n  background-image:none !important;\n  background-color: transparent !important;\n  padding: 0 !important;\n  list-style:none;\n  text-indent: 0px !important;\n  color: #5B5743 !important;\n  width: auto !important;\n  height: auto !important;\n\n\n  display: block;\n  float:right;\n  text-align: right;\n  color: #B4AF98;\n  font-size:70%;\n  margin: 0 !important;\n  margin-left: 10px !important;\n}\n\n.puli-guest-book .guest-book-list .guest-book-li.readmore {\n  text-align:center;\n  font-weight: bold;\n  /*border-top: 1px solid #5B5743;*/\n  /*background-color: white;*/\n  padding: 10px 0;\n  background-color: #D6D7D6 !important;\n}\n\n.puli-guest-book .guestbook-write {\n  text-align:center;\n  font-weight: bold;\n  padding: 10px 0;\n}\n\n.puli-guest-book .guestbook-write a.write {\n  color: #5B5743;\n  border: 1px solid #D2CBBD;\n  background-color:white;\n  padding: 5px;\n  margin: 5px;\n  text-decoration:none;\n  font-size:90%;\n  cursor:pointer;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n}\n\n.puli-guest-book .guestbook-write a.write:hover {\n  color: #5B5743;\n  border-color: #5B5743;\n}\n\n/*\n.puli-guest-book .guest-book-list .guest-book-li.guest-book-li-0 {\n  background-color: #F6F3E0 !important;\n}\n.puli-guest-book .guest-book-list .guest-book-li.guest-book-li-1 {\n  background-color: white !important;\n}\n*/\n\n.puli-guest-book .guest-book-list strong.name a {\n  display: inline;\n}", ""]);
 
@@ -1510,19 +1521,20 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 1:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js ./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css ./lib-for-link/src/global-footer/modules/puli-guest-book/init.js ./lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js ./lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js ./lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js ./lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css ./lib-for-link/src/global-footer/puli-guest-book/init.js ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/init.js ./lib-for-link/src/global-footer/article-download/article-download.js ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js */"./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.js");
-__webpack_require__(/*! ./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css */"./lib-for-link/src/global-footer/modules/puli-guest-book/puli-guest-book.css");
-__webpack_require__(/*! ./lib-for-link/src/global-footer/modules/puli-guest-book/init.js */"./lib-for-link/src/global-footer/modules/puli-guest-book/init.js");
-__webpack_require__(/*! ./lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js */"./lib-for-link/src/global-footer/modules/blogger-feed-loader/random-posts.js");
-__webpack_require__(/*! ./lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js */"./lib-for-link/src/global-footer/modules/blogger-feed-loader/recent-lib.js");
-__webpack_require__(/*! ./lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js */"./lib-for-link/src/global-footer/modules/blogger-feed-loader/comment-lib.js");
-module.exports = __webpack_require__(/*! ./lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js */"./lib-for-link/src/global-footer/modules/blogger-feed-loader/init.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js */"./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css */"./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/puli-guest-book/init.js */"./lib-for-link/src/global-footer/puli-guest-book/init.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js */"./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js */"./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js */"./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/init.js */"./lib-for-link/src/global-footer/blogger-feed-loader/init.js");
+module.exports = __webpack_require__(/*! ./lib-for-link/src/global-footer/article-download/article-download.js */"./lib-for-link/src/global-footer/article-download/article-download.js");
 
 
 /***/ })
