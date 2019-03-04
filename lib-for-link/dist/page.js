@@ -136,15 +136,16 @@ ArchiveListUtils = {
   },
   displayConfiguration: function () {
     console.log('displayConfiguration')
+    let cacheKey = 'archivesCheckboxStatus'
     
     this.openListYear(() => {
+      
+      // -------------------------------
+      
       let checkboxChange = function () {
         // 要先確認自己是位於那個階層
-        let folderType = 'month'
-        if ($(this).parent().parent().parent().attr('id') === 'BlogArchive1_ArchiveList') {
-          folderType = 'year'
-        }
-        
+        let folderType = $(this).attr('data-folder-type')
+        //console.log(folderType)
         
         if (folderType === 'year') {
           // 強迫它底下的所有checkbox都check
@@ -175,13 +176,52 @@ ArchiveListUtils = {
           })
           yearCheckbox.prop('checked', yearChecked)
         }
+        
+        // -------------------------------------
+        // 儲存狀態
+        let data = {}
+        $('#BlogArchive1_ArchiveList input.download-checkbox').each((i, input) => {
+          data[input.id] = input.checked
+        })
+        lscache.set(cacheKey, data)
       }
       
+      // -------------------------------------
+      
       $('#BlogArchive1_ArchiveList a.toggle').each((i, a) => {
-        let checkbox = $('<input type="checkbox" checked="checked" class="download-checkbox" />').change(checkboxChange)
+        // 查看一下現在的狀態，然後加上年月好嗎
+        let folderType = 'month'
+        if ($(a).parent().parent().parent().attr('id') === 'BlogArchive1_ArchiveList') {
+          folderType = 'year'
+        }
+        
+        let value
+        if (folderType === 'year') {
+          value = 'd_' + $(a).parent().children('a.post-count-link').text().trim()
+        }
+        else {
+          let link = $(a).parent().children('a.post-count-link').attr('href')
+          let linkParts = link.split('/')
+          value = 'd_' + linkParts[(linkParts.length - 3)] + '_' + linkParts[(linkParts.length - 2)]
+        }
+        
+        let checkbox = $('<input type="checkbox" checked="checked" class="download-checkbox" />')
+                .attr('id', value)
+                .attr('data-folder-type', folderType)
+                .change(checkboxChange)
         $(a).before(checkbox)
                 .parent().addClass('init-download-checkbox')
       })
+      
+      // --------------------------------
+      // 讀取狀態
+      let data = lscache.get(cacheKey)
+      if (data) {
+        for (let id in data) {
+          $('#' + id).prop('checked', data[id])
+        }
+      }
+      
     }) 
   },
   startDownload: function () {
