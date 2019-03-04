@@ -120,6 +120,13 @@ var app = {
             if (this.useLocalhost === true) {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
                       .join(this.localhostURL)
+              
+              mainTemplate = mainTemplate.split('<p:localhost-redirect />')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/static/redirect.js"></script>')
+            }
+            else {
+              mainTemplate = mainTemplate.split('<p:localhost-redirect />')
+                      .join('')
             }
             
             // 移除多餘的空行
