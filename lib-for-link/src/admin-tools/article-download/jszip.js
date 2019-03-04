@@ -11,10 +11,12 @@ https://github.com/nodeca/pako/blob/master/LICENSE
 */
 
 (function(f){
-  if (false && typeof exports==="object"&&typeof module!=="undefined") { 
+  if (false // 我額外加的，能夠移除掉嗎？ 
+          && typeof exports==="object"&&typeof module!=="undefined") { 
     module.exports=f()
   }
-  else if (false && typeof define==="function"&&define.amd) {
+  else if (false  // 我額外加的，能夠移除掉嗎？
+          && typeof define==="function"&&define.amd) {
     define([],f)
   }
   else {

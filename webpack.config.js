@@ -94,8 +94,6 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/style-print/style-print.css',
       //'./lib-for-link/src/item-header/style-print/gutenberg.min.css'
     ],
-    'item-owl': getFilelist('./lib-for-link/src/item-olw/'),
-    'page': getFilelist('./lib-for-link/src/page/'),
     'item-footer': [
       './lib-for-link/src/item-footer/modules/highlight/default.css',
       './lib-for-link/src/item-footer/modules/highlight/highlight.js',
@@ -109,9 +107,15 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/disqus/disqus.js',
       './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
       
-      './lib-for-link/src/item-footer/article-download/jszip.js',
-      './lib-for-link/src/item-footer/article-download/article-download.js',
-    ]
+      './lib-for-link/src/item-footer/script/admin-tools.js',
+    ],
+    'item-owl': getFilelist('./lib-for-link/src/item-olw/'),
+    'admin-tools': [
+      './lib-for-link/src/admin-tools/article-download/tidy.js',
+      './lib-for-link/src/admin-tools/article-download/jszip.js',
+      './lib-for-link/src/admin-tools/article-download/article-download.js',
+    ],
+    'page': getFilelist('./lib-for-link/src/page/'),
   },
   output: {
     path: path.resolve(__dirname, 'lib-for-link/dist'),
