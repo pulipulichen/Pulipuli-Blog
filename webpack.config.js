@@ -80,7 +80,7 @@ let webpackConfig  = {
     'item-header': [
       './lib-for-link/src/item-header/style/article-meta.css',
       './lib-for-link/src/item-header/style/comment.css',
-      './lib-for-link/src/item-header/style/go-top.css',
+      './lib-for-link/src/item-header/style/go-top.less',
       './lib-for-link/src/item-header/style/image.less',
       './lib-for-link/src/item-header/style/backlinks.css',
       './lib-for-link/src/item-header/style/sidebar.css',

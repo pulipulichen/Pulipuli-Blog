@@ -157,7 +157,7 @@ articleDownload = {
       commentJSON = JSON.stringify(commentJSON, null, 2)
       zip.file("comments.json", commentJSON);
       
-      downloadZip()
+      downloadZip() // 最後下載檔案
     })
   }
 }
