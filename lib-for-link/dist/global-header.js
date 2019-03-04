@@ -2185,7 +2185,7 @@ exports.push([module.i, "#masthead header .back-button {\n  float: left;\n  font
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#main .index-post-body .entry-meta .buttons a {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "#main .widget.Blog .entry-meta .buttons a {\n  cursor: pointer;\n}\n", ""]);
 
 
 
