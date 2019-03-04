@@ -136,13 +136,20 @@ ArchiveListUtils = {
         let win = window.open(linkList[i])
         
         // 這邊要等待它關閉
+        let waitCount = 60 * 5
         let checkWinClosed = () => {
-          if (win.closed === false) {
+          if (win.closed === false && waitCount > 0) {
             setTimeout(() => {
+              waitCount--
               checkWinClosed()
             }, 1000)
           }
           else {
+            if (waitCount === 0) {
+              // 五分鐘都沒關閉，一定有問題
+              console.log(['DOWNLOAD ERROR', linkList[i]])
+            }
+            
             i++
             loop(i)
           }
