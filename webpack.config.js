@@ -32,7 +32,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/go-top/go-top.css',
       './lib-for-link/src/global-header/go-top/go-top.js',
       
-      './lib-for-link/src/global-header/sidebar/sidebar.css',
+      './lib-for-link/src/global-header/sidebar/sidebar.less',
       './lib-for-link/src/global-header/sidebar/sidebar.js',
       
       './lib-for-link/src/global-header/btn-navbar/nav-collapse.less',
