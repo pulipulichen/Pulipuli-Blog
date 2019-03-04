@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//$()
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\xampp\\htdocs\\public\\Pulipuli-Blog\\lib-for-link\\src\\global-footer\\article-download\\article-download.js'");
 
 /***/ }),
 

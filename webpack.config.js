@@ -76,8 +76,6 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js',
       './lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js',
       './lib-for-link/src/global-footer/blogger-feed-loader/init.js',
-      
-      './lib-for-link/src/global-footer/article-download/article-download.js',
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/article-meta.css',
@@ -110,6 +108,9 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/disqus/disqus.css',
       './lib-for-link/src/item-footer/modules/disqus/disqus.js',
       './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
+      
+      './lib-for-link/src/item-footer/article-download/jszip.js',
+      './lib-for-link/src/item-footer/article-download/article-download.js',
     ]
   },
   output: {
