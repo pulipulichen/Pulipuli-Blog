@@ -148,10 +148,13 @@ ArchiveListUtils = {
             if (waitCount === 0) {
               // 五分鐘都沒關閉，一定有問題
               console.log(['DOWNLOAD ERROR', linkList[i]])
+              win.close()
             }
             
-            i++
-            loop(i)
+            setTimeout(() => {
+              i++
+              loop(i)
+            }, 3000)
           }
         }
         checkWinClosed()

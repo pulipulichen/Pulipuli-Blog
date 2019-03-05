@@ -4,6 +4,23 @@ require('./jszip-utils.js')
 //require('./beautify-css.js')
 require('./beautify-html.js')
 require('./FileSaver.js')
+const path = require('path')
+
+let extractExt = function (link) {
+  let urlObject = url.parse(link)
+  let ext = null
+  if (urlObject.pathname !== null 
+          && urlObject.pathname.lastIndexOf('.') > -1) {
+    ext = urlObject.pathname.slice(urlObject.pathname.lastIndexOf('.') + 1, urlObject.pathname.length)
+    if (ext.indexOf('/') > -1
+            || ext.indexOf("'") > -1
+            || ext.indexOf(';') > -1
+            || ext.indexOf(':') > -1) {
+      ext = null
+    }
+  }
+  return ext
+}
 
 articleDownload = {
   getRenderedPost: function () {
@@ -161,8 +178,72 @@ articleDownload = {
       '.bp.blogspot.com/',
       '.google.com/puddingchen.35/'
     ]
+    let allowExtList = [
+      'apk',
+      'arff',
+      'au3',
+      'bat',
+      'conf',
+      'csl',
+      'css',
+      'csv',
+      'doc',
+      'docx',
+      'emf',
+      'exe',
+      'fdf',
+      'gif',
+      'ico',
+      'ini',
+      'java',
+      'jpe',
+      'jpg',
+      'JPG',
+      'js',
+      'lrc',
+      'mas',
+      'model',
+      'ods',
+      'odt',
+      'pdf',
+      'png',
+      'ppt',
+      'pptx',
+      'py',
+      'r',
+      'R',
+      'reg',
+      'sav',
+      'sh',
+      'sql',
+      'ssa',
+      'svg',
+      'swf',
+      'tmpl',
+      'ttf',
+      'txt',
+      'wav',
+      'xls',
+      'xlsx',
+      'xml',
+      'yaml'
+    ]
     
     let pushImageList = function (link) {
+      if (link.indexOf('/blob/') > -1
+              || link.indexOf('skydrive.live.com/') > -1
+              || link.indexOf('/pudding.miroko.tw/') > -1
+              || link.indexOf('/www.mediafire.com/') > -1
+              || link.indexOf('/yandex.com/') > -1
+              || link.indexOf('.flashmirrors.com') > -1) {
+        return
+      }
+      
+      let ext = extractExt(link)
+      if (allowExtList.indexOf(ext) === -1) {
+        return
+      }
+      
       // https://lh3.googleusercontent.com/-quhLaYWL29s/WCsAVr6SwpI/AAAAAAAC9iI/F62sfdA4C90/image_thumb%25255B4%25255D.png?imgmax=800
       // http://2.bp.blogspot.com/-L-p05d-w9LA/XHbAUssrMPI/AAAAAAAED78/31DtDe9q6JcGr77dvTTUOna6huIYwbvEgCK4BGAYYCw/s0/%25E7%25B0%25A1%25E5%25A0%25B11.png
       if (typeof(imageList[link]) === 'string') {
@@ -203,6 +284,7 @@ articleDownload = {
       imageList[link] = filename
     }
     
+    /*
     imgUrlPatterns.forEach((pattern) => {
       article.find('a[href*="' + pattern + '"]').each((i, ele) => {
         pushImageList(ele.href)
@@ -211,6 +293,14 @@ articleDownload = {
       article.find('img[src*="' + pattern + '"]').each((i, ele) => {
         pushImageList(ele.src)
       })
+    })
+    */
+    article.find('a[href]').each((i, ele) => {
+      pushImageList(ele.href)
+    })
+
+    article.find('img[src]').each((i, ele) => {
+      pushImageList(ele.src)
     })
     
     //console.log(filenameList.length)
