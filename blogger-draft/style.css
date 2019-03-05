@@ -1,0 +1,156 @@
+#puli_util_20190122 {
+	background-color: #78e08f;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 50vh;
+	min-height: 50px;
+	text-align: center;
+	overflow-y: none;
+	overflow-x: none;
+}
+
+#puli_util_20190122[data-status="wait-config"] {
+	height: auto;
+}
+
+#puli_util_20190122 .wait-upload-message {
+	display: none;
+	font-size: 3rem;
+	color: white;
+	width: 100vw;
+	line-height: 50vh;
+	cursor: default;
+	user-select: none;
+}
+
+#puli_util_20190122[data-status="wait-upload"] .wait-upload-message {
+	display: block;
+}
+
+
+#puli_util_20190122 .init-panel {
+	display: none;
+}
+
+#puli_util_20190122[data-status="wait-config"] .init-panel {
+	display: block;
+}
+
+#puli_util_20190122 .init-panel a {
+	/*position: fixed;
+	bottom: 0;
+	left: 0;*/
+    float: left;
+    display: block;
+}
+
+#puli_util_20190122 .init-panel a button {
+    font-size: 2.8rem;
+    width: 9rem;
+    cursor: pointer;
+}
+
+#puli_util_20190122 .display-result {
+	display: none;
+} 
+
+#puli_util_20190122[data-status="image-loaded"] .display-result {
+	display: table;
+} 
+
+#puli_util_20190122 .display-result .buttons {
+	vertical-align: top;
+}
+
+#puli_util_20190122 .display-result td {
+	padding: 0.5rem;
+}
+
+#puli_util_20190122 .display-result .buttons button {
+	font-size: 3rem;
+	display: block;
+    width: 20rem;
+}
+
+#puli_util_20190122 .display-result .buttons input {
+    font-size: 3rem;
+    display: block;
+	width: 19.2rem;
+}
+
+
+#puli_util_20190122 .url-input {
+	width: calc(100vw - 9.63rem);
+	font-size: 3rem;
+	border: 1px solid gray;
+	/* position: fixed;
+	bottom: 0;
+	left: 9rem; */
+	/*width: 100vw;*/
+	float:right;
+	display: block;
+}
+
+#puli_util_20190122 .detect-size {
+	position: fixed;
+	left: calc(100vw + 100px);
+	top: calc(100vh + 100px);
+}
+
+#puli_util_20190122 .display-result .td-img img {
+	max-height: calc(50vh - 1rem);
+	width: auto;
+	display: block;
+} 
+
+#puli_util_20190122 .input-container {
+	display: none;
+}
+
+#puli_util_20190122 .uploading-message {
+	display: none;
+    font-size: 3rem;
+    margin: 1rem;
+    color: white;
+	line-height: 50vh;
+	user-select: none;
+}
+
+#puli_util_20190122[data-status="uploading"] .uploading-message {
+	display: block;
+}
+
+#puli_util_20190122 .display-result .buttons button.copy-thumbnail {
+	font-size: 2.7rem;
+}
+
+#puli_util_20190122 .editor-preview-panel {
+	text-align: right;
+	background-color: gray;
+	color: white;
+}
+
+#puli_util_20190122 .editor-preview-panel .img-list {
+	text-align: left;
+}
+
+#puli_util_20190122 .editor-preview-panel label {
+	cursor: pointer;
+}
+
+#puli_util_20190122 .editor-preview-panel a {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	max-height: 50px;
+	border: 1px solid white;
+	overflow: hidden;
+	background-color: white;
+}
+
+#puli_util_20190122 .editor-preview-panel a img {
+	width: 50px;
+	height: auto;
+}

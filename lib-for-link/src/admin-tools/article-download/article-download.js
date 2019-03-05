@@ -158,7 +158,8 @@ articleDownload = {
     
     let imgUrlPatterns = [
       '.googleusercontent.com/',
-      '.bp.blogspot.com/'
+      '.bp.blogspot.com/',
+      '.google.com/puddingchen.35/'
     ]
     
     let pushImageList = function (link) {
@@ -291,8 +292,11 @@ articleDownload = {
       let articleHTML = this.beautifyHTML(article.html())
       zip.file("article.html", articleHTML);
       
-      let img = zip.folder("img");
+      let img = null;
       for (let link in linkFileList) {
+        if (img === null) {
+          img = zip.folder("img");
+        }
         let item = linkFileList[link]
         img.file(item.filename, item.data, {binary:true});
       }
