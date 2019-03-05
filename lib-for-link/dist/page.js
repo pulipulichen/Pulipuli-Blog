@@ -228,31 +228,42 @@ ArchiveListUtils = {
   loopOpenItem: function (linkList, callback) {
     let loop = (i) => {
       if (i < linkList.length) {
-        let win = window.open(linkList[i])
-        
-        // 這邊要等待它關閉
-        let waitCount = 60 * 5
-        let checkWinClosed = () => {
-          if (win.closed === false && waitCount > 0) {
-            setTimeout(() => {
-              waitCount--
-              checkWinClosed()
-            }, 1000)
-          }
-          else {
-            if (waitCount === 0) {
-              // 五分鐘都沒關閉，一定有問題
-              console.log(['DOWNLOAD ERROR', linkList[i]])
-              win.close()
+        let openRetryCount = 3
+        let openWindow = () => {
+          let win = window.open(linkList[i])
+
+          // 這邊要等待它關閉
+          let waitCount = 60 * 5
+          let checkWinClosed = () => {
+            if (win.closed === false && waitCount > 0) {
+              setTimeout(() => {
+                waitCount--
+                checkWinClosed()
+              }, 1000)
             }
-            
-            setTimeout(() => {
-              i++
-              loop(i)
-            }, 3000)
+            else {
+              if (waitCount === 0) {
+                // 五分鐘都沒關閉，一定有問題
+                win.close()
+                
+                openRetryCount--
+                if (openRetryCount > 0) {
+                  openWindow()
+                  return
+                }
+                console.log(['DOWNLOAD ERROR', linkList[i]])
+              }
+
+              setTimeout(() => {
+                i++
+                loop(i)
+              }, 3000)
+            }
           }
+          checkWinClosed()
         }
-        checkWinClosed()
+        
+        openWindow()
       }
       else {
         if (typeof(callback) === 'function') {

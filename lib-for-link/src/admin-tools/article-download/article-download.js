@@ -259,8 +259,13 @@ articleDownload = {
       }
       
       // unescape
+      /*
       while (filename !== unescape(filename)) {
         filename = unescape(filename)
+      }
+      */
+      while (filename !== decodeURIComponent(filename)) {
+        filename = decodeURIComponent(filename)
       }
       
       /*
@@ -380,11 +385,20 @@ articleDownload = {
     //console.log(JSZip)
     //console.log(this.getMetadata())
     
+    if ($('.addthis-smartlayers .at-custom-sidebar-count:visible').length === 0) {
+      setTimeout(() => {
+        this.downloadArticle()
+      }, 3000)
+      return
+    }
+    
     let filename = this.getArticleFilename()
     var zip = new JSZip();
     
     let article = this.getRenderedPost()
     let imageList = this.parseImageList(article)
+    //console.log(imageList)
+    //return 
     
     this.getImageFromList(imageList,(linkFileList) => {
       article = this.replaceArticleLink(article, linkFileList)
