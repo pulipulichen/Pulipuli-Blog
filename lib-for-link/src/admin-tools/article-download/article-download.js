@@ -4,7 +4,7 @@ require('./jszip-utils.js')
 //require('./beautify-css.js')
 require('./beautify-html.js')
 require('./FileSaver.js')
-const path = require('path')
+const url = require('url');
 
 let extractExt = function (link) {
   let urlObject = url.parse(link)
@@ -235,7 +235,8 @@ articleDownload = {
               || link.indexOf('/pudding.miroko.tw/') > -1
               || link.indexOf('/www.mediafire.com/') > -1
               || link.indexOf('/yandex.com/') > -1
-              || link.indexOf('.flashmirrors.com') > -1) {
+              || link.indexOf('.flashmirrors.com') > -1
+              || link.indexOf('/puddingchen.35.googlepages.com/') > -1) {
         return
       }
       
@@ -262,11 +263,14 @@ articleDownload = {
         filename = unescape(filename)
       }
       
+      /*
       if (!filename.endsWith('.jpg')
               && !filename.endsWith('.png')
               && !filename.endsWith('.gif')) {
+        // 我覺得這個可能用不到
         filename = filename + '.png'
       }
+      */
       
       if (filenameList.indexOf(filename) > -1) {
         let count = 0
@@ -323,9 +327,14 @@ articleDownload = {
         let link = linkList[i]
         JSZipUtils.getBinaryContent(link, (err, data) => {
           if (err) {
-            throw err; // or handle the error
+            //throw err; // or handle the error
+            // 下載不到檔案的話
+            delete linkFileList[link]
           }
-          linkFileList[link].data = data
+          else {
+            linkFileList[link].data = data
+          }
+          
           i++
           loop(i)
         });
@@ -338,9 +347,9 @@ articleDownload = {
     }
     loop(0)
   },
-  replaceArticleLink: function (article, imageList) {
-    for (let link in imageList) {
-      let filename = 'img/' + imageList[link]
+  replaceArticleLink: function (article, linkFileList) {
+    for (let link in linkFileList) {
+      let filename = 'assets/' + linkFileList[link].filename
       //console.log(filename)
       
       article.find('a[href="' + link + '"]').each((i, ele) => {
@@ -377,18 +386,18 @@ articleDownload = {
     let article = this.getRenderedPost()
     let imageList = this.parseImageList(article)
     
-    article = this.replaceArticleLink(article, imageList)
     this.getImageFromList(imageList,(linkFileList) => {
+      article = this.replaceArticleLink(article, linkFileList)
       let articleHTML = this.beautifyHTML(article.html())
       zip.file("article.html", articleHTML);
       
-      let img = null;
+      let assets = null;
       for (let link in linkFileList) {
-        if (img === null) {
-          img = zip.folder("img");
+        if (assets === null) {
+          assets = zip.folder("assets");
         }
         let item = linkFileList[link]
-        img.file(item.filename, item.data, {binary:true});
+        assets.file(item.filename, item.data, {binary:true});
       }
       
       // --------------------------
