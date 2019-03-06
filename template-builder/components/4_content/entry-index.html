@@ -20,7 +20,7 @@
       expr:data-numComments='&quot;p&quot; + data:post.numComments'
       >
   
-  <a class="entry-image" expr:href='&quot;p&quot; + data:post.url'></a>
+  <a class="entry-image" expr:href='data:post.url'></a>
   
   <div class="entry-container">
     <div class="entry-content">
@@ -60,14 +60,14 @@
             </div>
         </div>
         <h1 class="entry-title"> 
-          <a expr:href='&quot;p&quot; + data:post.url'>
+          <a expr:href='data:post.url'>
             <data:post.title/>
           </a> 
         </h1>
         
         <data:post.body/>
         
-        <a class="more" expr:href='&quot;p&quot; + data:post.url'>
+        <a class="more" expr:href='data:post.url'>
           (more...)
         </a>
     </div>
