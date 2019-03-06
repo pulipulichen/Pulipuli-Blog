@@ -10,7 +10,7 @@ const enableEntryKey = [
 
 let css = ''
 enableEntryKey.forEach(filename => {
-  css = css + '\n/* ' + filename + '*/\n' 
+  css = css + '\n/* ' + filename + ' */\n' 
           + fs.readFileSync('./lib-for-link/dist-style/' + filename + '.css', 'utf8') + '\n'
 })
 
