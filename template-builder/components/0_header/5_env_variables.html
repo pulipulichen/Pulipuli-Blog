@@ -12,3 +12,7 @@
   expr:data-post-commentJso='data:post.commentJso'
   expr:data-post-commentMsgs='data:post.commentMsgs'
   expr:data-post-commentConfig='data:post.commentConfig' />
+<b:loop values='data:post.labels' var='label'>
+  <span class='label-variables' 
+        expr:data-label-name="data:label.name" />
+</b:loop>

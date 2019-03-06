@@ -2924,9 +2924,7 @@ maxresults = 10
 splittercolor = ''
 relatedpoststitle = 'Related Posts'
 
-// <script src='/feeds/posts/default/-/Software/GoogleDoc?alt=json-in-script&callback=pulipuli_related_results_labels_thumbs&max-results=6' type='text/javascript'></script>
-
-pulipuli_related_results_labels_thumbs = function (e) {
+let pulipuli_related_results_labels_thumbs = function (e) {
     //console.log(e);
     if (typeof(e.feed.entry) === "undefined") {
         if ($(".related-posts").hasClass("has-item") === false) {
@@ -2990,6 +2988,27 @@ _puli_related_post_render = function (_owl_items) {
     });
 };
 
+let loadLabelsRelatedPosts = (callback) => {
+  let labelList = getBloggerVariable('data-label-name')
+  //console.log(labelList)
+  let loop = (i) => {
+    if (i < labelList.length) {
+      // <script src='/feeds/posts/default/-/Software/GoogleDoc?alt=json-in-script&callback=pulipuli_related_results_labels_thumbs&max-results=6' type='text/javascript'></script>
+      let url = '/feeds/posts/default/-/' + labelList[i] + '?alt=json-in-script&max-results=6&callback=?'
+      lscacheHelper.getJSON(url, (data) => {
+        pulipuli_related_results_labels_thumbs(data)
+        i++
+        loop(i)
+      })
+    }
+    else {
+      if (typeof(callback) === 'function') {
+        callback()
+      }
+    }
+  }
+  loop(0)
+} 
 
 // --------------------
 
@@ -3004,15 +3023,18 @@ $(function() {
     return
   }
   
-  removeRelatedDuplicates_thumbs();
-  printRelatedLabels_thumbs(postUrl);
   
-  $("#owl-demo").owlCarousel({
-    autoPlay: 5000,
-    items : 3,
-    itemsDesktop : [1200,3],
-    itemsDesktopSmall : [980,2],
-    itemsMobile : [480,1]
+  loadLabelsRelatedPosts(() => {
+    removeRelatedDuplicates_thumbs();
+    printRelatedLabels_thumbs(postUrl);
+
+    $("#owl-demo").owlCarousel({
+      autoPlay: 5000,
+      items : 3,
+      itemsDesktop : [1200,3],
+      itemsDesktopSmall : [980,2],
+      itemsMobile : [480,1]
+    })
   })
 });
 
