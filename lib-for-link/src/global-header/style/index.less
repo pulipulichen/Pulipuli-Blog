@@ -1,5 +1,5 @@
 #main .widget.Blog {
-  .post {
+  .post .index-post-body {
     .index-labels {
       display: none;  
     }
@@ -23,6 +23,7 @@
     .entry-content {
       //padding-bottom: 1px;
       padding-bottom: 1rem;
+      padding-top: 1rem;
 
 
       .avatar-name {
@@ -99,45 +100,47 @@
       display: none;
     }
 
-    // 這是指最下面那一列
-    .entry-meta {
-      .buttons a {
-        cursor: pointer;
-        display: block;
-        float: left;
-        border-radius: 3px;
-        font-size: 13px;
-        padding: 7px 20px;
-        background: #333;
-        color: #fff;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        border: 1px solid #1D1D1D;
-        margin-top: 13px;
-        margin-bottom: 12px;
-        margin-left: 1em;
-      } 
-      .buttons a:hover {
-        color: #F69087;
-      } 
-
-
-      .read-more {
-        display: block;
-        float: left;
-        border-radius: 3px;
-        font-size: 13px;
-        padding: 7px 20px;
-        background: #333;
-        color: #fff;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        border: 1px solid #1D1D1D;
-        margin-top: 13px;
-        margin-bottom: 12px;
-      }
-    } 
   }
+
+
+  // 這是指最下面那一列
+  .post .entry-meta {
+    .buttons a {
+      cursor: pointer;
+      display: block;
+      float: left;
+      border-radius: 3px;
+      font-size: 13px;
+      padding: 7px 20px;
+      background: #333;
+      color: #fff;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: 1px solid #1D1D1D;
+      margin-top: 13px;
+      margin-bottom: 12px;
+      margin-left: 1em;
+    } 
+    .buttons a:hover {
+      color: #F69087;
+    } 
+
+
+    .read-more {
+      display: block;
+      float: left;
+      border-radius: 3px;
+      font-size: 13px;
+      padding: 7px 20px;
+      background: #333;
+      color: #fff;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: 1px solid #1D1D1D;
+      margin-top: 13px;
+      margin-bottom: 12px;
+    }
+  } 
 
 }
 
