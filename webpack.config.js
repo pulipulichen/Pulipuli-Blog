@@ -1,5 +1,6 @@
 const path = require('path')
 var glob = require("glob")
+const WebpackShellPlugin = require('webpack-shell-plugin')
 
 /**
  * 列出檔案清單
@@ -156,7 +157,13 @@ let webpackConfig  = {
         ],
       }
     ]
-  }
+  },
+  plugins: [
+    new WebpackShellPlugin({
+      //onBuildStart: [ 'npm run t' ], 
+      onBuildEnd: [ 'npm run package-css' ]
+    })
+  ]
 }
 
 module.exports = webpackConfig

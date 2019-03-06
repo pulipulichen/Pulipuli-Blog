@@ -10,7 +10,8 @@
     "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js",
     "selenium": "node selenium.config.js",
     "selenium-side-runner": "selenium-side-runner lib-for-link/src/**/*.side",
-    "extract-link": "node archive-prasing/extractLinks.js"
+    "extract-link": "node archive-prasing/extractLinks.js",
+    "package-css": "node package-css.js"
   },
   "repository": {
     "type": "git",
