@@ -144,9 +144,38 @@
 
 }
 
+// ------------------------------------------
+
+@media (max-width: 1200px) {
+  #main .widget.Blog .post .index-post-body {
+    .entry-image {
+      height: 320px;
+    }
+  }
+}
+
+
+@media (max-width: 979px) {
+  #main .widget.Blog .post .index-post-body {
+    .entry-image {
+      height: 420px;
+    }
+  }
+}
+
+// ------------------------------------------
+
+@media (max-width: 767px) {
+  #main .widget.Blog .post .index-post-body {
+    .entry-image {
+      height: 320px;
+    }
+  }
+}
+
 /********************/
 @media (max-width: 480px) {
-  #main .widget.Blog {
+  #main .widget.Blog .post .index-post-body  {
     /*********************/
     /* 20160926 修正小視窗底下按鈕沒有置中的問題 */
     .entry-meta.clearfix > aside > .pull-left {
@@ -164,6 +193,10 @@
 
     .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {
       margin-left: 0;
+    }
+    
+    .entry-image {
+      height: 240px;
     }
   }
 
