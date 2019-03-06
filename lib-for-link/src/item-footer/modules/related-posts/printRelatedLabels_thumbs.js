@@ -90,6 +90,7 @@ printRelatedLabels_thumbs = function (e) {
   //document.write('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>');
   //var owl = $('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>').appendTo(c)
   var owl = $('.related-posts:first #owl-demo')
+  //console.log(relatedTitles)
   if (relatedTitles.length > 0) {
     $('.related-posts.hidden').removeClass('hidden')
   }

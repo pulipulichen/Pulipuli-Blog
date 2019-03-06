@@ -2893,6 +2893,7 @@ printRelatedLabels_thumbs = function (e) {
   //document.write('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>');
   //var owl = $('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>').appendTo(c)
   var owl = $('.related-posts:first #owl-demo')
+  //console.log(relatedTitles)
   if (relatedTitles.length > 0) {
     $('.related-posts.hidden').removeClass('hidden')
   }
@@ -2997,8 +2998,9 @@ let pulipuli_related_results_labels_thumbs = function (e) {
 }
 
 let loadLabelsRelatedPosts = (callback) => {
-  let labelList = getBloggerVariable('data-label-name')
-
+  let labelList = getBloggerPostsVariable('data-label-name')[0]
+  console.log(labelList)
+  
   let maxResults = 6
   if (labelList.length === 1) {
     maxResults = 10
@@ -3043,7 +3045,7 @@ relatedUrls = new Array;
 thumburl = new Array;
 
 $(function () {
-  let postUrl = getBloggerVariable('data-post-url')
+  let postUrl = getBloggerPostsVariable('data-post-url')[0]
   if (typeof (postUrl) === 'undefined') {
     return
   }

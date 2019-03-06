@@ -53,8 +53,9 @@ let pulipuli_related_results_labels_thumbs = function (e) {
 }
 
 let loadLabelsRelatedPosts = (callback) => {
-  let labelList = getBloggerVariable('data-label-name')
-
+  let labelList = getBloggerPostsVariable('data-label-name')[0]
+  console.log(labelList)
+  
   let maxResults = 6
   if (labelList.length === 1) {
     maxResults = 10
@@ -99,7 +100,7 @@ relatedUrls = new Array;
 thumburl = new Array;
 
 $(function () {
-  let postUrl = getBloggerVariable('data-post-url')
+  let postUrl = getBloggerPostsVariable('data-post-url')[0]
   if (typeof (postUrl) === 'undefined') {
     return
   }

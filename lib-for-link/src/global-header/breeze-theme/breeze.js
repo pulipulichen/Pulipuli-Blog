@@ -8,10 +8,12 @@ var _0xd44f=["\x53\x20\x62\x3D\x5B\x22\x5C\x6B\x22\x2C\x22\x5C\x31\x76\x5C\x70\x
         _0xd6f5x5=function (_0xd6f5x3){
             return (_0xd6f5x3<_0xd6f5x2?_0xd44f[4]:_0xd6f5x5(parseInt(_0xd6f5x3/_0xd6f5x2)))+((_0xd6f5x3=_0xd6f5x3%_0xd6f5x2)>35?String[_0xd44f[5]](_0xd6f5x3+29):_0xd6f5x3.toString(36));} ;if(!_0xd44f[4][_0xd44f[6]](/^/,String)){while(_0xd6f5x3--){_0xd6f5x6[_0xd6f5x5(_0xd6f5x3)]=_0xd6f5x4[_0xd6f5x3]||_0xd6f5x5(_0xd6f5x3);} ;_0xd6f5x4=[function (_0xd6f5x5){return _0xd6f5x6[_0xd6f5x5];} ];_0xd6f5x5=function (){return _0xd44f[7];} ;_0xd6f5x3=1;} ;while(_0xd6f5x3--){if(_0xd6f5x4[_0xd6f5x3]){_0xd6f5x1=_0xd6f5x1[_0xd44f[6]]( new RegExp(_0xd44f[8]+_0xd6f5x5(_0xd6f5x3)+_0xd44f[8],_0xd44f[9]),_0xd6f5x4[_0xd6f5x3]);} ;} ;return _0xd6f5x1;} (_0xd44f[0],62,153,_0xd44f[3][_0xd44f[2]](_0xd44f[1]),0,{}));
         
-rm2 = function (_0x17a4x5, _url, _labels){
-    var _id = _0x17a4x5;
-    var _labels = $("#l" + _0x17a4x5).clone().show().html();
-    var _0x17a4x6= document[_0x2b54[6]](_0x17a4x5);
+rm2 = function (postId, _url, _labels) {
+  //let postId = getBloggerPostsVariable('data-post-id')[0]
+  
+    var _id = postId;
+    var _labels = $("#l" + postId).clone().show().html();
+    var _0x17a4x6= document[_0x2b54[6]](postId);
     imgtag=_0x2b54[4];
     ifrtag=_0x2b54[4];
     ifrsrc=_0x2b54[4];
