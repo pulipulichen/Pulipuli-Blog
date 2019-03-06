@@ -276,7 +276,7 @@ $(() => {
   let testOpen = () => {
     $('#masthead .btn-navbar').click()
   }
-  testOpen()  
+  //testOpen()  
 })
 
 
@@ -1266,7 +1266,7 @@ getBloggerVariable = function (key) {
     ele = $('.label-variables')
   }
   
-  if (ele.length === 1) {
+  if (ele.length === 1 && !key.startsWith('data-label-')) {
     let value = ele.attr(key)
     value = valueProcess(value)
     return value
@@ -1275,6 +1275,7 @@ getBloggerVariable = function (key) {
     let output = []
     ele.each((i, item) => {
       let value = $(item).attr(key)
+      //console.log([key, value])
       value = valueProcess(value)
       output.push(value)
     })

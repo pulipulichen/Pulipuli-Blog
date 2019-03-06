@@ -2990,12 +2990,30 @@ _puli_related_post_render = function (_owl_items) {
 
 let loadLabelsRelatedPosts = (callback) => {
   let labelList = getBloggerVariable('data-label-name')
+  
+  let maxResults = 6
+  if (labelList.length === 1) {
+    maxResults = 10
+  }
+  //console.log(labelList.length)
   //console.log(labelList)
   let loop = (i) => {
     if (i < labelList.length) {
+      let label = encodeURIComponent(labelList[i])
+      //console.log(label)
+      
+      if (typeof(label) !== 'string' 
+              || label.trim() === '') {
+        i++
+        loop(i)
+        return
+      }
       // <script src='/feeds/posts/default/-/Software/GoogleDoc?alt=json-in-script&callback=pulipuli_related_results_labels_thumbs&max-results=6' type='text/javascript'></script>
-      let url = '/feeds/posts/default/-/' + labelList[i] + '?alt=json-in-script&max-results=6&callback=?'
+      let url = '/feeds/posts/default/-/' + label + '?alt=json-in-script&max-results=' + maxResults + '&callback=?'
+      //console.log(url)
       lscacheHelper.getJSON(url, (data) => {
+      //$.getJSON(url, (data) => {
+        //console.log(data)
         pulipuli_related_results_labels_thumbs(data)
         i++
         loop(i)
@@ -3025,7 +3043,8 @@ $(function() {
   
   
   loadLabelsRelatedPosts(() => {
-    removeRelatedDuplicates_thumbs();
+    //removeRelatedDuplicates_thumbs();
+    //console.log('printRelatedLabels_thumbs')
     printRelatedLabels_thumbs(postUrl);
 
     $("#owl-demo").owlCarousel({
@@ -3202,7 +3221,7 @@ exports.push([module.i, "/* Preload images */\nbody:after {\n  content: url(//4.
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".related-posts {\n  /*height: 240px;*/\n  overflow: hidden;\n  z-index: 100;\n  background: #fff;\n}\n.related-posts .title {\n  background: none repeat scroll 0% 0% #FFF;\n  padding: 5px 20px;\n  margin: 0px 0px 15px;\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  font-size: 22px;\n}\n.related-posts #owl-demo {\n  overflow: visible;\n  padding: 0px 20px;\n  max-height: 233px;\n}\n.related-posts img {\n  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;\n  display: table-cell;\n  text-align: center;\n  color: #EB005D;\n  font-size: 19px;\n}\n.owl-wrapper-outer {\n  overflow: hidden;\n  max-height: 240px;\n}\n.related-posts .owl-controls.clickable {\n  position: relative;\n}\n.owl-wrapper {\n  position: relative;\n}\n.owl-item {\n  float: left;\n  padding: 0px 10px;\n  width: 235px !important;\n}\n.owl-item:first-child {\n  padding: 0px 10px 0px 0px;\n}\n.item-img {\n  position: relative;\n}\n.related-posts .owl-controls.clickable .owl-pagination {\n  position: absolute;\n  right: 0px;\n  top: -208px;\n}\n.owl-theme .owl-controls .owl-page {\n  display: inline-block;\n  width: 13px;\n  height: 13px;\n  margin: 5px 14px 5px -10px;\n  opacity: 0.5;\n  border-radius: 20px;\n  background: none repeat scroll 0% 0% #DDD;\n  cursor: pointer;\n}\n.owl-theme .owl-controls .owl-page.active,\n.owl-theme .owl-controls.clickable .owl-page:hover {\n  opacity: 1;\n  background: none repeat scroll 0% 0% #333;\n}\n", ""]);
+exports.push([module.i, ".related-posts {\n  /*height: 240px;*/\n  overflow: hidden;\n  z-index: 100;\n  background: #fff;\n}\n.related-posts .title {\n  background: none repeat scroll 0% 0% #FFF;\n  padding: 5px 20px;\n  margin: 0px 0px 15px;\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  font-size: 22px;\n}\n.related-posts #owl-demo {\n  overflow: visible;\n  padding: 0px 20px;\n  max-height: 233px;\n}\n.related-posts #owl-demo .owl-wrapper-outer {\n  overflow: hidden;\n  max-height: 240px;\n  margin-bottom: 20px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item {\n  float: left;\n  padding: 0px 10px;\n  width: 235px !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img img {\n  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;\n  display: table-cell;\n  text-align: center;\n  color: #EB005D;\n  font-size: 19px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item:first-child {\n  padding: 0px 10px 0px 0px;\n}\n.related-posts .owl-controls.clickable {\n  position: relative;\n  top: -20px;\n}\n.related-posts .owl-controls.clickable .owl-pagination {\n  position: absolute;\n  right: 0px;\n  top: -208px;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page {\n  display: inline-block;\n  width: 13px;\n  height: 13px;\n  margin: 5px 14px 5px -10px;\n  opacity: 0.5;\n  border-radius: 20px;\n  background: none repeat scroll 0% 0% #DDD;\n  cursor: pointer;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page.active,\n.related-posts .owl-controls.clickable .owl-pagination .owl-page:hover {\n  opacity: 1;\n  background: none repeat scroll 0% 0% #333;\n}\n", ""]);
 
 
 

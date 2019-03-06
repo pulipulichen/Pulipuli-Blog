@@ -17,54 +17,68 @@
     overflow: visible;
     padding: 0px 20px;
     max-height: 233px;
+
+    .owl-wrapper-outer {
+      overflow: hidden;
+      max-height: 240px;
+      margin-bottom: 20px;
+
+      .owl-wrapper {
+        position: relative;
+        
+        .owl-item {
+          float: left;
+          padding: 0px 10px;
+          width: 235px !important;
+          
+          .item-img {
+            position: relative;
+
+            img {
+              background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;
+              display: table-cell;
+              text-align: center;
+              color: #EB005D;
+              font-size: 19px;
+            }
+
+          }
+        }
+        .owl-item:first-child {
+          padding: 0px 10px 0px 0px;
+        }
+      }
+    }
   }
 
-  img {
-    background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;
-    display: table-cell;
-    text-align: center;
-    color: #EB005D;
-    font-size: 19px;
-  }
-}
+  
+  .owl-controls.clickable {
+    position: relative;
+    top: -20px;
 
-.owl-wrapper-outer {
-  overflow: hidden;
-  max-height: 240px;
-}
-.related-posts .owl-controls.clickable {
-  position: relative;
-}
-.owl-wrapper {
-  position: relative;
-}
-.owl-item {
-  float: left;
-  padding: 0px 10px;
-  width: 235px !important;
-}
-.owl-item:first-child {
-  padding: 0px 10px 0px 0px;
-}
-.item-img {
-  position: relative;
-}
-.related-posts .owl-controls.clickable .owl-pagination {
-  position: absolute;
-  right: 0px;
-  top: -208px;
-}
-.owl-theme .owl-controls .owl-page {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  margin: 5px 14px 5px -10px;
-  opacity: 0.5;
-  border-radius: 20px;
-  background: none repeat scroll 0% 0% #DDD;
-  cursor: pointer;
-}
-.owl-theme .owl-controls .owl-page.active, .owl-theme .owl-controls.clickable .owl-page:hover {
-  opacity: 1;
-  background: none repeat scroll 0% 0% #333;
+    .owl-pagination {
+      position: absolute;
+      right: 0px;
+      top: -208px;
+      
+
+      .owl-page {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin: 5px 14px 5px -10px;
+        opacity: 0.5;
+        border-radius: 20px;
+        background: none repeat scroll 0% 0% #DDD;
+        cursor: pointer;
+      }
+      
+      .owl-page.active, 
+      .owl-page:hover {
+        opacity: 1;
+        background: none repeat scroll 0% 0% #333;
+      }
+    }
+
+  }
 }

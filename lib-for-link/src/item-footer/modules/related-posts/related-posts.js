@@ -72,12 +72,30 @@ _puli_related_post_render = function (_owl_items) {
 
 let loadLabelsRelatedPosts = (callback) => {
   let labelList = getBloggerVariable('data-label-name')
+  
+  let maxResults = 6
+  if (labelList.length === 1) {
+    maxResults = 10
+  }
+  //console.log(labelList.length)
   //console.log(labelList)
   let loop = (i) => {
     if (i < labelList.length) {
+      let label = encodeURIComponent(labelList[i])
+      //console.log(label)
+      
+      if (typeof(label) !== 'string' 
+              || label.trim() === '') {
+        i++
+        loop(i)
+        return
+      }
       // <script src='/feeds/posts/default/-/Software/GoogleDoc?alt=json-in-script&callback=pulipuli_related_results_labels_thumbs&max-results=6' type='text/javascript'></script>
-      let url = '/feeds/posts/default/-/' + labelList[i] + '?alt=json-in-script&max-results=6&callback=?'
+      let url = '/feeds/posts/default/-/' + label + '?alt=json-in-script&max-results=' + maxResults + '&callback=?'
+      //console.log(url)
       lscacheHelper.getJSON(url, (data) => {
+      //$.getJSON(url, (data) => {
+        //console.log(data)
         pulipuli_related_results_labels_thumbs(data)
         i++
         loop(i)
@@ -107,7 +125,8 @@ $(function() {
   
   
   loadLabelsRelatedPosts(() => {
-    removeRelatedDuplicates_thumbs();
+    //removeRelatedDuplicates_thumbs();
+    //console.log('printRelatedLabels_thumbs')
     printRelatedLabels_thumbs(postUrl);
 
     $("#owl-demo").owlCarousel({
