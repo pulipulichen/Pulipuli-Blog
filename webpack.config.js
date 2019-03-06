@@ -1,8 +1,10 @@
 const path = require('path')
 var glob = require("glob")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+//const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const WebpackShellPlugin = require('webpack-shell-plugin')
 
 /**
@@ -144,11 +146,10 @@ let webpackConfig  = {
         //  'style-loader', // 這個會後執行 (順序很重要)
         //  'css-loader' // 這個會先執行
         //]
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /\.less$/,
@@ -157,12 +158,13 @@ let webpackConfig  = {
         //  'css-loader', // Step 2再執行這個
         //  'less-loader' // Step 1 要先執行這個
         //],
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'less-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            'css-loader',
+            'less-loader'
+          ]
+        })
       },
       {
         test: /\.vue$/,
@@ -184,10 +186,7 @@ let webpackConfig  = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    }),
+    new ExtractTextPlugin("[name].css"),
     new WebpackShellPlugin({
       //onBuildStart: [ 'npm run t' ], 
       onBuildEnd: [ 'npm run package-css' ]
