@@ -90,9 +90,6 @@ let webpackConfig  = {
       './lib-for-link/src/item-header/style/style-item.css',
       
       './lib-for-link/src/item-header/script/script-item.js',
-      './lib-for-link/src/item-header/modules/related-posts/related-posts.js',
-      './lib-for-link/src/item-header/modules/related-posts/jQueryOwlCarousel.js',
-      './lib-for-link/src/item-header/modules/related-posts/printRelatedLabels_thumbs.js',
       
       './lib-for-link/src/item-header/style-print/style-print.css',
       //'./lib-for-link/src/item-header/style-print/gutenberg.min.css'
@@ -111,6 +108,9 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
       
       './lib-for-link/src/item-footer/script/admin-tools.js',
+      
+      
+      './lib-for-link/src/item-footer/modules/related-posts/related-posts.js',
     ],
     'admin-tools': [
       //'./lib-for-link/src/admin-tools/article-download/beautify.js',

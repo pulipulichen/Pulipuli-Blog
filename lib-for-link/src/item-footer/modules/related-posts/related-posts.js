@@ -1,3 +1,6 @@
+require('./jQueryOwlCarousel.js')
+require('./printRelatedLabels_thumbs.js')
+
 maxresults = 10
 splittercolor = ''
 relatedpoststitle = 'Related Posts'
