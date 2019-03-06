@@ -25,21 +25,35 @@
 
       .owl-wrapper {
         position: relative;
-        
+
         .owl-item {
           float: left;
           padding: 0px 10px;
-          width: 235px !important;
-          
+          width: 268px !important;
+
           .item-img {
             position: relative;
+            max-height: 160px;
+            overflow: hidden;
+            
+            .related-post-title {
+              overflow-x: hidden;
+              white-space: nowrap;
+              background-color: black;
+              color: white;
+              padding-left: 10px;
+            }
 
             img {
               background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;
               display: table-cell;
               text-align: center;
-              color: #EB005D;
+              /*color: #EB005D;*/
               font-size: 19px;
+
+              /*max-width: 240px;*/
+              width: 100% !important;
+              height: auto !important;
             }
 
           }
@@ -51,7 +65,7 @@
     }
   }
 
-  
+
   .owl-controls.clickable {
     position: relative;
     top: -20px;
@@ -60,7 +74,7 @@
       position: absolute;
       right: 0px;
       top: -208px;
-      
+
 
       .owl-page {
         display: inline-block;
@@ -72,7 +86,7 @@
         background: none repeat scroll 0% 0% #DDD;
         cursor: pointer;
       }
-      
+
       .owl-page.active, 
       .owl-page:hover {
         opacity: 1;

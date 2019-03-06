@@ -2772,6 +2772,26 @@ $(function () {
 //var _0x13d6=["\x6C\x20\x31\x30\x28\x65\x29\x7B\x6B\x28\x34\x20\x74\x3D\x30\x3B\x74\x3C\x65\x2E\x41\x2E\x4D\x2E\x32\x3B\x74\x2B\x2B\x29\x7B\x34\x20\x6E\x3D\x65\x2E\x41\x2E\x4D\x5B\x74\x5D\x3B\x33\x5B\x39\x5D\x3D\x6E\x2E\x70\x2E\x24\x74\x3B\x5A\x7B\x38\x5B\x39\x5D\x3D\x6E\x2E\x59\x24\x58\x2E\x54\x7D\x31\x31\x28\x72\x29\x7B\x73\x3D\x6E\x2E\x31\x6D\x2E\x24\x74\x3B\x61\x3D\x73\x2E\x78\x28\x22\x3C\x79\x22\x29\x3B\x62\x3D\x73\x2E\x78\x28\x27\x49\x3D\x22\x27\x2C\x61\x29\x3B\x63\x3D\x73\x2E\x78\x28\x27\x22\x27\x2C\x62\x2B\x35\x29\x3B\x64\x3D\x73\x2E\x31\x75\x28\x62\x2B\x35\x2C\x63\x2D\x62\x2D\x35\x29\x3B\x36\x28\x61\x21\x3D\x2D\x31\x26\x26\x62\x21\x3D\x2D\x31\x26\x26\x63\x21\x3D\x2D\x31\x26\x26\x64\x21\x3D\x22\x22\x29\x7B\x38\x5B\x39\x5D\x3D\x64\x7D\x6D\x7B\x36\x28\x45\x20\x42\x21\x3D\x3D\x22\x4B\x22\x29\x38\x5B\x39\x5D\x3D\x42\x3B\x6D\x20\x38\x5B\x39\x5D\x3D\x22\x22\x7D\x7D\x36\x28\x33\x5B\x39\x5D\x2E\x32\x3E\x43\x29\x33\x5B\x39\x5D\x3D\x33\x5B\x39\x5D\x2E\x31\x76\x28\x30\x2C\x43\x29\x2B\x22\x2E\x2E\x2E\x22\x3B\x6B\x28\x34\x20\x69\x3D\x30\x3B\x69\x3C\x6E\x2E\x76\x2E\x32\x3B\x69\x2B\x2B\x29\x7B\x36\x28\x6E\x2E\x76\x5B\x69\x5D\x2E\x31\x74\x3D\x3D\x22\x31\x73\x22\x29\x7B\x37\x5B\x39\x5D\x3D\x6E\x2E\x76\x5B\x69\x5D\x2E\x6F\x3B\x39\x2B\x2B\x7D\x7D\x7D\x7D\x6C\x20\x31\x34\x28\x29\x7B\x34\x20\x65\x3D\x77\x20\x75\x28\x30\x29\x3B\x34\x20\x74\x3D\x77\x20\x75\x28\x30\x29\x3B\x34\x20\x6E\x3D\x77\x20\x75\x28\x30\x29\x3B\x6B\x28\x34\x20\x72\x3D\x30\x3B\x72\x3C\x37\x2E\x32\x3B\x72\x2B\x2B\x29\x7B\x36\x28\x21\x4E\x28\x65\x2C\x37\x5B\x72\x5D\x29\x29\x7B\x65\x2E\x32\x2B\x3D\x31\x3B\x65\x5B\x65\x2E\x32\x2D\x31\x5D\x3D\x37\x5B\x72\x5D\x3B\x74\x2E\x32\x2B\x3D\x31\x3B\x6E\x2E\x32\x2B\x3D\x31\x3B\x74\x5B\x74\x2E\x32\x2D\x31\x5D\x3D\x33\x5B\x72\x5D\x3B\x6E\x5B\x6E\x2E\x32\x2D\x31\x5D\x3D\x38\x5B\x72\x5D\x7D\x7D\x33\x3D\x74\x3B\x37\x3D\x65\x3B\x38\x3D\x6E\x7D\x6C\x20\x4E\x28\x65\x2C\x74\x29\x7B\x6B\x28\x34\x20\x6E\x3D\x30\x3B\x6E\x3C\x65\x2E\x32\x3B\x6E\x2B\x2B\x29\x36\x28\x65\x5B\x6E\x5D\x3D\x3D\x74\x29\x4F\x20\x55\x3B\x4F\x20\x31\x64\x7D\x6C\x20\x53\x28\x65\x29\x7B\x34\x20\x74\x3B\x36\x28\x45\x20\x51\x21\x3D\x3D\x22\x4B\x22\x29\x74\x3D\x51\x3B\x6D\x20\x74\x3D\x22\x22\x3B\x6B\x28\x34\x20\x6E\x3D\x30\x3B\x6E\x3C\x37\x2E\x32\x3B\x6E\x2B\x2B\x29\x7B\x36\x28\x37\x5B\x6E\x5D\x3D\x3D\x65\x7C\x7C\x21\x33\x5B\x6E\x5D\x29\x7B\x37\x2E\x68\x28\x6E\x2C\x31\x29\x3B\x33\x2E\x68\x28\x6E\x2C\x31\x29\x3B\x38\x2E\x68\x28\x6E\x2C\x31\x29\x3B\x6E\x2D\x2D\x7D\x7D\x34\x20\x72\x3D\x50\x2E\x56\x28\x28\x33\x2E\x32\x2D\x31\x29\x2A\x50\x2E\x57\x28\x29\x29\x3B\x34\x20\x6E\x3D\x30\x3B\x36\x28\x33\x2E\x32\x3E\x30\x29\x66\x2E\x67\x28\x27\x3C\x6A\x20\x71\x3D\x22\x70\x22\x3E\x3C\x4C\x3E\x27\x2B\x31\x32\x2B\x22\x3C\x2F\x4C\x3E\x3C\x2F\x6A\x3E\x22\x29\x3B\x66\x2E\x67\x28\x27\x3C\x6A\x20\x71\x3D\x22\x31\x33\x20\x7A\x2D\x31\x35\x20\x7A\x2D\x31\x36\x22\x20\x31\x37\x3D\x22\x7A\x2D\x31\x38\x22\x2F\x3E\x27\x29\x3B\x31\x39\x28\x6E\x3C\x33\x2E\x32\x26\x26\x6E\x3C\x31\x61\x26\x26\x6E\x3C\x31\x62\x29\x7B\x66\x2E\x67\x28\x27\x3C\x6A\x20\x71\x3D\x22\x31\x63\x2D\x79\x22\x3E\x3C\x61\x20\x27\x29\x3B\x36\x28\x6E\x21\x3D\x30\x29\x66\x2E\x67\x28\x22\x22\x29\x3B\x6D\x20\x66\x2E\x67\x28\x27\x22\x27\x29\x3B\x66\x2E\x67\x28\x27\x20\x6F\x3D\x22\x27\x2B\x37\x5B\x72\x5D\x2B\x27\x22\x20\x70\x3D\x22\x27\x2B\x33\x5B\x72\x5D\x2B\x27\x22\x3E\x3C\x79\x20\x52\x3D\x22\x31\x65\x3A\x31\x66\x3B\x31\x67\x3A\x31\x68\x3B\x22\x20\x31\x69\x3D\x22\x27\x2B\x33\x5B\x72\x5D\x2B\x27\x22\x20\x70\x3D\x22\x27\x2B\x33\x5B\x72\x5D\x2B\x27\x22\x20\x49\x3D\x22\x27\x2B\x38\x5B\x72\x5D\x2E\x31\x6A\x28\x22\x2F\x31\x6B\x2D\x63\x2F\x22\x2C\x22\x2F\x31\x6C\x2D\x63\x2F\x22\x29\x2B\x27\x22\x2F\x3E\x3C\x2F\x61\x3E\x3C\x2F\x6A\x3E\x27\x29\x3B\x6E\x2B\x2B\x3B\x36\x28\x72\x3C\x33\x2E\x32\x2D\x31\x29\x7B\x72\x2B\x2B\x7D\x6D\x7B\x72\x3D\x30\x7D\x7D\x66\x2E\x67\x28\x22\x3C\x2F\x6A\x3E\x22\x29\x3B\x37\x2E\x68\x28\x30\x2C\x37\x2E\x32\x29\x3B\x38\x2E\x68\x28\x30\x2C\x38\x2E\x32\x29\x3B\x33\x2E\x68\x28\x30\x2C\x33\x2E\x32\x29\x7D\x4A\x2E\x31\x6E\x3D\x6C\x28\x29\x7B\x34\x20\x65\x3D\x66\x2E\x31\x6F\x28\x22\x31\x70\x22\x29\x3B\x36\x28\x65\x3D\x3D\x31\x71\x29\x7B\x4A\x2E\x31\x72\x2E\x6F\x3D\x22\x48\x3A\x2F\x2F\x47\x2E\x46\x2E\x44\x2F\x22\x7D\x65\x2E\x31\x77\x28\x22\x6F\x22\x2C\x22\x48\x3A\x2F\x2F\x47\x2E\x46\x2E\x44\x2F\x22\x29\x3B\x65\x2E\x31\x78\x3D\x22\x31\x79\x22\x7D","\x7C","\x73\x70\x6C\x69\x74","\x7C\x7C\x6C\x65\x6E\x67\x74\x68\x7C\x72\x65\x6C\x61\x74\x65\x64\x54\x69\x74\x6C\x65\x73\x7C\x76\x61\x72\x7C\x7C\x69\x66\x7C\x72\x65\x6C\x61\x74\x65\x64\x55\x72\x6C\x73\x7C\x74\x68\x75\x6D\x62\x75\x72\x6C\x7C\x72\x65\x6C\x61\x74\x65\x64\x54\x69\x74\x6C\x65\x73\x4E\x75\x6D\x7C\x7C\x7C\x7C\x7C\x7C\x64\x6F\x63\x75\x6D\x65\x6E\x74\x7C\x77\x72\x69\x74\x65\x7C\x73\x70\x6C\x69\x63\x65\x7C\x7C\x64\x69\x76\x7C\x66\x6F\x72\x7C\x66\x75\x6E\x63\x74\x69\x6F\x6E\x7C\x65\x6C\x73\x65\x7C\x7C\x68\x72\x65\x66\x7C\x74\x69\x74\x6C\x65\x7C\x63\x6C\x61\x73\x73\x7C\x7C\x7C\x7C\x41\x72\x72\x61\x79\x7C\x6C\x69\x6E\x6B\x7C\x6E\x65\x77\x7C\x69\x6E\x64\x65\x78\x4F\x66\x7C\x69\x6D\x67\x7C\x6F\x77\x6C\x7C\x66\x65\x65\x64\x7C\x64\x65\x66\x61\x75\x6C\x74\x6E\x6F\x69\x6D\x61\x67\x65\x7C\x36\x30\x7C\x63\x6F\x6D\x7C\x74\x79\x70\x65\x6F\x66\x7C\x74\x68\x65\x6D\x65\x78\x70\x6F\x73\x65\x7C\x77\x77\x77\x7C\x68\x74\x74\x70\x7C\x73\x72\x63\x7C\x77\x69\x6E\x64\x6F\x77\x7C\x75\x6E\x64\x65\x66\x69\x6E\x65\x64\x7C\x68\x34\x7C\x65\x6E\x74\x72\x79\x7C\x63\x6F\x6E\x74\x61\x69\x6E\x73\x5F\x74\x68\x75\x6D\x62\x73\x7C\x72\x65\x74\x75\x72\x6E\x7C\x4D\x61\x74\x68\x7C\x73\x70\x6C\x69\x74\x74\x65\x72\x63\x6F\x6C\x6F\x72\x7C\x73\x74\x79\x6C\x65\x7C\x70\x72\x69\x6E\x74\x52\x65\x6C\x61\x74\x65\x64\x4C\x61\x62\x65\x6C\x73\x5F\x74\x68\x75\x6D\x62\x73\x7C\x75\x72\x6C\x7C\x74\x72\x75\x65\x7C\x66\x6C\x6F\x6F\x72\x7C\x72\x61\x6E\x64\x6F\x6D\x7C\x74\x68\x75\x6D\x62\x6E\x61\x69\x6C\x7C\x6D\x65\x64\x69\x61\x7C\x74\x72\x79\x7C\x72\x65\x6C\x61\x74\x65\x64\x5F\x72\x65\x73\x75\x6C\x74\x73\x5F\x6C\x61\x62\x65\x6C\x73\x5F\x74\x68\x75\x6D\x62\x73\x7C\x63\x61\x74\x63\x68\x7C\x72\x65\x6C\x61\x74\x65\x64\x70\x6F\x73\x74\x73\x74\x69\x74\x6C\x65\x7C\x63\x61\x72\x6F\x75\x73\x65\x6C\x5F\x72\x65\x6C\x61\x74\x65\x64\x7C\x72\x65\x6D\x6F\x76\x65\x52\x65\x6C\x61\x74\x65\x64\x44\x75\x70\x6C\x69\x63\x61\x74\x65\x73\x5F\x74\x68\x75\x6D\x62\x73\x7C\x63\x61\x72\x6F\x75\x73\x65\x6C\x7C\x74\x68\x65\x6D\x65\x7C\x69\x64\x7C\x64\x65\x6D\x6F\x7C\x77\x68\x69\x6C\x65\x7C\x32\x30\x7C\x6D\x61\x78\x72\x65\x73\x75\x6C\x74\x73\x7C\x69\x74\x65\x6D\x7C\x66\x61\x6C\x73\x65\x7C\x77\x69\x64\x74\x68\x7C\x32\x34\x30\x70\x78\x7C\x68\x65\x69\x67\x68\x74\x7C\x31\x36\x30\x70\x78\x7C\x61\x6C\x74\x7C\x72\x65\x70\x6C\x61\x63\x65\x7C\x73\x37\x32\x7C\x73\x32\x39\x30\x7C\x63\x6F\x6E\x74\x65\x6E\x74\x7C\x6F\x6E\x6C\x6F\x61\x64\x7C\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64\x7C\x6D\x79\x63\x6F\x6E\x74\x65\x6E\x74\x7C\x6E\x75\x6C\x6C\x7C\x6C\x6F\x63\x61\x74\x69\x6F\x6E\x7C\x61\x6C\x74\x65\x72\x6E\x61\x74\x65\x7C\x72\x65\x6C\x7C\x73\x75\x62\x73\x74\x72\x7C\x73\x75\x62\x73\x74\x72\x69\x6E\x67\x7C\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65\x7C\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C\x7C\x54\x68\x65\x6D\x65\x58\x70\x6F\x73\x65","","\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65","\x72\x65\x70\x6C\x61\x63\x65","\x5C\x77\x2B","\x5C\x62","\x67"];eval(function (_0x571ex1,_0x571ex2,_0x571ex3,_0x571ex4,_0x571ex5,_0x571ex6){_0x571ex5=function (_0x571ex3){return (_0x571ex3<_0x571ex2?_0x13d6[4]:_0x571ex5(parseInt(_0x571ex3/_0x571ex2)))+((_0x571ex3=_0x571ex3%_0x571ex2)>35?String[_0x13d6[5]](_0x571ex3+29):_0x571ex3.toString(36));} ;if(!_0x13d6[4][_0x13d6[6]](/^/,String)){while(_0x571ex3--){_0x571ex6[_0x571ex5(_0x571ex3)]=_0x571ex4[_0x571ex3]||_0x571ex5(_0x571ex3);} ;_0x571ex4=[function (_0x571ex5){return _0x571ex6[_0x571ex5];} ];_0x571ex5=function (){return _0x13d6[7];} ;_0x571ex3=1;} ;while(_0x571ex3--){if(_0x571ex4[_0x571ex3]){_0x571ex1=_0x571ex1[_0x13d6[6]]( new RegExp(_0x13d6[8]+_0x571ex5(_0x571ex3)+_0x13d6[8],_0x13d6[9]),_0x571ex4[_0x571ex3]);} ;} ;return _0x571ex1;} (_0x13d6[0],62,97,_0x13d6[3][_0x13d6[2]](_0x13d6[1]),0,{}));
 
 
+
+let _puli_related_post_render = function (_owl_items) {
+  //console.log($(_owl_items[0]).html());
+  for (var _i = 0; _i < _owl_items.length; _i++) {
+    var _item = $(_owl_items[_i]);
+    var _a = _item.find("a:first");
+    var _title = _a.attr("title");
+    _a.prepend('<div class="related-post-title">' + _title + '</div>');
+  }
+
+  $(function () {
+    var _stop_play = "stop-play";
+    $(".owl-wrapper-outer").hover(function () {
+      $(this).addClass(_stop_play);
+    }, function () {
+      $(this).removeClass(_stop_play);
+    });
+  });
+};
+
 /***/ }),
 
 /***/ "./lib-for-link/src/item-footer/modules/related-posts/printRelatedLabels_thumbs.js":
@@ -2925,72 +2945,52 @@ splittercolor = ''
 relatedpoststitle = 'Related Posts'
 
 let pulipuli_related_results_labels_thumbs = function (e) {
-    //console.log(e);
-    if (typeof(e.feed.entry) === "undefined") {
-        if ($(".related-posts").hasClass("has-item") === false) {
-            $(".related-posts").hide();
-        }
-        return;
+  //console.log(e);
+  if (typeof (e.feed.entry) === "undefined") {
+    if ($(".related-posts").hasClass("has-item") === false) {
+      $(".related-posts").hide();
     }
-    else {
-        $(".related-posts").addClass("has-item");
-        $(".related-posts").show();
-    }
+    return;
+  } else {
+    $(".related-posts").addClass("has-item");
+    $(".related-posts").show();
+  }
 
-    for (var t = 0; t < e.feed.entry.length; t++) {
-        var n = e.feed.entry[t];
-        relatedTitles[relatedTitlesNum] = n.title.$t;
-        try {
-            thumburl[relatedTitlesNum] = n.media$thumbnail.url;
-        } catch (r) {
-            var s = n.content.$t;
-            var a = s.indexOf("<img");
-            var b = s.indexOf('src="', a);
-            var c = s.indexOf('"', b + 5);
-            var d = s.substr(b + 5, c - b - 5);
-            if (a !== -1 && b !== -1 && c !== -1 && d !== "") {
-                thumburl[relatedTitlesNum] = d;
-            } else {
-                if (typeof defaultnoimage !== "undefined")
-                    thumburl[relatedTitlesNum] = defaultnoimage;
-                else
-                    thumburl[relatedTitlesNum] = "";
-            }
-        }
-        //if (relatedTitles[relatedTitlesNum].length > 60) {
-        //    relatedTitles[relatedTitlesNum] = relatedTitles[relatedTitlesNum].substring(0, 60) + "...";
-        //}
-        for (var i = 0; i < n.link.length; i++) {
-            if (n.link[i].rel === "alternate") {
-                relatedUrls[relatedTitlesNum] = n.link[i].href;
-                relatedTitlesNum++;
-            }
-        }
+  for (var t = 0; t < e.feed.entry.length; t++) {
+    var n = e.feed.entry[t];
+    relatedTitles[relatedTitlesNum] = n.title.$t;
+    try {
+      thumburl[relatedTitlesNum] = n.media$thumbnail.url;
+    } catch (r) {
+      var s = n.content.$t;
+      var a = s.indexOf("<img");
+      var b = s.indexOf('src="', a);
+      var c = s.indexOf('"', b + 5);
+      var d = s.substr(b + 5, c - b - 5);
+      if (a !== -1 && b !== -1 && c !== -1 && d !== "") {
+        thumburl[relatedTitlesNum] = d;
+      } else {
+        if (typeof defaultnoimage !== "undefined")
+          thumburl[relatedTitlesNum] = defaultnoimage;
+        else
+          thumburl[relatedTitlesNum] = "";
+      }
     }
+    //if (relatedTitles[relatedTitlesNum].length > 60) {
+    //    relatedTitles[relatedTitlesNum] = relatedTitles[relatedTitlesNum].substring(0, 60) + "...";
+    //}
+    for (var i = 0; i < n.link.length; i++) {
+      if (n.link[i].rel === "alternate") {
+        relatedUrls[relatedTitlesNum] = n.link[i].href;
+        relatedTitlesNum++;
+      }
+    }
+  }
 }
-
-_puli_related_post_render = function (_owl_items) {
-    //console.log($(_owl_items[0]).html());
-    for (var _i = 0; _i < _owl_items.length; _i++) {
-        var _item = $(_owl_items[_i]);
-        var _a = _item.find("a:first");
-        var _title = _a.attr("title");
-        _a.prepend('<div class="related-post-title">' + _title + '</div>');
-    }
-    
-    $(function () {
-        var _stop_play = "stop-play";
-        $(".owl-wrapper-outer").hover(function () {
-            $(this).addClass(_stop_play);
-        }, function () {
-            $(this).removeClass(_stop_play);
-        });
-    });
-};
 
 let loadLabelsRelatedPosts = (callback) => {
   let labelList = getBloggerVariable('data-label-name')
-  
+
   let maxResults = 6
   if (labelList.length === 1) {
     maxResults = 10
@@ -3001,8 +3001,8 @@ let loadLabelsRelatedPosts = (callback) => {
     if (i < labelList.length) {
       let label = encodeURIComponent(labelList[i])
       //console.log(label)
-      
-      if (typeof(label) !== 'string' 
+
+      if (typeof (label) !== 'string'
               || label.trim() === '') {
         i++
         loop(i)
@@ -3012,21 +3012,20 @@ let loadLabelsRelatedPosts = (callback) => {
       let url = '/feeds/posts/default/-/' + label + '?alt=json-in-script&max-results=' + maxResults + '&callback=?'
       //console.log(url)
       lscacheHelper.getJSON(url, (data) => {
-      //$.getJSON(url, (data) => {
+        //$.getJSON(url, (data) => {
         //console.log(data)
         pulipuli_related_results_labels_thumbs(data)
         i++
         loop(i)
       })
-    }
-    else {
-      if (typeof(callback) === 'function') {
+    } else {
+      if (typeof (callback) === 'function') {
         callback()
       }
     }
   }
   loop(0)
-} 
+}
 
 // --------------------
 
@@ -3035,24 +3034,26 @@ relatedTitlesNum = 0;
 relatedUrls = new Array;
 thumburl = new Array;
 
-$(function() {
+$(function () {
   let postUrl = getBloggerVariable('data-post-url')
-  if (typeof(postUrl) === 'undefined') {
+  if (typeof (postUrl) === 'undefined') {
     return
   }
-  
-  
+
+
   loadLabelsRelatedPosts(() => {
-    //removeRelatedDuplicates_thumbs();
+    removeRelatedDuplicates_thumbs();
     //console.log('printRelatedLabels_thumbs')
     printRelatedLabels_thumbs(postUrl);
 
     $("#owl-demo").owlCarousel({
       autoPlay: 5000,
-      items : 3,
-      itemsDesktop : [1200,3],
-      itemsDesktopSmall : [980,2],
-      itemsMobile : [480,1]
+      items: 4,
+      itemsDesktop: [1200, 3],
+      //itemsDesktopSmall: [979, 3],
+      itemsTablet: [940, 2],
+      //itemsTabletSmall: [979, 3],
+      itemsMobile: [340, 1]
     })
   })
 });
@@ -3221,7 +3222,7 @@ exports.push([module.i, "/* Preload images */\nbody:after {\n  content: url(//4.
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".related-posts {\n  /*height: 240px;*/\n  overflow: hidden;\n  z-index: 100;\n  background: #fff;\n}\n.related-posts .title {\n  background: none repeat scroll 0% 0% #FFF;\n  padding: 5px 20px;\n  margin: 0px 0px 15px;\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  font-size: 22px;\n}\n.related-posts #owl-demo {\n  overflow: visible;\n  padding: 0px 20px;\n  max-height: 233px;\n}\n.related-posts #owl-demo .owl-wrapper-outer {\n  overflow: hidden;\n  max-height: 240px;\n  margin-bottom: 20px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item {\n  float: left;\n  padding: 0px 10px;\n  width: 235px !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img img {\n  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;\n  display: table-cell;\n  text-align: center;\n  color: #EB005D;\n  font-size: 19px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item:first-child {\n  padding: 0px 10px 0px 0px;\n}\n.related-posts .owl-controls.clickable {\n  position: relative;\n  top: -20px;\n}\n.related-posts .owl-controls.clickable .owl-pagination {\n  position: absolute;\n  right: 0px;\n  top: -208px;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page {\n  display: inline-block;\n  width: 13px;\n  height: 13px;\n  margin: 5px 14px 5px -10px;\n  opacity: 0.5;\n  border-radius: 20px;\n  background: none repeat scroll 0% 0% #DDD;\n  cursor: pointer;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page.active,\n.related-posts .owl-controls.clickable .owl-pagination .owl-page:hover {\n  opacity: 1;\n  background: none repeat scroll 0% 0% #333;\n}\n", ""]);
+exports.push([module.i, ".related-posts {\n  /*height: 240px;*/\n  overflow: hidden;\n  z-index: 100;\n  background: #fff;\n}\n.related-posts .title {\n  background: none repeat scroll 0% 0% #FFF;\n  padding: 5px 20px;\n  margin: 0px 0px 15px;\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  font-size: 22px;\n}\n.related-posts #owl-demo {\n  overflow: visible;\n  padding: 0px 20px;\n  max-height: 233px;\n}\n.related-posts #owl-demo .owl-wrapper-outer {\n  overflow: hidden;\n  max-height: 240px;\n  margin-bottom: 20px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item {\n  float: left;\n  padding: 0px 10px;\n  width: 268px !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img {\n  position: relative;\n  max-height: 160px;\n  overflow: hidden;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img .related-post-title {\n  overflow-x: hidden;\n  white-space: nowrap;\n  background-color: black;\n  color: white;\n  padding-left: 10px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img img {\n  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;\n  display: table-cell;\n  text-align: center;\n  /*color: #EB005D;*/\n  font-size: 19px;\n  /*max-width: 240px;*/\n  width: 100% !important;\n  height: auto !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item:first-child {\n  padding: 0px 10px 0px 0px;\n}\n.related-posts .owl-controls.clickable {\n  position: relative;\n  top: -20px;\n}\n.related-posts .owl-controls.clickable .owl-pagination {\n  position: absolute;\n  right: 0px;\n  top: -208px;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page {\n  display: inline-block;\n  width: 13px;\n  height: 13px;\n  margin: 5px 14px 5px -10px;\n  opacity: 0.5;\n  border-radius: 20px;\n  background: none repeat scroll 0% 0% #DDD;\n  cursor: pointer;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page.active,\n.related-posts .owl-controls.clickable .owl-pagination .owl-page:hover {\n  opacity: 1;\n  background: none repeat scroll 0% 0% #333;\n}\n", ""]);
 
 
 

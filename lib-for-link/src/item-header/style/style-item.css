@@ -178,28 +178,6 @@ body .addthis-smartlayers {
         margin-bottom: 5px;
     }
 }
-
-/*********************************/
-
-.related-posts .item-img > a > img {
-    max-width: 240px;
-    width: 100% !important;
-    height: auto !important;
-}
-
-.related-posts .item-img {
-    max-height: 160px;
-    overflow: hidden;
-}
-
-.related-posts .related-post-title {
-    overflow-x: hidden;
-    white-space: nowrap;
-    background-color: black;
-    color: white;
-    padding-left: 10px;
-}
-
 /*************************************/
 /* 20160528 最矮留言高度 */
 #main div.comments#disqus_thread {
