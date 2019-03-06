@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+Semantic UI: 
+Button: https://semantic-ui.com/elements/button.html
+Grid: https://semantic-ui.com/collections/grid.html
+Icon: https://semantic-ui.com/elements/icon.html  http://fortawesome.github.io/Font-Awesome/icons/
+-->
+<html>
+    <head>
+        <title>TinyMCE Online Editor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin" />
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="//pulipulichen.github.io/blogger/posts/2016/12/semantic/semantic.min.css" />
+        <link rel="stylesheet" href="vender/font-awesome.css" />
+        <script src="//pulipulichen.github.io/blogger/posts/2016/12/semantic/semantic.min.js"></script>
+        
+        <script src="vender/clipboard.min.js"></script>
+        <script src="vender/puli-util.clipboard.js"></script>
+        
+        <script src="copy-init.js"></script>
+        
+        <link rel="icon" href="images/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" href="images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" href="images/favicon-48x48.png" sizes="48x48">
+        <link rel="icon" href="images/favicon-96x96.png" sizes="96x96">
+        
+        <script src="string-utils.js"></script>
+        
+        <script src="vender/FileSaver.js"></script>
+        
+        <script src="input-file-loader.js"></script>
+        
+        <script src="url-parameter-utils.js"></script>
+    </head>
+    <body>
+
+<form class="ui form">
+<div class="ui two column grid">
+    <div class="column">
+        <button type="button" class="fluid ui labeled icon button" id="load_button" style="max-width: 50vw;overflow-x: hidden;white-space: nowrap;">
+            <i class="folder open outline icon"></i>
+            OPEN PLAIN TEXT FILE (*.html, *.htm, *.txt)
+        </button>
+        <input type="file" class="input-field" 
+               id="input_html_file" load_content_to="#file_content" load_filename_to="#file_name" />
+    </div>
+    <div class="column">
+        <button type="button" class="fluid ui labeled icon button" id="new_button">
+            <i class="file outline icon"></i>
+            NEW
+        </button>
+    </div>
+</div>
+<div class="field">
+    <label>File Name:</label>
+    <input type="text" name="file_name" id="file_name" placeholder="File Name" value="file name {timestamp}">
+</div>
+
+<textarea id="file_content">Content</textarea>
+
+<div class="ui four column grid">
+    <div class="four wide column">
+        <button type="button" class="fluid ui labeled icon button" id="preview_button">
+            <i class="video play outline icon"></i>
+            PREVIEW
+        </button>
+    </div>
+    <div class="five wide column">
+        <button type="button" class="fluid ui labeled icon button" copy_from="#file_content" onclick="tinymce.triggerSave();">
+            <i class="copy icon"></i>
+            COPY HTML
+        </button>
+    </div>
+    <div class="seven wide column">
+        <div class="ui action input">
+            <select class="ui compact selection dropdown file-format" id="file_format">
+                <option value="html" selected="">HTML (.html)</option>
+                <option value="odt">OpenDocument (.odt)</option>
+            </select>
+            <div type="submit" class="ui right labeled icon button" id="save_button">
+                SAVE
+                <i class="save icon"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>
+
+<!-- <script src='vender/tinymce-4/tinymce.min.js'></script> -->
+<script src='vender/tinymce-5/js/tinymce/tinymce.min.js'></script>
+<script src="script.js"></script>
+
+<!-- ------------------------------------------------------------ -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37178375-7', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    </body>
+</html>
