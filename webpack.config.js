@@ -5,15 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const WebpackShellPlugin = require('webpack-shell-plugin')
 
-let webpackShimConfig = {
-  // shim config for incompatible libraries
-  shim: {
-    'melonjs': {
-      exports: 'me'
-    }
-  }
-};
-
 /**
  * 列出檔案清單
  * @author Pulipuli Chen 20190303
@@ -39,7 +30,6 @@ let webpackConfig  = {
   //cache: true,
   devtool: 'source-map',
   entry: {
-    /*
     'global-header': [
       './lib-for-link/src/global-header/breeze-theme/font-awesome.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
@@ -131,7 +121,6 @@ let webpackConfig  = {
       
       './lib-for-link/src/item-footer/comment/comment.js',
     ],
-    */
     'admin-tools': [
       //'./lib-for-link/src/admin-tools/article-download/beautify.js',
       //'./lib-for-link/src/admin-tools/article-download/beautify-css.js',
@@ -180,22 +169,16 @@ let webpackConfig  = {
         use: [
           'vue-loader'
         ],
-      }
-    ],
-    loaders: [
-      {
-        test: /\.js/,
-        loader: 'shim-loader',
-        query: webpackShimConfig
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: [
-            require.resolve('babel-preset-env')
-          ]
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-object-rest-spread']
+          }
         }
       }
     ]
