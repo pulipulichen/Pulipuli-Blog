@@ -740,9 +740,13 @@
         <article>
     <h1>
       <b:if cond='data:post.link'>
-          <a expr:href='data:post.link + &quot;&quot;' expr:title='data:post.title'><data:post.title/></a>
-      <b:else/>
+        <a expr:href='data:post.link + &quot;&quot;' 
+          expr:title='data:post.title'>
+          <data:post.title/>
+        </a>
+    <b:else/>
         <data:post.title/>
+    </b:if>
 
         <div class='meta1'>
           <p>
@@ -772,7 +776,6 @@
             </small>
           </p>
         </div>
-      </b:if>
     </h1>
 
 <!-- 實際上文章顯示的位置 -->            
