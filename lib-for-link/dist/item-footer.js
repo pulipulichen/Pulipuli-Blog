@@ -2857,7 +2857,7 @@ removeRelatedDuplicates_thumbs = function () {
 
 contains_thumbs = function (e, t) {
   for (var n = 0; n < e.length; n++) {
-    if (e[n] == t) {
+    if (e[n] === t) {
       return true;
     }
   }
@@ -2884,24 +2884,30 @@ printRelatedLabels_thumbs = function (e) {
   var r = Math.floor((relatedTitles.length - 1) * Math.random());
   var n = 0;
   var c = $('<div></div>').appendTo($('.related-posts:first'))
+  /*
   if (relatedTitles.length > 0) {
     //document.write('<div class="title"><h4>' + relatedpoststitle + "</h4></div>");
     c.append($('<div class="title"><h4>' + relatedpoststitle + '</h4></div>'))
   }
+  */
   //document.write('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>');
-  var owl = $('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>').appendTo(c)
+  //var owl = $('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>').appendTo(c)
+  var owl = $('.related-posts:first #owl-demo')
+  if (relatedTitles.length > 0) {
+    $('.related-posts.hidden').removeClass('hidden')
+  }
 
   while (n < relatedTitles.length && n < 20 && n < maxresults) {
     //document.write('<div class="item-img"><a ');
     var aTag = '<div class="item-img"><a '
-    if (n != 0) {
+    if (n !== 0) {
       //document.write("");
     } else {
       //document.write('"');
       aTag += '"'
     }
     //document.write(' href="' + relatedUrls[r] + '" title="' + relatedTitles[r] + '"><img style="width:240px;height:160px;" alt="' + relatedTitles[r] + '" title="' + relatedTitles[r] + '" src="' + thumburl[r].replace("/s72-c/", "/s290-c/") + '"/></a></div>');
-    aTag += ' href="' + relatedUrls[r] + '" title="' + relatedTitles[r] + '"><img style="width:240px;height:160px;" alt="' + relatedTitles[r] + '" title="' + relatedTitles[r] + '" src="' + thumburl[r].replace("/s72-c/", "/s290-c/") + '"/></a></div>'
+    aTag += ' href="' + relatedUrls[r] + '" title="' + relatedTitles[r] + '"><img alt="' + relatedTitles[r] + '" title="' + relatedTitles[r] + '" src="' + thumburl[r].replace("/s72-c/", "/s290-c/") + '"/></a></div>'
     n++;
     if (r < relatedTitles.length - 1) {
       r++
@@ -2942,10 +2948,11 @@ __webpack_require__(/*! ./printRelatedLabels_thumbs.js */ "./lib-for-link/src/it
 
 maxresults = 10
 splittercolor = ''
-relatedpoststitle = 'Related Posts'
+//relatedpoststitle = 'Related Posts'
 
 let pulipuli_related_results_labels_thumbs = function (e) {
   //console.log(e);
+  /*
   if (typeof (e.feed.entry) === "undefined") {
     if ($(".related-posts").hasClass("has-item") === false) {
       $(".related-posts").hide();
@@ -2955,6 +2962,7 @@ let pulipuli_related_results_labels_thumbs = function (e) {
     $(".related-posts").addClass("has-item");
     $(".related-posts").show();
   }
+  */
 
   for (var t = 0; t < e.feed.entry.length; t++) {
     var n = e.feed.entry[t];
@@ -3046,7 +3054,7 @@ $(function () {
     //console.log('printRelatedLabels_thumbs')
     printRelatedLabels_thumbs(postUrl);
 
-    $("#owl-demo").owlCarousel({
+    $(".related-posts #owl-demo").owlCarousel({
       autoPlay: 5000,
       items: 4,
       itemsDesktop: [1200, 3],
@@ -3222,7 +3230,7 @@ exports.push([module.i, "/* Preload images */\nbody:after {\n  content: url(//4.
 
 exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".related-posts {\n  /*height: 240px;*/\n  overflow: hidden;\n  z-index: 100;\n  background: #fff;\n}\n.related-posts .title {\n  background: none repeat scroll 0% 0% #FFF;\n  padding: 5px 20px;\n  margin: 0px 0px 15px;\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  font-size: 22px;\n}\n.related-posts #owl-demo {\n  overflow: visible;\n  padding: 0px 20px;\n  max-height: 233px;\n}\n.related-posts #owl-demo .owl-wrapper-outer {\n  overflow: hidden;\n  max-height: 240px;\n  margin-bottom: 20px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item {\n  float: left;\n  padding: 0px 10px;\n  width: 268px !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img {\n  position: relative;\n  max-height: 160px;\n  overflow: hidden;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img .related-post-title {\n  overflow-x: hidden;\n  white-space: nowrap;\n  background-color: black;\n  color: white;\n  padding-left: 10px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img img {\n  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;\n  display: table-cell;\n  text-align: center;\n  /*color: #EB005D;*/\n  font-size: 19px;\n  /*max-width: 240px;*/\n  width: 100% !important;\n  height: auto !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item:first-child {\n  padding: 0px 10px 0px 0px;\n}\n.related-posts .owl-controls.clickable {\n  position: relative;\n  top: -20px;\n}\n.related-posts .owl-controls.clickable .owl-pagination {\n  position: absolute;\n  right: 0px;\n  top: -208px;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page {\n  display: inline-block;\n  width: 13px;\n  height: 13px;\n  margin: 5px 14px 5px -10px;\n  opacity: 0.5;\n  border-radius: 20px;\n  background: none repeat scroll 0% 0% #DDD;\n  cursor: pointer;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page.active,\n.related-posts .owl-controls.clickable .owl-pagination .owl-page:hover {\n  opacity: 1;\n  background: none repeat scroll 0% 0% #333;\n}\n", ""]);
+exports.push([module.i, ".related-posts {\n  /*height: 240px;*/\n  overflow: hidden;\n  z-index: 100;\n  background: #fff;\n}\n.related-posts .title {\n  background: none repeat scroll 0% 0% #FFF;\n  padding: 5px 20px;\n  margin: 0px 0px 15px;\n  border-top: 1px solid #ddd;\n  border-bottom: 1px solid #ddd;\n  font-size: 22px;\n}\n.related-posts #owl-demo {\n  overflow: visible;\n  padding: 0px 20px;\n  max-height: 233px;\n}\n.related-posts #owl-demo .owl-wrapper-outer {\n  overflow: hidden;\n  max-height: 240px;\n  margin-bottom: 20px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper {\n  position: relative;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item {\n  float: left;\n  padding: 0px 10px;\n  width: 268px !important;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img {\n  position: relative;\n  max-height: 160px;\n  overflow: hidden;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img .related-post-title {\n  overflow-x: hidden;\n  white-space: nowrap;\n  background-color: rgba(0, 0, 0, 0.7);\n  color: white;\n  padding-left: 10px;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img img {\n  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;\n  display: table-cell;\n  text-align: center;\n  /*color: #EB005D;*/\n  font-size: 19px;\n  /*max-width: 240px;*/\n  width: 100% !important;\n  height: auto !important;\n  margin-top: -35px;\n  position: relative;\n  z-index: -1;\n}\n.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item:first-child {\n  padding: 0px 10px 0px 0px;\n}\n.related-posts .owl-controls.clickable {\n  position: relative;\n  top: -20px;\n}\n.related-posts .owl-controls.clickable .owl-pagination {\n  position: absolute;\n  right: 0px;\n  top: -208px;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page {\n  display: inline-block;\n  width: 13px;\n  height: 13px;\n  margin: 5px 14px 5px -10px;\n  opacity: 0.5;\n  border-radius: 20px;\n  background: none repeat scroll 0% 0% #DDD;\n  cursor: pointer;\n}\n.related-posts .owl-controls.clickable .owl-pagination .owl-page.active,\n.related-posts .owl-controls.clickable .owl-pagination .owl-page:hover {\n  opacity: 1;\n  background: none repeat scroll 0% 0% #333;\n}\n.related-posts.hidden {\n  display: none;\n}\n", ""]);
 
 
 

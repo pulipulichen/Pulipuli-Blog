@@ -54,7 +54,7 @@ removeRelatedDuplicates_thumbs = function () {
 
 contains_thumbs = function (e, t) {
   for (var n = 0; n < e.length; n++) {
-    if (e[n] == t) {
+    if (e[n] === t) {
       return true;
     }
   }
@@ -81,24 +81,30 @@ printRelatedLabels_thumbs = function (e) {
   var r = Math.floor((relatedTitles.length - 1) * Math.random());
   var n = 0;
   var c = $('<div></div>').appendTo($('.related-posts:first'))
+  /*
   if (relatedTitles.length > 0) {
     //document.write('<div class="title"><h4>' + relatedpoststitle + "</h4></div>");
     c.append($('<div class="title"><h4>' + relatedpoststitle + '</h4></div>'))
   }
+  */
   //document.write('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>');
-  var owl = $('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>').appendTo(c)
+  //var owl = $('<div class="carousel_related owl-carousel owl-theme" id="owl-demo"/>').appendTo(c)
+  var owl = $('.related-posts:first #owl-demo')
+  if (relatedTitles.length > 0) {
+    $('.related-posts.hidden').removeClass('hidden')
+  }
 
   while (n < relatedTitles.length && n < 20 && n < maxresults) {
     //document.write('<div class="item-img"><a ');
     var aTag = '<div class="item-img"><a '
-    if (n != 0) {
+    if (n !== 0) {
       //document.write("");
     } else {
       //document.write('"');
       aTag += '"'
     }
     //document.write(' href="' + relatedUrls[r] + '" title="' + relatedTitles[r] + '"><img style="width:240px;height:160px;" alt="' + relatedTitles[r] + '" title="' + relatedTitles[r] + '" src="' + thumburl[r].replace("/s72-c/", "/s290-c/") + '"/></a></div>');
-    aTag += ' href="' + relatedUrls[r] + '" title="' + relatedTitles[r] + '"><img style="width:240px;height:160px;" alt="' + relatedTitles[r] + '" title="' + relatedTitles[r] + '" src="' + thumburl[r].replace("/s72-c/", "/s290-c/") + '"/></a></div>'
+    aTag += ' href="' + relatedUrls[r] + '" title="' + relatedTitles[r] + '"><img alt="' + relatedTitles[r] + '" title="' + relatedTitles[r] + '" src="' + thumburl[r].replace("/s72-c/", "/s290-c/") + '"/></a></div>'
     n++;
     if (r < relatedTitles.length - 1) {
       r++

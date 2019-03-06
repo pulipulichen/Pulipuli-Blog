@@ -4,10 +4,11 @@ require('./printRelatedLabels_thumbs.js')
 
 maxresults = 10
 splittercolor = ''
-relatedpoststitle = 'Related Posts'
+//relatedpoststitle = 'Related Posts'
 
 let pulipuli_related_results_labels_thumbs = function (e) {
   //console.log(e);
+  /*
   if (typeof (e.feed.entry) === "undefined") {
     if ($(".related-posts").hasClass("has-item") === false) {
       $(".related-posts").hide();
@@ -17,6 +18,7 @@ let pulipuli_related_results_labels_thumbs = function (e) {
     $(".related-posts").addClass("has-item");
     $(".related-posts").show();
   }
+  */
 
   for (var t = 0; t < e.feed.entry.length; t++) {
     var n = e.feed.entry[t];
@@ -108,7 +110,7 @@ $(function () {
     //console.log('printRelatedLabels_thumbs')
     printRelatedLabels_thumbs(postUrl);
 
-    $("#owl-demo").owlCarousel({
+    $(".related-posts #owl-demo").owlCarousel({
       autoPlay: 5000,
       items: 4,
       itemsDesktop: [1200, 3],
