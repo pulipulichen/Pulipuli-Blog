@@ -4,7 +4,7 @@ require('./jszip-utils.js')
 //require('./beautify-css.js')
 require('./beautify-html.js')
 require('./FileSaver.js')
-const url = require('url');
+const url = require('url')
 
 let extractExt = function (link) {
   let urlObject = url.parse(link)

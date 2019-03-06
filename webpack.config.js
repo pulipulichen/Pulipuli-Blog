@@ -1,7 +1,18 @@
 const path = require('path')
 var glob = require("glob")
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const WebpackShellPlugin = require('webpack-shell-plugin')
+
+let webpackShimConfig = {
+  // shim config for incompatible libraries
+  shim: {
+    'melonjs': {
+      exports: 'me'
+    }
+  }
+};
 
 /**
  * 列出檔案清單
@@ -28,6 +39,7 @@ let webpackConfig  = {
   //cache: true,
   devtool: 'source-map',
   entry: {
+    /*
     'global-header': [
       './lib-for-link/src/global-header/breeze-theme/font-awesome.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
@@ -119,6 +131,7 @@ let webpackConfig  = {
       
       './lib-for-link/src/item-footer/comment/comment.js',
     ],
+    */
     'admin-tools': [
       //'./lib-for-link/src/admin-tools/article-download/beautify.js',
       //'./lib-for-link/src/admin-tools/article-download/beautify-css.js',
@@ -142,18 +155,25 @@ let webpackConfig  = {
         //  'style-loader', // 這個會後執行 (順序很重要)
         //  'css-loader' // 這個會先執行
         //]
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: 'css-loader'
-        })
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       {
         test: /\.less$/,
+        //use: [
+        //  'style-loader', // Step 3
+        //  'css-loader', // Step 2再執行這個
+        //  'less-loader' // Step 1 要先執行這個
+        //],
         use: [
-          'style-loader', // Step 3
-          'css-loader', // Step 2再執行這個
-          'less-loader' // Step 1 要先執行這個
-        ],
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'less-loader'
+        ]
       },
       {
         test: /\.vue$/,
@@ -161,15 +181,45 @@ let webpackConfig  = {
           'vue-loader'
         ],
       }
+    ],
+    loaders: [
+      {
+        test: /\.js/,
+        loader: 'shim-loader',
+        query: webpackShimConfig
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: [
+            require.resolve('babel-preset-env')
+          ]
+        }
+      }
     ]
   },
   plugins: [
-    new ExtractTextPlugin("[name].css"),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    }),
     new WebpackShellPlugin({
       //onBuildStart: [ 'npm run t' ], 
       onBuildEnd: [ 'npm run package-css' ]
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
 }
 
 module.exports = webpackConfig

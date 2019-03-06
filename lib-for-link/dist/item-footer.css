@@ -311,5 +311,92 @@ body.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+.related-posts {
+  /*height: 240px;*/
+  overflow: hidden;
+  z-index: 100;
+  background: #fff;
+}
+.related-posts .title {
+  background: none repeat scroll 0% 0% #FFF;
+  padding: 5px 20px;
+  margin: 0px 0px 15px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 22px;
+}
+.related-posts #owl-demo {
+  overflow: visible;
+  padding: 0px 20px;
+  max-height: 233px;
+}
+.related-posts #owl-demo .owl-wrapper-outer {
+  overflow: hidden;
+  max-height: 240px;
+  margin-bottom: 20px;
+}
+.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper {
+  position: relative;
+}
+.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item {
+  float: left;
+  padding: 0px 10px;
+  width: 268px !important;
+}
+.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img {
+  position: relative;
+  max-height: 160px;
+  overflow: hidden;
+}
+.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img .related-post-title {
+  overflow-x: hidden;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding-left: 10px;
+}
+.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item-img img {
+  background: url(//1.bp.blogspot.com/-EpAZ7479vZU/U8q4-6oeF5I/AAAAAAAAB2w/mQFhf-xZRko/s1600/background.png) repeat scroll 0% 0% #fff;
+  display: table-cell;
+  text-align: center;
+  /*color: #EB005D;*/
+  font-size: 19px;
+  /*max-width: 240px;*/
+  width: 100% !important;
+  height: auto !important;
+  margin-top: -35px;
+  position: relative;
+  z-index: -1;
+}
+.related-posts #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item:first-child {
+  padding: 0px 10px 0px 0px;
+}
+.related-posts .owl-controls.clickable {
+  position: relative;
+  top: -20px;
+}
+.related-posts .owl-controls.clickable .owl-pagination {
+  position: absolute;
+  right: 0px;
+  top: -208px;
+}
+.related-posts .owl-controls.clickable .owl-pagination .owl-page {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 5px 14px 5px -10px;
+  opacity: 0.5;
+  border-radius: 20px;
+  background: none repeat scroll 0% 0% #DDD;
+  cursor: pointer;
+}
+.related-posts .owl-controls.clickable .owl-pagination .owl-page.active,
+.related-posts .owl-controls.clickable .owl-pagination .owl-page:hover {
+  opacity: 1;
+  background: none repeat scroll 0% 0% #333;
+}
+.related-posts.hidden {
+  display: none;
+}
 
 /*# sourceMappingURL=item-footer.css.map*/
