@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack-build": "webpack --mode production",
+    "webpack-build-test": "webpack --config webpack.config.test.js --mode production",
     "webpack-watch": "webpack --watch --mode development",
     "mocha": "mocha lib-for-link/src/**/*.mocha-test.js",
     "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js",
