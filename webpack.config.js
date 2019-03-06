@@ -142,29 +142,18 @@ let webpackConfig  = {
     rules: [
       {
         test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
-        //use: [
-        //  'style-loader', // 這個會後執行 (順序很重要)
-        //  'css-loader' // 這個會先執行
-        //]
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
+        use: [
+          'style-loader', // 這個會後執行 (順序很重要)
+          'css-loader' // 這個會先執行
+        ]
       },
       {
         test: /\.less$/,
-        //use: [
-        //  'style-loader', // Step 3
-        //  'css-loader', // Step 2再執行這個
-        //  'less-loader' // Step 1 要先執行這個
-        //],
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            'css-loader',
-            'less-loader'
-          ]
-        })
+        use: [
+          'style-loader', // Step 3
+          'css-loader', // Step 2再執行這個
+          'less-loader' // Step 1 要先執行這個
+        ]
       },
       {
         test: /\.vue$/,
@@ -185,13 +174,6 @@ let webpackConfig  = {
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin("[name].css"),
-    new WebpackShellPlugin({
-      //onBuildStart: [ 'npm run t' ], 
-      onBuildEnd: [ 'npm run package-css' ]
-    })
-  ],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -204,4 +186,42 @@ let webpackConfig  = {
   },
 }
 
-module.exports = webpackConfig
+let webpackConfigCSS = JSON.parse(JSON.stringify(webpackConfig))
+webpackConfigCSS.output.path = path.resolve('./lib-for-link/dist-style')
+webpackConfigCSS.module.rules = [
+      {
+        test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader'
+          ]
+        })
+      },
+      {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            'css-loader',
+            'less-loader'
+          ]
+        })
+      },
+      {
+        test: /\.vue$/,
+        use: [
+          'vue-loader'
+        ],
+      }
+    ]
+webpackConfigCSS.plugins = [
+    new ExtractTextPlugin("[name].css"),
+    new WebpackShellPlugin({
+      //onBuildStart: [ 'npm run t' ], 
+      onBuildEnd: [ 'npm run package-css' ]
+    })
+  ]
+webpackConfigCSS.optimization.minimizer = [new OptimizeCSSAssetsPlugin({})]
+
+module.exports = [webpackConfig, webpackConfigCSS]

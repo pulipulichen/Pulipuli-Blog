@@ -15,6 +15,9 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
   var _id = postId;
   var _labels = $("#lp" + postId).clone().show().html();
   var postElement = document.getElementById('p' + postId);
+  if (!postElement) {
+    return
+  }
   let imgtag = '';
   let ifrtag = '';
   let ifrsrc = '';

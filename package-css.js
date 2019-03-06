@@ -11,10 +11,10 @@ const enableEntryKey = [
 let css = ''
 enableEntryKey.forEach(filename => {
   css = css + '\n/* ' + filename + '*/\n' 
-          + fs.readFileSync('./lib-for-link/dist/' + filename + '.css', 'utf8') + '\n'
+          + fs.readFileSync('./lib-for-link/dist-style/' + filename + '.css', 'utf8') + '\n'
 })
 
-fs.writeFileSync('./lib-for-link/dist/bundle.css', css, 'utf8')
+fs.writeFileSync('./lib-for-link/dist-style/bundle.css', css, 'utf8')
 
 // console.log(webpageConfig.entry)
 // 把entry都列出來，
