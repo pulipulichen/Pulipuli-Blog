@@ -1,10 +1,15 @@
 
+
 /******************/
 
-#masthead #header h1 {
-  line-height:30px;
-  margin-top: 10px;
-}
+#masthead {
+  padding-left: 25px;
+
+  #header h1 {
+    line-height:30px;
+    margin-top: 10px;
+  }
+} 
 
 // ----------------------
 
@@ -19,26 +24,77 @@
   }
 }
 
+// -----------------------------
+
+@media (min-width: 979px) and (max-width: 1200px) {
+  .navbar {
+    width: 960px !important;
+  }
+}
+
+// -----------------------
+
+@media (max-width: 979px) {
+
+  #masthead {
+    position: fixed;
+    padding-left: 50px;
+
+    #header #header-inner{
+      /*margin-left: 10px !important;*/
+      margin-top: 15px;
+    }
+  }
+
+  #masthead.fixed-nav.affix {
+    .btn-navbar {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+    #header h1 {
+      line-height: 55px;
+      margin-top: 0 !important;
+    }
+    #header-inner {
+      margin-top: 0px;
+    }
+    .navbar .nav .dropdown-menu li {
+      a {
+        padding-left:22px !important;
+      }
+      a:hover, 
+        a:active, 
+        a:focus {
+        padding-left:19px !important;
+      }
+    }
+
+  }
+
+}
+
 
 /* ------------------------------ */
 
 @media (max-width: 480px) {
-  #masthead #header .description {
-    display: none;
-  }
-  #masthead #header {
+  #masthead {
+    height: auto;
+    padding-left: 10px;
+    
+    #header { 
+      
     /*margin-top: 15px;*/
     margin-right:0 ;
     max-width: calc(100% - 101px);
     /*margin-left: 5px;*/
     overflow-x: hidden;
     white-space: nowrap;
+    
+      .description {
+    display: none;
   }
-
-  #masthead {
-    height: auto;
-  }
-
+    }
+  } 
   /*
   #masthead #header h1 {
       line-height:50px;
@@ -47,48 +103,6 @@
   */
 }
 
-@media (max-width: 979px) {
-  #masthead #header #header-inner{
-    /*margin-left: 10px !important;*/
-    margin-top: 15px;
-  }
-
-  /************/
-  #masthead {
-    position: fixed;
-  }
-
-  #masthead.fixed-nav.affix .btn-navbar {
-    margin-top: 5px;
-    margin-bottom: 0;
-  }
-
-  #masthead.fixed-nav.affix #header h1 {
-    line-height: 55px;
-    margin-top: 0 !important;
-  }
-
-  #masthead.fixed-nav.affix #header-inner {
-    margin-top: 0px;
-  }
-
-  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a {
-    padding-left:22px !important;
-  }
-
-  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:hover, 
-  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:active, 
-  #masthead.fixed-nav.affix .navbar .nav .dropdown-menu li a:focus {
-    padding-left:19px !important;
-  }
-
-}
-
-@media (min-width: 979px) and (max-width: 1200px) {
-  .navbar {
-    width: 960px !important;
-  }
-}
 
 @media (max-height: 480px) {
   #masthead.fixed-nav {
