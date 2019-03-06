@@ -1,10 +1,13 @@
+require('./related-posts.less')
 require('./jQueryOwlCarousel.js')
 require('./printRelatedLabels_thumbs.js')
 
 maxresults = 10
 splittercolor = ''
 relatedpoststitle = 'Related Posts'
-      
+
+// <script src='/feeds/posts/default/-/Software/GoogleDoc?alt=json-in-script&callback=pulipuli_related_results_labels_thumbs&max-results=6' type='text/javascript'></script>
+
 pulipuli_related_results_labels_thumbs = function (e) {
     //console.log(e);
     if (typeof(e.feed.entry) === "undefined") {
@@ -96,4 +99,3 @@ $(function() {
 });
 
 // ----------------------------------------
-
