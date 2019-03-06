@@ -2999,7 +2999,7 @@ let pulipuli_related_results_labels_thumbs = function (e) {
 
 let loadLabelsRelatedPosts = (callback) => {
   let labelList = getBloggerPostsVariable('data-label-name')[0]
-  console.log(labelList)
+  //console.log(labelList)
   
   let maxResults = 6
   if (labelList.length === 1) {
