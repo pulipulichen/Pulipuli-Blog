@@ -5,8 +5,8 @@ tinymce.init({
   selector: 'textarea',
   /*height: 500,*/
   language: 'zh_TW',
-  theme: 'modern',
-  content_css: 'bundle.css',
+  //theme: 'modern',
+  content_css: './bundle.css',
   resize: false,
   style_formats: [
     {    title: 'Heading 4',    block: 'h4'  }, 
@@ -49,7 +49,9 @@ tinymce.init({
     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
     // '//www.tinymce.com/css/codepen.min.css'
   ],
+  
   setup: function(editor) {
+    
         editor.on('change', function(e) {
             //console.log('change event', e);
             //tinymce.get('file_content').getContent();
