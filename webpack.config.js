@@ -100,8 +100,8 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/highlight/highlight.js',
       './lib-for-link/src/item-footer/modules/highlight/init.js',
       
-      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css',
-      './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js',
+      //'./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css',
+      //'./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js',
       './lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js',
       
       './lib-for-link/src/item-footer/modules/disqus/disqus.css',

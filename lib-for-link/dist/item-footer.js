@@ -1192,7 +1192,10 @@ if(false) {}
   !*** ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ***!
   \*****************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./css/lightbox.css */ "./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css")
+__webpack_require__(/*! ./js/lightbox.js */ "./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js")
 
 /**
  * 加入圖片的lightbox
@@ -1249,13 +1252,16 @@ $(function () {
   lightbox.option({
     'disableScrolling': true
   });
+  
   $("#lightbox .lb-nav").click(function () {
     var _src = $(this).prev().attr("src");
     //console.log(_src);
     if (_src !== undefined) {
       window.open(_src);
     }
+    $("#lightbox .lb-close").click()
   });
+  //$("#lightbox .lb-nav").
 });
 
 /***/ }),
@@ -1351,7 +1357,31 @@ $(function () {
   // Attach event handlers to the new DOM elements. click click click
   Lightbox.prototype.build = function() {
     var self = this;
-    jQuery('<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" /><div class="lb-nav"><a class="lb-prev" href="" ></a><a class="lb-next" href="" ></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>').appendTo(jQuery('body'));
+    jQuery(`
+<div id="lightboxOverlay" class="lightboxOverlay"></div>
+<div id="lightbox" class="lightbox">
+    <div class="lb-outerContainer">
+        <div class="lb-container">
+            <img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
+            <a class="lb-nav" target="_blank">
+                <a class="lb-prev" href=""></a>
+                <a class="lb-next" href=""></a>
+            </a>
+            <div class="lb-loader">
+                <a class="lb-cancel"></a>
+            </div>
+        </div>
+    </div>
+    <div class="lb-dataContainer">
+        <div class="lb-data">
+            <div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div>
+            <div class="lb-closeContainer">
+                <a class="lb-close"></a>
+            </div>
+        </div>
+    </div>
+</div>
+`).appendTo(jQuery('body'));
 
     // Cache jQuery objects
     this.$lightbox       = jQuery('#lightbox');
@@ -1545,6 +1575,11 @@ $(function () {
 
     preloader.src          = this.album[imageNumber].link;
     this.currentImageIndex = imageNumber;
+    
+    //console.log("顯示了")
+    //console.log($image)
+    let src = self.album[imageNumber].link
+    $("#lightbox .lb-nav").attr('href', src)
   };
 
   // Stretch overlay to fit the viewport
@@ -2421,17 +2456,15 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 3:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/item-footer/modules/highlight/default.css ./lib-for-link/src/item-footer/modules/highlight/highlight.js ./lib-for-link/src/item-footer/modules/highlight/init.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ./lib-for-link/src/item-footer/modules/disqus/disqus.css ./lib-for-link/src/item-footer/modules/disqus/disqus.js ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ./lib-for-link/src/item-footer/script/admin-tools.js ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/item-footer/modules/highlight/default.css ./lib-for-link/src/item-footer/modules/highlight/highlight.js ./lib-for-link/src/item-footer/modules/highlight/init.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ./lib-for-link/src/item-footer/modules/disqus/disqus.css ./lib-for-link/src/item-footer/modules/disqus/disqus.js ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ./lib-for-link/src/item-footer/script/admin-tools.js ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/highlight/default.css */"./lib-for-link/src/item-footer/modules/highlight/default.css");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/highlight/highlight.js */"./lib-for-link/src/item-footer/modules/highlight/highlight.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/highlight/init.js */"./lib-for-link/src/item-footer/modules/highlight/init.js");
-__webpack_require__(/*! ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css */"./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/css/lightbox.css");
-__webpack_require__(/*! ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js */"./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/js/lightbox.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js */"./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/disqus.css */"./lib-for-link/src/item-footer/modules/disqus/disqus.css");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/disqus.js */"./lib-for-link/src/item-footer/modules/disqus/disqus.js");

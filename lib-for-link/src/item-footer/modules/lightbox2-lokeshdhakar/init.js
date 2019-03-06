@@ -1,3 +1,6 @@
+require('./css/lightbox.css')
+require('./js/lightbox.js')
+
 /**
  * 加入圖片的lightbox
  * @author http://lokeshdhakar.com/projects/lightbox2/#getting-started 20160928
@@ -53,11 +56,14 @@ $(function () {
   lightbox.option({
     'disableScrolling': true
   });
+  
   $("#lightbox .lb-nav").click(function () {
     var _src = $(this).prev().attr("src");
     //console.log(_src);
     if (_src !== undefined) {
       window.open(_src);
     }
+    $("#lightbox .lb-close").click()
   });
+  //$("#lightbox .lb-nav").
 });
