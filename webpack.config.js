@@ -6,6 +6,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const WebpackShellPlugin = require('webpack-shell-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 /**
  * 列出檔案清單
@@ -174,14 +175,37 @@ let webpackConfig  = {
       }
     ]
   },
+  /*
+  plugins: [
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: {
+        safe: true,
+        discardComments: {
+          removeAll: true,
+        },
+      },
+    }),
+  ],
+  */
+  plugins: [
+      new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', {
+            discardComments: {removeAll: true}
+          }],
+      },
+      canPrint: true
+    })
+  ],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
         sourceMap: true // set to true if you want JS source maps
-      }),
-      new OptimizeCSSAssetsPlugin({})
+      })
     ]
   },
 }
@@ -224,4 +248,5 @@ webpackConfigCSS.plugins = [
   ]
 webpackConfigCSS.optimization.minimizer = [new OptimizeCSSAssetsPlugin({})]
 
-module.exports = [webpackConfig, webpackConfigCSS]
+module.exports = [webpackConfig]
+//module.exports = [webpackConfig, webpackConfigCSS]
