@@ -6,6 +6,6 @@ $(() => {
   let testOpen = () => {
     $('#masthead .btn-navbar').click()
   }
-  //testOpen()  
+  testOpen()  
 })
 
