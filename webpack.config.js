@@ -108,7 +108,7 @@ let webpackConfig  = {
       './lib-for-link/src/item-footer/modules/disqus/blogger_item.js',
       
       './lib-for-link/src/item-footer/script/admin-tools.js',
-      './lib-for-link/src/global-header/script/icon-replace.js',
+      './lib-for-link/src/item-footer/script/icon-replace.js',
       
       
       './lib-for-link/src/item-footer/modules/related-posts/related-posts.js',

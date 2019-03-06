@@ -1235,6 +1235,22 @@ getBloggerVariable = function (key) {
   if (key.startsWith('data-') === false) {
     key = 'data-' + key
   }
+  
+  let valueProcess = (value) => {
+    if (value === 'null') {
+      return null
+    } else if (value.startsWith('{') && value.endsWith('}')) {
+      try {
+        value = JSON.parse(value)
+      }
+      catch (e) { }
+      return value
+    }
+    else {
+      return value
+    }
+  }
+  
   let ele
   if (key.startsWith('data-blog-')) {
     ele = $('.blog-variables')
@@ -1242,13 +1258,18 @@ getBloggerVariable = function (key) {
   else if (key.startsWith('data-post-')) {
     ele = $('.post-variables')
   }
+  
   if (ele.length === 1) {
-    return ele.attr(key)
+    let value = ele.attr(key)
+    value = valueProcess(value)
+    return value
   }
   else {
     let output = []
     ele.each((i, item) => {
-      output.push(item[key])
+      let value = item[key]
+      value = valueProcess(value)
+      output.push(value)
     })
     return output
   }

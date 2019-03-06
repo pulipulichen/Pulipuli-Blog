@@ -2,9 +2,11 @@
 // ----------------------------------
 // 20160522 Relate post的功能
 
-let displayComment = function (items, msgs, config) {
+let displayComment = function () {
+  var items = getBloggerVariable('post-commentJso');
+  var msgs = getBloggerVariable('post-commentMsgs');
+  var config = getBloggerVariable('post-commentConfig');
   
-
   var cursor = null;
   if (items && items.length > 0) {
     cursor = parseInt(items[items.length - 1].timestamp) + 1;
@@ -67,6 +69,11 @@ let displayComment = function (items, msgs, config) {
     return comments;
   };
 
+  /**
+   * @author Pulipuli Chen 20190306
+   * 完全不知道下面這個要幹嘛，先全部移除掉
+   */
+  /*
   var paginator = function (callback) {
     if (hasMore()) {
       var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
@@ -143,7 +150,7 @@ let displayComment = function (items, msgs, config) {
   var provider = {
     'id': config.postId,
     'data': items,
-    'loadNext': paginator,
+    //'loadNext': paginator,
     'hasMore': hasMore,
     'getMeta': getMeta,
     'onReply': onReply,
@@ -154,10 +161,11 @@ let displayComment = function (items, msgs, config) {
     'messages': msgs
   };
 
+  
   var render = function () {
-    if (window.goog && window.goog.comments) {
+    if (goog && goog.comments) {
       var holder = document.getElementById('comment-holder');
-      window.goog.comments.render(holder, provider);
+      goog.comments.render(holder, provider);
     }
 
     var _div = $(".comment-replies ol li.comment span.comment-actions");
@@ -168,19 +176,34 @@ let displayComment = function (items, msgs, config) {
   };
 
   // render now, or queue to render when library loads:
-  if (window.goog && window.goog.comments) {
+  if (goog && goog.comments) {
     render();
   } else {
-    window.goog = window.goog || {};
-    window.goog.comments = window.goog.comments || {};
-    window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
-    window.goog.comments.loadQueue.push(render);
+    goog = goog || {};
+    goog.comments = goog.comments || {};
+    goog.comments.loadQueue = goog.comments.loadQueue || [];
+    goog.comments.loadQueue.push(render);
   }
+  */
 
-  // 為每個留言後面加上回覆
+};
+
+let addSubCommentReplyLink = () => {
+  
+  // 為每個回覆的留言後面加上回覆的連結
   var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">回覆</a>').click(function () {
     $(this).parents(".comment-replies").prev().find('a[o="r"]:first').click();
     var _top = $("#comment-editor:first").offset().top - $("#masthead .container:first").height();
     window.scrollTo(0, _top);
   });
-};
+  var _div = $(".comment-replies ol li.comment span.comment-actions");
+  for (var _i = 0; _i < _div.length; _i++) {
+    _div.eq(_i).prepend(_reply_link.clone(true));
+  }
+}
+
+$(() => {
+  displayComment()
+  addSubCommentReplyLink()
+  //console.log("aaa")
+})

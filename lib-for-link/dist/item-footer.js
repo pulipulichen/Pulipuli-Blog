@@ -97,9 +97,11 @@
 // ----------------------------------
 // 20160522 Relate post的功能
 
-let displayComment = function (items, msgs, config) {
+let displayComment = function () {
+  var items = getBloggerVariable('post-commentJso');
+  var msgs = getBloggerVariable('post-commentMsgs');
+  var config = getBloggerVariable('post-commentConfig');
   
-
   var cursor = null;
   if (items && items.length > 0) {
     cursor = parseInt(items[items.length - 1].timestamp) + 1;
@@ -162,6 +164,11 @@ let displayComment = function (items, msgs, config) {
     return comments;
   };
 
+  /**
+   * @author Pulipuli Chen 20190306
+   * 完全不知道下面這個要幹嘛，先全部移除掉
+   */
+  /*
   var paginator = function (callback) {
     if (hasMore()) {
       var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
@@ -238,7 +245,7 @@ let displayComment = function (items, msgs, config) {
   var provider = {
     'id': config.postId,
     'data': items,
-    'loadNext': paginator,
+    //'loadNext': paginator,
     'hasMore': hasMore,
     'getMeta': getMeta,
     'onReply': onReply,
@@ -249,10 +256,11 @@ let displayComment = function (items, msgs, config) {
     'messages': msgs
   };
 
+  
   var render = function () {
-    if (window.goog && window.goog.comments) {
+    if (goog && goog.comments) {
       var holder = document.getElementById('comment-holder');
-      window.goog.comments.render(holder, provider);
+      goog.comments.render(holder, provider);
     }
 
     var _div = $(".comment-replies ol li.comment span.comment-actions");
@@ -263,23 +271,37 @@ let displayComment = function (items, msgs, config) {
   };
 
   // render now, or queue to render when library loads:
-  if (window.goog && window.goog.comments) {
+  if (goog && goog.comments) {
     render();
   } else {
-    window.goog = window.goog || {};
-    window.goog.comments = window.goog.comments || {};
-    window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
-    window.goog.comments.loadQueue.push(render);
+    goog = goog || {};
+    goog.comments = goog.comments || {};
+    goog.comments.loadQueue = goog.comments.loadQueue || [];
+    goog.comments.loadQueue.push(render);
   }
+  */
 
-  // 為每個留言後面加上回覆
+};
+
+let addSubCommentReplyLink = () => {
+  
+  // 為每個回覆的留言後面加上回覆的連結
   var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">回覆</a>').click(function () {
     $(this).parents(".comment-replies").prev().find('a[o="r"]:first').click();
     var _top = $("#comment-editor:first").offset().top - $("#masthead .container:first").height();
     window.scrollTo(0, _top);
   });
-};
+  var _div = $(".comment-replies ol li.comment span.comment-actions");
+  for (var _i = 0; _i < _div.length; _i++) {
+    _div.eq(_i).prepend(_reply_link.clone(true));
+  }
+}
 
+$(() => {
+  displayComment()
+  addSubCommentReplyLink()
+  //console.log("aaa")
+})
 
 /***/ }),
 
@@ -3072,6 +3094,38 @@ $(() => {
 
 /***/ }),
 
+/***/ "./lib-for-link/src/item-footer/script/icon-replace.js":
+/*!*************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/script/icon-replace.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+(function () {
+    var _getQueryVariable = function (variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+          var pair = vars[i].split("=");
+          if (pair[0] === variable) {
+            return pair[1];
+          }
+        }
+    };
+    
+    var _icon = _getQueryVariable("icon");
+    if (_icon !== undefined) {
+        $("head link[rel='icon']").remove();
+        $("head link[rel='shortcut icon']").remove();
+        $("head link[rel='apple-touch-icon']").remove();
+        $("head").append('<link rel="shortcut icon" href="'+_icon+'" type="image/' + _icon.substr(_icon.lastIndexOf('.')+1) + '" size="192x192" />');
+    }
+})();
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-footer/modules/disqus/disqus.css":
 /*!******************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./lib-for-link/src/item-footer/modules/disqus/disqus.css ***!
@@ -3738,9 +3792,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 3:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/item-footer/modules/highlight/default.css ./lib-for-link/src/item-footer/modules/highlight/highlight.js ./lib-for-link/src/item-footer/modules/highlight/init.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ./lib-for-link/src/item-footer/modules/disqus/disqus.css ./lib-for-link/src/item-footer/modules/disqus/disqus.js ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ./lib-for-link/src/item-footer/script/admin-tools.js ./lib-for-link/src/global-header/script/icon-replace.js ./lib-for-link/src/item-footer/modules/related-posts/related-posts.js ./lib-for-link/src/item-footer/comment/comment.js ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/item-footer/modules/highlight/default.css ./lib-for-link/src/item-footer/modules/highlight/highlight.js ./lib-for-link/src/item-footer/modules/highlight/init.js ./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js ./lib-for-link/src/item-footer/modules/disqus/disqus.css ./lib-for-link/src/item-footer/modules/disqus/disqus.js ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ./lib-for-link/src/item-footer/script/admin-tools.js ./lib-for-link/src/item-footer/script/icon-replace.js ./lib-for-link/src/item-footer/modules/related-posts/related-posts.js ./lib-for-link/src/item-footer/comment/comment.js ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3752,7 +3806,7 @@ __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/disqus.css
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/disqus.js */"./lib-for-link/src/item-footer/modules/disqus/disqus.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js */"./lib-for-link/src/item-footer/modules/disqus/blogger_item.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/script/admin-tools.js */"./lib-for-link/src/item-footer/script/admin-tools.js");
-!(function webpackMissingModule() { var e = new Error("Cannot find module './lib-for-link/src/global-header/script/icon-replace.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+__webpack_require__(/*! ./lib-for-link/src/item-footer/script/icon-replace.js */"./lib-for-link/src/item-footer/script/icon-replace.js");
 __webpack_require__(/*! ./lib-for-link/src/item-footer/modules/related-posts/related-posts.js */"./lib-for-link/src/item-footer/modules/related-posts/related-posts.js");
 module.exports = __webpack_require__(/*! ./lib-for-link/src/item-footer/comment/comment.js */"./lib-for-link/src/item-footer/comment/comment.js");
 
