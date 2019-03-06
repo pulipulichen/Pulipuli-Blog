@@ -51,6 +51,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/index.less',
+      './lib-for-link/src/global-header/style/footer.less',
       './lib-for-link/src/global-header/style/style.less',
       
       './lib-for-link/src/global-header/gsc-search/default.css',
@@ -109,7 +110,6 @@ let webpackConfig  = {
       
       './lib-for-link/src/item-footer/script/admin-tools.js',
       './lib-for-link/src/item-footer/script/icon-replace.js',
-      
       
       './lib-for-link/src/item-footer/modules/related-posts/related-posts.js',
       

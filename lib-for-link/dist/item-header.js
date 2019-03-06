@@ -763,7 +763,7 @@ exports.push([module.i, "#backlinks-container h4 {\n  float: left;\n  line-heigh
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n\n#comment-editor.hide {\n  display: none;\n}\n\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom:-2px;\n}", ""]);
+exports.push([module.i, "#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n\n#comment-editor.hide {\n  display: none;\n}\n\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom:-2px;\n}\n\n\n/* ************************ */\n\n#disqus_thread {\n  overflow: hidden;\n  background: #FFFFFF;\n  border-bottom: 2px solid #DDDDDD;\n  padding: 25px;\n}\n", ""]);
 
 
 
@@ -823,7 +823,7 @@ exports.push([module.i, "/******************************/\n/* 20170309 上傳圖
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/*****************************/\n/* 20170312 GO to comment */\n#footer .go-top .goto-comment {\n  display: block !important;\n  margin-top: 0.5em;\n}\n", ""]);
+exports.push([module.i, "#footer .go-top .goto-comment {\n  display: block !important;\n}\n", ""]);
 
 
 

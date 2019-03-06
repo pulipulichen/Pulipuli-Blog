@@ -726,6 +726,7 @@
       <data:post.body/>
     </span>
     <!-- @TODO #23 -->
+    <!--
     <script type='text/javascript'>
       var x=&quot;<data:post.title/>&quot;
       ,y=&quot;<data:post.url/>&quot;
@@ -734,6 +735,7 @@
       ,u=&quot;<data:post.numComments/>&quot;;
       rm2(&quot;p<data:post.id/>&quot;,&quot;<data:post.url/>&quot;);
     </script>
+    -->
   <b:else/>
     <div class='entry-container'>
       <div class='entry-content'>
@@ -797,7 +799,7 @@
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
     <div class='pull-left buttons'>
-        <a class='read-more' expr:href='data:post.url + &quot;&quot;'>Read More</a>
+        <a class='read-more' expr:href='data:post.url + &quot;#&quot;'>Read More</a>
         <b:if cond='data:blog.pageType == &quot;item&quot;'>
           <b:include data='post' name='postQuickEdit'/>
         </b:if>

@@ -2,66 +2,55 @@
  * @author Pulipuli Chen 20190305
  * 其實都還沒整理，亂成一團啊
  */
- 
 
-#footer .go-top{float:right;margin-left:20px;padding-left:20px;border-left:1px solid rgba(0,0,0,0.1)}
-#footer .go-top a{display:block;width:30px;height:30px;color:#fff;font-size:14px;text-align:center;border-radius:2px;background-color:#F46B6B;transition:background-color 0.2s ease-in-out;-moz-transition:background-color 0.2s ease-in-out;-webkit-transition:background-color 0.2s ease-in-out;-o-transition:background-color 0.2s ease-in-out}
-#footer .go-top a:hover{background-color:#444}
-#footer .go-top a i{line-height:30px}
+#footer .go-top {
+	float: right;
+	margin-left: 20px;
+	padding-left: 20px;
+	/*border-left: 1px solid rgba(0, 0, 0, 0.1)*/
+}
+
+#footer .go-top a {
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #F46B6B;
+	transition: background-color 0.2s ease-in-out;
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-o-transition: background-color 0.2s ease-in-out
+}
+
+#footer .go-top a:hover {
+	background-color: #444
+}
+
+#footer .go-top a i {
+	line-height: 30px
+}
 
 
 
 #footer .go-top {
+  position: fixed;
+  right: 1em;
+  bottom: calc(50px + 1em);
+  z-index: 999;
   border-left-width: 0 !important;
+  
+  a {
+    background-color: #AD7518;
+    -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
+    box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
+    /*margin-bottom: 0.5em;*/
+  }
+  .goto-comment {
+    display: none;
+    margin-top: 0.5em;
+  }
 }
-
-/*****************************/
-/* 20170312 GO to comment */
-#footer .go-top .goto-comment {
-  display: none;
-}
-
-
-/*********************************/
-/* 底部按鈕的問題 */
-#footer .go-top {
-    position: fixed;
-    right: 1em;
-    bottom: calc(50px + 1em);
-    z-index: 999;
-}
-
-#footer footer .go-top a {
-  background-color: #AD7518;
-  -moz-box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
-  -webkit-box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
-  box-shadow:2px 2px 3px rgba(20%,20%,40%,0.5);
-  /*margin-bottom: 0.5em;*/
-}
-
-/*
-@media (max-height: 320px) {
-    #footer .go-top {
-        position: static;
-    }
-}
-*/
-
-/*
-@media (max-width: 979px) {
-    #footer .go-top {
-        bottom: calc(50px + 1em);
-    }
-}
-*/
-
-/*************************************/
-/* 20160625 小視窗的時候，主要文章的左右兩側，不要加入側邊欄 */
-
-/*
-@media (max-width: 460px) {
-    #footer .go-top {
-        bottom: calc(50px + 1em);
-    }
-}
-*/

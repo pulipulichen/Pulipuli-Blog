@@ -13,3 +13,13 @@
   width: 16px;
   margin-bottom:-2px;
 }
+
+
+/* ************************ */
+
+#disqus_thread {
+  overflow: hidden;
+  background: #FFFFFF;
+  border-bottom: 2px solid #DDDDDD;
+  padding: 25px;
+}
