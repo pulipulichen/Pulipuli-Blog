@@ -34,6 +34,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/go-top/go-top.less',
       './lib-for-link/src/global-header/go-top/go-top.js',
       
+      './lib-for-link/src/global-header/sidebar/random_posts.less',
       './lib-for-link/src/global-header/sidebar/sidebar.less',
       './lib-for-link/src/global-header/sidebar/sidebar.js',
       
@@ -48,10 +49,11 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/3_custom_style.less',
       './lib-for-link/src/global-header/style/header.less',
       './lib-for-link/src/global-header/style/addthis.css',
-      './lib-for-link/src/global-header/style/navbar.less',
+      //'./lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/index.less',
       './lib-for-link/src/global-header/style/footer.less',
+      './lib-for-link/src/global-header/style/content.less',
       './lib-for-link/src/global-header/style/style.less',
       
       './lib-for-link/src/global-header/gsc-search/default.css',
