@@ -15,7 +15,7 @@ function getFilelist (dir) {
           && !file.endsWith('.mocha-test-skip.js')
           && !file.endsWith('.selenium-test.js')
           && !file.endsWith('.selenium-test-skip.js')
-          && (file.indexOf('/tmp/') === -1)
+          //&& (file.indexOf('/tmp/') === -1)
           && (file.indexOf('/ignore/') === -1))
       })
       .map(item => './' + item)
@@ -122,6 +122,7 @@ let webpackConfig  = {
     ],
     'item-owl': getFilelist('./lib-for-link/src/item-olw/'),
     'page': getFilelist('./lib-for-link/src/page/'),
+    'tmp': getFilelist('./lib-for-link/src/tmp/'),
   },
   output: {
     path: path.resolve(__dirname, 'lib-for-link/dist'),
