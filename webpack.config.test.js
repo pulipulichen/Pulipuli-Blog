@@ -33,10 +33,10 @@ let webpackConfig  = {
   //cache: true,
   //devtool: 'source-map',
   entry: {
-    'test': getFilelist('./test/src/'),
+    'test': path.resolve(__dirname, './test/src/test.css'),
   },
   output: {
-    path: path.resolve('./test/dist'),
+    path: path.resolve(__dirname, './test/dist'),
     filename: '[name].js'
   },
   module: {
@@ -44,34 +44,18 @@ let webpackConfig  = {
       {
         test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
         use: [
-          'style-loader', // 這個會後執行 (順序很重要)
-          'css-loader' // 這個會先執行
+          /*
+          {
+            loader: 'style-loader',
+            options: {
+              transform: path.resolve(__dirname, './css-minify.js'),
+            }
+          }, // 這個會後執行 (順序很重要)
+          */
+          'style-loader',
+          'css-loader', // 這個會先執行
+          'postcss-loader',
         ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'style-loader', // Step 3
-          'css-loader', // Step 2再執行這個
-          'less-loader' // Step 1 要先執行這個
-        ]
-      },
-      {
-        test: /\.vue$/,
-        use: [
-          'vue-loader'
-        ],
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
-          }
-        }
       }
     ]
   },
@@ -87,18 +71,6 @@ let webpackConfig  = {
     }),
   ],
   */
-  plugins: [
-      new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default', {
-            discardComments: {removeAll: true}
-          }],
-      },
-      canPrint: true
-    })
-  ],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -106,7 +78,8 @@ let webpackConfig  = {
         parallel: true,
         sourceMap: true // set to true if you want JS source maps
       })
-    ]
+    ],
+
   },
 }
 
