@@ -143,21 +143,35 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
     ifrtag = '<div class="entry-video"><iframe width="840" height="472" src=""'
             + ifrsrc
             + '?vq=medium&rel=0" frameborder="0" allowfullscreen></iframe></div>'
-  } else {
+    $(ifrtag).prependTo($(postElement))
+  } 
+  else {
+    /*
     if (img.length >= 1) {
       imgtag = '<div class="entry-image"><a href="'
               + postUrl
               + '"><img class="thumb" src="'
               + img[0]['src']
               + '" /></a></div>'
-    } else {
+    } 
+    else {
       imgtag = '<div class="entry-image no-image">'
                 + '<a href="' + postUrl + '">'
                   //+ '<img class="thumb" src="//lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg" />'
                 +'</a>' 
               + '</div>'
     }
+    //console.log(imgtag)
+    //$(imgtag).prependTo($(postElement))
+    console.log(img[0]['src'])
+    $(postElement).find('.entry-image .thumb').attr(img[0]['src'])
+    */
+   //let imageUrl = $(postElement).find('.entry-content img:first').parent().attr('href')
+   let imageUrl = $(postElement).find('.entry-content img:first').attr('src')
+   //$(postElement).find('.entry-image .thumb').attr('src', imageUrl)
+   $(postElement).find('.entry-image').css('background-image', 'url(' + imageUrl + ')')
   }
+  /*
   postElement['innerHTML'] = ifrtag
           + imgtag
           + '<div class="entry-container"><div class="entry-content"><div class="foundation"> '
@@ -181,7 +195,8 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
           //  .replace(/<\/p>(?!.*?<\/p>)/, ' <a class="more" href="' + postUrl + '">(more...)</a>' + '</p>')
           + postElement.innerHTML
           + ' <a class="more" href="' + postUrl + '">(more...)</a>' + '</p>';
-  after_rm2(_id);
+  */
+  //after_rm2(_id);
 }
 
 let stripTags2 = function (a) {
@@ -198,6 +213,8 @@ let after_rm2 = function (_id) {
 }
 
 $(() => {
+  // 好像真的不用做這些，我可以直接修改耶
+  
   $('.post-variables').each((i, span) => {
     let postVariables = $(span).find('.post-variable')
     rm2(postVariables.attr('data-post-id')
@@ -2171,7 +2188,7 @@ exports.push([module.i, "#masthead header .back-button {\n  float: left;\n  font
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#main .widget.Blog .post .index-labels {\n  display: none;\n}\n#main .widget.Blog .post .entry-image {\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n}\n#main .widget.Blog .post .entry-image.no-image {\n  background-image: url(//lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg);\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#main .widget.Blog .post .entry-content {\n  padding-bottom: 1rem;\n}\n#main .widget.Blog .post .entry-content .avatar-name {\n  color: #fff;\n  font-size: 18px;\n  margin-left: 126px;\n  margin-bottom: -48px;\n  padding-top: 17px;\n  display: none;\n}\n#main .widget.Blog .post .entry-content .post-avatar:hover {\n  border-radius: 50%;\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all 0.2s ease-in-out;\n  -o-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n#main .widget.Blog .post .entry-content p {\n  text-indent: 0;\n  margin: 0;\n}\n#main .widget.Blog .post .entry-content p img {\n  display: none;\n}\n#main .widget.Blog .post .entry-content .foundation {\n  margin-bottom: 130px;\n  margin-top: -103px;\n}\n#main .widget.Blog .post .entry-content h1.entry-title a {\n  text-decoration: none;\n}\n#main .widget.Blog .post .entry-content a {\n  text-decoration: underline;\n  color: #BD8242;\n}\n#main .widget.Blog .post .entry-content a:hover {\n  color: #F69087;\n}\n#main .widget.Blog .post .entry-content .meta {\n  margin-top: 63px;\n  position: absolute;\n  margin-left: 126px;\n  line-height: 100%;\n}\n#main .widget.Blog .post .entry-content .meta p > small > span {\n  margin-right: 10px;\n}\n#main .widget.Blog .post .entry-content .meta .label-info a,\n#main .widget.Blog .post .entry-content .meta p > small > span a {\n  text-decoration: none;\n  color: #333;\n  margin-right: 0.5rem;\n  white-space: nowrap;\n}\n#main .widget.Blog .post .entry-content .meta .comment-number {\n  white-space: nowrap;\n}\n#main .widget.Blog .post .entry-content > a:last-of-type {\n  display: none;\n}\n#main .widget.Blog .post .entry-meta .buttons a {\n  cursor: pointer;\n  display: block;\n  float: left;\n  border-radius: 3px;\n  font-size: 13px;\n  padding: 7px 20px;\n  background: #333;\n  color: #fff;\n  letter-spacing: 0.5px;\n  text-transform: uppercase;\n  border: 1px solid #1D1D1D;\n  margin-top: 13px;\n  margin-bottom: 12px;\n  margin-left: 1em;\n}\n#main .widget.Blog .post .entry-meta .buttons a:hover {\n  color: #F69087;\n}\n#main .widget.Blog .post .entry-meta .read-more {\n  display: block;\n  float: left;\n  border-radius: 3px;\n  font-size: 13px;\n  padding: 7px 20px;\n  background: #333;\n  color: #fff;\n  letter-spacing: 0.5px;\n  text-transform: uppercase;\n  border: 1px solid #1D1D1D;\n  margin-top: 13px;\n  margin-bottom: 12px;\n}\n/********************/\n@media (max-width: 480px) {\n  #main .widget.Blog {\n    /*********************/\n    /* 20160926 修正小視窗底下按鈕沒有置中的問題 */\n  }\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left {\n    float: none;\n    text-align: center;\n    width: 100%;\n  }\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left > .read-more,\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {\n    float: none;\n    width: 42%;\n    display: inline-block;\n  }\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {\n    margin-left: 0;\n  }\n  /***********************/\n  #main .share-story {\n    display: none;\n  }\n  #main .post h1 {\n    font-size: 1.5rem;\n    line-height: 2rem;\n  }\n  #main .post .entry-content p {\n    font-size: 1rem;\n  }\n  #main .read-more {\n    width: 100%;\n    text-align: center;\n    margin: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n  #main .entry-meta .pull-left {\n    width: 100%;\n  }\n  #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {\n    width: 100%;\n    margin-left: 0 !important;\n    margin-right: 0;\n    padding-left: 0 !important;\n    padding-right: 0 !important;\n    text-align: center;\n  }\n  #main .entry-meta {\n    border-top-width: 0;\n    padding-top: 0;\n  }\n  #main .entry-content > p {\n    text-indent: 1em;\n  }\n}\n", ""]);
+exports.push([module.i, "#main .widget.Blog .post .index-labels {\n  display: none;\n}\n#main .widget.Blog .post .entry-image {\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 430px;\n  display: block;\n}\n#main .widget.Blog .post .entry-image.no-image {\n  background-image: url(//lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg);\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#main .widget.Blog .post .entry-content {\n  padding-bottom: 1rem;\n}\n#main .widget.Blog .post .entry-content .avatar-name {\n  color: #fff;\n  font-size: 18px;\n  margin-left: 126px;\n  margin-bottom: -48px;\n  padding-top: 17px;\n  display: none;\n}\n#main .widget.Blog .post .entry-content .post-avatar:hover {\n  border-radius: 50%;\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all 0.2s ease-in-out;\n  -o-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n#main .widget.Blog .post .entry-content p {\n  /*text-indent: 0;*/\n  margin: 0;\n}\n#main .widget.Blog .post .entry-content p img {\n  display: none !important;\n}\n#main .widget.Blog .post .entry-content .foundation {\n  /*\n        margin-bottom: 130px;\n        margin-top: -103px;\n        */\n  margin-bottom: 1rem;\n}\n#main .widget.Blog .post .entry-content h1.entry-title a {\n  text-decoration: none;\n}\n#main .widget.Blog .post .entry-content a {\n  text-decoration: underline;\n  color: #BD8242;\n}\n#main .widget.Blog .post .entry-content a:hover {\n  color: #F69087;\n}\n#main .widget.Blog .post .entry-content .meta {\n  /*margin-top: 63px;*/\n  /*position: absolute;*/\n  /*margin-left: 126px;*/\n  line-height: 100%;\n}\n#main .widget.Blog .post .entry-content .meta p > small > span {\n  margin-right: 10px;\n}\n#main .widget.Blog .post .entry-content .meta .label-info a,\n#main .widget.Blog .post .entry-content .meta p > small > span a {\n  text-decoration: none;\n  color: #333;\n  margin-right: 0.5rem;\n  white-space: nowrap;\n}\n#main .widget.Blog .post .entry-content .meta .comment-number {\n  white-space: nowrap;\n}\n#main .widget.Blog .post .entry-content > a:last-of-type {\n  display: none;\n}\n#main .widget.Blog .post .entry-meta .buttons a {\n  cursor: pointer;\n  display: block;\n  float: left;\n  border-radius: 3px;\n  font-size: 13px;\n  padding: 7px 20px;\n  background: #333;\n  color: #fff;\n  letter-spacing: 0.5px;\n  text-transform: uppercase;\n  border: 1px solid #1D1D1D;\n  margin-top: 13px;\n  margin-bottom: 12px;\n  margin-left: 1em;\n}\n#main .widget.Blog .post .entry-meta .buttons a:hover {\n  color: #F69087;\n}\n#main .widget.Blog .post .entry-meta .read-more {\n  display: block;\n  float: left;\n  border-radius: 3px;\n  font-size: 13px;\n  padding: 7px 20px;\n  background: #333;\n  color: #fff;\n  letter-spacing: 0.5px;\n  text-transform: uppercase;\n  border: 1px solid #1D1D1D;\n  margin-top: 13px;\n  margin-bottom: 12px;\n}\n/********************/\n@media (max-width: 480px) {\n  #main .widget.Blog {\n    /*********************/\n    /* 20160926 修正小視窗底下按鈕沒有置中的問題 */\n  }\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left {\n    float: none;\n    text-align: center;\n    width: 100%;\n  }\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left > .read-more,\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {\n    float: none;\n    width: 42%;\n    display: inline-block;\n  }\n  #main .widget.Blog .entry-meta.clearfix > aside > .pull-left > span.item-control.blog-admin a {\n    margin-left: 0;\n  }\n  /***********************/\n  #main .share-story {\n    display: none;\n  }\n  #main .post h1 {\n    font-size: 1.5rem;\n    line-height: 2rem;\n  }\n  #main .post .entry-content p {\n    font-size: 1rem;\n  }\n  #main .read-more {\n    width: 100%;\n    text-align: center;\n    margin: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n  #main .entry-meta .pull-left {\n    width: 100%;\n  }\n  #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {\n    width: 100%;\n    margin-left: 0 !important;\n    margin-right: 0;\n    padding-left: 0 !important;\n    padding-right: 0 !important;\n    text-align: center;\n  }\n  #main .entry-meta {\n    border-top-width: 0;\n    padding-top: 0;\n  }\n  #main .entry-content > p {\n    text-indent: 1em;\n  }\n}\n", ""]);
 
 
 

@@ -19,7 +19,61 @@
       expr:data-timestamp='&quot;p&quot; + data:post.timestamp'
       expr:data-numComments='&quot;p&quot; + data:post.numComments'
       >
-  <data:post.body/>
+  
+  <a class="entry-image" expr:href='&quot;p&quot; + data:post.url'></a>
+  
+  <div class="entry-container">
+    <div class="entry-content">
+        <div class="foundation">
+            <div class="post-avatar"></div>
+            <div class="avatar-name">
+              <data:post.author/>
+            </div>
+            <div class="meta">
+                <p>
+                  <small> 
+                    <span class="post-timestamp">
+                      <i class="fa fa-clock-o"></i>
+                      <data:post.timestamp/>
+                    </span>
+                    <span class="comment-number">
+                      <i class="fa fa-comments"></i> 
+                      <a href="http://blog.pulipuli.info/2019/02/image-vectorizer-inkscape-turn-hand.html#comments-anchor">
+                        <data:post.numComments/> Comments
+                      </a>
+                    </span>
+                    <span expr:id='&quot;lp&quot; + data:post.id'> 
+                      <i class='fa fa-tags'/>       
+                      <b:if cond='data:post.labels'>
+                        <span class='label-info'>
+                          <b:loop values='data:post.labels' var='label'>
+                            <a expr:href='data:label.url' rel='tag'>
+                              <data:label.name/>
+                            </a>
+                            <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+                          </b:loop>
+                        </span>
+                      </b:if>
+                    </span>
+                  </small>
+                </p>
+            </div>
+        </div>
+        <h1 class="entry-title"> 
+          <a expr:href='&quot;p&quot; + data:post.url'>
+            <data:post.title/>
+          </a> 
+        </h1>
+        
+        <data:post.body/>
+        
+        <a class="more" expr:href='&quot;p&quot; + data:post.url'>
+          (more...)
+        </a>
+    </div>
+</div>
+  
+  
 </span>
 
 <!-- @TODO #23 -->
@@ -33,3 +87,4 @@
   rm2(&quot;p<data:post.id/>&quot;,&quot;<data:post.url/>&quot;);
 </script>
 -->
+
