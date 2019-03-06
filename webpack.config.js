@@ -1,6 +1,6 @@
 const path = require('path')
 var glob = require("glob")
-const WebpackShellPlugin = require('webpack-shell-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 /**
  * 列出檔案清單
@@ -130,17 +130,24 @@ let webpackConfig  = {
     'page': getFilelist('./lib-for-link/src/page/'),
   },
   output: {
-    path: path.resolve(__dirname, 'lib-for-link/dist'),
+    path: './lib-for-link/dist',
     filename: '[name].js'
   },
   module: {
     rules: [
       {
         test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
-        use: [
-          'style-loader', // 這個會後執行 (順序很重要)
-          'css-loader' // 這個會先執行
-        ]
+        //use: [
+        //  'style-loader', // 這個會後執行 (順序很重要)
+        //  'css-loader' // 這個會先執行
+        //]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            'style-loader', // 這個會後執行 (順序很重要)
+            'css-loader' // 這個會先執行
+          ]
+        })
       },
       {
         test: /\.less$/,
@@ -159,10 +166,7 @@ let webpackConfig  = {
     ]
   },
   plugins: [
-    new WebpackShellPlugin({
-      //onBuildStart: [ 'npm run t' ], 
-      onBuildEnd: [ 'npm run package-css' ]
-    })
+    new ExtractTextPlugin('./lib-for-link/dist/bundle-styles.css')
   ]
 }
 
