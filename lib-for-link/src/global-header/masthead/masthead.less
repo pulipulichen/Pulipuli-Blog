@@ -163,6 +163,17 @@
     overflow-y: hidden;
   }
   */
+  #masthead {
+    
+    .navbar {
+      overflow-y: initial !important;
+    }
+  }
+  
+  #masthead.fixed-nav {
+    box-shadow: none;
+  }
+  
 }
 
 @media (max-height: 480px) {
@@ -194,6 +205,6 @@
 /* 20161116 */
 @media (max-width: 979px) {
   #masthead.fixed-nav > .container {
-    box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);
+    /*box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);*/
   }
 }
