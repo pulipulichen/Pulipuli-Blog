@@ -43,21 +43,24 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
       }
     }
   }
-  ;
+  
   if (ifrtb !== -1) {
     ifrtag = '<div class="entry-video"><iframe width="840" height="472" src=""'
             + ifrsrc
             + '?vq=medium&rel=0" frameborder="0" allowfullscreen></iframe></div>'
   } else {
-    if (img['length'] >= 1) {
+    if (img.length >= 1) {
       imgtag = '<div class="entry-image"><a href="'
               + postUrl
               + '"><img class="thumb" src="'
               + img[0]['src']
               + '" /></a></div>'
     } else {
-      imgtag = '<div class="entry-image no-image"><a href="' + postUrl + '">'
-              + '<img class="thumb" src="//lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg" /></a></div>'
+      imgtag = '<div class="entry-image no-image">'
+                + '<a href="' + postUrl + '">'
+                  //+ '<img class="thumb" src="//lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg" />'
+                +'</a>' 
+              + '</div>'
     }
   }
   postElement['innerHTML'] = ifrtag
@@ -71,13 +74,18 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
           
           + '<span class="comment-number"><i class="fa fa-comments"></i> '
           + '<a href="' + postUrl + '#comments-anchor">' + postNumComments + ' Comments</a>'
-          + '</span></small></p>'
-          + '<p><small>' + _labels  + '</small></p>'
+          + '</span>'
+          + _labels
+          + '</small></p>'
+          //+ '<p><small>' + _labels  + '</small></p>'
           + '</div></div>'
           + '<h1 class="entry-title">'
-          + ' <a href="' + postUrl + '">' + postTitle + ' </a> </h1> <p>'
-          + stripTags2(postElement.innerHTML, 60)
-            .replace(/<\/p>(?!.*?<\/p>)/, ' <a class="more" href="' + postUrl + '">(more...)</a>' + '</p>');
+          + ' <a href="' + postUrl + '">' + postTitle + ' </a> </h1> '
+          + '<p>'
+          //+ stripTags2(postElement.innerHTML, 60)
+          //  .replace(/<\/p>(?!.*?<\/p>)/, ' <a class="more" href="' + postUrl + '">(more...)</a>' + '</p>')
+          + postElement.innerHTML
+          + ' <a class="more" href="' + postUrl + '">(more...)</a>' + '</p>';
   after_rm2(_id);
 }
 

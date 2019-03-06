@@ -12,7 +12,49 @@
       width: 100%;
     }
 
+    .entry-image.no-image {
+      background-image: url(//lh4.googleusercontent.com/-G9M2DTCTUwM/Tlh-2pwtc5I/AAAAAAAABKM/kCJg-Kf3W2M/no_image_yet.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
     .entry-content {
+      //padding-bottom: 1px;
+      padding-bottom: 1rem;
+
+
+      .avatar-name {
+        color: #fff;
+        font-size: 18px;
+        margin-left: 126px;
+        margin-bottom: -48px;
+        padding-top: 17px;
+        display:none;
+      }
+
+
+      .post-avatar:hover {
+        border-radius: 50%;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+      }
+
+      p {
+        text-indent: 0;
+        margin: 0;
+
+        img {
+          display: none;
+        }
+      }
+
+      .foundation {
+        margin-bottom: 130px;
+        margin-top: -103px;
+      }
+
       h1.entry-title a {
         text-decoration: none;
       }
@@ -27,6 +69,11 @@
       }
 
       .meta {
+        margin-top: 63px;
+        position: absolute;
+        margin-left: 126px;
+        line-height: 100%;
+
         p > small > span {
           margin-right: 10px;
         }
@@ -43,6 +90,11 @@
       }
     } 
 
+    .entry-content > a:last-of-type {
+      display: none;
+    }
+
+    // 這是指最下面那一列
     .entry-meta {
       .buttons a {
         cursor: pointer;
@@ -63,6 +115,22 @@
       .buttons a:hover {
         color: #F69087;
       } 
+
+
+      .read-more {
+        display: block;
+        float: left;
+        border-radius: 3px;
+        font-size: 13px;
+        padding: 7px 20px;
+        background: #333;
+        color: #fff;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: 1px solid #1D1D1D;
+        margin-top: 13px;
+        margin-bottom: 12px;
+      }
     } 
   }
 
@@ -142,57 +210,3 @@
 // 以下還沒整理
 
 
-#main .entry-container .entry-content .foundation .meta {
-  line-height: 100%;
-}
-
-#main .entry-container .entry-content > a:last-of-type {
-  display: none;
-}
-
-#main .entry-container .entry-content {
-  padding-bottom: 1px;
-}
-
-
-.foundation {
-  margin-bottom: 121px;
-  margin-top: -103px;
-}
-
-.meta {
-  margin-top: 63px;
-  position: absolute;
-  margin-left: 126px;
-}
-
-.avatar-name {
-  color: #fff;
-  font-size: 18px;
-  margin-left: 126px;
-  margin-bottom: -48px;
-  padding-top: 17px;
-  display:none;
-}
-.post-avatar:hover {
-  border-radius: 50%;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.read-more {
-  display: block;
-  float: left;
-  border-radius: 3px;
-  font-size: 13px;
-  padding: 7px 20px;
-  background: #333;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  border: 1px solid #1D1D1D;
-  margin-top: 13px;
-  margin-bottom: 12px;
-}

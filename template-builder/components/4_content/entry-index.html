@@ -1,0 +1,35 @@
+<span expr:id='&quot;lp&quot; + data:post.id' class="index-labels"> 
+  <i class='fa fa-tags'/>       
+  <b:if cond='data:post.labels'>
+    <span class='label-info'>
+      <b:loop values='data:post.labels' var='label'>
+        <a expr:href='data:label.url' rel='tag'>
+          <data:label.name/>
+        </a>
+        <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+      </b:loop>
+    </span>
+  </b:if>
+</span>
+<span class="index-post-body" 
+      expr:id='&quot;p&quot; + data:post.id'
+      expr:data-title='&quot;p&quot; + data:post.title'
+      expr:data-url='&quot;p&quot; + data:post.url'
+      expr:data-author='&quot;p&quot; + data:post.author'
+      expr:data-timestamp='&quot;p&quot; + data:post.timestamp'
+      expr:data-numComments='&quot;p&quot; + data:post.numComments'
+      >
+  <data:post.body/>
+</span>
+
+<!-- @TODO #23 -->
+<!--
+<script type='text/javascript'>
+  var x=&quot;<data:post.title/>&quot;
+  ,y=&quot;<data:post.url/>&quot;
+  ,z=&quot;<data:post.author/>&quot;
+  ,t=&quot;<data:post.timestamp/>&quot;
+  ,u=&quot;<data:post.numComments/>&quot;;
+  rm2(&quot;p<data:post.id/>&quot;,&quot;<data:post.url/>&quot;);
+</script>
+-->
