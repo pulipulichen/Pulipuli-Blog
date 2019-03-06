@@ -6,13 +6,16 @@
   margin-top: 10px;
 }
 
-#masthead.fixed-nav.affix #header h1 {
-  line-height: 22px;
-}
+// ----------------------
 
 #masthead.fixed-nav {
   opacity: 1 !important;
   background-color: rgba(34, 34, 34, 0.9) !important;
+  top: 0;
+
+  .affix #header h1 {
+    line-height: 22px;
+  }
 }
 
 
@@ -51,7 +54,7 @@
 
   /************/
   #masthead {
-    position: fixed !important;
+    position: fixed;
   }
 
   #masthead.fixed-nav.affix .btn-navbar {

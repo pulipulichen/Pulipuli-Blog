@@ -30,3 +30,27 @@
   }
   */
 }
+
+@media (max-height: 480px) {
+  // 從480px開始，就沒有區分fixed-nav的差別，全部都要一樣小
+  /*
+  #masthead .navbar {
+    max-height: 56px;
+    overflow-y: hidden;
+  }
+  */
+  #masthead.fixed-nav {
+    background: #222222;
+    margin-bottom: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: none;
+    position: static;
+  }
+  
+  #masthead .container {
+    box-shadow: none;
+  }
+}

@@ -41,7 +41,9 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/btn-navbar/btn-navbar.less',
       './lib-for-link/src/global-header/btn-navbar/btn-navbar.js',
       
-      './lib-for-link/src/global-header/style/masthead.less',
+      './lib-for-link/src/global-header/masthead/masthead.less',
+      './lib-for-link/src/global-header/masthead/masthead.js',
+      
       './lib-for-link/src/global-header/style/2_style.less',
       './lib-for-link/src/global-header/style/3_custom_style.less',
       './lib-for-link/src/global-header/style/header.less',

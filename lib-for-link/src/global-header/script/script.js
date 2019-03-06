@@ -280,22 +280,6 @@ _display_related_posts = function (items, msgs, config) {
     });
 };
 
-
-// -------------------
-$(function ($) {
-  var aboveHeight = $('#leader-wrapper').outerHeight();
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > aboveHeight) {
-      $('#masthead').addClass('fixed-nav').css('top', '0')
-              .next().css('padding-top', '5px');
-
-    } else {
-      $('#masthead').removeClass('fixed-nav')
-              .next().css('padding-top', '0');
-    }
-  });
-});
-
 (function () {
     var _getQueryVariable = function (variable) {
         var query = window.location.search.substring(1);
