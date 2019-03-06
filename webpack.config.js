@@ -1,6 +1,7 @@
 const path = require('path')
 var glob = require("glob")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const WebpackShellPlugin = require('webpack-shell-plugin')
 
 /**
  * 列出檔案清單
@@ -130,7 +131,7 @@ let webpackConfig  = {
     'page': getFilelist('./lib-for-link/src/page/'),
   },
   output: {
-    path: './lib-for-link/dist',
+    path: path.resolve('./lib-for-link/dist'),
     filename: '[name].js'
   },
   module: {
@@ -143,10 +144,7 @@ let webpackConfig  = {
         //]
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: [
-            'style-loader', // 這個會後執行 (順序很重要)
-            'css-loader' // 這個會先執行
-          ]
+          use: 'css-loader'
         })
       },
       {
@@ -166,7 +164,11 @@ let webpackConfig  = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('./lib-for-link/dist/bundle-styles.css')
+    new ExtractTextPlugin("[name].css"),
+    new WebpackShellPlugin({
+      //onBuildStart: [ 'npm run t' ], 
+      onBuildEnd: [ 'npm run package-css' ]
+    })
   ]
 }
 
