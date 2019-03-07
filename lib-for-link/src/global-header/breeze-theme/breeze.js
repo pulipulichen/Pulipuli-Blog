@@ -79,6 +79,7 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
     let imageUrl = $(postElement).find('.entry-content img:first').attr('src')
     //$(postElement).find('.entry-image .thumb').attr('src', imageUrl)
     if (imageUrl !== undefined) {
+      $(postElement).find('.entry-image img.thumb').attr('src', imageUrl)
       $(postElement).find('.entry-image').css('background-image', 'url(' + imageUrl + ')')
     } else {
       $(postElement).find('.entry-image').hide()

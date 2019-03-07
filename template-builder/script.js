@@ -3,7 +3,7 @@ var app = {
   data: {
     codeForBlogger: '',
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
-    useLocalhost: false,
+    useLocalhost: true,
     localhostURL: 'http://pc.pulipuli.info/public/Pulipuli-Blog/'
   },
   created: function () {
