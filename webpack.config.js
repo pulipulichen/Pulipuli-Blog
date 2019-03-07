@@ -90,7 +90,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/blogger-feed-loader/init.js',
     ],
     'item-header': [
-      './lib-for-link/src/item-header/style/article-meta.css',
+      './lib-for-link/src/item-header/style/article.less',
       './lib-for-link/src/item-header/style/comment.css',
       './lib-for-link/src/item-header/style/go-top.less',
       './lib-for-link/src/item-header/style/image.less',

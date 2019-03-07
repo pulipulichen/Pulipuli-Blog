@@ -52,6 +52,7 @@
       p {
         /*text-indent: 0;*/
         margin: 0;
+        text-align: justify;
 
         img {
           display: none !important;
@@ -64,6 +65,11 @@
         margin-top: -103px;
         */
         margin-bottom: 1rem;
+        text-align: justify;
+      }
+      
+      h1.entry-title {
+        text-align: justify;
       }
 
       h1.entry-title a {
@@ -171,9 +177,13 @@
 // ------------------------------------------
 
 @media (max-width: 767px) {
-  #main .widget.Blog .post .index-post-body {
-    .entry-image {
+  #main .widget.Blog .post {
+    .index-post-body .entry-image {
       //height: 320px;
+    }
+    
+    .entry-meta .buttons {
+      margin-bottom: 15px;
     }
   }
 }
@@ -230,7 +240,9 @@
   }
 
   #main .entry-meta .pull-left {
-    width: 100%;
+    width: calc(100% - 80px);
+    margin: 20px;
+    margin-top: 0;
   }
 
   #main .post > .entry-meta.clearfix > aside > .pull-left > .item-control.blog-admin a {
@@ -245,12 +257,17 @@
   #main .entry-meta {
     border-top-width: 0;
     padding-top: 0;
+    padding: 0;
   }
 
   #main .entry-content > p {
     text-indent: 1em;
   }
-}
+  
+  #main .widget.Blog .post .entry-meta .buttons a {
+    margin: 0;
+  }
+} // @media (max-width: 480px) {
 
 // ------------------------------
 // 以下還沒整理
