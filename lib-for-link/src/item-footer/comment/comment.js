@@ -192,7 +192,9 @@ let addSubCommentReplyLink = () => {
   
   // 為每個回覆的留言後面加上回覆的連結
   var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">回覆</a>').click(function () {
-    $(this).parents(".comment-replies").prev().find('a[o="r"]:first').click();
+    //console.log('OK')
+    //console.log($(this).parents(".comment-replies:first").prev().find('a.comment-reply:first').length)
+    $(this).parents(".comment-replies:first").prev().find('a.comment-reply:first')[0].click();
     var _top = $("#comment-editor:first").offset().top - $("#masthead .container:first").height();
     window.scrollTo(0, _top);
   });
