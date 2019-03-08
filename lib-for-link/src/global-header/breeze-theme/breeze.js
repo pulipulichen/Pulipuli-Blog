@@ -12,8 +12,8 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
 
   //postUrl = postUrl + '#more'
 
-  var _id = postId;
-  var _labels = $("#lp" + postId).clone().show().html();
+  //var _id = postId;
+  //var _labels = $("#lp" + postId).clone().show().html();
   var postElement = document.getElementById('p' + postId);
   if (!postElement) {
     return
@@ -24,21 +24,21 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
   let ifrtb = -1;
   let img = postElement.getElementsByTagName('img');
   let ifr = postElement.getElementsByTagName('iframe');
-  for (var i = 0; i < ifr['length']; i++) {
+  for (var i = 0; i < ifr.length; i++) {
     ifrsrc = ifr[i]['src'];
-    if (ifrsrc['indexOf']('//www.youtube.com/embed/') != -1) {
+    if (ifrsrc.indexOf('//www.youtube.com/embed/') != -1) {
       ifrtb = i;
       break
     } else {
-      if (ifrsrc['indexOf']('//player.vimeo.com/video/') != -1) {
+      if (ifrsrc.indexOf('//player.vimeo.com/video/') != -1) {
         ifrtb = i;
         break
       } else {
-        if (ifrsrc['indexOf']('//www.dailymotion.com/embed/video/') != -1) {
+        if (ifrsrc.indexOf('//www.dailymotion.com/embed/video/') != -1) {
           ifrtb = i;
           break
         } else {
-          if (ifrsrc['indexOf']('//w.soundcloud.com/player/') != -1) {
+          if (ifrsrc.indexOf('//w.soundcloud.com/player/') != -1) {
             ifrtb = i;
             break
           }
@@ -46,7 +46,7 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
       }
     }
   }
-
+  //console.log(postId)
   if (ifrtb !== -1) {
     ifrtag = '<div class="entry-video"><iframe width="840" height="472" src=""'
             + ifrsrc
@@ -79,6 +79,7 @@ let rm2 = function (postId, postTitle, postUrl, postAuthor, postTimestamp, postN
     let imageUrl = $(postElement).find('.entry-content img:first').attr('src')
     //$(postElement).find('.entry-image .thumb').attr('src', imageUrl)
     if (imageUrl !== undefined) {
+      //console.log(imageUrl)
       $(postElement).find('.entry-image img.thumb').attr('src', imageUrl)
       $(postElement).find('.entry-image').css('background-image', 'url(' + imageUrl + ')')
     } else {
@@ -130,6 +131,7 @@ $(() => {
   // 好像真的不用做這些，我可以直接修改耶
 
   $('.post-variables').each((i, span) => {
+    //console.log(i)
     let postVariables = $(span).find('.post-variable')
     rm2(postVariables.attr('data-post-id')
             , postVariables.attr('data-post-title')
