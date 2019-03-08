@@ -222,7 +222,7 @@ webpackConfigCSS.module.rules = [
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader'
+            'css-loader?sourceMap'
           ]
         })
       },
@@ -231,8 +231,8 @@ webpackConfigCSS.module.rules = [
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: [
-            'css-loader',
-            'less-loader'
+            'css-loader?sourceMap',
+            'less-loader?sourceMap'
           ]
         })
       },
