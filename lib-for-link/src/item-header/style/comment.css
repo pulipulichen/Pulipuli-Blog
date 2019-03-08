@@ -23,3 +23,7 @@
   border-bottom: 2px solid #DDDDDD;
   padding: 25px;
 }
+
+#main div.comments#comments {
+  min-height: initial;
+}
