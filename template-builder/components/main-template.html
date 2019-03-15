@@ -107,6 +107,12 @@
   expr:data-blog-homepageUrl='data:blog.homepageUrl'
   expr:data-blog-canonicalHomepageUrl='data:blog.canonicalHomepageUrl' />
 
+<!-- 封存頁面不要被索引
+  -- https://www.wfublog.com/2019/03/blogger-archive-page-noindex.html
+  -->
+<b:if cond='data:blog.pageType == "archive"'>
+  <meta content='NOINDEX' name='ROBOTS'/>
+</b:if>
 
 </head>
 
