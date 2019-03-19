@@ -24,7 +24,9 @@ $(function () {
     }
     _title = _title + _i;
 
-    if ($(this).attr("href").indexOf("amazon.com") === -1) {
+    let href = $(this).attr("href")
+    if (typeof(href) !== 'undefined' 
+            && href.indexOf("amazon.com") === -1) {
       $(this).addClass("lightbox-group")
               .attr("href", $(this).attr("href").replace(/s1600-h/g, "s1600"))
               .attr("data-lightbox", _title);
