@@ -49,7 +49,6 @@ articleDownload = {
       return link
     }
     
-    /*
     let imgUrlPatterns = [
       '.googleusercontent.com/',
       '.bp.blogspot.com/'
@@ -57,16 +56,16 @@ articleDownload = {
     
     imgUrlPatterns.forEach((pattern) => {
       article.find('a[href*="' + pattern + '"]').each((i, ele) => {
+        //console.log(ele.href)
         ele.href = linkRemoveHttpHeader(ele.href)
         $(ele).removeAttr('target')
       })
 
       article.find('img[src*="' + pattern + '"]').each((i, ele) => {
+        //console.log(ele.src)
         ele.src = linkRemoveHttpHeader(ele.src)
       })
     })
-    */
-      
     
     return article
   },
