@@ -5,6 +5,7 @@ let FileSystemHelper = {
   onInitFs: function (fs) {
     this.fs = fs
 
+    /*
     console.log('Opened file system: ' + fs.name);
 
     this.write('log.txt', 'ok', () => {
@@ -12,6 +13,7 @@ let FileSystemHelper = {
         console.log(result)
       })
     })
+    */
   },
   errorHandler: function (e) {
     var msg = '';
@@ -94,6 +96,34 @@ let FileSystemHelper = {
 
     }, errorHandler);
 
+  },
+  copyFiles: function (files, callback) {
+    let fs = this.fs
+    let errorHandler = this.errorHandler
+    
+    let output = []
+    let loop = (i) => {
+      if (i < files.length) {
+        let file = files[i]
+        fs.root.getFile(file.name, {create: true, exclusive: true}, function(fileEntry) {
+          fileEntry.createWriter(function(fileWriter) {
+            fileWriter.write(file); // Note: write() can take a File or Blob object.
+
+            let url = fileEntry.toURL()
+            output.push(url)
+
+            i++
+            loop(i)
+          }, errorHandler);
+        }, errorHandler);
+      }
+      else {
+        if (typeof(callback) === 'function') {
+          callback(output)
+        }
+      }
+    }
+    loop(0)
   }
 
 }
