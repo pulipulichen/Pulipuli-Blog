@@ -34,6 +34,7 @@ $(function () {
   });
 
   /*
+   * 
    $("head").append($("<link />").attr({
    rel: "stylesheet",
    type: "text/css",
