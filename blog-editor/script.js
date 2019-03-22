@@ -4,8 +4,19 @@ let summernoteConfig = {
   maxHeight: null,             // set maximum height of editor
   focus: true,                  // set focus to editable area after initializing summernote
   disableResizeEditor: true,
+  callbacks: {
+    onImageUpload: function(files) {
+      // upload image to server and create imgNode...
+      //$summernote.summernote('insertNode', imgNode);
+      console.log(files)
+      let imgUrl = 'icon.png'
+      let imgNode = $(`<img src="${imgUrl}" />`)[0]
+      $summernote.summernote('insertNode', imgNode);
+    }
+  }
 }
 
 $(document).ready(function() {
-  $('#summernote').summernote(summernoteConfig);
+  $summernote = $('#summernote')
+  $summernote.summernote(summernoteConfig);
 });
