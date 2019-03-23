@@ -2,6 +2,16 @@ let FileSystemHelper = {
   type: window.TEMPORARY,
   quota: 5 * 1024 * 1024 /*5MB*/,
   fs: null,
+  init: function () {
+    
+    // Note: The file system has been prefixed as of Google Chrome 12:
+    window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.requestFileSystem(this.type,
+            this.quota,
+            (fs) => this.onInitFs(fs),
+            (e) => this.errorHandler(e));
+
+  },
   onInitFs: function (fs) {
     this.fs = fs
 
@@ -97,7 +107,16 @@ let FileSystemHelper = {
     }, errorHandler);
 
   },
-  copyFiles: function (files, callback) {
+  copy: function (files, callback) {
+    if (Array.isArray(files) === false) {
+      this.copy([files], (list) => {
+        if (typeof(callback) === 'function') {
+          callback(list[0])
+        }
+      })
+      return
+    }
+    
     let fs = this.fs
     let errorHandler = this.errorHandler
     
@@ -127,9 +146,5 @@ let FileSystemHelper = {
   }
 
 }
-// Note: The file system has been prefixed as of Google Chrome 12:
-window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
-window.requestFileSystem(FileSystemHelper.type,
-        FileSystemHelper.quota,
-        (fs) => FileSystemHelper.onInitFs(fs),
-        (e) => FileSystemHelper.errorHandler(e));
+
+FileSystemHelper.init()

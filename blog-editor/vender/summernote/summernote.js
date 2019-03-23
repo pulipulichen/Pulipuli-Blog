@@ -4692,9 +4692,12 @@
                   _this.$editor.removeClass('dragover');
               }
           };
-          this.documentEventHandlers.onDrop = function () {
-              collection = $$1();
-              _this.$editor.removeClass('dragover');
+          this.documentEventHandlers.onDrop = function (event) {
+            //console.log(event)
+            //console.log(_this.options.callbacks.onDrop)
+            //_this.options.callbacks.onDrop(event)
+            collection = $$1();
+            _this.$editor.removeClass('dragover');
           };
           // show dropzone on dragenter when dragging a object to document
           // -but only if the editor is visible, i.e. has a positive width and height
@@ -4711,6 +4714,7 @@
           });
           // attach dropImage
           this.$dropzone.on('drop', function (event) {
+            console.log(event)
               var dataTransfer = event.originalEvent.dataTransfer;
               // stop the browser from opening the dropped content
               event.preventDefault();
