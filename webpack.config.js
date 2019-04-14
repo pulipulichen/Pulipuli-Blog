@@ -163,94 +163,60 @@ let webpackConfig  = {
         use: [
           'vue-loader'
         ],
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
-          }
-        }
       }
     ]
-  },
-  /*
-  plugins: [
-    new OptimizeCssAssetsPlugin({
-      cssProcessorOptions: {
-        safe: true,
-        discardComments: {
-          removeAll: true,
-        },
-      },
-    }),
-  ],
-  */
-  /*
-  plugins: [
-      new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default', {
-            discardComments: {removeAll: true}
-          }],
-      },
-      canPrint: true
-    })
-  ],
-  */
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true // set to true if you want JS source maps
-      })
-    ]
-  },
+  }
 }
 
-let webpackConfigCSS = JSON.parse(JSON.stringify(webpackConfig))
-webpackConfigCSS.output.path = path.resolve('./lib-for-link/dist-style')
-webpackConfigCSS.module.rules = [
-      {
-        test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader?sourceMap'
-          ]
-        })
-      },
-      {
-        test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            'css-loader?sourceMap',
-            'less-loader?sourceMap'
-          ]
-        })
-      },
-      {
-        test: /\.vue$/,
-        use: [
-          'vue-loader'
-        ],
-      }
-    ]
-webpackConfigCSS.plugins = [
-    new ExtractTextPlugin("[name].css"),
-    new WebpackShellPlugin({
-      //onBuildStart: [ 'npm run t' ], 
-      onBuildEnd: [ 'npm run package-css' ]
-    })
-  ]
-webpackConfigCSS.optimization.minimizer = [new OptimizeCSSAssetsPlugin({})]
 
-module.exports = [webpackConfig]
-//module.exports = [webpackConfig, webpackConfigCSS]
+module.exports = (env, argv) => {
+  
+  //console.log(argv.mode)
+
+  if (argv.mode === 'production') {
+    webpackConfig.devtool = false
+    
+    webpackConfig.module.rules[0] = {
+      test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
+      use: [
+        'style-loader', // 這個會後執行 (順序很重要)
+        'css-loader', // 這個會先執行
+        'postcss-loader',
+      ]
+    }
+    webpackConfig.module.rules[1] = {
+      test: /\.less$/,
+      use: [
+        'style-loader', // Step 3
+        'css-loader', // Step 2再執行這個
+        'postcss-loader',
+        'less-loader' // Step 1 要先執行這個
+      ]
+    }
+    webpackConfig.module.rules.push({
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-proposal-object-rest-spread']
+        }
+      }
+    })
+    webpackConfig.optimization = {
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true // set to true if you want JS source maps
+        })
+      ]
+    }
+  }
+  if (argv.mode === 'development') {
+
+  }
+
+  return webpackConfig
+}

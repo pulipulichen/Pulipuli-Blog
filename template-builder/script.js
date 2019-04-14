@@ -3,8 +3,9 @@ var app = {
   data: {
     codeForBlogger: '',
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
-    useLocalhost: false,
-    localhostURL: 'http://pc.pulipuli.info/public/Pulipuli-Blog/'
+    useLocalhost: 'github',
+    pulipuliURL: 'http://pc.pulipuli.info/public/Pulipuli-Blog/',
+    localhostURL: 'http://localhost:8383/Pulipuli-Blog/'
   },
   created: function () {
     this.loadTemplate()
@@ -119,7 +120,14 @@ var app = {
               alert("<p:include> error")
             }
 
-            if (this.useLocalhost === true) {
+            if (this.useLocalhost === 'pulipuli') {
+              mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
+                      .join(this.pulipuliURL)
+              
+              mainTemplate = mainTemplate.split('<p:localhost-redirect />')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
+            }
+            else if (this.useLocalhost === 'localhost') {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
                       .join(this.localhostURL)
               

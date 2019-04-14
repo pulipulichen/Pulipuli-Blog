@@ -29,11 +29,23 @@
           </div>
         </div>
             
-        
-        <div class="ui checkbox">
-          <input type="checkbox" id="useLocalhost" name="useLocalhost" v-model="useLocalhost" v-on:change="loadTemplate" />
-          <label for="useLocalhost">Use Local Server</label>
+        <div class="ui radio checkbox">
+          <input type="radio" name="useLocalhost" value="github"
+                 v-model="useLocalhost" v-on:change="loadTemplate">
+          <label>Use GitHub Server</label>
         </div>
+        <div class="ui radio checkbox">
+          <input type="radio" name="useLocalhost" value="pulipuli"
+                 v-model="useLocalhost" v-on:change="loadTemplate">
+          <label>Use pc.pulipuli.info Server</label>
+        </div>
+        <div class="ui radio checkbox">
+          <input type="radio" name="useLocalhost" value="localhost"
+                 v-model="useLocalhost" v-on:change="loadTemplate">
+          <label>Use Localhost Server</label>
+        </div>
+        
+        
         <div class="ui stackable one column grid">
           <div class="column blogger">
             <button class="ui top attached labeled icon fluid button copy-button" 
