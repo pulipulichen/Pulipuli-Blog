@@ -16,7 +16,10 @@
       <form class="ui form">
         <div class="ui unstackable two column grid">
           <div class="column">
-            <a class="ui labeled icon primary fluid button" href="https://www.blogger.com/blogger.g?blogID=16607461#templatehtml/src=sidebar" target="bloggerTemplateLink">
+            <a class="ui labeled icon primary fluid button" 
+               href="https://www.blogger.com/blogger.g?blogID=16607461#templatehtml/src=sidebar" 
+               target="bloggerTemplateLink"
+               @click="openBloggerTemplateLink">
               <i class="cog icon"></i>
               Open Blogger Template
             </a>
@@ -28,24 +31,31 @@
             </a>
           </div>
         </div>
+        
+        <div class="unstackable three fields">
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="hostType" value="github"
+                     v-model="hostType" @click="loadTemplate">
+              <label>Use GitHub Server</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="hostType" value="pulipuli"
+                     v-model="hostType" @click="loadTemplate">
+              <label>Use pc.pulipuli.info Server</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="hostType" value="localhost"
+                     v-model="hostType" @click="loadTemplate">
+              <label>Use Localhost Server</label>
+            </div>
+          </div>
+        </div>
             
-        <div class="ui radio checkbox">
-          <input type="radio" name="useLocalhost" value="github"
-                 v-model="useLocalhost" v-on:change="loadTemplate">
-          <label>Use GitHub Server</label>
-        </div>
-        <div class="ui radio checkbox">
-          <input type="radio" name="useLocalhost" value="pulipuli"
-                 v-model="useLocalhost" v-on:change="loadTemplate">
-          <label>Use pc.pulipuli.info Server</label>
-        </div>
-        <div class="ui radio checkbox">
-          <input type="radio" name="useLocalhost" value="localhost"
-                 v-model="useLocalhost" v-on:change="loadTemplate">
-          <label>Use Localhost Server</label>
-        </div>
-        
-        
         <div class="ui stackable one column grid">
           <div class="column blogger">
             <button class="ui top attached labeled icon fluid button copy-button" 

@@ -3,19 +3,31 @@ var app = {
   data: {
     codeForBlogger: '',
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
-    useLocalhost: 'github',
+    hostType: 'github',
     pulipuliURL: 'http://pc.pulipuli.info/public/Pulipuli-Blog/',
     localhostURL: 'http://localhost:8383/Pulipuli-Blog/'
+  },
+  mounted: function () {
+    let key = 'hostType'
+    if (localStorage.getItem(key)) {
+      try {
+        this[key] = localStorage.getItem(key)
+      } catch(e) {
+        console.log(e)
+        localStorage.removeItem(key);
+      }
+    }
   },
   created: function () {
     this.loadTemplate()
   },
   methods: {
-    copyCode: function (event) {
+    copyCode: function () {
       //console.log(event)
-      var btn = $(event.srcElement)
-      var textarea = btn.parents('.column:first').find('textarea')
-      this.copyToClip(textarea.val())
+      //var btn = $(event.srcElement)
+      //var textarea = btn.parents('.column:first').find('textarea')
+      //this.copyToClip(textarea.val())
+      this.copyToClip(this.codeForBlogger)
     },
     copyToClip: function (str) {
       var listener = function (e) {
@@ -38,6 +50,11 @@ var app = {
       return T
     },
     loadTemplate: function () {
+      $(() => {
+        localStorage['hostType'] = this.hostType
+      })
+      
+      this.codeForBlogger = ''
       fetch('components/main-template.html')
         .then(res => res.text())
         .then(mainTemplate => {
@@ -120,14 +137,14 @@ var app = {
               alert("<p:include> error")
             }
 
-            if (this.useLocalhost === 'pulipuli') {
+            if (this.hostType === 'pulipuli') {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
                       .join(this.pulipuliURL)
               
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
             }
-            else if (this.useLocalhost === 'localhost') {
+            else if (this.hostType === 'localhost') {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
                       .join(this.localhostURL)
               
@@ -156,7 +173,13 @@ var app = {
         loop(0)
 
       })  // $.get('main-template.html', (mainTemplate) => {
+    },
+    openBloggerTemplateLink: function () {
+      this.copyCode()
+      let url = "https://www.blogger.com/blogger.g?blogID=16607461#templatehtml/src=sidebar"
+      let name = "bloggerTemplateLink"
+      window.open(url, name)
     }
-  }
+  } // methods: {
 }
 new Vue(app)
