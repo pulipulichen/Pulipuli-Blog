@@ -7,10 +7,14 @@
       xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
   <title>
-    <b:if cond='data:blog.pageType == &quot;item&quot;'>
-      <data:blog.pageName/> - <data:blog.title/>
+    <b:if cond='data:blog.url == data:blog.canonicalHomepageUrl'>
+      <data:blog.pageTitle/>  
       <b:else/>
-      <data:blog.pageTitle/>
+      <b:if cond='data:blog.pageName'>
+        <data:blog.pageName/> - <data:blog.title/>
+        <b:else/>
+        <data:blog.pageTitle/>
+      </b:if>
     </b:if>
   </title>
 <b:include data='blog' name='all-head-content'/>
@@ -149,8 +153,15 @@
   <div class="back-button">
     <i class="fa fa-arrow-left" aria-hidden="true"></i>
   </div>
+
   <b:else />
-  <div class="back-button placeholder"></div>
+  <b:if cond='data:blog.searchLabel'>
+    <div class="back-button">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <b:else />
+    <div class="back-button placeholder"></div>
+  </b:if>
 </b:if>
     
 <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
