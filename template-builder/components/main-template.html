@@ -20,7 +20,12 @@
 ]]></b:skin>
 
 <!-- jQuery 還是保留讓它使用Google的cdn吧 -->
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' type='text/javascript'/>
+<!--
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' 
+        type='text/javascript'/>
+-->
+<script src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' 
+        type='text/javascript'/>
 
 <p:localhost-redirect />
 
@@ -107,6 +112,12 @@
   expr:data-blog-homepageUrl='data:blog.homepageUrl'
   expr:data-blog-canonicalHomepageUrl='data:blog.canonicalHomepageUrl' />
 
+<!-- 封存頁面不要被索引
+  -- https://www.wfublog.com/2019/03/blogger-archive-page-noindex.html
+  -->
+<b:if cond='data:blog.pageType == "archive"'>
+  <meta content='NOINDEX' name='ROBOTS'/>
+</b:if>
 
 </head>
 

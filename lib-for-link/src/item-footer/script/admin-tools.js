@@ -8,6 +8,7 @@ let loadAdminTools = function (callback) {
   else {
     let adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     $.getScript(adminToolURL, callback)
+    loadAdminToolsIsLoaded = true
   }
 }
 
