@@ -36,22 +36,25 @@
           <div class="field">
             <div class="ui radio checkbox">
               <input type="radio" name="hostType" value="github"
+                     id="hostType1"
                      v-model="hostType" @click="loadTemplate">
-              <label>Use GitHub Server</label>
+              <label for="hostType1">Use GitHub Server</label>
             </div>
           </div>
           <div class="field">
             <div class="ui radio checkbox">
               <input type="radio" name="hostType" value="pulipuli"
+                     id="hostType2"
                      v-model="hostType" @click="loadTemplate">
-              <label>Use pc.pulipuli.info Server</label>
+              <label for="hostType2">Use pc.pulipuli.info Server</label>
             </div>
           </div>
           <div class="field">
             <div class="ui radio checkbox">
               <input type="radio" name="hostType" value="localhost"
+                     id="hostType3"
                      v-model="hostType" @click="loadTemplate">
-              <label>Use Localhost Server</label>
+              <label for="hostType3">Use Localhost Server</label>
             </div>
           </div>
         </div>

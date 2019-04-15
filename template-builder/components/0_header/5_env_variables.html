@@ -17,4 +17,8 @@
     <span class='label-variable' 
           expr:data-label-name="data:label.name" />
   </b:loop>
+  <b:if cond='data:post.editUrl'>
+    <span expr:class='&quot;admin-variable item-control &quot; + data:post.adminClass'
+          expr:data-post-adminClass="data:post.adminClass" />
+  </b:if>
 </span>

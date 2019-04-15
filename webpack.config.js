@@ -52,6 +52,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/masthead/masthead.less',
       './lib-for-link/src/global-header/masthead/masthead.js',
       
+      './lib-for-link/src/global-header/footer/footer.js',
       './lib-for-link/src/global-header/footer/footer.less',
       './lib-for-link/src/global-header/footer/footer-column1.less',
       

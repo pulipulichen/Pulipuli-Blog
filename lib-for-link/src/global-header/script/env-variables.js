@@ -134,3 +134,7 @@ getBloggerPostsVariable = function (key) {
   }
   */
 }
+
+isAdmin = function () {
+  return ($(".admin-variable:visible").length === 1)
+}
