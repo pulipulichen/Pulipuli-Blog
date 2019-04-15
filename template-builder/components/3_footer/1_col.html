@@ -17,40 +17,39 @@
 -->
 
 <div id="donation" class="widget Text donation">
-    <h2 class="title">Buy Me A Coffee (Donation)</h2>
-    <div class="widget-content">
-        <div style="width: 100%; margin: 0 auto; font-size: 12pt;">
-            <div style="padding-bottom: 0.5rem;">
-                <a title="如果有幫到您的話，請布丁喝杯咖啡吧！" 
-                   style="color: white;"
-                   href="/p/donation.html">如果有幫到您的話，請布丁喝杯咖啡吧！<br />
-                    <u>進入贊助捐款網頁</u>
-                </a></div>
-            <a href="/p/donation.html" style=''> 
-                <img style="border: 3px solid white;" 
-                     src="//lh3.googleusercontent.com/-2n1EnISvn_M/WbdZZAVDhFI/AAAAAAADRlc/h2M2gffoxlsIXz9qQCAiqrN19LTO8ZzgACHMYCw/s180/QRCode_acef1820-b3ab-4083-ab16-f0fe17188296.png" alt="進入捐款畫面" border="0" /></a>
-            
-        </div>
+  <h2 class="title">Buy Me A Coffee (Donation)</h2>
+  <div class="widget-content">
+    <div class="message">
+      <div class="text-message">
+        <a title="如果有幫到您的話，請布丁喝杯咖啡吧！" 
+           href="/p/donation.html">如果有幫到您的話，請布丁喝杯咖啡吧！<br />
+          <u>進入贊助捐款網頁</u>
+        </a>
+      </div>
+      <a href="/p/donation.html"> 
+        <img src="//lh3.googleusercontent.com/-2n1EnISvn_M/WbdZZAVDhFI/AAAAAAADRlc/h2M2gffoxlsIXz9qQCAiqrN19LTO8ZzgACHMYCw/s180/QRCode_acef1820-b3ab-4083-ab16-f0fe17188296.png" alt="進入捐款畫面" border="0" /></a>
+
     </div>
-    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
 </div>
 
 <b:section id='column1-stats' preferred='yes'>
   <b:widget id='Stats1' locked='false' title='Total Hit Count' type='Stats'>
     <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
-  <div class='widget-content'>
-    <!-- Content is going to be visible when data will be fetched from server. -->
-    <div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'>
-      <!-- Counter and image will be injected later via AJAX call. -->
-      <b:if cond='data:showSparkline'>
-        <img alt='Sparkline' expr:id='data:widget.instanceId + &quot;_sparkline&quot;' height='30' width='75'/>
-      </b:if>
-      <span expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)' expr:id='data:widget.instanceId + &quot;_totalCount&quot;'>
-      </span>
-      <b:include name='quickedit'/>
-    </div>
-  </div>
-</b:includable>
-</b:widget>
+      <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
+      <div class='widget-content'>
+        <!-- Content is going to be visible when data will be fetched from server. -->
+        <div expr:id='data:widget.instanceId + &quot;_content&quot;' style='display: none;'>
+          <!-- Counter and image will be injected later via AJAX call. -->
+          <b:if cond='data:showSparkline'>
+            <img alt='Sparkline' expr:id='data:widget.instanceId + &quot;_sparkline&quot;' height='30' width='75'/>
+          </b:if>
+          <span expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)' expr:id='data:widget.instanceId + &quot;_totalCount&quot;'>
+          </span>
+          <b:include name='quickedit'/>
+        </div>
+      </div>
+    </b:includable>
+  </b:widget>
 </b:section>

@@ -52,6 +52,9 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/masthead/masthead.less',
       './lib-for-link/src/global-header/masthead/masthead.js',
       
+      './lib-for-link/src/global-header/footer/footer.less',
+      './lib-for-link/src/global-header/footer/footer-column1.less',
+      
       './lib-for-link/src/global-header/style/2_style.less',
       './lib-for-link/src/global-header/style/3_custom_style.less',
       './lib-for-link/src/global-header/style/header.less',
@@ -59,7 +62,6 @@ let webpackConfig  = {
       //'./lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/index.less',
-      './lib-for-link/src/global-header/style/footer.less',
       './lib-for-link/src/global-header/style/content.less',
       './lib-for-link/src/global-header/style/style.less',
       

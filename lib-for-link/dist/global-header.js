@@ -116,6 +116,36 @@ exports.push([module.i, "#masthead #menu-primary a{color:#fff}#masthead #menu-pr
 
 /***/ }),
 
+/***/ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer-column1.less":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** /usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!/usr/lib/node_modules/postcss-loader/src?sourceMap!/usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer-column1.less ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js */ "../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, "#colophon #column1 .widget.donation#donation .widget-content .message{width:100%;margin:0 auto;font-size:12pt}#colophon #column1 .widget.donation#donation .widget-content .message .text-message{padding-bottom:.5rem}#colophon #column1 .widget.donation#donation .widget-content .message .text-message a{color:#fff}#colophon #column1 .widget.donation#donation .widget-content .message img{border:3px solid #fff}", "",{"version":3,"sources":["/home/pudding/NetBeansProjects/[nodejs]/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer-column1.less","footer-column1.less"],"names":[],"mappings":"AAAA,sEAEI,UAAA,CACA,aAAA,CACA,cCAJ,CDJA,oFAOM,oBCAN,CDPA,sFAUQ,UCAR,CDVA,0EAeM,qBCFN","file":"footer-column1.less","sourcesContent":["#colophon #column1 {\n  .widget.donation#donation .widget-content .message {\n    width: 100%; \n    margin: 0 auto; \n    font-size: 12pt;\n\n    .text-message {\n      padding-bottom: 0.5rem;\n\n      a {\n        color: white\n      }\n    }\n\n    img {\n      border: 3px solid white;\n    }\n  }\n}","#colophon #column1 .widget.donation#donation .widget-content .message {\n  width: 100%;\n  margin: 0 auto;\n  font-size: 12pt;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message .text-message {\n  padding-bottom: 0.5rem;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message .text-message a {\n  color: white;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message img {\n  border: 3px solid white;\n}\n"]}]);
+
+
+
+/***/ }),
+
+/***/ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer.less":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** /usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!/usr/lib/node_modules/postcss-loader/src?sourceMap!/usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer.less ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js */ "../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".site-footer#colophon{z-index:0}.site-footer#colophon #footer{line-height:30px;padding:10px 0 0;background-color:#1a1a1a}.site-footer#colophon #footer p{font-size:13px;float:left;line-height:30px}.site-footer#colophon #footer a{color:#f57676}.site-footer#colophon #footer .go-top{color:#fff}", "",{"version":3,"sources":["/home/pudding/NetBeansProjects/[nodejs]/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer.less","footer.less"],"names":[],"mappings":"AAAA,sBACE,SCCF,CDFA,8BAII,gBAAA,CACA,gBAAA,CACA,wBCCJ,CDPA,gCASM,cAAA,CACA,UAAA,CACA,gBCCN,CDZA,gCAeM,aCAN,CDfA,sCAmBM,UCDN","file":"footer.less","sourcesContent":[".site-footer#colophon {\n  z-index: 0;\n  \n  #footer {\n    line-height: 30px;\n    padding: 10px 0 0px 0;\n    background-color: #1a1a1a;\n\n    p {\n      font-size: 13px;\n      float: left;\n      line-height: 30px\n    }\n\n    a {\n      color: #F57676;\n    }\n\n    .go-top {\n      color: white;\n    }\n  }\n} \n",".site-footer#colophon {\n  z-index: 0;\n}\n.site-footer#colophon #footer {\n  line-height: 30px;\n  padding: 10px 0 0px 0;\n  background-color: #1a1a1a;\n}\n.site-footer#colophon #footer p {\n  font-size: 13px;\n  float: left;\n  line-height: 30px;\n}\n.site-footer#colophon #footer a {\n  color: #F57676;\n}\n.site-footer#colophon #footer .go-top {\n  color: white;\n}\n"]}]);
+
+
+
+/***/ }),
+
 /***/ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/go-top/go-top.less":
 /*!*****************************************************************************************************************************************************************************************************************************!*\
   !*** /usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!/usr/lib/node_modules/postcss-loader/src?sourceMap!/usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/go-top/go-top.less ***!
@@ -261,21 +291,6 @@ exports.push([module.i, "#header-inner{width:auto!important;background-position:
 exports = module.exports = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js */ "../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
 exports.push([module.i, "#content-wrapper{padding-top:80px;padding-left:50px}@media (max-width:979px){#content-wrapper{padding-top:80px}#content-wrapper #primary{padding-left:0}}@media (max-width:480px){#content-wrapper{padding-top:50px!important;padding-left:0}#content-wrapper #primary{padding-left:0!important;padding-right:0!important}}", "",{"version":3,"sources":["/home/pudding/NetBeansProjects/[nodejs]/Pulipuli-Blog/lib-for-link/src/global-header/style/content.less","content.less"],"names":[],"mappings":"AAAA,iBACE,gBAAA,CACA,iBCCF,CDIA,yBAEE,iBACE,gBCHF,CDEA,0BAII,cCHJ,CACF,CDSA,yBACE,iBACE,0BAAA,CACA,cCPF,CDKA,0BAKI,wBAAA,CACA,yBCPJ,CAMF","file":"content.less","sourcesContent":["#content-wrapper {\n  padding-top: 80px;\n  padding-left: 50px;\n}\n\n// -------------------------------------------------\n\n@media (max-width: 979px) {\n\n  #content-wrapper {\n    padding-top: 80px;\n    \n    #primary {\n      padding-left: 0;\n    }\n  }\n}\n\n// -------------------------------------------------\n\n@media (max-width: 480px) {\n  #content-wrapper {\n    padding-top: 50px !important;\n    padding-left: 0;\n    \n    #primary {\n      padding-left:0px !important;\n      padding-right:0px !important; \n    }\n  }\n  \n  /*\n  .sumome-stylebufferbottom-shim {\n    height: 50px;\n  }\n  */\n}","#content-wrapper {\n  padding-top: 80px;\n  padding-left: 50px;\n}\n@media (max-width: 979px) {\n  #content-wrapper {\n    padding-top: 80px;\n  }\n  #content-wrapper #primary {\n    padding-left: 0;\n  }\n}\n@media (max-width: 480px) {\n  #content-wrapper {\n    padding-top: 50px !important;\n    padding-left: 0;\n  }\n  #content-wrapper #primary {\n    padding-left: 0px !important;\n    padding-right: 0px !important;\n  }\n  /*\n  .sumome-stylebufferbottom-shim {\n    height: 50px;\n  }\n  */\n}\n"]}]);
-
-
-
-/***/ }),
-
-/***/ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/style/footer.less":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** /usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!/usr/lib/node_modules/postcss-loader/src?sourceMap!/usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/style/footer.less ***!
-  \****************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js */ "../../../../../usr/lib/node_modules/css-loader/dist/runtime/api.js")(true);
-// Module
-exports.push([module.i, ".site-footer #footer{line-height:30px;padding:10px 0 0;background-color:#1a1a1a}.site-footer #footer p{font-size:13px;float:left;line-height:30px}.site-footer #footer a{color:#f57676}.site-footer #footer .go-top{color:#fff}.site-footer#colophon{z-index:0}", "",{"version":3,"sources":["/home/pudding/NetBeansProjects/[nodejs]/Pulipuli-Blog/lib-for-link/src/global-header/style/footer.less","footer.less"],"names":[],"mappings":"AAAA,qBACE,gBAAA,CACA,gBAAA,CACA,wBCCF,CDJA,uBAMI,cAAA,CACA,UAAA,CACA,gBCCJ,CDTA,uBAYI,aCAJ,CDZA,6BAgBI,UCDJ,CDKA,sBACE,SCHF","file":"footer.less","sourcesContent":[".site-footer #footer {\n  line-height: 30px;\n  padding: 10px 0 0px 0;\n  background-color: #1a1a1a;\n\n  p {\n    font-size: 13px;\n    float: left;\n    line-height: 30px\n  }\n\n  a {\n    color: #F57676;\n  }\n  \n  .go-top {\n    color: white;\n  }\n}\n\n.site-footer#colophon {\n  z-index: 0;\n}",".site-footer #footer {\n  line-height: 30px;\n  padding: 10px 0 0px 0;\n  background-color: #1a1a1a;\n}\n.site-footer #footer p {\n  font-size: 13px;\n  float: left;\n  line-height: 30px;\n}\n.site-footer #footer a {\n  color: #F57676;\n}\n.site-footer #footer .go-top {\n  color: white;\n}\n.site-footer#colophon {\n  z-index: 0;\n}\n"]}]);
 
 
 
@@ -1310,6 +1325,66 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../../../../../usr/lib/node_modules/postcss-loader/src?sourceMap!../../../../../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./nav-collapse.less */ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/btn-navbar/nav-collapse.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/style-loader/lib/addStyles.js */ "../../../../../usr/lib/node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/footer/footer-column1.less":
+/*!*******************************************************************!*\
+  !*** ./lib-for-link/src/global-header/footer/footer-column1.less ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../../../../../usr/lib/node_modules/postcss-loader/src?sourceMap!../../../../../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./footer-column1.less */ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer-column1.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/style-loader/lib/addStyles.js */ "../../../../../usr/lib/node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-header/footer/footer.less":
+/*!***********************************************************!*\
+  !*** ./lib-for-link/src/global-header/footer/footer.less ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../../../../../usr/lib/node_modules/postcss-loader/src?sourceMap!../../../../../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./footer.less */ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2765,36 +2840,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-header/style/footer.less":
-/*!**********************************************************!*\
-  !*** ./lib-for-link/src/global-header/style/footer.less ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../../../../../usr/lib/node_modules/postcss-loader/src?sourceMap!../../../../../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./footer.less */ "../../../../../usr/lib/node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../usr/lib/node_modules/postcss-loader/src/index.js?sourceMap!../../../../../usr/lib/node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/style/footer.less");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../../usr/lib/node_modules/style-loader/lib/addStyles.js */ "../../../../../usr/lib/node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./lib-for-link/src/global-header/style/header.less":
 /*!**********************************************************!*\
   !*** ./lib-for-link/src/global-header/style/header.less ***!
@@ -2886,9 +2931,9 @@ if(false) {}
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.less ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/random_posts.less ./lib-for-link/src/global-header/sidebar/sidebar.less ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/masthead/masthead.less ./lib-for-link/src/global-header/masthead/masthead.js ./lib-for-link/src/global-header/style/2_style.less ./lib-for-link/src/global-header/style/3_custom_style.less ./lib-for-link/src/global-header/style/header.less ./lib-for-link/src/global-header/style/addthis.css ./lib-for-link/src/global-header/style/index.less ./lib-for-link/src/global-header/style/footer.less ./lib-for-link/src/global-header/style/content.less ./lib-for-link/src/global-header/style/style.less ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.less ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.less ./lib-for-link/src/global-header/gsc-search/gsc-search-result.less ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/modules/lscache/lscache.js ./lib-for-link/src/global-header/modules/lscache/lscacheHelper.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/back-button.js ./lib-for-link/src/global-header/script/script.js ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-header/breeze-theme/font-awesome.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css ./lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css ./lib-for-link/src/global-header/go-top/go-top.less ./lib-for-link/src/global-header/go-top/go-top.js ./lib-for-link/src/global-header/sidebar/random_posts.less ./lib-for-link/src/global-header/sidebar/sidebar.less ./lib-for-link/src/global-header/sidebar/sidebar.js ./lib-for-link/src/global-header/btn-navbar/nav-collapse.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.less ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js ./lib-for-link/src/global-header/masthead/masthead.less ./lib-for-link/src/global-header/masthead/masthead.js ./lib-for-link/src/global-header/footer/footer.less ./lib-for-link/src/global-header/footer/footer-column1.less ./lib-for-link/src/global-header/style/2_style.less ./lib-for-link/src/global-header/style/3_custom_style.less ./lib-for-link/src/global-header/style/header.less ./lib-for-link/src/global-header/style/addthis.css ./lib-for-link/src/global-header/style/index.less ./lib-for-link/src/global-header/style/content.less ./lib-for-link/src/global-header/style/style.less ./lib-for-link/src/global-header/gsc-search/default.css ./lib-for-link/src/global-header/gsc-search/gsc-search-bar-placeholder.less ./lib-for-link/src/global-header/gsc-search/gsc-search-bar.less ./lib-for-link/src/global-header/gsc-search/gsc-search-result.less ./lib-for-link/src/global-header/gsc-search/gsc-search.js ./lib-for-link/src/global-header/modules/lscache/lscache.js ./lib-for-link/src/global-header/modules/lscache/lscacheHelper.js ./lib-for-link/src/global-header/breeze-theme/breeze.js ./lib-for-link/src/global-header/script/google-analytics.js ./lib-for-link/src/global-header/script/facebook.js ./lib-for-link/src/global-header/script/env-variables.js ./lib-for-link/src/global-header/script/back-button.js ./lib-for-link/src/global-header/script/script.js ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2905,12 +2950,13 @@ __webpack_require__(/*! ./lib-for-link/src/global-header/btn-navbar/btn-navbar.l
 __webpack_require__(/*! ./lib-for-link/src/global-header/btn-navbar/btn-navbar.js */"./lib-for-link/src/global-header/btn-navbar/btn-navbar.js");
 __webpack_require__(/*! ./lib-for-link/src/global-header/masthead/masthead.less */"./lib-for-link/src/global-header/masthead/masthead.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/masthead/masthead.js */"./lib-for-link/src/global-header/masthead/masthead.js");
+__webpack_require__(/*! ./lib-for-link/src/global-header/footer/footer.less */"./lib-for-link/src/global-header/footer/footer.less");
+__webpack_require__(/*! ./lib-for-link/src/global-header/footer/footer-column1.less */"./lib-for-link/src/global-header/footer/footer-column1.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/2_style.less */"./lib-for-link/src/global-header/style/2_style.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/3_custom_style.less */"./lib-for-link/src/global-header/style/3_custom_style.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/header.less */"./lib-for-link/src/global-header/style/header.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/addthis.css */"./lib-for-link/src/global-header/style/addthis.css");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/index.less */"./lib-for-link/src/global-header/style/index.less");
-__webpack_require__(/*! ./lib-for-link/src/global-header/style/footer.less */"./lib-for-link/src/global-header/style/footer.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/content.less */"./lib-for-link/src/global-header/style/content.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/style/style.less */"./lib-for-link/src/global-header/style/style.less");
 __webpack_require__(/*! ./lib-for-link/src/global-header/gsc-search/default.css */"./lib-for-link/src/global-header/gsc-search/default.css");
