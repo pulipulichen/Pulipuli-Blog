@@ -90,6 +90,7 @@ var app = {
           '4_content/entry-index.html',
           '4_content/entry-item.html',
           '4_content/social-media.html',
+          '4_content/statistics.html',
           '5_footer_bar/1_col.html',
           '5_footer_bar/2_col.html',
           '5_footer_bar/3_col.html',
