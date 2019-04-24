@@ -1,9 +1,8 @@
-
-
 /******************/
 
 #masthead {
   padding-left: 25px;
+  background-color: #2c2c2c;
 
   #header h1 {
     line-height:30px;
@@ -28,7 +27,8 @@
 
 @media (min-width: 979px) and (max-width: 1200px) {
   .navbar {
-    width: 960px !important;
+    //width: 960px !important; // @author Pulipuli Chen 20190424
+    width: 940px !important; // @author Pulipuli Chen 20190424
   }
 }
 
@@ -40,6 +40,11 @@
     position: fixed;
     padding-left: 50px;
 
+    &> .container {
+      //width: calc(100vw - 66px);
+      margin-right: 25px;
+    }
+    
     #header #header-inner{
       /*margin-left: 10px !important;*/
       margin-top: 15px;
@@ -80,6 +85,10 @@
   #masthead {
     height: auto;
     padding-left: 10px;
+    
+    &> .container {
+      width: auto;
+    }
     
     #header { 
       

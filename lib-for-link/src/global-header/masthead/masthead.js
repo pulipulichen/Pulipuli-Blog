@@ -1,8 +1,9 @@
 
 // -------------------
 $(function ($) {
-  var aboveHeight = $('#leader-wrapper').outerHeight();
-  $(window).scroll(function () {
+  //var aboveHeight = $('#masthead > .container').outerHeight();
+  let aboveHeight = 80
+  let windowScroll = function () {
     if ($(window).scrollTop() > aboveHeight) {
       $('body').addClass('fixed-nav')
       $('#masthead').addClass('fixed-nav')
@@ -13,5 +14,7 @@ $(function ($) {
       $('#masthead').removeClass('fixed-nav')
               //.next().css('padding-top', '0');
     }
-  });
+  }
+  $(window).scroll(windowScroll);
+  windowScroll()
 });

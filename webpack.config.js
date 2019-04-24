@@ -37,6 +37,8 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/vendor/jquery/jquery-loader.js',
       './lib-for-link/src/global-header/vendor/font-awesome/font-awesome-loader.js',
       
+      './lib-for-link/src/global-header/style/1_style.less',
+      
       //'./lib-for-link/src/global-header/breeze-theme/font-awesome.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
@@ -59,7 +61,6 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/footer/footer.less',
       './lib-for-link/src/global-header/footer/footer-column1.less',
       
-      './lib-for-link/src/global-header/style/1_style.less',
       './lib-for-link/src/global-header/style/2_style.less',
       './lib-for-link/src/global-header/style/3_custom_style.less',
       './lib-for-link/src/global-header/style/header.less',
