@@ -34,6 +34,8 @@ let webpackConfig  = {
   devtool: 'source-map',
   entry: {
     'global-header': [
+      './lib-for-link/src/global-header/vendor/jquery/jquery-loader.js',
+      
       './lib-for-link/src/global-header/breeze-theme/font-awesome.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
@@ -56,10 +58,13 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/footer/footer.less',
       './lib-for-link/src/global-header/footer/footer-column1.less',
       
+      './lib-for-link/src/global-header/style/1_style.less',
       './lib-for-link/src/global-header/style/2_style.less',
       './lib-for-link/src/global-header/style/3_custom_style.less',
       './lib-for-link/src/global-header/style/header.less',
-      './lib-for-link/src/global-header/style/addthis.css',
+      
+      './lib-for-link/src/global-header/vendor/font-awesome/css/font-awesome.css',
+      './lib-for-link/src/global-header/vendor/addthis.css',
       //'./lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
       './lib-for-link/src/global-header/style/index.less',
@@ -161,12 +166,19 @@ let webpackConfig  = {
           'less-loader?sourceMap' // Step 1 要先執行這個
         ]
       },
-      {
-        test: /\.vue$/,
+      { 
+        test: /\.(eot|woff|woff2|svg|png|ttf)([\?]?.*)$/, 
         use: [
-          'vue-loader'
-        ],
-      }
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'asset',
+              publicPath: '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/asset'
+            }
+          }
+        ]
+      },
     ]
   }
 }

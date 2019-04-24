@@ -1,0 +1,1 @@
+https://pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/fontawesome/
