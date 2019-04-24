@@ -2,3 +2,8 @@
   max-height: inherit !important;
   height: calc(100vh - 10em) !important;
 }
+
+.ui.radio.checkbox,
+.ui.checkbox .box, .ui.checkbox label {
+  cursor: pointer !important;
+}

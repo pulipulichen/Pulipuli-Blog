@@ -35,8 +35,9 @@ let webpackConfig  = {
   entry: {
     'global-header': [
       './lib-for-link/src/global-header/vendor/jquery/jquery-loader.js',
+      './lib-for-link/src/global-header/vendor/font-awesome/font-awesome-loader.js',
       
-      './lib-for-link/src/global-header/breeze-theme/font-awesome.css',
+      //'./lib-for-link/src/global-header/breeze-theme/font-awesome.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-crete-round.css',
       './lib-for-link/src/global-header/breeze-theme/googleapis-font-family-lato.css',
       
@@ -63,7 +64,7 @@ let webpackConfig  = {
       './lib-for-link/src/global-header/style/3_custom_style.less',
       './lib-for-link/src/global-header/style/header.less',
       
-      './lib-for-link/src/global-header/vendor/font-awesome/css/font-awesome.css',
+      //'./lib-for-link/src/global-header/vendor/font-awesome/css/font-awesome.css',
       './lib-for-link/src/global-header/vendor/addthis.css',
       //'./lib-for-link/src/global-header/style/navbar.less',
       //'./lib-for-link/src/global-header/style/search-bar.css',
@@ -82,14 +83,14 @@ let webpackConfig  = {
       
       './lib-for-link/src/global-header/breeze-theme/breeze.js',
       './lib-for-link/src/global-header/script/google-analytics.js',
-      './lib-for-link/src/global-header/script/facebook.js',
+      //'./lib-for-link/src/global-header/script/facebook.js',
       './lib-for-link/src/global-header/script/env-variables.js',
       './lib-for-link/src/global-header/script/back-button.js',
       './lib-for-link/src/global-header/script/script.js'
     ],
     'global-footer': [
       './lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js',
-      './lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.css',
+      './lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.less',
       './lib-for-link/src/global-footer/puli-guest-book/init.js',
       
       './lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js',
