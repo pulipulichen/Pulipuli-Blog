@@ -98,6 +98,9 @@ let webpackConfig  = {
       './lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js',
       './lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js',
       './lib-for-link/src/global-footer/blogger-feed-loader/init.js',
+      
+      './lib-for-link/src/global-footer/cookie-banner/cookie-banner.less',
+      './lib-for-link/src/global-footer/cookie-banner/cookie-banner.js',
     ],
     'item-header': [
       './lib-for-link/src/item-header/style/article.less',

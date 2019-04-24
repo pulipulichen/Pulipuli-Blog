@@ -540,6 +540,61 @@ puliHandlePost = function () {
 
 /***/ }),
 
+/***/ "./lib-for-link/src/global-footer/cookie-banner/cookie-banner.js":
+/*!***********************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/cookie-banner/cookie-banner.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(() => {
+  $('body').append(`<div class="cookie-banner">
+  <button type="button" class="button">
+    <i aria-hidden="true" class="fa fa-check"></i>
+    OK
+  </button>
+  <div class="description">
+    <div class="header">This blog use cookies</div>
+    <div class="content">
+      We use cookie to offer you a better experience and analyze site traffic. By using this blog you agree to our 
+      <a href="/p/cookie-policy.html" target="cookie-policy">Cookie Policy</a>.
+    </div>
+  </div>
+</div>`)
+})
+
+/***/ }),
+
+/***/ "./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less":
+/*!*************************************************************************!*\
+  !*** ./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./cookie-banner.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./lib-for-link/src/global-footer/puli-guest-book/init.js":
 /*!****************************************************************!*\
   !*** ./lib-for-link/src/global-footer/puli-guest-book/init.js ***!
@@ -555,7 +610,7 @@ jQuery.puliGuestBook({
     url: "/2005/12/blogger_113544406852218769.html#comment-editor",    //訂閱張貼意見的網址，或是文章ID:115667103250300740
     //css: "//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/modules/puliGuestBook/puliGuestBook.css",    //CSS樣式表
     container: ".puliGuestBook",    //顯示留言的元素
-    listNumber: 20,    //顯示留言數量。超過此數量時，會顯示「閱讀全部留言」的連結。
+    listNumber: 10,    //顯示留言數量。超過此數量時，會顯示「閱讀全部留言」的連結。
     adminName: 'Pulipuli Chen',    //Blog主人的名字
     adminPhoto: '//1.bp.blogspot.com/_yr4MQB4zDus/SZ4Mb30N0aI/AAAAAAAAFUg/3OGhwhzBUOg/S45/',    //部落格主人的照片
     anonymous: '匿名',    //匿名者的名字
@@ -923,6 +978,21 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".cookie-banner{position:fixed;bottom:0;left:0;background-color:rgba(44,44,44,.7);color:#fff;width:100%}.cookie-banner>.button{float:right;margin:.9rem 1rem;cursor:pointer;display:block;border-radius:3px;font-size:13px;padding:3px 10px;letter-spacing:.5px;text-transform:uppercase;border:1px solid #1d1d1d}.cookie-banner>.description{margin:.5rem 1rem}.cookie-banner>.description .header{font-size:1rem;line-height:1.5rem;font-weight:700}.cookie-banner>.description .content{font-size:.7rem;line-height:1rem;font-weight:400}.cookie-banner>.description .content a{color:#ff0;font-weight:700}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/global-footer/cookie-banner/cookie-banner.less","cookie-banner.less"],"names":[],"mappings":"AAAA,eACE,cAAA,CACA,QAAA,CACA,MAAA,CACA,kCAAA,CAEA,UAAA,CACA,UCAF,CDGA,uBACE,WAAA,CACA,iBAAA,CAEA,cAAA,CACA,aAAA,CACA,iBAAA,CACA,cAAA,CACA,gBAAA,CAGA,mBAAA,CACA,wBAAA,CACA,wBCJF,CDSA,4BACE,iBCPF,CDMA,oCAII,cAAA,CACA,kBAAA,CACA,eCPJ,CDCA,qCAUI,eAAA,CACA,gBAAA,CACA,eCRJ,CDJA,uCAgBI,UAAA,CACA,eCTJ","file":"cookie-banner.less","sourcesContent":[".cookie-banner {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(44, 44, 44, 0.7);\n  //opacity: 0.7;\n  color: white;\n  width: 100%;\n}\n\n.cookie-banner > .button {\n  float: right;\n  margin: 0.9rem 1rem;\n  \n  cursor: pointer;\n  display: block;\n  border-radius: 3px;\n  font-size: 13px;\n  padding: 3px 10px;\n  //background: #333;\n  //color: #fff;\n  letter-spacing: .5px;\n  text-transform: uppercase;\n  border: 1px solid #1d1d1d;\n  //margin-top: 5px;\n  //margin-bottom: 12px;\n}\n\n.cookie-banner > .description {\n  margin: 0.5rem 1rem;\n  \n  .header {\n    font-size: 1rem;\n    line-height: 1.5rem;\n    font-weight: bold;\n  }\n\n  .content {\n    font-size: 0.7rem;\n    line-height: 1rem;\n    font-weight: normal;\n  }\n  \n  .content a {\n    color: yellow;\n    font-weight: bold;\n  }\n} ",".cookie-banner {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(44, 44, 44, 0.7);\n  color: white;\n  width: 100%;\n}\n.cookie-banner > .button {\n  float: right;\n  margin: 0.9rem 1rem;\n  cursor: pointer;\n  display: block;\n  border-radius: 3px;\n  font-size: 13px;\n  padding: 3px 10px;\n  letter-spacing: 0.5px;\n  text-transform: uppercase;\n  border: 1px solid #1d1d1d;\n}\n.cookie-banner > .description {\n  margin: 0.5rem 1rem;\n}\n.cookie-banner > .description .header {\n  font-size: 1rem;\n  line-height: 1.5rem;\n  font-weight: bold;\n}\n.cookie-banner > .description .content {\n  font-size: 0.7rem;\n  line-height: 1rem;\n  font-weight: normal;\n}\n.cookie-banner > .description .content a {\n  color: yellow;\n  font-weight: bold;\n}\n"],"sourceRoot":""}]);
+
+
 
 /***/ }),
 
@@ -1547,9 +1617,9 @@ module.exports = function (css) {
 /***/ }),
 
 /***/ 1:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.less ./lib-for-link/src/global-footer/puli-guest-book/init.js ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/init.js ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.js ./lib-for-link/src/global-footer/puli-guest-book/puli-guest-book.less ./lib-for-link/src/global-footer/puli-guest-book/init.js ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js ./lib-for-link/src/global-footer/blogger-feed-loader/init.js ./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less ./lib-for-link/src/global-footer/cookie-banner/cookie-banner.js ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1559,7 +1629,9 @@ __webpack_require__(/*! ./lib-for-link/src/global-footer/puli-guest-book/init.js
 __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js */"./lib-for-link/src/global-footer/blogger-feed-loader/random-posts.js");
 __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js */"./lib-for-link/src/global-footer/blogger-feed-loader/recent-lib.js");
 __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js */"./lib-for-link/src/global-footer/blogger-feed-loader/comment-lib.js");
-module.exports = __webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/init.js */"./lib-for-link/src/global-footer/blogger-feed-loader/init.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/blogger-feed-loader/init.js */"./lib-for-link/src/global-footer/blogger-feed-loader/init.js");
+__webpack_require__(/*! ./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less */"./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less");
+module.exports = __webpack_require__(/*! ./lib-for-link/src/global-footer/cookie-banner/cookie-banner.js */"./lib-for-link/src/global-footer/cookie-banner/cookie-banner.js");
 
 
 /***/ })
