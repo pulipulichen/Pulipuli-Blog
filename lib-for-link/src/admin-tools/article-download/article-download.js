@@ -1,10 +1,10 @@
-require('./jszip.js')
-require('./jszip-utils.js')
+import './lib/jszip.js'
+import './lib/jszip-utils.js'
 //require('./beautify.js')
 //require('./beautify-css.js')
-require('./beautify-html.js')
-require('./FileSaver.js')
-const url = require('url')
+import './lib/beautify-html.js'
+import './lib/FileSaver.js'
+import url from 'url'
 
 let extractExt = function (link) {
   let urlObject = url.parse(link)
@@ -22,7 +22,7 @@ let extractExt = function (link) {
   return ext
 }
 
-articleDownload = {
+window.articleDownload = {
   getRenderedPost: function () {
     let article = $('#main .post .entry-content > article').clone()
     
@@ -95,16 +95,25 @@ articleDownload = {
     let article = this.getRenderedPost()
     
     article = article.clone()
-    article.find('a[href*=".blogspot.com/"]').each((i, ele) => {
-      let value = ele.href
-      if (value.startsWith('http://') 
-              || value.startsWith('https://')) {
-        value = value.slice(value.indexOf('://') + 1)
-        ele.href = value
-      }
-    })
     
-    article.find('img[src*=".blogspot.com/"]').each((i, ele) => {
+    let hosts = [
+      '.ggpht.com/',
+      '.blogspot.com/'
+    ]
+    
+    hosts.forEach(host => {
+      
+      article.find(`a[href*="${host}"]`).each((i, ele) => {
+        let value = ele.href
+        if (value.startsWith('http://') 
+                || value.startsWith('https://')) {
+          value = value.slice(value.indexOf('://') + 1)
+          ele.href = value
+        }
+      })
+    })
+
+    article.find(`img[src]`).each((i, ele) => {
       let value = ele.src
       if (value.startsWith('http://') 
               || value.startsWith('https://')) {
@@ -491,4 +500,3 @@ articleDownload = {
     */
   }
 }
-
