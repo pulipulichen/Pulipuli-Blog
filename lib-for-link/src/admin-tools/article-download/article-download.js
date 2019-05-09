@@ -93,6 +93,26 @@ articleDownload = {
     //return
     
     let article = this.getRenderedPost()
+    
+    article = article.clone()
+    article.find('a[href*=".blogspot.com/"]').each((i, ele) => {
+      let value = ele.href
+      if (value.startsWith('http://') 
+              || value.startsWith('https://')) {
+        value = value.slice(value.indexOf('://') + 1)
+        ele.href = value
+      }
+    })
+    
+    article.find('img[src*=".blogspot.com/"]').each((i, ele) => {
+      let value = ele.src
+      if (value.startsWith('http://') 
+              || value.startsWith('https://')) {
+        value = value.slice(value.indexOf('://') + 1)
+        ele.src = value
+      }
+    })
+    
     let html = this.beautifyHTML(article.html())
     
     //console.log(html);
