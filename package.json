@@ -6,7 +6,8 @@
   "scripts": {
     "1 webpack-build-dev": "webpack --mode development",
     "2 webpack-watch-dev": "webpack --watch --mode development",
-    "3 webpack-build": "webpack --mode production",
+    "3 webpack-watch-build": "webpack --watch --mode production",
+    "4 webpack-build": "webpack --mode production",
     "mocha": "mocha lib-for-link/src/**/*.mocha-test.js",
     "mocha-watch": "mocha --watch lib-for-link/src/**/*.mocha-test.js",
     "selenium": "node selenium.config.js",
