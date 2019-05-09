@@ -1,10 +1,10 @@
-require('./jszip.js')
-require('./jszip-utils.js')
+import './lib/jszip.js'
+import './lib/jszip-utils.js'
 //require('./beautify.js')
 //require('./beautify-css.js')
-require('./beautify-html.js')
-require('./FileSaver.js')
-const url = require('url')
+import './lib/beautify-html.js'
+import './lib/FileSaver.js'
+import url from 'url'
 
 let extractExt = function (link) {
   let urlObject = url.parse(link)
