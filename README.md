@@ -17,6 +17,11 @@ https://ithelp.ithome.com.tw/articles/10158140
 npm init
 ````
 
+## 安裝套件的方法
+````
+npm-link-save [package-name] --save-dev
+````
+
 盡可能降低連線數
 http://blog.pulipuli.info/2007/05/blog-post_7346.html
 
