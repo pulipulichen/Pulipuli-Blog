@@ -185,7 +185,18 @@ let webpackConfig  = {
         ]
       },
     ]
-  }
+  },  // module: {
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  },
 }
 
 
@@ -224,15 +235,18 @@ module.exports = (env, argv) => {
         }
       }
     })
-    webpackConfig.optimization = {
-      minimizer: [
-        new UglifyJsPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true // set to true if you want JS source maps
-        })
-      ]
+    
+    if (typeof(webpackConfig.optimization) !== 'object') {
+      webpackConfig.optimization = {}
     }
+    
+    webpackConfig.optimization.minimizer = [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false // set to true if you want JS source maps
+      })
+    ]
   }
   if (argv.mode === 'development') {
 
