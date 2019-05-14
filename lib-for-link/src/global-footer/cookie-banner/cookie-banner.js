@@ -5,6 +5,7 @@ $(() => {
   }
   
   let cookieBanner = $(`<div class="cookie-banner">
+  <div class="cookie-banner-wrapper">
   <button type="button" class="button">
     <i aria-hidden="true" class="fa fa-check"></i>
     OK
@@ -15,6 +16,7 @@ $(() => {
       We use cookie to offer you a better experience and analyze site traffic. By using this blog you agree to our 
       <a href="/p/cookie-policy.html" target="cookie-policy">Cookie Policy</a>.
     </div>
+  </div>
   </div>
 </div>`)
   

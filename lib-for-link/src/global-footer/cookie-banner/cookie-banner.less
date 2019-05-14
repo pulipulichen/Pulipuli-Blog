@@ -6,44 +6,82 @@
   //opacity: 0.7;
   color: white;
   width: 100%;
+  
+  .cookie-banner-wrapper {
+    width: 100%;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    
+    &> .button {
+      float: right;
+      margin: 0.9rem 1rem;
+
+      cursor: pointer;
+      display: block;
+      border-radius: 3px;
+      font-size: 13px;
+      padding: 3px 10px;
+      //background: #333;
+      //color: #fff;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      border: 1px solid #1d1d1d;
+      //margin-top: 5px;
+      //margin-bottom: 12px;
+      margin-right: 0;
+    }
+    
+    &> .description {
+      margin: 0.5rem 1rem;
+      margin-left: 0;
+
+      .header {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .content {
+        font-size: 0.7rem;
+        line-height: 1rem;
+        font-weight: normal;
+      }
+
+      .content a {
+        color: yellow;
+        font-weight: bold;
+      }
+    } 
+  }
 }
 
-.cookie-banner > .button {
-  float: right;
-  margin: 0.9rem 1rem;
-  
-  cursor: pointer;
-  display: block;
-  border-radius: 3px;
-  font-size: 13px;
-  padding: 3px 10px;
-  //background: #333;
-  //color: #fff;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  border: 1px solid #1d1d1d;
-  //margin-top: 5px;
-  //margin-bottom: 12px;
+@media (max-width: 1200px) {
+  .cookie-banner > .cookie-banner-wrapper {
+    width: 960px;
+    max-width: inherit;
+    padding-left: 70px;
+  }
 }
 
-.cookie-banner > .description {
-  margin: 0.5rem 1rem;
-  
-  .header {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
+@media (max-width: 979px) {
+  .cookie-banner > .cookie-banner-wrapper {
+    width: calc(100% - 70px);
+    max-width: inherit;
+    padding-left: 30px;
   }
+}
 
-  .content {
-    font-size: 0.7rem;
-    line-height: 1rem;
-    font-weight: normal;
+@media (max-width: 480px) {
+  .cookie-banner {
+    bottom: 40px;
   }
   
-  .content a {
-    color: yellow;
-    font-weight: bold;
+  .cookie-banner > .cookie-banner-wrapper {
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    margin-left: 0;
   }
-} 
+}
