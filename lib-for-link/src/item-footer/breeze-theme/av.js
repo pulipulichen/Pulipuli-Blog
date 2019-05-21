@@ -2,6 +2,7 @@
  * 應該是不需要這個函式啦
  * @param {type} _0x17a4x5
  * @returns {undefined}
+ * @deprecated 應該是不需要這個函式啦 20190521 Pulipuli Chen
  */
 av = function (_0x17a4x5) {
     var _0x17a4xa = _0x17a4x5['entry']['author'][0];
