@@ -2892,6 +2892,36 @@ window.jQuery = window.$
 
 /***/ }),
 
+/***/ "./lib-for-link/src/item-footer/comment/comment-form-tool.less":
+/*!*********************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/comment/comment-form-tool.less ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./comment-form-tool.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/comment-form-tool.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./lib-for-link/src/item-footer/comment/comment.js":
 /*!*********************************************************!*\
   !*** ./lib-for-link/src/item-footer/comment/comment.js ***!
@@ -3089,15 +3119,30 @@ let displayComment = function () {
 
 };
 
+
 let addSubCommentReplyLink = () => {
   
   // 為每個回覆的留言後面加上回覆的連結
-  var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">回覆</a>').click(function () {
+  var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">' + '回覆' + '</a>').click(function () {
     //console.log('OK')
     //console.log($(this).parents(".comment-replies:first").prev().find('a.comment-reply:first').length)
     $(this).parents(".comment-replies:first").prev().find('a.comment-reply:first')[0].click();
     var _top = $("#comment-editor:first").offset().top - $("#masthead .container:first").height();
     window.scrollTo(0, _top);
+    initTopContinueButton()
+    //console.log('addSubCommentReplyLink')
+    //console.log([$('#top-continue').length, $('#top-continue').html()])
+    
+    
+    /*
+    $('#top-continue a.comment-reply').text('取消回覆，新增主題留言')
+    
+    $('#top-continue a.comment-reply').click(function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false
+    })
+    */
   });
   var _div = $(".comment-replies ol li.comment span.comment-actions");
   for (var _i = 0; _i < _div.length; _i++) {
@@ -3105,11 +3150,71 @@ let addSubCommentReplyLink = () => {
   }
 }
 
+let isInitTopContinueButton = false
+let topContinueButton = null
+let initTopContinueButton = () => {
+  let button
+  if (isInitTopContinueButton === true) {
+    topContinueButton.show()
+    return
+  }
+  
+  let topContinue = $('#top-continue')
+  button = topContinue.clone()
+          .attr('id', 'top-continue-clone')
+          .insertAfter(topContinue)
+  
+  button.find('a').text('取消回覆，新增主題留言')
+  
+  button.click(() => {
+    if (window.confirm('你確定要取消回覆，新增主題留言嗎？') === false) {
+      return
+    }
+    topContinue.find('a')[0].click()
+    button.hide()
+  })
+  
+  topContinue.hide()
+  
+  isInitTopContinueButton = true
+  topContinueButton = button
+}
+
 $(() => {
   displayComment()
   addSubCommentReplyLink()
   //console.log("aaa")
 })
+
+/***/ }),
+
+/***/ "./lib-for-link/src/item-footer/comment/comment.less":
+/*!***********************************************************!*\
+  !*** ./lib-for-link/src/item-footer/comment/comment.less ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./comment.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/comment.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -3130,10 +3235,13 @@ __webpack_require__(/*! ./modules/disqus/blogger_item.js */ "./lib-for-link/src/
 __webpack_require__(/*! ./script/admin-tools-loader.js */ "./lib-for-link/src/item-footer/script/admin-tools-loader.js")
 __webpack_require__(/*! ./script/icon-replace.js */ "./lib-for-link/src/item-footer/script/icon-replace.js")
 __webpack_require__(/*! ./modules/related-posts/related-posts.js */ "./lib-for-link/src/item-footer/modules/related-posts/related-posts.js")
-__webpack_require__(/*! ./comment/comment.js */ "./lib-for-link/src/item-footer/comment/comment.js")
 
 __webpack_require__(/*! ./toc/toc.js */ "./lib-for-link/src/item-footer/toc/toc.js")
 __webpack_require__(/*! ./toc/toc.less */ "./lib-for-link/src/item-footer/toc/toc.less")
+
+__webpack_require__(/*! ./comment/comment.js */ "./lib-for-link/src/item-footer/comment/comment.js")
+__webpack_require__(/*! ./comment/comment.less */ "./lib-for-link/src/item-footer/comment/comment.less")
+__webpack_require__(/*! ./comment/comment-form-tool.less */ "./lib-for-link/src/item-footer/comment/comment-form-tool.less")
 
 /***/ }),
 
@@ -6355,12 +6463,10 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! ./style/article.less */ "./lib-for-link/src/item-header/style/article.less")
-__webpack_require__(/*! ./style/comment.css */ "./lib-for-link/src/item-header/style/comment.css")
 __webpack_require__(/*! ./style/go-top.less */ "./lib-for-link/src/item-header/style/go-top.less")
 __webpack_require__(/*! ./style/image.less */ "./lib-for-link/src/item-header/style/image.less")
 __webpack_require__(/*! ./style/backlinks.less */ "./lib-for-link/src/item-header/style/backlinks.less")
 __webpack_require__(/*! ./style/sidebar.css */ "./lib-for-link/src/item-header/style/sidebar.css")
-__webpack_require__(/*! ./style/comment-form-tool.less */ "./lib-for-link/src/item-header/style/comment-form-tool.less")
 __webpack_require__(/*! ./style/style-item.css */ "./lib-for-link/src/item-header/style/style-item.css")
 __webpack_require__(/*! ./script/script-item.js */ "./lib-for-link/src/item-header/script/script-item.js")
 __webpack_require__(/*! ./style-print/style-print.css */ "./lib-for-link/src/item-header/style-print/style-print.css")
@@ -6564,66 +6670,6 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./backlinks.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/backlinks.less");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./lib-for-link/src/item-header/style/comment-form-tool.less":
-/*!*******************************************************************!*\
-  !*** ./lib-for-link/src/item-header/style/comment-form-tool.less ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./comment-form-tool.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/comment-form-tool.less");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./lib-for-link/src/item-header/style/comment.css":
-/*!********************************************************!*\
-  !*** ./lib-for-link/src/item-header/style/comment.css ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!./comment.css */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-header/style/comment.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -8989,21 +9035,6 @@ exports.push([module.i, "@media print{#masthead{border-bottom:1px solid grey;pos
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-header/style/comment.css":
-/*!****************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./lib-for-link/src/item-header/style/comment.css ***!
-  \****************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
-// Module
-exports.push([module.i, "#comment-editor{width:100%;height:210px;border-width:0}#comment-editor.hide{display:none}#comments-block img.favicon{height:16px;width:16px;margin-bottom:-2px}#disqus_thread{overflow:hidden;background:#fff;border-bottom:2px solid #ddd;padding:25px}#main div.comments#comments{min-height:0}", "",{"version":3,"sources":["comment.css"],"names":[],"mappings":"AAAA,gBACE,UAAW,CACX,YAAa,CACb,cACF,CAEA,qBACE,YACF,CAEA,4BACE,WAAY,CACZ,UAAW,CACX,kBACF,CAKA,eACE,eAAgB,CAChB,eAAmB,CACnB,4BAAgC,CAChC,YACF,CAEA,4BACE,YACF","file":"comment.css","sourcesContent":["#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n\n#comment-editor.hide {\n  display: none;\n}\n\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom:-2px;\n}\n\n\n/* ************************ */\n\n#disqus_thread {\n  overflow: hidden;\n  background: #FFFFFF;\n  border-bottom: 2px solid #DDDDDD;\n  padding: 25px;\n}\n\n#main div.comments#comments {\n  min-height: initial;\n}"],"sourceRoot":""}]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-header/style/sidebar.css":
 /*!****************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./lib-for-link/src/item-header/style/sidebar.css ***!
@@ -9334,6 +9365,36 @@ exports.push([module.i, ".entry-content{line-height:200%}.entry-content>article>
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/comment-form-tool.less":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/comment-form-tool.less ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".comment-form-tool a button{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #c6c6c6;color:#222;-webkit-transition:all;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);font-weight:700;font-family:arial,sans-serif;font-size:11px;height:27px;padding-bottom:0;text-align:center;text-shadow:0 1px rgba(0,0,0,.1);vertical-align:top;-webkit-appearance:none;box-sizing:border-box;user-select:none;margin:0 8px 6px .5em}.comment-form-tool{font-size:14px;user-select:none}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/comment/comment-form-tool.less","comment-form-tool.less"],"names":[],"mappings":"AAGA,4BACI,wBAAA,CACA,6DAAA,CACA,wBAAA,CACA,UAAA,CACA,sBAAA,CACA,2CAAA,CACA,eAAA,CAEA,4BAAA,CACA,cAAA,CACA,WAAA,CACA,gBAAA,CACA,iBAAA,CACA,gCAAA,CACA,kBAAA,CACA,uBAAA,CACA,qBAAA,CACA,gBAAA,CACA,qBCAJ,CDGA,mBACI,cAAA,CACA,gBCDJ","file":"comment-form-tool.less","sourcesContent":["\n/******************************/\n/* 20170309 上傳圖片 */\n.comment-form-tool a button {\n    background-color: #f8f8f8;\n    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);\n    border: 1px solid #c6c6c6;\n    color: #222;\n    -webkit-transition: all;\n    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);\n    font-weight: bold;\n    margin: 0 8px 6px 0;\n    font-family: arial,sans-serif;\n    font-size: 11px;\n    height: 27px;\n    padding-bottom: 0;\n    text-align: center;\n    text-shadow: 0 1px rgba(0,0,0,.1);\n    vertical-align: top;\n    -webkit-appearance: none;\n    box-sizing: border-box;\n    user-select: none;\n    margin-left: 0.5em;\n}\n\n.comment-form-tool {\n    font-size: 14px;\n    user-select: none;\n}","/******************************/\n/* 20170309 上傳圖片 */\n.comment-form-tool a button {\n  background-color: #f8f8f8;\n  background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);\n  border: 1px solid #c6c6c6;\n  color: #222;\n  -webkit-transition: all;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);\n  font-weight: bold;\n  margin: 0 8px 6px 0;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  height: 27px;\n  padding-bottom: 0;\n  text-align: center;\n  text-shadow: 0 1px rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n  -webkit-appearance: none;\n  box-sizing: border-box;\n  user-select: none;\n  margin-left: 0.5em;\n}\n.comment-form-tool {\n  font-size: 14px;\n  user-select: none;\n}\n"],"sourceRoot":""}]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/comment.less":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/comment.less ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, "#comment-editor{width:100%;height:210px;border-width:0}#comment-editor.hide{display:none}#comments-block img.favicon{height:16px;width:16px;margin-bottom:-2px}#disqus_thread{overflow:hidden;background:#fff;border-bottom:2px solid #ddd;padding:25px}#main div.comments#comments{min-height:0}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/comment/comment.less","comment.less"],"names":[],"mappings":"AAAA,gBACE,UAAA,CACA,YAAA,CACA,cCCF,CDEA,qBACE,YCAF,CDGA,4BACE,WAAA,CACA,UAAA,CACA,kBCDF,CDOA,eACE,eAAA,CACA,eAAA,CACA,4BAAA,CACA,YCJF,CDOA,4BACE,YCLF","file":"comment.less","sourcesContent":["#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n\n#comment-editor.hide {\n  display: none;\n}\n\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom:-2px;\n}\n\n\n/* ************************ */\n\n#disqus_thread {\n  overflow: hidden;\n  background: #FFFFFF;\n  border-bottom: 2px solid #DDDDDD;\n  padding: 25px;\n}\n\n#main div.comments#comments {\n  min-height: initial;\n}","#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n#comment-editor.hide {\n  display: none;\n}\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom: -2px;\n}\n/* ************************ */\n#disqus_thread {\n  overflow: hidden;\n  background: #FFFFFF;\n  border-bottom: 2px solid #DDDDDD;\n  padding: 25px;\n}\n#main div.comments#comments {\n  min-height: initial;\n}\n"],"sourceRoot":""}]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/modules/related-posts/related-posts.less":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/modules/related-posts/related-posts.less ***!
@@ -9389,21 +9450,6 @@ exports.push([module.i, "#main .entry-content article.article{text-align:justify
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
 exports.push([module.i, "#backlinks-container h4{float:left;line-height:1rem;margin-right:25px;cursor:default}#backlinks-container h4:after{bottom:10px;left:inherit;right:-20px}#backlinks-container a[href]{line-height:2.4rem}#backlinks-container p{margin-bottom:0}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-header/style/backlinks.less","backlinks.less"],"names":[],"mappings":"AAAA,wBAEI,UAAA,CACA,gBAAA,CACA,iBAAA,CACA,cCAJ,CDLA,8BAQI,WAAA,CACA,YAAA,CACA,WCAJ,CDVA,6BAcI,kBCDJ,CDbA,uBAkBI,eCFJ","file":"backlinks.less","sourcesContent":["#backlinks-container {\n  h4 {\n    float: left;\n    line-height: 1rem;\n    margin-right: 25px;\n    cursor: default;\n  }\n  h4:after {\n    bottom: 10px;\n    left: inherit;\n    right: -20px;\n  }\n\n  a[href] {\n    line-height: 2.4rem;\n  }\n\n  p {\n    margin-bottom: 0;\n  }\n} ","#backlinks-container h4 {\n  float: left;\n  line-height: 1rem;\n  margin-right: 25px;\n  cursor: default;\n}\n#backlinks-container h4:after {\n  bottom: 10px;\n  left: inherit;\n  right: -20px;\n}\n#backlinks-container a[href] {\n  line-height: 2.4rem;\n}\n#backlinks-container p {\n  margin-bottom: 0;\n}\n"],"sourceRoot":""}]);
-
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/comment-form-tool.less":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/comment-form-tool.less ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
-// Module
-exports.push([module.i, ".comment-form-tool a button{background-color:#f8f8f8;background-image:-webkit-linear-gradient(top,#f8f8f8,#f1f1f1);border:1px solid #c6c6c6;color:#222;-webkit-transition:all;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);font-weight:700;font-family:arial,sans-serif;font-size:11px;height:27px;padding-bottom:0;text-align:center;text-shadow:0 1px rgba(0,0,0,.1);vertical-align:top;-webkit-appearance:none;box-sizing:border-box;user-select:none;margin:0 8px 6px .5em}.comment-form-tool{font-size:14px;user-select:none}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-header/style/comment-form-tool.less","comment-form-tool.less"],"names":[],"mappings":"AAGA,4BACI,wBAAA,CACA,6DAAA,CACA,wBAAA,CACA,UAAA,CACA,sBAAA,CACA,2CAAA,CACA,eAAA,CAEA,4BAAA,CACA,cAAA,CACA,WAAA,CACA,gBAAA,CACA,iBAAA,CACA,gCAAA,CACA,kBAAA,CACA,uBAAA,CACA,qBAAA,CACA,gBAAA,CACA,qBCAJ,CDGA,mBACI,cAAA,CACA,gBCDJ","file":"comment-form-tool.less","sourcesContent":["\n/******************************/\n/* 20170309 上傳圖片 */\n.comment-form-tool a button {\n    background-color: #f8f8f8;\n    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);\n    border: 1px solid #c6c6c6;\n    color: #222;\n    -webkit-transition: all;\n    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);\n    font-weight: bold;\n    margin: 0 8px 6px 0;\n    font-family: arial,sans-serif;\n    font-size: 11px;\n    height: 27px;\n    padding-bottom: 0;\n    text-align: center;\n    text-shadow: 0 1px rgba(0,0,0,.1);\n    vertical-align: top;\n    -webkit-appearance: none;\n    box-sizing: border-box;\n    user-select: none;\n    margin-left: 0.5em;\n}\n\n.comment-form-tool {\n    font-size: 14px;\n    user-select: none;\n}","/******************************/\n/* 20170309 上傳圖片 */\n.comment-form-tool a button {\n  background-color: #f8f8f8;\n  background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);\n  border: 1px solid #c6c6c6;\n  color: #222;\n  -webkit-transition: all;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);\n  font-weight: bold;\n  margin: 0 8px 6px 0;\n  font-family: arial, sans-serif;\n  font-size: 11px;\n  height: 27px;\n  padding-bottom: 0;\n  text-align: center;\n  text-shadow: 0 1px rgba(0, 0, 0, 0.1);\n  vertical-align: top;\n  -webkit-appearance: none;\n  box-sizing: border-box;\n  user-select: none;\n  margin-left: 0.5em;\n}\n.comment-form-tool {\n  font-size: 14px;\n  user-select: none;\n}\n"],"sourceRoot":""}]);
 
 
 

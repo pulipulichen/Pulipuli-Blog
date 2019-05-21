@@ -188,20 +188,65 @@ let displayComment = function () {
 
 };
 
+
 let addSubCommentReplyLink = () => {
   
   // 為每個回覆的留言後面加上回覆的連結
-  var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">回覆</a>').click(function () {
+  var _reply_link = $('<a kind="i" href="javascript:void(0);" target="_self" o="r">' + '回覆' + '</a>').click(function () {
     //console.log('OK')
     //console.log($(this).parents(".comment-replies:first").prev().find('a.comment-reply:first').length)
     $(this).parents(".comment-replies:first").prev().find('a.comment-reply:first')[0].click();
     var _top = $("#comment-editor:first").offset().top - $("#masthead .container:first").height();
     window.scrollTo(0, _top);
+    initTopContinueButton()
+    //console.log('addSubCommentReplyLink')
+    //console.log([$('#top-continue').length, $('#top-continue').html()])
+    
+    
+    /*
+    $('#top-continue a.comment-reply').text('取消回覆，新增主題留言')
+    
+    $('#top-continue a.comment-reply').click(function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false
+    })
+    */
   });
   var _div = $(".comment-replies ol li.comment span.comment-actions");
   for (var _i = 0; _i < _div.length; _i++) {
     _div.eq(_i).prepend(_reply_link.clone(true));
   }
+}
+
+let isInitTopContinueButton = false
+let topContinueButton = null
+let initTopContinueButton = () => {
+  let button
+  if (isInitTopContinueButton === true) {
+    topContinueButton.show()
+    return
+  }
+  
+  let topContinue = $('#top-continue')
+  button = topContinue.clone()
+          .attr('id', 'top-continue-clone')
+          .insertAfter(topContinue)
+  
+  button.find('a').text('取消回覆，新增主題留言')
+  
+  button.click(() => {
+    if (window.confirm('你確定要取消回覆，新增主題留言嗎？') === false) {
+      return
+    }
+    topContinue.find('a')[0].click()
+    button.hide()
+  })
+  
+  topContinue.hide()
+  
+  isInitTopContinueButton = true
+  topContinueButton = button
 }
 
 $(() => {
