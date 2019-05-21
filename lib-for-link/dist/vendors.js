@@ -3133,6 +3133,7 @@ __webpack_require__(/*! ./modules/related-posts/related-posts.js */ "./lib-for-l
 __webpack_require__(/*! ./comment/comment.js */ "./lib-for-link/src/item-footer/comment/comment.js")
 
 __webpack_require__(/*! ./toc/toc.js */ "./lib-for-link/src/item-footer/toc/toc.js")
+__webpack_require__(/*! ./toc/toc.less */ "./lib-for-link/src/item-footer/toc/toc.less")
 
 /***/ }),
 
@@ -6033,7 +6034,13 @@ $(() => {
  */
 PULI_UTILS.post.toc = function (cata_container, heading) {
   var i, top;
-
+  let cateID = 'postcata' + PULI_UTILS.create_page_id()
+  let isCached = false
+  
+  let cachedHTML = localStorage.getItem(cateID)
+  if (cachedHTML !== null) {
+    isCached = true
+  }
 
   //if (PULI_UTILS.is_blogger_fullpage() === false) {
   //	return;
@@ -6052,27 +6059,41 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
      * @returns {Array}
      */
     var postBody = $("#main article.article:first");
+
+    /**
+     * 如果已經有cata-title元素，則不使用本功能
+     */
+    if (postBody.find('.cate-title').length > 0) {
+      return;
+    }
     
     let headingTag = ['h4', 'h5']
     if (postBody.find("h2").length > 0) {
       headingTag = ['h2', 'h3']
+      postBody.addClass('heading-h2-h3')
     }
-    console.log(headingTag)
+    else {
+      postBody.addClass('heading-h4-h5')
+    }
+    //console.log(headingTag)
     
     if (typeof heading === "undefined") {
       heading = headingTag[0];
     }
 
     //PULI_UTILS.log('post.toc', '2');
+    var firstHeading = $('div.entry-content:first > article > ' + heading + ':first');
+    cleanFirstHeading(firstHeading)
 
-    if (typeof cata_container === "undefined") {
+    if (isCached === false 
+            && typeof cata_container === "undefined") {
 
       //先檢查是否有取消目錄的功能
       if ($('div.entry-content .disable-post-catalog').length > 0) {
         return;
       }
 
-      var firstHeading = $('div.entry-content:first > article > ' + heading + ':first');
+      
 
       //PULI_UTILS.log('post.toc 2-1 firstHeading.length:', firstHeading.length );
 
@@ -6080,119 +6101,44 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
         return;
       }
 
-      //如果firstHeading之前有<font size="3"></font>，則移除之
-      var font = firstHeading.prev().filter('font');
-      if (font.length > 0) {
-        font.remove();
-      }
-
-      //如果firstHeading之前有hr，則移除之
-      var hr = firstHeading.prev().filter('hr');
-      if (hr.length > 0) {
-        hr.remove();
-        /*console.log("有<hr />");*/
-      } else {
-        var div = firstHeading.prevAll("div:first");
-        hr = div.children(':last').filter('hr');
-        if (hr.length > 0) {
-          hr.remove();
-          /*console.log("有 div > hr");*/
-        } else {
-          var p = firstHeading.prevAll("p:first");
-          //p.css("border", "1px solid red");
-          //console.log([p.length, p.html()]);
-          hr = p.children().filter('hr');
-          if (hr.length > 0) {
-            hr.remove();
-            /*console.log("有 p > hr");*/
-          } else {
-            hr = p.prev().filter("hr");
-            if (hr.length > 0) {
-              hr.remove();
-            }
-            //console.log(["p裡面找不到", p.length, p.children().length, p.html() ]);
-          }
-          if ($.trim(p.html()) === "") {
-            p.remove();
-            //console.log('p 也移除囉');
-          }
-        }
-      }
-
-      //var p = firstHeading.prevAll("p:first");
-      //console.log(firstHeading.html());
-      //console.log(p.children().length);
-      //if (p.length > 0) {
-      //	p.remove();
-      //}
-
       cata_container = $('<span></span>')
               .addClass("puli-utils-append")
               .hide()
-              .insertBefore(firstHeading);
-      cata_container.attr('id', 'postcata' + PULI_UTILS.create_page_id());
+              .insertBefore(firstHeading)
+      cata_container.attr('id', cateID)
+    }
+    else {
+      //console.log(cachedHTML)
+      //console.log(firstHeading.length)
+      cata_container = $(cachedHTML).insertBefore(firstHeading)
     }
 
     //get cataSlt ID
-    var cata = jQuery(cata_container);
-    var prefix = cata.attr("id");
+    //var cata = jQuery(cata_container)
+    var prefix = cateID
 
     //postBody.css("border", "1px solid red");
 
-    if (postBody.find('.cate-title').length > 0) {
-      return;
-    }
 
     //PULI_UTILS.log('post.toc', '3');
 
-    var headingAry = postBody.find(headingTag.join(','))
-
-    var headingTop = [];
-    var topId = {};
-    for (i = 0; i < headingAry.length; i++) {
-      heading = headingAry.eq(i);
-      top = heading.offset().top;
-      topId[top] = heading;
-      headingTop.push(top);
-    }
-
-    if (headingTop.length === 1) {
-      hr = firstHeading.prevAll().filter('hr');
-      if (hr.length === 0) {
-        firstHeading.before("<hr />");
-      }
-      return;
-    }
-
-    //然後將headingTop排序
-    headingTop.sort(function (a, b) {
-      return a - b;
-    });
-
-    //重新輸入headingAry
-    headingAry = [];
-    for (i = 0; i < headingTop.length; i++) {
-      top = headingTop[i];
-      heading = topId[top];
-      headingAry.push(heading);
-    }
-
-    //PULI_UTILS.log('post.toc', '4');
-
-    //headingAry.css("border", "1px solid red");
+    var headingAry = getHeadingAry(postBody, headingTag, firstHeading)
 
     var cataTitleID = prefix + "cataTitle";
     var cataTitle = jQuery('<a class="puli-utils-append" name="' + cataTitleID + '" id="' + cataTitleID + '" />');
-
     var goCata = jQuery('<a class="puli-utils-append heading-button" href="#' + cataTitleID + '">'
             + '<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>'
             + '</a>');
 
-    var ulObj = jQuery("<ul></ul>")
-            .addClass("puli-toc")
-            .addClass("puli-utils-append")
+    var ulObj
+    if (isCached === false) {
+      ulObj = jQuery("<ul></ul>")
+              .addClass("puli-toc")
+              .addClass("puli-utils-append")
+    }
 
     //在每個Heading後面加入錨點
+    //console.log(headingAry)
     for (i = 0; i < headingAry.length; i++) {
       var hdObj = headingAry[i];
 
@@ -6211,25 +6157,29 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
       if (typeof (tagName) === "string") {
         tagName = tagName.toLowerCase();
       }
+      
+      // -----------------------------------
 
-      var hd = jQuery("<li><a href='#" + anchorID + "'>" + title + "</a></li>");
+      if (isCached === false) {
+        var hd = jQuery("<li><a href='#" + anchorID + "'>" + title + "</a></li>");
 
-      if (tagName === headingTag[0]) {
-        ulObj.append(hd);
-      } else if (tagName === headingTag[1]) {
+        if (tagName === headingTag[0]) {
+          ulObj.append(hd);
+        } else if (tagName === headingTag[1]) {
 
-        var lastHd = ulObj.children('li:last');
+          var lastHd = ulObj.children('li:last');
 
-        if (lastHd.length === 0) {
-          lastHd = $('<li></li>').appendTo(ulObj);
+          if (lastHd.length === 0) {
+            lastHd = $('<li></li>').appendTo(ulObj);
+          }
+
+          var lastUl = lastHd.children("ul:last");
+
+          if (lastUl.length === 0) {
+            lastUl = $('<ul></ul>').appendTo(lastHd);
+          }
+          lastUl.append(hd);
         }
-
-        var lastUl = lastHd.children("ul:last");
-
-        if (lastUl.length === 0) {
-          lastUl = $('<ul></ul>').appendTo(lastHd);
-        }
-        lastUl.append(hd);
       }
       //ulObj.append(hd);
     }
@@ -6240,24 +6190,160 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
      * 顯示目錄
      */
     //console.log(headingAry.length)
-    if (headingAry.length > 1) {
+    if (isCached === false) {
+      if (headingAry.length > 1) {
+        cata_container.append(cataTitle)
+                .append(ulObj)
+                .slideDown();
 
-      cata_container.append(cataTitle)
-              .append(ulObj)
-              .slideDown();
-
-      cata_container.prepend('<hr class="puli-utils-append" />');
-      cata_container.append('<hr class="puli-utils-append" />');
+        cata_container.prepend('<hr class="puli-utils-append" />');
+        cata_container.append('<hr class="puli-utils-append" />');
+      }
     }
-
+    else {
+      cata_container.slideDown();
+    }
+    
+    if (isCached === false) {
+      let html = cata_container.prop('outerHTML')
+      html = html.replace('overflow: hidden;', '')
+      cata_container.find('.puli-toc').dblclick(() => {
+        localStorage.removeItem(cateID)
+      })
+      //console.log(html)
+      
+      localStorage.setItem(cateID, html)
+    }
+  
   });	//$(function () {
 
   //PULI_UTILS.log('post.toc', '6');
+  
 };
+
+let getHeadingAry = function (postBody, headingTag, firstHeading) {
+  let top;
+  
+  var headingAry = postBody.find(headingTag.join(','))
+  
+  var headingTop = [];
+  var topId = {};
+  for (let i = 0; i < headingAry.length; i++) {
+    let heading = headingAry.eq(i);
+    top = heading.offset().top;
+    topId[top] = heading;
+    headingTop.push(top);
+  }
+
+  if (headingTop.length === 1) {
+    let hr = firstHeading.prevAll().filter('hr');
+    if (hr.length === 0) {
+      firstHeading.before("<hr />");
+    }
+    return;
+  }
+
+  //然後將headingTop排序
+  headingTop.sort(function (a, b) {
+    return a - b;
+  });
+
+  //重新輸入headingAry
+  headingAry = [];
+  for (let i = 0; i < headingTop.length; i++) {
+    top = headingTop[i];
+    heading = topId[top];
+    headingAry.push(heading);
+  }
+  
+  return headingAry
+}
+
+let cleanFirstHeading = function (firstHeading) {
+  if (firstHeading.length === 0) {
+    return;
+  }
+
+  //如果firstHeading之前有<font size="3"></font>，則移除之
+  var font = firstHeading.prev().filter('font');
+  if (font.length > 0) {
+    font.remove();
+  }
+
+  //如果firstHeading之前有hr，則移除之
+  var hr = firstHeading.prev().filter('hr');
+  if (hr.length > 0) {
+    hr.remove();
+    /*console.log("有<hr />");*/
+  } else {
+    var div = firstHeading.prevAll("div:first");
+    hr = div.children(':last').filter('hr');
+    if (hr.length > 0) {
+      hr.remove();
+      /*console.log("有 div > hr");*/
+    } else {
+      var p = firstHeading.prevAll("p:first");
+      //p.css("border", "1px solid red");
+      //console.log([p.length, p.html()]);
+      hr = p.children().filter('hr');
+      if (hr.length > 0) {
+        hr.remove();
+        /*console.log("有 p > hr");*/
+      } else {
+        hr = p.prev().filter("hr");
+        if (hr.length > 0) {
+          hr.remove();
+        }
+        //console.log(["p裡面找不到", p.length, p.children().length, p.html() ]);
+      }
+      if ($.trim(p.html()) === "") {
+        p.remove();
+        //console.log('p 也移除囉');
+      }
+    }
+  }
+
+  //var p = firstHeading.prevAll("p:first");
+  //console.log(firstHeading.html());
+  //console.log(p.children().length);
+  //if (p.length > 0) {
+  //	p.remove();
+  //}
+}
 
 $(function () {
   PULI_UTILS.post.toc();
 });
+
+/***/ }),
+
+/***/ "./lib-for-link/src/item-footer/toc/toc.less":
+/*!***************************************************!*\
+  !*** ./lib-for-link/src/item-footer/toc/toc.less ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./toc.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/toc/toc.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -6272,7 +6358,7 @@ __webpack_require__(/*! ./style/article.less */ "./lib-for-link/src/item-header/
 __webpack_require__(/*! ./style/comment.css */ "./lib-for-link/src/item-header/style/comment.css")
 __webpack_require__(/*! ./style/go-top.less */ "./lib-for-link/src/item-header/style/go-top.less")
 __webpack_require__(/*! ./style/image.less */ "./lib-for-link/src/item-header/style/image.less")
-__webpack_require__(/*! ./style/backlinks.css */ "./lib-for-link/src/item-header/style/backlinks.css")
+__webpack_require__(/*! ./style/backlinks.less */ "./lib-for-link/src/item-header/style/backlinks.less")
 __webpack_require__(/*! ./style/sidebar.css */ "./lib-for-link/src/item-header/style/sidebar.css")
 __webpack_require__(/*! ./style/comment-form-tool.less */ "./lib-for-link/src/item-header/style/comment-form-tool.less")
 __webpack_require__(/*! ./style/style-item.css */ "./lib-for-link/src/item-header/style/style-item.css")
@@ -6469,15 +6555,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./lib-for-link/src/item-header/style/backlinks.css":
-/*!**********************************************************!*\
-  !*** ./lib-for-link/src/item-header/style/backlinks.css ***!
-  \**********************************************************/
+/***/ "./lib-for-link/src/item-header/style/backlinks.less":
+/*!***********************************************************!*\
+  !*** ./lib-for-link/src/item-header/style/backlinks.less ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!./backlinks.css */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-header/style/backlinks.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./backlinks.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/backlinks.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -8903,21 +8989,6 @@ exports.push([module.i, "@media print{#masthead{border-bottom:1px solid grey;pos
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-header/style/backlinks.css":
-/*!******************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./lib-for-link/src/item-header/style/backlinks.css ***!
-  \******************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
-// Module
-exports.push([module.i, "#backlinks-container h4{float:left;line-height:1rem;margin-right:25px;cursor:default}#backlinks-container h4:after{bottom:10px;left:inherit;right:-20px}#backlinks-container a[href]{line-height:2.4rem}#backlinks-container p{margin-bottom:0}", "",{"version":3,"sources":["backlinks.css"],"names":[],"mappings":"AAAA,wBACE,UAAW,CACX,gBAAiB,CACjB,iBAAkB,CAClB,cACF,CAEA,8BACE,WAAY,CACZ,YAAa,CACb,WACF,CAEA,6BACE,kBACF,CAEA,uBACE,eACF","file":"backlinks.css","sourcesContent":["#backlinks-container h4 {\n  float: left;\n  line-height: 1rem;\n  margin-right: 25px;\n  cursor: default;\n}\n\n#backlinks-container h4:after {\n  bottom: 10px;\n  left: inherit;\n  right: -20px;\n}\n\n#backlinks-container a[href] {\n  line-height: 2.4rem;\n}\n\n#backlinks-container p {\n  margin-bottom: 0;\n}"],"sourceRoot":""}]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-header/style/comment.css":
 /*!****************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./lib-for-link/src/item-header/style/comment.css ***!
@@ -9278,6 +9349,21 @@ exports.push([module.i, ".related-posts{overflow:hidden;z-index:100;background:#
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/toc/toc.less":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/toc/toc.less ***!
+  \************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".entry-content article.heading-h2-h3 h2{font-size:24pt;color:#bd8a39;margin-top:1.5em;margin-bottom:1em}.entry-content article.heading-h2-h3 h3{font-size:20pt;color:#bd8a39;margin-top:1.5em;margin-bottom:1em}.entry-content article.heading-h2-h3 h4{font-size:18pt;font-style:italic;color:#bd8a39;margin-top:1.5em;margin-bottom:1em}.entry-content article.heading-h4-h5 h4{font-size:24pt;color:#bd8a39;margin-top:1.5em;margin-bottom:1em}.entry-content article.heading-h4-h5 h5{font-size:20pt;color:#bd8a39;margin-top:1.5em;margin-bottom:1em}.entry-content article.heading-h4-h5 h6{font-size:18pt;font-style:italic;color:#bd8a39;margin-top:1.5em;margin-bottom:1em}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/toc/toc.less","toc.less"],"names":[],"mappings":"AAAA,wCAEI,cAAA,CACA,aAAA,CACA,gBAAA,CACA,iBCAJ,CDLA,wCASI,cAAA,CACA,aAAA,CACA,gBAAA,CACA,iBCDJ,CDXA,wCAgBI,cAAA,CACA,iBAAA,CACA,aAAA,CACA,gBAAA,CACA,iBCFJ,CDMA,wCAEI,cAAA,CACA,aAAA,CACA,gBAAA,CACA,iBCLJ,CDAA,wCASI,cAAA,CACA,aAAA,CACA,gBAAA,CACA,iBCNJ,CDNA,wCAgBI,cAAA,CACA,iBAAA,CACA,aAAA,CACA,gBAAA,CACA,iBCPJ","file":"toc.less","sourcesContent":[".entry-content article.heading-h2-h3 {\n  h2 {\n    font-size: 24pt;\n    color:#BD8A39;\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n  }\n\n  h3 {\n    font-size: 20pt;\n    color:#BD8A39;\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n  }\n\n  h4 {\n    font-size: 18pt;\n    font-style: italic;\n    color:#BD8A39;\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n  }\n}\n\n.entry-content article.heading-h4-h5 {\n  h4 {\n    font-size: 24pt;\n    color:#BD8A39;\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n  }\n\n  h5 {\n    font-size: 20pt;\n    color:#BD8A39;\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n  }\n\n  h6 {\n    font-size: 18pt;\n    font-style: italic;\n    color:#BD8A39;\n    margin-top: 1.5em;\n    margin-bottom: 1em;\n  }\n}",".entry-content article.heading-h2-h3 h2 {\n  font-size: 24pt;\n  color: #BD8A39;\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n}\n.entry-content article.heading-h2-h3 h3 {\n  font-size: 20pt;\n  color: #BD8A39;\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n}\n.entry-content article.heading-h2-h3 h4 {\n  font-size: 18pt;\n  font-style: italic;\n  color: #BD8A39;\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n}\n.entry-content article.heading-h4-h5 h4 {\n  font-size: 24pt;\n  color: #BD8A39;\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n}\n.entry-content article.heading-h4-h5 h5 {\n  font-size: 20pt;\n  color: #BD8A39;\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n}\n.entry-content article.heading-h4-h5 h6 {\n  font-size: 18pt;\n  font-style: italic;\n  color: #BD8A39;\n  margin-top: 1.5em;\n  margin-bottom: 1em;\n}\n"],"sourceRoot":""}]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/article.less":
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/article.less ***!
@@ -9288,6 +9374,21 @@ exports.push([module.i, ".related-posts{overflow:hidden;z-index:100;background:#
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
 exports.push([module.i, "#main .entry-content article.article{text-align:justify}#main .entry-content article.article .meta1 .item-control a{margin-right:.5rem;white-space:nowrap;cursor:pointer}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-header/style/article.less","article.less"],"names":[],"mappings":"AAAA,qCACE,kBCCF,CDFA,4DAII,kBAAA,CACA,kBAAA,CACA,cCCJ","file":"article.less","sourcesContent":["#main .entry-content article.article {\n  text-align: justify;\n  \n  .meta1 .item-control a {\n    margin-right: 0.5rem;\n    white-space: nowrap;\n    cursor: pointer;\n  }\n} ","#main .entry-content article.article {\n  text-align: justify;\n}\n#main .entry-content article.article .meta1 .item-control a {\n  margin-right: 0.5rem;\n  white-space: nowrap;\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/backlinks.less":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/backlinks.less ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, "#backlinks-container h4{float:left;line-height:1rem;margin-right:25px;cursor:default}#backlinks-container h4:after{bottom:10px;left:inherit;right:-20px}#backlinks-container a[href]{line-height:2.4rem}#backlinks-container p{margin-bottom:0}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-header/style/backlinks.less","backlinks.less"],"names":[],"mappings":"AAAA,wBAEI,UAAA,CACA,gBAAA,CACA,iBAAA,CACA,cCAJ,CDLA,8BAQI,WAAA,CACA,YAAA,CACA,WCAJ,CDVA,6BAcI,kBCDJ,CDbA,uBAkBI,eCFJ","file":"backlinks.less","sourcesContent":["#backlinks-container {\n  h4 {\n    float: left;\n    line-height: 1rem;\n    margin-right: 25px;\n    cursor: default;\n  }\n  h4:after {\n    bottom: 10px;\n    left: inherit;\n    right: -20px;\n  }\n\n  a[href] {\n    line-height: 2.4rem;\n  }\n\n  p {\n    margin-bottom: 0;\n  }\n} ","#backlinks-container h4 {\n  float: left;\n  line-height: 1rem;\n  margin-right: 25px;\n  cursor: default;\n}\n#backlinks-container h4:after {\n  bottom: 10px;\n  left: inherit;\n  right: -20px;\n}\n#backlinks-container a[href] {\n  line-height: 2.4rem;\n}\n#backlinks-container p {\n  margin-bottom: 0;\n}\n"],"sourceRoot":""}]);
 
 
 
