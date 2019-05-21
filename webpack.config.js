@@ -8,6 +8,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const WebpackShellPlugin = require('webpack-shell-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+let compileCount = 0
+
 /**
  * 列出檔案清單
  * @author Pulipuli Chen 20190303
@@ -28,8 +32,6 @@ function getFilelist(dir) {
           .map(item => './' + item)
   return filelist
 }
-
-
 module.exports = (env, argv) => {
   if (argv.mode === undefined) {
     argv.mode = 'development'
@@ -95,13 +97,35 @@ module.exports = (env, argv) => {
       splitChunks: {
         cacheGroups: {
           commons: {
-            test: /[\\/]node_modules[\\/]/,
+            //test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all'
           }
         }
       }
     },
+    plugins: [
+      {
+        apply: (compiler) => {
+          compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
+            let paddingZero = (n) => {
+              if (n < 10) {
+                n = '0' + n
+              }
+              return n
+            }
+            setTimeout(() => {
+              compileCount++
+              let date = new Date;
+              let seconds = paddingZero(date.getSeconds())
+              let minutes = paddingZero(date.getMinutes())
+              let hour = paddingZero(date.getHours())
+              console.warn(`[${compileCount}] Building completed at ${hour}:${minutes}:${seconds}`)
+            }, 100)
+          });
+        } // apply: (compiler) => {
+      }
+    ]
   }
 
 
@@ -148,6 +172,13 @@ module.exports = (env, argv) => {
         sourceMap: false // set to true if you want JS source maps
       })
     ]
+    
+    if (argv.watch === false) {
+      if (Array.isArray(webpackConfig.plugins) === false) {
+        webpackConfig.plugins = []
+      }
+      webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+    }
   }
   
   // ----------------------------------------
