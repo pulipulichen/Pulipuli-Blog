@@ -8,7 +8,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const WebpackShellPlugin = require('webpack-shell-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 let compileCount = 0
 
@@ -97,7 +97,7 @@ module.exports = (env, argv) => {
       splitChunks: {
         cacheGroups: {
           commons: {
-            //test: /[\\/]node_modules[\\/]/,
+            test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all'
           }
@@ -177,7 +177,7 @@ module.exports = (env, argv) => {
       if (Array.isArray(webpackConfig.plugins) === false) {
         webpackConfig.plugins = []
       }
-      webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+      //webpackConfig.plugins.push(new BundleAnalyzerPlugin())
     }
   }
   
