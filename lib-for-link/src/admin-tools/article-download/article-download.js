@@ -22,7 +22,7 @@ let extractExt = function (link) {
   return ext
 }
 
-window.articleDownload = {
+let articleDownload = {
   getRenderedPost: function () {
     let article = $('#main .post .entry-content > article').clone()
     
@@ -500,3 +500,6 @@ window.articleDownload = {
     */
   }
 }
+
+window.articleDownload = articleDownload
+export default articleDownload

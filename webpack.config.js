@@ -52,7 +52,7 @@ module.exports = (env, argv) => {
       'global-footer': './lib-for-link/src/global-footer/global-footer.js',
       'item-header': './lib-for-link/src/item-header/item-header.js',
       'item-footer': './lib-for-link/src/item-footer/item-footer.js',
-      'admin-tools': './lib-for-link/src/item-footer/item-footer.js',
+      'admin-tools': './lib-for-link/src/admin-tools/admin-tools.js',
       'page': getFilelist('./lib-for-link/src/page/'),
     },
     output: {
