@@ -12,6 +12,19 @@
                   <b:if cond='data:title'>
                     <h2><data:title/></h2>
                   </b:if>
+                  <div class='widget-content'>
+                    <div id='labelsTool'>
+                      <div class="page-tool">
+                        <a class="copy-labels">
+                          <button type="button">
+                            <i class="fa fa-copy" aria-hidden="true"></i>
+                            Copy Labels
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                    <b:include name='quickedit'/>
+                  </div>
                   <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
                     <b:if cond='data:display == &quot;list&quot;'>
                       <ul>
