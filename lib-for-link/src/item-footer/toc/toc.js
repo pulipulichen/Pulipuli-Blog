@@ -132,6 +132,43 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
        */
       let permanentLink = jQuery('<a class="heading-permanent-link puli-utils-append" href="#' + anchorID + '"><i aria-hidden="true" class="fa fa-link"></i></a>');
       hdObj.prepend(permanentLink);
+      
+      permanentLink.click(function (event) {
+        
+        /*
+        let url = location.href
+        if (url.indexOf('#') > 0) {
+          url = url.slice(0, url.indexOf('#'))
+        }
+        */
+        url = this.href
+        
+        var textArea = document.createElement("textarea");
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        
+        var doc = document.documentElement;
+        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        textArea.style.position = 'absolute'
+        textArea.style.top = top + 'px'
+        
+        textArea.focus();
+        textArea.select();
+
+        try {
+          var successful = document.execCommand('copy');
+          var msg = successful ? 'successful' : 'unsuccessful';
+          //console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+        
+        event.preventDefault()
+        event.stopPropagation()
+        return false
+      })
 
       hdObj.prepend(goCata.clone());
 
