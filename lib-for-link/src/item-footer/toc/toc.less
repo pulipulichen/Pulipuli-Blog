@@ -45,3 +45,22 @@
     margin-bottom: 1em;
   }
 }
+
+.entry-content article .heading-permanent-link {
+  position: absolute;
+  margin-left: -2rem !important;
+  //display: none;
+  opacity: 0;
+  transition: opacity 0.2s 1s ease;  /* Mouse leave: immediate */
+}
+
+.entry-content article {
+  h2:hover .heading-permanent-link,
+  h3:hover .heading-permanent-link,
+  h4:hover .heading-permanent-link,
+  h5:hover .heading-permanent-link,
+  h6:hover .heading-permanent-link {
+    opacity: 1;
+    transition: opacity 0.2s 0 ease;
+  }
+}

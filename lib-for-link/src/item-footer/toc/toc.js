@@ -1,4 +1,6 @@
 
+/* global PULI_UTILS */
+
 /**
  * Table of Content
  * for Pulipuli.blogspot.tw
@@ -123,6 +125,13 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
 
       var anc = jQuery('<a class="heading-anchor puli-utils-append" id="' + anchorID + '" name="' + anchorID + '" />');
       hdObj.prepend(anc);
+      
+      /**
+       * @author Pulipuli Chen 20190929
+       * 與此同時，也在每個Heading前面加上錨點
+       */
+      let permanentLink = jQuery('<a class="heading-permanent-link puli-utils-append" href="#' + anchorID + '"><i aria-hidden="true" class="fa fa-link"></i></a>');
+      hdObj.prepend(permanentLink);
 
       hdObj.prepend(goCata.clone());
 
