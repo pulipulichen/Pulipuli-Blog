@@ -15,10 +15,10 @@ TableUtil = {
       
       label.click(function () {
         let table = $(this).next()
-        let html = table.prop('outerHTML')
+        //let html = table.prop('outerHTML')
         
         //console.log(html)
-        CopyPasteHelper.copyRichFormat(html)
+        CopyPasteHelper.copyRichFormat(table)
       })
     })
   }

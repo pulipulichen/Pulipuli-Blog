@@ -25,6 +25,15 @@ CopyPasteHelper = {
     e.preventDefault();
   },
   copyRichFormat: function (str) {
+    if (typeof(str) === 'object') {
+      if (typeof(str.outerHTML) === 'string') {
+        str = str.outerHTML
+      }
+      if (typeof(str.prop) === 'function') {
+        str = str.prop('outerHTML')
+      }
+    }
+    
     document.addEventListener("copy", (e) => {
       this.copyRichFormatListener(e, str)
     });
