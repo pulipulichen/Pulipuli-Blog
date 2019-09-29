@@ -1,4 +1,5 @@
 <div class="comment-form-tool">
+  <!--
   留言工具:
   <a href="//imgur.com/upload" target="_blank" class="imgur-btn">
     <button type="button">
@@ -24,15 +25,6 @@
       程式碼轉換
     </button>
   </a>
-  <!--
-  <a href="/feeds/501119240898359739/comments/full" 
-     target="_blank" class="feed xml">
-      <button type="button">
-          <i class="fa fa-code" aria-hidden="true"></i>
-          留言資料 (XML)
-      </button>
-  </a>
-  -->
   <a expr:href='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full&quot;' 
      target="_blank" class="feed xml">
     <button type="button">
@@ -47,4 +39,43 @@
       留言資料 (JSON)
     </button>
   </a>
+  -->
+  
+  <label for="CommentToolsSelect">
+    Comment Tools: 
+  </label>
+  
+  <select id="CommentToolsSelect" class="comment-tools-select">
+    <option selected="selected">Choose one...</option>
+    <option value="upload-image" 
+            data-tool-type="open-url" 
+            data-url="//imgur.com/upload">
+      Upload Image (imgur)
+    </option>
+    <option value="upload-video" 
+            data-tool-type="open-url" 
+            data-url="//streamable.com">
+      Upload Video (Streamable)
+    </option>
+    <option value="upload-file" 
+            data-tool-type="open-url" 
+            data-url="//file.town">
+      Upload File (File.Town)
+    </option>
+    <option value="convert-code" 
+            data-tool-type="open-url" 
+            data-url="/2008/05/blog-post_09.html">
+      Convert Code
+    </option>
+    <option value="open-comment-feed" 
+            data-tool-type="open-url" 
+            expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full?alt=json&quot;'>
+      Comments Feed (JSON format)
+    </option>
+    <option value="open-comment-feed" 
+            data-tool-type="open-url" 
+            expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full&quot;'>
+      Comments Feed (XML format)
+    </option>
+  </select>
 </div>
