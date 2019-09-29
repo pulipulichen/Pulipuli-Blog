@@ -693,7 +693,6 @@ __webpack_require__(/*! ./blogger-feed-loader/comment-lib.js */ "./lib-for-link/
 __webpack_require__(/*! ./blogger-feed-loader/init.js */ "./lib-for-link/src/global-footer/blogger-feed-loader/init.js")
 __webpack_require__(/*! ./cookie-banner/cookie-banner.less */ "./lib-for-link/src/global-footer/cookie-banner/cookie-banner.less")
 __webpack_require__(/*! ./cookie-banner/cookie-banner.js */ "./lib-for-link/src/global-footer/cookie-banner/cookie-banner.js")
-__webpack_require__(/*! ./scripts/ask-add-homepage.js */ "./lib-for-link/src/global-footer/scripts/ask-add-homepage.js")
 
 /***/ }),
 
@@ -1080,25 +1079,6 @@ var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/a
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-
-/***/ "./lib-for-link/src/global-footer/scripts/ask-add-homepage.js":
-/*!********************************************************************!*\
-  !*** ./lib-for-link/src/global-footer/scripts/ask-add-homepage.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 76 and later from showing the mini-infobar
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-  showInstallPromotion();
-});
-*/
 
 /***/ }),
 
