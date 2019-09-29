@@ -48,35 +48,42 @@
   <select id="CommentToolsSelect" class="comment-tools-select">
     <option selected="selected"
             value="">Choose one...</option>
-    <option value="upload-image" 
-            data-tool-type="open-url" 
-            data-url="//imgur.com/upload">
-      Upload Image (imgur)
-    </option>
-    <option value="upload-video" 
-            data-tool-type="open-url" 
-            data-url="//streamable.com">
-      Upload Video (Streamable)
-    </option>
-    <option value="upload-file" 
-            data-tool-type="open-url" 
-            data-url="//file.town">
-      Upload File (File.Town)
-    </option>
+    
+    <optgroup label="Upload">
+      <option value="upload-image" 
+              data-tool-type="open-url" 
+              data-url="//imgur.com/upload">
+        Upload Image (imgur)
+      </option>
+      <option value="upload-video" 
+              data-tool-type="open-url" 
+              data-url="//streamable.com">
+        Upload Video (Streamable)
+      </option>
+      <option value="upload-file" 
+              data-tool-type="open-url" 
+              data-url="//file.town">
+        Upload File (File.Town)
+      </option>
+    </optgroup>
+    <optgroup label="Writing">
     <option value="convert-code" 
             data-tool-type="open-url" 
             data-url="/2008/05/blog-post_09.html">
       Convert Code
     </option>
-    <option value="open-comment-feed" 
-            data-tool-type="open-url" 
-            expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full?alt=json&quot;'>
-      Comments Feed (JSON format)
-    </option>
-    <option value="open-comment-feed" 
-            data-tool-type="open-url" 
-            expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full&quot;'>
-      Comments Feed (XML format)
-    </option>
+    </optgroup>
+    <optgroup label="Feed">
+      <option value="open-comment-feed" 
+              data-tool-type="open-url" 
+              expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full?alt=json&quot;'>
+        Comments Feed (JSON format)
+      </option>
+      <option value="open-comment-feed" 
+              data-tool-type="open-url" 
+              expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full&quot;'>
+        Comments Feed (XML format)
+      </option>
+    </optgroup>
   </select>
 </div>
