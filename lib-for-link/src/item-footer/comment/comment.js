@@ -249,9 +249,11 @@ let initTopContinueButton = () => {
   topContinueButton = button
 }
 
+// --------------------------------------------------------------
+
 let initCommnetToolsSelect = () => {
   $('#CommentToolsSelect').change(function () {
-    let $option = $(this).children('option:selected')
+    let $option = $(this).find('option:selected')
     let url = $option.attr('data-url')
     //console.log(type)
     
