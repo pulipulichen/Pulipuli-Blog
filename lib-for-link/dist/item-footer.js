@@ -487,7 +487,7 @@ let initTopContinueButton = () => {
   let button
   if (isInitTopContinueButton === true) {
     topContinueButton.show()
-    return
+    return true
   }
   
   let topContinue = $('#top-continue')
@@ -499,7 +499,7 @@ let initTopContinueButton = () => {
   
   button.click(() => {
     if (window.confirm('你確定要取消回覆，新增主題留言嗎？') === false) {
-      return
+      return false
     }
     topContinue.find('a')[0].click()
     button.hide()
@@ -511,9 +511,29 @@ let initTopContinueButton = () => {
   topContinueButton = button
 }
 
+let initCommnetToolsSelect = () => {
+  $('#CommentToolsSelect').change(function () {
+    let $option = $(this).children('option:selected')
+    let url = $option.attr('data-url')
+    //console.log(type)
+    
+    if (url === undefined) {
+      return false
+    }
+    else {
+      window.open(url)
+    }
+    
+    this.value = ''
+  })
+}
+
+// ---------------------------------------
+
 $(() => {
   displayComment()
   addSubCommentReplyLink()
+  initCommnetToolsSelect()
   //console.log("aaa")
 })
 
