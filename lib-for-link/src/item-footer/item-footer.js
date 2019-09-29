@@ -8,6 +8,7 @@ require("./modules/disqus/blogger_item.js")
 require("./script/admin-tools-loader.js")
 require("./script/icon-replace.js")
 require("./modules/related-posts/related-posts.js")
+require("./modules/CopyPasteHelper/CopyPasteHelper.js")
 
 require("./toc/toc.js")
 require("./toc/toc.less")
