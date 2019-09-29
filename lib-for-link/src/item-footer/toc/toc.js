@@ -1,5 +1,5 @@
 
-/* global PULI_UTILS */
+/* global PULI_UTILS, CopyPasteHelper */
 
 /**
  * Table of Content
@@ -143,8 +143,9 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
           url = url.slice(0, url.indexOf('#'))
         }
         */
-        url = this.href
-        
+        let url = this.href
+        CopyPasteHelper.copyPlainText(url)
+        /*
         var textArea = document.createElement("textarea");
         textArea.value = url;
         document.body.appendChild(textArea);
@@ -169,7 +170,8 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
         
         event.preventDefault()
         event.stopPropagation()
-        return false
+        */
+        //return false
       })
 
       hdObj.prepend(goCata.clone());
