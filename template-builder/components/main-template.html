@@ -259,9 +259,10 @@
       
       <script src='//www.google.com/jsapi' type='text/javascript'/>
       <script type='text/javascript'>
-        google.load(&quot;annotations&quot;, &quot;1&quot;, {&quot;locale&quot;: &quot;<data:top.languageCode/>&quot;});
+        //google.load(&quot;annotations&quot;, &quot;1&quot;, {&quot;locale&quot;: &quot;<data:top.languageCode/>&quot;});
+        google.load("annotations", "1", {"locale": "<data:top.languageCode/>"});
         function initialize() {
-          google.annotations.setApplicationId(<data:top.blogspotReviews/>);
+          google.annotations.setApplicationId('<data:top.blogspotReviews/>');
           google.annotations.createAll();
           google.annotations.fetch();
         }
