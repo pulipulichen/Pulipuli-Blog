@@ -6,6 +6,7 @@ require("./style/sidebar.less")
 require("./style/style-item.less")
 require("./script/script-item.js")
 require("./style/article-code.less")
+require("./style/article-table.less")
 
 //require("./style-print/gutenberg.min.less")
 require("./style-print/style-print.less")

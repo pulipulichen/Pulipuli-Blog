@@ -169,6 +169,7 @@ __webpack_require__(/*! ./style/sidebar.less */ "./lib-for-link/src/item-header/
 __webpack_require__(/*! ./style/style-item.less */ "./lib-for-link/src/item-header/style/style-item.less")
 __webpack_require__(/*! ./script/script-item.js */ "./lib-for-link/src/item-header/script/script-item.js")
 __webpack_require__(/*! ./style/article-code.less */ "./lib-for-link/src/item-header/style/article-code.less")
+__webpack_require__(/*! ./style/article-table.less */ "./lib-for-link/src/item-header/style/article-table.less")
 
 //require("./style-print/gutenberg.min.less")
 __webpack_require__(/*! ./style-print/style-print.less */ "./lib-for-link/src/item-header/style-print/style-print.less")
@@ -339,6 +340,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./article-code.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/article-code.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./lib-for-link/src/item-header/style/article-table.less":
+/*!***************************************************************!*\
+  !*** ./lib-for-link/src/item-header/style/article-table.less ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./article-table.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/article-table.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -565,6 +596,21 @@ exports.push([module.i, "@media print{#masthead{border-bottom:1px solid grey;pos
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
 exports.push([module.i, "#main .entry-content article pre>.code-label:first-of-type{display:block;cursor:pointer;user-select:none;font-size:.5rem;border:1px dotted grey;background-color:grey;color:#fff;clear:both;line-height:.7rem;text-align:center;text-indent:0;position:absolute;margin-top:-.9rem;margin-left:-.9rem;border-radius:4px;margin-bottom:-.7rem;width:fit-content;padding-left:.2rem;padding-right:.2rem}#main .entry-content article pre>.code-label:first-of-type:active{opacity:.7}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-header/style/article-code.less","article-code.less"],"names":[],"mappings":"AAAA,2DAKI,aAAA,CACA,cAAA,CACA,gBAAA,CACA,eAAA,CACA,sBAAA,CACA,qBAAA,CACA,UAAA,CAEA,UAAA,CACA,iBAAA,CACA,iBAAA,CACA,aAAA,CACA,iBAAA,CACA,iBAAA,CACA,kBAAA,CACA,iBAAA,CACA,oBAAA,CACA,iBAAA,CACA,kBAAA,CACA,mBCkIJ,CDhII,kEACE,UCkIN","file":"article-code.less","sourcesContent":["#main .entry-content {\n  //article pre code::before {\n  article pre > .code-label:first-of-type {\n    //content: '';\n    //display: none;\n    display: block;\n    cursor: pointer;\n    user-select: none;\n    font-size: 0.5rem;\n    border: 1px dotted gray;\n    background-color: gray;\n    color: white;\n    margin-bottom: 5px;\n    clear: both;\n    line-height: 0.7rem;\n    text-align: center;\n    text-indent: 0;\n    position: absolute;\n    margin-top: -0.9rem;\n    margin-left: -0.9rem;\n    border-radius: 4px;\n    margin-bottom: -0.7rem;\n    width: fit-content;\n    padding-left: 0.2rem;\n    padding-right: 0.2rem;\n    \n    &:active {\n      opacity: 0.7;\n    }\n  }\n\n  /*\n  article pre code.javascript::before {\n    content: 'JavaScript';\n    display: block;\n  }\n\n  article pre code.html::before {\n    content: 'HTML';\n    display: block;\n  }\n\n  article pre code.css::before {\n    content: 'CSS';\n    display: block;\n  }\n\n  article pre code.bash::before {\n    content: 'Bash';\n    display: block;\n  }\n\n  article pre code.ini::before {\n    content: 'INI';\n    display: block;\n  }\n\n  article pre code.json::before {\n    content: 'JSON';\n    display: block;\n  }\n\n  article pre code.java::before {\n    content: 'Java';\n    display: block;\n  }\n\n  article pre code.php::before {\n    content: 'PHP';\n    display: block;\n  }\n\n  article pre code.perl::before {\n    content: 'Perl';\n    display: block;\n  }\n\n  article pre code.r::before {\n    content: 'R';\n    display: block;\n  }\n\n  article pre code.sql::before {\n    content: 'SQL';\n    display: block;\n  }\n\n  article pre code.autoit::before {\n    content: 'AutoIT';\n    display: block;\n  }\n\n  article pre code.csharp::before {\n    content: 'C#';\n    display: block;\n  }\n\n  article pre code.cpp::before {\n    content: 'C++';\n    display: block;\n  }\n\n  article pre code.dos::before {\n    content: 'DOS';\n    display: block;\n  }\n\n  article pre code.excel::before {\n    content: 'Excel';\n    display: block;\n  }\n\n  article pre code.markdown::before {\n    content: 'Markdown';\n    display: block;\n  }\n\n  article pre code.nginx::before {\n    content: 'Nginx';\n    display: block;\n  }\n\n  article pre code.python::before {\n    content: 'Python';\n    display: block;\n  }\n\n  article pre code.ruby::before {\n    content: 'Ruby';\n    display: block;\n  }\n\n  article pre code.swift::before {\n    content: 'Swift';\n    display: block;\n  }\n\n  article pre code.typescript::before {\n    content: 'TypeScript';\n    display: block;\n  }\n\n  article pre code.vbnet::before {\n    content: 'VB.Net';\n    display: block;\n  }\n\n  article pre code.vbscript::before {\n    content: 'VBscript';\n    display: block;\n  }\n\n  article pre code.xpath::before {\n    content: 'XQuery, Xpath';\n    display: block;\n  }\n\n  article pre code.matlab::before {\n    content: 'Matlab';\n    display: block;\n  }\n  */\n}","#main .entry-content {\n  /*\n  article pre code.javascript::before {\n    content: 'JavaScript';\n    display: block;\n  }\n\n  article pre code.html::before {\n    content: 'HTML';\n    display: block;\n  }\n\n  article pre code.css::before {\n    content: 'CSS';\n    display: block;\n  }\n\n  article pre code.bash::before {\n    content: 'Bash';\n    display: block;\n  }\n\n  article pre code.ini::before {\n    content: 'INI';\n    display: block;\n  }\n\n  article pre code.json::before {\n    content: 'JSON';\n    display: block;\n  }\n\n  article pre code.java::before {\n    content: 'Java';\n    display: block;\n  }\n\n  article pre code.php::before {\n    content: 'PHP';\n    display: block;\n  }\n\n  article pre code.perl::before {\n    content: 'Perl';\n    display: block;\n  }\n\n  article pre code.r::before {\n    content: 'R';\n    display: block;\n  }\n\n  article pre code.sql::before {\n    content: 'SQL';\n    display: block;\n  }\n\n  article pre code.autoit::before {\n    content: 'AutoIT';\n    display: block;\n  }\n\n  article pre code.csharp::before {\n    content: 'C#';\n    display: block;\n  }\n\n  article pre code.cpp::before {\n    content: 'C++';\n    display: block;\n  }\n\n  article pre code.dos::before {\n    content: 'DOS';\n    display: block;\n  }\n\n  article pre code.excel::before {\n    content: 'Excel';\n    display: block;\n  }\n\n  article pre code.markdown::before {\n    content: 'Markdown';\n    display: block;\n  }\n\n  article pre code.nginx::before {\n    content: 'Nginx';\n    display: block;\n  }\n\n  article pre code.python::before {\n    content: 'Python';\n    display: block;\n  }\n\n  article pre code.ruby::before {\n    content: 'Ruby';\n    display: block;\n  }\n\n  article pre code.swift::before {\n    content: 'Swift';\n    display: block;\n  }\n\n  article pre code.typescript::before {\n    content: 'TypeScript';\n    display: block;\n  }\n\n  article pre code.vbnet::before {\n    content: 'VB.Net';\n    display: block;\n  }\n\n  article pre code.vbscript::before {\n    content: 'VBscript';\n    display: block;\n  }\n\n  article pre code.xpath::before {\n    content: 'XQuery, Xpath';\n    display: block;\n  }\n\n  article pre code.matlab::before {\n    content: 'Matlab';\n    display: block;\n  }\n  */\n}\n#main .entry-content article pre > .code-label:first-of-type {\n  display: block;\n  cursor: pointer;\n  user-select: none;\n  font-size: 0.5rem;\n  border: 1px dotted gray;\n  background-color: gray;\n  color: white;\n  margin-bottom: 5px;\n  clear: both;\n  line-height: 0.7rem;\n  text-align: center;\n  text-indent: 0;\n  position: absolute;\n  margin-top: -0.9rem;\n  margin-left: -0.9rem;\n  border-radius: 4px;\n  margin-bottom: -0.7rem;\n  width: fit-content;\n  padding-left: 0.2rem;\n  padding-right: 0.2rem;\n}\n#main .entry-content article pre > .code-label:first-of-type:active {\n  opacity: 0.7;\n}\n"]}]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/article-table.less":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-header/style/article-table.less ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, "#main .entry-content article>table{line-height:100%;border-bottom:1px solid #ddd;margin-left:auto;margin-right:auto}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-header/style/article-table.less","article-table.less"],"names":[],"mappings":"AAAA,mCACE,gBAAA,CACA,4BAAA,CACA,gBAAA,CACA,iBCCF","file":"article-table.less","sourcesContent":["#main .entry-content article > table {\n  line-height: 100%;\n  border-bottom: 1px solid #ddd;\n  margin-left: auto;\n  margin-right: auto;\n}","#main .entry-content article > table {\n  line-height: 100%;\n  border-bottom: 1px solid #ddd;\n  margin-left: auto;\n  margin-right: auto;\n}\n"]}]);
 
 
 
