@@ -1,0 +1,20 @@
+{
+	"background_color": "#ffffff",
+	"theme_color": "#A1501A",
+	"name": "布丁布丁吃什麼？",
+	"short_name": "布丁BLOG",
+	"display": "minimal-ui",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "//3.bp.blogspot.com/--xC22F_QMQY/XZCpKeCLZGI/AAAAAAAEYiU/yPpR9WjNP74uWO2gIxtnUgmPb4xmShw6QCK4BGAYYCw/s192/%25E5%25B8%2583%25E4%25B8%2581%25E7%25B9%25AA%25E5%259C%2596%25E9%25A0%25AD%25E5%2583%258F%2B%2528%25E6%259C%2589%25E6%25A1%2586%25E6%259C%2589%25E8%2583%258C%25E6%2599%25AF%2529.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "//3.bp.blogspot.com/--xC22F_QMQY/XZCpKeCLZGI/AAAAAAAEYiU/yPpR9WjNP74uWO2gIxtnUgmPb4xmShw6QCK4BGAYYCw/s512/%25E5%25B8%2583%25E4%25B8%2581%25E7%25B9%25AA%25E5%259C%2596%25E9%25A0%25AD%25E5%2583%258F%2B%2528%25E6%259C%2589%25E6%25A1%2586%25E6%259C%2589%25E8%2583%258C%25E6%2599%25AF%2529.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
