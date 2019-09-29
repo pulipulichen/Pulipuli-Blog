@@ -20,3 +20,6 @@ require("./comment/comment.js")
 require("./comment/comment.less")
 require("./comment/comment-form-tool.less")
 require("./comment/CommentLinkParser.js")
+
+require("./admin-tools/AdminToolsStat.js")
+require("./admin-tools/AdminToolsStat.less")

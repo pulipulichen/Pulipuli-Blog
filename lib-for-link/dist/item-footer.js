@@ -223,6 +223,120 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js":
+/*!********************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+let AdminToolsStat = {
+  init: function () {
+    let statContainer = $('.entry-content article:first .meta1 .article-stats-container:visible:first')
+    
+    if (statContainer.length === 0) {
+      return false
+    }
+    
+    statContainer.append(`<i class="fa fa-safari" aria-hidden="true"></i>`)
+    
+    let list = []
+    
+    this.countChar((charCount) => {
+      if (charCount > 1) {
+        list.push(`${charCount} Characters`)
+      }
+      else if (charCount === 1) {
+        list.push(`${charCount} Character`)
+      }
+      
+      //statContainer.append(`/`)
+      
+      this.countImage((count) => {
+        if (count > 1) {
+          list.push(`${count} Images`)
+        }
+        else if (count === 1) {
+          list.push(`${count} Image`)
+        }
+        
+        let listString = list.join(', ')
+        statContainer.append(`<span>${listString}</span>`)
+      })
+    })
+  },
+  countChar: function (callback) {
+    if (typeof(callback) !== 'function') {
+      return false
+    }
+    
+    let article = $('.entry-content article:visible:first')
+    
+    if (article.length === 0) {
+      return false
+    }
+    
+    article = article.clone()
+    article.children('h1:first').remove()
+    let articleText = article.text()
+    
+    // 我想要把中文跟英文斷開來... 算了，先不要這樣做吧，這樣太拖慢網頁速度了
+    callback(articleText.replace(/ /g, '').length)
+  },
+  countImage: function (callback) {
+    if (typeof(callback) !== 'function') {
+      return false
+    }
+    
+    let article = $('.entry-content article:visible:first')
+    
+    if (article.length === 0) {
+      return false
+    }
+    
+    // 我想要把中文跟英文斷開來
+    callback(article.find('a[href] > img[src]').length)
+  }
+}
+
+$(() => {
+  setTimeout(() => {
+    AdminToolsStat.init()
+  }, 3000)
+})
+
+/***/ }),
+
+/***/ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less":
+/*!**********************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./AdminToolsStat.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./lib-for-link/src/item-footer/comment/CommentLinkParser.js":
 /*!*******************************************************************!*\
   !*** ./lib-for-link/src/item-footer/comment/CommentLinkParser.js ***!
@@ -731,6 +845,9 @@ __webpack_require__(/*! ./comment/comment.js */ "./lib-for-link/src/item-footer/
 __webpack_require__(/*! ./comment/comment.less */ "./lib-for-link/src/item-footer/comment/comment.less")
 __webpack_require__(/*! ./comment/comment-form-tool.less */ "./lib-for-link/src/item-footer/comment/comment-form-tool.less")
 __webpack_require__(/*! ./comment/CommentLinkParser.js */ "./lib-for-link/src/item-footer/comment/CommentLinkParser.js")
+
+__webpack_require__(/*! ./admin-tools/AdminToolsStat.js */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js")
+__webpack_require__(/*! ./admin-tools/AdminToolsStat.less */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less")
 
 /***/ }),
 
@@ -4140,6 +4257,21 @@ exports.push([module.i, "body:after{content:url(//4.bp.blogspot.com/-CYj_Sg6HAKQ
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
 exports.push([module.i, ".entry-content article .table-label{display:block;cursor:pointer;user-select:none;font-size:.5rem;border:1px dotted grey;background-color:grey;color:#fff;clear:both;line-height:.7rem;text-align:center;text-indent:0;border-radius:4px;margin-bottom:.5rem;width:fit-content;padding:.2rem;margin-left:auto;margin-right:auto}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/TableUtil/TableUtil.less","TableUtil.less"],"names":[],"mappings":"AAAA,oCAEI,aAAA,CACA,cAAA,CACA,gBAAA,CACA,eAAA,CACA,sBAAA,CACA,qBAAA,CACA,UAAA,CACA,UAAA,CACA,iBAAA,CACA,iBAAA,CACA,aAAA,CAIA,iBAAA,CACA,mBAAA,CACA,iBAAA,CAIA,aAAA,CACA,gBAAA,CACA,iBCHJ","file":"TableUtil.less","sourcesContent":[".entry-content article {\n  .table-label {\n    display: block;\n    cursor: pointer;\n    user-select: none;\n    font-size: 0.5rem;\n    border: 1px dotted gray;\n    background-color: gray;\n    color: white;\n    clear: both;\n    line-height: 0.7rem;\n    text-align: center;\n    text-indent: 0;\n    //position: absolute;\n    //margin-top: -0.9rem;\n    //margin-left: -0.9rem;\n    border-radius: 4px;\n    margin-bottom: 0.5rem;\n    width: fit-content;\n    padding-left: 0.2rem;\n    padding-right: 0.2rem;\n    padding-top: .2rem;\n    padding-bottom: .2rem;\n    margin-left: auto;\n    margin-right: auto;\n  }\n}",".entry-content article .table-label {\n  display: block;\n  cursor: pointer;\n  user-select: none;\n  font-size: 0.5rem;\n  border: 1px dotted gray;\n  background-color: gray;\n  color: white;\n  clear: both;\n  line-height: 0.7rem;\n  text-align: center;\n  text-indent: 0;\n  border-radius: 4px;\n  margin-bottom: 0.5rem;\n  width: fit-content;\n  padding-left: 0.2rem;\n  padding-right: 0.2rem;\n  padding-top: 0.2rem;\n  padding-bottom: 0.2rem;\n  margin-left: auto;\n  margin-right: auto;\n}\n"]}]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, ".entry-content article:first-of-type .meta1 .article-stats-container:first-of-type{white-space:nowrap}.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type:active{color:inherit}.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type>i:first-of-type{margin-right:10px}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less","AdminToolsStat.less"],"names":[],"mappings":"AAAA,mFACE,kBCCF,CDCE,0FACE,aCCJ,CDEE,mGACE,iBCAJ","file":"AdminToolsStat.less","sourcesContent":[".entry-content article:first-of-type .meta1 .article-stats-container:first-of-type {\n  white-space: nowrap;\n  \n  &:active {\n    color: inherit;\n  }\n  \n  &> i:first-of-type {\n    margin-right: 10px;\n  }\n  \n  &> span {\n    //margin-right: auto;\n  }\n}",".entry-content article:first-of-type .meta1 .article-stats-container:first-of-type {\n  white-space: nowrap;\n}\n.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type:active {\n  color: inherit;\n}\n.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type > i:first-of-type {\n  margin-right: 10px;\n}\n"]}]);
 
 
 
