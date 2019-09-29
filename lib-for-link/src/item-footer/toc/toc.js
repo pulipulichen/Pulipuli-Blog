@@ -104,7 +104,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
 
     var cataTitleID = prefix + "cataTitle";
     var cataTitle = jQuery('<a class="puli-utils-append" name="' + cataTitleID + '" id="' + cataTitleID + '" />');
-    var goCata = jQuery('<a class="puli-utils-append heading-button" href="#' + cataTitleID + '">'
+    var goCata = jQuery('<a class="puli-utils-append heading-button" href="#' + cataTitleID + '" title="Go to top">'
             + '<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>'
             + '</a>');
 
@@ -130,7 +130,9 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
        * @author Pulipuli Chen 20190929
        * 與此同時，也在每個Heading前面加上錨點
        */
-      let permanentLink = jQuery('<a class="heading-permanent-link puli-utils-append" href="#' + anchorID + '"><i aria-hidden="true" class="fa fa-link"></i></a>');
+      let permanentLink = jQuery(`<a class="heading-permanent-link puli-utils-append" href="#' + anchorID + '" title="Copy link">
+        <i aria-hidden="true" class="fa fa-link" title="Copy link"></i>
+      </a>`);
       hdObj.prepend(permanentLink);
       
       permanentLink.click(function (event) {
