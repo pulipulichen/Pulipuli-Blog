@@ -130,7 +130,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
        * @author Pulipuli Chen 20190929
        * 與此同時，也在每個Heading前面加上錨點
        */
-      let permanentLink = jQuery(`<a class="heading-permanent-link puli-utils-append" href="#' + anchorID + '" title="Copy link">
+      let permanentLink = jQuery(`<a class="heading-permanent-link puli-utils-append" href="#${anchorID}" title="Copy link">
         <i aria-hidden="true" class="fa fa-link" title="Copy link"></i>
       </a>`);
       hdObj.prepend(permanentLink);
