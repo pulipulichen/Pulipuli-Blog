@@ -15,7 +15,7 @@ TableUtil = {
       
       label.click(function () {
         let table = $(this).next()
-        let html = table.html()
+        let html = table.prop('outerHTML')
         
         //console.log(html)
         CopyPasteHelper.copyRichFormat(html)
