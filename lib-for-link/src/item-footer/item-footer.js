@@ -13,6 +13,9 @@ require("./modules/CopyPasteHelper/CopyPasteHelper.js")
 require("./toc/toc.js")
 require("./toc/toc.less")
 
+require("./TableUtil/TableUtil.js")
+require("./TableUtil/TableUtil.less")
+
 require("./comment/comment.js")
 require("./comment/comment.less")
 require("./comment/comment-form-tool.less")
