@@ -248,22 +248,26 @@ let AdminToolsStat = {
     }
     
     this.countChar((count) => {
-      if (typeof(count) === 'number' && count > 0) {
+      //console.log(count)
+      if (typeof(count) === 'string') {
         list.push(count)
       }
       
       this.countImage((count) => {
-        if (typeof(count) === 'number' && count > 0) {
+        //console.log(count)
+        if (typeof(count) === 'string') {
           list.push(count)
         }
         
         this.countTable((count) => {
-          if (typeof(count) === 'number' && count > 0) {
+          //console.log(count)
+          if (typeof(count) === 'string') {
             list.push(count)
           }
           
           this.countIframe((count) => {
-            if (typeof(count) === 'number' && count > 0) {
+            ///console.log(count)
+            if (typeof(count) === 'string') {
               list.push(count)
             }
             append()
