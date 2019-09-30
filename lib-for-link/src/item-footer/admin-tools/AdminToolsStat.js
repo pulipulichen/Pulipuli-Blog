@@ -10,37 +10,46 @@ let AdminToolsStat = {
     
     let list = []
     
-    this.countChar((charCount) => {
-      if (charCount > 1) {
-        list.push(`${charCount} Characters`)
+    let append = () => {
+      let listString = list.join(', ')
+      statContainer.append(`<span>${listString}</span>`)
+    }
+    
+    this.countChar((count) => {
+      if (typeof(count) === 'number' && count > 0) {
+        list.push(count)
       }
-      else if (charCount === 1) {
-        list.push(`${charCount} Character`)
-      }
-      
-      //statContainer.append(`/`)
       
       this.countImage((count) => {
-        if (count > 1) {
-          list.push(`${count} Images`)
-        }
-        else if (count === 1) {
-          list.push(`${count} Image`)
+        if (typeof(count) === 'number' && count > 0) {
+          list.push(count)
         }
         
-        let listString = list.join(', ')
-        statContainer.append(`<span>${listString}</span>`)
+        this.countTable((count) => {
+          if (typeof(count) === 'number' && count > 0) {
+            list.push(count)
+          }
+          
+          this.countIframe((count) => {
+            if (typeof(count) === 'number' && count > 0) {
+              list.push(count)
+            }
+            append()
+          })
+        })
       })
     })
   },
   countChar: function (callback) {
     if (typeof(callback) !== 'function') {
+      callback()
       return false
     }
     
     let article = $('.entry-content article:visible:first')
     
     if (article.length === 0) {
+      callback()
       return false
     }
     
@@ -49,21 +58,80 @@ let AdminToolsStat = {
     let articleText = article.text()
     
     // 我想要把中文跟英文斷開來... 算了，先不要這樣做吧，這樣太拖慢網頁速度了
-    callback(articleText.replace(/ /g, '').length)
+    let count = articleText.replace(/ /g, '').length
+    if (count > 1) {
+      count = `${count} Characters`
+    }
+    else if (count === 1) {
+      count = `${count} Character`
+    }
+    callback(count)
   },
   countImage: function (callback) {
     if (typeof(callback) !== 'function') {
+      callback()
       return false
     }
     
     let article = $('.entry-content article:visible:first')
     
     if (article.length === 0) {
+      callback()
       return false
     }
     
-    // 我想要把中文跟英文斷開來
-    callback(article.find('a[href] > img[src]').length)
+    let count = article.find('a[href] > img[src]').length
+    if (count > 1) {
+      count = `${count} Images`
+    }
+    else if (count === 1) {
+      count = `${count} Image`
+    }
+    callback(count)
+  },
+  countTable: function (callback) {
+    if (typeof(callback) !== 'function') {
+      callback()
+      return false
+    }
+    
+    let article = $('.entry-content article:visible:first')
+    
+    if (article.length === 0) {
+      callback()
+      return false
+    }
+    
+    let count = article.find('table').length
+    if (count > 1) {
+      count = `${count} Tables`
+    }
+    else if (count === 1) {
+      count = `${count} Table`
+    }
+    callback(count)
+  },
+  countIframe: function (callback) {
+    if (typeof(callback) !== 'function') {
+      callback()
+      return false
+    }
+    
+    let article = $('.entry-content article:visible:first')
+    
+    if (article.length === 0) {
+      callback()
+      return false
+    }
+    
+    let count = article.find('iframe').length
+    if (count > 1) {
+      count = `${count} Embed Iframes`
+    }
+    else if (count === 1) {
+      count = `${count} Embed Iframe`
+    }
+    callback(count)
   }
 }
 
