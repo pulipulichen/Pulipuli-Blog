@@ -1,6 +1,12 @@
 .entry-content article {
+  .table-labels {
+    //amrgin-left: auto;
+    //margin-right: auto;
+    text-align: center;
+  }
+  
   .table-label {
-    display: block;
+    display: inline-block;
     cursor: pointer;
     user-select: none;
     font-size: 0.5rem;
@@ -21,7 +27,25 @@
     padding-right: 0.2rem;
     padding-top: .2rem;
     padding-bottom: .2rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  /*
+  .table-container {
+    overflow: auto;
+    
+    &> table {
+      //min-width: 800px;
+    }
+  }
+  */
+}
+
+/*
+@media (max-width: 480px) {
+  .entry-content article .table-container > table {
+    min-width: 800px;
   }
 }
+*/
