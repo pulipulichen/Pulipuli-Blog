@@ -1,5 +1,13 @@
 /* global CopyPasteHelper */
 
+/*
+import html2canvas from "./../vandors/html2canvas/html2canvas.js"
+console.log(html2canvas)
+window.html2canvas = html2canvas
+*/
+import domToImage from "./../vandors/dom-to-image/dom-to-image.js"
+console.log(domToImage)
+
 let TableUtil = {
   init: function () {
     let tables = $('.entry-content article > table')
@@ -8,6 +16,7 @@ let TableUtil = {
     tables.each((i, table) => {
       let $table = $(table)
       this.addLabel($table)
+      this.setupCanvas(table)
       //this.setupPannable($table)
     })
     /*
@@ -39,9 +48,14 @@ let TableUtil = {
       POPUP
     </div>`).appendTo(container)
 
+    let _this = this
     openLabel.click(function () {
       let table = $(this).parent().next()
-      let win = window.open('', '_blank')
+      _this.popupTable(table)
+    })
+  },
+  popupTable: function (table) {
+    let win = window.open('', '_blank')
       //let win = window.open(`data:text/html;charset=utf8,<html><head><link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='icon' sizes='192x192'/></head><body></body></html>`);
       win.document.title = 'Table: ' + document.title
       
@@ -54,7 +68,76 @@ let TableUtil = {
 
       win.document.body.innerHTML = table.prop('outerHTML')
         + `<link href='${cssURL}' rel='stylesheet' type='text/css'/>`
-    })
+  },
+  setupCanvas: function (table) {
+    //console.log(domToImage.toSvg(table))
+    let _this = this
+    
+    table.style.minWidth = '800px'
+    table.border = 0
+    domToImage.toSvg(table)
+      .then(function (dataUrl) {
+          var img = new Image();
+          img.src = dataUrl;
+          //document.body.appendChild(img);
+          let $img = $(img)
+          $img.addClass('table-snap')
+                  .attr('title', 'Open table in new window')
+                  .insertAfter(table)
+          $img.click(function () {
+            let $table = $(this).prev()
+            _this.popupTable($table)
+          })
+          $(table).addClass('table-snap-inited')
+          table.style.minWidth = 'auto'
+      })
+      .catch(function (error) {
+          console.error('oops, something went wrong!', error);
+      });
+    
+    /*
+    html2canvas(table).then(canvas => {
+      //document.body.appendChild(canvas)
+      let $canvas = $(canvas)
+      $canvas.addClass('table-canvas')
+      
+      $canvas.insertAfter(table)
+    });
+    */
+   /*
+    let render_html_to_canvas = function (html, ctx, x, y, width, height) {
+        var xml = html_to_xml(html);
+        xml = xml.replace(/\#/g, '%23');
+        var data = "data:image/svg+xml;charset=utf-8,"+'<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'">' +
+                            '<foreignObject width="100%" height="100%">' +
+                            xml+
+                            '</foreignObject>' +
+                            '</svg>';
+
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, x, y);
+        }
+        img.src = data;
+    }
+
+    let html_to_xml = function (html) {
+        var doc = document.implementation.createHTMLDocument('');
+        doc.write(html);
+
+        // You must manually set the xmlns if you intend to immediately serialize     
+        // the HTML document to a string as opposed to appending it to a
+        // <foreignObject> in the DOM
+        doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
+
+        // Get well-formed markup
+        html = (new XMLSerializer).serializeToString(doc.body);
+        return html;
+    }
+    
+    let canvas 
+    render_html_to_canvas(table.outerHTML, )
+    */
   },
   setupPannable: function ($table) {
     

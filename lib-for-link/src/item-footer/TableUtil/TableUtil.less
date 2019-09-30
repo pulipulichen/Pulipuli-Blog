@@ -40,12 +40,31 @@
     }
   }
   */
+  
+  &> .table-snap {
+    display: none;
+  }
 }
 
 /*
-@media (max-width: 480px) {
-  .entry-content article .table-container > table {
+@media (max-width: 800px) {
+  .entry-content article > table {
     min-width: 800px;
   }
 }
 */
+
+
+@media (max-width: 680px) {
+  .entry-content article > table.table-snap-inited {
+    display: none;
+  }
+  
+  .entry-content article > .table-snap {
+    //min-width: 800px;
+    display: block;
+    cursor: pointer;
+    //width: 100%;
+    //height: auto;
+  }
+}

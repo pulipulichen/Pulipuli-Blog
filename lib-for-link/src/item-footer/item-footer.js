@@ -15,7 +15,6 @@ require("./toc/toc.less")
 
 require("./TableUtil/TableUtil.js")
 require("./TableUtil/TableUtil.less")
-//require("./vandors/html2canvas/html2canvas.svg.js")
 
 require("./comment/comment.js")
 require("./comment/comment.less")
