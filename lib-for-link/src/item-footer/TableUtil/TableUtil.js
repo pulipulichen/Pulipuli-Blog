@@ -11,7 +11,7 @@ let TableUtil = {
     tables.each((i, table) => {
       let $table = $(table)
       this.addLabel($table)
-      this.setupCanvas(table)
+      this.setupThumbnail(table)
     })
   },
   addLabel: function ($table) {
@@ -57,7 +57,7 @@ let TableUtil = {
       win.document.body.innerHTML = table.prop('outerHTML')
         + `<link href='${cssURL}' rel='stylesheet' type='text/css'/>`
   },
-  setupCanvas: function (table) {
+  setupThumbnail: function (table) {
     //console.log(domToImage.toSvg(table))
     let _this = this
     
@@ -69,14 +69,14 @@ let TableUtil = {
           img.src = dataUrl;
           //document.body.appendChild(img);
           let $img = $(img)
-          $img.addClass('table-snap')
+          $img.addClass('table-thumbnail')
                   .attr('title', 'Open table in new window')
                   .insertAfter(table)
           $img.click(function () {
             let $table = $(this).prev()
             _this.popupTable($table)
           })
-          $(table).addClass('table-snap-inited')
+          $(table).addClass('table-thumbnail-ready')
           table.style.minWidth = 'auto'
       })
       .catch(function (error) {
