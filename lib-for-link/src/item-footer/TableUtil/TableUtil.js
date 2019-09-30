@@ -45,7 +45,7 @@ let TableUtil = {
       //let win = window.open(`data:text/html;charset=utf8,<html><head><link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='icon' sizes='192x192'/></head><body></body></html>`);
       win.document.title = 'Table: ' + document.title
       
-      WIN = win
+      //WIN = win
       
       let cssURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/table-popup.css'
       if ($('script[src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
@@ -54,8 +54,6 @@ let TableUtil = {
 
       win.document.body.innerHTML = table.prop('outerHTML')
         + `<link href='${cssURL}' rel='stylesheet' type='text/css'/>`
-
-      $(win.document.head).append(`<link href='//blog.pulipuli.info/favicon.ico' rel='icon' type='image/x-icon'/>`)
     })
   },
   setupPannable: function ($table) {

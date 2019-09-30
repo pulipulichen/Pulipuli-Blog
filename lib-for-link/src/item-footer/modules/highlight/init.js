@@ -22,8 +22,8 @@ $(function () {
               .join('')
     }
     let label = $(`<span class="code-label" title="Copy code">
+            <span>${className}</span>
             <i aria-hidden="true" class="fa fa-copy"></i>
-            ${className}
         </span>`).insertBefore(_code)
 
     label.click(function () {
