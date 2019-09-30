@@ -681,7 +681,7 @@
                     try {
                         util.asArray(sheet.cssRules || []).forEach(cssRules.push.bind(cssRules));
                     } catch (e) {
-                        console.log('Error while reading CSS rules from ' + sheet.href, e.toString());
+                        //console.log('Error while reading CSS rules from ' + sheet.href, e.toString());
                     }
                 });
                 return cssRules;
