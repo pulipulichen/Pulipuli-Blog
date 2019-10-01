@@ -1,21 +1,24 @@
-.related-posts {
+#main .post > .related-posts {
   /*height: 240px;*/
   overflow: hidden;
   z-index: 100;
   background: #fff;
+  //background-color: blue; // 20191001 for test
+  
+  padding: 15px 30px;
+  border-top: 1px solid #ddd;
 
   .title {
-    background: none repeat scroll 0% 0% #FFF;
-    padding: 5px 20px;
+    //background: none repeat scroll 0% 0% #FFF;
+    //padding: 5px 20px;
     margin: 0px 0px 15px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    //border-bottom: 1px solid #ddd;
     font-size: 22px;
   }
 
   #owl-demo {
     overflow: visible;
-    padding: 0px 20px;
+    //padding: 0px 20px;
     max-height: 233px;
 
     .owl-wrapper-outer {
@@ -89,6 +92,10 @@
         border-radius: 20px;
         background: none repeat scroll 0% 0% #DDD;
         cursor: pointer;
+        
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
 
       .owl-page.active, 
@@ -99,8 +106,8 @@
     }
 
   }
-}
-
-.related-posts.hidden {
-  display: none;
+  
+  &.hidden {
+    display: none;
+  }
 }
