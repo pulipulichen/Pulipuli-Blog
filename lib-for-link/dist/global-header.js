@@ -449,36 +449,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./lib-for-link/src/global-header/footer/footer-column1.less":
-/*!*******************************************************************!*\
-  !*** ./lib-for-link/src/global-header/footer/footer-column1.less ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./footer-column1.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer-column1.less");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./lib-for-link/src/global-header/footer/footer.js":
 /*!*********************************************************!*\
   !*** ./lib-for-link/src/global-header/footer/footer.js ***!
@@ -546,11 +516,13 @@ __webpack_require__(/*! ./sidebar/sidebar.js */ "./lib-for-link/src/global-heade
 __webpack_require__(/*! ./btn-navbar/nav-collapse.less */ "./lib-for-link/src/global-header/btn-navbar/nav-collapse.less")
 __webpack_require__(/*! ./btn-navbar/btn-navbar.less */ "./lib-for-link/src/global-header/btn-navbar/btn-navbar.less")
 __webpack_require__(/*! ./btn-navbar/btn-navbar.js */ "./lib-for-link/src/global-header/btn-navbar/btn-navbar.js")
+
 __webpack_require__(/*! ./masthead/masthead.less */ "./lib-for-link/src/global-header/masthead/masthead.less")
 __webpack_require__(/*! ./masthead/masthead.js */ "./lib-for-link/src/global-header/masthead/masthead.js")
+
 __webpack_require__(/*! ./footer/footer.js */ "./lib-for-link/src/global-header/footer/footer.js")
 __webpack_require__(/*! ./footer/footer.less */ "./lib-for-link/src/global-header/footer/footer.less")
-__webpack_require__(/*! ./footer/footer-column1.less */ "./lib-for-link/src/global-header/footer/footer-column1.less")
+
 __webpack_require__(/*! ./style/2_style.less */ "./lib-for-link/src/global-header/style/2_style.less")
 __webpack_require__(/*! ./style/3_custom_style.less */ "./lib-for-link/src/global-header/style/3_custom_style.less")
 __webpack_require__(/*! ./style/header.less */ "./lib-for-link/src/global-header/style/header.less")
@@ -2208,21 +2180,6 @@ exports.push([module.i, "#masthead #menu-primary a{color:#fff}#masthead #menu-pr
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer-column1.less":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer-column1.less ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
-// Module
-exports.push([module.i, "#colophon #column1 .widget.donation#donation .widget-content .message{width:100%;margin:0 auto;font-size:12pt}#colophon #column1 .widget.donation#donation .widget-content .message .text-message{padding-bottom:.5rem}#colophon #column1 .widget.donation#donation .widget-content .message .text-message a{color:#fff}#colophon #column1 .widget.donation#donation .widget-content .message img{border:3px solid #fff}#colophon #column1 .widget.stats iframe{border-width:0;pointer-events:none}@media (max-width:680px){.widget.stats{padding-top:10px;clear:both}}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer-column1.less","footer-column1.less"],"names":[],"mappings":"AAAA,sEAEI,UAAA,CACA,aAAA,CACA,cCAJ,CDJA,oFAOM,oBCAN,CDPA,sFAUQ,UCAR,CDVA,0EAeM,qBCFN,CDbA,wCAqBM,cAAA,CACA,mBCLN,CDUA,yBACE,cACE,gBAAA,CACA,UCRF,CACF","file":"footer-column1.less","sourcesContent":["#colophon #column1 {\n  .widget.donation#donation .widget-content .message {\n    width: 100%; \n    margin: 0 auto; \n    font-size: 12pt;\n\n    .text-message {\n      padding-bottom: 0.5rem;\n\n      a {\n        color: white\n      }\n    }\n\n    img {\n      border: 3px solid white;\n    }\n  }\n  \n  .widget.stats {\n    iframe {\n      border-width: 0;\n      pointer-events: none;\n    }\n  }\n}\n\n@media (max-width: 680px) {\n  .widget.stats {\n    padding-top: 10px;\n    clear:both;\n  }\n}","#colophon #column1 .widget.donation#donation .widget-content .message {\n  width: 100%;\n  margin: 0 auto;\n  font-size: 12pt;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message .text-message {\n  padding-bottom: 0.5rem;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message .text-message a {\n  color: white;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message img {\n  border: 3px solid white;\n}\n#colophon #column1 .widget.stats iframe {\n  border-width: 0;\n  pointer-events: none;\n}\n@media (max-width: 680px) {\n  .widget.stats {\n    padding-top: 10px;\n    clear: both;\n  }\n}\n"]}]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer.less":
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/global-header/footer/footer.less ***!
@@ -2232,7 +2189,7 @@ exports.push([module.i, "#colophon #column1 .widget.donation#donation .widget-co
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".site-footer#colophon{z-index:0}.site-footer#colophon #footer{line-height:30px;padding:10px 0 0;background-color:#1a1a1a}.site-footer#colophon #footer p{font-size:13px;float:left;line-height:30px}.site-footer#colophon #footer p.copyright{line-height:1rem}.site-footer#colophon #footer a{color:#f57676}.site-footer#colophon #footer .management{line-height:1rem}.site-footer#colophon .container{padding-top:0!important;padding-left:50px;padding-bottom:0}@media (max-width:979px){.site-footer#colophon .container{margin-left:30px;padding-left:20px}}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer.less","footer.less"],"names":[],"mappings":"AAAA,sBACE,SCCF,CDFA,8BAII,gBAAA,CACA,gBAAA,CACA,wBCCJ,CDPA,gCASM,cAAA,CACA,UAAA,CACA,gBCCN,CDZA,0CAeM,gBCAN,CDfA,gCAmBM,aCDN,CDlBA,0CAwBM,gBCHN,CDrBA,iCA6BI,uBAAA,CACA,iBAAA,CACA,gBCLJ,CDSA,yBACE,iCAEI,gBAAA,CACA,iBCRJ,CACF","file":"footer.less","sourcesContent":[".site-footer#colophon {\n  z-index: 0;\n  \n  #footer {\n    line-height: 30px;\n    padding: 10px 0 0px 0;\n    background-color: #1a1a1a;\n\n    p {\n      font-size: 13px;\n      float: left;\n      line-height: 30px\n    }\n    \n    p.copyright {\n      line-height: 1rem;\n    }\n\n    a {\n      color: #F57676;\n    }\n    \n    .management  {\n      //display: none;\n      line-height: 1rem;\n    }\n  }\n  \n  .container {  \n    padding-top:0 !important;\n    padding-left: 50px;\n    padding-bottom: 0;\n  }\n} \n\n@media (max-width: 979px) {\n  .site-footer#colophon {\n    .container {  \n      margin-left: 30px;\n      padding-left: 20px;\n    }\n  }\n}",".site-footer#colophon {\n  z-index: 0;\n}\n.site-footer#colophon #footer {\n  line-height: 30px;\n  padding: 10px 0 0px 0;\n  background-color: #1a1a1a;\n}\n.site-footer#colophon #footer p {\n  font-size: 13px;\n  float: left;\n  line-height: 30px;\n}\n.site-footer#colophon #footer p.copyright {\n  line-height: 1rem;\n}\n.site-footer#colophon #footer a {\n  color: #F57676;\n}\n.site-footer#colophon #footer .management {\n  line-height: 1rem;\n}\n.site-footer#colophon .container {\n  padding-top: 0 !important;\n  padding-left: 50px;\n  padding-bottom: 0;\n}\n@media (max-width: 979px) {\n  .site-footer#colophon .container {\n    margin-left: 30px;\n    padding-left: 20px;\n  }\n}\n"]}]);
+exports.push([module.i, "#colophon #column1 .widget.donation#donation .widget-content .message{width:100%;margin:0 auto;font-size:12pt}#colophon #column1 .widget.donation#donation .widget-content .message .text-message{padding-bottom:.5rem}#colophon #column1 .widget.donation#donation .widget-content .message .text-message a{color:#fff}#colophon #column1 .widget.donation#donation .widget-content .message img{border:3px solid #fff}#colophon #column1 .widget.stats iframe{border-width:0;pointer-events:none}@media (max-width:680px){.widget.stats{padding-top:10px;clear:both}}#column2-section h2 a{color:#fff}#column2-section h2 a:hover{color:#f69087}#column2-section h2 .widget-item-control{margin-top:-30px}.site-footer#colophon{z-index:0}.site-footer#colophon #footer{line-height:30px;padding:10px 0 0;background-color:#1a1a1a}.site-footer#colophon #footer p{font-size:13px;float:left;line-height:30px}.site-footer#colophon #footer p.copyright{line-height:1rem}.site-footer#colophon #footer a{color:#f57676}.site-footer#colophon #footer .management{line-height:1rem}.site-footer#colophon .container{padding-top:0!important;padding-left:50px;padding-bottom:0}@media (max-width:979px){.site-footer#colophon .container{margin-left:30px;padding-left:20px}}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer-column1.less","footer.less","D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer-column2.less","D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/global-header/footer/footer.less"],"names":[],"mappings":"AAAA,sEAEI,UAAA,CACA,aAAA,CACA,cCAJ,CDJA,oFAOM,oBCAN,CDPA,sFAUQ,UCAR,CDVA,0EAeM,qBCFN,CDbA,wCAqBM,cAAA,CACA,mBCLN,CDUA,yBACE,cACE,gBAAA,CACA,UCRF,CACF,CCvBA,sBAGM,UDuBN,CCrBM,4BACE,aDuBR,CC7BA,yCAWM,gBDqBN,CE7BA,sBACE,SF+BF,CEhCA,8BAII,gBAAA,CACA,gBAAA,CACA,wBF+BJ,CErCA,gCASM,cAAA,CACA,UAAA,CACA,gBF+BN,CE1CA,0CAeM,gBF8BN,CE7CA,gCAmBM,aF6BN,CEhDA,0CAwBM,gBF2BN,CEnDA,iCA6BI,uBAAA,CACA,iBAAA,CACA,gBFyBJ,CErBA,yBACE,iCAEI,gBAAA,CACA,iBFsBJ,CACF","file":"footer.less","sourcesContent":["#colophon #column1 {\n  .widget.donation#donation .widget-content .message {\n    width: 100%; \n    margin: 0 auto; \n    font-size: 12pt;\n\n    .text-message {\n      padding-bottom: 0.5rem;\n\n      a {\n        color: white\n      }\n    }\n\n    img {\n      border: 3px solid white;\n    }\n  }\n  \n  .widget.stats {\n    iframe {\n      border-width: 0;\n      pointer-events: none;\n    }\n  }\n}\n\n@media (max-width: 680px) {\n  .widget.stats {\n    padding-top: 10px;\n    clear:both;\n  }\n}","#colophon #column1 .widget.donation#donation .widget-content .message {\n  width: 100%;\n  margin: 0 auto;\n  font-size: 12pt;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message .text-message {\n  padding-bottom: 0.5rem;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message .text-message a {\n  color: white;\n}\n#colophon #column1 .widget.donation#donation .widget-content .message img {\n  border: 3px solid white;\n}\n#colophon #column1 .widget.stats iframe {\n  border-width: 0;\n  pointer-events: none;\n}\n@media (max-width: 680px) {\n  .widget.stats {\n    padding-top: 10px;\n    clear: both;\n  }\n}\n#column2-section h2 a {\n  color: white;\n}\n#column2-section h2 a:hover {\n  color: #f69087;\n}\n#column2-section h2 .widget-item-control {\n  margin-top: -30px;\n}\n.site-footer#colophon {\n  z-index: 0;\n}\n.site-footer#colophon #footer {\n  line-height: 30px;\n  padding: 10px 0 0px 0;\n  background-color: #1a1a1a;\n}\n.site-footer#colophon #footer p {\n  font-size: 13px;\n  float: left;\n  line-height: 30px;\n}\n.site-footer#colophon #footer p.copyright {\n  line-height: 1rem;\n}\n.site-footer#colophon #footer a {\n  color: #F57676;\n}\n.site-footer#colophon #footer .management {\n  line-height: 1rem;\n}\n.site-footer#colophon .container {\n  padding-top: 0 !important;\n  padding-left: 50px;\n  padding-bottom: 0;\n}\n@media (max-width: 979px) {\n  .site-footer#colophon .container {\n    margin-left: 30px;\n    padding-left: 20px;\n  }\n}\n","#column2-section {\n  h2 {\n    a {\n      color: white;\n      \n      &:hover {\n        color: #f69087;\n      }\n    }\n    \n    .widget-item-control {\n      margin-top: -30px;\n    }\n  }\n}","@import 'footer-column1.less';\n@import 'footer-column2.less';\n\n.site-footer#colophon {\n  z-index: 0;\n  \n  #footer {\n    line-height: 30px;\n    padding: 10px 0 0px 0;\n    background-color: #1a1a1a;\n\n    p {\n      font-size: 13px;\n      float: left;\n      line-height: 30px\n    }\n    \n    p.copyright {\n      line-height: 1rem;\n    }\n\n    a {\n      color: #F57676;\n    }\n    \n    .management  {\n      //display: none;\n      line-height: 1rem;\n    }\n  }\n  \n  .container {  \n    padding-top:0 !important;\n    padding-left: 50px;\n    padding-bottom: 0;\n  }\n} \n\n@media (max-width: 979px) {\n  .site-footer#colophon {\n    .container {  \n      margin-left: 30px;\n      padding-left: 20px;\n    }\n  }\n}"]}]);
 
 
 

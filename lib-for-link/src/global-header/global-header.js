@@ -11,11 +11,13 @@ require("./sidebar/sidebar.js")
 require("./btn-navbar/nav-collapse.less")
 require("./btn-navbar/btn-navbar.less")
 require("./btn-navbar/btn-navbar.js")
+
 require("./masthead/masthead.less")
 require("./masthead/masthead.js")
+
 require("./footer/footer.js")
 require("./footer/footer.less")
-require("./footer/footer-column1.less")
+
 require("./style/2_style.less")
 require("./style/3_custom_style.less")
 require("./style/header.less")

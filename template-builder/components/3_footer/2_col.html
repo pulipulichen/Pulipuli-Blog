@@ -3,7 +3,11 @@
   <b:widget id='Label2' locked='false' title='Labels' type='Label'>
     <b:includable id='main'>
   <b:if cond='data:title'>
-    <h2><data:title/></h2>
+    <h2>
+      <data:title/>
+      (<a href="/p/labels.html">All Labels</a>)
+      <b:include name='quickedit'/>
+    </h2>
   </b:if>
   <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
     <b:if cond='data:display == &quot;list&quot;'>
@@ -35,8 +39,7 @@
         </span>
       </b:loop>
     </b:if>
-	<a href="/p/labels.html" class="btn">View All Labels</a>
-    <b:include name='quickedit'/>
+    <!-- <a href="/p/labels.html" class="btn">View All Labels</a> -->
   </div>
 </b:includable>
   </b:widget>

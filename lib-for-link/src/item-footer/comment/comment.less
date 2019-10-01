@@ -67,22 +67,48 @@
       }
     }
     
-    .item-control, 
-    .comment-reply {
-      user-select: none;
+    .comment-block {
+      
+      .user a,
+      .datetime {
+        font-size: 16px;
+      }
+      
+      // -------------------
+      
+      a {
+        color: #bd8242;
+        
+        &:hover {
+          color: #f69087;
+          text-decoration: underline;
+        }
+      }
+      
+      
+      // 20181021 留言裡面的圖片
+      // https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html
+      img.comment-image {
+        display: block;
+      }
+
+      iframe.youtube-embed {
+        max-width: 100%;
+        display: block;
+      }
+      
+      // --------------------
+      
+      .item-control, 
+      a.comment-reply,
+      a[kind="i"] {
+        user-select: none;
+        font-weight: normal;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
-  }
-}
-
-
-/*****************************/
-/* 20181021 留言裡面的圖片 */
-/* https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html */
-#comment-holder .comment-content img.comment-image {
-  display: block;
-}
-
-#comment-holder .comment-content iframe.youtube-embed {
-  max-width: 100%;
-  display: block;
+  } // #comment-holder > .comment-thread {
 }
