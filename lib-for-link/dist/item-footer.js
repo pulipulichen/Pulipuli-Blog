@@ -964,9 +964,11 @@ __webpack_require__(/*! ./modules/highlight/default.css */ "./lib-for-link/src/i
 __webpack_require__(/*! ./modules/highlight/highlight.js */ "./lib-for-link/src/item-footer/modules/highlight/highlight.js")
 __webpack_require__(/*! ./modules/highlight/init.js */ "./lib-for-link/src/item-footer/modules/highlight/init.js")
 __webpack_require__(/*! ./modules/lightbox2-lokeshdhakar/init.js */ "./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js")
-__webpack_require__(/*! ./modules/disqus/disqus.css */ "./lib-for-link/src/item-footer/modules/disqus/disqus.css")
-__webpack_require__(/*! ./modules/disqus/disqus.js */ "./lib-for-link/src/item-footer/modules/disqus/disqus.js")
-__webpack_require__(/*! ./modules/disqus/blogger_item.js */ "./lib-for-link/src/item-footer/modules/disqus/blogger_item.js")
+
+//require("./modules/disqus/disqus.css")
+//require("./modules/disqus/disqus.js")
+//require("./modules/disqus/blogger_item.js")
+
 __webpack_require__(/*! ./script/admin-tools-loader.js */ "./lib-for-link/src/item-footer/script/admin-tools-loader.js")
 __webpack_require__(/*! ./script/icon-replace.js */ "./lib-for-link/src/item-footer/script/icon-replace.js")
 __webpack_require__(/*! ./modules/related-posts/related-posts.js */ "./lib-for-link/src/item-footer/modules/related-posts/related-posts.js")
@@ -1041,110 +1043,6 @@ CopyPasteHelper = {
   }
 }
 
-
-/***/ }),
-
-/***/ "./lib-for-link/src/item-footer/modules/disqus/blogger_item.js":
-/*!*********************************************************************!*\
-  !*** ./lib-for-link/src/item-footer/modules/disqus/blogger_item.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var disqus_url = disqus_blogger_current_url;
-
-(function () {
-    "use strict";
-    var get_comment_block = function () {
-        var block = document.getElementById('disqus_thread');
-        if (!block) {
-            block = document.getElementById('disqus-blogger-comment-block');
-        }
-        return block;
-    };
-    var comment_block = get_comment_block();
-    if (!!comment_block) {
-        var disqus_div = document.createElement('div');
-        disqus_div.id = 'disqus_thread';
-        comment_block.innerHTML = '';
-        comment_block.appendChild(disqus_div);
-        comment_block.style.display = 'block';
-        var dsq = document.createElement('script');
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.body).appendChild(dsq);
-    }
-})();
-
-
-/***/ }),
-
-/***/ "./lib-for-link/src/item-footer/modules/disqus/disqus.css":
-/*!****************************************************************!*\
-  !*** ./lib-for-link/src/item-footer/modules/disqus/disqus.css ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../../node_modules/postcss-loader/src?sourceMap!./disqus.css */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-footer/modules/disqus/disqus.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./lib-for-link/src/item-footer/modules/disqus/disqus.js":
-/*!***************************************************************!*\
-  !*** ./lib-for-link/src/item-footer/modules/disqus/disqus.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * disqus主要檔案
- * @author Pulipuli Chen 20190301
- * @type String
- */
-disqus_shortname = 'pulipuli'
-
-disqus_blogger_current_url = getBloggerVariable('data-blog-canonicalUrl')
-if (!disqus_blogger_current_url.length) {
-  disqus_blogger_current_url = getBloggerVariable('data-blog-url')
-}
-disqus_blogger_homepage_url = getBloggerVariable('data-blog-homepageUrl')
-disqus_blogger_canonical_homepage_url = getBloggerVariable('data-blog-canonicalHomepageUrl')
-
-$(function () {
-  disqus_url = disqus_blogger_current_url;
-  
-  /**
-   * 莫名其妙...移除了也能夠正常運作，為什麼呢？
-   * @author Pulipuli Chen 20190301
-   */
-  /*
-  (function () {
-      "use strict";
-      //$.getScript('//pulipuli.disqus.com/embed.js');
-      //disqus_embed()
-  })();
-  */
-});
 
 /***/ }),
 
@@ -5122,21 +5020,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-footer/modules/disqus/disqus.css":
-/*!************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./lib-for-link/src/item-footer/modules/disqus/disqus.css ***!
-  \************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
-// Module
-exports.push([module.i, ".post-comment-link{visibility:hidden}", "",{"version":3,"sources":["disqus.css"],"names":[],"mappings":"AAMA,mBACE,iBACF","file":"disqus.css","sourcesContent":["/*\n#comments { \n  display:none; \n}\n*/\n\n.post-comment-link { \n  visibility: hidden; \n}"]}]);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./lib-for-link/src/item-footer/modules/highlight/default.css":
 /*!****************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./lib-for-link/src/item-footer/modules/highlight/default.css ***!
@@ -5221,7 +5104,7 @@ exports.push([module.i, ".comment-form-tool a button{background-color:#f8f8f8;ba
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "#comment-editor{width:100%;height:210px;border-width:0}#comment-editor.hide{display:none}#comments-block img.favicon{height:16px;width:16px;margin-bottom:-2px}#disqus_thread{overflow:hidden;background:#fff;border-bottom:2px solid #ddd;padding:15px 30px 0}#main div.comments#comments{min-height:0;padding:15px 30px}#main div.comments#comments>.comments-content #top-ra>.comment:first-of-type:first-child{padding-top:0}#main div.comments#comments #comment-holder>.comment-thread.toplevel-thread{margin:0}#main div.comments#comments #comment-holder>.comment-thread img[src=\"//resources.blogblog.com/img/blank.gif\"]{background-image:url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);background-position:50%;background-repeat:no-repeat}#main div.comments#comments #comment-holder>.comment-thread .thread-expanded img[src=\"//resources.blogblog.com/img/blank.gif\"]{background-image:url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png)}#main div.comments#comments #comment-holder>.comment-thread .comment:first-of-type{margin-top:5px}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread{margin-top:0;margin-bottom:0;border:1px solid #ddd;border-top:0 solid #ddd}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread .thread-toggle{margin-top:5px;user-select:none}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread .thread-toggle.thread-collapsed{margin-bottom:5px}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread .comment{width:calc(100% - 40px)}#main div.comments#comments #comment-holder>.comment-thread .comment-reply,#main div.comments#comments #comment-holder>.comment-thread .item-control{user-select:none}#comment-holder .comment-content img.comment-image{display:block}#comment-holder .comment-content iframe.youtube-embed{max-width:100%;display:block}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/comment/comment.less","comment.less"],"names":[],"mappings":"AAAA,gBACE,UAAA,CACA,YAAA,CACA,cCCF,CDEA,qBACE,YCAF,CDGA,4BACE,WAAA,CACA,UAAA,CACA,kBCDF,CDOA,eACE,eAAA,CACA,eAAA,CACA,4BAAA,CAIA,mBCNF,CDSA,4BACE,YAAA,CACA,iBCPF,CDSE,yFACE,aCPJ,CDYI,4EACE,QCVN,CDDA,8GAeM,qJAAA,CACA,uBAAA,CACA,2BCXN,CDNA,+HAqBM,qJCZN,CDTA,mFAyBM,cCbN,CDZA,6FA6BM,YAAA,CACA,eAAA,CAEA,qBAAA,CAAA,uBCdN,CDlBA,4GAmCQ,cAAA,CACA,gBCdR,CDgBQ,6HACE,iBCdV,CDzBA,sGA4CQ,uBChBR,CD5BA,qJAkDM,gBClBN,CD2BA,mDACE,aCtBF,CDyBA,sDACE,cAAA,CACA,aCvBF","file":"comment.less","sourcesContent":["#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n\n#comment-editor.hide {\n  display: none;\n}\n\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom:-2px;\n}\n\n\n/* ************************ */\n\n#disqus_thread {\n  overflow: hidden;\n  background: #FFFFFF;\n  border-bottom: 2px solid #DDDDDD;\n  //padding: 25px;\n  \n  padding: 15px 30px;\n  padding-bottom: 0;\n}\n\n#main div.comments#comments {\n  min-height: initial;\n  padding: 15px 30px;\n  \n  &> .comments-content #top-ra > .comment:first-of-type:first-child {\n    padding-top: 0;\n  }\n  \n  #comment-holder > .comment-thread {\n\n    &.toplevel-thread {\n      margin: 0;\n    }\n    \n    img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n      background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);\n      background-position: center center;\n      background-repeat: no-repeat;\n    }\n    \n    .thread-expanded img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n      background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png);\n    }\n    \n    .comment:first-of-type {\n      margin-top: 5px;\n    }\n    \n    .comment-replies .comment-thread {\n      margin-top: 0;\n      margin-bottom: 0;\n      border: 1px solid #ddd;\n      border-top-width: 0;\n      \n      .thread-toggle {\n        margin-top: 5px;\n        user-select: none;\n        \n        &.thread-collapsed {\n          margin-bottom: 5px;\n        }\n      }\n      \n      .comment {\n        width: calc(100% - 40px);\n      }\n    }\n    \n    .item-control, \n    .comment-reply {\n      user-select: none;\n    }\n  }\n}\n\n\n/*****************************/\n/* 20181021 留言裡面的圖片 */\n/* https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html */\n#comment-holder .comment-content img.comment-image {\n  display: block;\n}\n\n#comment-holder .comment-content iframe.youtube-embed {\n  max-width: 100%;\n  display: block;\n}\n","#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n#comment-editor.hide {\n  display: none;\n}\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom: -2px;\n}\n/* ************************ */\n#disqus_thread {\n  overflow: hidden;\n  background: #FFFFFF;\n  border-bottom: 2px solid #DDDDDD;\n  padding: 15px 30px;\n  padding-bottom: 0;\n}\n#main div.comments#comments {\n  min-height: initial;\n  padding: 15px 30px;\n}\n#main div.comments#comments > .comments-content #top-ra > .comment:first-of-type:first-child {\n  padding-top: 0;\n}\n#main div.comments#comments #comment-holder > .comment-thread.toplevel-thread {\n  margin: 0;\n}\n#main div.comments#comments #comment-holder > .comment-thread img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n  background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#main div.comments#comments #comment-holder > .comment-thread .thread-expanded img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n  background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png);\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment:first-of-type {\n  margin-top: 5px;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread {\n  margin-top: 0;\n  margin-bottom: 0;\n  border: 1px solid #ddd;\n  border-top-width: 0;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread .thread-toggle {\n  margin-top: 5px;\n  user-select: none;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread .thread-toggle.thread-collapsed {\n  margin-bottom: 5px;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread .comment {\n  width: calc(100% - 40px);\n}\n#main div.comments#comments #comment-holder > .comment-thread .item-control,\n#main div.comments#comments #comment-holder > .comment-thread .comment-reply {\n  user-select: none;\n}\n/*****************************/\n/* 20181021 留言裡面的圖片 */\n/* https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html */\n#comment-holder .comment-content img.comment-image {\n  display: block;\n}\n#comment-holder .comment-content iframe.youtube-embed {\n  max-width: 100%;\n  display: block;\n}\n"]}]);
+exports.push([module.i, "#comment-editor{width:100%;height:210px;border-width:0}#comment-editor.hide{display:none}#comments-block img.favicon{height:16px;width:16px;margin-bottom:-2px}#main div.comments#comments{min-height:0;padding:15px 30px}#main div.comments#comments>.comments-content #top-ra>.comment:first-of-type:first-child{padding-top:0}#main div.comments#comments #comment-holder>.comment-thread.toplevel-thread{margin:12px 0 0}#main div.comments#comments #comment-holder>.comment-thread img[src=\"//resources.blogblog.com/img/blank.gif\"]{background-image:url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);background-position:50%;background-repeat:no-repeat}#main div.comments#comments #comment-holder>.comment-thread .thread-expanded img[src=\"//resources.blogblog.com/img/blank.gif\"]{background-image:url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png)}#main div.comments#comments #comment-holder>.comment-thread .comment:first-of-type{margin-top:5px}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread{margin-top:0;margin-bottom:0;border:1px solid #ddd;border-top:0 solid #ddd}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread .thread-toggle{margin-top:5px;user-select:none}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread .thread-toggle.thread-collapsed{margin-bottom:5px}#main div.comments#comments #comment-holder>.comment-thread .comment-replies .comment-thread .comment{width:calc(100% - 40px)}#main div.comments#comments #comment-holder>.comment-thread .comment-reply,#main div.comments#comments #comment-holder>.comment-thread .item-control{user-select:none}#comment-holder .comment-content img.comment-image{display:block}#comment-holder .comment-content iframe.youtube-embed{max-width:100%;display:block}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/comment/comment.less","comment.less"],"names":[],"mappings":"AAAA,gBACE,UAAA,CACA,YAAA,CACA,cCCF,CDEA,qBACE,YCAF,CDGA,4BACE,WAAA,CACA,UAAA,CACA,kBCDF,CDQA,4BACE,YAAA,CACA,iBCLF,CDOE,yFACE,aCLJ,CDUI,4EAEE,eCRN,CDJA,8GAgBM,qJAAA,CACA,uBAAA,CACA,2BCTN,CDTA,+HAsBM,qJCVN,CDZA,mFA0BM,cCXN,CDfA,6FA8BM,YAAA,CACA,eAAA,CAEA,qBAAA,CAAA,uBCZN,CDrBA,4GAoCQ,cAAA,CACA,gBCZR,CDcQ,6HACE,iBCZV,CD5BA,sGA6CQ,uBCdR,CD/BA,qJAmDM,gBChBN,CDyBA,mDACE,aCpBF,CDuBA,sDACE,cAAA,CACA,aCrBF","file":"comment.less","sourcesContent":["#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n\n#comment-editor.hide {\n  display: none;\n}\n\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom:-2px;\n}\n\n\n/* ************************ */\n\n\n#main div.comments#comments {\n  min-height: initial;\n  padding: 15px 30px;\n  \n  &> .comments-content #top-ra > .comment:first-of-type:first-child {\n    padding-top: 0;\n  }\n  \n  #comment-holder > .comment-thread {\n\n    &.toplevel-thread {\n      margin: 0;\n      margin-top: 12px;\n    }\n    \n    img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n      background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);\n      background-position: center center;\n      background-repeat: no-repeat;\n    }\n    \n    .thread-expanded img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n      background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png);\n    }\n    \n    .comment:first-of-type {\n      margin-top: 5px;\n    }\n    \n    .comment-replies .comment-thread {\n      margin-top: 0;\n      margin-bottom: 0;\n      border: 1px solid #ddd;\n      border-top-width: 0;\n      \n      .thread-toggle {\n        margin-top: 5px;\n        user-select: none;\n        \n        &.thread-collapsed {\n          margin-bottom: 5px;\n        }\n      }\n      \n      .comment {\n        width: calc(100% - 40px);\n      }\n    }\n    \n    .item-control, \n    .comment-reply {\n      user-select: none;\n    }\n  }\n}\n\n\n/*****************************/\n/* 20181021 留言裡面的圖片 */\n/* https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html */\n#comment-holder .comment-content img.comment-image {\n  display: block;\n}\n\n#comment-holder .comment-content iframe.youtube-embed {\n  max-width: 100%;\n  display: block;\n}\n","#comment-editor {\n  width: 100%;\n  height: 210px;\n  border-width: 0;\n}\n#comment-editor.hide {\n  display: none;\n}\n#comments-block img.favicon {\n  height: 16px;\n  width: 16px;\n  margin-bottom: -2px;\n}\n/* ************************ */\n#main div.comments#comments {\n  min-height: initial;\n  padding: 15px 30px;\n}\n#main div.comments#comments > .comments-content #top-ra > .comment:first-of-type:first-child {\n  padding-top: 0;\n}\n#main div.comments#comments #comment-holder > .comment-thread.toplevel-thread {\n  margin: 0;\n  margin-top: 12px;\n}\n#main div.comments#comments #comment-holder > .comment-thread img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n  background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n#main div.comments#comments #comment-holder > .comment-thread .thread-expanded img[src=\"//resources.blogblog.com/img/blank.gif\"] {\n  background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png);\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment:first-of-type {\n  margin-top: 5px;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread {\n  margin-top: 0;\n  margin-bottom: 0;\n  border: 1px solid #ddd;\n  border-top-width: 0;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread .thread-toggle {\n  margin-top: 5px;\n  user-select: none;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread .thread-toggle.thread-collapsed {\n  margin-bottom: 5px;\n}\n#main div.comments#comments #comment-holder > .comment-thread .comment-replies .comment-thread .comment {\n  width: calc(100% - 40px);\n}\n#main div.comments#comments #comment-holder > .comment-thread .item-control,\n#main div.comments#comments #comment-holder > .comment-thread .comment-reply {\n  user-select: none;\n}\n/*****************************/\n/* 20181021 留言裡面的圖片 */\n/* https://blog.pulipuli.info/2017/10/k-determin-optimal-number-of-clusters.html */\n#comment-holder .comment-content img.comment-image {\n  display: block;\n}\n#comment-holder .comment-content iframe.youtube-embed {\n  max-width: 100%;\n  display: block;\n}\n"]}]);
 
 
 
