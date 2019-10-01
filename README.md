@@ -47,3 +47,9 @@ https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdri
 如果案例裡面有需要等待的AJAX，請使用 `pause` 指令來等待
 
 Font Awesome icon: https://fontawesome.com/icons?d=gallery&m=free
+
+----
+
+# Blogger
+
+- pageType: index, archive, item
