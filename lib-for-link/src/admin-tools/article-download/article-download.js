@@ -194,6 +194,8 @@ let articleDownload = {
     shareCount = parseInt(shareCount, 10)
     metadata.shareCount = shareCount
     
+    metadata.editURL = $('article h1 .meta1 .edit-url').attr('href')
+    
     metadata.publicURL = location.href
     if (metadata.publicURL.indexOf('#') > -1) {
       metadata.publicURL = metadata.publicURL.slice(0, metadata.publicURL.indexOf('#'))
