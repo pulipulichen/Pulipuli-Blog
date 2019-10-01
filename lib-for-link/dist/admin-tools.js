@@ -347,6 +347,9 @@ let articleDownload = {
     if (filename.endsWith(".html")) {
       filename = filename.slice(0, filename.length - 5)
     }
+    
+    filename = 'post-' + filename
+    
     return filename
   },
   getMetadata: function () {
@@ -376,6 +379,14 @@ let articleDownload = {
     let shareCount = $('.addthis-smartlayers .at-custom-sidebar-count').text()
     shareCount = parseInt(shareCount, 10)
     metadata.shareCount = shareCount
+    
+    metadata.publicURL = location.href
+    if (metadata.publicURL.indexOf('#') > -1) {
+      metadata.publicURL = metadata.publicURL.slice(0, metadata.publicURL.indexOf('#'))
+    }
+    if (metadata.publicURL.indexOf('?') > -1) {
+      metadata.publicURL = metadata.publicURL.slice(0, metadata.publicURL.indexOf('?'))
+    }
     
     return metadata
   },
