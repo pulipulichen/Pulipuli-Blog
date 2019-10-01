@@ -8,6 +8,8 @@ require("./script/script-item.js")
 require("./style/article-meta.less")
 require("./style/article-code.less")
 require("./style/article-table.less")
+require("./style/article-footer.less")
+require("./style/addthis.less")
 
 //require("./style-print/gutenberg.min.less")
 require("./style-print/style-print.less")
