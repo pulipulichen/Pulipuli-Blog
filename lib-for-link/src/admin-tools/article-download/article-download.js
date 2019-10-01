@@ -179,10 +179,11 @@ let articleDownload = {
       day: parseInt(articleDate[1].trim(), 10)
     }
     
-    metadata.labels = []
+    metadata.labelsList = []
     $('article .meta1 .label-info > a').each((i, ele) => {
-      metadata.labels.push(ele.innerHTML.trim())
+      metadata.labelsList.push(ele.innerHTML.trim())
     })
+    metadata.labels = metadata.labelsList.join(', ')
     
     let commentCount = $('article .meta1 .comment-count').text().trim()
     commentCount = commentCount.slice(0, commentCount.indexOf(' '))
