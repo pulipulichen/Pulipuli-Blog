@@ -24,12 +24,29 @@
   
   li.dropdown {
     cursor: pointer;
+    
+    .dropdown-toggle {
+      user-select: none;
+
+      i {
+        font-size: 20px;
+      }
+    }
+    
+    // 20191001 強制複寫原本的功能
+    /*
+    &> .dropdown-menu {
+      display: none;
+      opacity: 0;
+      transition: all 1s -.3s;
+    }
+    &:hover> .dropdown-menu {
+      display: block;
+      opacity: 0.5;
+    }
+    */
   }
   
-  .dropdown-toggle i {
-    font-size: 20px;
-  }
-
   li.help {
     a {
       padding-left: 0;
@@ -71,6 +88,8 @@
   
   .dropdown-menu {
     z-index: -1;
+    
+    //transition: opacity 0.2s 1s ease;
     /*display: block;*/
     
     li > a {
@@ -222,8 +241,8 @@
           }
 
           li a:hover, 
-            li a:active, 
-            li a:focus {
+          li a:active, 
+          li a:focus {
             border-left: 3px solid #85CCB1;
             padding-left:15px !important;
           }
@@ -265,6 +284,19 @@
 
     // --------------------------------
 
+  }
+  
+  #masthead.fixed-nav.affix {
+    .navbar .nav .dropdown-menu li {
+      a {
+        padding-left:22px !important;
+      }
+      a:hover, 
+        a:active, 
+        a:focus {
+        padding-left:19px !important;
+      }
+    }
   }
   
   #masthead.fixed-nav #menu-primary {

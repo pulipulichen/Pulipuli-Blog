@@ -15,8 +15,6 @@
 
 .ui.checkbox label {
   display: block;
-  line-height: 50px;
-}
-.ui.checkbox label span {
+  /*line-height: 50px;*/
   padding: 15px;
 }
