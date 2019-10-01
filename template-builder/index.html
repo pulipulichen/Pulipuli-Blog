@@ -34,27 +34,39 @@
         
         <div class="unstackable three fields">
           <div class="field">
-            <div class="ui radio checkbox">
+            <div class="ui radio checkbox fluid button">
               <input type="radio" name="hostType" value="github"
                      id="hostType1"
                      v-model="hostType" @click="loadTemplate">
-              <label for="hostType1">Use GitHub Server</label>
+              <label for="hostType1">
+                <span>
+                  Use GitHub Server
+                </span>
+              </label>
             </div>
           </div>
           <div class="field">
-            <div class="ui radio checkbox">
+            <div class="ui radio checkbox fluid button">
               <input type="radio" name="hostType" value="pulipuli"
                      id="hostType2"
                      v-model="hostType" @click="loadTemplate">
-              <label for="hostType2">Use pc.pulipuli.info Server</label>
+              <label for="hostType2">
+                <span>
+                  Use pc.pulipuli.info Server
+                </span>
+              </label>
             </div>
           </div>
           <div class="field">
-            <div class="ui radio checkbox">
+            <div class="ui radio checkbox fluid button">
               <input type="radio" name="hostType" value="localhost"
                      id="hostType3"
                      v-model="hostType" @click="loadTemplate">
-              <label for="hostType3">Use Localhost Server</label>
+              <label for="hostType3">
+                <span>
+                  Use Localhost Server
+                </span>
+              </label>
             </div>
           </div>
         </div>

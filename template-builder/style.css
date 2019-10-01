@@ -1,9 +1,22 @@
 .template-code {
   max-height: inherit !important;
-  height: calc(100vh - 10em) !important;
+  height: calc(100vh - 15em) !important;
 }
 
 .ui.radio.checkbox,
 .ui.checkbox .box, .ui.checkbox label {
   cursor: pointer !important;
+}
+
+.ui.radio.checkbox.button {
+  margin: 5px;
+  padding: 5px;
+}
+
+.ui.checkbox label {
+  display: block;
+  line-height: 50px;
+}
+.ui.checkbox label span {
+  padding: 15px;
 }
