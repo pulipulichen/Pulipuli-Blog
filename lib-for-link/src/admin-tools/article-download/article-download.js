@@ -265,19 +265,19 @@ let articleDownload = {
               || link.indexOf('/yandex.com/') > -1
               || link.indexOf('.flashmirrors.com') > -1
               || link.indexOf('/puddingchen.35.googlepages.com/') > -1) {
-        return
+        return false
       }
       
       let ext = extractExt(link)
       if (allowExtList.indexOf(ext) === -1) {
-        return
+        return false
       }
       
       // https://lh3.googleusercontent.com/-quhLaYWL29s/WCsAVr6SwpI/AAAAAAAC9iI/F62sfdA4C90/image_thumb%25255B4%25255D.png?imgmax=800
       // http://2.bp.blogspot.com/-L-p05d-w9LA/XHbAUssrMPI/AAAAAAAED78/31DtDe9q6JcGr77dvTTUOna6huIYwbvEgCK4BGAYYCw/s0/%25E7%25B0%25A1%25E5%25A0%25B11.png
       if (typeof(imageList[link]) === 'string') {
         // 表示已經加入了
-        return
+        return false
       }
       
       let filename = link
@@ -319,6 +319,8 @@ let articleDownload = {
       
       filenameList.push(filename)
       imageList[link] = filename
+      
+      return filename
     }
     
     /*
@@ -333,11 +335,11 @@ let articleDownload = {
     })
     */
     article.find('a[href]').each((i, ele) => {
-      pushImageList(ele.href)
+      ele.href = 'assets/' + pushImageList(ele.href)
     })
 
     article.find('img[src]').each((i, ele) => {
-      pushImageList(ele.src)
+      ele.src = 'assets/' + pushImageList(ele.src)
     })
     
     //console.log(filenameList.length)
@@ -417,7 +419,7 @@ let articleDownload = {
       setTimeout(() => {
         this.downloadArticle()
       }, 3000)
-      return
+      return false
     }
     
     let filename = this.getArticleFilename()
@@ -449,7 +451,9 @@ let articleDownload = {
       zip.file("metadata.json", metadata);
 
       // 下載comments的json
-      let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
+      //let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
+      let commentJSONLink = $('.comment-form-tool .comment-tools-select option[value="open-comment-feed-json"]').attr('data-url')
+      
       commentJSONLink = commentJSONLink + '-in-script&callback=?'
       $.getJSON(commentJSONLink, (commentJSON) => {
         commentJSON = JSON.stringify(commentJSON, null, 2)
@@ -501,5 +505,8 @@ let articleDownload = {
   }
 }
 
-window.articleDownload = articleDownload
+if (typeof(window) === 'object') {
+  window.articleDownload = articleDownload
+}
+
 export default articleDownload

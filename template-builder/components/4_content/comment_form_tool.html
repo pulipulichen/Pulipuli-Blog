@@ -74,12 +74,13 @@
     </option>
     </optgroup>
     <optgroup label="Feed">
-      <option value="open-comment-feed" 
+      <!-- Use for download -->
+      <option value="open-comment-feed-json" 
               data-tool-type="open-url" 
               expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full?alt=json&quot;'>
         Comments Feed (JSON format)
       </option>
-      <option value="open-comment-feed" 
+      <option value="open-comment-feed-xml" 
               data-tool-type="open-url" 
               expr:data-url='&quot;/feeds/&quot; + data:post.id + &quot;/comments/full&quot;'>
         Comments Feed (XML format)

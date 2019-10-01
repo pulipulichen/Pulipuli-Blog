@@ -13,6 +13,8 @@ let loadAdminTools = function (callback) {
       adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     }
     
+    //console.log(adminToolURL)
+    
     $.getScript(adminToolURL, () => {
       loadAdminToolsIsLoaded = true
       loadAdminTools(callback)
@@ -29,6 +31,7 @@ $(() => {
   })
   
   $('#main .entry-content .blog-admin .download-article-button').click(function () {
+    //console.log('aaa')
     loadAdminTools(() => {
       articleDownload.downloadArticle()
     })
