@@ -29,6 +29,27 @@
 
 #main div.comments#comments {
   min-height: initial;
+  padding: 15px 30px;
+  
+  &> .comments-content #top-ra > .comment:first-of-type:first-child {
+    padding-top: 0;
+  }
+  
+  #comment-holder > .comment-thread {
+    &.toplevel-thread {
+      margin: 0;
+    }
+    
+    img[src="//resources.blogblog.com/img/blank.gif"] {
+      background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    
+    .thread-expanded img[src="//resources.blogblog.com/img/blank.gif"] {
+      background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png);
+    }
+  }
 }
 
 
