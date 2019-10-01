@@ -335,15 +335,18 @@ let articleDownload = {
     })
     */
     article.find('a[href]').each((i, ele) => {
-      ele.href = 'assets/' + pushImageList(ele.href)
+      pushImageList(ele.href)
+      //ele.href = 'assets/' + pushImageList(ele.href)
     })
 
     article.find('img[src]').each((i, ele) => {
-      ele.src = 'assets/' + pushImageList(ele.src)
+      pushImageList(ele.src)
+      //ele.src = 'assets/' + pushImageList(ele.src)
     })
     
     //console.log(filenameList.length)
     //console.log(filenameList)
+    //console.log(imageList)
     return imageList
   },
   getImageFromList: function (imageList, callback) {
@@ -387,16 +390,24 @@ let articleDownload = {
       let filename = 'assets/' + linkFileList[link].filename
       //console.log(filename)
       
-      article.find('a[href="' + link + '"]').each((i, ele) => {
-        ele.href = filename
-      })
-
-      article.find('img[src="' + link + '"]').each((i, ele) => {
-        ele.src = filename
-      })
+      this.replaceArticleSingleLink(article, link, filename)
+      
+      if (link.startsWith('http://') || link.startsWith('https://')) {
+        let altLink = link.slice(link.indexOf('//'))
+        this.replaceArticleSingleLink(article, altLink, filename)
+      }
     }
     
     return article
+  },
+  replaceArticleSingleLink: function (article, link, filename) {
+    article.find('a[href="' + link + '"]').each((i, ele) => {
+      ele.href = filename
+    })
+
+    article.find('img[src="' + link + '"]').each((i, ele) => {
+      ele.src = filename
+    })
   },
   downloadZIP: function (filename, zip, callback) {
     zip.generateAsync({type: "blob"})
@@ -427,18 +438,20 @@ let articleDownload = {
     
     let article = this.getRenderedPost()
     let imageList = this.parseImageList(article)
-    //console.log(imageList)
-    //return 
     
     this.getImageFromList(imageList,(linkFileList) => {
+      //console.log(linkFileList)
+      //console.log(imageList)
       article = this.replaceArticleLink(article, linkFileList)
       let articleHTML = this.beautifyHTML(article.html())
-      zip.file("article.html", articleHTML);
+      
+      let mainFolder = zip.folder(filename)
+      mainFolder.file("article.html", articleHTML);
       
       let assets = null;
       for (let link in linkFileList) {
         if (assets === null) {
-          assets = zip.folder("assets");
+          assets = mainFolder.folder("assets")
         }
         let item = linkFileList[link]
         assets.file(item.filename, item.data, {binary:true});
@@ -448,7 +461,7 @@ let articleDownload = {
       
       let metadata = this.getMetadata()
       metadata = JSON.stringify(metadata, null, 2)
-      zip.file("metadata.json", metadata);
+      mainFolder.file("metadata.json", metadata);
 
       // 下載comments的json
       //let commentJSONLink = $('.comment-form-tool a.feed.json').attr('href')
@@ -457,7 +470,7 @@ let articleDownload = {
       commentJSONLink = commentJSONLink + '-in-script&callback=?'
       $.getJSON(commentJSONLink, (commentJSON) => {
         commentJSON = JSON.stringify(commentJSON, null, 2)
-        zip.file("comments.json", commentJSON);
+        mainFolder.file("comments.json", commentJSON);
 
         this.downloadZIP(filename, zip, () => {
           if (location.href.endsWith('downloadArticle=true')) {
