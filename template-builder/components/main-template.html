@@ -119,7 +119,7 @@
 <!-- 封存頁面不要被索引
   -- https://www.wfublog.com/2019/03/blogger-archive-page-noindex.html
   -->
-<b:if cond='data:blog.pageType == "archive"'>
+<b:if cond='data:blog.pageType == &quot;archive&quot;'>
   <meta content='NOINDEX' name='ROBOTS'/>
 </b:if>
 
@@ -238,7 +238,7 @@
       <b:include data='top' name='status-message'/>
       <b:loop values='data:posts' var='post'>
         <b:include data='post' name='post'/>
-        <b:if cond='data:blog.pageType != &quot;index&quot;'>
+        <b:if cond='data:blog.pageType != &quot;index&quot; and data:blog.pageType != &quot;archive&quot;'>
           <b:if cond='data:post.showThreadedComments'>
             <b:include data='post' name='threaded_comments'/>
           <b:else/>
@@ -483,7 +483,7 @@
   <!-- posts -->
   <div class='blog-posts hfeed'>
     <b:include data='top' name='status-message'/>
-    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <b:if cond='data:blog.pageType == &quot;index&quot; || data:blog.pageType == &quot;archive&quot;'>
       <b:loop values='data:posts' var='post'>
         <b:include data='post' name='mobile-index-post'/>
       </b:loop>
@@ -625,7 +625,7 @@
           </div>
         </div>
 
-        <b:if cond='data:blog.pageType != &quot;index&quot;'>
+        <b:if cond='data:blog.pageType != &quot;index&quot; and data:blog.pageType != &quot;archive&quot;'>
           <b:if cond='data:post.showThreadedComments'>
             <div class="comments" id="disqus_thread"></div>
             <b:include data='post' name='threaded_comments'/>
@@ -713,7 +713,7 @@
 <b:includable id='post' var='post'>
   <p:include>0_header/5_env_variables.html</p:include>
   <div class='post'>
-  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+  <b:if cond='data:blog.pageType == &quot;index&quot; || data:blog.pageType == &quot;archive&quot;'>
     <b:if cond='data:post.title'>
       <h3>
         <b:if cond='data:post.link'>
@@ -735,13 +735,12 @@
     </b:if>
   </b:if>
     
-  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+  <b:if cond='data:blog.pageType == &quot;index&quot; || data:blog.pageType == &quot;archive&quot;'>
     <p:include>4_content/entry-index.html</p:include>
   <b:else/>
     <!-- 這邊是item的article頁面 -->
     <p:include>4_content/entry-item.html</p:include>
-
-</b:if>
+  </b:if>
 
 <div class='clear'/>
 
@@ -751,7 +750,7 @@
 
       <aside>
 
-<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<b:if cond='data:blog.pageType == &quot;index&quot; || data:blog.pageType == &quot;archive&quot;'>
   <div class='pull-left buttons'>
     <a class='read-more' expr:href='data:post.url + &quot;#&quot;'>Read More</a>
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
