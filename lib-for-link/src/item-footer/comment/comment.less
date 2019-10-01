@@ -36,6 +36,7 @@
   }
   
   #comment-holder > .comment-thread {
+
     &.toplevel-thread {
       margin: 0;
     }
@@ -48,6 +49,35 @@
     
     .thread-expanded img[src="//resources.blogblog.com/img/blank.gif"] {
       background-image: url(//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s36/gnome_stock_person.png);
+    }
+    
+    .comment:first-of-type {
+      margin-top: 5px;
+    }
+    
+    .comment-replies .comment-thread {
+      margin-top: 0;
+      margin-bottom: 0;
+      border: 1px solid #ddd;
+      border-top-width: 0;
+      
+      .thread-toggle {
+        margin-top: 5px;
+        user-select: none;
+        
+        &.thread-collapsed {
+          margin-bottom: 5px;
+        }
+      }
+      
+      .comment {
+        width: calc(100% - 40px);
+      }
+    }
+    
+    .item-control, 
+    .comment-reply {
+      user-select: none;
     }
   }
 }
