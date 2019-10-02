@@ -15,7 +15,7 @@ let TableUtil = {
     })
   },
   addLabel: function ($table) {
-    let container = $(`<div class="table-labels"></div>`)
+    let container = $(`<div class="table-labels puli-utils-append"></div>`)
       .insertBefore($table)
     
     let copyLabel = $(`<div class="table-label">
@@ -44,18 +44,18 @@ let TableUtil = {
   },
   popupTable: function (table) {
     let win = window.open('', '_blank')
-      //let win = window.open(`data:text/html;charset=utf8,<html><head><link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='icon' sizes='192x192'/></head><body></body></html>`);
-      win.document.title = 'Table: ' + document.title
-      
-      //WIN = win
-      
-      let cssURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/table-popup.css'
-      if ($('script[src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
-        cssURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/static/table-popup.css'
-      }
+    //let win = window.open(`data:text/html;charset=utf8,<html><head><link href='//lh3.googleusercontent.com/-EJjh-ZlKl64/VvtjyofcjNI/AAAAAAACuME/hYJhk_ZuORs/s0/pulipuli192x192.jpg' rel='icon' sizes='192x192'/></head><body></body></html>`);
+    win.document.title = 'Table: ' + document.title
 
-      win.document.body.innerHTML = table.prop('outerHTML')
-        + `<link href='${cssURL}' rel='stylesheet' type='text/css'/>`
+    //WIN = win
+
+    let cssURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/table-popup.css'
+    if ($('script[src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
+      cssURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/static/table-popup.css'
+    }
+
+    win.document.body.innerHTML = table.prop('outerHTML')
+      + `<link href='${cssURL}' rel='stylesheet' type='text/css'/>`
   },
   setupThumbnail: function (table) {
     //console.log(domToImage.toSvg(table))
@@ -70,6 +70,7 @@ let TableUtil = {
           //document.body.appendChild(img);
           let $img = $(img)
           $img.addClass('table-thumbnail')
+                  .addClass('puli-utils-append')
                   .attr('title', 'Open table in new window')
                   .insertAfter(table)
           $img.click(function () {

@@ -21,7 +21,7 @@ $(function () {
               })
               .join('')
     }
-    let label = $(`<span class="code-label" title="Copy code">
+    let label = $(`<span class="code-label puli-utils-append" title="Copy code">
             <span>${className}</span>
             <i aria-hidden="true" class="fa fa-copy"></i>
         </span>`).insertBefore(_code)
