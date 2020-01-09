@@ -40,7 +40,7 @@ ArchiveListUtils = {
     })
   },
   displayConfiguration: function () {
-    console.log('displayConfiguration')
+    //console.log('displayConfiguration')
     let cacheKey = 'archivesCheckboxStatus'
     
     this.openListYear(() => {
@@ -94,6 +94,11 @@ ArchiveListUtils = {
       // -------------------------------------
       
       $('#BlogArchive1_ArchiveList a.toggle').each((i, a) => {
+        //console.log($(a).parent().hasClass('init-download-checkbox'))
+        if ($(a).parent().hasClass('init-download-checkbox')) {
+          return false
+        }
+        
         // 查看一下現在的狀態，然後加上年月好嗎
         let folderType = 'month'
         if ($(a).parent().parent().parent().attr('id') === 'BlogArchive1_ArchiveList') {
