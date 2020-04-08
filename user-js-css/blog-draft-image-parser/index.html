@@ -21,9 +21,15 @@
       <textarea v-model="rawHTML"
                 onfocus="this.select()"></textarea>
       <ul>
-        <li v-for="(link, i) in links">
+        <li v-for="(link, i) in links"
+            v-bind:title="filename(link)">
           <a v-bind:href="link" target="_blank">
-            {{ link }}
+            <span class="image-container">
+              <img v-bind:src="link" />
+            </span>
+            <span class="link-container">
+              {{ filename(link) }}
+            </span>
           </a>
         </li>
       </ul>
