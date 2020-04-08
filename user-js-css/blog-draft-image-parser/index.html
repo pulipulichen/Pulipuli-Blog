@@ -18,21 +18,35 @@
   </head>
   <body>
     <form class="ui form" id="app">
-      <textarea v-model="rawHTML"
-                onfocus="this.select()"></textarea>
-      <ul>
-        <li v-for="(link, i) in links"
-            v-bind:title="filename(link)">
-          <a v-bind:href="link" target="_blank">
-            <span class="image-container">
-              <img v-bind:src="link" />
-            </span>
-            <span class="link-container">
-              {{ filename(link) }}
-            </span>
-          </a>
-        </li>
-      </ul>
+      <textarea 
+        class="input"
+        v-model="rawHTML"
+        onfocus="this.select()"></textarea>
+      
+      <div class="ui grid ">
+        <div class="eight wide column">
+          <ul>
+          <li v-for="(link, i) in links"
+              v-bind:title="filename(link)">
+            <a v-bind:href="link" target="_blank">
+              <span class="image-container">
+                <img v-bind:src="link" />
+              </span>
+              <span class="filename-container">
+                {{ filename(link) }}
+              </span>
+              <span class="link-container">
+                {{ link }}
+              </span>
+            </a>
+          </li>
+        </ul>
+        </div>
+        <div class="eight wide column">
+          <textarea onfocus="this.select()">{{ outputLinks }}</textarea>
+        </div>
+      </div>
+        
       <button 
         type="button"
         v-if="rawHTML !== ``"
