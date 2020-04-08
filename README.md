@@ -53,3 +53,4 @@ Font Awesome icon: https://fontawesome.com/icons?d=gallery&m=free
 # Blogger
 
 - pageType: index, archive, item
+- Blog draft image link parser: https://pulipulichen.github.io/Pulipuli-Blog/user-js-css/blog-draft-image-parser/

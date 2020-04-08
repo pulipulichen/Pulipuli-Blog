@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>blog-draft-image-parser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../template-builder/lib/semantic-ui/semantic.min.css" />
+    
+    <script src="../../template-builder/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../template-builder/lib/semantic-ui/semantic.min.js"></script>
+    
+    
+    <script src="../../template-builder/lib/vue/vue.min.js"></script>
+    
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form class="ui form" id="app">
+      <textarea v-model="rawHTML"
+                onfocus="this.select()"></textarea>
+      <ul>
+        <li v-for="(link, i) in links">
+          <a v-bind:href="link" target="_blank">
+            {{ link }}
+          </a>
+        </li>
+      </ul>
+      <button 
+        type="button"
+        v-if="rawHTML !== ``"
+        v-on:click="rawHTML = ``"
+        class="ui fluid button">
+        RESET
+      </button>
+    </form>
+    
+    <script src="main.js"></script>
+  </body>
+</html>
