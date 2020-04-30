@@ -122,6 +122,24 @@ let articleDownload = {
       }
     })
     
+    article.find(`a[href*="http://pulipuli.blogspot.com/"],a[href*="https://pulipuli.blogspot.com/"]`).each((i, ele) => {
+      let value = ele.href
+      value = value.slice(value.indexOf('.com/') + 4)
+      ele.href = value
+    })
+    
+    article.find(`a[href*="http://pulipuli.blogspot.tw/"],a[href*="https://pulipuli.blogspot.tw/"]`).each((i, ele) => {
+      let value = ele.href
+      value = value.slice(value.indexOf('.tw/') + 3)
+      ele.href = value
+    })
+    
+    article.find(`a[href*="http://blog.pulipuli.info/"],a[href*="https://blog.pulipuli.info/"]`).each((i, ele) => {
+      let value = ele.href
+      value = value.slice(value.indexOf('.info/') + 5)
+      ele.href = value
+    })
+    
     let html = this.beautifyHTML(article.html())
     
     //console.log(html);
