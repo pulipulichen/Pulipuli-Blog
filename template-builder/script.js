@@ -99,7 +99,8 @@ var app = {
           '6_includable/shareButtons.html',
           '6_includable/status-message.html',
           '6_includable/threaded_comment_js.html',
-          '6_includable/threaded_comments.html'
+          '6_includable/threaded_comments.html',
+          '6_includable/check-localhost.html'
         ] // var replaceList = [
 
         var loop = (i) => {
