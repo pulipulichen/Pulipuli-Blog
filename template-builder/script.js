@@ -145,6 +145,9 @@ var app = {
               
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
+              
+              mainTemplate = mainTemplate.split('<p:check-localhost />')
+                      .join('')
             }
             else if (this.hostType === 'localhost') {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
@@ -152,9 +155,15 @@ var app = {
               
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
+              
+              mainTemplate = mainTemplate.split('<p:check-localhost />')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/checkLocalhost.min.js"></script>')
             }
             else {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
+                      .join('')
+              
+              mainTemplate = mainTemplate.split('<p:check-localhost />')
                       .join('')
             }
             
