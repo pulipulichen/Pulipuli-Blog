@@ -8,4 +8,4 @@ setTimeout(function () {
     
     console.log('Load GitHub resources')
   }
-}, 0)
+}, 3000)
