@@ -1,0 +1,12 @@
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+  <p:check-localhost-item />
+  
+  <b:else />
+  <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+    <p:check-localhost-page />
+    
+    <b:else />
+    
+    <p:check-localhost-index />
+  </b:if>
+</b:if>

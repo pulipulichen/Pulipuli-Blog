@@ -146,7 +146,11 @@ var app = {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
               
-              mainTemplate = mainTemplate.split('<p:check-localhost />')
+              mainTemplate = mainTemplate.split('<p:check-localhost-index />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-item />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-page />')
                       .join('')
             }
             else if (this.hostType === 'localhost') {
@@ -156,14 +160,22 @@ var app = {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
               
-              mainTemplate = mainTemplate.split('<p:check-localhost />')
-                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/checkLocalhost.min.js"></script>')
+              mainTemplate = mainTemplate.split('<p:check-localhost-index />')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/check-localhost/check-localhost-index.min.js"></script>')
+              mainTemplate = mainTemplate.split('<p:check-localhost-item />')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/check-localhost/check-localhost-item.min.js"></script>')
+              mainTemplate = mainTemplate.split('<p:check-localhost-page />')
+                      .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/check-localhost/check-localhost-page.min.js"></script>')
             }
             else {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('')
               
-              mainTemplate = mainTemplate.split('<p:check-localhost />')
+              mainTemplate = mainTemplate.split('<p:check-localhost-index />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-item />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-page />')
                       .join('')
             }
             
