@@ -132,7 +132,7 @@ jQuery.puliGuestBook = function (config) {
     var temp = '<ul id="' + listID + '" class="guest-book-list">';
     var postshow = listNumber;
     var titlelen = '20';
-    var layout = `<a class="date" href="%COMMENT_LINK%" target="_blank">%Y%-%M%-%D% (查看留言)</a>
+    var layout = `<a class="date" href="%COMMENT_LINK%" target="_blank">%Y%-%M%-%D% <i aria-hidden="true" class="fa fa-link"></i></a>
       <strong class="name">%authorname%</strong>:<br />
       %comment%`;
     var sortentry = [];
