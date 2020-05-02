@@ -48,29 +48,19 @@
   
   var scriptsList = [
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/vendors.js',
-    '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/global-footer.js',
-    //'//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/related-posts/related-posts.js',
-    //'//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/lightbox2-lokeshdhakar/js/lightbox.min.js',
-    //'//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/lightbox2-lokeshdhakar/init.js',
-
-    //'//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/highlight/highlight.min.js',
-    //'//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/highlight/init.js',
-
-    '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/page.js',
-
+    
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/global-header.js',
-
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-header.js',
+    '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/page.js',
+    '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js',
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/global-footer.js',
-    '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js'
-
   ]
   
   var loop = function (i) {
     if (i < scriptsList.length) {
       loadScript(scriptsList[i], function () {
         i++
-        loop()
+        loop(i)
       })
     }
   }
