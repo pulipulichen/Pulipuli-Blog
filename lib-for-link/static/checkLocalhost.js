@@ -5,5 +5,7 @@ setTimeout(function () {
     script.async = true;
     script.src = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/loadRemote.min.js';
     document.getElementsByTagName('head')[0].appendChild(script);
+    
+    console.log('Load GitHub resources')
   }
 }, 0)
