@@ -40,7 +40,8 @@
  <script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js" async="async" type="text/javascript"></script>
 
    */
-  [
+  
+  var scriptsList = [
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/global-footer.js',
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/related-posts/related-posts.js',
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/lightbox2-lokeshdhakar/js/lightbox.min.js',
@@ -58,14 +59,18 @@
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/global-footer.js',
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js'
 
-  ].forEach(function (url) {
+  ]
+          
+  scriptsList.forEach(function (url) {
     loadScript(url)
   })
   
-  [
+  var styleList = [
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/lightbox2-lokeshdhakar/css/lightbox.min.css',
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/item/src/modules/highlight/default.min.css'
-  ].forEach(function (url) {
+  ]
+  
+  styleList.forEach(function (url) {
     loadStyle(url)
   })
   
