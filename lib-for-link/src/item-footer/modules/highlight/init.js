@@ -35,7 +35,9 @@ $(function () {
       }
       code.find('.code-label:first').remove()
 
-      let codeString = code.text()
+      let codeString = code.html()
+      codeString = codeString.replace(/\&nbsp\;/g, ' ')
+          .replace(/<br>/g, '\n')
       //console.log(codeString)
       CopyPasteHelper.copyPlainText(codeString)
     })
