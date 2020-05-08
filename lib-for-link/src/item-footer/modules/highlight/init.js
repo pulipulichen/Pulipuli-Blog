@@ -30,7 +30,10 @@ $(function () {
       //console.log('click')
       let code = $(this).parent().clone()
 
-      code.find('.label:first').remove()
+      if (code.find('.hljs').length > 0) {
+        code = code.find('.hljs:first')
+      }
+      code.find('.code-label:first').remove()
 
       let codeString = code.text()
       //console.log(codeString)
