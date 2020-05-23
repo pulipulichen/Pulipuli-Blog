@@ -186,7 +186,10 @@ jQuery.puliGuestBook = function (config) {
         }
       }
       title = title_temp;
-      var link = post.link[2].href;
+      var link = ''
+      if (post.link[2]) {
+        link = post.link[2].href
+      }
       var title_link = fulltitle;
 
       /**
