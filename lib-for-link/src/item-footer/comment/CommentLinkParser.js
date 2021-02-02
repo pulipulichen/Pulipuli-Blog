@@ -25,6 +25,11 @@ let parseImgur = () => {
   $('#comment-holder .comment-content a[href$=".png"],'
             + '#comment-holder .comment-content a[href$=".gif"],'
             + '#comment-holder .comment-content a[href$=".jpg"],'
+            + '#comment-holder .comment-content a[href$=".jpeg"],'
+            + '#comment-holder .comment-content a[href$=".PNG"],'
+            + '#comment-holder .comment-content a[href$=".GIF"],'
+            + '#comment-holder .comment-content a[href$=".JPG"],'
+            + '#comment-holder .comment-content a[href$=".JPEG"],'
             + '#comment-holder .comment-content a[href^="http://imgur.com/"]:not([href^="http://imgur.com/upload"]),'
             + '#comment-holder .comment-content a[href^="https://imgur.com/"]:not([href^="https://imgur.com/upload"])').each(function (i, aNode) {
       let url = aNode.href
