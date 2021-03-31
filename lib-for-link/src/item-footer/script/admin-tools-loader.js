@@ -1,3 +1,5 @@
+/* global articleDownload */
+
 let loadAdminToolsIsLoaded = false
 let loadAdminTools = function (callback) {
   //console.log(loadAdminToolsIsLoaded)
