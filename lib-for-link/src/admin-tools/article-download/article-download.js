@@ -142,6 +142,8 @@ let articleDownload = {
     
     let html = this.beautifyHTML(article.html())
     
+    html = html.replace(`<a name="more"></a>`, `<a name="more"></a><!-- more -->`)
+    
     //console.log(html);
     this.copyToClip(html)
   },
