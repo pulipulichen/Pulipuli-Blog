@@ -1,3 +1,5 @@
+/* global fetch */
+
 var app = {
   el: '#app',
   data: {
@@ -79,18 +81,23 @@ var app = {
           '3_footer/4_management.html',
           '3_footer/8_include.html',
           '3_footer/9_include_item.html',
-          '4_content/archives.html',
+          
           '4_content/author.html',
           '4_content/backlinks.html',
           '4_content/comment_form_tool.html',
           '4_content/comments.html',
-          '4_content/labels.html',
+          
           '4_content/share.html',
           '4_content/related_posts.html',
           '4_content/entry-index.html',
           '4_content/entry-item.html',
-          '4_content/social-media.html',
-          '4_content/statistics.html',
+          
+          '4_page/social-media.html',
+          '4_page/statistics.html',
+          '4_page/labels.html',
+          '4_page/archives.html',
+          '4_page/page-as-item.html',
+          
           '5_footer_bar/1_col.html',
           '5_footer_bar/2_col.html',
           '5_footer_bar/3_col.html',

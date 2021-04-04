@@ -12,7 +12,11 @@ let loadAdminTools = function (callback) {
     //let adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     let adminToolURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     if ($('script[src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
-      adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
+      // 嘗試找尋另一種的讀取方法
+      let baseScriptTag = $('script[src$="/lib-for-link/dist/global-header.js"]:first')
+      let src = baseScriptTag.attr('src')
+      
+      adminToolURL = src.slice(0, src.lastIndexOf('/dist/')) + '/dist/admin-tools.js'
     }
     
     //console.log(adminToolURL)

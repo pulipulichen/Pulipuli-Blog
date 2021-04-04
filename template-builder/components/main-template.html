@@ -213,22 +213,40 @@
 <!-- ============================ -->
   
 <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/archives.html" or data:blog.url == "https://blog.pulipuli.info/p/archives.html"'>
-  <p:include>4_content/archives.html</p:include>
+  <p:include>4_page/archives.html</p:include>
+  
+  <b:else/>
+  
+    <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/labels.html" or data:blog.url == "https://blog.pulipuli.info/p/labels.html"'>
+      <p:include>4_page/labels.html</p:include>
+      <b:else/>
+      
+      <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/social-media.html" or data:blog.url == "https://blog.pulipuli.info/p/social-media.html"'>
+        <p:include>4_page/social-media.html</p:include>
+        <b:else/>
+        
+          <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/sta.html" or data:blog.url == "https://blog.pulipuli.info/p/sta.html"'>
+            <p:include>4_page/statistics.html</p:include>
+            <p:include>4_page/page-as-item.html</p:include>
+            <b:else/>
+
+              <b:if cond='data:view.isPage'>
+                <p:include>4_page/page-as-item.html</p:include>
+              </b:if>
+          </b:if>
+      </b:if>
+    </b:if>
 </b:if>
   
 <!-- ============================ -->
 
-<b:if cond='data:blog.url == "http://blog.pulipuli.info/p/labels.html" or data:blog.url == "https://blog.pulipuli.info/p/labels.html"'>
-  <p:include>4_content/labels.html</p:include>
-</b:if>
+    
 
-<b:if cond='data:blog.url == "http://blog.pulipuli.info/p/social-media.html" or data:blog.url == "https://blog.pulipuli.info/p/social-media.html"'>
-<p:include>4_content/social-media.html</p:include>
-</b:if>
 
-<b:if cond='data:blog.url == "http://blog.pulipuli.info/p/sta.html" or data:blog.url == "https://blog.pulipuli.info/p/sta.html"'>
-<p:include>4_content/statistics.html</p:include>
-</b:if>
+
+
+
+
   
 <!-- ============================ -->
   

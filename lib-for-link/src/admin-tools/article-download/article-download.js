@@ -140,12 +140,33 @@ let articleDownload = {
       ele.href = value
     })
     
+    
+    if (location.href.endsWith('/p/publications.html')) {
+      article = this.copyHTMLinPublications(article)
+    }
+    
     let html = this.beautifyHTML(article.html())
     
     html = html.replace(`<a name="more"></a>`, `<a name="more"></a><!-- more --><hr />`)
     
     //console.log(html);
     this.copyToClip(html)
+  },
+  
+  copyHTMLinPublications (article) {
+    article.find('li').each((i, ele) => {
+      let html = ele.innerHTML
+      
+      html = html.split('&nbsp;').join(' ')
+      
+      let pos = html.lastIndexOf('(相關記事：')
+      if (pos > -1) {
+        html = html.slice(0, pos)
+      }
+      ele.innerHTML = html.trim()
+    })
+    
+    return article
   },
   
   getArticleFilename: function () {
