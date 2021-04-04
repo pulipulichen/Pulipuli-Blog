@@ -147,10 +147,26 @@ let articleDownload = {
     
     let html = this.beautifyHTML(article.html())
     
-    html = html.replace(`<a name="more"></a>`, `<a name="more"></a><!-- more --><hr />`)
+    html = this.copyHTMLMore(html)
+    
+    //html = html.replace(`<a name="more"></a>`, `<a name="more"></a><!-- more --><hr />`)
     
     //console.log(html);
     this.copyToClip(html)
+  },
+  
+  copyHTMLMore (html) {
+    
+    if (html.indexOf(`<a name="more"></a>
+<hr>`) > -1) {
+      html = html.replace(`<a name="more"></a>`, `<a name="more"></a><!--more-->`)
+    }
+    else if (html.indexOf(`<a name="more"></a>`) > -1) {
+      html = html.replace(`<a name="more"></a>`, `<a name="more"></a><!--more-->
+<hr />`)
+    }
+    
+    return html
   },
   
   copyHTMLinPublications (article) {
