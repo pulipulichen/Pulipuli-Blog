@@ -2,7 +2,7 @@
 // ------------------------------
 // 20170309 留言網址變連結
 let replaceURLtoLink = () => {
-  
+  console.trace('誰讀取了 replaceURLtoLink')
   $('#comment-holder .comment-content:not(.replaced-url-to-link)').html(function (i, inputText) {
     var replacedText, replacePattern1, replacePattern2, replacePattern3;
 

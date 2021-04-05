@@ -11,7 +11,7 @@ let loadAdminTools = function (callback) {
   else {
     //let adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     let adminToolURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
-    if ($('script[src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
+    if ($('script[src$="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
       // 嘗試找尋另一種的讀取方法
       let baseScriptTag = $('script[src$="/lib-for-link/dist/global-header.js"]:first')
       let src = baseScriptTag.attr('src')
