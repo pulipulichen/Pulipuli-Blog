@@ -13,4 +13,4 @@ import "./style/article-footer.less"
 import "./style/addthis.less"
 
 //import "./style-print/gutenberg.min.less"
-import "./style-print/style-print.less"
+import "./style-print/item-style-print.less"

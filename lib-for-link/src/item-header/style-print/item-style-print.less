@@ -1,7 +1,7 @@
 
 /******************************************/
 @media print {
-  * {
+  *:not(i) {
     font-family: 微軟正黑體 !important;
   }
   
@@ -51,9 +51,9 @@
         padding-top: 5px;
     }
     
-    #masthead.fixed-nav.affix #header-inner .descriptionwrapper {
-        display: block;
-    }
+    //#masthead.fixed-nav.affix #header-inner .descriptionwrapper {
+    //    display: block;
+    //}
     
     #masthead .descriptionwrapper:after {
         content:attr(url);
@@ -95,7 +95,7 @@
      * 處理連結的問題
      */
     #main .post {
-      a[href]:not(.btn):not(.lightbox-group):not([href^="https://translate.google.com.tw/#view="]):not([href^="#"]):not([href^="javascript:"]):after{
+      a[href]:after{
         content:" (" attr(href) ") ";
         font-size:0.8em;
         font-weight:normal;
@@ -106,11 +106,30 @@
         text-overflow: ellipsis;
       }
       
-      h1, .puli-utils-append {
+      h1, 
+      .puli-utils-append {
         a[href]:after {
           content: none !important;
         }
-      } 
+      }
+      
+      a.btn:after,
+      a.lightbox-group:after,
+      a[href^="#"]:after,
+      a[href^="javascript:"]:after,
+      a[href^="https://docs.google.com/"][href~="/export/"]:after,
+      a[href^="https://pulipulichen.github.io/blog-pulipuli-info-data-"]:after,
+      a[href^="https://www.slideshare.net/pulipulichen/"]:after,
+      a[href^="https://1drv.ms/p/"]:after,
+      a[href^="https://app.box.com/s/"]:after,
+      a[href^="https://mega.nz/"]:after,
+      a[href^="https://www.mediafire.com/file/"]:after,
+      a[href^="https://drive.google.com/file/d/"][href$="/view?usp=sharing"]:after,
+      a[href^="https://docs.google.com/document/d/"][href$="/edit?usp=sharing"]:after,
+      a[href^="https://docs.google.com/spreadsheets/d/"][href$="/edit?usp=sharing"]:after,
+      a[href^="https://translate.google.com.tw/#view="]:after {
+        content: none !important;
+      }
     }
     
     /**
@@ -147,6 +166,7 @@
       iframe {
         height: 40rem !important;
         break-inside: avoid;
+        border: 1px solid #CCC;
       }
     }
     
@@ -182,9 +202,20 @@
      * 處理水平線問題
      */
     #main .entry-content {
+      article a.lightbox-group:first-of-type > img,
       img.original-size {
         max-width: 30rem !important;
         height: auto !important;
+      }
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理標題下說明的問題
+     */
+    #main .entry-content article {
+      .meta1 {
+        line-height: 50%;
       }
     }
     
