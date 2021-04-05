@@ -1,1 +1,1 @@
-require("./article-download/article-download.js")
+import "./article-download/article-download.js"

@@ -1,14 +1,20 @@
 
 /******************************************/
 @media print {
+  * {
+    font-family: 微軟正黑體 !important;
+  }
+  
     #masthead {
         border-bottom: 1px solid gray;
         position: static !important;
     }
     
     #masthead.fixed-nav {
-        position: static !important;
-        height: 82px;
+      position: static !important;
+      height: 82px;
+      background-color: transparent !important;
+      
     }
     
     #masthead.fixed-nav.fixed-nav h1 {
@@ -84,11 +90,264 @@
         display: none;
     }
     
-    #main .post a[href]:after{
+    /**
+     * @Pulipuli 20210406
+     * 處理連結的問題
+     */
+    #main .post {
+      a[href]:not(.btn):not(.lightbox-group):not([href^="https://translate.google.com.tw/#view="]):not([href^="#"]):not([href^="javascript:"]):after{
         content:" (" attr(href) ") ";
         font-size:0.8em;
         font-weight:normal;
         text-decoration: underline !important;
+        white-space: break-spaces;
+        word-break: break-all;
+        max-width: 100%;
+        text-overflow: ellipsis;
+      }
+      
+      h1, .puli-utils-append {
+        a[href]:after {
+          content: none !important;
+        }
+      } 
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理目錄問題
+     */
+    #main .entry-content {
+      .puli-toc,
+      .puli-toc li,
+      .puli-toc li a,{
+        color: #000 !important;
+      }
+      
+      .puli-toc ul,
+      .puli-toc li {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .puli-toc.puli-utils-append {
+        border: 1px solid #CCC;
+      }
+      
+      hr.puli-utils-append {
+        display: none;
+      }
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理iframe問題
+     */
+    #main .entry-content {
+      iframe {
+        height: 40rem !important;
+        break-inside: avoid;
+      }
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理段落問題
+     */
+    #main .entry-content {
+      
+      article > p {
+        //margin-bottom: 0;
+        line-height: 150%;
+      }
+      
+      article > ul > li {
+        line-height: 150%;
+      }
+    }
+    
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理水平線問題
+     */
+    #main .entry-content {
+      hr {
+        border: 2px solid #CCC;
+      }
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理水平線問題
+     */
+    #main .entry-content {
+      img.original-size {
+        max-width: 30rem !important;
+        height: auto !important;
+      }
+    }
+    
+    .at-share-dock-outer {
+      display: none !important;
+    }
+    
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理程式碼問題
+     */
+    #main .entry-content {
+      .code-label.puli-utils-append {
+        display: none;
+        
+        margin-left: 0 !important;
+        background: #FFF !important;
+        
+        i {
+          display: none;
+        }
+      }
+    }
+    
+    .code-label.puli-utils-append {
+      display: none;
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理圖片的問題
+     */
+    #main .entry-content {
+      .lightbox-group img {
+        border: 1px solid #CCC;
+      }
+      
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理要隱藏資訊的問題
+     */
+    #main {
+      .blog-admin,
+      #comments > h4 {
+        display: none !important;
+      }
+    }
+    
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理標題消失的問題
+     */
+    #masthead {
+      .back-button {
+        display: none !important;
+      }
+      margin-bottom: 0;
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理留言的部分
+     */
+    #comments {
+      .comment-replybox-thread,
+      .comment-form-tool,
+      .comment-reply,
+      #backlinks-container,
+      .thread-toggle,
+      .comment-replybox-single {
+        display: none !important;
+      }
+      
+      // -----------------------------
+      
+      /**
+       * @Pulipuli 20210406
+       * 是圖片的問題
+       */
+      .comment:not(#c6292867368144666888) {
+        display: none !important;
+      }
+      
+      .comment#c6292867368144666888 {
+        .parsed-imgur:not(:first-of-type) {
+          display: none !important;
+        }
+        
+        .comment-block {
+          height: 30rem;
+        }
+      }
+      
+      // -----------------------------
+      
+      .comment-content {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        
+        img {
+          max-width: 60% !important;
+        }
+      }
+      
+      //.comment-block {
+      //  break-inside: avoid;
+      //}
+      
+      padding: 0 !important;
+      
+      img[src="//resources.blogblog.com/img/blank.gif"]:after {
+        content: url("<img src='//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png' />");
+      }
+      
+      &.hide-comments {
+        display: none !important;
+      }
+      
+      border-top: 2px solid #ddd;
+      
+      display: none !important;
+    }
+    
+    .post {
+      margin-bottom: 0 !important;
+      border-bottom-width: 0 !important; 
+    }
+    
+    #blog-pager {
+      display: none !important;
+    }
+    
+    /**
+     * @Pulipuli 20210406
+     * 處理sidebar的部分
+     */
+    #sidebar {
+      .widget > a.icon,
+      .widget.random {
+        display: none !important;
+      }
+      
+      .widget {
+        break-inside: avoid;
+      }
+      
+      h2.title {
+        border-top: 2px solid #eee;
+        border-bottom-width: 0;
+        padding-top: 0;
+        
+        &> span {
+          border-bottom-width: 0;
+          border-top: 2px solid #e23a3e;
+          
+          bottom: 0;
+          top: -2px;
+        }
+      }
     }
     
     #main .post .entry-content .meta1 a:after,
@@ -98,7 +357,7 @@
     #main .post a[href^="#"]:after,
     #main .post a.toggle:after,
     #main .post #ArchiveList a.post-count-link:after {
-        content: "";
+        content: none;
     }
     
     #main .post a[href^="#"] {

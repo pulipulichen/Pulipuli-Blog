@@ -276,3 +276,5 @@ $(() => {
   initCommnetToolsSelect()
   //console.log("aaa")
 })
+
+import './CommentToggle.js'

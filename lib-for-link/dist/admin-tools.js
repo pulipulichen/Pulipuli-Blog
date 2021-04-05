@@ -158,10 +158,13 @@
 /*!*****************************************************!*\
   !*** ./lib-for-link/src/admin-tools/admin-tools.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./article-download/article-download.js */ "./lib-for-link/src/admin-tools/article-download/article-download.js")
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _article_download_article_download_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./article-download/article-download.js */ "./lib-for-link/src/admin-tools/article-download/article-download.js");
+
 
 
 /***/ }),

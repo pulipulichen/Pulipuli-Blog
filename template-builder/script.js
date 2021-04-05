@@ -168,12 +168,23 @@ var app = {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/redirect.min.js"></script>')
               
+              /**
+               * 20210406 為什麼要做這件事情？我不懂，還是拿掉吧
+               */
+              /*
               mainTemplate = mainTemplate.split('<p:check-localhost-index />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/check-localhost/check-localhost-index.min.js"></script>')
               mainTemplate = mainTemplate.split('<p:check-localhost-item />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/check-localhost/check-localhost-item.min.js"></script>')
               mainTemplate = mainTemplate.split('<p:check-localhost-page />')
                       .join('<script src="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/check-localhost/check-localhost-page.min.js"></script>')
+               */
+              mainTemplate = mainTemplate.split('<p:check-localhost-index />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-item />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-page />')
+                      .join('')
             }
             else {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')

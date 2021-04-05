@@ -360,6 +360,7 @@ let loadAdminTools = function (callback) {
   else {
     //let adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     let adminToolURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
+    
     if ($('script[src$="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
       // 嘗試找尋另一種的讀取方法
       let baseScriptTag = $('script[src$="/lib-for-link/dist/global-header.js"]:first')
@@ -405,12 +406,20 @@ $(() => {
 /*!************************************************!*\
   !*** ./lib-for-link/src/page-as-item/index.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./../item-footer/admin-tools/AdminToolsStat.js */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js")
-__webpack_require__(/*! ./../item-footer/admin-tools/AdminToolsStat.less */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less")
-__webpack_require__(/*! ./../item-footer/script/admin-tools-loader.js */ "./lib-for-link/src/item-footer/script/admin-tools-loader.js")
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _item_footer_admin_tools_AdminToolsStat_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../item-footer/admin-tools/AdminToolsStat.js */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js");
+/* harmony import */ var _item_footer_admin_tools_AdminToolsStat_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_item_footer_admin_tools_AdminToolsStat_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _item_footer_admin_tools_AdminToolsStat_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../item-footer/admin-tools/AdminToolsStat.less */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less");
+/* harmony import */ var _item_footer_admin_tools_AdminToolsStat_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_item_footer_admin_tools_AdminToolsStat_less__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _item_footer_script_admin_tools_loader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../item-footer/script/admin-tools-loader.js */ "./lib-for-link/src/item-footer/script/admin-tools-loader.js");
+/* harmony import */ var _item_footer_script_admin_tools_loader_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_item_footer_script_admin_tools_loader_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
 
 /***/ }),
 

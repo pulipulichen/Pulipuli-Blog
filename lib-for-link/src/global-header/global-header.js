@@ -1,39 +1,39 @@
-require("./vendor/jquery/jquery-loader.js")
-require("./vendor/font-awesome/font-awesome-loader.js")
-require("./style/1_style.less")
-require("./breeze-theme/googleapis-font-family-crete-round.css")
-require("./breeze-theme/googleapis-font-family-lato.css")
-require("./go-top/go-top.less")
-require("./go-top/go-top.js")
-require("./sidebar/random_posts.less")
-require("./sidebar/sidebar.less")
-require("./sidebar/sidebar.js")
-require("./btn-navbar/nav-collapse.less")
-require("./btn-navbar/btn-navbar.less")
-require("./btn-navbar/btn-navbar.js")
+import "./vendor/jquery/jquery-loader.js"
+import "./vendor/font-awesome/font-awesome-loader.js"
+import "./style/1_style.less"
+import "./breeze-theme/googleapis-font-family-crete-round.css"
+import "./breeze-theme/googleapis-font-family-lato.css"
+import "./go-top/go-top.less"
+import "./go-top/go-top.js"
+import "./sidebar/random_posts.less"
+import "./sidebar/sidebar.less"
+import "./sidebar/sidebar.js"
+import "./btn-navbar/nav-collapse.less"
+import "./btn-navbar/btn-navbar.less"
+import "./btn-navbar/btn-navbar.js"
 
-require("./masthead/masthead.less")
-require("./masthead/masthead.js")
+import "./masthead/masthead.less"
+import "./masthead/masthead.js"
 
-require("./footer/footer.js")
-require("./footer/footer.less")
+import "./footer/footer.js"
+import "./footer/footer.less"
 
-require("./style/2_style.less")
-require("./style/3_custom_style.less")
-require("./style/header.less")
-require("./vendor/addthis.css")
-require("./style/index.less")
-require("./style/content.less")
-require("./style/style.less")
-require("./gsc-search/default.css")
-require("./gsc-search/gsc-search-bar-placeholder.less")
-require("./gsc-search/gsc-search-bar.less")
-require("./gsc-search/gsc-search-result.less")
-require("./gsc-search/gsc-search.js")
-require("./modules/lscache/lscache.js")
-require("./modules/lscache/lscacheHelper.js")
-require("./breeze-theme/breeze.js")
-require("./script/google-analytics.js")
-require("./script/env-variables.js")
-require("./script/back-button.js")
-require("./script/script.js")
+import "./style/2_style.less"
+import "./style/3_custom_style.less"
+import "./style/header.less"
+import "./vendor/addthis.css"
+import "./style/index.less"
+import "./style/content.less"
+import "./style/style.less"
+import "./gsc-search/default.css"
+import "./gsc-search/gsc-search-bar-placeholder.less"
+import "./gsc-search/gsc-search-bar.less"
+import "./gsc-search/gsc-search-result.less"
+import "./gsc-search/gsc-search.js"
+import "./modules/lscache/lscache.js"
+import "./modules/lscache/lscacheHelper.js"
+import "./breeze-theme/breeze.js"
+import "./script/google-analytics.js"
+import "./script/env-variables.js"
+import "./script/back-button.js"
+import "./script/script.js"

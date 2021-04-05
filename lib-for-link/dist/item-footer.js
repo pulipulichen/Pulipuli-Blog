@@ -571,6 +571,16 @@ let parseYouTube = () => {
     })
 }
 
+// 20170309 留言網址變連結
+let anonymousToImage = () => {
+  //console.trace('誰讀取了 replaceURLtoLink')
+  $('.avatar-image-container > img[src="//resources.blogblog.com/img/blank.gif"]').each(function (i, ele) {
+    ele = $(ele)
+    ele.after(`<img src="//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png" class="anonymous-avatar" />`)
+    ele.remove()
+  });
+}
+
 /**
  * @author Pulipuli Chen 20190929
  * https://streamable.com
@@ -609,12 +619,11 @@ var _setup_comment_to_link = function () {
   if (_len === 0) {
     setTimeout(_setup_comment_to_link, 1000);
   } else {
-    //console.log('停停停')
-    return false
     replaceURLtoLink()
     parseImgur()
     parseYouTube()
     parseStreamable()
+    anonymousToImage()
     commentInited = true
   }
 };
@@ -623,7 +632,61 @@ $(function () {
   _setup_comment_to_link();
 });
 
-console.trace('是誰讀取CommentLinkParser.js')
+//console.trace('是誰讀取CommentLinkParser.js')
+
+/***/ }),
+
+/***/ "./lib-for-link/src/item-footer/comment/CommentToggle.js":
+/*!***************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/comment/CommentToggle.js ***!
+  \***************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CommentToggle_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommentToggle.less */ "./lib-for-link/src/item-footer/comment/CommentToggle.less");
+/* harmony import */ var _CommentToggle_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_CommentToggle_less__WEBPACK_IMPORTED_MODULE_0__);
+$(() => {
+  let comments = $('#comments')
+  $('.toggle-comment-display').click((event) => {
+    event.stopPropagation()
+    event.preventDefault()
+    comments.toggleClass('hide-comments')
+  })
+})
+
+
+
+/***/ }),
+
+/***/ "./lib-for-link/src/item-footer/comment/CommentToggle.less":
+/*!*****************************************************************!*\
+  !*** ./lib-for-link/src/item-footer/comment/CommentToggle.less ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js?sourceMap!../../../../node_modules/postcss-loader/src?sourceMap!../../../../node_modules/less-loader/dist/cjs.js?sourceMap!./CommentToggle.less */ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/CommentToggle.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -661,9 +724,12 @@ if(false) {}
 /*!*********************************************************!*\
   !*** ./lib-for-link/src/item-footer/comment/comment.js ***!
   \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CommentToggle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommentToggle.js */ "./lib-for-link/src/item-footer/comment/CommentToggle.js");
 
 // ----------------------------------
 // 20160522 Relate post的功能
@@ -943,6 +1009,8 @@ $(() => {
   //console.log("aaa")
 })
 
+
+
 /***/ }),
 
 /***/ "./lib-for-link/src/item-footer/comment/comment.less":
@@ -979,36 +1047,72 @@ if(false) {}
 /*!*****************************************************!*\
   !*** ./lib-for-link/src/item-footer/item-footer.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(/*! ./modules/highlight/default.css */ "./lib-for-link/src/item-footer/modules/highlight/default.css")
-__webpack_require__(/*! ./modules/highlight/highlight.js */ "./lib-for-link/src/item-footer/modules/highlight/highlight.js")
-__webpack_require__(/*! ./modules/highlight/init.js */ "./lib-for-link/src/item-footer/modules/highlight/init.js")
-__webpack_require__(/*! ./modules/lightbox2-lokeshdhakar/init.js */ "./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js")
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_highlight_default_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/highlight/default.css */ "./lib-for-link/src/item-footer/modules/highlight/default.css");
+/* harmony import */ var _modules_highlight_default_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_highlight_default_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_highlight_highlight_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/highlight/highlight.js */ "./lib-for-link/src/item-footer/modules/highlight/highlight.js");
+/* harmony import */ var _modules_highlight_highlight_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_highlight_highlight_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_highlight_init_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/highlight/init.js */ "./lib-for-link/src/item-footer/modules/highlight/init.js");
+/* harmony import */ var _modules_highlight_init_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_highlight_init_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_lightbox2_lokeshdhakar_init_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/lightbox2-lokeshdhakar/init.js */ "./lib-for-link/src/item-footer/modules/lightbox2-lokeshdhakar/init.js");
+/* harmony import */ var _modules_lightbox2_lokeshdhakar_init_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_lightbox2_lokeshdhakar_init_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _script_admin_tools_loader_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./script/admin-tools-loader.js */ "./lib-for-link/src/item-footer/script/admin-tools-loader.js");
+/* harmony import */ var _script_admin_tools_loader_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_script_admin_tools_loader_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _script_icon_replace_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./script/icon-replace.js */ "./lib-for-link/src/item-footer/script/icon-replace.js");
+/* harmony import */ var _script_icon_replace_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_script_icon_replace_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_related_posts_related_posts_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/related-posts/related-posts.js */ "./lib-for-link/src/item-footer/modules/related-posts/related-posts.js");
+/* harmony import */ var _modules_related_posts_related_posts_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_related_posts_related_posts_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _modules_CopyPasteHelper_CopyPasteHelper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/CopyPasteHelper/CopyPasteHelper.js */ "./lib-for-link/src/item-footer/modules/CopyPasteHelper/CopyPasteHelper.js");
+/* harmony import */ var _modules_CopyPasteHelper_CopyPasteHelper_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_CopyPasteHelper_CopyPasteHelper_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _toc_toc_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./toc/toc.js */ "./lib-for-link/src/item-footer/toc/toc.js");
+/* harmony import */ var _toc_toc_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_toc_toc_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _toc_toc_less__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./toc/toc.less */ "./lib-for-link/src/item-footer/toc/toc.less");
+/* harmony import */ var _toc_toc_less__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_toc_toc_less__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _TableUtil_TableUtil_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./TableUtil/TableUtil.js */ "./lib-for-link/src/item-footer/TableUtil/TableUtil.js");
+/* harmony import */ var _TableUtil_TableUtil_less__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./TableUtil/TableUtil.less */ "./lib-for-link/src/item-footer/TableUtil/TableUtil.less");
+/* harmony import */ var _TableUtil_TableUtil_less__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_TableUtil_TableUtil_less__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _comment_comment_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./comment/comment.js */ "./lib-for-link/src/item-footer/comment/comment.js");
+/* harmony import */ var _comment_comment_less__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./comment/comment.less */ "./lib-for-link/src/item-footer/comment/comment.less");
+/* harmony import */ var _comment_comment_less__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_comment_comment_less__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _comment_comment_form_tool_less__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./comment/comment-form-tool.less */ "./lib-for-link/src/item-footer/comment/comment-form-tool.less");
+/* harmony import */ var _comment_comment_form_tool_less__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_comment_comment_form_tool_less__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _comment_CommentLinkParser_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./comment/CommentLinkParser.js */ "./lib-for-link/src/item-footer/comment/CommentLinkParser.js");
+/* harmony import */ var _comment_CommentLinkParser_js__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_comment_CommentLinkParser_js__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _admin_tools_AdminToolsStat_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./admin-tools/AdminToolsStat.js */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js");
+/* harmony import */ var _admin_tools_AdminToolsStat_js__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_admin_tools_AdminToolsStat_js__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _admin_tools_AdminToolsStat_less__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./admin-tools/AdminToolsStat.less */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less");
+/* harmony import */ var _admin_tools_AdminToolsStat_less__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_admin_tools_AdminToolsStat_less__WEBPACK_IMPORTED_MODULE_17__);
 
-//require("./modules/disqus/disqus.css")
-//require("./modules/disqus/disqus.js")
-//require("./modules/disqus/blogger_item.js")
 
-__webpack_require__(/*! ./script/admin-tools-loader.js */ "./lib-for-link/src/item-footer/script/admin-tools-loader.js")
-__webpack_require__(/*! ./script/icon-replace.js */ "./lib-for-link/src/item-footer/script/icon-replace.js")
-__webpack_require__(/*! ./modules/related-posts/related-posts.js */ "./lib-for-link/src/item-footer/modules/related-posts/related-posts.js")
-__webpack_require__(/*! ./modules/CopyPasteHelper/CopyPasteHelper.js */ "./lib-for-link/src/item-footer/modules/CopyPasteHelper/CopyPasteHelper.js")
 
-__webpack_require__(/*! ./toc/toc.js */ "./lib-for-link/src/item-footer/toc/toc.js")
-__webpack_require__(/*! ./toc/toc.less */ "./lib-for-link/src/item-footer/toc/toc.less")
 
-__webpack_require__(/*! ./TableUtil/TableUtil.js */ "./lib-for-link/src/item-footer/TableUtil/TableUtil.js")
-__webpack_require__(/*! ./TableUtil/TableUtil.less */ "./lib-for-link/src/item-footer/TableUtil/TableUtil.less")
 
-__webpack_require__(/*! ./comment/comment.js */ "./lib-for-link/src/item-footer/comment/comment.js")
-__webpack_require__(/*! ./comment/comment.less */ "./lib-for-link/src/item-footer/comment/comment.less")
-__webpack_require__(/*! ./comment/comment-form-tool.less */ "./lib-for-link/src/item-footer/comment/comment-form-tool.less")
-__webpack_require__(/*! ./comment/CommentLinkParser.js */ "./lib-for-link/src/item-footer/comment/CommentLinkParser.js")
+//import "./modules/disqus/disqus.css"
+//import "./modules/disqus/disqus.js"
+//import "./modules/disqus/blogger_item.js"
 
-__webpack_require__(/*! ./admin-tools/AdminToolsStat.js */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.js")
-__webpack_require__(/*! ./admin-tools/AdminToolsStat.less */ "./lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***/ }),
 
@@ -3818,6 +3922,7 @@ let loadAdminTools = function (callback) {
   else {
     //let adminToolURL = 'http://pc.pulipuli.info/public/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
     let adminToolURL = '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/admin-tools.js'
+    
     if ($('script[src$="//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/item-footer.js"]').length === 0) {
       // 嘗試找尋另一種的讀取方法
       let baseScriptTag = $('script[src$="/lib-for-link/dist/global-header.js"]:first')
@@ -5108,6 +5213,21 @@ exports.push([module.i, ".entry-content article .table-labels{text-align:center}
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
 exports.push([module.i, ".entry-content article:first-of-type .meta1 .article-stats-container:first-of-type{white-space:nowrap}.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type:active{color:inherit}.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type>i:first-of-type{margin-right:10px}#main .entry-content .blog-admin>a{cursor:pointer;margin-right:.5rem}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/admin-tools/AdminToolsStat.less","AdminToolsStat.less"],"names":[],"mappings":"AAAA,mFACE,kBCCF,CDCE,0FACE,aCCJ,CDEE,mGACE,iBCAJ,CDQA,mCACE,cAAA,CACA,kBCNF","file":"AdminToolsStat.less","sourcesContent":[".entry-content article:first-of-type .meta1 .article-stats-container:first-of-type {\n  white-space: nowrap;\n  \n  &:active {\n    color: inherit;\n  }\n  \n  &> i:first-of-type {\n    margin-right: 10px;\n  }\n  \n  &> span {\n    //margin-right: auto;\n  }\n}\n\n#main .entry-content .blog-admin > a {\n  cursor: pointer;\n  margin-right: 0.5rem;\n}",".entry-content article:first-of-type .meta1 .article-stats-container:first-of-type {\n  white-space: nowrap;\n}\n.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type:active {\n  color: inherit;\n}\n.entry-content article:first-of-type .meta1 .article-stats-container:first-of-type > i:first-of-type {\n  margin-right: 10px;\n}\n#main .entry-content .blog-admin > a {\n  cursor: pointer;\n  margin-right: 0.5rem;\n}\n"]}]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src/index.js?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/CommentToggle.less":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js?sourceMap!./node_modules/postcss-loader/src?sourceMap!./node_modules/less-loader/dist/cjs.js?sourceMap!./lib-for-link/src/item-footer/comment/CommentToggle.less ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
+// Module
+exports.push([module.i, "#comments.hide-comments #backlinks-container,#comments.hide-comments .comment-footer,#comments.hide-comments .comment-form,#comments.hide-comments .comments-content,#comments.hide-comments .hide-comments,#comments.hide-comments>p,#comments:not(.hide-comments) .show-comments{display:none!important}#comments.hide-comments h4:after{border-top-width:0!important}", "",{"version":3,"sources":["D:/xampp/htdocs/public/Pulipuli-Blog/lib-for-link/src/item-footer/comment/CommentToggle.less","CommentToggle.less"],"names":[],"mappings":"AAMA,mRAOI,sBCHJ,CDJA,iCAWI,4BCJJ","file":"CommentToggle.less","sourcesContent":["#comments:not(.hide-comments) {\n  .show-comments {\n    display: none !important;\n  }\n}\n\n#comments.hide-comments {\n  .comments-content,\n  .comment-footer,\n  .comment-form,\n  .hide-comments,\n  &> p,\n  #backlinks-container {\n    display: none !important;\n  }\n  \n  h4:after {\n    border-top-width: 0 !important;\n  }\n}","#comments:not(.hide-comments) .show-comments {\n  display: none !important;\n}\n#comments.hide-comments .comments-content,\n#comments.hide-comments .comment-footer,\n#comments.hide-comments .comment-form,\n#comments.hide-comments .hide-comments,\n#comments.hide-comments > p,\n#comments.hide-comments #backlinks-container {\n  display: none !important;\n}\n#comments.hide-comments h4:after {\n  border-top-width: 0 !important;\n}\n"]}]);
 
 
 

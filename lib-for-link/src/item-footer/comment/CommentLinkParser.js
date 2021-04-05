@@ -87,6 +87,16 @@ let parseYouTube = () => {
     })
 }
 
+// 20170309 留言網址變連結
+let anonymousToImage = () => {
+  //console.trace('誰讀取了 replaceURLtoLink')
+  $('.avatar-image-container > img[src="//resources.blogblog.com/img/blank.gif"]').each(function (i, ele) {
+    ele = $(ele)
+    ele.after(`<img src="//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png" class="anonymous-avatar" />`)
+    ele.remove()
+  });
+}
+
 /**
  * @author Pulipuli Chen 20190929
  * https://streamable.com
@@ -125,12 +135,11 @@ var _setup_comment_to_link = function () {
   if (_len === 0) {
     setTimeout(_setup_comment_to_link, 1000);
   } else {
-    //console.log('停停停')
-    return false
     replaceURLtoLink()
     parseImgur()
     parseYouTube()
     parseStreamable()
+    anonymousToImage()
     commentInited = true
   }
 };
@@ -139,4 +148,4 @@ $(function () {
   _setup_comment_to_link();
 });
 
-console.trace('是誰讀取CommentLinkParser.js')
+//console.trace('是誰讀取CommentLinkParser.js')

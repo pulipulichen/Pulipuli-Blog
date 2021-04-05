@@ -26,14 +26,16 @@
 
 // ----------------------
 
-#masthead.fixed-nav {
-  opacity: 1 !important;
-  background-color: rgba(34, 34, 34, 0.9) !important;
-  top: 0;
-  position: fixed !important;
+@media screen {
+  #masthead.fixed-nav {
+    opacity: 1 !important;
+    background-color: rgba(34, 34, 34, 0.9) !important;
+    top: 0;
+    position: fixed !important;
 
-  .affix #header h1 {
-    line-height: 22px;
+    .affix #header h1 {
+      line-height: 22px;
+    }
   }
 }
 
@@ -65,17 +67,19 @@
     }
   }
 
-  #masthead.fixed-nav.affix {
-    .btn-navbar {
-      margin-top: 5px;
-      margin-bottom: 0;
-    }
-    #header h1 {
-      line-height: 55px;
-      margin-top: 0 !important;
-    }
-    #header-inner {
-      margin-top: 0px;
+  @media screen {
+    #masthead.fixed-nav.affix {
+      .btn-navbar {
+        margin-top: 5px;
+        margin-bottom: 0;
+      }
+      #header h1 {
+        line-height: 55px;
+        margin-top: 0 !important;
+      }
+      #header-inner {
+        margin-top: 0px;
+      }
     }
   }
 
@@ -116,7 +120,7 @@
 }
 
 
-@media (max-height: 480px) {
+@media screen and (max-height: 480px) {
   #masthead.fixed-nav {
     position: absolute !important;
   }
@@ -125,46 +129,48 @@
 //--------------------------------------
 // 以下還沒整理
 
-#masthead.fixed-nav img {
-  margin-top: 0;
-  width: auto;
-  max-height: 85%;
-}
+@media screen {
+  #masthead.fixed-nav img {
+    margin-top: 0;
+    width: auto;
+    max-height: 85%;
+  }
 
 
-#masthead.fixed-nav form {
-  margin-top: -16px;
-}
-#masthead.fixed-nav h1 {
-  font-size: 20px;
-  margin-top: 9px;
-}
+  #masthead.fixed-nav form {
+    margin-top: -16px;
+  }
+  #masthead.fixed-nav h1 {
+    font-size: 20px;
+    margin-top: 9px;
+  }
 
-/***
- * 這是整個最上面的navbar設定
- **/
+  /***
+   * 這是整個最上面的navbar設定
+   **/
 
-#masthead.fixed-nav {
-  position: fixed;
-  top: 0;
-  width: 100% !important;
-  margin: 0px auto;
-  z-index: 999;
-  height: 56px;
-  background-color: rgba(0,0,0,0.9);
-  /*opacity: 0.9;*/
-  /*
-  -webkit-box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
-  -moz-box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
-  box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
-  */
-  box-shadow: 0px 2px 3px rgba(20%,20%,40%,0.5);
-}
+  #masthead.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100% !important;
+    margin: 0px auto;
+    z-index: 999;
+    height: 56px;
+    background-color: rgba(0,0,0,0.9);
+    /*opacity: 0.9;*/
+    /*
+    -webkit-box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
+    */
+    box-shadow: 0px 2px 3px rgba(20%,20%,40%,0.5);
+  }
 
-#masthead.fixed-nav .navbar {
-  height: 56px;
-  max-height: 56px;
-  overflow-y: hidden;
+  #masthead.fixed-nav .navbar {
+    height: 56px;
+    max-height: 56px;
+    overflow-y: hidden;
+  }
 }
 
 @media (max-width: 480px) {
@@ -182,8 +188,10 @@
     }
   }
   
-  #masthead.fixed-nav {
-    box-shadow: none;
+  @media screen {
+    #masthead.fixed-nav {
+      box-shadow: none;
+    }
   }
   
 }
@@ -196,17 +204,19 @@
     overflow-y: hidden;
   }
   */
-  #masthead.fixed-nav {
-    background: #222222;
-    margin-bottom: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    box-shadow: none;
-    position: static;
+  @media screen {
+    #masthead.fixed-nav {
+      background: #222222;
+      margin-bottom: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: none;
+      position: static;
+    }
   }
-  
+    
   #masthead .container {
     box-shadow: none;
   }
@@ -215,7 +225,7 @@
 
 /*****************************/
 /* 20161116 */
-@media (max-width: 979px) {
+@media screen and (max-width: 979px) {
   #masthead.fixed-nav > .container {
     /*box-shadow: 2px 2px 3px rgba(20%,20%,40%,0.5);*/
   }

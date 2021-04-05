@@ -4,7 +4,7 @@
 
 /* --------------------------------------------- */
 /* @media (max-width: 979px) {*/
-@media (max-width: 979px) {
+@media screen and (max-width: 979px) {
   #masthead .btn-navbar {
     font-size: 23px !important;
     /*margin-top: 15px;*/
@@ -25,17 +25,19 @@
   
   /* --------------------------------------------- */
   /* @media (max-width: 979px) fixed-nav {*/
-  #masthead.fixed-nav .btn-navbar {
-    /*margin-top: 5px;*/
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    line-height: 56px;
+  @media screen {
+    #masthead.fixed-nav .btn-navbar {
+      /*margin-top: 5px;*/
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 56px;
+    }
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   #masthead .btn-navbar,
   #masthead.fixed-nav .btn-navbar {
     margin-top: 0;
@@ -76,9 +78,6 @@
     margin-top:0 !important;
     line-height: 55px;
   }
-
-  
-
 
   #masthead #header-inner .descriptionwrapper {
     display: none;

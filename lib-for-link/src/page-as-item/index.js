@@ -1,3 +1,3 @@
-require('./../item-footer/admin-tools/AdminToolsStat.js')
-require('./../item-footer/admin-tools/AdminToolsStat.less')
-require('./../item-footer/script/admin-tools-loader.js')
+import './../item-footer/admin-tools/AdminToolsStat.js'
+import './../item-footer/admin-tools/AdminToolsStat.less'
+import './../item-footer/script/admin-tools-loader.js'

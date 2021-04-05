@@ -1,27 +1,27 @@
-require("./modules/highlight/default.css")
-require("./modules/highlight/highlight.js")
-require("./modules/highlight/init.js")
-require("./modules/lightbox2-lokeshdhakar/init.js")
+import "./modules/highlight/default.css"
+import "./modules/highlight/highlight.js"
+import "./modules/highlight/init.js"
+import "./modules/lightbox2-lokeshdhakar/init.js"
 
-//require("./modules/disqus/disqus.css")
-//require("./modules/disqus/disqus.js")
-//require("./modules/disqus/blogger_item.js")
+//import "./modules/disqus/disqus.css"
+//import "./modules/disqus/disqus.js"
+//import "./modules/disqus/blogger_item.js"
 
-require("./script/admin-tools-loader.js")
-require("./script/icon-replace.js")
-require("./modules/related-posts/related-posts.js")
-require("./modules/CopyPasteHelper/CopyPasteHelper.js")
+import "./script/admin-tools-loader.js"
+import "./script/icon-replace.js"
+import "./modules/related-posts/related-posts.js"
+import "./modules/CopyPasteHelper/CopyPasteHelper.js"
 
-require("./toc/toc.js")
-require("./toc/toc.less")
+import "./toc/toc.js"
+import "./toc/toc.less"
 
-require("./TableUtil/TableUtil.js")
-require("./TableUtil/TableUtil.less")
+import "./TableUtil/TableUtil.js"
+import "./TableUtil/TableUtil.less"
 
-require("./comment/comment.js")
-require("./comment/comment.less")
-require("./comment/comment-form-tool.less")
-require("./comment/CommentLinkParser.js")
+import "./comment/comment.js"
+import "./comment/comment.less"
+import "./comment/comment-form-tool.less"
+import "./comment/CommentLinkParser.js"
 
-require("./admin-tools/AdminToolsStat.js")
-require("./admin-tools/AdminToolsStat.less")
+import "./admin-tools/AdminToolsStat.js"
+import "./admin-tools/AdminToolsStat.less"

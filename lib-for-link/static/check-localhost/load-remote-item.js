@@ -21,7 +21,7 @@
   }
   
   // ------------------------------------
-  
+  console.log('現在載入遠端資源')
   var scriptsList = [
     '//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/dist/vendors.js',
     

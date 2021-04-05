@@ -74,14 +74,17 @@
 /* --------------------------------------------- */
 /* all fixed-nav { */
 
-#masthead.fixed-nav .search-bar {
-  .nav-search {
-    margin-top: 6px;
-  }
-  form.gcse-placeholder {
-    margin-top: 10px;
+@media screen {
+  #masthead.fixed-nav .search-bar {
+    .nav-search {
+      margin-top: 6px;
+    }
+    form.gcse-placeholder {
+      margin-top: 10px;
+    }
   }
 }
+  
 
 
 /*
@@ -139,11 +142,14 @@
     }
   }
   
-  #masthead.fixed-nav .search-bar {
-    form.gcse-placeholder {
-      margin-top: 10px;
+  @media screen {
+    #masthead.fixed-nav .search-bar {
+      form.gcse-placeholder {
+        margin-top: 10px;
+      }
     }
   }
+    
   
   /*
   #masthead .nav-search .srch_btn {

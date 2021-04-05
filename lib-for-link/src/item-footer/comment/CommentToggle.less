@@ -1,0 +1,20 @@
+#comments:not(.hide-comments) {
+  .show-comments {
+    display: none !important;
+  }
+}
+
+#comments.hide-comments {
+  .comments-content,
+  .comment-footer,
+  .comment-form,
+  .hide-comments,
+  &> p,
+  #backlinks-container {
+    display: none !important;
+  }
+  
+  h4:after {
+    border-top-width: 0 !important;
+  }
+}

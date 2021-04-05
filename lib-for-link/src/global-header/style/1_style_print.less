@@ -10,12 +10,17 @@
   a:visited {
     text-decoration: underline
   }
-  a[href]:after {
-    content: " (" attr(href) ")"
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")"
-  }
+  
+  // 讓連接出現網址的設定
+/*  .entry-content .article {
+    a[href]:not(.btn):after {
+      content: " (" attr(href) ")"
+    }
+    abbr[title]:after {
+      content: " (" attr(title) ")"
+    }
+  }*/
+    
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -43,5 +48,15 @@
   h2,
   h3 {
     page-break-after: avoid
+  }
+  
+  #masthead {
+    .search-bar {
+      display: none !important;
+    }
+  }
+  
+  a[accesskey]:not([accesskey="H"]) {
+    display: none !important;
   }
 }
