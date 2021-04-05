@@ -2,7 +2,8 @@
 // ------------------------------
 // 20170309 留言網址變連結
 let replaceURLtoLink = () => {
-  $('#comment-holder .comment-content').html(function (i, inputText) {
+  
+  $('#comment-holder .comment-content:not(.replaced-url-to-link)').html(function (i, inputText) {
     var replacedText, replacePattern1, replacePattern2, replacePattern3;
 
     //URLs starting with http://, https://, or ftp://
@@ -11,27 +12,30 @@ let replaceURLtoLink = () => {
 
     //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
     replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
+    replacedText = replacedText.replace(replacePattern2, '$1<a href="https://$2" target="_blank">$2</a>');
 
     //Change email addresses to mailto:: links.
     replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
     replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
 
+    $(this).addClass('replaced-url-to-link')
+
+    //console.log(inputText, replacedText)
     return replacedText;
   });
 }
 
 let parseImgur = () => {
-  $('#comment-holder .comment-content a[href$=".png"],'
-            + '#comment-holder .comment-content a[href$=".gif"],'
-            + '#comment-holder .comment-content a[href$=".jpg"],'
-            + '#comment-holder .comment-content a[href$=".jpeg"],'
-            + '#comment-holder .comment-content a[href$=".PNG"],'
-            + '#comment-holder .comment-content a[href$=".GIF"],'
-            + '#comment-holder .comment-content a[href$=".JPG"],'
-            + '#comment-holder .comment-content a[href$=".JPEG"],'
-            + '#comment-holder .comment-content a[href^="http://imgur.com/"]:not([href^="http://imgur.com/upload"]),'
-            + '#comment-holder .comment-content a[href^="https://imgur.com/"]:not([href^="https://imgur.com/upload"])').each(function (i, aNode) {
+  $('#comment-holder .comment-content a[href$=".png"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".gif"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".jpg"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".jpeg"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".PNG"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".GIF"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".JPG"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href$=".JPEG"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href^="http://imgur.com/"]:not([href^="http://imgur.com/upload"]):not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href^="https://imgur.com/"]:not([href^="https://imgur.com/upload"]):not(.parsed-imgur)').each(function (i, aNode) {
       let url = aNode.href
 
       if (url.indexOf('://imgur.com/') > 0) {
@@ -57,16 +61,17 @@ let parseImgur = () => {
 
       //console.log(url)
       $(aNode).html('<img src="' + url + '" border="0" class="comment-image" />')
+      $(aNode).addClass('parsed-imgur')
     })
     
     // http://imgur.com/GX5p4sk,gcsV3HI,UyWWPGZ#2
 }
 
 let parseYouTube = () => {
-  $('#comment-holder .comment-content a[href^="https://www.youtube.com/watch?v="],'
-            + '#comment-holder .comment-content a[href^="http://www.youtube.com/watch?v="],'
-            + '#comment-holder .comment-content a[href^="https://youtu.be/"],'
-            + '#comment-holder .comment-content a[href^="http://youtu.be/"]').each(function (i, aNode) {
+  $('#comment-holder .comment-content a[href^="https://www.youtube.com/watch?v="]:not(.parsed-youtube),'
+            + '#comment-holder .comment-content a[href^="http://www.youtube.com/watch?v="]:not(.parsed-youtube),'
+            + '#comment-holder .comment-content a[href^="https://youtu.be/"]:not(.parsed-youtube),'
+            + '#comment-holder .comment-content a[href^="http://youtu.be/"]:not(.parsed-youtube)').each(function (i, aNode) {
       let url = aNode.href
 
       // 取得id
@@ -78,6 +83,7 @@ let parseYouTube = () => {
 
       //console.log(url)
       $(aNode).before('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + url + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube-embed"></iframe>')
+      $(aNode).addClass('parsed-youtube')
     })
 }
 
