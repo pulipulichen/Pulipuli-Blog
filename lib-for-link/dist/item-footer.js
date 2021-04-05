@@ -486,7 +486,7 @@ if(false) {}
 // ------------------------------
 // 20170309 留言網址變連結
 let replaceURLtoLink = () => {
-  console.trace('誰讀取了 replaceURLtoLink')
+  //console.trace('誰讀取了 replaceURLtoLink')
   $('#comment-holder .comment-content:not(.replaced-url-to-link)').html(function (i, inputText) {
     var replacedText, replacePattern1, replacePattern2, replacePattern3;
 
@@ -599,21 +599,31 @@ let parseStreamable = () => {
     })
 }
 
+let commentInited = false
 var _setup_comment_to_link = function () {
+  if (commentInited === true) {
+    return false
+  }
+  
   var _len = $("#comment-holder").length;
   if (_len === 0) {
     setTimeout(_setup_comment_to_link, 1000);
   } else {
+    //console.log('停停停')
+    return false
     replaceURLtoLink()
     parseImgur()
     parseYouTube()
     parseStreamable()
+    commentInited = true
   }
 };
 
 $(function () {
   _setup_comment_to_link();
 });
+
+console.trace('是誰讀取CommentLinkParser.js')
 
 /***/ }),
 
