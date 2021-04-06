@@ -1,565 +1,532 @@
 
 /******************************************/
 @media print {
-  *:not(i) {
-    font-family: 微軟正黑體 !important;
+  //@page {
+  //  size: A4 portrait;
+  //}
+  #masthead {
+    border-bottom: 1px solid gray;
+    position: static !important;
+    
   }
-  
-    #masthead {
-        border-bottom: 1px solid gray;
-        position: static !important;
+
+  #masthead.fixed-nav {
+    position: static !important;
+    height: 82px;
+    background-color: transparent !important;
+  }
+
+  #masthead.fixed-nav.fixed-nav h1 {
+    line-height: 30px;
+    margin-top: 10px;
+    font-size: 30px;
+  }
+
+  #masthead .gcse,
+  #masthead .btn-navbar,
+  #masthead #menu-primary {
+    display:none;
+  }
+
+  #masthead #header-inner {
+    width: 100% !important;
+    padding-left: 0;
+  }
+  #masthead .titlewrapper {
+    float: left;
+  }
+  #masthead .title a {
+    text-decoration: none;
+  }
+
+  #masthead .title a:after {
+    content: "";
+  }
+
+  #masthead .descriptionwrapper {
+    width: max-content;
+    /*padding-top: 20px;*/
+    padding-left: 18em;
+    padding-top: 5px;
+  }
+
+  //#masthead.fixed-nav.affix #header-inner .descriptionwrapper {
+  //    display: block;
+  //}
+
+  #masthead .descriptionwrapper:after {
+    content:attr(url);
+    display:block;
+    text-decoration: underline;
+  }
+
+  #masthead .description {
+    margin-bottom: 0;
+  }
+
+  /****************/
+
+  .row {
+    margin-left: 0;
+  }
+
+  #content {
+    margin-left:0;
+  }
+
+  #content-wrapper {
+    padding-top: 0;
+  }
+
+  /*****************/
+
+  #main .read-more,
+  #main .share-story-container,
+  #main a[name="more"],
+  #main .related-posts,
+  #main .blogger-comment-from-post,
+  #main #backlinks-container {
+    display: none;
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理連結的問題
+   */
+  #main .post {
+    a[href]:after{
+      content:" (" attr(href) ") ";
+      font-size:0.8em;
+      font-weight:normal;
+      text-decoration: underline !important;
+      white-space: break-spaces;
+      word-break: break-all;
+      max-width: 100%;
+      text-overflow: ellipsis;
     }
-    
-    #masthead.fixed-nav {
-      position: static !important;
-      height: 82px;
-      background-color: transparent !important;
-      
-    }
-    
-    #masthead.fixed-nav.fixed-nav h1 {
-        line-height: 30px;
-        margin-top: 10px;
-        font-size: 30px;
-    }
-    
-    #masthead .gcse,
-    #masthead .btn-navbar,
-    #masthead #menu-primary {
-        display:none;
-    }
-    
-    #masthead #header-inner {
-        width: 100% !important;
-        padding-left: 0;
-    }
-    #masthead .titlewrapper {
-        float: left;
-    }
-    #masthead .title a {
-        text-decoration: none;
-    }
-    
-    #masthead .title a:after {
-        content: "";
-    }
-    
-    #masthead .descriptionwrapper {
-        width: max-content;
-        /*padding-top: 20px;*/
-        padding-left: 18em;
-        padding-top: 5px;
-    }
-    
-    //#masthead.fixed-nav.affix #header-inner .descriptionwrapper {
-    //    display: block;
-    //}
-    
-    #masthead .descriptionwrapper:after {
-        content:attr(url);
-        display:block;
-        text-decoration: underline;
-    }
-    
-    #masthead .description {
-        margin-bottom: 0;
-    }
-    
-    /****************/
-    
-    .row {
-        margin-left: 0;
-    }
-    
-    #content {
-        margin-left:0;
-    }
-    
-    #content-wrapper {
-        padding-top: 0;
-    }
-    
-    /*****************/
-    
-    #main .read-more,
-    #main .share-story-container,
-    #main a[name="more"],
-    #main .related-posts,
-    #main .blogger-comment-from-post,
-    #main #backlinks-container {
-        display: none;
-    }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理連結的問題
-     */
-    #main .post {
-      a[href]:after{
-        content:" (" attr(href) ") ";
-        font-size:0.8em;
-        font-weight:normal;
-        text-decoration: underline !important;
-        white-space: break-spaces;
-        word-break: break-all;
-        max-width: 100%;
-        text-overflow: ellipsis;
+
+    h1, 
+    .puli-utils-append {
+      a[href]:after {
+        content: none !important;
       }
-      
-      h1, 
-      .puli-utils-append {
-        a[href]:after {
-          content: none !important;
-        }
-      }
-      
-      a.btn:after,
+    }
+
+    a.btn:after,
       a.lightbox-group:after,
+      a[href*=".googleusercontent.com/-"]:after,
+      a[href*="/s1600/"]:after,
       a[href^="#"]:after,
       a[href^="javascript:"]:after,
-      a[href^="https://docs.google.com/"][href~="/export/"]:after,
+      a[href^="https://docs.google.com/"][href*="/export/"]:after,
       a[href^="https://pulipulichen.github.io/blog-pulipuli-info-data-"]:after,
-      a[href^="https://www.slideshare.net/pulipulichen/"]:after,
+      a[href^="https://www.slideshare.net/"]:after,
       a[href^="https://1drv.ms/p/"]:after,
       a[href^="https://app.box.com/s/"]:after,
       a[href^="https://mega.nz/"]:after,
       a[href^="https://www.mediafire.com/file/"]:after,
       a[href^="https://drive.google.com/file/d/"][href$="/view?usp=sharing"]:after,
       a[href^="https://docs.google.com/document/d/"][href$="/edit?usp=sharing"]:after,
+      a[href^="https://docs.google.com/presentation/d/"][href$="/edit?usp=sharing"]:after,
       a[href^="https://docs.google.com/spreadsheets/d/"][href$="/edit?usp=sharing"]:after,
       a[href^="https://translate.google.com.tw/#view="]:after {
-        content: none !important;
-      }
+      content: none !important;
     }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理目錄問題
-     */
-    #main .entry-content {
-      .puli-toc,
-      .puli-toc li,
-      .puli-toc li a,{
-        color: #000 !important;
-      }
-      
-      .puli-toc ul,
-      .puli-toc li {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-      }
-      
-      .puli-toc.puli-utils-append {
-        border: 1px solid #CCC;
-      }
-      
-      hr.puli-utils-append {
-        display: none;
-      }
+  }
+
+  .gcse {
+    display: none !important;
+  }
+
+
+  /**
+   * @Pulipuli 20210406
+   * 處理目錄問題
+   */
+  #main .entry-content {
+    .puli-toc,
+    .puli-toc li,
+    .puli-toc li a,{
+      color: #000 !important;
     }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理iframe問題
-     */
-    #main .entry-content {
-      iframe {
-        height: 40rem !important;
-        break-inside: avoid;
-        border: 1px solid #CCC;
-      }
+
+    .puli-toc ul,
+    .puli-toc li {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理段落問題
-     */
-    #main .entry-content {
-      
-      article > p {
-        //margin-bottom: 0;
-        line-height: 150%;
-      }
-      
-      article > ul > li {
-        line-height: 150%;
-      }
+
+    .puli-toc.puli-utils-append {
+      border: 1px solid #CCC;
     }
-    
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理水平線問題
-     */
-    #main .entry-content {
-      hr {
-        border: 2px solid #CCC;
-      }
-    }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理水平線問題
-     */
-    #main .entry-content {
-      article a.lightbox-group:first-of-type > img,
-      img.original-size {
-        max-width: 30rem !important;
-        height: auto !important;
-      }
-    }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理標題下說明的問題
-     */
-    #main .entry-content article {
-      .meta1 {
-        line-height: 50%;
-      }
-    }
-    
-    .at-share-dock-outer {
-      display: none !important;
-    }
-    
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理程式碼問題
-     */
-    #main .entry-content {
-      .code-label.puli-utils-append {
-        display: none;
-        
-        margin-left: 0 !important;
-        background: #FFF !important;
-        
-        i {
-          display: none;
-        }
-      }
-    }
-    
-    .code-label.puli-utils-append {
+
+    hr.puli-utils-append {
       display: none;
     }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理圖片的問題
-     */
-    #main .entry-content {
-      .lightbox-group img {
-        border: 1px solid #CCC;
-      }
-      
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理iframe問題
+   */
+  #main .entry-content {
+    iframe {
+      height: 40rem !important;
+      break-inside: avoid;
+      border: 1px solid #CCC;
     }
-    
+  }
+
+  #main .entry-content article.article {
+    text-align: left;
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理段落問題
+   */
+  #main .entry-content {
+
+    article > p {
+      //margin-bottom: 0;
+      line-height: 150%;
+    }
+
+    article > ul > li {
+      line-height: 150%;
+    }
+  }
+
+
+  /**
+   * @Pulipuli 20210406
+   * 處理水平線問題
+   */
+  #main .entry-content {
+    hr {
+      border: 2px solid #CCC;
+    }
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理水平線問題
+   */
+  #main .entry-content {
+    article a.lightbox-group:first-of-type > img,
+      img.original-size {
+      max-width: 30rem !important;
+      height: auto !important;
+    }
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理標題下說明的問題
+   */
+  #main .entry-content article {
+    .meta1 {
+      line-height: 50%;
+    }
+  }
+
+  .at-share-dock-outer {
+    display: none !important;
+  }
+
+
+  /**
+   * @Pulipuli 20210406
+   * 處理程式碼問題
+   */
+  #main .entry-content {
+    .code-label.puli-utils-append {
+      display: none;
+
+      margin-left: 0 !important;
+      background: #FFF !important;
+
+      i {
+        display: none;
+      }
+    }
+  }
+
+  .code-label.puli-utils-append {
+    display: none;
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理圖片的問題
+   */
+  #main .entry-content {
+    .lightbox-group img {
+      border: 1px solid #CCC;
+    }
+
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理要隱藏資訊的問題
+   */
+  #main {
+    .blog-admin,
+    #comments > h4 {
+      display: none !important;
+    }
+  }
+
+
+  /**
+   * @Pulipuli 20210406
+   * 處理標題消失的問題
+   */
+  #masthead {
+    .back-button {
+      display: none !important;
+    }
+    margin-bottom: 0;
+  }
+
+  /**
+   * @Pulipuli 20210406
+   * 處理留言的部分
+   */
+  #comments {
+    .comment-replybox-thread,
+    .comment-form-tool,
+    .comment-reply,
+    #backlinks-container,
+    .thread-toggle,
+    .comment-replybox-single {
+      display: none !important;
+    }
+
+    // -----------------------------
+
     /**
      * @Pulipuli 20210406
-     * 處理要隱藏資訊的問題
+     * 是圖片的問題
      */
-    #main {
-      .blog-admin,
-      #comments > h4 {
+    .comment:not(#c6292867368144666888) {
+      display: none !important;
+    }
+
+    .comment#c6292867368144666888 {
+      .parsed-imgur:not(:first-of-type) {
         display: none !important;
       }
-    }
-    
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理標題消失的問題
-     */
-    #masthead {
-      .back-button {
-        display: none !important;
+
+      .comment-block {
+        height: 30rem;
       }
+    }
+
+    // -----------------------------
+
+    .comment-content {
       margin-bottom: 0;
+      padding-bottom: 0;
+
+      img {
+        max-width: 60% !important;
+      }
     }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理留言的部分
-     */
-    #comments {
-      .comment-replybox-thread,
-      .comment-form-tool,
-      .comment-reply,
-      #backlinks-container,
-      .thread-toggle,
-      .comment-replybox-single {
-        display: none !important;
-      }
-      
-      // -----------------------------
-      
-      /**
-       * @Pulipuli 20210406
-       * 是圖片的問題
-       */
-      .comment:not(#c6292867368144666888) {
-        display: none !important;
-      }
-      
-      .comment#c6292867368144666888 {
-        .parsed-imgur:not(:first-of-type) {
-          display: none !important;
-        }
-        
-        .comment-block {
-          height: 30rem;
-        }
-      }
-      
-      // -----------------------------
-      
-      .comment-content {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        
-        img {
-          max-width: 60% !important;
-        }
-      }
-      
-      //.comment-block {
-      //  break-inside: avoid;
-      //}
-      
-      padding: 0 !important;
-      
-      img[src="//resources.blogblog.com/img/blank.gif"]:after {
-        content: url("<img src='//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png' />");
-      }
-      
-      &.hide-comments {
-        display: none !important;
-      }
-      
-      border-top: 2px solid #ddd;
-      
+
+    //.comment-block {
+    //  break-inside: avoid;
+    //}
+
+    padding: 0 !important;
+
+    img[src="//resources.blogblog.com/img/blank.gif"]:after {
+      content: url("<img src='//3.bp.blogspot.com/-LjxZkakL_Us/XZNckMvlIXI/AAAAAAAEYoI/r6OlfDjQdTIOowbxJ74KPlgAoDt8HufcgCK4BGAYYCw/s48/gnome_stock_person.png' />");
+    }
+
+    &.hide-comments {
       display: none !important;
     }
-    
-    .post {
-      margin-bottom: 0 !important;
-      border-bottom-width: 0 !important; 
-    }
-    
-    #blog-pager {
-      display: none !important;
-    }
-    
-    /**
-     * @Pulipuli 20210406
-     * 處理sidebar的部分
-     */
-    #sidebar {
-      .widget > a.icon,
-      .widget.random {
-        display: none !important;
-      }
-      
-      .widget {
-        break-inside: avoid;
-      }
-      
-      h2.title {
-        border-top: 2px solid #eee;
-        border-bottom-width: 0;
-        padding-top: 0;
-        
-        &> span {
-          border-bottom-width: 0;
-          border-top: 2px solid #e23a3e;
-          
-          bottom: 0;
-          top: -2px;
-        }
-      }
-    }
-    
-    #main .post .entry-content .meta1 a:after,
-    #main .post .entry-content a[href$=".png"]:after,
-    #main #comments a[href]:after,
-    #main .post a[href="javascript:void(0)"]:after,
-    #main .post a[href^="#"]:after,
-    #main .post a.toggle:after,
-    #main .post #ArchiveList a.post-count-link:after {
-        content: none;
-    }
-    
-    #main .post a[href^="#"] {
-        display: none;
-    }
-    
-    #main .post .puli-toc a[href^="#"] {
-        display: inline;
-    }
-    
-    
-    #main #comments h4:after {
-        border-top-width: 0;
-    }
-    
-    #main .post:last-of-type {
-        margin-bottom: 0;
-    }
-    
-    #main .post h4,
-    #main .post h5,
-    #main .post h6 {
-        page-break-before: avoid;
-    }
-    
-    #main .post table {
-        page-break-inside: avoid;
-    }
-    
-    #main .post .entry-content {
-        padding-left:0;
-        padding-right:0;
-    }
-    
-    #main .entry-meta {
-        display: none;
-    }
-    
-    #main #comments {
-        border-bottom-width: 0;
-    }
-        
-    /*********************/
-    #sidebar {
-        margin-left: 0;
-    }
-    
-    #sidebar .about-me img[align="right"] {
-        float:left;
-        margin-left: 0;
-        margin-right: 0.5em;
-        
-    }
-    
-    #sidebar .about-me .widget-content {
-        margin-top: 0.5em;
-    }
-    #sidebar .about-me .about-link,
-    #sidebar .about-me .email-subscribe {
-        display: none;
-    }
-    
-    #sidebar .about-me a:after {
-        content: "";
-    }
-    
-    #sidebar .about-me .social-media div {
-        text-align: left;
-        padding-right:0 !important;
-        padding-left:0 !important;
-        margin-bottom: 0 !important;
-    }
-    
-    #sidebar .about-me .social-media div .social-button-wrapper {
-        display: block;
-        text-align: left;
-    }
-    #sidebar .about-me .social-media div .social-button-wrapper a {
-        display: inline;
-    }
-    
-    #sidebar .about-me .social-media div .social-button.google-plus,
-    #sidebar .about-me .social-media div .social-button.plurk,
-    #sidebar .about-me .social-media div .social-button.linkedin,
-    #sidebar .about-me .social-media div .social-button.twitter,
-    #sidebar .about-me .social-media div .social-button.github,
-    #sidebar .about-me .social-media div .social-button.android,
-    #sidebar .about-me .social-media div .social-button.chrome,
-    #sidebar .about-me .social-media div .social-button.rss {
-        display: none;
-    }
-    
-    #sidebar .about-me .social-media div a:after {
-        content: " " attr(title) ": " attr(href) "";
-        margin-left: 1em;
-    }
-    
-    #sidebar .about-me .social-media div a.email:after {
-        content: " " attr(href) "";
-    }
-    
-    #sidebar .popular-posts a[rel="bookmark"] {
-        text-decoration: none;
-    }
-    
-    #sidebar .popular-posts a[rel="bookmark"]:after {
-        content: attr(href);
-        text-decoration: underline;
-        display: block;
-    }
-    
-    #sidebar .guestbook a[href]:after,
-    #sidebar .new a[href]:after,
-    #sidebar .comments a[href]:after {
-        content: "";
-    }
-    
-    #sidebar .guestbook,
-    #sidebar .comments,
-    #sidebar .new,
-    #sidebar .PopularPosts {
-        display: none;
-    }
-    
-    #sidebar .widget {
-        page-break-inside: avoid;
-    }
-    
-    /**********************************/
-    #content-wrapper {
-        margin-bottom: 0;
-    }
-    
-    .site-footer #footer-body,
-    .site-footer .management,
-    .site-footer .go-top,
-    .site-footer .container {
-        display: none;
-    }
-    
-    .site-footer a:after {
-        content: "";
-    }
-    
-    /*************************************/
-    #footer .container {
-        padding: 0;
-    }
-    #footer p {
-        text-align: center;
-        width: 100%;
-    }
-    
-    #footer p a:after {
-        content: " " attr(href) "";
-    }
-    
-    #footer .themexpose {
-        display: none;
-    }
-    
-    /*****************************/
-    a.quickedit {
-        display: none;
-    }
-    
-    a:after {
-        white-space:nowrap;
-    }
-    
-    body > .sumome-share-client-wrapper {
-        display: none;
-    }
+
+    border-top: 2px solid #ddd;
+
+    display: none !important;
+  }
+
+  .post {
+    margin-bottom: 0 !important;
+    border-bottom-width: 0 !important; 
+  }
+
+  #main .post .entry-content .meta1 a:after,
+  #main .post .entry-content a[href$=".png"]:after,
+  #main #comments a[href]:after,
+  #main .post a[href="javascript:void(0)"]:after,
+  #main .post a[href^="#"]:after,
+  #main .post a.toggle:after,
+  #main .post #ArchiveList a.post-count-link:after {
+    content: none;
+  }
+
+  #main .post a[href^="#"] {
+    display: none;
+  }
+
+  #main .post .puli-toc a[href^="#"] {
+    display: inline;
+  }
+
+
+  #main #comments h4:after {
+    border-top-width: 0;
+  }
+
+  #main .post:last-of-type {
+    margin-bottom: 0;
+  }
+
+  #main .post h4,
+  #main .post h5,
+  #main .post h6 {
+    page-break-before: avoid;
+  }
+
+  #main .post table {
+    page-break-inside: avoid;
+  }
+
+  #main .post .entry-content {
+    padding-left:0;
+    padding-right:0;
+  }
+
+  #main .entry-meta {
+    display: none;
+  }
+
+  #main #comments {
+    border-bottom-width: 0;
+  }
+
+  /*********************/
+  #sidebar {
+    margin-left: 0;
+  }
+
+  #sidebar .about-me img[align="right"] {
+    float:left;
+    margin-left: 0;
+    margin-right: 0.5em;
+
+  }
+
+  #sidebar .about-me .widget-content {
+    margin-top: 0.5em;
+  }
+  #sidebar .about-me .about-link,
+  #sidebar .about-me .email-subscribe {
+    display: none;
+  }
+
+  #sidebar .about-me a:after {
+    content: "";
+  }
+
+  #sidebar .about-me .social-media div {
+    text-align: left;
+    padding-right:0 !important;
+    padding-left:0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #sidebar .about-me .social-media div .social-button-wrapper {
+    display: block;
+    text-align: left;
+  }
+  #sidebar .about-me .social-media div .social-button-wrapper a {
+    display: inline;
+  }
+
+  #sidebar .about-me .social-media div .social-button.google-plus,
+  #sidebar .about-me .social-media div .social-button.plurk,
+  #sidebar .about-me .social-media div .social-button.linkedin,
+  #sidebar .about-me .social-media div .social-button.twitter,
+  #sidebar .about-me .social-media div .social-button.github,
+  #sidebar .about-me .social-media div .social-button.android,
+  #sidebar .about-me .social-media div .social-button.chrome,
+  #sidebar .about-me .social-media div .social-button.rss {
+    display: none;
+  }
+
+  #sidebar .about-me .social-media div a:after {
+    content: " " attr(title) ": " attr(href) "";
+    margin-left: 1em;
+  }
+
+  #sidebar .about-me .social-media div a.email:after {
+    content: " " attr(href) "";
+  }
+
+  #sidebar .popular-posts a[rel="bookmark"] {
+    text-decoration: none;
+  }
+
+  #sidebar .popular-posts a[rel="bookmark"]:after {
+    content: attr(href);
+    text-decoration: underline;
+    display: block;
+  }
+
+  #sidebar .guestbook a[href]:after,
+  #sidebar .new a[href]:after,
+  #sidebar .comments a[href]:after {
+    content: "";
+  }
+
+  #sidebar .guestbook,
+  #sidebar .comments,
+  #sidebar .new,
+  #sidebar .PopularPosts {
+    display: none;
+  }
+
+  #sidebar .widget {
+    page-break-inside: avoid;
+  }
+
+  /**********************************/
+  #content-wrapper {
+    margin-bottom: 0;
+  }
+
+  /*************************************/
+  #footer .container {
+    padding: 0;
+  }
+  #footer p {
+    text-align: center;
+    width: 100%;
+  }
+
+  #footer p a:after {
+    content: " " attr(href) "";
+  }
+
+  #footer .themexpose {
+    display: none;
+  }
+
+  /*****************************/
+  a.quickedit {
+    display: none;
+  }
+
+  a:after {
+    white-space:nowrap;
+  }
+
+  body > .sumome-share-client-wrapper {
+    display: none;
+  }
 }   /* @media print { */

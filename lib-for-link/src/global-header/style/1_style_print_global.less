@@ -1,0 +1,150 @@
+
+@media print {
+  * {
+    text-shadow: none !important;
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    
+    &:not(i) {
+      font-family: 微軟正黑體 !important;
+    }
+  }
+  a,
+  a:visited {
+    text-decoration: underline
+  }
+  
+  // 讓連接出現網址的設定
+/*  .entry-content .article {
+    a[href]:not(.btn):after {
+      content: " (" attr(href) ")"
+    }
+    abbr[title]:after {
+      content: " (" attr(title) ")"
+    }
+  }*/
+    
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""
+  }
+  thead {
+    display: table-header-group
+  }
+  tr,
+  img {
+    page-break-inside: avoid
+  }
+  img {
+    max-width: 100% !important
+  }
+  @page {
+    margin: 0.5cm
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3
+  }
+  h2,
+  h3 {
+    page-break-after: avoid
+  }
+  
+  #masthead {
+    .search-bar {
+      display: none !important;
+    }
+    
+    .btn-navbar {
+      display: none;
+    }
+  }
+  
+  a[accesskey]:not([accesskey="H"]) {
+    display: none !important;
+  }
+  
+  
+  .site-footer {
+    #footer-body,
+    .management,
+    .go-top,
+    .container {
+      display: none;
+    }
+
+    a:after {
+      content: none;
+    }
+  }
+  
+  /**
+   * @Pulipuli 20210406
+   * 首頁內容的部分
+   */
+  .post {
+    .meta > p > small {
+      text-align: left;
+    }
+    
+    .entry-meta.clearfix {
+      display: none;
+    }
+  }
+  
+  // ----------------------
+  
+  
+  /**
+   * @Pulipuli 20210406
+   * 處理sidebar的部分
+   */
+  #sidebar {
+    .widget > a.icon,
+    .widget.random,
+    .widget.guestbook,
+    .widget.recent-posts,
+    .widget.comments {
+      display: none !important;
+    }
+
+    .widget {
+      break-inside: avoid;
+    }
+    
+    .widget.about-me {
+      .about-link {
+        display: none;
+      }
+    }
+
+    h2.title {
+      border-top: 2px solid #eee;
+      border-bottom-width: 0 !important;
+      padding-top: 0;
+
+      &> span {
+        border-bottom-width: 0;
+        border-top: 2px solid #e23a3e;
+
+        bottom: 0;
+        top: -2px;
+      }
+    }
+  }
+
+  // --------------------------
+  
+  /**
+   * @Pulipuli 20210406
+   * 換頁的部分
+   */
+  #blog-pager {
+    display: none !important;
+  }
+
+}
