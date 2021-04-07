@@ -25,8 +25,10 @@ var vm = new Vue({
       }
       filenames.sort()
       
-      filenames.forEach(function (filename) {
-        links.push(filenamesMapping[filename])
+      filenames.forEach((filename) => {
+        let link = filenamesMapping[filename]
+        link = this.resizeLink(link)
+        links.push(link)
       })
       
       return links
@@ -41,6 +43,15 @@ var vm = new Vue({
         return link
       }
       return link.slice(link.lastIndexOf('/') + 1)
+    },
+    resizeLink (link) {
+      if (link.indexOf('/s1600/') === -1) {
+        let pos = link.lastIndexOf('/')
+        let part1 = link.slice(0, pos)
+        let part2 = link.slice(pos)
+        link = part1 + '/s1600' + part2
+      }
+      return link
     }
   }
 });
