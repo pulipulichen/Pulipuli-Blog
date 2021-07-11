@@ -31,6 +31,7 @@
         type='text/javascript'/>
 -->
 
+
 <p:localhost-redirect />
 
 <p:include>6_includable/check-localhost.html</p:include>
@@ -228,11 +229,19 @@
           <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/sta.html" or data:blog.url == "https://blog.pulipuli.info/p/sta.html"'>
             <p:include>4_page/statistics.html</p:include>
             <p:include>4_page/page-as-item.html</p:include>
+            <p:include>4_page/page-as-article.html</p:include>
             <b:else/>
+            
+            <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/2021-nccu-lib.html" or data:blog.url == "https://blog.pulipuli.info/p/2021-nccu-lib.html"'>
+              <!-- <p:include>4_page/course.html</p:include> -->
+              <p:include>4_page/page-as-item.html</p:include>
+              <p:include>4_page/page-as-article.html</p:include>
+              <b:else/>
 
-              <b:if cond='data:view.isPage'>
-                <p:include>4_page/page-as-item.html</p:include>
-              </b:if>
+                <b:if cond='data:view.isPage'>
+                  <p:include>4_page/page-as-item.html</p:include>
+                </b:if>
+            </b:if>
           </b:if>
       </b:if>
     </b:if>

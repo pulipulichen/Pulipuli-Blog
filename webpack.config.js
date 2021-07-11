@@ -55,6 +55,7 @@ module.exports = (env, argv) => {
       'admin-tools': './lib-for-link/src/admin-tools/admin-tools.js',
       'page': getFilelist('./lib-for-link/src/page/'),
       'page-as-item': './lib-for-link/src/page-as-item/index.js',
+      'page-as-article': './lib-for-link/src/page-as-article/index.js',
     },
     output: {
       path: path.resolve('./lib-for-link/dist'),

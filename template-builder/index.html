@@ -14,12 +14,12 @@
   <body>
     <div class="ui container" id="app">
       <form class="ui form">
-        <div class="ui unstackable two column grid">
+        <div class="ui unstackable three column grid">
           <div class="column">
             <a class="ui labeled icon primary fluid button" 
                href="https:////www.blogger.com/blog/themes/edit/16607461" 
                target="bloggerTemplateLink"
-               @click="openBloggerTemplateLink">
+               v-on:click="openBloggerTemplateLink">
               <i class="cog icon"></i>
               Open Blogger Template
             </a>
@@ -28,6 +28,12 @@
             <a class="ui labeled icon fluid button" href="https://blog.pulipuli.info" target="blogPulipuliInfo">
               <i class="eye icon"></i>
               Open Blogger
+            </a>
+          </div>
+          <div class="column">
+            <a class="ui labeled icon fluid button" href="https://www.blogger.com/blog/settings/16607461" target="settingBlogPulipuliInfo">
+              <i class="reply icon"></i>
+              HTTPS Redirect
             </a>
           </div>
         </div>
@@ -64,7 +70,7 @@
                      v-model="hostType" @click="loadTemplate">
               <label for="hostType3">
                 <span>
-                  Use Localhost Server
+                  Use Localhost Server (要關閉HTTPS轉向)
                 </span>
               </label>
             </div>

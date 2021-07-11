@@ -97,6 +97,7 @@ var app = {
           '4_page/labels.html',
           '4_page/archives.html',
           '4_page/page-as-item.html',
+          '4_page/page-as-article.html',
           
           '5_footer_bar/1_col.html',
           '5_footer_bar/2_col.html',

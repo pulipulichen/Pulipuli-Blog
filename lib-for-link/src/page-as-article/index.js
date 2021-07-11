@@ -1,0 +1,1 @@
+import './styles/page-as-article.less'
