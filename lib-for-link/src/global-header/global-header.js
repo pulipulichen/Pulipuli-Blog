@@ -37,3 +37,5 @@ import "./script/google-analytics.js"
 import "./script/env-variables.js"
 import "./script/back-button.js"
 import "./script/script.js"
+
+import "./style/footer.less"
