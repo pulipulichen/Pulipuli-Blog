@@ -64,6 +64,10 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
     let more = $('div.entry-content:first > article > a[name="more"]:first');
     if (more.length > 0) {
       firstHeading = more
+      let moreNext = more.next()
+      if (moreNext.filter('hr').length > 0) {
+        moreNext.remove()
+      }
     }
     cleanFirstHeading(firstHeading)
 
