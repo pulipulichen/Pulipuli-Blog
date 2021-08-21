@@ -61,6 +61,10 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
 
     //PULI_UTILS.log('post.toc', '2');
     var firstHeading = $('div.entry-content:first > article > ' + heading + ':first');
+    let more = $('div.entry-content:first > article > a[name="more"]:first');
+    if (more.length > 0) {
+      firstHeading = more
+    }
     cleanFirstHeading(firstHeading)
 
     if (isCached === false 
