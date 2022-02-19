@@ -34,6 +34,7 @@ let parseImgur = () => {
             + '#comment-holder .comment-content a[href$=".GIF"]:not(.parsed-imgur),'
             + '#comment-holder .comment-content a[href$=".JPG"]:not(.parsed-imgur),'
             + '#comment-holder .comment-content a[href$=".JPEG"]:not(.parsed-imgur),'
+            + '#comment-holder .comment-content a[href^="https://blogger.googleusercontent.com/img/a/"]:not(.parsed-imgur),'
             + '#comment-holder .comment-content a[href^="http://imgur.com/"]:not([href^="http://imgur.com/upload"]):not(.parsed-imgur),'
             + '#comment-holder .comment-content a[href^="https://imgur.com/"]:not([href^="https://imgur.com/upload"]):not(.parsed-imgur)').each(function (i, aNode) {
       let url = aNode.href
@@ -53,12 +54,13 @@ let parseImgur = () => {
           $(aNode).html('<blockquote class="imgur-embed-pub" lang="en" data-id="a/' + url + '">'
                   + '<a href="//imgur.com/' + url + '"></a>'
                   + '</blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>')
+          $(aNode).addClass('parsed-imgur')
           return true
         }
 
         url = url + '.jpg'
       }
-
+      
       //console.log(url)
       $(aNode).html('<img src="' + url + '" border="0" class="comment-image" />')
       $(aNode).addClass('parsed-imgur')
