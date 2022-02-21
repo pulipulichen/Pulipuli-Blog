@@ -1,0 +1,21 @@
+# docker-Specify the compose version
+version: "3"
+
+services:
+  app:
+    #Build a Dockerfile in the same directory
+    build: .
+    #Give the container a name(Any)
+    container_name: PuliBlog
+    #You can keep the container running.
+    tty: true
+    #Mount the files in the directory to the app directory in the container
+    volumes: 
+      - ./archive-prasing:/app/archive-prasing
+      - ./lib-for-link:/app/lib-for-link
+      - ./page:/app/page
+      - ./template-builder:/app/template-builder
+      - ./user-js-css:/app/user-js-css
+    #Mount port 1000 on the container side to port 8080 on the host side.
+    #ports:
+    #  - "8080:8080"
