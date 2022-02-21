@@ -16,10 +16,12 @@ RUN mkdir /app
 WORKDIR /app
 
 #Package in container.json and packate-lock.Make sure that two of json are copied
-COPY package.json ./
 COPY package-css.js ./
 COPY postcss.config.js ./
 COPY webpack.config.js ./
+
+# UPDATE 20220221 
+COPY package.json ./
 # package.Install the package described in json.
 RUN npm i
 
