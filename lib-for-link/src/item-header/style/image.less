@@ -26,12 +26,15 @@
     }
   }
 
+  // 圖片陰影
   p:not(:first-of-type) > a[href$=".png"],
   p:not(:first-of-type) > a[href$=".jpg"],
   p:not(:first-of-type) > a[href$=".gif"],
   p:not(:first-of-type) > a[href|="https://lh3.googleusercontent.com/"],
+  p:not(:first-of-type) > a[href|="//lh3.googleusercontent.com/"],
   p:not(:first-of-type) > a[href$="-no"],
-  p:not(:first-of-type) > a[href$=".png?puli_gphoto=1"] {
+  p:not(:first-of-type) > a[href$=".png?puli_gphoto=1"],
+  p:not(:first-of-type) > a[href|="//blogger.googleusercontent.com/img/a/"] {
 
     img {
       box-shadow: 4px 4px 2px grey;
