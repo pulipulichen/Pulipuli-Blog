@@ -57,10 +57,8 @@ Font Awesome icon: https://fontawesome.com/icons?d=gallery&m=free
 
 -----
 
-自動轉發
+# 自動轉發
 
-linkin: https://app.dlvrit.com/share/automate
-微博 https://ifttt.com/applets/36147970d-if-any-new-post-on-your-blog-then-publish-a-post-to
-twitter https://ifttt.com/applets/34163224d-if-any-new-post-on-your-blog-then-post-a-tweet-with-image-to-pulipuli
-tumblr https://ifttt.com/applets/35617038d-if-any-new-post-on-your-blog-then-create-a-quote-post-on-your-tumblr-blog
-facebook page https://ifttt.com/applets/4948871d-blogger
+Private document:
+https://docs.google.com/document/d/1lkQwKG22HN9OlRztyRUPI6WplEOEn427fnw7nk0DRCQ/edit
+
