@@ -95,7 +95,9 @@ var app = {
           '4_content/entry-index.html',
           '4_content/entry-item.html',
           '4_content/1_ad_before_blog.html',
+          '4_content/5_ad_before_comment.html',
           '4_content/9_ad_before_blog.html',
+          
           
           '4_page/social-media.html',
           '4_page/statistics.html',
