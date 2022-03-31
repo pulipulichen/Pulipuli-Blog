@@ -80,9 +80,11 @@ var _load_random_posts = function () {
         randompoststitle = randompoststitle.substr(0, 40) + "...";
       }
       // 20160625 最新標題，把/之前的文字加上粗體
+      let randompoststitleOriginal = randompoststitle
       if (randompoststitle.indexOf(" / ") > 0) {
         var _slash_pos = randompoststitle.indexOf(" / ");
         randompoststitle = "<strong>" + randompoststitle.substr(0, _slash_pos) + "</strong>" + randompoststitle.substr(_slash_pos);
+        randompoststitleOriginal = randompoststitle.substr(0, _slash_pos)
       } else {
         randompoststitle = "<strong>" + randompoststitle + "</strong>";
       }
@@ -119,17 +121,20 @@ var _load_random_posts = function () {
           if ('media$thumbnail' in entry) {
             var randompoststhumb = entry.media$thumbnail.url;
           } else {
-            randompoststhumb = "http://3.bp.blogspot.com/-5SoVe1K6JSk/Utl0OOmucAI/AAAAAAAAF6E/hQghgD_EJdQ/s1600/no_thumb.png";
+            randompoststhumb = "//3.bp.blogspot.com/-5SoVe1K6JSk/Utl0OOmucAI/AAAAAAAAF6E/hQghgD_EJdQ/s1600/no_thumb.png";
           }
         }
       }
-      ;
+      if (randompoststhumb.startsWith('http://')) {
+        randompoststhumb = randompoststhumb.slice(randompoststhumb.indexOf('//'))
+      }
+
       var _li = '';
       //document.write('<li>');
       _li = _li + '<dd>';
       _li = _li + '<a href="' + randompostsurl + '" rel="nofollow" title="' + randomposts_snippet + '">';
       //document.write('<a href="' + randompostsurl + '" rel="nofollow"><img alt="' + randompoststitle + '" src="' + randompoststhumb + '"/></a>');
-      _li = _li + '<img alt="' + randompoststitle + '" src="' + randompoststhumb + '"/>';
+      _li = _li + '<img alt="' + randompoststitleOriginal + '" src="' + randompoststhumb + '"/>';
       //document.write('<div><a href="' + randompostsurl + '" rel="nofollow">' + randompoststitle + '</a></div>');
 
       _li = _li + randompoststitle;
