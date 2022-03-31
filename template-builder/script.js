@@ -81,6 +81,7 @@ var app = {
           '3_footer/4_management.html',
           '3_footer/8_include.html',
           '3_footer/9_include_item.html',
+          '3_footer/10_ad_before_footer.html',
           
           '4_content/author.html',
           '4_content/backlinks.html',
@@ -208,6 +209,11 @@ var app = {
                 return item + '\n'
               }
             }).join("").trim()
+
+            if (mainTemplate.endsWith('</script></body>\n</html>')) {
+              mainTemplate = mainTemplate.substring(0, mainTemplate.lastIndexOf('<script type="text/javascript">'))
+                + '</body></html>'
+            }
 
             this.codeForBlogger = mainTemplate
             $('.copy-button:first').focus()
