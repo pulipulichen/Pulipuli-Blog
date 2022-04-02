@@ -278,6 +278,7 @@
         <b:include data='post' name='post'/>
         
         <b:if cond='data:blog.pageType != &quot;index&quot; and data:blog.pageType != &quot;archive&quot;'>
+          <p:include>4_content/5_ad_before_comment.html</p:include>
           <b:if cond='data:post.showThreadedComments'>
             <b:include data='post' name='threaded_comments'/>
           <b:else/>
@@ -401,6 +402,7 @@
 </b:includable>
 
 <b:includable id='comment_picker' var='post'>
+  <p:include>4_content/5_ad_before_comment.html</p:include>
   <b:if cond='data:post.forceIframeComments'>
     <b:include data='post' name='iframe_comments'/>
     <b:if cond='data:post.showThreadedComments'>
