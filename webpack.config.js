@@ -138,17 +138,17 @@ module.exports = (env, argv) => {
       test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
       use: [
         'style-loader', // 這個會後執行 (順序很重要)
-        'css-loader', // 這個會先執行
-        'postcss-loader',
+        'css-loader?sourceMap', // 這個會先執行
+        'postcss-loader?sourceMap',
       ]
     }
     webpackConfig.module.rules[1] = {
       test: /\.less$/,
       use: [
         'style-loader', // Step 3
-        'css-loader', // Step 2再執行這個
-        'postcss-loader',
-        'less-loader' // Step 1 要先執行這個
+        'css-loader?sourceMap', // Step 2再執行這個
+        'postcss-loader?sourceMap',
+        'less-loader?sourceMap' // Step 1 要先執行這個
       ]
     }
     webpackConfig.module.rules.push({
