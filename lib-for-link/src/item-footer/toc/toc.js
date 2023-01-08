@@ -109,6 +109,10 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
     //PULI_UTILS.log('post.toc', '3');
 
     var headingAry = getHeadingAry(postBody, headingTag, firstHeading)
+    if (!headingAry) {
+      return false
+    }
+
 
     var cataTitleID = prefix + "cataTitle";
     var cataTitle = jQuery('<a class="puli-utils-append" name="' + cataTitleID + '" id="' + cataTitleID + '" />');
