@@ -113,7 +113,6 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
       return false
     }
 
-
     var cataTitleID = prefix + "cataTitle";
     var cataTitle = jQuery('<a class="puli-utils-append" name="' + cataTitleID + '" id="' + cataTitleID + '" />');
     var goCata = jQuery('<a class="puli-utils-append heading-button" href="#' + cataTitleID + '" title="Go to top">'
