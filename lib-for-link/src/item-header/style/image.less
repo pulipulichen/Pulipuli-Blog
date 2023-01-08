@@ -10,6 +10,7 @@
   p:first-of-type > a[href$=".png"]:first-of-type,
     p:first-of-type > a[href$=".jpg"]:first-of-type,
     p:first-of-type > a[href$=".gif"]:first-of-type,
+    p:first-of-type > a[href*="/img/a/"]:first-of-type,
     p:first-of-type > a[href|="https://lh3.googleusercontent.com/"]:first-of-type,
     p:first-of-type > a[href$="-no"]:first-of-type,
     p:first-of-type > a[href$=".png?puli_gphoto=1"]:first-of-type {
@@ -33,6 +34,7 @@
   p:not(:first-of-type) > a[href|="https://lh3.googleusercontent.com/"],  // 不要開頭
   p:not(:first-of-type) > a[href|="//lh3.googleusercontent.com/"], // 不要開頭
   p:not(:first-of-type) > a[href$="-no"],
+  p:not(:first-of-type) > a[href$="/img/a/"],
   p:not(:first-of-type) > a[href$=".png?puli_gphoto=1"],
   p:not(:first-of-type) > a[href^="//blogger.googleusercontent.com/img/a/"], /* 開頭 */
   p:not(:first-of-type) > a[href^="https://blogger.googleusercontent.com/img/a/"] /* 開頭 */ {
@@ -62,6 +64,7 @@
     p:first-of-type > a[href$=".png"]:first-of-type,
       p:first-of-type > a[href$=".jpg"]:first-of-type,
       p:first-of-type > a[href$=".gif"]:first-of-type,
+      p:first-of-type > a[href*="/img/a/"]:first-of-type,
       p:first-of-type > a[href|="https://lh3.googleusercontent.com/"]:first-of-type,
       p:first-of-type > a[href$="-no"]:first-of-type {
       /*margin-left: -2em;
@@ -101,6 +104,7 @@
     p:not(:first-of-type) > a[href$=".png"],
       p:not(:first-of-type) > a[href$=".jpg"],
       p:not(:first-of-type) > a[href$=".gif"],
+      p:not(:first-of-type) > a[href*="/img/a/"],
       p:not(:first-of-type) > a[href|="https://lh3.googleusercontent.com/"],
       p:not(:first-of-type) > a[href$="-no"] {
       display: block;
@@ -131,6 +135,7 @@
       p:first-of-type > a[href$=".gif"]:first-of-type, 
       p:first-of-type > a[href|="https://lh3.googleusercontent.com/"]:first-of-type,
       p:first-of-type > a[href$="-no"]:first-of-type, 
+      p:first-of-type > a[href$="/img/a/"]:first-of-type, 
       p:first-of-type > a[href$=".png?puli_gphoto=1"]:first-of-type {
       margin-left: 0 !important;
     }
@@ -140,6 +145,7 @@
     p:not(:first-of-type) > a[href$=".gif"],
     p:not(:first-of-type) > a[href|="https://lh3.googleusercontent.com/"],
     p:not(:first-of-type) > a[href$="-no"],
+    p:not(:first-of-type) > a[href*="/img/a/"],
     p:not(:first-of-type) > a[href$=".png?puli_gphoto=1"] {
       /*margin-left: 2rem;*/
       margin-left: 1rem;
