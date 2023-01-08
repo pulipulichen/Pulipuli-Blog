@@ -171,7 +171,8 @@ module.exports = (env, argv) => {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false // set to true if you want JS source maps
+        // sourceMap: false // set to true if you want JS source maps
+        sourceMap: true // set to true if you want JS source maps
       })
     ]
     
