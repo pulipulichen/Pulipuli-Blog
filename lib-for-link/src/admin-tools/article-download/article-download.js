@@ -768,7 +768,7 @@ let articleDownload = {
 }
 
 if (typeof(window) === 'object') {
-  window.articleDownload = articleDownload
+  window['articleDownload'] = articleDownload
 }
 
 export default articleDownload
