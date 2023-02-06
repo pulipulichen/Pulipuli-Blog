@@ -440,7 +440,7 @@ let articleDownload = {
     
     //console.log(filenameList.length)
     //console.log(filenameList)
-    //console.log(imageList)
+    console.log(imageList)
     return imageList
   },
   getImageFromList: function (imageList, callback) {
