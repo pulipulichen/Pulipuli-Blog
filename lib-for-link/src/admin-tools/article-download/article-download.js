@@ -6,7 +6,7 @@ import './lib/beautify-html.js'
 import './lib/FileSaver.js'
 import api from '@fortawesome/fontawesome'
 import JSZipUtils from './lib/jszip-utils.js'
-// import url from 'url'
+import url from 'url'
 
 let extractExt = function (link) {
   let urlObject = new URL(link)
