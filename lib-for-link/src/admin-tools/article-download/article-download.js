@@ -347,7 +347,8 @@ let articleDownload = {
       'xls',
       'xlsx',
       'xml',
-      'yaml'
+      'yaml',
+      'https://blogger.googleusercontent.com/img/a/'
     ]
     
     let pushImageList = function (link) {
@@ -414,7 +415,7 @@ let articleDownload = {
       imageList[link] = filename
       
       return filename
-    }
+    } // let pushImageList = function (link) {
     
     /*
     imgUrlPatterns.forEach((pattern) => {
