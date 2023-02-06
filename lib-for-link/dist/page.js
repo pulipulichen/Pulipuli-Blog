@@ -162,8 +162,12 @@
 /***/ (function(module, exports) {
 
 ArchiveListUtils = {
+  deselectAll: function () {
+    let inputList = document.querySelectorAll(`#BlogArchive1_ArchiveList > ul > li > input[type="checkbox"][checked="checked"]`)
+    inputList.forEach(i => i.checked = false)
+  },
   openListYear: function (callback) {
-    console.log('openListYear')
+    // console.log('openListYear')
     //$("#BlogArchive1_ArchiveList > ul.hierarchy > li.archivedate:not(.expanded) a.toggle:eq(0)").trigger("click")
     let li = $("#BlogArchive1_ArchiveList > ul.hierarchy > li.archivedate:not(.expanded)")
     let zippy = $("#BlogArchive1_ArchiveList > ul.hierarchy > li.archivedate:not(.expanded) > a.toggle > .zippy:not(.toggle-open)")
