@@ -233,6 +233,9 @@ ArchiveListUtils = {
 
 $(() => {
   let archiveTool = $('#ArchiveList > .page-tool')
+  archiveTool.find('.deselect.all').click(() => {
+    ArchiveListUtils.deselectAll()
+  })
   archiveTool.find('.open-list.year').click(() => {
     ArchiveListUtils.openListYear()
   })
