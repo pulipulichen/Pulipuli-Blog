@@ -4,10 +4,12 @@ import './lib/jszip-utils.js'
 //require('./beautify-css.js')
 import './lib/beautify-html.js'
 import './lib/FileSaver.js'
-import url from 'url'
+import api from '@fortawesome/fontawesome'
+import JSZipUtils from './lib/jszip-utils.js'
+// import url from 'url'
 
 let extractExt = function (link) {
-  let urlObject = url.parse(link)
+  let urlObject = new URL(link)
   let ext = null
   if (urlObject.pathname !== null 
           && urlObject.pathname.lastIndexOf('.') > -1) {
@@ -347,11 +349,11 @@ let articleDownload = {
       'xls',
       'xlsx',
       'xml',
-      'yaml',
-      'https://blogger.googleusercontent.com/img/a/'
+      'yaml'
     ]
     
     let pushImageList = function (link) {
+      console.log(link)
       if (link.indexOf('/blob/') > -1
               || link.indexOf('skydrive.live.com/') > -1
               || link.indexOf('/pudding.miroko.tw/') > -1
@@ -362,17 +364,21 @@ let articleDownload = {
         return false
       }
       
+      console.log(link, 1)
       let ext = extractExt(link)
-      if (allowExtList.indexOf(ext) === -1) {
+      if (allowExtList.indexOf(ext) === -1 && link.startsWith('https://blogger.googleusercontent.com/img/a/') === false) {
         return false
       }
       
+      console.log(link, imageList[link], 2)
       // https://lh3.googleusercontent.com/-quhLaYWL29s/WCsAVr6SwpI/AAAAAAAC9iI/F62sfdA4C90/image_thumb%25255B4%25255D.png?imgmax=800
       // http://2.bp.blogspot.com/-L-p05d-w9LA/XHbAUssrMPI/AAAAAAAED78/31DtDe9q6JcGr77dvTTUOna6huIYwbvEgCK4BGAYYCw/s0/%25E7%25B0%25A1%25E5%25A0%25B11.png
       if (typeof(imageList[link]) === 'string') {
         // 表示已經加入了
         return false
       }
+
+      console.log(link, 3)
       
       let filename = link
       filename = filename.slice(filename.lastIndexOf('/')+1, filename.length)
@@ -380,6 +386,7 @@ let articleDownload = {
         filename = filename.slice(0, filename.lastIndexOf("?"))
       }
       
+      console.log(link, filename, 4)
       // unescape
       /*
       while (filename !== unescape(filename)) {
@@ -390,6 +397,7 @@ let articleDownload = {
         filename = decodeURIComponent(filename)
       }
       
+      console.log(link, filename, 5)
       /*
       if (!filename.endsWith('.jpg')
               && !filename.endsWith('.png')
@@ -410,10 +418,13 @@ let articleDownload = {
         }
         filename = tempFilename
       }
+
+      console.log(link, filename, 6)
       
       filenameList.push(filename)
       imageList[link] = filename
       
+      console.log(link, filename, 7)
       return filename
     } // let pushImageList = function (link) {
     
@@ -457,19 +468,37 @@ let articleDownload = {
     let loop = (i) => {
       if (i < linkList.length) {
         let link = linkList[i]
-        JSZipUtils.getBinaryContent(link, (err, data) => {
-          if (err) {
-            //throw err; // or handle the error
-            // 下載不到檔案的話
-            delete linkFileList[link]
-          }
-          else {
-            linkFileList[link].data = data
-          }
+        
+        if (link.startsWith('https://blogger.googleusercontent.com/img/a/')) {
+          let apiURL = `https://script.google.com/macros/s/AKfycby23TavuSQR5PLcziRsO4ZEcP1DhX_icSkHDk18dEGGHHahU0PEFc3kRdP0Pw1GXRoN/exec`
+          let requestURL = apiURL + '?url=' + encodeURIComponent(link)
+
+          $.getJSON(requestURL, async (result) => {
+            let {output} = result
+            let blob = await (await fetch(content)).blob()
+
+            linkFileList[link].data = blob
+
+            i++
+            loop(i)
+          })
+        }
+        else {
+          JSZipUtils.getBinaryContent(link, (err, data) => {
+            if (err) {
+              //throw err; // or handle the error
+              // 下載不到檔案的話
+              delete linkFileList[link]
+            }
+            else {
+              linkFileList[link].data = data
+            }
+            
+            i++
+            loop(i)
+          });
+        }
           
-          i++
-          loop(i)
-        });
       }
       else {
         if (typeof(callback) === "function") {
