@@ -431,6 +431,17 @@ let articleDownload = {
     metadata.title = h1.text().trim()
     
     let articleDate = $('article .meta1 .timestamp').text().trim().split('/')
+    if (articleDate.length === 1) {
+      articleDate = articleDate[0]
+
+      let parts = []
+      articleDate = articleDate.split('月').map(p => p.trim())
+      parts[0] = articleDate[0]
+      articleDate = articleDate[1].split(', ').map(p => p.trim())
+      parts[1] = articleDate[0]
+      parts[2] = articleDate[1]
+      articleDate = parts
+    }
     metadata.date = {
       year: parseInt(articleDate[2].trim(), 10),
       month: parseInt(articleDate[0].trim(), 10),
