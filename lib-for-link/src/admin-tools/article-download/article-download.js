@@ -364,21 +364,21 @@ let articleDownload = {
         return false
       }
       
-      console.log(link, 1)
+      // console.log(link, 1)
       let ext = extractExt(link)
       if (allowExtList.indexOf(ext) === -1 && link.startsWith('https://blogger.googleusercontent.com/img/a/') === false) {
         return false
       }
       
-      console.log(link, imageList[link], 2)
+      // console.log(link, imageList[link], 2)
       // https://lh3.googleusercontent.com/-quhLaYWL29s/WCsAVr6SwpI/AAAAAAAC9iI/F62sfdA4C90/image_thumb%25255B4%25255D.png?imgmax=800
       // http://2.bp.blogspot.com/-L-p05d-w9LA/XHbAUssrMPI/AAAAAAAED78/31DtDe9q6JcGr77dvTTUOna6huIYwbvEgCK4BGAYYCw/s0/%25E7%25B0%25A1%25E5%25A0%25B11.png
       if (typeof(imageList[link]) === 'string') {
         // 表示已經加入了
         return false
       }
-
-      console.log(link, 3)
+// 
+      // console.log(link, 3)
       
       let filename = link
       filename = filename.slice(filename.lastIndexOf('/')+1, filename.length)
@@ -386,7 +386,7 @@ let articleDownload = {
         filename = filename.slice(0, filename.lastIndexOf("?"))
       }
       
-      console.log(link, filename, 4)
+      // console.log(link, filename, 4)
       // unescape
       /*
       while (filename !== unescape(filename)) {
@@ -397,7 +397,7 @@ let articleDownload = {
         filename = decodeURIComponent(filename)
       }
       
-      console.log(link, filename, 5)
+      // console.log(link, filename, 5)
       /*
       if (!filename.endsWith('.jpg')
               && !filename.endsWith('.png')
@@ -419,12 +419,12 @@ let articleDownload = {
         filename = tempFilename
       }
 
-      console.log(link, filename, 6)
+      // console.log(link, filename, 6)
       
       filenameList.push(filename)
       imageList[link] = filename
       
-      console.log(link, filename, 7)
+      // console.log(link, filename, 7)
       return filename
     } // let pushImageList = function (link) {
     
@@ -470,12 +470,12 @@ let articleDownload = {
         let link = linkList[i]
         
         if (link.startsWith('https://blogger.googleusercontent.com/img/a/')) {
-          let apiURL = `https://script.google.com/macros/s/AKfycby23TavuSQR5PLcziRsO4ZEcP1DhX_icSkHDk18dEGGHHahU0PEFc3kRdP0Pw1GXRoN/exec`
+          let apiURL = `https://script.google.com/macros/s/AKfycbx2QQwxVGAVSAUedIeWBmFkauLqSyxv6LFCbAePgozGFmucM71Hcqlq6wDZ1Yt-retl/exec`
           let requestURL = apiURL + '?url=' + encodeURIComponent(link)
 
           $.getJSON(requestURL, async (result) => {
             let {output} = result
-            let blob = await (await fetch(content)).blob()
+            let blob = await (await fetch(output)).blob()
 
             linkFileList[link].data = blob
 
