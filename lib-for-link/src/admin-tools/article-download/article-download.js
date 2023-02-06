@@ -610,7 +610,7 @@ let articleDownload = {
           })
         }
         else {
-          window.JSZipUtils.getBinaryContent(link, (err, data) => {
+          JSZipUtils.getBinaryContent(link, (err, data) => {
             if (err) {
               //throw err; // or handle the error
               // 下載不到檔案的話
