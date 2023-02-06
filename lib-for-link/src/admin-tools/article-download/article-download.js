@@ -353,7 +353,7 @@ let articleDownload = {
     ]
     
     let pushImageList = function (link) {
-      console.log(link)
+      // console.log(link)
       if (link.indexOf('/blob/') > -1
               || link.indexOf('skydrive.live.com/') > -1
               || link.indexOf('/pudding.miroko.tw/') > -1
@@ -451,7 +451,7 @@ let articleDownload = {
     
     //console.log(filenameList.length)
     //console.log(filenameList)
-    console.log(imageList)
+    // console.log(imageList)
     return imageList
   },
   getImageFromList: function (imageList, callback) {
