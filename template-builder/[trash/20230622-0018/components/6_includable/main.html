@@ -1,0 +1,57 @@
+<b:if cond='data:useImage'>
+  <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
+    <!--
+    Show image as background to text. You can't really calculate the width
+    reliably in JS because margins are not taken into account by any of
+    clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
+    width if the user is using shrink to fit.
+    This results in a margin-width's worth of pixels being cropped. If the
+    user is not using shrink to fit then we expand the header.
+    -->
+    <b:if cond='data:mobile'>
+      <div id='header-inner'>
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            <b:include name='title'/>
+          </h1>
+        </div>
+        <b:include name='description'/>
+      </div>
+      <b:else/>
+      <div id="header-inner" class="header-inner-not-mobile" 
+           expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot; + &quot;background-position: &quot; + data:backgroundPositionStyleStr + &quot;; &quot; + data:widthStyleStr + &quot;min-height: &quot; + data:height + &quot;_height: &quot; + data:height' >
+        <div class='titlewrapper'>
+          <h1 class='title'>
+            <b:include name='title'/>
+          </h1>
+        </div>
+        <b:include name='description'/>
+      </div>
+    </b:if>
+    <b:else/>
+    <!--Show the image only-->
+    <div id='header-inner'>
+      <a accesskey="H" expr:href='data:blog.homepageUrl' id='header-inner-link'>
+        <img expr:alt='data:title' 
+             expr:height='data:height' 
+             expr:id='data:widget.instanceId + &quot;_headerimg&quot;' 
+             expr:src='data:sourceUrl'
+             expr:width='data:width'/>
+      </a>
+      <!--Show the description-->
+      <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
+        <b:include name='description'/>
+      </b:if>
+    </div>
+  </b:if>
+  <b:else/>
+  <!--No header image -->
+  <div id='header-inner' class="no-header-image">
+    <div class='titlewrapper'>
+      <h1 class='title'>
+        <b:include name='title'/>
+      </h1>
+    </div>
+    <b:include name='description'/>
+  </div>
+</b:if>

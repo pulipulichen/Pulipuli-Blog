@@ -12,6 +12,13 @@ https://github.com/pulipulichen/Pulipuli-Blog/issues
 3. `~/telebit http 5501` sweet-pug-22.telebit.io
 4. 確認 https://sweet-pug-22.telebit.io/lib-for-link/dist/admin-tools.js 可以連線
 
+# 已知錯誤訊息
+
+## 20230621-2358 來自FB
+````
+Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.
+Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'.
+````
 
 # Reference
 - Semantic UI: https://semantic-ui.com/collections/grid.html

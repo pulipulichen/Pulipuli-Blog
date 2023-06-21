@@ -1,0 +1,13 @@
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+  <p:check-localhost-item />
+  
+  <b:else />
+  
+  <b:if cond='data:blog.url == "http://blog.pulipuli.info/p/archives.html" or data:blog.url == "https://blog.pulipuli.info/p/archives.html" or data:blog.url == "http://blog.pulipuli.info/p/labels.html" or data:blog.url == "https://blog.pulipuli.info/p/labels.html"'>
+    <p:check-localhost-page />
+    
+    <b:else />
+    
+    <p:check-localhost-index />
+  </b:if>
+</b:if>

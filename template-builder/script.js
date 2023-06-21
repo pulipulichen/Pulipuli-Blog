@@ -84,7 +84,10 @@ var app = {
 
           '1_menu/1_menu.html',
           '1_menu/2_search.html',
+
           '2_sidebar/1_sidebar.html',
+          '2_sidebar/2_ad_after_sidebar.html',
+
           '3_footer/1_col.html',
           '3_footer/2_col.html',
           '3_footer/3_col.html',
@@ -242,6 +245,9 @@ var app = {
               mainTemplate = mainTemplate.substring(0, mainTemplate.lastIndexOf('<script>')) +
                 '</body></html>'
             }
+
+            // 移除註解 20230622-0017 
+            mainTemplate = mainTemplate.replace(/<!--[\s\S]*?-->/g, '')
 
             this.codeForBlogger = mainTemplate
             $('.copy-button:first').focus()
