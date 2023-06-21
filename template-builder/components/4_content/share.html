@@ -1,19 +1,25 @@
 <div class='pull-right share-story-container'>
 
+<div class="share-count"
+    expr:post-url="data:post.url"></div>
+
 <ul class='share-story'>
     <li><a class='tips social-button facebook' data-title='分享到Facebook' target='_blank'
         title="Share to Facebook"
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;s=facebook&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_facebook&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url'>
         <i class="fa fa-facebook"></i>
     </a></li>
     <li class="line"><a class='tips social-button line' data-title='分享到LINE' target='_blank'
         title="Share to LINE"
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;s=lineme&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_line&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;line://msg/text/&quot; + data:post.url'>
         <strong>L</strong>
     </a></li>
     <li><a class='tips social-button plurk' data-title='分享到Plurk' target='_blank'
         title="Share to Plurk"
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;s=plurk&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_plurk&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;http://www.plurk.com/m?qualifier=shares&amp;content=&quot; + data:post.url'>
         <strong>P</strong>
     </a></li>
     <!--
@@ -22,28 +28,38 @@
         <i class="fa fa-twitter"></i>
     </a></li>
     -->
+    <li><a class='tips social-button twitter' data-title='分享到Twitter' target='_blank'
+        title="Share to Twitter"
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_twitter&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url'>
+        <i class="fa fa-twitter"></i>
+    </a></li>
     <li><a class='tips social-button linkedin' data-title='分享到LinkedIn' target='_blank'
         title="Share to LinkedIn"
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;s=linkedin&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_linkedin&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:post.url'>
         <i class="fa fa-linkedin"></i>
     </a></li>
 
     <li><a class='tips social-button pocket' data-title='儲存到Pocket' target='_blank'
         title="Save to Pocket"
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;s=pocket&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_pocket&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;https://getpocket.com/edit?url=&quot; + data:post.url'>
         <i class="fa fa-get-pocket"></i>
     </a></li>
     
     <li><a class='tips social-button email' data-title='分享到Email' target='_blank'
         title="Share to E-Mail"
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;s=email&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_email&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
+        expr:href='&quot;mailto:?subject=&quot; + data:post.title + &quot;&amp;bo&quot; + &quot;dy=&quot; + data:post.url'>
         <i class="fa fa-envelope"></i>
     </a></li>
 
-    <li><a class='tips social-button addthis' data-title='分享到其他地方' target='_blank'
+    <li><a class='tips social-button web-share-api' data-title='分享到其他地方'
         title="Share..."
-        expr:href='&quot;//www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=pulipuli&amp;source=msd-1.0&amp;url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title + &quot;&amp;ate=AT-pulipuli/-/per-13/-/4&amp;frommenu=1&amp;ips=1&amp;uud=1&amp;ct=1&amp;pre=http%3A%2F%2Fblog.pulipuli.info%2F&amp;tt=0&amp;captcha_provider=nucaptcha&amp;pro=1&quot;'>
-        <i class="fa fa-plus"></i>
+        expr:onclick='&quot;BLOG_STATISTIC.log(&apos;share_web_share_api&apos;, &apos;&quot; + data:post.url + &quot;&apos;, &apos;&quot; + data:post.title + &quot;&apos;)&quot;'
+        href='#'>
+        <i class="fa fa-share"></i>
     </a></li>
 </ul>
     
