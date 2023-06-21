@@ -38,9 +38,9 @@
           </div>
         </div>
         
-        <div class="unstackable three fields">
+        <div class="unstackable four fields">
           <div class="field">
-            <div class="ui radio checkbox fluid button">
+            <div class="ui radio checkbox fluid positive button">
               <input type="radio" name="hostType" value="github"
                      id="hostType1"
                      v-model="hostType" @click="loadTemplate">
@@ -75,6 +75,25 @@
               </label>
             </div>
           </div>
+          <div class="field">
+            <div class="ui radio checkbox fluid negative button">
+              <input type="radio" name="hostType" value="telebit"
+                     id="hostType4"
+                     v-model="hostType" @click="loadTemplate">
+              <label for="hostType4">
+                <span>
+                  Use Telebit
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="telebitURL">
+            Telebit Base URL
+          </label>
+          <input type="text" v-model="telebitURL" id="telebitURL" />
         </div>
             
         <div class="ui stackable one column grid">
@@ -91,8 +110,11 @@
                       class="template-code ui attached segment"
                       placeholder="Blogger Template Code (now loading...)"></textarea>
           </div>
+        </div>
+
+        <div class="ui stackable one column grid">
           <div class="column olw">
-            
+            <iframe src="https://www.blogger.com/blog/themes/edit/16607461"></iframe>
           </div>
         </div>
       </form>

@@ -398,8 +398,10 @@ let articleDownload = {
     commentCount = parseInt(commentCount, 10)
     metadata.commentCount = commentCount
     
-    let shareCount = $('.addthis-smartlayers .at-custom-sidebar-count').text()
-    shareCount = parseInt(shareCount, 10)
+    // let shareCount = $('.addthis-smartlayers .at-custom-sidebar-count').text()
+    // shareCount = parseInt(shareCount, 10)
+    // 20230621-2323 因為AddThis關閉了，所以此數字降為0
+    let shareCount = 0
     metadata.shareCount = shareCount
     
     metadata.editURL = $('article h1 .meta1 .edit-url').attr('href')

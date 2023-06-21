@@ -5,6 +5,14 @@ https://pulipulichen.github.io/Pulipuli-Blog/
 
 https://github.com/pulipulichen/Pulipuli-Blog/issues
 
+# 如何修改測試內容
+
+1. 用Live Server開啟
+2. 確認 http://127.0.0.1:5501/lib-for-link/dist/admin-tools.js 可以連線
+3. `~/telebit http 5501` sweet-pug-22.telebit.io
+4. 確認 https://sweet-pug-22.telebit.io/lib-for-link/dist/admin-tools.js 可以連線
+
+
 # Reference
 - Semantic UI: https://semantic-ui.com/collections/grid.html
 - Semantic UI icon: https://semantic-ui.com/elements/icon.html

@@ -4,6 +4,8 @@
   "description": "擺放blog.pulipuli.info各種資料的儲存庫",
   "main": "index.js",
   "scripts": {
+    "start": "bash ./docker-compose/d3.webpack-watch-build-production.sh",
+    "telebit": "~/telebit http 5501",
     "d2.webpack-watch-development": "bash ./docker-compose/d2.webpack-watch-development.sh",
     "d3.webpack-watch-build-production": "bash ./docker-compose/d3.webpack-watch-build-production.sh",
     "1.webpack-build-development": "webpack --mode development",

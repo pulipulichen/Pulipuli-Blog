@@ -7,21 +7,30 @@ var app = {
     codeForOLW: 'Open Live Writer Template Code (now loading...)',
     hostType: 'github',
     pulipuliURL: 'http://pc.pulipuli.info/public/Pulipuli-Blog/',
-    localhostURL: 'http://localhost:8383/Pulipuli-Blog/'
+    localhostURL: 'http://localhost:8383/Pulipuli-Blog/',
+    telebitURL: '//sweet-pug-22.telebit.io/',
   },
   mounted: function () {
-    let key = 'hostType'
-    if (localStorage.getItem(key)) {
-      try {
-        this[key] = localStorage.getItem(key)
-      } catch(e) {
-        console.log(e)
-        localStorage.removeItem(key);
+    let keys = ['hostType', 'telebitURL']
+
+    keys.forEach(key => {
+      if (localStorage.getItem(key)) {
+        try {
+          this[key] = localStorage.getItem(key)
+        } catch(e) {
+          console.log(e)
+          localStorage.removeItem(key);
+        }
       }
-    }
+    })
   },
   created: function () {
     this.loadTemplate()
+  },
+  watch: {
+    telebitURL () {
+      localStorage.setItem('telebitURL', this.telebitURL)
+    }
   },
   methods: {
     copyCode: function () {
@@ -195,6 +204,10 @@ var app = {
                       .join('')
               mainTemplate = mainTemplate.split('<p:check-localhost-page />')
                       .join('')
+            }
+            else if (this.hostType === 'telebit') {
+              mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
+                      .join(this.telebitURL)
             }
             else {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')
