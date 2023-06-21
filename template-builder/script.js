@@ -231,9 +231,16 @@ var app = {
               }
             }).join("").trim()
 
+            // 避免Live Server多加程式碼 20230621-2354 
             if (mainTemplate.endsWith('</script></body>\n</html>')) {
-              mainTemplate = mainTemplate.substring(0, mainTemplate.lastIndexOf('<script type="text/javascript">'))
-                + '</body></html>'
+              mainTemplate = mainTemplate.substring(0, mainTemplate.lastIndexOf('<script type="text/javascript">')) + 
+                '</body></html>'
+            }
+
+            // 避免Live Server多加程式碼 20230621-2354 
+            if (mainTemplate.endsWith('</script>\n</body>\n</html>')) {
+              mainTemplate = mainTemplate.substring(0, mainTemplate.lastIndexOf('<script>')) +
+                '</body></html>'
             }
 
             this.codeForBlogger = mainTemplate
