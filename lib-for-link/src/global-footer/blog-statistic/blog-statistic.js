@@ -3,6 +3,7 @@
 BLOG_STATISTIC = {
   api: 'https://script.google.com/macros/s/AKfycbwFLapgBzxxt6qKsj73wey_Uh-Q_-XvTNJSpXLgQmvKoGJxboAnfSQX3y2tJqimUsteIQ/exec',
   log: function (element, target, url, title) {
+    url = this.filterURL(url)
     let apiURL = this.api + '?type=' + target + '&url=' + encodeURIComponent(url)
     // await fetch(apiURL)
     setTimeout(async () => {
@@ -62,16 +63,25 @@ BLOG_STATISTIC = {
     }
   },
   filterURL (url) {
-    let queryPos = url.indexOf('?')
-    if (queryPos > -1) {
-      url = url.slice(0, queryPos)
-    }
+    // let queryPos = url.indexOf('?')
+    // if (queryPos > -1) {
+    //   url = url.slice(0, queryPos)
+    // }
 
-    let hashPos = url.indexOf('#')
-    if (hashPos > -1) {
-      url = url.slice(0, hashPos)
+    // let hashPos = url.indexOf('#')
+    // if (hashPos > -1) {
+    //   url = url.slice(0, hashPos)
+    // }
+    // return url
+
+    try {
+      url = new URL(url);
+      return url.pathname;
     }
-    return url
+    catch (e) {
+      console.error('Error url: ' + url)
+      return url
+    }
   },
   getCount () {
     let shareCountList = $('#content .share-count[post-url]')
@@ -81,16 +91,6 @@ BLOG_STATISTIC = {
     for (let i = 0; i < shareCountList.length; i++) {
       let url = shareCountList.eq(i).attr('post-url')
       url = this.filterURL(url)
-
-      let queryPos = url.indexOf('?')
-      if (queryPos > -1) {
-        url = url.slice(0, queryPos)
-      }
-
-      let hashPos = url.indexOf('#')
-      if (hashPos > -1) {
-        url = url.slice(0, hashPos)
-      }
       
       if (postURLList.indexOf(url) === -1) {
         postURLList.push(url)
@@ -102,10 +102,11 @@ BLOG_STATISTIC = {
     body.postURLList = postURLList
 
     if ($('script[src$="/item-footer.js"]').length === 1) {
-      body.view = location.href
+      body.view = this.filterURL(location.href)
+      body.uuid = this.generateDeviceUUID()
     }
 
-    // console.log(postURLList)
+    // console.log(body)
     // Make a POST request
     fetch(this.api, {
       redirect: "follow",
@@ -119,6 +120,11 @@ BLOG_STATISTIC = {
       .then(data => {
         // Handle the response data
         // console.log(data);
+        if (data.status && data.status === 'error') {
+          console.error(data)
+          return false
+        }
+
         this.setShareCounts(shareCountList, data)
         this.setViewCounts(viewCountList, data)
       })
@@ -132,6 +138,11 @@ BLOG_STATISTIC = {
       let item = shareCountList.eq(i)
       let url = item.attr('post-url')
       url = this.filterURL(url)
+
+      if (!data[url]) {
+        continue
+      }
+
       let count = data[url][1]
       if (count && count !== 0) {
         this.setShareCount(item, count)
@@ -148,16 +159,49 @@ BLOG_STATISTIC = {
       let item = viewCountList.eq(i)
       let url = item.attr('post-url')
       url = this.filterURL(url)
+
+      if (!data[url]) {
+        continue
+      }
+
       let count = data[url][0]
+      let time = data[url][2]
+      // let time = 2
       if (count && count !== 0) {
-        this.setViewCount(item, count)
+        this.setViewCount(item, count, time)
       }
     }
   },
-  setViewCount: function(item, count) {
+  setViewCount: function(item, count, time) {
     item.text(count)
     item.addClass('show')
-    item.parents('li.view-count:first').addClass('show-view-count')
+    let viewCountContainer = item.parents('li.view-count:first')
+    viewCountContainer.addClass('show-view-count')
+
+    if (time) {
+      viewCountContainer.find('.view-time').addClass('show-view-time')
+        .find('.hour').text(time)
+    }
+  },
+  generateDeviceUUID() {
+    var uuid = localStorage.getItem('deviceUUID');
+    if (!uuid) {
+      uuid = this.generateRandomUUID();
+      localStorage.setItem('deviceUUID', uuid);
+    }
+    return uuid;
+  },
+  generateRandomUUID() {
+    // Implement your own UUID generation logic here
+    // This is just a basic example, you may use a more robust UUID library
+  
+    var randomUUID = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0,
+          v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  
+    return randomUUID;
   }
 }
 
