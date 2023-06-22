@@ -72,9 +72,11 @@
   }
 }
 
-
 .share-button-before-article {
   .share-story li {
+
+    margin-left: 0;
+
     .view-time {
       display: none;
 
@@ -101,6 +103,31 @@
   }
 }
 
+.share-button-before-article {
+
+  @media (min-width:768px) {
+    // .share-story li {
+    //   float: right;
+    // }
+    .share-story {
+      text-align: right;
+    }
+
+    li {
+      display: inline-block;
+      width: 33px;
+      height: 35px;
+
+      margin: 0 !important;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+      border: none;
+      outline: none;
+
+    }
+  }
+}
 
 #main .share-story {
   @media (max-width:480px) {

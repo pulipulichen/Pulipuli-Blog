@@ -117,7 +117,8 @@ BLOG_STATISTIC = {
     let body = {}
     body.postURLList = postURLList
 
-    if ($('script[src$="/item-footer.js"]').length === 1) {
+    if ($('script[src$="/item-footer.js"]').length === 1 || 
+      $('script[src$="/page-as-item.js"]').length === 1) {
       body.view = this.filterURL(location.href)
       body.uuid = this.generateDeviceUUID()
     }
