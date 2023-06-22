@@ -1,4 +1,13 @@
 <ul class='share-story'>
+    
+    <li class="view-count"><a class='tips social-button view-count' data-title='觀看數'
+        title="View count"
+        href='#'>
+        <i class="fa fa-bar-chart"></i>
+        <span class="view-count"
+            expr:post-url="data:post.url"></span>
+    </a></li>
+
     <li><a class='tips social-button facebook' data-title='分享到Facebook' target='_blank'
         title="Share to Facebook"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_facebook&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
@@ -58,25 +67,4 @@
         <span class="share-count"
             expr:post-url="data:post.url"></span>
     </a></li>
-</ul>
-    
-<ul class='share-story about'>
-    <li>
-        <a href="/p/about_38.html">
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
-            關於布丁
-        </a>
-    </li>
-    <li>
-        <a href="/p/sitemap.html#subscribe">
-            <i class="fa fa-rss-square" aria-hidden="true"></i>
-            訂閱BLOG
-        </a>
-    </li>
-    <li>
-        <a href="/p/donation.html">
-            <i class="fa fa-coffee" aria-hidden="true"></i>
-            贊助
-        </a>
-    </li>
 </ul>

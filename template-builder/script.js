@@ -134,6 +134,7 @@ var app = {
           '6_includable/check-localhost.html'
         ] // var replaceList = [
 
+        let round = 0
         var loop = (i) => {
           if (i < replaceList.length) {
             var filename = replaceList[i]
@@ -151,6 +152,11 @@ var app = {
             })
           }
           else {
+            round++
+            if (round < 2) {
+              return loop(0)
+            }
+
             // 加入年份
             var year = (new Date()).getFullYear()
             mainTemplate = mainTemplate.replace('<p:year />', year);
@@ -167,6 +173,8 @@ var app = {
             mainTemplate = template.innerHTML;
             console.log(mainTemplate)
             */
+
+
             if (mainTemplate.indexOf("<p:include>") > -1) {
               alert("<p:include> error")
             }

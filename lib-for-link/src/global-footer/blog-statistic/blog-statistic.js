@@ -61,12 +61,20 @@ BLOG_STATISTIC = {
       console.log('Web Share API is not supported');
     }
   },
-  getShareCount () {
+  getCount () {
     let shareCountList = $('#content .share-count[post-url]')
+    let viewCountList = $('#content .view-count[post-url]')
 
     let postURLList = []
     for (let i = 0; i < shareCountList.length; i++) {
       postURLList.push(shareCountList.eq(i).attr('post-url'))
+    }
+
+    let body = {}
+    body.postURLList = postURLList
+
+    if ($('script[src$="/item-footer.js"]').length === 1) {
+      body.view = location.href
     }
 
     // console.log(postURLList)
@@ -74,7 +82,7 @@ BLOG_STATISTIC = {
     fetch(this.api, {
       redirect: "follow",
       method: "POST",
-      body: JSON.stringify({postURLList}),
+      body: JSON.stringify(body),
       headers: {
         "Content-Type": "text/plain;charset=utf-8",
       },
@@ -82,8 +90,9 @@ BLOG_STATISTIC = {
       .then(response => response.json())
       .then(data => {
         // Handle the response data
-        // console.log(data);
+        console.log(data);
         this.setShareCounts(shareCountList, data)
+        this.setViewCounts(viewCountList, data)
       })
       .catch(error => {
         // Handle any errors
@@ -94,8 +103,8 @@ BLOG_STATISTIC = {
     for (let i = 0; i < shareCountList.length; i++) {
       let item = shareCountList.eq(i)
       let url = item.attr('post-url')
-      let count = data[url]
-      if (count) {
+      let count = data[url][1]
+      if (count && count !== 0) {
         this.setShareCount(item, count)
       }
     }
@@ -104,9 +113,24 @@ BLOG_STATISTIC = {
     item.text(count)
     item.addClass('show')
     item.parents('li.web-share-api:first').addClass('show-share-count')
+  },
+  setViewCounts: function(viewCountList, data) {
+    for (let i = 0; i < viewCountList.length; i++) {
+      let item = viewCountList.eq(i)
+      let url = item.attr('post-url')
+      let count = data[url][0]
+      if (count && count !== 0) {
+        this.setViewCount(item, count)
+      }
+    }
+  },
+  setViewCount: function(item, count) {
+    item.text(count)
+    item.addClass('show')
+    item.parents('li.view-count:first').addClass('show-view-count')
   }
 }
 
 $(() => {
-  BLOG_STATISTIC.getShareCount()
+  BLOG_STATISTIC.getCount()
 })

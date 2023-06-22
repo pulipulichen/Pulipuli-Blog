@@ -1,5 +1,10 @@
 
 .share-story li {
+  a {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+
   @media (max-width:767px) {
     float: none;
     display: table-cell;
@@ -8,16 +13,37 @@
     border-top: 1px solid #E6E6E6;
   }
 
-  &.web-share-api {
+  &.view-count {
+    display: none;
 
-    &.show-share-count {
+    &.show-view-count {
+      display: inline-block;
+    }
+
+    a {
+      cursor: default;
+    }
+  }
+
+  &.web-share-api,
+  &.view-count {
+
+    a {
+      white-space: nowrap;
+      width: fit-content;
+      min-width: 33px;
+    }
+
+    &.show-share-count,
+    &.show-view-count {
       width: fit-content;
       padding-left: 10px;
       padding-right: 10px;
       background-color: #d6d7d6;
       border-radius: 16px;
 
-      .share-count {
+      .share-count,
+      .view-count {
         display: inline-block !important;
       }
 
