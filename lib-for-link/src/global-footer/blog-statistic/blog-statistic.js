@@ -3,6 +3,7 @@
 BLOG_STATISTIC = {
   api: 'https://script.google.com/macros/s/AKfycbzxTzGVCUpv0EfWNYkvcvf3hiEfKYP_r56LmQs1zpvWbOD98ZuH2TEKphaEWPvulMwZkw/exec',
   log: function (element, target, url, title) {
+    // let originalURL = url
     url = this.filterURL(url)
     let apiURL = this.api + '?type=' + target + '&url=' + encodeURIComponent(url)
     // await fetch(apiURL)
@@ -14,7 +15,18 @@ BLOG_STATISTIC = {
       this.openWebShareAPI(url, title)
     }
 
+    gtag('event', 'share', {
+      target,
+      url: 'https://blog.pulipuli.info' + url,
+    });
+
     this.addCount(element)
+  },
+  logAskMe(url) {
+    url = this.filterURL(url)
+    gtag('event', 'ask_me', {
+      url: 'https://blog.pulipuli.info' + url,
+    });
   },
   addCount (element) {
     // console.log(element)

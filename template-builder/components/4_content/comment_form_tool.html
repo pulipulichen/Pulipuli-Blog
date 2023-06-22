@@ -92,6 +92,7 @@
 
   <a class='question tips social-button email' data-title='用Email提問' target='_blank'
       title="Send question to E-Mail"
+      expr:onclick='&quot;BLOG_STATISTIC.logAskMe(&apos;&quot; + data:post.url + &quot;&apos;)&quot;'
       expr:href='&quot;mailto:blog@pulipuli.info?subject=Question: &quot; + data:post.title + &quot;&amp;bo&quot; + &quot;dy=From: &quot; + data:post.url'>
       <i class="fa fa-envelope"></i>
       Ask Me on Email
