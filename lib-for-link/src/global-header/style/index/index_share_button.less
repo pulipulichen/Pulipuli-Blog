@@ -89,3 +89,23 @@
     }
   }
 }
+
+#main .share-story {
+  @media (max-width:480px) {
+    margin-bottom: 1rem;
+    
+    li {
+      &.twitter, 
+      &.plurk,
+      &.linkedin,
+      &.pocket,
+      &.email {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width:360px) {
+    display: none;
+  }
+}

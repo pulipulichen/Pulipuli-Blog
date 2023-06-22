@@ -11,7 +11,7 @@
         </span>
     </a></li>
 
-    <li><a class='tips social-button facebook' data-title='分享到Facebook' target='_blank'
+    <li class="facebook"><a class='tips social-button facebook' data-title='分享到Facebook' target='_blank'
         title="Share to Facebook"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_facebook&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
         expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url'>
@@ -23,7 +23,7 @@
         expr:href='&quot;line://msg/text/&quot; + data:post.url'>
         <strong>L</strong>
     </a></li>
-    <li><a class='tips social-button plurk' data-title='分享到Plurk' target='_blank'
+    <li class="plurk"><a class='tips social-button plurk' data-title='分享到Plurk' target='_blank'
         title="Share to Plurk"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_plurk&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
         expr:href='&quot;http://www.plurk.com/m?qualifier=shares&amp;content=&quot; + data:post.url'>
@@ -35,27 +35,27 @@
         <i class="fa fa-twitter"></i>
     </a></li>
     -->
-    <li><a class='tips social-button twitter' data-title='分享到Twitter' target='_blank'
+    <li class="twitter"><a class='tips social-button twitter' data-title='分享到Twitter' target='_blank'
         title="Share to Twitter"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_twitter&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
         expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url'>
         <i class="fa fa-twitter"></i>
     </a></li>
-    <li><a class='tips social-button linkedin' data-title='分享到LinkedIn' target='_blank'
+    <li class="linkedin"><a class='tips social-button linkedin' data-title='分享到LinkedIn' target='_blank'
         title="Share to LinkedIn"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_linkedin&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
         expr:href='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:post.url'>
         <i class="fa fa-linkedin"></i>
     </a></li>
 
-    <li><a class='tips social-button pocket' data-title='儲存到Pocket' target='_blank'
+    <li class="pocket"><a class='tips social-button pocket' data-title='儲存到Pocket' target='_blank'
         title="Save to Pocket"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_pocket&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
         expr:href='&quot;https://getpocket.com/edit?url=&quot; + data:post.url'>
         <i class="fa fa-get-pocket"></i>
     </a></li>
     
-    <li><a class='tips social-button email' data-title='分享到Email' target='_blank'
+    <li class="email"><a class='tips social-button email' data-title='分享到Email' target='_blank'
         title="Share to E-Mail"
         expr:onclick='&quot;BLOG_STATISTIC.log(this, &apos;share_email&apos;, &apos;&quot; + data:post.url + &quot;&apos;)&quot;'
         expr:href='&quot;mailto:?subject=&quot; + data:post.title + &quot;&amp;bo&quot; + &quot;dy=&quot; + data:post.url'>
