@@ -5,6 +5,7 @@ BLOG_STATISTIC = {
   log: function (element, target, url, title) {
     // let originalURL = url
     url = this.filterURL(url)
+    let fullURL = 'https://blog.pulipuli.info' + url
     let apiURL = this.api + '?type=' + target + '&url=' + encodeURIComponent(url)
     // await fetch(apiURL)
     setTimeout(async () => {
@@ -12,12 +13,12 @@ BLOG_STATISTIC = {
     }, 0)
 
     if (target === 'share_web_share_api') {
-      this.openWebShareAPI(url, title)
+      this.openWebShareAPI(fullURL, title)
     }
 
     gtag('event', 'share', {
       target,
-      url: 'https://blog.pulipuli.info' + url,
+      url: fullURL,
     });
 
     this.addCount(element)
@@ -72,6 +73,9 @@ BLOG_STATISTIC = {
         });
     } else {
       console.log('Web Share API is not supported');
+
+      // https://www.addtoany.com/share#url=https%3A%2F%2Fshubo.io%2F
+      window.open(`https://www.addtoany.com/share#url=${encodeURIComponent(url)}`, '_blank')
     }
   },
   filterURL (url) {
