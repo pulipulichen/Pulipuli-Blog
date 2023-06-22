@@ -78,21 +78,29 @@
     .view-time {
       display: none;
 
-      @media (max-width:480px) {
-        margin-left: 0.5rem;
+      margin-left: 0.5rem;
 
-        position: relative;
-        top: -0.1rem;
-        font-size: 0.8rem;
+      position: relative;
+      top: -0.1rem;
+      font-size: 0.8rem;
 
         
-        &.show-view-time {
-          display: inline-block;
+      &.show-view-time {
+        @media (min-width:769px) {
+          &.full {
+            display: inline-block;
+          }
+        }
+        @media (max-width:768px) {
+          &.short {
+            display: inline-block;
+          }
         }
       }
     }
   }
 }
+
 
 #main .share-story {
   @media (max-width:480px) {
