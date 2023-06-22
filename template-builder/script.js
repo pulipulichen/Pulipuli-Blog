@@ -222,6 +222,13 @@ var app = {
             else if (this.hostType === 'telebit') {
               mainTemplate = mainTemplate.split('//pulipulichen.github.io/Pulipuli-Blog/')
                       .join(this.telebitURL)
+
+              mainTemplate = mainTemplate.split('<p:check-localhost-index />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-item />')
+                      .join('')
+              mainTemplate = mainTemplate.split('<p:check-localhost-page />')
+                      .join('')
             }
             else {
               mainTemplate = mainTemplate.split('<p:localhost-redirect />')

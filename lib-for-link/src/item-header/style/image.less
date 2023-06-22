@@ -5,6 +5,7 @@
 #main article {
   img {
     max-width: calc(100% - 2rem);
+    border: 1px solid rgba(0, 0, 0, 0.5);
   }
 
   @media (min-width: 767px) {
@@ -21,6 +22,9 @@
     p:first-of-type > a[href$="-no"]:first-of-type,
     p:first-of-type > a[href$=".png?puli_gphoto=1"]:first-of-type {
     margin-left: -2em;
+    @media (max-width: 480px) {
+      margin-left: 0;
+    }
     display: block;
     text-align:center;
     
@@ -29,6 +33,7 @@
       box-shadow: 4px 4px 2px grey;
       margin-right: auto;
       margin-bottom: auto;
+      border-width: 0;
       //margin-left: -1rem;
     }
   }
@@ -46,9 +51,17 @@
   p:not(:first-of-type) > a[href^="https://blogger.googleusercontent.com/img/a/"] /* 開頭 */ {
 
     img {
+      // @media (max-width: 480px) {
+      //    margin-left: -1em;
+      // }
       box-shadow: 4px 4px 2px grey;
       margin-right: 5px;
       margin-bottom: 5px;
+    }
+
+    @media (max-width: 480px) {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 

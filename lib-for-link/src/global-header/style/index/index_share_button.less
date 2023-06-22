@@ -120,4 +120,30 @@
   @media (max-width:360px) {
     display: none;
   }
+
+  &.about {
+    @media (max-width:360px) {
+      display: block;
+      width: 100vw;
+      position: relative;
+      left: -1rem;
+
+      li a {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 361px) and (max-width:480px) {
+      display: block;
+      width: 100vw;
+      position: relative;
+      left: 1rem;
+      margin-top: -1rem;
+
+      li a {
+        margin-bottom: 0;
+      }
+    }
+
+  }
 }

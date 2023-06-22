@@ -32,9 +32,27 @@
     position: relative;
     top: -0.2rem;
   }
-  
+
+  .field {
+    display: inline-block;
+  }
+
   select.comment-tools-select {
     width: 8rem;
+    // width: calc(100% - 7rem);
+  }
+  
+  @media (max-width: 767px) {
+    .field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    select.comment-tools-select {
+      // width: 8rem;
+      width: calc(100% - 7rem);
+    }
   }
 
   .question.email {
@@ -45,6 +63,12 @@
 
     position: relative;
     top: -0.2rem;
+
+    @media (max-width: 767px) {
+      display: block;
+      margin-left: 0;
+      width: calc(100% - 1rem);
+    }
   }
 }
 
