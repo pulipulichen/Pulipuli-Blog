@@ -74,6 +74,7 @@ var app = {
         //this.codeForBlogger = mainTemplate.trim()
 
         var replaceList = [
+          '0_header/0_google_analytics.html',
           '0_header/0_manifest.html',
           '0_header/1_style.css',
           //'0_header/2_style.min.css',
