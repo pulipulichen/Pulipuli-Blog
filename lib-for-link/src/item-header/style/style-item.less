@@ -1,13 +1,6 @@
 
 /*************************************/
 
-@media (min-width:767px) {
-  #main .author-meta {
-    max-width: calc(100% - 300px);
-  }
-
-}
-
 #main .post-iframe {
   height: 90vh;
 }
@@ -183,21 +176,6 @@
   line-height: 1.15em;
 }
 
-/************************************/
-/* 20161113 puli toc */
-.entry-content .puli-toc {
-  /*border: 3px solid #CE8A42;*/
-  padding: 0.5em;
-  background-color: #2d2d2d;
-  color: white !important;
-  display: inline-block;
-}
-
-.entry-content .puli-toc li,
-.entry-content .puli-toc a {
-  color: white !important;
-}
-
 /* ******************************* */
 /* 2016/11/15 */
 @media (max-width: 480px) {
@@ -245,47 +223,6 @@
   background-size: cover;
 }
 
-/****************************/
-/* 20161118 */
-.entry-meta.clearfix .share-story-container .share-story.about {
-  display: block;
-}
-
-.entry-meta.clearfix .share-story-container .share-story.about li a  {
-  display: block;
-}
-
-@media (max-width: 767px) {
-  .entry-meta.clearfix .share-story-container .share-story.about li a  {
-    line-height: 50px;
-    padding: 0;
-    margin-bottom: 10px;
-  }
-}
-
-@media (min-width: 767px) {
-  .pull-right.share-story-container {
-    margin-top: 0;
-  }
-
-  .entry-meta.clearfix .share-story-container .share-story.about li {
-    width: auto;
-  }
-
-  .entry-meta.clearfix .share-story-container .share-story.about li a {
-    background-color: #D6D7D6;
-    border-radius: 6px;
-    line-height: 32px;
-    padding: 0 10px;
-    margin-top: 5px;
-    font-size: 0.8em;
-  }
-
-  .entry-meta.clearfix .share-story-container .share-story.about li a:hover {
-    color:white;
-    background-color: #333;
-  }
-}
 
 .author-meta .popover {
   font-weight: normal;
@@ -309,3 +246,7 @@
     }
   }
 }
+
+@import './style-item/style-item-author-meta.less';
+@import './style-item/style-item-puli-toc.less';
+@import './style-item/style-item-share-story-container.less';

@@ -61,13 +61,41 @@ BLOG_STATISTIC = {
       console.log('Web Share API is not supported');
     }
   },
+  filterURL (url) {
+    let queryPos = url.indexOf('?')
+    if (queryPos > -1) {
+      url = url.slice(0, queryPos)
+    }
+
+    let hashPos = url.indexOf('#')
+    if (hashPos > -1) {
+      url = url.slice(0, hashPos)
+    }
+    return url
+  },
   getCount () {
     let shareCountList = $('#content .share-count[post-url]')
     let viewCountList = $('#content .view-count[post-url]')
 
     let postURLList = []
     for (let i = 0; i < shareCountList.length; i++) {
-      postURLList.push(shareCountList.eq(i).attr('post-url'))
+      let url = shareCountList.eq(i).attr('post-url')
+      url = this.filterURL(url)
+
+      let queryPos = url.indexOf('?')
+      if (queryPos > -1) {
+        url = url.slice(0, queryPos)
+      }
+
+      let hashPos = url.indexOf('#')
+      if (hashPos > -1) {
+        url = url.slice(0, hashPos)
+      }
+      
+      if (postURLList.indexOf(url) === -1) {
+        postURLList.push(url)
+      }
+      
     }
 
     let body = {}
@@ -90,7 +118,7 @@ BLOG_STATISTIC = {
       .then(response => response.json())
       .then(data => {
         // Handle the response data
-        console.log(data);
+        // console.log(data);
         this.setShareCounts(shareCountList, data)
         this.setViewCounts(viewCountList, data)
       })
@@ -103,6 +131,7 @@ BLOG_STATISTIC = {
     for (let i = 0; i < shareCountList.length; i++) {
       let item = shareCountList.eq(i)
       let url = item.attr('post-url')
+      url = this.filterURL(url)
       let count = data[url][1]
       if (count && count !== 0) {
         this.setShareCount(item, count)
@@ -118,6 +147,7 @@ BLOG_STATISTIC = {
     for (let i = 0; i < viewCountList.length; i++) {
       let item = viewCountList.eq(i)
       let url = item.attr('post-url')
+      url = this.filterURL(url)
       let count = data[url][0]
       if (count && count !== 0) {
         this.setViewCount(item, count)
