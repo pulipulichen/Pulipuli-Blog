@@ -1,0 +1,38 @@
+
+.share-story li {
+  @media (max-width:767px) {
+    float: none;
+    display: table-cell;
+    width: 1%;
+    border-right: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+  }
+
+  &.web-share-api {
+
+    &.show-share-count {
+      width: fit-content;
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: #d6d7d6;
+      border-radius: 16px;
+
+      .share-count {
+        display: inline-block !important;
+      }
+
+      @media (max-width: 767px) {
+        float: none;
+        display: table-cell;
+        width: 1%;
+        border-right: 1px solid #e6e6e6;
+        border-top: 1px solid #e6e6e6;
+        border-radius: 0;
+        background-color: #f1eff2;
+      }
+    }
+
+    
+  }
+}
+

@@ -103,7 +103,9 @@ var app = {
           '4_content/comment_form_tool.html',
           '4_content/comments.html',
           
-          '4_content/share.html',
+          '4_content/share_about.html',
+          '4_content/share_buttons.html',
+
           '4_content/related_posts.html',
           '4_content/entry-index.html',
           '4_content/entry-item.html',

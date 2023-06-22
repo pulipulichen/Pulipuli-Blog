@@ -2,7 +2,7 @@
 
 BLOG_STATISTIC = {
   api: 'https://script.google.com/macros/s/AKfycbwFLapgBzxxt6qKsj73wey_Uh-Q_-XvTNJSpXLgQmvKoGJxboAnfSQX3y2tJqimUsteIQ/exec',
-  log: function (target, url, title) {
+  log: function (element, target, url, title) {
     let apiURL = this.api + '?type=' + target + '&url=' + encodeURIComponent(url)
     // await fetch(apiURL)
     setTimeout(async () => {
@@ -12,6 +12,33 @@ BLOG_STATISTIC = {
     if (target === 'share_web_share_api') {
       this.openWebShareAPI(url, title)
     }
+
+    this.addCount(element)
+  },
+  addCount (element) {
+    // console.log(element)
+    let shareContainer = $(element).parents('.share-story:first')
+    if (shareContainer.length === 0) {
+      // console.log(element)
+      // console.log('shareContainer.length')
+      return false
+    }
+
+    let shareCount = shareContainer.find('.share-count[post-url]:first')
+    if (shareCount.length === 0) {
+      // console.log(shareContainer)
+      // window.S = shareContainer
+      // console.log('shareCount.length')
+      return false
+    }
+
+    let count = shareCount.text().trim()
+    if (count === '') {
+      count = 0
+    }
+    count = Number(count) + 1
+
+    this.setShareCount(shareCount, count)
   },
   openWebShareAPI (url, title) {
     if (navigator.share) {
@@ -34,7 +61,7 @@ BLOG_STATISTIC = {
       console.log('Web Share API is not supported');
     }
   },
-  getShareCount: async function () {
+  getShareCount () {
     let shareCountList = $('#content .share-count[post-url]')
 
     let postURLList = []
@@ -45,28 +72,38 @@ BLOG_STATISTIC = {
     // console.log(postURLList)
     // Make a POST request
     fetch(this.api, {
-      method: 'POST',
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   'Access-Control-Allow-Origin': '*',
-      //   'Access-Control-Allow-Methods': 'GET, POST',
-      //   'Access-Control-Allow-Headers': 'Content-Type'
-      // },
+      redirect: "follow",
+      method: "POST",
       body: JSON.stringify({postURLList}),
-      mode: 'cors'
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
     })
-      .then(response => response.text())
+      .then(response => response.json())
       .then(data => {
         // Handle the response data
-        console.log('[' + data + ']');
+        // console.log(data);
+        this.setShareCounts(shareCountList, data)
       })
       .catch(error => {
         // Handle any errors
         console.error(error);
       });
-    // const obj = { key: "value" };
-    // const res = await axios.post(this.api, obj);
-    // console.log(res);
+  },
+  setShareCounts: function(shareCountList, data) {
+    for (let i = 0; i < shareCountList.length; i++) {
+      let item = shareCountList.eq(i)
+      let url = item.attr('post-url')
+      let count = data[url]
+      if (count) {
+        this.setShareCount(item, count)
+      }
+    }
+  },
+  setShareCount: function(item, count) {
+    item.text(count)
+    item.addClass('show')
+    item.parents('li.web-share-api:first').addClass('show-share-count')
   }
 }
 

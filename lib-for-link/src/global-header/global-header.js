@@ -1,6 +1,8 @@
 import "./vendor/jquery/jquery-loader.js"
 import "./vendor/font-awesome/font-awesome-loader.js"
+
 import "./style/1_style.less"
+
 import "./breeze-theme/googleapis-font-family-crete-round.css"
 import "./breeze-theme/googleapis-font-family-lato.css"
 import "./go-top/go-top.less"
@@ -22,7 +24,11 @@ import "./style/2_style.less"
 import "./style/3_custom_style.less"
 import "./style/header.less"
 // import "./vendor/addthis.css"
+
+
 import "./style/index.less"
+
+
 import "./style/content.less"
 import "./style/style.less"
 import "./gsc-search/default.css"
