@@ -1,6 +1,7 @@
 .template-code {
   max-height: inherit !important;
-  height: calc(100vh - 36em) !important;
+  height: calc(100vh - 38em) !important;
+  min-height: 0 !important;
 }
 
 .ui.radio.checkbox,
@@ -21,5 +22,5 @@
 
 iframe {
   width: 100%;
-  height: calc(100vh - 32em) !important;
+  height: calc(100vh - 29em) !important;
 }

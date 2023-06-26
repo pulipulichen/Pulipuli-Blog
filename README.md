@@ -9,8 +9,9 @@ https://github.com/pulipulichen/Pulipuli-Blog/issues
 
 1. 用Live Server開啟
 2. 確認 http://127.0.0.1:5501/lib-for-link/dist/admin-tools.js 可以連線
-3. `~/telebit http 5501` sweet-pug-22.telebit.io
-4. 確認 https://sweet-pug-22.telebit.io/lib-for-link/dist/admin-tools.js 可以連線
+3. `curl https://get.telebit.io/ | bash`
+4. `~/telebit http 5501` sweet-pug-22.telebit.io
+5. 確認 https://sweet-pug-22.telebit.io/lib-for-link/dist/admin-tools.js 可以連線
 
 # 已知錯誤訊息
 
