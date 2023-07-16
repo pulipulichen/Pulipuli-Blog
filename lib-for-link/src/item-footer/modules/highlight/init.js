@@ -35,6 +35,11 @@ $(function () {
       }
       code.find('.code-label:first').remove()
 
+      let children = code.children()
+      if (children.length === 1 && children[0].tagName.toLowerCase() === 'code') {
+        code = code.children().eq(0)
+      }
+
       let codeString = code.html()
       codeString = codeString.replace(/\&nbsp\;/g, ' ')
           .replace(/<br>/g, '\n')
