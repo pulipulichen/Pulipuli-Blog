@@ -5,6 +5,7 @@ services:
   app:
     #Build a Dockerfile in the same directory
     build: .
+    # image: pudding/node-pwa:pulipuli-blog-20230621
     #Give the container a name(Any)
     container_name: PuliBlog
     #You can keep the container running.
