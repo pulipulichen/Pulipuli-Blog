@@ -1,4 +1,4 @@
-FROM pudding/node-pwa:pulipuli-blog-20230621
+FROM pudding/node-pwa:pulipuli-blog-20231128-0215
 
 RUN npm link axios@1.6.2
 

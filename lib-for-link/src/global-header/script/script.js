@@ -89,9 +89,9 @@ var _page_index = 0;
 PULI_UTILS.create_page_id = function () {
     // var _pagename = location.pathname.split("/").slice(-1);
 		let _pagename = location.pathname.split("/").join('_')
-    if (typeof(_pagename[0]) === "string") {
-        _pagename = _pagename[0];
-    }
+    // if (typeof(_pagename[0]) === "string") {
+    //     _pagename = _pagename[0];
+    // }
     _pagename = _pagename + _page_index;
     _page_index++;
     return _pagename;
