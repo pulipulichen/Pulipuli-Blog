@@ -674,7 +674,7 @@ let articleDownload = {
             });
   },
   downloadArticle: function () {
-    this.downloadArticleDocx()
+    return this.downloadArticleDocx()
 
     //console.log('downloadArticle')
     //console.log(JSZip)
@@ -785,7 +785,7 @@ let articleDownload = {
     */
   },
   downloadArticleDocx: function () {
-    let url = `//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/docxtemplater/template.docx`
+    let url = `//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/docxtemplater/input.docx`
     PizZipUtils.getBinaryContent(url, (content) => {
       const zip = new PizZip(content);
       const doc = new window.docxtemplater(zip, {
@@ -795,8 +795,11 @@ let articleDownload = {
 
       // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
       doc.render({
-          content: "Hello, world",
-      });
+        first_name: "John",
+        last_name: "Doe",
+        phone: "0652455478",
+        description: "New Website",
+    });
 
       const blob = doc.getZip().generate({
           type: "blob",
