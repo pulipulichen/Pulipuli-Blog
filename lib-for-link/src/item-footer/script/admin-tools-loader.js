@@ -55,6 +55,10 @@ $(() => {
   if (location.href.endsWith('downloadArticle=true')) {
     setTimeout(() => {
       $('#main .entry-content .blog-admin .download-article-button:visible').click()
+
+      setInterval(() => {
+        $('#main .entry-content .blog-admin .download-article-button:visible').click()
+      }, 1000 * 60 * 5)
     }, 1000)
   }
 })
