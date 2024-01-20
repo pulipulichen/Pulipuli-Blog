@@ -41,10 +41,10 @@ $(() => {
   
   $('#main .entry-content .blog-admin .download-article-button').click(function () {
     //console.log('aaa')
-    console.log('Ready to load Admin Tools')
+    // console.log('Ready to load Admin Tools')
 
     loadAdminTools(() => {
-      console.log('Ready to download Article')
+      // console.log('Ready to download Article')
 
       articleDownload.downloadArticle()
     })
