@@ -840,7 +840,10 @@ let articleDownload = {
   downloadArticleDocx: function (callback) {
     let article = this.getRenderedPost()
 
-    let paragraphs = []
+    let paragraphs = [
+      new docx.TextRun(document.querySelector('article h1').innerText.trim()),
+      new docx.TextRun('')
+    ]
     for (let i = 0; i < article.length; i++) {
       let text = article.eq(i).text()
       paragraphs.push(new docx.TextRun(text))
