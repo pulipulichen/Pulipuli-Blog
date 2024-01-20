@@ -896,8 +896,6 @@ let articleDownload = {
       }
     });
 
-    
-  
     docx.Packer.toBlob(doc).then((blob) => {
       // console.log(blob);
       let filename = this.getArticleFilenameChinese()
