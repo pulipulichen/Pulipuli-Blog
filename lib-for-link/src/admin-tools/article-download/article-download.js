@@ -394,7 +394,10 @@ let articleDownload = {
     if (filename.indexOf(' / ') > 0) {
       filename = filename.slice(0, filename.indexOf(' / ')).trim()
     }
-    if (filename.indexOf('\n') > 0) {
+    else if (filename.indexOf('/') > 0) {
+      filename = filename.slice(0, filename.indexOf('/')).trim()
+    }
+    else if (filename.indexOf('\n') > 0) {
       filename = filename.slice(0, filename.indexOf('\n')).trim()
     }
 
