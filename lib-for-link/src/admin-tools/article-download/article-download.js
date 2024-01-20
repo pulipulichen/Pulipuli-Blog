@@ -678,12 +678,14 @@ let articleDownload = {
     //console.log(JSZip)
     //console.log(this.getMetadata())
     
-    if ($('.addthis-smartlayers .at-custom-sidebar-count:visible').length === 0) {
-      setTimeout(() => {
-        this.downloadArticle()
-      }, 3000)
-      return false
-    }
+    // 20240120-2229 
+    // 因為沒有AddThis了。所以這些功能都要關掉。
+    // if ($('.addthis-smartlayers .at-custom-sidebar-count:visible').length === 0) {
+    //   setTimeout(() => {
+    //     this.downloadArticle()
+    //   }, 3000)
+    //   return false
+    // }
     
     let filename = this.getArticleFilename()
     var zip = new JSZip();
