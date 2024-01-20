@@ -914,7 +914,10 @@ let articleDownload = {
       // console.log("Document created successfully");
 
       if (typeof(callback) === "function") {
-        callback()
+        setTimeout(() => {
+          callback()
+        }, 5000)
+        
       }
     });
   }
