@@ -785,25 +785,35 @@ let articleDownload = {
     */
   },
   downloadArticleDocx: function () {
-    var doc = new docxtemplater();
-    var template = `<p>Hello, world</p>`
-    doc.loadZip(new JSZip(template));
+    if (error) {
+      throw error;
+    }
 
-    // Compile the template with the data
-    var data = {
-      text: 'Hello, world'
-    };
-    doc.setData(data);
-    doc.render();
-
-    // Generate the DOCX file
-    var generatedDoc = doc.getZip().generate({
-      type: 'blob',
-      mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    let content = 'hello world'
+    const zip = new PizZip(content);
+    const doc = new window.docxtemplater(zip, {
+        paragraphLoop: true,
+        linebreaks: true,
     });
 
-    // Download the file as "test.docx"
-    saveAs(generatedDoc, 'test.docx');
+    // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
+    doc.render({
+        first_name: "John",
+        last_name: "Doe",
+        phone: "0652455478",
+        description: "New Website",
+    });
+
+    const blob = doc.getZip().generate({
+        type: "blob",
+        mimeType:
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        // compression: DEFLATE adds a compression step.
+        // For a 50MB output document, expect 500ms additional CPU time
+        compression: "DEFLATE",
+    });
+    // Output the document using Data-URI
+    saveAs(blob, "output.docx");
   }
 }
 
