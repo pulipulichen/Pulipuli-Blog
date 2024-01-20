@@ -8,7 +8,7 @@ import api from '@fortawesome/fontawesome'
 // import JSZipUtils from './lib/jszip-utils.js'
 import url from 'url'
 
-import './lib/docxtemplater.min.js'
+import Docxtemplater from 'docxtemplater'
 
 /*!
 
@@ -676,6 +676,8 @@ let articleDownload = {
             });
   },
   downloadArticle: function () {
+    this.downloadArticleDocx()
+
     //console.log('downloadArticle')
     //console.log(JSZip)
     //console.log(this.getMetadata())
@@ -739,7 +741,7 @@ let articleDownload = {
         // console.log({commentJSON})
 
         this.downloadZIP(filename, zip, () => {
-          this.downloadArticleDocx()
+          
 
           if (location.href.endsWith('downloadArticle=true')) {
             window.close()
