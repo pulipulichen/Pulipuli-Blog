@@ -785,10 +785,7 @@ let articleDownload = {
     */
   },
   downloadArticleDocx: function () {
-    if (error) {
-      throw error;
-    }
-
+    
     let content = 'hello world'
     const zip = new PizZip(content);
     const doc = new window.docxtemplater(zip, {
