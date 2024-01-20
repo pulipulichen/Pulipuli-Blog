@@ -687,15 +687,20 @@ let articleDownload = {
     //   return false
     // }
     
+    console.log(`downloadArticle`, 1)
+
     let filename = this.getArticleFilename()
     var zip = new JSZip();
     
     let article = this.getRenderedPost()
     let imageList = this.parseImageList(article)
+
+    console.log(`downloadArticle`, 2)
     
     this.getImageFromList(imageList,(linkFileList) => {
-      //console.log(linkFileList)
-      //console.log(imageList)
+      console.log({linkFileList})
+      console.log({imageList})
+
       article = this.replaceArticleLink(article, linkFileList)
       let articleHTML = this.beautifyHTML(article.html())
       
@@ -722,9 +727,14 @@ let articleDownload = {
       let commentJSONLink = $('.comment-form-tool .comment-tools-select option[value="open-comment-feed-json"]').attr('data-url')
       
       commentJSONLink = commentJSONLink + '-in-script&callback=?'
+
+      console.log({commentJSONLink})
+
       $.getJSON(commentJSONLink, (commentJSON) => {
         commentJSON = JSON.stringify(commentJSON, null, 2)
         mainFolder.file("comments.json", commentJSON);
+
+        console.log({commentJSON})
 
         this.downloadZIP(filename, zip, () => {
           if (location.href.endsWith('downloadArticle=true')) {
