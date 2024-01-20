@@ -864,17 +864,33 @@ let articleDownload = {
     // });
 
     let paragraphs = [
-      {
-        properties: {},
+      new docx.Paragraph({
         children: [
-          new docx.Paragraph({
-            children: [
-              new docx.TextRun(document.querySelector('article h1').innerText.trim())
-            ],
-          }),
+          new docx.TextRun(document.querySelector('article h1').innerText.trim())
         ],
-      },
-      {
+      }),
+      new docx.Paragraph({
+        children: [
+          new docx.TextRun('')
+        ],
+      }),
+    ]
+    for (let i = 0; i < article.length; i++) {
+      let text = article.eq(i).text()
+      paragraphs.push(new docx.Paragraph({
+        children: [
+          new docx.TextRun(text)
+        ],
+      }))
+      paragraphs.push(new docx.Paragraph({
+        children: [
+          new docx.TextRun('')
+        ],
+      }))
+    }
+
+    const doc = new docx.Document({
+      sections: {
         properties: {},
         children: [
           new docx.Paragraph({
@@ -884,33 +900,6 @@ let articleDownload = {
           }),
         ],
       }
-    ]
-    for (let i = 0; i < article.length; i++) {
-      let text = article.eq(i).text()
-      paragraphs.push({
-        properties: {},
-        children: [
-          new docx.Paragraph({
-            children: [
-              new docx.TextRun(text)
-            ],
-          }),
-        ],
-      })
-      paragraphs.push({
-        properties: {},
-        children: [
-          new docx.Paragraph({
-            children: [
-              new docx.TextRun('')
-            ],
-          }),
-        ],
-      })
-    }
-
-    const doc = new docx.Document({
-      sections: paragraphs
     });
 
     
