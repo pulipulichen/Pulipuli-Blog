@@ -741,6 +741,7 @@ let articleDownload = {
     //console.log(this.getMetadata())
     
     if ($('.show-view-time:visible').length === 0) {
+      console.log(`尚未讀取完成，再等等`)
       setTimeout(() => {
         this.downloadArticle()
       }, 3000)
@@ -882,7 +883,7 @@ let articleDownload = {
     ]
     for (let i = 0; i < article.length; i++) {
       let text = article.eq(i).text()
-      console.log(text)
+      // console.log(text)
       text.split('\n').forEach(t => {
         t = t.trim()
         if (t === '') {

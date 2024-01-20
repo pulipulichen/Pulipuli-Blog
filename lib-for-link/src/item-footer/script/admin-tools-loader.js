@@ -62,6 +62,6 @@ $(() => {
         console.log(`重試`)
         $('#main .entry-content .blog-admin .download-article-button:visible').click()
       }, 1000 * 60 * 3)
-    }, 1000)
+    }, 5000)
   }
 })
