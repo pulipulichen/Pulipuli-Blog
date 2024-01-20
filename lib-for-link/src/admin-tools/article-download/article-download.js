@@ -8,8 +8,6 @@ import api from '@fortawesome/fontawesome'
 // import JSZipUtils from './lib/jszip-utils.js'
 import url from 'url'
 
-import Docxtemplater from 'docxtemplater'
-
 /*!
 
 JSZipUtils - A collection of cross-browser utilities to go along with JSZip.
