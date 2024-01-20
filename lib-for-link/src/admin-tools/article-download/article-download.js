@@ -844,6 +844,7 @@ let articleDownload = {
     for (let i = 0; i < article.length; i++) {
       let text = article.eq(i).text()
       paragraphs.push(new docx.TextRun(text))
+      paragraphs.push(new docx.TextRun(''))
     }
 
     const doc = new docx.Document({
