@@ -890,12 +890,14 @@ let articleDownload = {
     }
 
     const doc = new docx.Document({
-      sections: {
+      sections: [{
         properties: {},
         children: paragraphs,
-      }
+      }]
     });
 
+    
+  
     docx.Packer.toBlob(doc).then((blob) => {
       // console.log(blob);
       let filename = this.getArticleFilenameChinese()
