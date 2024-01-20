@@ -2,6 +2,9 @@ ArchiveListUtils = {
   deselectAll: function () {
     let inputList = document.querySelectorAll(`#BlogArchive1_ArchiveList > ul > li > ul > li > input[type="checkbox"][checked="checked"]`)
     inputList.forEach(i => i.checked = false)
+
+    let inputListYear = document.querySelectorAll(`#BlogArchive1_ArchiveList > ul > li > input[type="checkbox"][checked="checked"]`)
+    inputListYear.forEach(i => i.checked = false)
   },
   openListYear: function (callback) {
     // console.log('openListYear')
