@@ -877,16 +877,20 @@ let articleDownload = {
     ]
     for (let i = 0; i < article.length; i++) {
       let text = article.eq(i).text()
-      paragraphs.push(new docx.Paragraph({
-        children: [
-          new docx.TextRun(text)
-        ],
-      }))
-      paragraphs.push(new docx.Paragraph({
-        children: [
-          new docx.TextRun('\n')
-        ],
-      }))
+      console.log(text)
+      text.split('\n').forEach(t => {
+        paragraphs.push(new docx.Paragraph({
+          children: [
+            new docx.TextRun(t)
+          ],
+        }))
+        paragraphs.push(new docx.Paragraph({
+          children: [
+            new docx.TextRun('\n')
+          ],
+        }))
+      })
+        
     }
 
     const doc = new docx.Document({
