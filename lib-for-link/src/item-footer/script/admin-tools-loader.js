@@ -53,10 +53,13 @@ $(() => {
   })
   
   if (location.href.endsWith('downloadArticle=true')) {
+    console.log(`嘗試開始下載`)
     setTimeout(() => {
       $('#main .entry-content .blog-admin .download-article-button:visible').click()
 
+      console.log(`嘗試重試`)
       setInterval(() => {
+        console.log(`重試`)
         $('#main .entry-content .blog-admin .download-article-button:visible').click()
       }, 1000 * 60 * 3)
     }, 1000)
