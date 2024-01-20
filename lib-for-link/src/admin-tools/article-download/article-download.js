@@ -840,28 +840,80 @@ let articleDownload = {
   downloadArticleDocx: function (callback) {
     let article = this.getRenderedPost()
 
+    // let paragraphs = [
+    //   new docx.TextRun(document.querySelector('article h1').innerText.trim()),
+    //   new docx.TextRun('')
+    // ]
+    // for (let i = 0; i < article.length; i++) {
+    //   let text = article.eq(i).text()
+    //   paragraphs.push(new docx.TextRun(text))
+    //   paragraphs.push(new docx.TextRun(''))
+    // }
+
+    // const doc = new docx.Document({
+    //   sections: [
+    //     {
+    //       properties: {},
+    //       children: [
+    //         new docx.Paragraph({
+    //           children: paragraphs
+    //         })
+    //       ]
+    //     }
+    //   ]
+    // });
+
     let paragraphs = [
-      new docx.TextRun(document.querySelector('article h1').innerText.trim()),
-      new docx.TextRun('')
+      {
+        properties: {},
+        children: [
+          new docx.Paragraph({
+            children: [
+              new docx.TextRun(document.querySelector('article h1').innerText.trim())
+            ],
+          }),
+        ],
+      },
+      {
+        properties: {},
+        children: [
+          new docx.Paragraph({
+            children: [
+              new docx.TextRun('')
+            ],
+          }),
+        ],
+      }
     ]
     for (let i = 0; i < article.length; i++) {
       let text = article.eq(i).text()
-      paragraphs.push(new docx.TextRun(text))
-      paragraphs.push(new docx.TextRun(''))
+      paragraphs.push({
+        properties: {},
+        children: [
+          new docx.Paragraph({
+            children: [
+              new docx.TextRun(text)
+            ],
+          }),
+        ],
+      })
+      paragraphs.push({
+        properties: {},
+        children: [
+          new docx.Paragraph({
+            children: [
+              new docx.TextRun('')
+            ],
+          }),
+        ],
+      })
     }
 
     const doc = new docx.Document({
-      sections: [
-        {
-          properties: {},
-          children: [
-            new docx.Paragraph({
-              children: paragraphs
-            })
-          ]
-        }
-      ]
+      sections: paragraphs
     });
+
+    
   
     docx.Packer.toBlob(doc).then((blob) => {
       // console.log(blob);
