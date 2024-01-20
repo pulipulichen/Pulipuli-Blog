@@ -412,6 +412,10 @@ let articleDownload = {
     }
     
     filename = 'post-' + filename
+
+    if (filename.length > 100) {
+      filename = filename.slice(0, 100)
+    }
     
     return filename
   },

@@ -58,7 +58,7 @@ $(() => {
 
       setInterval(() => {
         $('#main .entry-content .blog-admin .download-article-button:visible').click()
-      }, 1000 * 60 * 10)
+      }, 1000 * 60 * 3)
     }, 1000)
   }
 })
