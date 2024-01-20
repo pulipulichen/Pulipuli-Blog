@@ -740,14 +740,12 @@ let articleDownload = {
     //console.log(JSZip)
     //console.log(this.getMetadata())
     
-    // 20240120-2229 
-    // 因為沒有AddThis了。所以這些功能都要關掉。
-    // if ($('.addthis-smartlayers .at-custom-sidebar-count:visible').length === 0) {
-    //   setTimeout(() => {
-    //     this.downloadArticle()
-    //   }, 3000)
-    //   return false
-    // }
+    if ($('.show-view-time:visible').length === 0) {
+      setTimeout(() => {
+        this.downloadArticle()
+      }, 3000)
+      return false
+    }
     
     // console.log(`downloadArticle`, 1)
 
