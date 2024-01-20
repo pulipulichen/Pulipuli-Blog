@@ -740,7 +740,7 @@ let articleDownload = {
     //console.log(JSZip)
     //console.log(this.getMetadata())
     
-    if ($('.view-count:visible').length === 0) {
+    if ($('article-stats-container:visible').length === 0) {
       console.log(`尚未讀取完成，再等等`)
       setTimeout(() => {
         this.downloadArticle()
