@@ -2,6 +2,8 @@
 
 let loadAdminToolsIsLoaded = false
 let loadAdminTools = function (callback) {
+  console.log({loadAdminToolsIsLoaded})
+
   //console.log(loadAdminToolsIsLoaded)
   if (loadAdminToolsIsLoaded === true) {
     if (typeof(callback) === "function") {
@@ -39,7 +41,11 @@ $(() => {
   
   $('#main .entry-content .blog-admin .download-article-button').click(function () {
     //console.log('aaa')
+    console.log('Ready to load Admin Tools')
+
     loadAdminTools(() => {
+      console.log('Ready to download Article')
+
       articleDownload.downloadArticle()
     })
   })
