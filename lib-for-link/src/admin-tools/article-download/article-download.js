@@ -786,7 +786,9 @@ let articleDownload = {
   },
   downloadArticleDocx: function () {
     var doc = new docxtemplater();
-    
+    var template = `<p>Hello, world</p>`
+    doc.loadZip(new JSZip(template));
+
     // Compile the template with the data
     var data = {
       text: 'Hello, world'
