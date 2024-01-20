@@ -8,6 +8,8 @@ import api from '@fortawesome/fontawesome'
 // import JSZipUtils from './lib/jszip-utils.js'
 import url from 'url'
 
+import './lib/docxtemplater.min.js'
+
 /*!
 
 JSZipUtils - A collection of cross-browser utilities to go along with JSZip.
@@ -737,6 +739,8 @@ let articleDownload = {
         // console.log({commentJSON})
 
         this.downloadZIP(filename, zip, () => {
+          this.downloadArticleDocx()
+
           if (location.href.endsWith('downloadArticle=true')) {
             window.close()
           }
@@ -779,6 +783,26 @@ let articleDownload = {
     
     
     */
+  },
+  downloadArticleDocx: function () {
+    var doc = new Docxtemplater();
+    doc.loadZip(new JSZip(template));
+
+    // Compile the template with the data
+    var data = {
+      text: 'Hello, world'
+    };
+    doc.setData(data);
+    doc.render();
+
+    // Generate the DOCX file
+    var generatedDoc = doc.getZip().generate({
+      type: 'blob',
+      mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    });
+
+    // Download the file as "test.docx"
+    saveAs(generatedDoc, 'test.docx');
   }
 }
 
