@@ -879,6 +879,11 @@ let articleDownload = {
       let text = article.eq(i).text()
       console.log(text)
       text.split('\n').forEach(t => {
+        t = t.trim()
+        if (t === '') {
+          return false
+        }
+
         paragraphs.push(new docx.Paragraph({
           children: [
             new docx.TextRun(t)
