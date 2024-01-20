@@ -871,7 +871,7 @@ let articleDownload = {
       }),
       new docx.Paragraph({
         children: [
-          new docx.TextRun('')
+          new docx.TextRun('\n')
         ],
       }),
     ]
@@ -884,7 +884,7 @@ let articleDownload = {
       }))
       paragraphs.push(new docx.Paragraph({
         children: [
-          new docx.TextRun('')
+          new docx.TextRun('\n')
         ],
       }))
     }
