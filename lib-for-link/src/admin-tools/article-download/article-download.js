@@ -785,32 +785,31 @@ let articleDownload = {
     */
   },
   downloadArticleDocx: function () {
-    
-    let content = 'hello world'
-    const zip = new PizZip(content);
-    const doc = new window.docxtemplater(zip, {
-        paragraphLoop: true,
-        linebreaks: true,
-    });
+    let url = `//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/docxtemplater/template.docx`
+    PizZipUtils.getBinaryContent(url, (content) => {
+      const zip = new PizZip(content);
+      const doc = new window.docxtemplater(zip, {
+          paragraphLoop: true,
+          linebreaks: true,
+      });
 
-    // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
-    doc.render({
-        first_name: "John",
-        last_name: "Doe",
-        phone: "0652455478",
-        description: "New Website",
-    });
+      // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
+      doc.render({
+          content: "Hello, world",
+      });
 
-    const blob = doc.getZip().generate({
-        type: "blob",
-        mimeType:
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        // compression: DEFLATE adds a compression step.
-        // For a 50MB output document, expect 500ms additional CPU time
-        compression: "DEFLATE",
+      const blob = doc.getZip().generate({
+          type: "blob",
+          mimeType:
+              "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          // compression: DEFLATE adds a compression step.
+          // For a 50MB output document, expect 500ms additional CPU time
+          compression: "DEFLATE",
+      });
+      // Output the document using Data-URI
+      saveAs(blob, "output.docx");
     });
-    // Output the document using Data-URI
-    saveAs(blob, "output.docx");
+      
   }
 }
 

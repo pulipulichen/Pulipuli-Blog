@@ -24,7 +24,7 @@ let loadAdminTools = function (callback) {
     
     //console.log(adminToolURL)
     
-    $.getScript('//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/lib//docxtemplater.min.js', () => {
+    $.getScript('//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/docxtemplater/docxtemplater.min.js', () => {
       $.getScript(adminToolURL, () => {
         loadAdminToolsIsLoaded = true
         loadAdminTools(callback)
