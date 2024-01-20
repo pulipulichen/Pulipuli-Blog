@@ -362,6 +362,59 @@ let articleDownload = {
     
     return filename
   },
+  getArticleFilenameChinese: function () {
+    let articleDate = $('article .meta1 .timestamp').text().trim().split('/')
+    if (articleDate.length === 1) {
+      articleDate = articleDate[0]
+
+      let parts = []
+      articleDate = articleDate.split('月').map(p => p.trim())
+      parts[0] = articleDate[0]
+      articleDate = articleDate[1].split(', ').map(p => p.trim())
+      parts[1] = articleDate[0]
+      parts[2] = articleDate[1]
+      articleDate = parts
+    }
+    let date = {
+      year: parseInt(articleDate[2].trim(), 10),
+      month: parseInt(articleDate[0].trim(), 10),
+      day: parseInt(articleDate[1].trim(), 10)
+    }
+    
+    let paddingZero = (n) => {
+      if (n < 10) {
+        return '0' + n
+      }
+      else {
+        return n
+      }
+    }
+    
+    let filename = document.querySelector('article h1').innerText
+    if (filename.indexOf(' / ') > 0) {
+      filename = filename.slice(0, filename.indexOf(' / ')).trim()
+    }
+    if (filename.indexOf('\n') > 0) {
+      filename = filename.slice(0, filename.indexOf('\n')).trim()
+    }
+
+    filename = date.year 
+            + '-' 
+            + paddingZero(date.month)
+            + '-' 
+            + paddingZero(date.day)
+            + '_' 
+            +  filename
+    
+    // 移除最後的html
+    if (filename.endsWith(".html")) {
+      filename = filename.slice(0, filename.length - 5)
+    }
+    
+    filename = 'post-' + filename
+    
+    return filename
+  },
   getMetadata: function () {
     let metadata = {}
     
@@ -674,7 +727,7 @@ let articleDownload = {
             });
   },
   downloadArticle: function () {
-    return this.downloadArticleDocx()
+    // this.downloadArticleDocx()
 
     //console.log('downloadArticle')
     //console.log(JSZip)
@@ -691,7 +744,7 @@ let articleDownload = {
     
     // console.log(`downloadArticle`, 1)
 
-    let filename = this.getArticleFilename()
+    let filename = this.getArticleFilenameChinese()
     var zip = new JSZip();
     
     let article = this.getRenderedPost()
@@ -739,11 +792,11 @@ let articleDownload = {
         // console.log({commentJSON})
 
         this.downloadZIP(filename, zip, () => {
-          
-
-          if (location.href.endsWith('downloadArticle=true')) {
-            window.close()
-          }
+          this.downloadArticleDocx(() => {
+            if (location.href.endsWith('downloadArticle=true')) {
+              window.close()
+            }
+          })
         })
       })
       
@@ -784,24 +837,22 @@ let articleDownload = {
     
     */
   },
-  downloadArticleDocx: function () {
+  downloadArticleDocx: function (callback) {
+    let article = this.getRenderedPost()
+
+    let paragraphs = []
+    for (let i = 0; i < article.length; i++) {
+      let text = article.eq(i).text()
+      paragraphs.push(new docx.TextRun(text))
+    }
+
     const doc = new docx.Document({
       sections: [
         {
           properties: {},
           children: [
             new docx.Paragraph({
-              children: [
-                new docx.TextRun("Hello World"),
-                new docx.TextRun({
-                  text: "Foo Bar",
-                  bold: true
-                }),
-                new docx.TextRun({
-                  text: "\tGithub is the best",
-                  bold: true
-                })
-              ]
+              children: paragraphs
             })
           ]
         }
@@ -809,9 +860,14 @@ let articleDownload = {
     });
   
     docx.Packer.toBlob(doc).then((blob) => {
-      console.log(blob);
-      saveAs(blob, "example.docx");
-      console.log("Document created successfully");
+      // console.log(blob);
+      let filename = this.getArticleFilenameChinese()
+      saveAs(blob, filename + ".docx");
+      // console.log("Document created successfully");
+
+      if (typeof(callback) === "function") {
+        callback()
+      }
     });
   }
 }
