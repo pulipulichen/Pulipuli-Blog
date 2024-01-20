@@ -785,34 +785,34 @@ let articleDownload = {
     */
   },
   downloadArticleDocx: function () {
-    let url = `//pulipulichen.github.io/Pulipuli-Blog/lib-for-link/static/docxtemplater/input.docx`
-    PizZipUtils.getBinaryContent(url, (content) => {
-      const zip = new PizZip(content);
-      const doc = new window.docxtemplater(zip, {
-          paragraphLoop: true,
-          linebreaks: true,
-      });
-
-      // Render the document (Replace {first_name} by John, {last_name} by Doe, ...)
-      doc.render({
-        first_name: "John",
-        last_name: "Doe",
-        phone: "0652455478",
-        description: "New Website",
+    const doc = new docx.Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            new docx.Paragraph({
+              children: [
+                new docx.TextRun("Hello World"),
+                new docx.TextRun({
+                  text: "Foo Bar",
+                  bold: true
+                }),
+                new docx.TextRun({
+                  text: "\tGithub is the best",
+                  bold: true
+                })
+              ]
+            })
+          ]
+        }
+      ]
     });
-
-      const blob = doc.getZip().generate({
-          type: "blob",
-          mimeType:
-              "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-          // compression: DEFLATE adds a compression step.
-          // For a 50MB output document, expect 500ms additional CPU time
-          compression: "DEFLATE",
-      });
-      // Output the document using Data-URI
-      saveAs(blob, "output.docx");
+  
+    docx.Packer.toBlob(doc).then((blob) => {
+      console.log(blob);
+      saveAs(blob, "example.docx");
+      console.log("Document created successfully");
     });
-      
   }
 }
 
