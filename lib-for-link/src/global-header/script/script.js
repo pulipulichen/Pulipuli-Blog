@@ -72,7 +72,9 @@ PULI_UTILS.is_blogger_fullpage = function()
  */
 PULI_UTILS.is_guess_message = function()
 {
-	var _needle = "/2005/12/blogger_113544406852218769.html";
+	// var _needle = "/2005/12/blogger_113544406852218769.html";
+	var _needle = "/p/2024-guestbook-2024.html";
+
 	var _href = location.href;
 	return (_href.substr((_href.length - _needle.length), _needle.length ) === _needle);
 };
