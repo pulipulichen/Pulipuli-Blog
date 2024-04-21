@@ -1,7 +1,7 @@
 
 
 BLOG_STATISTIC = {
-  api: 'https://script.google.com/macros/s/AKfycbzxTzGVCUpv0EfWNYkvcvf3hiEfKYP_r56LmQs1zpvWbOD98ZuH2TEKphaEWPvulMwZkw/exec',
+  api: 'https://script.google.com/macros/s/AKfycbxt5pC6irHRoGwxt1ur4uIRdmYR4Si0wG_cXCiRr4sTPhh4--7ZyBvYjpnY_fD_yEmf/exec',
   log: function (element, target, url, title) {
     // let originalURL = url
     url = this.filterURL(url)
