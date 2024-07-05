@@ -1,17 +1,18 @@
 $(() => {
   $('.post-variables:fist').each((i, span) => {
     //console.log(i)
-    let postVariables = $(span).find('.post-variable')
+    let postVariable = $(span).find('.post-variable')
+    console.log(postVariable)
 
-    let postTitle = postVariables.attr('.post-title')
+    let postTitle = postVariable.attr('.post-title')
     if (postTitle.indexOf(' / ') > -1) {
       postTitle = postTitle.substring(0, postTitle.indexOf(' / ')).trim()
     }
     $(`meata[name="citation_title"]`).attr('content', postTitle)
 
-    $(`meata[name="citation_author"]`).attr('content', postVariables.attr('.post-author'))
+    $(`meata[name="citation_author"]`).attr('content', postVariable.attr('.post-author'))
 
-    $(`meata[name="citation_date"]`).attr('content', reformatDate(postVariables.attr('.post-timestamp')))
+    $(`meata[name="citation_date"]`).attr('content', reformatDate(postVariable.attr('.post-timestamp')))
 
   })
 })
