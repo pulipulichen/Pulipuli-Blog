@@ -102,6 +102,7 @@ var app = {
           '3_footer/10_ad_before_footer.html',
           
           '4_content/author.html',
+          '4_content/zotero.html',
           '4_content/backlinks.html',
           '4_content/comment_form_tool.html',
           '4_content/comments.html',

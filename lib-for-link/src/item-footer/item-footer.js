@@ -11,7 +11,7 @@ import "./script/admin-tools-loader.js"
 import "./script/icon-replace.js"
 import "./modules/related-posts/related-posts.js"
 import "./modules/CopyPasteHelper/CopyPasteHelper.js"
-// import "./script/setup-meta-citation.js"
+import "./script/setup-meta-citation.js"
 
 import "./toc/toc.js"
 import "./toc/toc.less"

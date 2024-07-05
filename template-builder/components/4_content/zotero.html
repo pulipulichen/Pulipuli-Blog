@@ -1,0 +1,76 @@
+<div class="ciation" style="display: none;">
+  <div class='post-footer'>
+    <div class='post-footer-line post-footer-line-1'>
+      <span class='post-author vcard'>
+        <b:if cond='data:top.showAuthor'>
+          <b:if cond='data:post.authorProfileUrl'>
+            <span class='fn'>
+              <a expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
+                <data:post.author/>
+              </a>
+            </span>
+          <b:else/>
+            <span class='fn'><data:post.author/></span>
+          </b:if>
+        </b:if>
+      </span>
+
+      <span class='post-timestamp'>
+        <b:if cond='data:top.showTimestamp'>
+          <data:top.timestampLabel/>
+          <b:if cond='data:post.url'>
+            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
+              <abbr class='published' expr:title='data:post.timestampISO8601'>
+                <data:post.timestamp/>
+              </abbr>
+            </a>
+          </b:if>
+        </b:if>
+      </span>
+
+      <span class='post-comment-link'>
+        <b:if cond='data:blog.pageType != &quot;item&quot;'>
+          <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+            <b:if cond='data:post.allowComments'>
+              <a class='comment-link' 
+                 expr:href='data:post.addCommentUrl' 
+                 expr:onclick='data:post.addCommentOnclick'>
+                <b:if cond='data:post.numComments == 1'>
+                  1 <data:top.commentLabel/>
+                  <b:else/>
+                  <data:post.numComments/> <data:top.commentLabelPlural/>
+                </b:if>
+              </a>
+            </b:if>
+          </b:if>
+        </b:if>
+      </span>
+    </div>
+
+    <div class='post-footer-line post-footer-line-2'>
+      <b:if cond='data:top.showMobileShare'>
+        <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
+          <a href='javascript:void(0);'><data:shareMsg/></a>
+        </div>
+      </b:if>
+      <b:if cond='data:top.showDummy'>
+        <div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
+      </b:if>
+    </div>
+
+    
+    <b:if cond='data:post.dateHeader'>
+      <h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+    </b:if>
+
+    <span class='post-labels'>
+      <b:if cond='data:top.showPostLabels and data:post.labels'>
+        <data:postLabelsLabel/>
+        <b:loop values='data:post.labels' var='label'>
+          <a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='not data:label.isLast'>,</b:if>
+        </b:loop>
+      </b:if>
+    </span>
+  </div>
+
+</div>
