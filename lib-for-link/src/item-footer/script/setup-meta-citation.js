@@ -24,7 +24,7 @@ $(() => {
       // content.push(labels.eq(i).text().trim())
       let label = labels.eq(i)
       // label.after(`<citation_keywords>${label.text().trim()}</citation_keywords>`)
-      $(`<meta name="citation_keywords" content="${content}" />`).appendTo($('head'))
+      $(`<meta name="citation_keywords" content="${label.text().trim()}" />`).appendTo($('head'))
     }
     // $(`<meta name="keywords" content="${content}" />`).appendTo($('head'))
   }
