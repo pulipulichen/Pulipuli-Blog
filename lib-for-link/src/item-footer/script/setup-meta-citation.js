@@ -12,7 +12,7 @@ $(() => {
 
     $(`meta[name="citation_author"]`).attr('content', postVariable.data('post-author'))
 
-    $(`meta[name="citation_date"]`).attr('content', reformatDate(postVariable.data('post-timestamp')))
+    $(`meta[name="citation_publication_date"]`).attr('content', reformatDate(postVariable.data('post-timestamp')))
 
   })
 })
