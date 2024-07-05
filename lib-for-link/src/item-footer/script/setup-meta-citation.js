@@ -15,6 +15,16 @@ $(() => {
   if (dateHeader.length > 0) {
     dateHeader.after(`<time datetime="${dateHeader.text().trim()}" />`)
   }
+
+  // citation_keywords
+  let labels = $('.post-labels > a')
+  if (labels.length > 0) {
+    let content = []
+    for (let i = 0; i < labels.length; i++) {
+      content.push(labels.eq(i).text().trim())
+    }
+    $(`<meta name="keywords" content="${content}" />`).appendTo($('head'))
+  }
 })
 
 // function reformatDate(dateString) {
