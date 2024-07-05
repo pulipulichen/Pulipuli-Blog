@@ -8,11 +8,11 @@ $(() => {
     if (postTitle.indexOf(' / ') > -1) {
       postTitle = postTitle.substring(0, postTitle.indexOf(' / ')).trim()
     }
-    $(`meata[name="citation_title"]`).attr('content', postTitle)
+    $(`meta[name="citation_title"]`).attr('content', postTitle)
 
-    $(`meata[name="citation_author"]`).attr('content', postVariable.data('post-author'))
+    $(`meta[name="citation_author"]`).attr('content', postVariable.data('post-author'))
 
-    $(`meata[name="citation_date"]`).attr('content', reformatDate(postVariable.data('post-timestamp')))
+    $(`meta[name="citation_date"]`).attr('content', reformatDate(postVariable.data('post-timestamp')))
 
   })
 })
