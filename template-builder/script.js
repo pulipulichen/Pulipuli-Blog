@@ -81,6 +81,8 @@ var app = {
           //'0_header/3_custom_style.min.css',
           '0_header/4_facebook_code.html',
           '0_header/5_env_variables.html',
+          '0_header/6_meta_citation_blog.html',
+          '0_header/7_meta_citation_post.html',
           '0_header/9_ad_header.html',
 
           '1_menu/1_menu.html',
