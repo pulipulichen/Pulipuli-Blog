@@ -1,5 +1,5 @@
 $(() => {
-  $('.post-variables:fist').each((i, span) => {
+  $('.post-variables:first').each((i, span) => {
     //console.log(i)
     let postVariable = $(span).find('.post-variable')
     console.log(postVariable)
