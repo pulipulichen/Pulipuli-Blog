@@ -19,11 +19,13 @@ $(() => {
   // citation_keywords
   let labels = $('.post-labels > a')
   if (labels.length > 0) {
-    let content = []
+    // let content = []
     for (let i = 0; i < labels.length; i++) {
-      content.push(labels.eq(i).text().trim())
+      // content.push(labels.eq(i).text().trim())
+      let label = labels.eq(i)
+      label.after(`<citation_keywords>${label.text().trim()}</citation_keywords>`)
     }
-    $(`<meta name="keywords" content="${content}" />`).appendTo($('head'))
+    // $(`<meta name="keywords" content="${content}" />`).appendTo($('head'))
   }
 })
 
