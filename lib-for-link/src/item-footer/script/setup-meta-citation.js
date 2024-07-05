@@ -4,15 +4,15 @@ $(() => {
     let postVariable = $(span).find('.post-variable')
     console.log(postVariable)
 
-    let postTitle = postVariable.data('post-title')
+    let postTitle = postVariable.attr('data-post-title')
     if (postTitle.indexOf(' / ') > -1) {
       postTitle = postTitle.substring(0, postTitle.indexOf(' / ')).trim()
     }
     $(`meata[name="citation_title"]`).attr('content', postTitle)
 
-    $(`meata[name="citation_author"]`).attr('content', postVariable.data('post-author'))
+    $(`meata[name="citation_author"]`).attr('content', postVariable.attr('data-post-author'))
 
-    $(`meata[name="citation_date"]`).attr('content', reformatDate(postVariable.data('post-timestamp')))
+    $(`meata[name="citation_date"]`).attr('content', reformatDate(postVariable.attr('data-post-timestamp')))
 
   })
 })
