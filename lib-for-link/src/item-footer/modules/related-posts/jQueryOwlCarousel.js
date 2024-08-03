@@ -594,6 +594,7 @@
                 f = 0,
                 k;
             "DIV" === b.prop("tagName") ? (b.css("background-image", "url(" + b.data("src") + ")"), k = !0) : b[0].src = b.data("src");
+            // console.log(b[0].src)
             c()
         },
         autoHeight: function() {
@@ -789,7 +790,15 @@ let _puli_related_post_render = function (_owl_items) {
     var _item = $(_owl_items[_i]);
     var _a = _item.find("a:first");
     var _title = _a.attr("title");
-    _a.prepend('<div class="related-post-title">' + _title + '</div>');
+    _a.prepend('<div class="related-post-title">' + _title + '</div>')
+
+    // https://blogger.googleusercontent.com/img/a/AVvXsEj4EgRaH_APfQzvTOPczyWIjIyLeIsuj2jzQdUKrnxJ7IqC1_wuhq8gwZO7tDMLINv_riVZk2V2ONKPv5t-UX2hOGrEKmaSfzmyiZ1ZgfcH1gHJMCP-VxTFSWDhduMPsHXtETvHuRNXYSEDEzrc_DgUDLCPkGKkNSBNYxsa8NAR5AKRrUXVDRXCFA=s256-c
+    var img = _item.find("img:first")
+    let src = img.attr("src")
+    if (src.endsWith("=s72-c")) {
+        src = src.slice(0, -6) + '=s256-c'
+    }
+    img.attr("src", src)
   }
 
   $(function () {
