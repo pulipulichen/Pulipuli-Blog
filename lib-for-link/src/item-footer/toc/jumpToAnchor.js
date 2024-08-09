@@ -1,20 +1,20 @@
-function isSamePageWithoutHash(ignoreHash = true) {
-  console.log([window.location.href, document.referrer])
-  try {
-    const currentUrl = new URL(window.location.href);
-    const referrerUrl = new URL(document.referrer);
+// function isSamePageWithoutHash(ignoreHash = true) {
+//   // console.log([window.location.href, document.referrer])
+//   try {
+//     const currentUrl = new URL(window.location.href);
+//     const referrerUrl = new URL(document.referrer);
 
-    if (ignoreHash) {
-      currentUrl.hash = '';
-      referrerUrl.hash = '';
-    }
+//     if (ignoreHash) {
+//       currentUrl.hash = '';
+//       referrerUrl.hash = '';
+//     }
 
-    return currentUrl.href === referrerUrl.href;
-  }
-  catch (e) {
-    return false
-  }
-}
+//     return currentUrl.href === referrerUrl.href;
+//   }
+//   catch (e) {
+//     return false
+//   }
+// }
 
 module.exports = function () {
   // console.log(performance.navigation.type)
@@ -29,7 +29,8 @@ module.exports = function () {
   const hash = window.location.hash.substring(1); // 去除 # 號
 
   // 如果有 hash 值
-  if (hash) {
+  // console.log(hash)
+  if (hash && hash.startsWith('postcata_')) {
       // 尋找對應 id 的元素
       const element = document.getElementById(hash);
 

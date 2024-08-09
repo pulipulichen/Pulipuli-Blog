@@ -131,7 +131,19 @@
 // ----------------------------------------------------------------
 // @Pulipuli Chen 20240810-0511 
 
-.entry-content .id-anchor {
-  position: relative;
-  top: -70px;
+// .entry-content .id-anchor {
+//   position: relative;
+//   top: -70px;
+// }
+
+
+.entry-content {
+  a[name][id]:target,
+  a[name="more"]:target {
+    // margin-top: -60px;
+    // position: absolute;
+    top: -60px;
+    position: relative;
+  }
 }
+

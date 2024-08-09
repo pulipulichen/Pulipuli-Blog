@@ -142,11 +142,11 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
       var title = hdObj.text();
       var anchorID = prefix + "_anchor" + i;
 
-      // var anc = jQuery('<a class="heading-anchor puli-utils-append" id="' + anchorID + '" name="' + anchorID + '" />');
-      var anc = jQuery('<a class="heading-anchor puli-utils-append" name="' + anchorID + '" />')
-      var idAnchor = jQuery(`<div class="heading-anchor id-anchor" id="${anchorID}"></div>`)
+      var anc = jQuery('<a class="heading-anchor puli-utils-append" id="' + anchorID + '" name="' + anchorID + '" />');
+      // var anc = jQuery('<a class="heading-anchor puli-utils-append" name="' + anchorID + '" />')
+      // var idAnchor = jQuery(`<div class="heading-anchor id-anchor" id="${anchorID}"></div>`)
       // hdObj.attr('id', anchorID)
-      hdObj.prepend(idAnchor)
+      // hdObj.prepend(idAnchor)
       hdObj.prepend(anc);
       
       /**
