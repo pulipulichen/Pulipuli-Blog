@@ -23,10 +23,33 @@
 
 // --------------
 // 20181226 FB粉專
-$(function () {
-    _load_fan_page()
-});
+// $(function () {
+//     _load_fan_page()
+// });
 
-var _load_fan_page = function () {
-  $('.widget.HTML.fb-fan-page .widget-content').html('<iframe src="//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpulipuli.blogspot&tabs=timeline&width=350&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=391880581194257" width="350" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
-}
+// var _load_fan_page = function () {
+//   $('.widget.HTML.fb-fan-page .widget-content').html('<iframe src="//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpulipuli.blogspot&tabs=timeline&width=350&height=500&small_header=true&adapt_container_width=true&lazy=true&hide_cover=false&show_facepile=false&&appId=391880581194257" width="350" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>');
+// }
+
+// -----------------
+// @Pulipuli Chen 20240810-0535 
+// 實際上這一串不使用
+
+$(() => {
+  // let done = false
+  let onScrollEvent = function() {
+    const fbFanPage = document.querySelector('.fb-fan-page');
+    const rect = fbFanPage.getBoundingClientRect();
+
+    // 如果元素在視窗內可見，則執行 console.log('ok')
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        // console.log('ok');
+        let iframeCode = '<iframe src="//www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpulipuli.blogspot&tabs=timeline&width=350&height=500&small_header=true&adapt_container_width=true&lazy=true&hide_cover=false&show_facepile=false&&appId=391880581194257" width="350" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>'
+        $('.widget.HTML.fb-fan-page .widget-content').html(iframeCode);
+        window.removeEventListener('scroll', onScrollEvent)
+        console.log('done')
+    }
+  }
+
+  window.addEventListener('scroll', onScrollEvent);
+})

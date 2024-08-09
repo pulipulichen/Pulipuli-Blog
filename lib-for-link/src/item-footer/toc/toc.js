@@ -1,3 +1,11 @@
+const cleanFirstHeading = require('./cleanFirstHeading.js') 
+const jumpToAnchor = require('./jumpToAnchor.js') 
+
+// window.addEventListener('scroll', function() {
+//   console.log('觸發 onscroll 事件');
+//   console.log('當前滾動位置：', window.scrollY);
+//   console.trace(); // 打印出呼叫堆疊
+// });
 
 /* global PULI_UTILS, CopyPasteHelper */
 
@@ -19,6 +27,9 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
   if (cachedHTML !== null) {
     isCached = true
   }
+  
+  // isCached = false
+  // console.log({isCached})
 
   //if (PULI_UTILS.is_blogger_fullpage() === false) {
   //	return;
@@ -42,7 +53,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
      * 如果已經有cata-title元素，則不使用本功能
      */
     if (postBody.find('.cate-title').length > 0) {
-      return;
+      return false;
     }
     
     let headingTag = ['h4', 'h5']
@@ -71,20 +82,17 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
     }
     cleanFirstHeading(firstHeading)
 
-    if (isCached === false 
-            && typeof cata_container === "undefined") {
+    if (isCached === false && typeof cata_container === "undefined") {
 
       //先檢查是否有取消目錄的功能
       if ($('div.entry-content .disable-post-catalog').length > 0) {
-        return;
+        return false;
       }
-
-      
 
       //PULI_UTILS.log('post.toc 2-1 firstHeading.length:', firstHeading.length );
 
       if (firstHeading.length === 0) {
-        return;
+        return false;
       }
 
       cata_container = $('<span></span>')
@@ -134,7 +142,11 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
       var title = hdObj.text();
       var anchorID = prefix + "_anchor" + i;
 
-      var anc = jQuery('<a class="heading-anchor puli-utils-append" id="' + anchorID + '" name="' + anchorID + '" />');
+      // var anc = jQuery('<a class="heading-anchor puli-utils-append" id="' + anchorID + '" name="' + anchorID + '" />');
+      var anc = jQuery('<a class="heading-anchor puli-utils-append" name="' + anchorID + '" />')
+      var idAnchor = jQuery(`<div class="heading-anchor id-anchor" id="${anchorID}"></div>`)
+      // hdObj.attr('id', anchorID)
+      hdObj.prepend(idAnchor)
       hdObj.prepend(anc);
       
       /**
@@ -252,6 +264,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
       localStorage.setItem(cateID, html)
     }
   
+    jumpToAnchor()
   });	//$(function () {
 
   //PULI_UTILS.log('post.toc', '6');
@@ -296,57 +309,7 @@ let getHeadingAry = function (postBody, headingTag, firstHeading) {
   return headingAry
 }
 
-let cleanFirstHeading = function (firstHeading) {
-  if (firstHeading.length === 0) {
-    return;
-  }
 
-  //如果firstHeading之前有<font size="3"></font>，則移除之
-  var font = firstHeading.prev().filter('font');
-  if (font.length > 0) {
-    font.remove();
-  }
-
-  //如果firstHeading之前有hr，則移除之
-  var hr = firstHeading.prev().filter('hr');
-  if (hr.length > 0) {
-    hr.remove();
-    /*console.log("有<hr />");*/
-  } else {
-    var div = firstHeading.prevAll("div:first");
-    hr = div.children(':last').filter('hr');
-    if (hr.length > 0) {
-      hr.remove();
-      /*console.log("有 div > hr");*/
-    } else {
-      var p = firstHeading.prevAll("p:first");
-      //p.css("border", "1px solid red");
-      //console.log([p.length, p.html()]);
-      hr = p.children().filter('hr');
-      if (hr.length > 0) {
-        hr.remove();
-        /*console.log("有 p > hr");*/
-      } else {
-        hr = p.prev().filter("hr");
-        if (hr.length > 0) {
-          hr.remove();
-        }
-        //console.log(["p裡面找不到", p.length, p.children().length, p.html() ]);
-      }
-      if ($.trim(p.html()) === "") {
-        p.remove();
-        //console.log('p 也移除囉');
-      }
-    }
-  }
-
-  //var p = firstHeading.prevAll("p:first");
-  //console.log(firstHeading.html());
-  //console.log(p.children().length);
-  //if (p.length > 0) {
-  //	p.remove();
-  //}
-}
 
 $(function () {
   PULI_UTILS.post.toc();

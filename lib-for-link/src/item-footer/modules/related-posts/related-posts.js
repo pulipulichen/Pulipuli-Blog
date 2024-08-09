@@ -94,10 +94,10 @@ let loadLabelsRelatedPosts = (callback) => {
 
 // --------------------
 
-relatedTitles = new Array;
+relatedTitles = []
 relatedTitlesNum = 0;
-relatedUrls = new Array;
-thumburl = new Array;
+relatedUrls = []
+thumburl = []
 
 $(function () {
   let postUrl = getBloggerPostsVariable('data-post-url')[0]

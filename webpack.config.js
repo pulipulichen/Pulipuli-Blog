@@ -132,23 +132,53 @@ module.exports = (env, argv) => {
 
 
   if (argv.mode === 'production') {
-    webpackConfig.devtool = false
+    // webpackConfig.devtool = false
 
     webpackConfig.module.rules[0] = {
       test: /\.css$/, // 針對所有.css 的檔案作預處理，這邊是用 regular express 的格式
       use: [
         'style-loader', // 這個會後執行 (順序很重要)
-        'css-loader', // 這個會先執行
-        'postcss-loader',
+        //'css-loader', // 這個會先執行
+        {
+          loader: 'css-loader?sourceMap',
+          options: {
+            sourceMap: true
+          }
+        },
+        //'postcss-loader'
+        {
+          loader: 'postcss-loader?sourceMap',
+          options: {
+            sourceMap: true
+          }
+        }
       ]
     }
     webpackConfig.module.rules[1] = {
       test: /\.less$/,
       use: [
         'style-loader', // Step 3
-        'css-loader', // Step 2再執行這個
-        'postcss-loader',
-        'less-loader' // Step 1 要先執行這個
+        //'css-loader?sourceMap', // Step 2再執行這個
+        {
+          loader: 'css-loader?sourceMap',
+          options: {
+            sourceMap: true
+          }
+        },
+        //'postcss-loader?sourceMap',
+        {
+          loader: 'postcss-loader?sourceMap',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'less-loader?sourceMap',
+          options: {
+            sourceMap: true,
+            globalVars: require('../src/styles/style.config.js')
+          }
+        }, // Step 1 要先執行這個
       ]
     }
     webpackConfig.module.rules.push({
@@ -171,7 +201,7 @@ module.exports = (env, argv) => {
       new UglifyJsPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false // set to true if you want JS source maps
+        sourceMap: true // set to true if you want JS source maps
       })
     ]
     
