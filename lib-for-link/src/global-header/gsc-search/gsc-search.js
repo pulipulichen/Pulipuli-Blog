@@ -32,29 +32,28 @@ var initSearchInput = () => {
   $(() => {
     //console.log($('.gcse-placeholder').length)
     $('.gcse-placeholder').submit(function () {
-      return menu_search_submit(this);
+      // return menu_search_submit(this);
+      perform_felo_search()
     })
     
     $('.srch_btn').click(() => {
       //$('input.gsc-search-button').click()
-      $('.gcse-placeholder:first').submit()
+      // $('.gcse-placeholder:first').submit()
+      return menu_search_submit($('.gcse-placeholder')[0]);
     })
 
     $('.felo-search').click(() => {
-      let search = $('.gcse-placeholder:first input').val().trim()
-
-      if (search.length > 0) {
-        var encodedText = encodeURIComponent(search + ' site:blog.pulipuli.info');
-        window.open(`https://felo.ai/search?q=${encodedText}&mode=verbose&invite=B84K3x3wo0Xr0`, '_query_' + encodedText)
-      }
+      perform_felo_search()
     })
     
     $('.gcse-placeholder-dropdown').submit(function () {
-      return menu_search_submit(this);
+      // return menu_search_submit(this);
+      perform_felo_search()
     })
     $('.srch_btn-dropdown').click(() => {
       //$('input.gsc-search-button').click()
-      $('.gcse-placeholder-dropdown').submit()
+      // $('.gcse-placeholder-dropdown').submit()
+      return menu_search_submit($('.gcse-placeholder-dropdown')[0]);
     })
     
     var testSearch = () => {
@@ -125,3 +124,12 @@ var menu_search_submit = function (_form) {
   //console.log(['query', _query])
   return false;
 };
+
+let perform_felo_search = function () {
+  let search = $('.gcse-placeholder:first input').val().trim()
+
+  if (search.length > 0) {
+    var encodedText = encodeURIComponent(search + ' site:blog.pulipuli.info');
+    window.open(`https://felo.ai/search?q=${encodedText}&mode=verbose&invite=B84K3x3wo0Xr0`, '_query_' + encodedText)
+  }
+}
