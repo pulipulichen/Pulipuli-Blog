@@ -39,6 +39,15 @@ var initSearchInput = () => {
       //$('input.gsc-search-button').click()
       $('.gcse-placeholder:first').submit()
     })
+
+    $('.felo-search').click(() => {
+      let search = $('.gcse-placeholder:first input').val().trim()
+
+      if (search.length > 0) {
+        var encodedText = encodeURIComponent(search + ' site:blog.pulipuli.info');
+        window.open(`https://felo.ai/search?q=${encodedText}&mode=verbose&invite=B84K3x3wo0Xr0`, '_query_' + encodedText)
+      }
+    })
     
     $('.gcse-placeholder-dropdown').submit(function () {
       return menu_search_submit(this);
