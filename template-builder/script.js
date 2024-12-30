@@ -8,7 +8,7 @@ var app = {
     hostType: 'github',
     pulipuliURL: 'http://pc.pulipuli.info/public/Pulipuli-Blog/',
     localhostURL: 'http://localhost:8383/Pulipuli-Blog/',
-    telebitURL: '//sweet-pug-22.telebit.io/',
+    telebitURL: '//dangerous-lizard-99.telebit.io/',
   },
   mounted: function () {
     let keys = ['hostType', 'telebitURL']

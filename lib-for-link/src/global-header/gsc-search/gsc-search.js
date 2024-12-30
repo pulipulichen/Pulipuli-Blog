@@ -50,6 +50,7 @@ var initSearchInput = () => {
       // return menu_search_submit(this);
       perform_felo_search()
     })
+    
     $('.srch_btn-dropdown').click(() => {
       //$('input.gsc-search-button').click()
       // $('.gcse-placeholder-dropdown').submit()
@@ -126,7 +127,14 @@ var menu_search_submit = function (_form) {
 };
 
 let perform_felo_search = function () {
-  let search = $('.gcse-placeholder:first input').val().trim()
+  let search
+  if ($('.gcse-placeholder:visible input').length > 0) {
+    search = $('.gcse-placeholder input').val().trim()
+  }
+  else {
+    search = $('.gcse-placeholder-dropdown input').val().trim()
+  }
+  // console.log({search})
 
   if (search.length > 0) {
     var encodedText = encodeURIComponent(search + ' site:blog.pulipuli.info');
