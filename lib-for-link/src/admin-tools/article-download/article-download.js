@@ -659,7 +659,7 @@ let articleDownload = {
         let link = linkList[i]
         
         if (link.startsWith('https://blogger.googleusercontent.com/img/a/')) {
-          let apiURL = `https://script.google.com/macros/s/AKfycbx2QQwxVGAVSAUedIeWBmFkauLqSyxv6LFCbAePgozGFmucM71Hcqlq6wDZ1Yt-retl/exec`
+          let apiURL = `https://script.google.com/macros/s/AKfycby3befXJNiJEFvLuwOw5FHzYhloEbJwUEud8HMNBzfKuZwPqrXZRgg0smkOa6cHHzlu/exec`
           let requestURL = apiURL + '?url=' + encodeURIComponent(link)
 
           $.getJSON(requestURL, async (result) => {
