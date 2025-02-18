@@ -24,9 +24,12 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
   let isCached = false
   
   let cachedHTML = localStorage.getItem(cateID)
-  console.log(cachedHTML)
-  if (cachedHTML !== null || isCached.trim().length > 0) {
-    isCached = true
+  // console.log(cachedHTML)
+  if (cachedHTML !== null) {
+    let cacheText = $(cachedHTML).text().trim()
+    if (cacheText.length > 0) {
+      isCached = true
+    }
   }
   
   // isCached = false
