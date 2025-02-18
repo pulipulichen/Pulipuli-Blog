@@ -666,6 +666,8 @@ let articleDownload = {
 
       linkCount++
     }
+    console.log('20250219-0523')
+    console.log(linkFileList)
     
     let loop = (i) => {
       if (i < linkList.length) {
