@@ -157,6 +157,8 @@ let articleDownload = {
     
     // 移除標題 & meta
     article.find("h1:first").remove()
+
+    article.find(".share-story:first").remove()
     
     // 移除lightbox
     article.find('.lightbox-group').each((i, ele) => {
@@ -666,8 +668,8 @@ let articleDownload = {
 
       linkCount++
     }
-    console.log('20250219-0523')
-    console.log(linkFileList)
+    // console.log('20250219-0523')
+    // console.log(linkFileList)
     
     let loop = (i) => {
       if (i < linkList.length) {
@@ -788,7 +790,7 @@ let articleDownload = {
       mainFolder.file("article.html", articleHTML);
       
       let assets = null;
-      console.log(linkFileList)
+      // console.log(linkFileList)
       for (let link in linkFileList) {
         if (assets === null) {
           assets = mainFolder.folder("assets")
