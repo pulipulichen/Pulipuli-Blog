@@ -700,6 +700,10 @@ let articleDownload = {
   replaceArticleLink: function (article, linkFileList) {
     for (let link in linkFileList) {
       let filename = 'assets/' + linkFileList[link].filename
+
+      if (!filename.endsWith('.png')) {
+        filename = filename + '.png'
+      }
       //console.log(filename)
       
       this.replaceArticleSingleLink(article, link, filename)
