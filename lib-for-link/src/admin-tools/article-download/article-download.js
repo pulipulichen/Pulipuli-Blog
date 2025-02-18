@@ -788,6 +788,7 @@ let articleDownload = {
       mainFolder.file("article.html", articleHTML);
       
       let assets = null;
+      console.log(linkFileList)
       for (let link in linkFileList) {
         if (assets === null) {
           assets = mainFolder.folder("assets")
