@@ -647,11 +647,24 @@ let articleDownload = {
     let linkList = []
     let linkFileList = {}
     
+    let linkCount = 0
     for (let link in imageList) {
       linkList.push(link)
-      linkFileList[link] = {
-        'filename': imageList[link]
+
+      let filename = imageList[link] 
+      if (filename.length > 20) {
+        filename = filename.slice(0, 20)
       }
+      if (!filename.endsWith(".png")) {
+        filename = filename + '.png'
+      }
+      filename = linkCount + '-' + filename
+
+      linkFileList[link] = {
+        filename
+      }
+
+      linkCount++
     }
     
     let loop = (i) => {
@@ -701,9 +714,9 @@ let articleDownload = {
     for (let link in linkFileList) {
       let filename = 'assets/' + linkFileList[link].filename
 
-      if (!filename.endsWith('.png')) {
-        filename = filename + '.png'
-      }
+      // if (!filename.endsWith('.png')) {
+      //   filename = filename + '.png'
+      // }
       //console.log(filename)
       
       this.replaceArticleSingleLink(article, link, filename)
