@@ -24,7 +24,7 @@ PULI_UTILS.post.toc = function (cata_container, heading) {
   let isCached = false
   
   let cachedHTML = localStorage.getItem(cateID)
-  if (cachedHTML !== null) {
+  if (cachedHTML !== null || isCached.trim().length > 0) {
     isCached = true
   }
   
