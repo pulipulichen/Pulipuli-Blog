@@ -244,6 +244,8 @@ let articleDownload = {
       })
     })
 
+    article.find(`.share-button-before-article`).remove()
+
     article.find(`img[src]`).each((i, ele) => {
       let value = ele.src
       if (value.startsWith('http://') 
