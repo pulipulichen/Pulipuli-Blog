@@ -66,7 +66,12 @@ puliHandlePost = function () {
       var m = timestamp.substr(5, 2);
       var d = timestamp.substr(8, 2);
 
-      var layout_replace = layout.replace("%title%", title_link).replace("%Y%", y).replace("%M%", m).replace("%D%", d).replace("%authorname%", authorname);
+      var layout_replace = layout.replace("%title%", title_link)
+        .replace("%LINK%", link)
+        .replace("%Y%", y)
+        .replace("%M%", m)
+        .replace("%D%", d)
+        .replace("%authorname%", authorname);
 
       temp += '<li class="' + pHP.liClass + '">' + layout_replace + '</li>';
     }

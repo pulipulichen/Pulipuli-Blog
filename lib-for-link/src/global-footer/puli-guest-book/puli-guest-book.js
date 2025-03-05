@@ -132,7 +132,7 @@ jQuery.puliGuestBook = function (config) {
     var temp = '<ul id="' + listID + '" class="guest-book-list">';
     var postshow = listNumber;
     var titlelen = '20';
-    var layout = `<a class="date" href="%COMMENT_LINK%" target="_blank">%M%-%D% <i aria-hidden="true" class="fa fa-link"></i></a>
+    var layout = `<a class="date" href="%COMMENT_LINK%" target="_blank">%Y%-%M%-%D% <i aria-hidden="true" class="fa fa-link"></i></a>
       <strong class="name">%authorname%</strong>:<br />
       %comment%`;
     var sortentry = [];
@@ -290,15 +290,15 @@ jQuery.puliGuestBook = function (config) {
     temp += "</ul>";
 
     if (disableBottomButtons === false) {
-      temp += '<div class="guestbook-write">'
+      temp += '<a class="guestbook-write" href="' + add_link + '" target="guestbook_write">'
               //+ ' <a href="'+rss_link+'" style="float:right;margin-right:1em;font-size: 1.5em;line-height: 1em;">'
               //+ '<img src="http://3.bp.blogspot.com/_yr4MQB4zDus/Ru35yvgloDI/AAAAAAAABOQ/bbtw-pQhpOk/s200/rss.gif" border="0" />'
               //+ '<i class="fa fa-rss-square"></i>'
               //+ '</a>'
 
-              + ' <a href="' + add_link + '" class="write" target="guestbook_write">' + write + '</a>'
-              + ' <a class="write" onclick="' + reload_cmd + '">' + reload + '</a>'
-              + '</div>';
+              + write
+              // + ' <a class="write" onclick="' + reload_cmd + '">' + reload + '</a>'
+              + '</a>';
     }
 
     //document.getElementById("pulipuli_guestbook").innerHTML = temp;

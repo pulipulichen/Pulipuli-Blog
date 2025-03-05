@@ -8,10 +8,10 @@ puliHandleComments = function ()	{
     pHC.liClass = "puliHandleCom-item-title";
     pHC.postshow = 10;
     pHC.titlelen = 20;
-    pHC.layout = `<a class="date">%Y%-%M%-%D% <i aria-hidden="true" class="fa fa-link"></i></a><strong class="name">%authorname%</strong>:<br />%title%`;
+    pHC.layout = `<a class="date">%Y%-%M%-%D% <i aria-hidden="true" class="fa fa-link"></i></a><strong class="name">%authorname%</strong>:<br />%comment%`;
 
-    console.log(pHC.layout)
-    
+    // console.log(pHC.layout)
+
     pHC.bloggerName = "pulipuli";
 
     pHC.compareentry = function (a, b) {
@@ -22,6 +22,8 @@ puliHandleComments = function ()	{
     };
 
     pHC.handleComments = function (json) {
+        // console.log(json)
+
         var title = '';
         if (pHC.title !== '')
             title = '<h2>' + pHC.title + '</h2>';
@@ -29,6 +31,7 @@ puliHandleComments = function ()	{
         var postshow = pHC.postshow;
         var titlelen = pHC.titlelen;
         var layout = pHC.layout;
+        // console.log(layout)
         var sortentry = json.feed.entry.sort(compareentry);
         for (var i = 0, post; post = sortentry[i]; i++) {
             if (i >= postshow) {
@@ -58,7 +61,13 @@ puliHandleComments = function ()	{
             var m = timestamp.substr(5, 2);
             var d = timestamp.substr(8, 2);
 
-            var layout_replace = layout.replace("%comment%", title_link).replace("%Y%", y).replace("%M%", m).replace("%D%", d).replace("%authorname%", authorname);
+            var layout_replace = layout.replace("%comment%", title_link)
+                .replace("%LINK%", link)
+                .replace("%Y%", y)
+                .replace("%M%", m)
+                .replace("%D%", d)
+                .replace("%authorname%", authorname);
+            // console.log(layout_replace)
 
             temp += '<li class="' + pHC.liClass + '">' + layout_replace + '</li>';
         }   //for (var i = 0, post; post = sortentry[i]; i++) {

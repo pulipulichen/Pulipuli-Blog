@@ -9,6 +9,8 @@ import "./blogger-feed-loader/recent-lib.js"
 import "./blogger-feed-loader/comment-lib.js"
 import "./blogger-feed-loader/init.js"
 
+import "./blogger-feed-loader/random-posts.less"
+
 import "./cookie-banner/cookie-banner.less"
 import "./cookie-banner/cookie-banner.js"
 

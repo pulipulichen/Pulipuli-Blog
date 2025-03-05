@@ -16,5 +16,5 @@ jQuery.puliGuestBook({
     write: '撰寫留言',    //撰寫留言連結的名稱
     reload: '重新讀取',    //重新讀取連結的名稱
     addLink: "/p/2024-guestbook-2024.html#comment-editor", //撰寫留言的按鈕連結
-    disableBottomButtons: true
+    disableBottomButtons: false
 });
