@@ -8,7 +8,7 @@ puliHandleComments = function ()	{
     pHC.liClass = "puliHandleCom-item-title";
     pHC.postshow = 10;
     pHC.titlelen = 20;
-    pHC.layout = "%Y%-%M%-%D% %authorname%<br />%title%";
+    pHC.layout = `<a class="date">%Y%-%M%-%D% <i aria-hidden="true" class="fa fa-link"></i></a><strong class="name">%authorname%</strong>:<br />%title%`;
     pHC.bloggerName = "pulipuli";
 
     pHC.compareentry = function (a, b) {
