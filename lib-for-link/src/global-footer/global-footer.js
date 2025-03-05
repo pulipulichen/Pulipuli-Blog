@@ -2,7 +2,8 @@ import "./puli-guest-book/puli-guest-book.js"
 import "./puli-guest-book/puli-guest-book.less"
 import "./puli-guest-book/init.js"
 
-import "./sidebar-list-item/sidebar-list-item.less"
+import "./sidebar-style/sidebar-list-item.less"
+import "./sidebar-style/donate-list.less"
 
 import "./blogger-feed-loader/random-posts.js"
 import "./blogger-feed-loader/recent-lib.js"
