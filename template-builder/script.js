@@ -92,6 +92,7 @@ var app = {
           '2_sidebar/2_ad_after_sidebar.html',
           '2_sidebar/2_donate_list.html',
           '2_sidebar/3_fb_fan_page.html',
+          '2_sidebar/3a_youtube_podcast.html',
           '2_sidebar/4_random.html',
           '2_sidebar/5_guestbook.html',
           '2_sidebar/6_recent_posts.html',
