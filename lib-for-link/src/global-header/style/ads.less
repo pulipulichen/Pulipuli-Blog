@@ -7,7 +7,10 @@
   border-style: solid;
   height: auto !important;
 
-  display: none !important;
+  &:not(.show) {
+    display: none !important;
+  }
+  
   &.show {
     display: block !important;
   }
