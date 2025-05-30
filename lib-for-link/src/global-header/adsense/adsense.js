@@ -10,7 +10,7 @@ function setupAdsense() {
   }
 }
 
-window.addEventListener('load', function () {
+$(() => {
   setTimeout(() => {
     let ins = $('ins.adsbygoogle')
     ins.addClass('show')
