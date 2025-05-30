@@ -15,7 +15,9 @@ setTimeout(() => {
   ins.addClass('show')
 
   let count = ins.length
-  for (let i = 0; i < count; i++) {
-    setupAdsense()
-  }
+  setTimeout(() => {
+    for (let i = 0; i < count; i++) {
+      setupAdsense()
+    }
+  }, 500)
 }, 3000)
