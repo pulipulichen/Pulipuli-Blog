@@ -1,11 +1,12 @@
 function setupAdsense() {
   try {
-    $('ins.adsbygoogle > div').each((i, ele) => {
-      let $ele = $(ele)
+    let items = $('ins.adsbygoogle > div')
+    for (let i = 0; i < items.length; i++) {
+      let $ele = items.eq(i)
       if ($ele.height() === 0) {
         $ele.remove()
       }
-    })
+    }
 
     (adsbygoogle = window.adsbygoogle || []).push({});
   }
