@@ -48,5 +48,5 @@ function loadAdWhenVisible(insSelector) {
 $(() => {
   let ins = $('ins.adsbygoogle')
   ins.addClass('show')
-  loadAdWhenVisible(".adsbygoogle");
+  loadAdWhenVisible("ins.adsbygoogle");
 })
