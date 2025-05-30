@@ -89,7 +89,7 @@ var app = {
           '1_menu/2_search.html',
 
           '2_sidebar/1_about_me.html',
-          '2_sidebar/2_ad_after_sidebar.html',
+          '2_sidebar/2_ad_in_sidebar.html',
           '2_sidebar/2_donate_list.html',
           '2_sidebar/3_fb_fan_page.html',
           '2_sidebar/3a_youtube_podcast.html',
@@ -97,6 +97,7 @@ var app = {
           '2_sidebar/5_guestbook.html',
           '2_sidebar/6_recent_posts.html',
           '2_sidebar/7_comments.html',
+          '2_sidebar/9_ad_after_sidebar.html',
 
           '3_footer/1_col.html',
           '3_footer/2_col.html',
@@ -122,7 +123,7 @@ var app = {
           '4_content/entry-item.html',
           '4_content/1_ad_before_blog.html',
           '4_content/5_ad_before_comment.html',
-          '4_content/9_ad_before_blog.html',
+          '4_content/9_ad_after_blog.html',
           
           
           '4_page/social-media.html',
