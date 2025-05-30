@@ -28,10 +28,11 @@ function loadAdWhenVisible(insSelector) {
   const ad = document.querySelector(insSelector);
   if (!ad) return;
 
-  $(ad).addClass('show')
+  // $(ad).addClass('show')
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      console.log(entry.isIntersecting)
       if (entry.isIntersecting) {
         (adsbygoogle = window.adsbygoogle || []).push({});
         observer.disconnect();
