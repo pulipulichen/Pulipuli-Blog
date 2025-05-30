@@ -12,7 +12,7 @@ function setupAdsense() {
 
 setTimeout(() => {
   let ins = $('ins.adsbygoogle')
-  ins.show()
+  ins.addClass('show')
 
   let count = ins.length
   for (let i = 0; i < count; i++) {
