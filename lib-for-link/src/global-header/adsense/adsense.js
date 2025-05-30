@@ -1,12 +1,19 @@
 function setupAdsense() {
   try {
+    $('ins.adsbygoogle > div').each((i, ele) => {
+      let $ele = $(ele)
+      if ($ele.height() === 0) {
+        $ele.remove()
+      }
+    })
+
     (adsbygoogle = window.adsbygoogle || []).push({});
   }
   catch (e) {
     console.error(e)
-    // setTimeout(() => {
-    //   setupAdsense()
-    // }, 3000)
+    setTimeout(() => {
+      setupAdsense()
+    }, 3000)
   }
 }
 
