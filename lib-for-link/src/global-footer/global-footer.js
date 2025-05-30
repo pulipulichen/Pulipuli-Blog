@@ -17,6 +17,8 @@ import "./cookie-banner/cookie-banner.js"
 
 import "./blog-statistic/blog-statistic.js"
 
+import "./adsense/adsense.js"
+
 import axios from 'axios'
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
