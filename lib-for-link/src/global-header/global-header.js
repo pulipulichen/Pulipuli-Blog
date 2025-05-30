@@ -27,6 +27,7 @@ import "./style/header.less"
 
 
 import "./style/index.less"
+import "./style/ads.less"
 
 
 import "./style/content.less"
