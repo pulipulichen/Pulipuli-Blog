@@ -4,9 +4,9 @@ function setupAdsense() {
   }
   catch (e) {
     console.error(e)
-    setTimeout(() => {
-      setupAdsense()
-    }, 3000)
+    // setTimeout(() => {
+    //   setupAdsense()
+    // }, 3000)
   }
 }
 
