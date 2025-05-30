@@ -25,7 +25,7 @@ function setupAdsense() {
 // })
 
 function loadAdWhenVisible(insSelector) {
-  const ad = document.querySelector(insSelector);
+  const ad = document.querySelectorAll(insSelector);
   if (!ad) return;
 
   // $(ad).addClass('show')
@@ -40,7 +40,9 @@ function loadAdWhenVisible(insSelector) {
     });
   });
 
-  observer.observe(ad);
+  for (let i = 0; i < ad.length; i++) {
+    observer.observe(ad[i]);
+  }
 }
 
 $(() => {
