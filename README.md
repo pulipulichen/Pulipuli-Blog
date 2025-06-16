@@ -1,6 +1,10 @@
 # Pulipuli-Blog
 擺放blog.pulipuli.info各種資料的儲存庫
 
+````
+git clone --depth=1 https://github.com/pulipulichen/Pulipuli-Blog.git
+````
+
 https://pulipulichen.github.io/Pulipuli-Blog/
 
 https://github.com/pulipulichen/Pulipuli-Blog/issues
@@ -78,3 +82,8 @@ Font Awesome icon: https://fontawesome.com/icons?d=gallery&m=free
 Private document:
 https://docs.google.com/document/d/1lkQwKG22HN9OlRztyRUPI6WplEOEn427fnw7nk0DRCQ/edit
 
+----
+
+# 檢視廣告
+
+https://colab.research.google.com/drive/1trktjoOK2tc9GdSmMHTAsQRaoHTRacfX
