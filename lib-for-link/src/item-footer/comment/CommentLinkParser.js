@@ -77,16 +77,23 @@ let parseYouTube = () => {
       let url = aNode.href
 
       // 取得id
-      if (url.indexOf('//www.youtube.com/watch?v=') > 0) {
-        url = url.slice(url.indexOf('?v=') + 3)
-      } else if (url.indexOf('//youtu.be/') > 0) {
-        url = url.slice(url.indexOf('.be/') + 4)
-      }
+      // if (url.indexOf('//www.youtube.com/watch?v=') > 0) {
+      //   url = url.slice(url.indexOf('?v=') + 3)
+      // } else if (url.indexOf('//youtu.be/') > 0) {
+      //   url = url.slice(url.indexOf('.be/') + 4)
+      // }
+      let id = youtube_parser(url)
 
       //console.log(url)
-      $(aNode).before('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + url + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube-embed"></iframe>')
+      $(aNode).before('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + id + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube-embed"></iframe>')
       $(aNode).addClass('parsed-youtube')
     })
+}
+
+function youtube_parser(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[7].length==11)? match[7] : false;
 }
 
 // 20170309 留言網址變連結
